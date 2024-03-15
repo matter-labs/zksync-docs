@@ -1,0 +1,26 @@
+{
+  "name": "zksync-docs",
+  "module": "index.ts",
+  "description": "zkSync Docs V3",
+  "license": "MIT",
+  "author": "Matter Labs",
+  "homepage": "https://zksync.io",
+  "devDependencies": {
+    "bun-types": "latest",
+    "cspell": "^8.6.0",
+    "markdownlint": "^0.33.0",
+    "markdownlint-cli2": "^0.12.1",
+    "prettier": "^3.2.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "start": "bun run index.ts",
+    "lint:fmt": "prettier --check **/*.md",
+    "lint:fix": "prettier --write **/*.md",
+    "lint:spell": "cspell **/*.md --config=./checks-config/cspell.json",
+    "lint:mdl": "markdownlint-cli2 -c .markdownlint.json \"**/*.md\" \"#node_modules\" \"#.github\""
+  },
+  "type": "module"
+}
