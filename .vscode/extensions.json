@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    "streetsidesoftware.code-spell-checker",
+    "mikestead.dotenv",
+    "dbaeumer.vscode-eslint",
+    "nuxt.mdc",
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense",
+    "yoavbls.pretty-ts-errors",
+    "simonsiefke.svg-preview",
+    "bradlc.vscode-tailwindcss",
+    "vue.volar",
+    "rvest.vs-code-prettier-eslint",
+    "DavidAnson.vscode-markdownlint"
+  ],
+  "unwantedRecommendations": [
+    "vue.vscode-typescript-vue-plugin",
+    "esbenp.prettier-vscode"
+  ]
+}
