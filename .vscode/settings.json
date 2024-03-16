@@ -1,10 +1,9 @@
 {
-  "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnType": false,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "file",
-  "vs-code-prettier-eslint.prettierLast": false,
   "editor.tabSize": 2,
   "editor.insertSpaces": true
 }

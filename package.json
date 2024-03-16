@@ -46,7 +46,7 @@
     "preview": "nuxt preview",
     "lint:fmt": "prettier --check .",
     "lint:fix": "prettier --write .",
-    "lint:spell": "cspell **/*.md --config=./checks-config/cspell.json",
+    "lint:spell": "cspell **/*.md --config=./cspell-config/cspell.json",
     "lint:mdl": "markdownlint-cli2 -c .markdownlint.json \"**/*.md\" \"#node_modules\" \"#.github\"",
     "lint:eslint": "eslint . --ignore-path .gitignore --debug",
     "lint:eslint:fix": "eslint . --ignore-path .gitignore --fix",
