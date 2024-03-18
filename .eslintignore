@@ -1,2 +1,6 @@
-dist
-/node_modules
+*.d.ts
+**/node_modules/**
+**/build/**
+**/dist/**
+**/coverage/**
+**/.*/**

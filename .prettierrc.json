@@ -9,8 +9,6 @@
   "singleQuote": true,
   "bracketSpacing": true,
   "vueIndentScriptAndStyle": false,
-  "newline": true,
-  "trimTrailingWhitespace": true,
   "proseWrap": "always",
   "singleAttributePerLine": true
 }

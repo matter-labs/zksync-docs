@@ -4,18 +4,8 @@
     "es2021": true,
     "node": true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:vue/vue3-essential",
-    "@nuxt/eslint-config"
-  ],
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "parser": "@typescript-eslint/parser",
-    "sourceType": "module"
-  },
-  "plugins": ["@typescript-eslint", "vue"],
+  "extends": ["eslint:recommended", "plugin:vue/vue3-essential", "@nuxt/eslint-config"],
+  "plugins": ["vue"],
   "rules": {
     "quote-props": ["error", "as-needed"]
   }
