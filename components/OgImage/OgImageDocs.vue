@@ -1,27 +1,27 @@
 <script lang="ts" setup>
 defineOptions({
-  inheritAttrs: false
-})
+  inheritAttrs: false,
+});
 
 defineProps({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   description: {
     type: String,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 </script>
 
 <template>
-  <div class="w-full h-full flex flex-col justify-center text-center bg-slate-900 p-8">
+  <div class="flex h-full w-full flex-col justify-center bg-slate-900 p-8 text-center">
     <div class="relative">
-      <h1 class="text-8xl mb-4 text-white">
+      <h1 class="mb-4 text-8xl text-white">
         {{ title }}
       </h1>
-      <p class="text-5xl text-gray-200 leading-tight">
+      <p class="text-5xl leading-tight text-gray-200">
         {{ description }}
       </p>
     </div>

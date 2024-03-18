@@ -122,4 +122,5 @@ Read more on [Nuxt Studio docs](https://nuxt.studio/docs/projects/setup).
 
 ## Renovate integration
 
-Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.
+Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you
+are good to go.
