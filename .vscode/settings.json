@@ -1,9 +1,10 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnType": false,
-  "editor.formatOnPaste": true,
+  "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "file",
   "editor.tabSize": 2,
-  "editor.insertSpaces": true
+  "editor.insertSpaces": true,
+  "files.eol": "\n"
 }

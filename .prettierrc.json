@@ -11,5 +11,6 @@
   "vueIndentScriptAndStyle": false,
   "newline": true,
   "trimTrailingWhitespace": true,
-  "proseWrap": "always"
+  "proseWrap": "always",
+  "singleAttributePerLine": true
 }

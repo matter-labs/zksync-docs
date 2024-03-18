@@ -1,20 +1,19 @@
 {
   "recommendations": [
-    "streetsidesoftware.code-spell-checker",
-    "mikestead.dotenv",
-    "dbaeumer.vscode-eslint",
-    "nuxt.mdc",
+    "bradlc.vscode-tailwindcss",
     "christian-kohler.npm-intellisense",
     "christian-kohler.path-intellisense",
-    "yoavbls.pretty-ts-errors",
-    "simonsiefke.svg-preview",
-    "bradlc.vscode-tailwindcss",
-    "vue.volar",
+    "DavidAnson.vscode-markdownlint",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editor",
+    "esbenp.prettier-vscode",
+    "mikestead.dotenv",
+    "nuxt.mdc",
     "rvest.vs-code-prettier-eslint",
-    "DavidAnson.vscode-markdownlint"
+    "simonsiefke.svg-preview",
+    "streetsidesoftware.code-spell-checker",
+    "vue.volar",
+    "yoavbls.pretty-ts-errors"
   ],
-  "unwantedRecommendations": [
-    "vue.vscode-typescript-vue-plugin",
-    "esbenp.prettier-vscode"
-  ]
+  "unwantedRecommendations": ["vue.vscode-typescript-vue-plugin"]
 }
