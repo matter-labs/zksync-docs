@@ -38,6 +38,14 @@ jspm_packages/
 
 .npm
 
+# npm and pnpm
+package-lock.json
+__package_previews__
+.store
+
+privatePackages/store
+pnpm-lock.yaml
+
 # Optional eslint cache
 
 .eslintcache
@@ -73,7 +81,8 @@ dist
 .yarn/unplugged
 .yarn/build-state.yml
 .yarn/install-state.gz
-.pnp.\*
+.pnp.*
+yarn.lock
 
 # IntelliJ based IDEs
 .idea
