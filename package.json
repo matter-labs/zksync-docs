@@ -44,12 +44,10 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "lint:fmt": "prettier --check .",
-    "lint:fix": "prettier --write .",
-    "lint:spell": "cspell content/**/*.md --config=./cspell.json",
-    "lint:mdl": "markdownlint-cli2 -c .markdownlint.json \"**/*.md\" \"#node_modules\" \"#.github\"",
-    "lint:eslint": "eslint . --ignore-path .gitignore --debug",
-    "lint:eslint:fix": "eslint . --ignore-path .gitignore --fix",
+    "lint:spelling": "cspell content/**/*.md --config=./cspell.json",
+    "lint:markdown": "markdownlint-cli2 -c .markdownlint.json \"**/*.md\" \"#node_modules\" \"#.github\"",
+    "lint:eslint": "eslint . --ignore-path .gitignore --fix",
+    "lint:prettier": "prettier --check .",
     "prepare": "husky",
     "postinstall": "nuxt prepare"
   }

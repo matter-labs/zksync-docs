@@ -25,13 +25,25 @@
     "softwareTerms",
     "swift",
     "typescript",
-    "dict-zksync"
+    "dict-zksync",
+    "dict-blockchain",
+    "dict-dev"
   ],
   "dictionaryDefinitions": [
     {
       "name": "dict-zksync",
       "addWords": true,
       "path": "./cspell-config/cspell-zksync.txt"
+    },
+    {
+      "name": "dict-blockchain",
+      "addWords": true,
+      "path": "./cspell-config/cspell-blockchain.txt"
+    },
+    {
+      "name": "dict-dev",
+      "addWords": true,
+      "path": "./cspell-config/cspell-dev.txt"
     }
   ],
   "allowCompoundWords": true
