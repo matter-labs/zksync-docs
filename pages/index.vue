@@ -1,17 +1,17 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData('index', () => queryContent('/').findOne())
+const { data: page } = await useAsyncData('index', () => queryContent('/').findOne());
 
 useSeoMeta({
   titleTemplate: '',
-  title: page.value.title,
-  ogTitle: page.value.title,
-  description: page.value.description,
-  ogDescription: page.value.description
-})
+  title: page.value?.title,
+  ogTitle: page.value?.title,
+  description: page.value?.description,
+  ogDescription: page.value?.description,
+});
 </script>
 
 <template>
-  <div>
+  <div v-if="page">
     <ULandingHero v-if="page.hero" v-bind="page.hero">
       <template #headline>
         <UBadge v-if="page.hero.headline" variant="subtle" size="lg" class="relative rounded-full font-semibold">
@@ -21,7 +21,11 @@ useSeoMeta({
 
           {{ page.hero.headline.label }}
 
-          <UIcon v-if="page.hero.headline.icon" :name="page.hero.headline.icon" class="ml-1 w-4 h-4 pointer-events-none" />
+          <UIcon
+            v-if="page.hero.headline.icon"
+            :name="page.hero.headline.icon"
+            class="pointer-events-none ml-1 h-4 w-4"
+          />
         </UBadge>
       </template>
 
