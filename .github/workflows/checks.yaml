@@ -16,7 +16,7 @@ jobs:
       - name: Runs prettier formatter
         run: |
           bun install
-          bun run lint:fmt
+          bun run lint:prettier
 
   spelling:
     name: spelling
@@ -27,10 +27,10 @@ jobs:
       - name: Runs cspell spell checker 
         run: |
            bun install
-           bun run lint:spell
+           bun run lint:spelling
 
   lint:
-    name: lint
+    name: lint markdown
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -38,4 +38,4 @@ jobs:
       - name: Runs mdl markdown linter
         run: |
             bun install
-            bun run lint:mdl
+            bun run lint:markdown

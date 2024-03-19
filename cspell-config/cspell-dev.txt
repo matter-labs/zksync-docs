@@ -1,0 +1,8 @@
+nuxt
+nuxtjs
+rocksdb
+nuxi
+otlp
+nvme
+nuxtdotjs
+fontaine

@@ -1,26 +1,54 @@
 {
   "name": "zksync-docs",
-  "module": "index.ts",
+  "type": "module",
   "description": "zkSync Docs V3",
+  "version": "0.0.0",
   "license": "MIT",
   "author": "Matter Labs",
   "homepage": "https://zksync.io",
   "devDependencies": {
-    "bun-types": "latest",
+    "@nuxt/eslint-config": "^0.2.0",
+    "@nuxthq/studio": "^1.0.13",
+    "@types/bun": "^1.0.8",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/eslint-config-typescript": "^13.0.0",
+    "@vue/test-utils": "^2.4.5",
     "cspell": "^8.6.0",
+    "eslint": "^8.52.0",
+    "eslint-plugin-vue": "^9.23.0",
+    "husky": "^9.0.11",
     "markdownlint": "^0.33.0",
     "markdownlint-cli2": "^0.12.1",
-    "prettier": "^3.2.5"
+    "prettier": "^3.1.0",
+    "prettier-eslint": "^16.1.2",
+    "prettier-plugin-tailwindcss": "^0.5.12",
+    "vue-eslint-parser": "^8.0.0",
+    "vue-tsc": "^2.0.6"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
-  "scripts": {
-    "start": "bun run index.ts",
-    "lint:fmt": "prettier --check **/*.md",
-    "lint:fix": "prettier --write **/*.md",
-    "lint:spell": "cspell **/*.md --config=./checks-config/cspell.json",
-    "lint:mdl": "markdownlint-cli2 -c .markdownlint.json \"**/*.md\" \"#node_modules\" \"#.github\""
+  "dependencies": {
+    "@iconify-json/heroicons": "^1.1.20",
+    "@iconify-json/simple-icons": "^1.1.95",
+    "@nuxt/content": "^2.12.1",
+    "@nuxt/fonts": "^0.3.0",
+    "@nuxt/ui-pro": "^1.0.2",
+    "nuxt": "^3.10.3",
+    "nuxt-og-image": "^3.0.0-rc.45"
   },
-  "type": "module"
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "lint:spelling": "cspell content/**/*.md --config=./cspell.json",
+    "lint:markdown": "markdownlint-cli2 \"content/**/*.md\" --config \".markdownlint.json\"",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier --check .",
+    "prepare": "husky",
+    "postinstall": "nuxt prepare"
+  }
 }
