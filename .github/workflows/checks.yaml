@@ -1,0 +1,41 @@
+name: clean 🧹
+
+on:
+  pull_request:
+    branches: [main, staging]
+
+  workflow_dispatch:
+
+jobs:
+  format:
+    name: format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+      - name: Runs prettier formatter
+        run: |
+          bun install
+          bun run lint:prettier
+
+  spelling:
+    name: spelling
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+      - name: Runs cspell spell checker 
+        run: |
+           bun install
+           bun run lint:spelling
+
+  lint:
+    name: lint markdown
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+      - name: Runs mdl markdown linter
+        run: |
+            bun install
+            bun run lint:markdown
