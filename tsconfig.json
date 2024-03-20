@@ -6,6 +6,6 @@
     "downlevelIteration": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
-    "typeRoots": ["./node_modules/@types", "./types"]
+    "typeRoots": ["./node_modules/@types", "./types", ".nuxt/nuxt.d.ts"]
   }
 }
