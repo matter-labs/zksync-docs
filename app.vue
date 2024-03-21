@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
+import FooterComponent from './components/FooterComponent.vue';
+import HeaderComponent from './components/HeaderComponent.vue';
 
 const { seo } = useAppConfig();
 
@@ -52,7 +54,7 @@ provide('navigation', navigation);
   <div>
     <NuxtLoadingIndicator />
 
-    <Header />
+    <HeaderComponent />
 
     <UMain>
       <NuxtLayout>
@@ -60,7 +62,7 @@ provide('navigation', navigation);
       </NuxtLayout>
     </UMain>
 
-    <Footer />
+    <FooterComponent />
 
     <ClientOnly>
       <LazyUContentSearch

@@ -99,3 +99,4 @@ yarn.lock
 .nitro
 .cache
 dist
+.firebase

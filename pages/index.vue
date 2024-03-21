@@ -19,7 +19,6 @@ const particlesLoaded = async (container: unknown) => {
     <div>
       <vue-particles
         id="tsparticles"
-        @particles-loaded="particlesLoaded"
         :options="{
           fpsLimit: 120,
           interactivity: {
@@ -86,6 +85,7 @@ const particlesLoaded = async (container: unknown) => {
           },
           detectRetina: true,
         }"
+        @particles-loaded="particlesLoaded"
       />
       <ULandingHero
         v-if="page.hero"

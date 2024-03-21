@@ -1,5 +1,18 @@
 {
   "projects": {
-    "default": "zksync-docs-staging"
-  }
+    "default": "zksync-docs"
+  },
+  "targets": {
+    "zksync-docs": {
+      "hosting": {
+        "prod": [
+          "zksync-docs"
+        ],
+        "staging": [
+          "zksync-docs-staging"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
