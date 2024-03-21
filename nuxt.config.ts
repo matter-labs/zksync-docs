@@ -47,4 +47,10 @@ export default defineNuxtConfig({
       },
     },
   },
+  // deployment settings for Firebase
+  nitro: {
+    firebase: {
+      gen: 2,
+    },
+  },
 });
