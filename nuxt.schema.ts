@@ -1,5 +1,10 @@
 import { field, group } from '@nuxthq/studio/theme';
+import { type SchemaDefinition } from 'nuxt/schema';
 
+/**
+ * Nuxt Schema is a configuration file that allows you to define properties
+ * from nuxt.config.ts that can then be dynamically edited in Nuxt Studio.
+ */
 export default defineNuxtSchema({
   appConfig: {
     ui: group({
@@ -61,8 +66,11 @@ export default defineNuxtSchema({
           title: 'Primary',
           description: 'Primary color of your UI.',
           icon: 'i-mdi-palette-outline',
-          default: 'green',
+          default: 'zkPurple',
           required: [
+            'zkPurple',
+            'zkBlue',
+            'zkSlate',
             'sky',
             'mint',
             'rose',
@@ -91,7 +99,7 @@ export default defineNuxtSchema({
           title: 'Gray',
           description: 'Gray color of your UI.',
           icon: 'i-mdi-palette-outline',
-          default: 'slate',
+          default: 'zkSlate',
           required: ['slate', 'cool', 'zinc', 'neutral', 'stone'],
         }),
       },
@@ -105,7 +113,7 @@ export default defineNuxtSchema({
           type: 'string',
           title: 'Site Name',
           description:
-            'Name used in ogSiteName and used as second part of your page title (My page title - Nuxt UI Pro).',
+            'Name used in ogSiteName and used as second part of your page title (My page title - {Site Name}).',
           icon: 'i-mdi-web',
           default: [],
         }),
@@ -238,4 +246,4 @@ export default defineNuxtSchema({
       },
     }),
   },
-});
+}) as SchemaDefinition;
