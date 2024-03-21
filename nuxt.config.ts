@@ -1,3 +1,5 @@
+import { getIconCollections } from '@egoist/tailwindcss-icons';
+import { zksyncIcons } from './assets/zksync-icons';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
@@ -11,7 +13,12 @@ export default defineNuxtConfig({
     },
   },
   ui: {
-    icons: ['heroicons', 'simple-icons'],
+    icons: {
+      collections: {
+        ...zksyncIcons,
+        ...getIconCollections(['heroicons', 'simple-icons']),
+      },
+    },
   },
   routeRules: {
     '/api/search.json': { prerender: true },
