@@ -1,16 +1,6 @@
 {
-  "hosting": [
-    {
-      "target": "staging",
-      "public": ".output/public",
-      "cleanUrls": true,
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
-    },
-    {
-      "target": "prod",
-      "public": ".output/public",
-      "cleanUrls": true,
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
-    }
-  ]
+  "hosting": {
+    "public": ".output/public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
 }
