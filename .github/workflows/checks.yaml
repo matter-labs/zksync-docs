@@ -1,22 +1,21 @@
-name: clean 🧹
+name: check 🕵️
 
 on:
   pull_request:
     branches: [main, staging]
-
   workflow_dispatch:
 
 jobs:
   format:
-    name: format
+    name: code_format
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
-      - name: Runs prettier formatter
-        run: |
-          bun install
-          bun run lint:prettier
+      - name: Install Dependencies
+        run: bun install
+      - name: Runs Prettier Formatter
+        run: bun run lint:prettier
 
   spelling:
     name: spelling
@@ -24,18 +23,29 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
-      - name: Runs cspell spell checker 
-        run: |
-           bun install
-           bun run lint:spelling
+      - name: Install Dependencies
+        run: bun install
+      - name: Runs cSpell Spell Checker
+        run: bun run lint:spelling
 
-  lint:
-    name: lint markdown
+  markdown-lint:
+    name: markdown_lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
-      - name: Runs mdl markdown linter
-        run: |
-            bun install
-            bun run lint:markdown
+      - name: Install Dependencies
+        run: bun install
+      - name: Runs Markdown Linter
+        run: bun run lint:markdown
+
+  eslint:
+    name: code_lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+      - name: Install Dependencies
+        run: bun install
+      - name: Runs ESLint
+        run: bun run lint:eslint
