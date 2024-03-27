@@ -4,12 +4,11 @@ declare interface CodeSwitcherTabItem {
    */
   label: string;
   /**
-   * The name of the markdown partial to display when the tab is selected
+   * The general path to the partial that is relative to the parent markdown.
    *
    * Example:
    *
-   * aPartial => will search for _aPartial.md in the same folder
-   * or lower as the parent markdown file
+   * "_getting-started/_aPartial" => `_getting-started/_aPartial.md`
    */
   partial: string;
 }

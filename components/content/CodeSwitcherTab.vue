@@ -8,6 +8,7 @@ const selectedIndex = ref(0);
 function onTabChange(index: number) {
   selectedIndex.value = index;
 }
+const route = useRoute();
 </script>
 
 <template>
@@ -26,7 +27,7 @@ function onTabChange(index: number) {
         v-slot="{ data }"
         :path="$route.path"
         find="one"
-        :where="{ _partial: true, title: { $icontains: item.partial } }"
+        :where="{ _partial: true, _path: { $icontains: item.partial } }"
       >
         <ContentRenderer :value="data" />
       </ContentQuery>
