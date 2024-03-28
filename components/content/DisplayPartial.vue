@@ -1,15 +1,15 @@
 <script setup lang="ts">
 defineProps<{
-  partial: string;
+  path: string;
 }>();
 </script>
 
 <template>
   <ContentQuery
     v-slot="{ data }"
-    path="_partials"
+    :path
     find="one"
-    :where="{ _partial: true, title: { $icontains: partial } }"
+    :where="{ _partial: true }"
   >
     <ContentRenderer :value="data" />
   </ContentQuery>

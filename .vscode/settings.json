@@ -8,6 +8,8 @@
   "editor.insertSpaces": true,
   "files.eol": "\n",
   "[markdown]": {
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+    "editor.formatOnSave": true
   }
 }
