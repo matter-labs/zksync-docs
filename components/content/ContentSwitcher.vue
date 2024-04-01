@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  items: CodeSwitcherTabItem[];
+  items: ContentSwitcherItem[];
 }>();
 
 const selectedIndex = ref(0);

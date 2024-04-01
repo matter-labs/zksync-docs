@@ -1,4 +1,4 @@
-declare interface CodeSwitcherTabItem {
+declare interface ContentSwitcherItem {
   /**
    * The label to display on the tab
    */
