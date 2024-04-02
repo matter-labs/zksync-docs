@@ -6,3 +6,7 @@ otlp
 nvme
 nuxtdotjs
 fontaine
+zksolc
+zkvyper
+ZKEVM
+zkout

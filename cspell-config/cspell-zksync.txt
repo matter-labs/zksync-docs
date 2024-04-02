@@ -2,3 +2,4 @@
 matterlabs
 zksync
 boojum
+Zeek
