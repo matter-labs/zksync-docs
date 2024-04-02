@@ -14,3 +14,7 @@ Vue
 
 // devs
 dutterbutter
+zksolc
+zkvyper
+ZKEVM
+zkout

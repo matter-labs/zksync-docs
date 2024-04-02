@@ -4,3 +4,4 @@ MatterLabs
 zkSync
 zksync
 zksync-cli
+Zeek
