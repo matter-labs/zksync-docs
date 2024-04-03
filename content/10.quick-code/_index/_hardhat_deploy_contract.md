@@ -1,8 +1,27 @@
 ---
-title: Deploy contract using Hardhat
+title: Hardhat | Deploy Contract
 ---
 
-Now that we have setup our environment and our wallet, we are ready to deploy our first contract! For this tutorial we'll focus on the `/contracts/ZeekAdventures.sol` contract:
+Hardhat is an Ethereum development environment, designed for easy smart contract development in Solidity.
+zkSync provides its own plugins which makes working with contracts on zkSync simple and efficient.
+
+## Step 1: Setting up environment
+:display-partial{partial = "Environment Setup with zkSync CLI"}
+
+## Step 2: Set up wallet
+
+Deploying contracts on the zkSync Sepolia testnet requires having testnet ETH.
+If you're working within the local development environment,
+you can utilize pre-configured rich wallets and skip this step.
+For testnet deployments, follow these steps to secure your funds:
+
+:display-partial{partial = "Setting up your wallet"}
+
+## Step 3: Deploying your first contract
+:display-partial{partial = "Deploy Contract"}
+
+Now that we have setup our environment and our wallet, we are ready to deploy our first contract!
+For this tutorial we'll focus on the `/contracts/ZeekAdventures.sol` contract:
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -50,7 +69,8 @@ contract ZeekAdventures {
 
 ### Compile contract
 
-Smart contracts deployed to zkSync must be compiled using our custom compilers. For this particular guide we are making use of `zksolc`.
+Smart contracts deployed to zkSync must be compiled using our custom compilers.
+For this particular guide we are making use of `zksolc`.
 
 To compile the contracts in the project, run the following command:
 
@@ -71,6 +91,7 @@ npm run compile:contracts
 ```bash [bun]
 bun run compile:contracts
 ```
+
 ::
 
 **You'll get the following output:**
@@ -86,11 +107,14 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 ### Deploy
 
-In this section, we’ll get to deploy the ZeekAdventure contract onto {network}. The script to deploy contracts is found at `/deploy/deploy.ts`. 
+In this section, we’ll get to deploy the ZeekAdventure contract
+onto {network}.
+The script to deploy contracts is found at `/deploy/deploy.ts`.
 
-The `contractArtifactName` defines the contract we want to deploy.Here we have it set to our contract, ZeekAdventure. Similarly, `constructorArguments` are the arguments we need to provide to the constructor to initialize the contract. 
+The `contractArtifactName` defines the contract we want to deploy.Here we have it set to our contract, ZeekAdventure.
+Similarly, `constructorArguments` are the arguments we need to provide to the constructor to initialize the contract.
 
-To deploy the contract, run the following command: 
+To deploy the contract, run the following command:
 
 ::code-group
 
@@ -109,6 +133,7 @@ npm run deploy
 ```bash [bun]
 bun run deploy
 ```
+
 ::
 
 **You'll get the following output:**
