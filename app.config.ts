@@ -36,6 +36,11 @@ export default defineAppConfig({
         },
       },
     },
+    'navigation-accordion': {
+      button: {
+        label: 'text-sm/6 font-semibold text-left text-pretty',
+      },
+    },
   },
   seo: {
     siteName: 'zkSync Docs',
