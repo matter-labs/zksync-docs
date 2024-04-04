@@ -2,7 +2,7 @@ nuxt
 nuxtjs
 rocksdb
 nuxi
-otlp
-nvme
+NVMe
 nuxtdotjs
 fontaine
+diataxis

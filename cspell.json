@@ -1,6 +1,7 @@
 {
   "language": "en",
   "ignorePaths": ["node_modules/**", ".github/**", ".firebase/**", ".yarn/**", "dist/**", ".vscode/**"],
+  "caseSensitive": true,
   "dictionaries": [
     "bash",
     "cpp",
@@ -46,5 +47,6 @@
       "path": "./cspell-config/cspell-dev.txt"
     }
   ],
-  "allowCompoundWords": true
+  "allowCompoundWords": true,
+  "flagWords": ["hte", "hve"]
 }
