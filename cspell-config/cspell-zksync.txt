@@ -5,3 +5,8 @@ zkSync
 zksync
 zksync-cli
 Zeek
+MatterLabs
+zkSync
+zksync
+zksync-cli
+zksync

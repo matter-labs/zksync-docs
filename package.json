@@ -7,6 +7,7 @@
   "author": "Matter Labs",
   "homepage": "https://zksync.io",
   "devDependencies": {
+    "@nuxt/devtools": "^1.1.5",
     "@nuxt/eslint-config": "^0.2.0",
     "@nuxthq/studio": "^1.0.13",
     "@types/bun": "^1.0.8",
