@@ -96,8 +96,8 @@ export default defineAppConfig({
   toc: {
     title: 'Table of Contents',
     bottom: {
-      title: 'Community',
-      edit: 'https://github.com/matter-labs/zksync-docs/edit/main/content',
+      title: '',
+      edit: 'https://github.com/matter-labs/zksync-docs/edit/staging/content',
       links: [
         // {
         //   icon: 'i-heroicons-star',

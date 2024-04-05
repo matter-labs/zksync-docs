@@ -8,8 +8,8 @@ seeking advanced guides, you'll find the resources you need here.
 
 - [Vue](https://vuejs.org/)
 - [Nuxt](https://nuxt.com/)
-- [NuxtContent](https://content.nuxt.com/)
-- [NuxtUI & NuxtUI Pro](https://ui.nuxt.com/)
+- [Nuxt Content](https://content.nuxt.com/)
+- [Nuxt UI & Nuxt UI Pro](https://ui.nuxt.com/)
 - [Tailwind](https://tailwindcss.com/)
 - [Bun](https://bun.sh/)
 

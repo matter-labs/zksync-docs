@@ -14,8 +14,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
-
 export interface Props {
   text: string;
   href: string;

@@ -1,5 +1,5 @@
 // zkSync-related words
+boojum
 MatterLabs
 zkSync
-boojum
 zksync-cli
