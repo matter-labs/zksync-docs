@@ -32,7 +32,7 @@ title: Setting up your wallet
       - Open the `.env` file and add your private key in the following format:
 
         ```sh
-        PRIVATE_KEY=your_private_key_here
+        WALLET_PRIVATE_KEY=your_private_key_here
         ```
 
       - Replace **`your_private_key_here`** with your actual private key.

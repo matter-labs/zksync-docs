@@ -94,24 +94,24 @@ export default defineAppConfig({
       title: 'Community',
       edit: 'https://github.com/matter-labs/zksync-docs/edit/main/content',
       links: [
-        // {
-        //   icon: 'i-heroicons-star',
-        //   label: 'Star on GitHub',
-        //   to: 'https://github.com/nuxt/ui',
-        //   target: '_blank',
-        // },
-        // {
-        //   icon: 'i-heroicons-book-open',
-        //   label: 'Nuxt UI Pro docs',
-        //   to: 'https://ui.nuxt.com/pro/guide',
-        //   target: '_blank',
-        // },
-        // {
-        //   icon: 'i-simple-icons-nuxtdotjs',
-        //   label: 'Purchase a license',
-        //   to: 'https://ui.nuxt.com/pro/purchase',
-        //   target: '_blank',
-        // },
+        {
+          icon: 'i-heroicons-star',
+          label: 'Star on GitHub',
+          to: 'https://github.com/matter-labs/zksync-docs',
+          target: '_blank',
+        },
+        {
+          icon: 'i-heroicons-chat-bubble-oval-left-ellipsis-16-solid',
+          label: 'Chat on Discord',
+          to: 'https://join.zksync.dev/',
+          target: '_blank',
+        },
+        {
+          icon: 'i-heroicons-user-group-20-solid',
+          label: 'Developer Forum',
+          to: 'https://github.com/zkSync-Community-Hub/zkync-developers/discussions',
+          target: '_blank',
+        },
       ],
     },
   },
