@@ -109,7 +109,7 @@ of Solidity files compiled.
 
 ```bash
 [⠒] Compiling...
-[⠃] Compiling 21 files with 0.8.20
+[⠃] Compiling 2 files with 0.8.20
 [⠊] Solc 0.8.20 finished in 736.48ms
 Compiler run successful!
 Compiling contracts for zkSync Era with zksolc v1.4.0
@@ -148,6 +148,8 @@ Key Components:
 - **contractArtifactName:** Identifies the `CrowdfundingCampaign` contract for deployment.
 - **constructorArguments:** Sets initialization parameters for the contract.
 
+#### Deploy contract
+
 Execute the deployment command.
 
 ```bash
@@ -162,32 +164,7 @@ Upon successful deployment, you'll receive output detailing the deployment proce
 including the contract address, transaction hash, and block number deployed to:
 
 ```bash
-Script ran successfully.
-
-## Setting up 1 EVM.
-
-==========================
-
-Chain 300
-
-Estimated gas price: .1 gwei
-
-Estimated total gas used for script: 481392
-
-Estimated amount required: 0.00015404544 ETH
-
-==========================
-
-###
-Finding wallets for all the necessary addresses...
-##
-Sending transactions [0 - 0].
-⠁ [00:00:00] [###########################################################################################################################################################################################################] 1/1 txes (0.0s)
-
-##
-Waiting for receipts.
-⠉ [00:00:06] [#######################################################################################################################################################################################################] 1/1 receipts (0.0s)
-##### 300
+...
 ✅  [Success]Hash: 0x69f5f1f0f5b3fa12ed2fbab4d6bb6edc02bbfff2f8c414d8171cc8295250296c
 Contract Address: 0xB0C0d3d02c270b6ABe4862EA90bBa1Af192314a8
 Block: 1491370

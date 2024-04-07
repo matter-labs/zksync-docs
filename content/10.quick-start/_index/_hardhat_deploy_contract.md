@@ -147,6 +147,7 @@ Key Components:
 - **constructorArguments:** Sets initialization parameters for the contract. In this case,
 the fundraising goal, converted from ether to `wei` to match Solidity's `uint256` type.
 
+#### Deploy contract
 Execute the deployment command corresponding to your package manager. The default command
 deploys to the configured network in your Hardhat setup. For local deployment, append
 `--network inMemoryNode` to deploy to the local in-memory node running.
