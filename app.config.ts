@@ -36,6 +36,11 @@ export default defineAppConfig({
         },
       },
     },
+    'navigation-accordion': {
+      button: {
+        label: 'text-sm/6 font-semibold text-left text-pretty',
+      },
+    },
   },
   seo: {
     siteName: 'zkSync Docs',
@@ -91,8 +96,9 @@ export default defineAppConfig({
   toc: {
     title: 'Table of Contents',
     bottom: {
-      title: 'Community',
-      edit: 'https://github.com/matter-labs/zksync-docs/edit/main/content',
+      title: '',
+      edit: 'https://github.com/matter-labs/zksync-docs/edit/staging/content',
+      feedback: 'https://github.com/matter-labs/zksync-docs/issues/new?labels=documentation',
       links: [
         // {
         //   icon: 'i-heroicons-star',
