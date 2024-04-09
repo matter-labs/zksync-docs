@@ -1,7 +1,7 @@
-evm
-merkle
+EVM
 keccak
 upgradability
 Initializable
 initializable
 UUPS
+merkle

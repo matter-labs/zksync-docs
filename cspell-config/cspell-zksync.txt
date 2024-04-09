@@ -1,5 +1,6 @@
 // zkSync-related words
-matterlabs
-zksync
 boojum
 Zeek
+MatterLabs
+zkSync
+zksync-cli
