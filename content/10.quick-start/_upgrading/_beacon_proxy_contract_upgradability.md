@@ -23,10 +23,10 @@ features or fixes while maintaining a uniform interface for users.
 ---
 items: [{
   label: 'Hardhat',
-  partial: '_upgrading/_beacon/_hardhat_transparent_contract_upgradability'
+  partial: '_upgrading/_beacon/_hardhat_beacon_contract_upgradability'
 }, {
   label: 'Foundry',
-  partial: '_upgrading/_beacon/_foundry_transparent_contract_upgradability'
+  partial: '_upgrading/_beacon/_foundry_beacon_contract_upgradability'
 }]
 ---
 ::

@@ -1,5 +1,5 @@
 ---
-title: Hardhat | Contract Testing
+title: Hardhat | Beacon
 ---
 
 `foundry-zksync` is a specialized fork of Foundry, tailored for zkSync.

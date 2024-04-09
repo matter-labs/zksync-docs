@@ -24,10 +24,10 @@ with a stable user experience.
 ---
 items: [{
   label: 'Hardhat',
-  partial: '_upgrading/_uups/_hardhat_transparent_contract_upgradability'
+  partial: '_upgrading/_uups/_hardhat_uups_contract_upgradability'
 }, {
   label: 'Foundry',
-  partial: '_upgrading/_uups/_foundry_transparent_contract_upgradability'
+  partial: '_upgrading/_uups/_foundry_uups_contract_upgradability'
 }]
 ---
 ::

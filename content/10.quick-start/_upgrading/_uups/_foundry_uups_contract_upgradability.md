@@ -2,7 +2,7 @@
 title: Hardhat | Contract Testing
 ---
 
-`foundry-zksync` is a specialized fork of Foundry, tailored for zkSync.
+`foundry-zksync` is a sssspecialized fork of Foundry, tailored for zkSync.
 It extends Foundry's capabilities for Ethereum app development to support zkSync,
 allowing for the compilation, deployment, testing, and interaction with smart contracts on zkSync.
 

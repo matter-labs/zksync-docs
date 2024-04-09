@@ -1,5 +1,5 @@
 ---
-title: Hardhat | Contract Upgrading
+title: Hardhat | Beacon
 ---
 
 Hardhat is an Ethereum development environment, designed for easy smart contract development in Solidity.
