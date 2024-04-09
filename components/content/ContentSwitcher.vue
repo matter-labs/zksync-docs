@@ -2,7 +2,6 @@
 defineProps<{
   items: ContentSwitcherItem[];
 }>();
-
 const selectedIndex = ref(0);
 
 function onTabChange(index: number) {
@@ -23,6 +22,10 @@ const route = useRoute();
       v-show="selectedIndex === index"
       :key="item.partial"
     >
+      <div v-if="selectedIndex === index">
+        {{ console.log('Route path:', $route.path) }}
+        {{ console.log('Rendering item:', item.partial) }}
+      </div>
       <ContentQuery
         v-slot="{ data }"
         :path="$route.path"
