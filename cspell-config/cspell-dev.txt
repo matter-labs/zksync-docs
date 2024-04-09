@@ -10,3 +10,4 @@ zksolc
 zkvyper
 ZKEVM
 zkout
+nomicfoundation
