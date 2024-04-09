@@ -98,6 +98,7 @@ export default defineAppConfig({
     bottom: {
       title: '',
       edit: 'https://github.com/matter-labs/zksync-docs/edit/staging/content',
+      feedback: 'https://github.com/matter-labs/zksync-docs/issues/new?labels=documentation',
       links: [
         // {
         //   icon: 'i-heroicons-star',

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { ParsedContent } from '@nuxt/content/types';
 import { withoutTrailingSlash } from 'ufo';
 
 definePageMeta({
@@ -14,7 +15,7 @@ if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true });
 }
 
-const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
+const { data: surround }: any = await useAsyncData(`${route.path}-surround`, () =>
   queryContent()
     .where({ _extension: 'md', navigation: { $ne: false } })
     .only(['title', 'description', '_path'])
@@ -34,7 +35,7 @@ defineOgImage({
   description: page.value.description,
 });
 
-const headline = computed(() => findPageHeadline(page.value));
+const headline = computed(() => findPageHeadline(page.value as ParsedContent));
 
 const links = computed(() =>
   [
@@ -44,13 +45,19 @@ const links = computed(() =>
       to: `${toc.bottom.edit}/${page?.value?._file}`,
       target: '_blank',
     },
+    toc?.bottom?.feedback && {
+      icon: 'i-heroicons-chat-bubble-oval-left-ellipsis',
+      label: 'Share feedback',
+      to: `${toc.bottom.feedback}&title=Feedback for ${page?.value?.title}&body=Page: ${page?.value?._path}`,
+      target: '_blank',
+    },
     ...(toc?.bottom?.links || []),
   ].filter(Boolean)
 );
 </script>
 
 <template>
-  <UPage>
+  <UPage v-if="page">
     <UPageHeader
       :title="page.title"
       :description="page.description"
