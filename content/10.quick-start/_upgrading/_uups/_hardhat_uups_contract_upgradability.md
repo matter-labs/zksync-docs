@@ -5,18 +5,24 @@ title: Hardhat | Contract Upgrading
 Hardhat is an Ethereum development environment, designed for easy smart contract development in Solidity.
 zkSync provides its own plugins which makes working with contracts on zkSync simple and efficient.
 
-## Step 1: Environment Configuration
+## Step 1: Setting up environment
+:display-partial{partial = "Environment Setup with zkSync CLI"}
 
-## Step 2: Test Wallet Configuration
+## Step 2: Set up wallet
 
-## Step 3: Adapting `CrowdfundingCampaign.sol` contract for upgradeability
+Deploying contracts on the zkSync Sepolia testnet requires having testnet ETH.
+If you're working within the local development environment,
+you can utilize pre-configured rich wallets and skip this step.
+For testnet deployments, follow these steps to secure your funds:
 
-To adapt our `CrowdfundingCampaign.sol` contract for upgradeability, we're
-transitioning to a Transparent Proxy pattern. This approach separates the
-contract's logic (which can be upgraded) from its persistent state
-(stored in the proxy).
+:display-partial{partial = "Setting up your wallet"}
 
-**Refactoring for Proxy Compatibility:**
+## Step 3: Adapting `CrowdfundingCampaign.sol` contract for upgradability
+
+To adapt our `CrowdfundingCampaign.sol` contract for upgradability, we're
+transitioning to an UUPS pattern. This approach...
+
+### Refactoring for Proxy Compatibility
 
 We're refactoring the contract to initialize state variables through an
 `initialize` function instead of the constructor, in line with the
@@ -33,14 +39,15 @@ import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 contract CrowdfundingCampaign is Initializable {
     address public owner;
     uint256 public fundingGoal;
-    uint256 public deadline;
+    mapping(address => uint256) public contributions;
 
     event ContributionReceived(address contributor, uint256 amount);
+    event GoalReached(uint256 totalFundsRaised);
 
-    function initialize(uint256 _fundingGoal, uint256 _duration) public initializer {
+    // Remove constructor in favour of initialize method
+    function initialize(uint256 _fundingGoal) public initializer {
         owner = msg.sender;
         fundingGoal = _fundingGoal;
-        deadline = block.timestamp + _duration;
     }
 
     function contribute() public payable {
@@ -70,11 +77,131 @@ through new logic contracts.
 - **Transparent Proxy Pattern**: Utilizes a proxy contract to delegate calls to this logic contract,
 allowing for future upgrades without losing the contract's state.
 
-This restructuring not only prepares the `CrowdfundingCampaign` contract for upgradeability.
+This restructuring prepares the `CrowdfundingCampaign` contract for upgradeability.
 
-## Step 4: Upgrading the `CrowdfundingCampaign` Contract
+## Step 4: Deploy the `CrowdfundingCampaign` contract
 
-With our initial setup in place, we're ready to enhance our `CrowdfundingCampaign.sol`
+Now that the `CrowdfundingCampaign` contract is adapted for contract upgradability, let's proceed to deploy
+the contract so we may upgrade it in later steps. Since we've made changes to our contract we will
+need to re-compile.
+
+To compile the contracts in the project, run the following command:
+
+::code-group
+
+```bash [yarn]
+yarn compile
+```
+
+```bash [pnpm]
+pnpm run compile
+```
+
+```bash [npm]
+npm run compile
+```
+
+```bash [bun]
+bun run compile
+```
+
+::
+
+#### Expected Output
+
+Upon successful compilation, you'll receive output detailing the
+`zksolc` and `solc` versions used during compiling and the number
+of Solidity files compiled.
+
+```bash
+Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling 1 Solidity file
+Successfully compiled 1 Solidity file
+```
+
+The compiled artifacts will be located in the `/artifacts-zk` folder.
+
+### Deploy
+
+This section outlines the steps to deploy the `CrowdfundingCampaign` contract that we recently updated for upgradability.
+The deployment script is located at `/deploy/deployBeaconProxy.ts`.
+
+```typescript
+import { getWallet } from "./utils";
+import { Deployer } from '@matterlabs/hardhat-zksync';
+import { ethers } from "ethers";
+import { HardhatRuntimeEnvironment } from "hardhat/types";
+
+export default async function (hre: HardhatRuntimeEnvironment) {
+    const wallet = getWallet();
+    const deployer = new Deployer(hre, wallet);
+
+    const contractArtifact = await deployer.loadArtifact("CrowdfundingCampaign");
+    const fundingGoalInWei = ethers.parseEther('0.1').toString();
+
+    const beacon = await hre.zkUpgrades.deployBeacon(
+        getWallet(),
+        contractArtifact
+    );
+    await beacon.waitForDeployment();
+
+    const crowdfunding = await hre.zkUpgrades.deployBeaconProxy(deployer.zkWallet, 
+        await beacon.getAddress(), contractArtifact, [fundingGoalInWei]);
+    await crowdfunding.waitForDeployment();
+}
+```
+
+Key Components:
+
+#### Deploy contract
+Execute the deployment command corresponding to your package manager. The default command
+deploys to the configured network in your Hardhat setup. For local deployment, append
+`--network inMemoryNode` to deploy to the local in-memory node running.
+
+::code-group
+
+```bash [yarn]
+yarn hardhat deploy-zksync --script deployBeaconProxy.ts
+# To deploy the contract on local in-memory node:
+# yarn hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
+```
+
+```bash [pnpm]
+pnpm run hardhat deploy-zksync --script deployBeaconProxy.ts
+# To deploy the contract on local in-memory node:
+# pnpm run hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
+```
+
+```bash [npm]
+npm run hardhat deploy-zksync --script deployBeaconProxy.ts
+# To deploy the contract on local in-memory node:
+# npm run hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
+```
+
+```bash [bun]
+bun run hardhat deploy-zksync --script deployBeaconProxy.ts
+# To deploy the contract on local in-memory node:
+# bun run hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
+```
+
+::
+
+#### Expected Output
+
+Upon successful deployment, you'll receive output detailing the deployment process,
+including the contract addresses of the implementation
+contract, the admin contract, and the transparent
+proxy contract.
+
+```bash
+Beacon impl deployed at 0xE3F814fa915A75bA47230537726C99f6517Da58e
+Beacon deployed at:  0x26410Bebf5Df7398DCBC5f00e9EBBa0Ddf471C72
+Beacon proxy deployed at:  0xD58FA9Fb362Abf69cFc68A3545fD227165DAc167
+```
+
+## Step 5: Upgrading the `CrowdfundingCampaign` Contract
+
+With our initial setup deployed, we're ready to upgrade our `CrowdfundingCampaign.sol`
 contract by incorporating a deadline for contributions. This addition not only brings
 a new layer of functionality but also introduces the concept of time-based conditions
 through a `modifier`.
@@ -92,22 +219,81 @@ this constraint, ensuring contributions are made within the allowed period.
 
 **Enhanced Contract:**
 
+Let's review the `CrowdfundingCampaignV2.sol` contract in the `/contracts` directory to view the updated contract:
+
 ```solidity
-uint256 public deadline;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
-function initialize(uint256 _fundingGoal, uint256 _duration) public initializer {
-    owner = msg.sender;
-    fundingGoal = _fundingGoal;
-    deadline = block.timestamp + _duration;
-}
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 
-modifier withinDeadline() {
-    require(block.timestamp <= deadline, "Funding period has ended");
-    _;
-}
+contract CrowdfundingCampaignV2 is Initializable {
+    address public owner;
+    uint256 public fundingGoal;
+    uint256 public totalFundsRaised;
+    mapping(address => uint256) public contributions;
 
-function contribute() public payable withinDeadline {
-    // Existing contribution logic
+    uint256 public deadline;
+    bool private initializedV2;
+
+    event ContributionReceived(address contributor, uint256 amount);
+    event GoalReached(uint256 totalFundsRaised);
+
+    // Original initialization function for V1
+    function initialize(uint256 _fundingGoal) public initializer {
+        owner = msg.sender;
+        fundingGoal = _fundingGoal;
+    }
+
+    // Additional initialization function for V2
+    function initializeV2(uint256 _duration) public {
+        require(!initializedV2, "V2 already initialized");
+        require(msg.sender == owner, "Only the owner can initialize V2");
+
+        deadline = block.timestamp + _duration;
+        initializedV2 = true;
+    }
+    
+    modifier withinDeadline() {
+        require(block.timestamp <= deadline, "Funding period has ended");
+        _;
+    }
+
+    function contribute() public payable withinDeadline {
+        require(msg.value > 0, "Contribution must be greater than 0");
+        contributions[msg.sender] += msg.value;
+        totalFundsRaised += msg.value;
+
+        emit ContributionReceived(msg.sender, msg.value);
+
+        if (totalFundsRaised >= fundingGoal) {
+            emit GoalReached(totalFundsRaised);
+        }
+    }
+
+    function withdrawFunds() public {
+        require(msg.sender == owner, "Only the owner can withdraw funds");
+        require(totalFundsRaised >= fundingGoal, "Funding goal not reached");
+
+        uint256 amount = address(this).balance;
+        totalFundsRaised = 0;
+
+        (bool success, ) = payable(owner).call{value: amount}("");
+        require(success, "Transfer failed.");
+    }
+
+    function getTotalFundsRaised() public view returns (uint256) {
+        return totalFundsRaised;
+    }
+
+    function getFundingGoal() public view returns (uint256) {
+        return fundingGoal;
+    }
+
+    function extendDeadline(uint256 _newDuration) public {
+        require(msg.sender == owner, "Only the owner can extend the deadline");
+        deadline = block.timestamp + _newDuration;
+    }    
 }
 ```
 
@@ -167,106 +353,132 @@ Successfully compiled 2 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-### Testing
+### Upgrading `CrowdfundingCampaign` to `CrowdfundingCampaignV2`
 
-This section describes the testing `CrowdfundingCampaign.sol` contract. Let's
-start by reviewing the tests for `CrowdfundingCampaign.sol` contract provided
-during the initialization step in the `/tests` directory, specifically the
-`crowdFunding.test.ts` file.
+This section describes the initating the upgrade to `CrowdfundingCampaign.sol` contract. Let's
+start by reviewing the `upgradeBeaconCrowdfundingCampaign.ts` script in the `deploy/upgrade-scripts` directory:
 
 ```typescript
-import { expect } from "chai";
-import { ethers } from "hardhat";
-import { getWallet, LOCAL_RICH_WALLETS, deployContract } from "../deploy/utils";
+import { getWallet } from "../utils";
+import { Deployer } from '@matterlabs/hardhat-zksync';
+import { HardhatRuntimeEnvironment } from "hardhat/types";
+import * as zk from 'zksync-ethers';
+import { Contract } from 'ethers';
 
-describe("CrowdfundingCampaign", function () {
-  let campaign;
-  let owner, addr1, addr2;
+export default async function (hre: HardhatRuntimeEnvironment) {
+    const wallet = getWallet();
+    const deployer = new Deployer(hre, wallet);
+    const beaconAddress = 'beacon address here';
+    
+    const crowdfundingCampaignV2 = await deployer.loadArtifact('CrowdfundingCampaignV2');
+    await hre.zkUpgrades.upgradeBeacon(deployer.zkWallet, beaconAddress, crowdfundingCampaignV2);
+    console.log('Successfully upgraded crowdfundingCampaign to crowdfundingCampaignV2', beaconAddress);
 
-  beforeEach(async function () {
-    owner = getWallet(LOCAL_RICH_WALLETS[0].privateKey);
-    addr1 = getWallet(LOCAL_RICH_WALLETS[1].privateKey);
-    addr2 = getWallet(LOCAL_RICH_WALLETS[2].privateKey);
-    const fundingGoalInWei = ethers.parseEther('1').toString();
-    campaign = await deployContract("CrowdfundingCampaign", [fundingGoalInWei], { wallet: owner, silent: true });
-  });
+    const attachTo = new zk.ContractFactory<any[], Contract>(
+        crowdfundingCampaignV2.abi,
+        crowdfundingCampaignV2.bytecode,
+        deployer.zkWallet,
+        deployer.deploymentType,
+    );
+    
+    const beaconProxyAddress = "beacon proxy address here";
+    const upgradedCrowdfundingCampaign  = attachTo.attach(beaconProxyAddress);
 
-  describe("Contribute", function () {
-    it("should reject contributions of 0", async function () {
-      await expect(campaign.connect(addr1).contribute({ value: ethers.parseEther("0") })).to.be.revertedWith("Contribution must be greater than 0");
-    });
+    upgradedCrowdfundingCampaign.connect(deployer.zkWallet);
+    // wait some time before the next call
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    
+    const durationInSeconds = 30 * 24 * 60 * 60; // For example, setting a 30-day duration
 
-    it("should aggregate contributions in totalFundsRaised", async function () {
-      await campaign.connect(addr1).contribute({ value: ethers.parseEther("0.5") });
-      await campaign.connect(addr2).contribute({ value: ethers.parseEther("0.3") });
-      expect(await campaign.getTotalFundsRaised()).to.equal(ethers.parseEther("0.8"));
-    });
+    const initTx = await upgradedCrowdfundingCampaign.initializeV2(durationInSeconds);
+    const receipt = await initTx.wait();
 
-    it("should emit GoalReached event when funding goal is met", async function () {
-      await expect(campaign.connect(addr1).contribute({ value: ethers.parseEther("1") }))
-        .to.emit(campaign, "GoalReached")
-        .withArgs(ethers.parseEther("1"));
-    });
-  });
-});
+    console.log('CrowdfundingCampaignV2 initialized!', receipt.hash);
+
+    const fundraisingGoal = await upgradedCrowdfundingCampaign.getFundingGoal();
+    console.log('Fundraising goal:', fundraisingGoal.toString());
+}
 ```
+
+Add the **Beacon** address and the **Beacon proxy** address from our deployment
+process to the `beaconAddress`, `beaconProxyAddress` variables in the above script.
 
 Key Components:
 
-**Testing Workflow:**
-
-- **Initialization**: Each test case initializes with fresh contract instances and predefined
-rich wallet accounts to simulate various contributors and the contract owner.
-- **Deployment**: The `CrowdfundingCampaign` contract is deployed using the `deployContract`
-utility, setting a specific funding goal for each test scenario.
-
-**`contribute` Method Tests:**
-
-- **Zero Contributions**: Verifies that the contract correctly rejects contribution attempts with
-zero value, ensuring the integrity of the contribution process.
-- **Funds Aggregation**: Tests the contract's ability to accurately aggregate contributions from
-multiple addresses and update the `totalFundsRaised` accordingly.
-- **Goal Achievement**: Checks for the `GoalReached` event emission upon meeting the funding goal,
-confirming the contract's responsiveness to achieving its set target.
-
-#### Execute tests
+#### Upgrade contract
 Execute the test command corresponding to your package manager:
 
 ::code-group
 
 ```bash [yarn]
-yarn hardhat test --network hardhat
+yarn hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
 ```
 
 ```bash [pnpm]
-pnpm run hardhat test --network hardhat
+pnpm run hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
 ```
 
 ```bash [npm]
-npm run hardhat test --network hardhat
+npm run hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
 ```
 
 ```bash [bun]
-bun run hardhat test --network hardhat
+bun run hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
 ```
 
 ::
 
 #### Expected Output
 
-Upon completion, the test suite will provide a summary of all executed tests,
-indicating their success or failure:
+Upon successful deployment, you'll receive output detailing the upgrade process,
+including the new beacon address, and transaction hash:
 
 ```bash
-  CrowdfundingCampaign
-    Contribute
-      ✔ should reject contributions of 0 (45ms)
-      ✔ should aggregate contributions in totalFundsRaised (213ms)
-      ✔ should emit GoalReached event when funding goal is met (113ms)
-
-
-  3 passing (1s)
+New beacon impl deployed at 0x58BD5adb462CF087E5838d53aE38A3Fe0EAf7A31
+Successfully upgraded crowdfundingCampaign to crowdfundingCampaignV2 0x26410Bebf5Df7398DCBC5f00e9EBBa0Ddf471C72
+CrowdfundingCampaignV2 initialized! 0x5f3131c77fcac19390f5f644a3ad1f0e7719dee4b4b5b4746c992de00db743f7
+Fundraising goal: 100000000000000000
 ```
 
-🎉 Congratulations! The `contribute` method of the `CrowdfundingCampaign` contract
-has been thoroughly tested and is ready for action.
+## Step 6: Verify upgradable contracts
+
+To verify our upgradable contracts we need to the proxy address we previously used in our upgrade script.
+With that execute the following command:
+
+::code-group
+
+```bash [yarn]
+yarn hardhat verify <BEACON-PROXY-ADDRESS>
+```
+
+```bash [pnpm]
+pnpm run hardhat verify <BEACON-PROXY-ADDRESS>
+```
+
+```bash [npm]
+npm run hardhat verify <BEACON-PROXY-ADDRESS>
+```
+
+```bash [bun]
+bun run hardhat verify <BEACON-PROXY-ADDRESS>
+```
+
+::
+
+#### Expected Output
+
+Upon successful verification, you'll receive output detailing the verification process:
+
+```bash
+Verifying implementation: 0x58BD5adb462CF087E5838d53aE38A3Fe0EAf7A31
+Your verification ID is: 10547
+Contract successfully verified on zkSync block explorer!
+Verifying beacon: 0x26410Bebf5Df7398DCBC5f00e9EBBa0Ddf471C72
+Your verification ID is: 10548
+Contract successfully verified on zkSync block explorer!
+Verifying beacon proxy: 0xD58FA9Fb362Abf69cFc68A3545fD227165DAc167
+Your verification ID is: 10549
+Contract successfully verified on zkSync block explorer!
+```
+
+🎉 Congratulations! The `CrowdfundingCampaign` contract has been upgraded and verified!

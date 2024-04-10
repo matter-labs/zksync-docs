@@ -26,7 +26,7 @@ For testnet deployments, follow these steps to secure your funds:
 
 :display-partial{partial = "Setting up your wallet"}
 
-## Step 3: Deploying your first contract
+## Step 3: Deploying contract with factory
 
 With our environment and wallet configured, we're set to review the `CrowdfundingFactory.sol`
 contract that is provided during the initialization step in the `/src` directory.
@@ -106,47 +106,52 @@ artifacts will be located in the `/out` folder.
 This section outlines the steps to deploy the `CrowdfundingCampaign` contract using
 our new `CrowdfundingFactory`.
 
-The deployment script is located at `/script/deployUsingFactory.s.sol`.
+Let's start by deploying the `CrowdfundingFactory` contract. Execute the following
+command:
 
-```solidity
-// SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
+```bash
+forge create src/CrowdfundFactory.sol:CrowdfundingFactory --factory-deps src/CrowdfundingCampaign.sol:CrowdfundingCampaign --rpc-url zkSyncSepoliaTestnet --chain 300 --private-key <YOUR-PRIVATE-KEY> --zksync
+# To deploy the contract on local in-memory node:
+# forge script script/DeployFactory.s.sol:DeployFactoryAndCreateCampaign --rpc-url inMemoryNode --broadcast --zksync
+```
 
-import "forge-std/Script.sol";
-import "forge-std/console.sol";
-import "../src/CrowdfundFactory.sol";
-import "../src/CrowdfundingCampaign.sol";
+#### Expected output
 
-contract DeployFactoryAndCreateCampaign is Script {
-    function run() external {
-        uint256 deployerPrivateKey = vm.envUint("WALLET_PRIVATE_KEY");
-        vm.startBroadcast(deployerPrivateKey);
+Upon a successfull deployment you'll receive details of the deploying address, the contract address,
+and the transaction hash, like so:
 
-        // Deploy the CrowdfundingFactory contract
-        CrowdfundingFactory factory = new CrowdfundingFactory();
+```bash
+Deployer: 0x89E0Ff69Cc520b55C9F7Bcd3EAC17e81d9bB8dc2
+Deployed to: 0x607545Fd35ef49d7445555ddFa22938fD4Efb219
+Transaction hash: 0x94e7a97bb64c2bacffbd2a47f3c10021a80156d11082c079046a426c99518d28
+```
 
-        // Log the factory's address
-        console.log("CrowdfundingFactory deployed at: %s", address(factory));
+Using the `CrowdfundingFactory` contract address let's deploy our `CrowdfundingCampaign`:
 
-        // Define the funding goal for the new campaign
-        uint256 fundingGoalInWei = 0.01 ether;
+```bash
+cast send 0x607545Fd35ef49d7445555ddFa22938fD4Efb219 "createCampaign(uint256)" "1" --rpc-url zkSyncSepoliaTestnet --chain 300 --private-key <YOUR-PRIVATE-KEY>
+# To use the contract factory on local in-memory node:
+# cast send 0x607545Fd35ef49d7445555ddFa22938fD4Efb219 "createCampaign(uint256)" "1" --rpc-url inMemoryNode --chain 260 --private-key <YOUR-PRIVATE-KEY>
+```
 
-        // Use the factory to create a new CrowdfundingCampaign
-        factory.createCampaign(fundingGoalInWei);
+#### Expected output
 
-        // Not sure how to get the address of the new campaign
-        // TODO: Log the address of the new campaign
+Upon a successfull deployment you'll receive details of the transaction, including the
+contract address of our crowdfunding campaign:
 
-        vm.stopBroadcast();
-    }
-}
+```bash
+blockHash               0x7f8dfcd365b4ba5ac690e94aedb5fdb2bdb5ef12b2ff68672ab58c7a89738161
+blockNumber             1576375
+contractAddress         0x95f83473b88B5599cdB273F976fB3DC66DEA1c1D
+...
+...
 ```
 
 Key Components:
 
 **Deployment Workflow:**
 
-- Initiates by deploying the `CrowdfundingFactory` through `deployContract`.
+- Initiates by deploying the `CrowdfundingFactory` through `forge create --zksync`.
 - Using the factory's deployed address to form a `factoryContract` instance,
 facilitating access to the factory's functionalities.
 
@@ -154,30 +159,5 @@ facilitating access to the factory's functionalities.
 
 - Executes the `factoryContract`'s `createCampaign` function to create and deploy a new
 crowdfunding campaign, with the specified funding target.
-
-#### Deploy factory
-Execute the deployment command.
-
-```bash
-forge script script/DeployFactory.s.sol:DeployFactoryAndCreateCampaign --rpc-url zkSyncSepoliaTestnet --broadcast --zksync
-# To deploy the contract on local in-memory node:
-# forge script script/DeployFactory.s.sol:DeployFactoryAndCreateCampaign --rpc-url inMemoryNode --broadcast --zksync
-```
-
-#### Expected Output
-
-Upon successful deployment, you'll receive output detailing the deployment process,
-including the contract address, transaction hash, and block number deployed to:
-
-```bash
-== Logs ==
-  CrowdfundingFactory deployed at: 0xdE663Eccf654692A27CC706a8783D9E226ab7998
-...
-...
-✅  [Success]Hash: 0x51b8707426039e2fb4f9464403176792dca80d94a4b7b8bf75d6fb1bddcb9144
-Contract Address: 0xdE663Eccf654692A27CC706a8783D9E226ab7998
-Block: 1505221
-Paid: 0.000455622 ETH (4556220 gas * 0.1 gwei)
-```
 
 🌟 Brilliant! Your contract factory and its first crowdfunding campaign are now operational.

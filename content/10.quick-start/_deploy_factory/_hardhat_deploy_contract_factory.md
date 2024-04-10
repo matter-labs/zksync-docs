@@ -18,7 +18,7 @@ For testnet deployments, follow these steps to secure your funds:
 
 :display-partial{partial = "Setting up your wallet"}
 
-## Step 3: Deploying your first contract
+## Step 3: Deploying contract with factory
 
 With our environment and wallet configured, we're set to review the `CrowdfundingFactory.sol`
 contract that is provided during the initialization step in the `/contracts` directory.

@@ -7,7 +7,7 @@ zkSync provides its own plugins which makes working with contracts on zkSync sim
 
 ## Step 1: Environment Configuration
 While setting up a local development environment was previously optional, testing contracts requires
-a more structured setup. We'll employ `hardhat-zksync` to run tests against an In-memory node,
+a more structured setup. We'll use `hardhat-zksync` to run tests against an In-memory node,
 which operates seamlessly within a separate process for an optimized testing workflow.
 Kickstart the project setup for this guide with the following command:
 
@@ -160,7 +160,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 ### Testing
 
-This section describes the testing `CrowdfundingCampaign.sol` contract. Let's
+This section describes testing `CrowdfundingCampaign.sol` contract. Let's
 start by reviewing the tests for `CrowdfundingCampaign.sol` contract provided
 during the initialization step in the `/tests` directory, specifically the
 `crowdFunding.test.ts` file.

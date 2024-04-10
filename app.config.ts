@@ -101,12 +101,6 @@ export default defineAppConfig({
       feedback: 'https://github.com/matter-labs/zksync-docs/issues/new?labels=documentation',
       links: [
         {
-          icon: 'i-heroicons-star',
-          label: 'Star on GitHub',
-          to: 'https://github.com/matter-labs/zksync-docs',
-          target: '_blank',
-        },
-        {
           icon: 'i-heroicons-chat-bubble-oval-left-ellipsis-16-solid',
           label: 'Chat on Discord',
           to: 'https://join.zksync.dev/',

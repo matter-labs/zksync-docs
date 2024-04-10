@@ -12,10 +12,9 @@ yet and may not work as fully intended. It is open-sourced and contributions are
 ::
 
 ## Step 1: Environment Configuration
+:display-partial{partial = "Foundry-zksync Installation"}
 
-## Step 2: Test Wallet Configuration
-
-## Step 3: Testing `CrowdfundingCampaign` contract
+## Step 2: Testing `CrowdfundingCampaign` contract
 
 Now that our setup is complete, it's time to focus on the core of this
 guide - testing our `CrowdfundingCampaign.sol` contract. Here's a quick

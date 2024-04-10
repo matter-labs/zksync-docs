@@ -1,9 +1,9 @@
 ---
-title: Transparent Proxy Contract Upgradeability
+title: Transparent Upgradeable Proxy Contract
 ---
 
-### What is a transparent upgradeable contract?
-Transparent Upgradeable Contracts utilize the proxy pattern to facilitate post-deployment
+### What is a transparent upgradeable proxy contract?
+Transparent upgradeable contracts utilize the proxy pattern to facilitate post-deployment
 logic updates while preventing accidental function collisions. They consist of:
 
 1. **Proxy Contract**: Manages storage, balance, and delegates calls to the logic contract,
