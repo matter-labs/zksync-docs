@@ -2,4 +2,5 @@
 boojum
 MatterLabs
 zkSync
+zksync
 zksync-cli
