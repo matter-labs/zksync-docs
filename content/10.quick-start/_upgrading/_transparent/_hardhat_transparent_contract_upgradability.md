@@ -158,8 +158,8 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 - **`hre.zkUpgrades.deployProxy`**: The method call to deploy the `CrowdfundingCampaign`
 contract via a transparent proxy, leveraging Hardhat's runtime environment for zkSync upgrades.
 This ensures the deployed contract can be upgraded in the future without losing its state or funds.
-- **`initializer`**: Specifies the initialization method of the contract, initialize in this case,
-which is crucial for setting up the proxy's state upon deployment.
+- **`initializer`**: Specifies the initialization method of the contract, `initialize` in this case,
+which is required for setting up the proxy's state upon deployment.
 
 #### Deploy contract
 Execute the deployment command corresponding to your package manager. The default command
@@ -260,30 +260,7 @@ exemplifies the use of `modifiers` for enforcing contract conditions.
 
 ### Compile contract
 
-Smart contracts deployed to zkSync must be compiled using our custom compiler.
-For this particular guide we are making use of `zksolc`.
-
-To compile the contracts in the project, run the following command:
-
-::code-group
-
-```bash [yarn]
-yarn compile
-```
-
-```bash [pnpm]
-pnpm run compile
-```
-
-```bash [npm]
-npm run compile
-```
-
-```bash [bun]
-bun run compile
-```
-
-::
+:display-partial{partial = "Compile Solidity Contract"}
 
 #### Expected Output
 
@@ -299,10 +276,11 @@ Successfully compiled 2 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-### Upgrading `CrowdfundingCampaign` to `CrowdfundingCampaignV2`
+### Upgrading to `CrowdfundingCampaignV2`
 
-This section describes the initating the upgrade to `CrowdfundingCampaign.sol` contract. Let's
-start by reviewing the `upgradeCrowdfundingCampaign.ts` script in the `deploy/upgrade-scripts` directory:
+This section guides you through upgrading the `CrowdfundingCampaign` contract
+to its second version, `CrowdfundingCampaignV2`. Review the `upgradeCrowdfundingCampaign.ts`
+script located within the `deploy/upgrade-scripts` directory to begin.
 
 ```typescript
 import { getWallet } from "../utils";
@@ -313,34 +291,42 @@ export default async function (hre: HardhatRuntimeEnvironment) {
     const wallet = getWallet();
     const deployer = new Deployer(hre, wallet);
     
-    const crowdfundingCampaignProxyAddress = 'Proxy address here';
+    // Placeholder for the deployed proxy address
+    const proxyAddress = 'YOUR_PROXY_ADDRESS_HERE';
     
-    const crowdfundingCampaignV2 = await deployer.loadArtifact('CrowdfundingCampaignV2');
+    const contractV2Artifact = await deployer.loadArtifact('CrowdfundingCampaignV2');
 
-    const upgradedCrowdfundingCampaign = await hre.zkUpgrades.upgradeProxy(deployer.zkWallet, crowdfundingCampaignAddress, crowdfundingCampaignV2);
+    // Upgrade the proxy to V2
+    const upgradedContract = await hre.zkUpgrades.upgradeProxy(deployer.zkWallet, proxyAddress, contractV2Artifact);
 
     console.log('Successfully upgraded crowdfundingCampaign to crowdfundingCampaignV2');
 
-    upgradedCrowdfundingCampaign.connect(deployer.zkWallet);
+    upgradedContract.connect(deployer.zkWallet);
     // wait some time before the next call
     await new Promise((resolve) => setTimeout(resolve, 2000));
     
+    // Initialize V2 with a new campaign duration
     const durationInSeconds = 30 * 24 * 60 * 60; // For example, setting a 30-day duration
-
-    const initTx = await upgradedCrowdfundingCampaign.initializeV2(durationInSeconds);
+    const initTx = await upgradedContract.initializeV2(durationInSeconds);
     const receipt = await initTx.wait();
 
-    console.log('CrowdfundingCampaignV2 initialized!', receipt.hash);
-
-    const fundraisingGoal = await upgradedCrowdfundingCampaign.getFundingGoal();
-    console.log('Fundraising goal:', fundraisingGoal.toString());
+    console.log(`CrowdfundingCampaignV2 initialized. Transaction Hash: ${receipt.hash}`);
 }
 ```
 
-We will need to add the **Transparent proxy** address from our deployment process to the
-`crowdfundingCampaignProxyAddress` in the above script.
+Ensure to replace `YOUR_PROXY_ADDRESS_HERE` with the actual address of your
+deployed Transparent Proxy from the previous deployment step.
 
-Key Components:
+**Key Components:**
+
+- **`upgradeProxy`:** A critical method from the `hre.zkUpgrades` module that
+performs the contract upgrade. It takes the wallet, the proxy address, and the
+new contract artifact as arguments to transition the proxy to use the `CrowdfundingCampaignV2` logic.
+
+- **`initializeV2`:** Post-upgrade, this function is invoked to initialize the new
+variables or logic introduced in `CrowdfundingCampaignV2`. In this example,
+it sets a new campaign duration, illustrating how contract upgrades can add
+functionalities without losing the existing state or funds.
 
 #### Upgrade contract
 Execute the test command corresponding to your package manager:
@@ -379,8 +365,10 @@ Fundraising goal: 100000000000000000
 
 ## Step 6: Verify upgradable contracts
 
-To verify our upgradable contracts we need to the proxy address we previously used in our upgrade script.
-With that execute the following command:
+For the verification of our upgradable contracts, it's essential to utilize the proxy address that was specified in our
+upgrade script.
+
+To proceed with verification, execute the following command:
 
 ::code-group
 
@@ -402,6 +390,8 @@ bun run hardhat verify <PROXY-ADDRESS>
 
 ::
 
+Ensure to replace <PROXY_ADDRESS> with the actual proxy address from your deployment.
+
 #### Expected Output
 
 Upon successful verification, you'll receive output detailing the verification process:
@@ -418,4 +408,4 @@ Your verification ID is: 10545
 Contract successfully verified on zkSync block explorer!
 ```
 
-🎉 Congratulations! The `CrowdfundingCampaign` contract has been upgraded and verified!
+🎉 Congratulations! The `CrowdfundingCampaignV2` contract has been upgraded and verified!
