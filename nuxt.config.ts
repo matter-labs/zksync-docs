@@ -3,7 +3,15 @@ import { zksyncIcons } from './assets/zksync-icons';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
-  modules: ['@nuxt/content', '@nuxt/ui', '@nuxt/fonts', '@nuxthq/studio', 'nuxt-og-image', '@nuxt/devtools'],
+  modules: [
+    '@nuxt/content',
+    '@nuxt/ui',
+    '@nuxt/fonts',
+    '@nuxthq/studio',
+    'nuxt-og-image',
+    'nuxt-headlessui',
+    '@nuxt/devtools',
+  ],
   hooks: {
     // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
     'components:extend': (components) => {
