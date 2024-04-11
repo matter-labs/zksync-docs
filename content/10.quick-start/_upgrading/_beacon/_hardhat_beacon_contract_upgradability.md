@@ -285,7 +285,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 ### Upgrading to `CrowdfundingCampaignV2`
 
-This section describes the initating the upgrade to `CrowdfundingCampaign.sol` contract. Let's
+This section describes the initiating the upgrade to `CrowdfundingCampaignV2.sol` contract. Let's
 start by reviewing the `upgradeBeaconCrowdfundingCampaign.ts` script in the `deploy/upgrade-scripts` directory:
 
 ```typescript

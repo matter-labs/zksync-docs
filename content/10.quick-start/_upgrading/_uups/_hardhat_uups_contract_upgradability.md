@@ -17,45 +17,51 @@ For testnet deployments, follow these steps to secure your funds:
 
 :display-partial{partial = "Setting up your wallet"}
 
-## Step 3: Adapting `CrowdfundingCampaign.sol` contract for upgradability
+## Step 3: Adapting `CrowdfundingCampaign.sol` for UUPS Upgradability
 
-To adapt our `CrowdfundingCampaign.sol` contract for upgradability, we're
-transitioning to an UUPS pattern. This approach...
+To align the `CrowdfundingCampaign.sol` contract with UUPS (Universal Upgradeable Proxy Standard) upgradability,
+we're integrating OpenZeppelin's UUPSUpgradeable contracts. This method offers a more secure and gas-efficient
+approach to contract upgrades by embedding the upgrade logic within the contract itself.
 
-### Refactoring for Proxy Compatibility
+### Refactoring for UUPS Compatibility
 
-We're refactoring the contract to initialize state variables through an
-`initialize` function instead of the constructor, in line with the
-Transparent Proxy pattern.
+We've refactored the contract to support UUPS upgradability, ensuring the contract's logic
+is upgradeable while maintaining a persistent state. This is achieved by utilizing initializer
+functions and the UUPS upgrade mechanism.
 
-**Updated Contract Structure:**
+**UUPS-Enabled Contract Structure:**
 
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
+// Import UUPS from OpenZeppelin
+import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
-contract CrowdfundingCampaign is Initializable {
-    address public owner;
+contract CrowdfundingCampaign_UUPS is Initializable, UUPSUpgradeable, OwnableUpgradeable {
     uint256 public fundingGoal;
+    uint256 public totalFundsRaised;
     mapping(address => uint256) public contributions;
 
     event ContributionReceived(address contributor, uint256 amount);
     event GoalReached(uint256 totalFundsRaised);
 
-    // Remove constructor in favour of initialize method
+    // Initializer function, replaces constructor for upgradeable contracts
     function initialize(uint256 _fundingGoal) public initializer {
-        owner = msg.sender;
+        __Ownable_init(); // Initialize ownership to the deployer
+        __UUPSUpgradeable_init(); // Initialize UUPS upgradeability
+
         fundingGoal = _fundingGoal;
     }
 
     function contribute() public payable {
-        // contribution logic remains the same
+        // Contribution logic remains the same
     }
 
-    function withdrawFunds() public {
-        // withdrawFunds logic remains the same
+    function withdrawFunds() public onlyOwner {
+        // WithdrawFunds logic remains the same
     }
 
     function getTotalFundsRaised() public view returns (uint256) {
@@ -65,23 +71,27 @@ contract CrowdfundingCampaign is Initializable {
     function getFundingGoal() public view returns (uint256) {
         // getFundingGoal remains the same
     }
+
+    // Ensure only the owner can upgrade the contract
+    function _authorizeUpgrade(address newImplementation) internal override onlyOwner {}
 }
 ```
 
-**Key Modifications:**
+**Key Adaptations:**
 
-- **Initializable**: Inherits from OpenZeppelin's `Initializable` to ensure the `initialize` function
-can only be called once, similar to a constructor.
-- **Initialize Function**: Replaces the constructor for setting initial state, facilitating upgrades
-through new logic contracts.
-- **Transparent Proxy Pattern**: Utilizes a proxy contract to delegate calls to this logic contract,
-allowing for future upgrades without losing the contract's state.
+- **Initializable & UUPSUpgradeable**: The contract inherits from `Initializable` and `UUPSUpgradeable`,
+ensuring initialization follows the proxy pattern and enabling the UUPS upgrade mechanism.
+- **OwnableUpgradeable**: Utilizes `OwnableUpgradeable` to manage ownership through an initializer,
+important for secure upgrade authorization.
+- **_authorizeUpgrade**: A safeguard function ensuring only the contract owner can perform upgrades,
+reinforcing the contract's security.
 
-This restructuring prepares the `CrowdfundingCampaign` contract for upgradeability.
+By adopting the UUPS pattern, the `CrowdfundingCampaign_UUPS` contract becomes efficiently upgradeable,
+offering enhanced security and reduced gas costs, setting a solid foundation for future enhancements.
 
 ## Step 4: Deploy the `CrowdfundingCampaign` contract
 
-Now that the `CrowdfundingCampaign` contract is adapted for contract upgradability, let's proceed to deploy
+Now that the `CrowdfundingCampaign_UUPS` contract is adapted for contract upgradability, let's proceed to deploy
 the contract so we may upgrade it in later steps. Since we've made changes to our contract we will
 need to re-compile.
 
@@ -123,8 +133,8 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 ### Deploy
 
-This section outlines the steps to deploy the `CrowdfundingCampaign` contract that we recently updated for upgradability.
-The deployment script is located at `/deploy/deployBeaconProxy.ts`.
+This section outlines the steps to deploy the `CrowdfundingCampaign_UUPS` contract that we recently updated for
+UUPS upgradability. The deployment script is located at `/deploy/deployUUPS.ts`.
 
 ```typescript
 import { getWallet } from "./utils";
@@ -136,22 +146,30 @@ export default async function (hre: HardhatRuntimeEnvironment) {
     const wallet = getWallet();
     const deployer = new Deployer(hre, wallet);
 
-    const contractArtifact = await deployer.loadArtifact("CrowdfundingCampaign");
+    const contractArtifact = await deployer.loadArtifact("CrowdfundingCampaign_UUPS");
     const fundingGoalInWei = ethers.parseEther('0.1').toString();
 
-    const beacon = await hre.zkUpgrades.deployBeacon(
+    const crowdfunding = await hre.zkUpgrades.deployProxy(
         getWallet(),
-        contractArtifact
+        contractArtifact,
+        [fundingGoalInWei],
+        { initializer: 'initialize' }
     );
-    await beacon.waitForDeployment();
 
-    const crowdfunding = await hre.zkUpgrades.deployBeaconProxy(deployer.zkWallet, 
-        await beacon.getAddress(), contractArtifact, [fundingGoalInWei]);
     await crowdfunding.waitForDeployment();
 }
 ```
 
-Key Components:
+**Key Components:**
+
+- **`deployProxy` Method:** This method is responsible for deploying the `CrowdfundingCampaign`
+contract as a UUPS upgradeable contract. It initializes the contract with the specified parameters,
+such as the `fundingGoalInWei`, ensuring that the contract is ready for immediate use after deployment.
+The use of the UUPS pattern provides a secure and efficient mechanism for future upgrades.
+
+- **`initializer` Option:** Specifies the initialization method of the contract, in this case, `initialize`.
+This is used for setting up the initial state of the contract upon deployment, particularly important
+for upgradeable contracts where constructor usage is not possible.
 
 #### Deploy contract
 Execute the deployment command corresponding to your package manager. The default command
@@ -161,27 +179,27 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 ::code-group
 
 ```bash [yarn]
-yarn hardhat deploy-zksync --script deployBeaconProxy.ts
+yarn hardhat deploy-zksync --script deployUUPS.ts
 # To deploy the contract on local in-memory node:
-# yarn hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
+# yarn hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script deployBeaconProxy.ts
+pnpm run hardhat deploy-zksync --script deployUUPS.ts
 # To deploy the contract on local in-memory node:
-# pnpm run hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
+# pnpm run hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
 ```
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script deployBeaconProxy.ts
+npm run hardhat deploy-zksync --script deployUUPS.ts
 # To deploy the contract on local in-memory node:
-# npm run hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
+# npm run hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
 ```
 
 ```bash [bun]
-bun run hardhat deploy-zksync --script deployBeaconProxy.ts
+bun run hardhat deploy-zksync --script deployUUPS.ts
 # To deploy the contract on local in-memory node:
-# bun run hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
+# bun run hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
 ```
 
 ::
@@ -194,14 +212,13 @@ contract, the admin contract, and the transparent
 proxy contract.
 
 ```bash
-Beacon impl deployed at 0xE3F814fa915A75bA47230537726C99f6517Da58e
-Beacon deployed at:  0x26410Bebf5Df7398DCBC5f00e9EBBa0Ddf471C72
-Beacon proxy deployed at:  0xD58FA9Fb362Abf69cFc68A3545fD227165DAc167
+Implementation contract was deployed to 0xF0De77041F3cF6D9C905A10ce59858b17E57E3B9
+UUPS proxy was deployed to 0x56882194aAe8E4B6d18cD84e4D7B0F807e0100Cb
 ```
 
-## Step 5: Upgrading the `CrowdfundingCampaign` Contract
+## Step 5: Upgrading the `CrowdfundingCampaign_UUPS` Contract
 
-With our initial setup deployed, we're ready to upgrade our `CrowdfundingCampaign.sol`
+With our initial setup deployed, we're ready to upgrade our `CrowdfundingCampaign_UUPS.sol`
 contract by incorporating a deadline for contributions. This addition not only brings
 a new layer of functionality but also introduces the concept of time-based conditions
 through a `modifier`.
@@ -219,83 +236,21 @@ this constraint, ensuring contributions are made within the allowed period.
 
 **Enhanced Contract:**
 
-Let's review the `CrowdfundingCampaignV2.sol` contract in the `/contracts` directory to view the updated contract:
+The upgraded contract, `CrowdfundingCampaignV2_UUPS.sol`, located in the `/contracts` directory,
+incorporates these changes:
 
-```solidity
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+- **Deadline Variable:** A new state variable deadline defines the campaign's end time,
+enhancing the contract with time-based logic.
 
-import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
+- **Initialization Logic:** An additional initialization method, `initializeV2`, sets the deadline
+based on a duration provided during the upgrade. This function ensures that the upgrade is
+backward-compatible and maintains the contract's integrity.
 
-contract CrowdfundingCampaignV2 is Initializable {
-    address public owner;
-    uint256 public fundingGoal;
-    uint256 public totalFundsRaised;
-    mapping(address => uint256) public contributions;
+- **Contribution Logic with Deadline:** The `contribute` method now includes a `withinDeadline` modifier,
+ensuring all contributions are made within the set timeframe.
 
-    uint256 public deadline;
-    bool private initializedV2;
-
-    event ContributionReceived(address contributor, uint256 amount);
-    event GoalReached(uint256 totalFundsRaised);
-
-    // Original initialization function for V1
-    function initialize(uint256 _fundingGoal) public initializer {
-        owner = msg.sender;
-        fundingGoal = _fundingGoal;
-    }
-
-    // Additional initialization function for V2
-    function initializeV2(uint256 _duration) public {
-        require(!initializedV2, "V2 already initialized");
-        require(msg.sender == owner, "Only the owner can initialize V2");
-
-        deadline = block.timestamp + _duration;
-        initializedV2 = true;
-    }
-    
-    modifier withinDeadline() {
-        require(block.timestamp <= deadline, "Funding period has ended");
-        _;
-    }
-
-    function contribute() public payable withinDeadline {
-        require(msg.value > 0, "Contribution must be greater than 0");
-        contributions[msg.sender] += msg.value;
-        totalFundsRaised += msg.value;
-
-        emit ContributionReceived(msg.sender, msg.value);
-
-        if (totalFundsRaised >= fundingGoal) {
-            emit GoalReached(totalFundsRaised);
-        }
-    }
-
-    function withdrawFunds() public {
-        require(msg.sender == owner, "Only the owner can withdraw funds");
-        require(totalFundsRaised >= fundingGoal, "Funding goal not reached");
-
-        uint256 amount = address(this).balance;
-        totalFundsRaised = 0;
-
-        (bool success, ) = payable(owner).call{value: amount}("");
-        require(success, "Transfer failed.");
-    }
-
-    function getTotalFundsRaised() public view returns (uint256) {
-        return totalFundsRaised;
-    }
-
-    function getFundingGoal() public view returns (uint256) {
-        return fundingGoal;
-    }
-
-    function extendDeadline(uint256 _newDuration) public {
-        require(msg.sender == owner, "Only the owner can extend the deadline");
-        deadline = block.timestamp + _newDuration;
-    }    
-}
-```
+- **Deadline Enforcement:** The `withinDeadline` modifier checks the current time against the deadline,
+safeguarding the contract from late contributions.
 
 **Deadline Extension Capability:**
 
@@ -314,30 +269,7 @@ exemplifies the use of `modifiers` for enforcing contract conditions.
 
 ### Compile contract
 
-Smart contracts deployed to zkSync must be compiled using our custom compiler.
-For this particular guide we are making use of `zksolc`.
-
-To compile the contracts in the project, run the following command:
-
-::code-group
-
-```bash [yarn]
-yarn compile
-```
-
-```bash [pnpm]
-pnpm run compile
-```
-
-```bash [npm]
-npm run compile
-```
-
-```bash [bun]
-bun run compile
-```
-
-::
+:display-partial{partial = "Compile Solidity Contract"}
 
 #### Expected Output
 
@@ -353,57 +285,55 @@ Successfully compiled 2 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-### Upgrading `CrowdfundingCampaign` to `CrowdfundingCampaignV2`
+### Upgrading to `CrowdfundingCampaignV2_UUPS`
 
-This section describes the initating the upgrade to `CrowdfundingCampaign.sol` contract. Let's
-start by reviewing the `upgradeBeaconCrowdfundingCampaign.ts` script in the `deploy/upgrade-scripts` directory:
+This section describes the initiating the upgrade to `CrowdfundingCampaignV2_UUPS.sol` contract.
+Let's start by reviewing the `upgradeUUPSCrowdfundingCampaign.ts` script in the
+`deploy/upgrade-scripts` directory:
 
 ```typescript
 import { getWallet } from "../utils";
 import { Deployer } from '@matterlabs/hardhat-zksync';
 import { HardhatRuntimeEnvironment } from "hardhat/types";
-import * as zk from 'zksync-ethers';
-import { Contract } from 'ethers';
 
 export default async function (hre: HardhatRuntimeEnvironment) {
     const wallet = getWallet();
     const deployer = new Deployer(hre, wallet);
-    const beaconAddress = 'beacon address here';
-    
-    const crowdfundingCampaignV2 = await deployer.loadArtifact('CrowdfundingCampaignV2');
-    await hre.zkUpgrades.upgradeBeacon(deployer.zkWallet, beaconAddress, crowdfundingCampaignV2);
-    console.log('Successfully upgraded crowdfundingCampaign to crowdfundingCampaignV2', beaconAddress);
 
-    const attachTo = new zk.ContractFactory<any[], Contract>(
-        crowdfundingCampaignV2.abi,
-        crowdfundingCampaignV2.bytecode,
-        deployer.zkWallet,
-        deployer.deploymentType,
-    );
+    // Placeholder for the deployed proxy address
+    const proxyAddress = 'YOUR_PROXY_ADDRESS_HERE';
     
-    const beaconProxyAddress = "beacon proxy address here";
-    const upgradedCrowdfundingCampaign  = attachTo.attach(beaconProxyAddress);
+    // Upgrade the proxy to V2
+    const contractV2Artifact = await deployer.loadArtifact('CrowdfundingCampaignV2_UUPS');
+    const upgradedContract = await hre.zkUpgrades.upgradeProxy(deployer.zkWallet, proxyAddress, contractV2Artifact);
+    console.log('Successfully upgraded crowdfundingCampaign_UUPS to crowdfundingCampaignV2_UUPS');
 
-    upgradedCrowdfundingCampaign.connect(deployer.zkWallet);
+    upgradedContract.connect(deployer.zkWallet);
     // wait some time before the next call
     await new Promise((resolve) => setTimeout(resolve, 2000));
     
     const durationInSeconds = 30 * 24 * 60 * 60; // For example, setting a 30-day duration
 
-    const initTx = await upgradedCrowdfundingCampaign.initializeV2(durationInSeconds);
+    const initTx = await upgradedContract.initializeV2(durationInSeconds);
     const receipt = await initTx.wait();
 
-    console.log('CrowdfundingCampaignV2 initialized!', receipt.hash);
-
-    const fundraisingGoal = await upgradedCrowdfundingCampaign.getFundingGoal();
-    console.log('Fundraising goal:', fundraisingGoal.toString());
+    console.log('CrowdfundingCampaignV2_UUPS initialized!', receipt.hash);
 }
 ```
 
-Add the **Beacon** address and the **Beacon proxy** address from our deployment
-process to the `beaconAddress`, `beaconProxyAddress` variables in the above script.
+Ensure to replace `YOUR_PROXY_ADDRESS_HERE` with the actual address of your
+deployed Transparent Proxy from the previous deployment step.
 
-Key Components:
+**Key Components:**
+
+- **`upgradeProxy`:** A critical method from the `hre.zkUpgrades` module that
+performs the contract upgrade. It takes the wallet, the proxy address, and the
+new contract artifact as arguments to transition the proxy to use the `CrowdfundingCampaignV2_UUPS` logic.
+
+- **`initializeV2`:** Post-upgrade, this function is invoked to initialize the new
+variables or logic introduced in `CrowdfundingCampaignV2_UUPS`. In this example,
+it sets a new campaign duration, illustrating how contract upgrades can add
+functionalities without losing the existing state or funds.
 
 #### Upgrade contract
 Execute the test command corresponding to your package manager:
@@ -411,19 +341,19 @@ Execute the test command corresponding to your package manager:
 ::code-group
 
 ```bash [yarn]
-yarn hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
+yarn hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
+pnpm run hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
 ```
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
+npm run hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
 ```
 
 ```bash [bun]
-bun run hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
+bun run hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
 ```
 
 ::
@@ -434,10 +364,9 @@ Upon successful deployment, you'll receive output detailing the upgrade process,
 including the new beacon address, and transaction hash:
 
 ```bash
-New beacon impl deployed at 0x58BD5adb462CF087E5838d53aE38A3Fe0EAf7A31
-Successfully upgraded crowdfundingCampaign to crowdfundingCampaignV2 0x26410Bebf5Df7398DCBC5f00e9EBBa0Ddf471C72
-CrowdfundingCampaignV2 initialized! 0x5f3131c77fcac19390f5f644a3ad1f0e7719dee4b4b5b4746c992de00db743f7
-Fundraising goal: 100000000000000000
+Contract successfully upgraded to 0x9BE22706966D717d7b0C8aEC99A1a9d1b3bFeC50 with tx 0x24ad582828b23b98d207ec7c057cd6a9c911bea22dbe85e0affd7479b00d90e9
+Successfully upgraded crowdfundingCampaign_UUPS to crowdfundingCampaignV2_UUPS
+CrowdfundingCampaignV2_UUPS initialized! 0xab959f588b64dc6dee1e94d5fa0da2ae205c7438cf097d26d3ba73690e2b09e8
 ```
 
 ## Step 6: Verify upgradable contracts
@@ -448,19 +377,19 @@ With that execute the following command:
 ::code-group
 
 ```bash [yarn]
-yarn hardhat verify <BEACON-PROXY-ADDRESS>
+yarn hardhat verify <PROXY-ADDRESS>
 ```
 
 ```bash [pnpm]
-pnpm run hardhat verify <BEACON-PROXY-ADDRESS>
+pnpm run hardhat verify <PROXY-ADDRESS>
 ```
 
 ```bash [npm]
-npm run hardhat verify <BEACON-PROXY-ADDRESS>
+npm run hardhat verify <PROXY-ADDRESS>
 ```
 
 ```bash [bun]
-bun run hardhat verify <BEACON-PROXY-ADDRESS>
+bun run hardhat verify <PROXY-ADDRESS>
 ```
 
 ::
@@ -470,15 +399,12 @@ bun run hardhat verify <BEACON-PROXY-ADDRESS>
 Upon successful verification, you'll receive output detailing the verification process:
 
 ```bash
-Verifying implementation: 0x58BD5adb462CF087E5838d53aE38A3Fe0EAf7A31
-Your verification ID is: 10547
+Verifying implementation: 0x9BE22706966D717d7b0C8aEC99A1a9d1b3bFeC50
+Your verification ID is: 10618
 Contract successfully verified on zkSync block explorer!
-Verifying beacon: 0x26410Bebf5Df7398DCBC5f00e9EBBa0Ddf471C72
-Your verification ID is: 10548
-Contract successfully verified on zkSync block explorer!
-Verifying beacon proxy: 0xD58FA9Fb362Abf69cFc68A3545fD227165DAc167
-Your verification ID is: 10549
+Verifying proxy: 0x91921fDb0F8942c18eCeE4E3896b369ca0650483
+Your verification ID is: 10619
 Contract successfully verified on zkSync block explorer!
 ```
 
-🎉 Congratulations! The `CrowdfundingCampaign` contract has been upgraded and verified!
+🎉 Congratulations! The `CrowdfundingCampaignV2_UUPS` contract has been upgraded and verified!
