@@ -7,6 +7,39 @@ zkSync provides its own plugins which makes working with contracts on zkSync sim
 
 ## Step 1: Setting up environment
 :display-partial{path = "/_partials/_environment-setup-with-zksync-cli"}
+<!-- TODO: @dutterbutter determine best approach to leverate zksync cli for project
+bootstrapping for this guide series. -->
+::drop-panel
+  ::panel{label="Initialize project"}
+    Run the following command in your terminal to initialize the project.
+
+    ```sh
+    git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
+    cd zksync-quickstart-guide
+    ```
+    Install the dependencies:
+
+    ::code-group
+
+    ```bash [yarn]
+    yarn install
+    ```
+
+    ```bash [pnpm]
+    pnpm run install
+    ```
+
+    ```bash [npm]
+    npm run install
+    ```
+
+    ```bash [bun]
+    bun run install
+    ```
+
+    ::
+  ::
+::
 
 ## Step 2: Set up wallet
 
@@ -83,30 +116,7 @@ Owned and deployed with a set funding goal, it features:
 
 ### Compile contract
 
-Smart contracts deployed to zkSync must be compiled using our custom compiler.
-For this particular guide we are making use of `zksolc`.
-
-To compile the contracts in the project, run the following command:
-
-::code-group
-
-```bash [yarn]
-yarn compile
-```
-
-```bash [pnpm]
-pnpm run compile
-```
-
-```bash [npm]
-npm run compile
-```
-
-```bash [bun]
-bun run compile
-```
-
-::
+:display-partial{path = "/_partials/_compile-solidity-contracts"}
 
 #### Expected Output
 
@@ -129,7 +139,6 @@ The deployment script is located at `/deploy/deploy.ts`.
 
 ```typescript
 import { deployContract } from "./utils";
-import { ethers } from "ethers";
 
 // An example of a basic deploy script
 // It will deploy a CrowdfundingCampaign contract to selected network

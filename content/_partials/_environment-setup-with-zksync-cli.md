@@ -36,12 +36,4 @@ title: Environment Setup With zkSync CLI
   **[http://127.0.0.1:8011](http://127.0.0.1:8011/)**, ready for deployment or testing purposes.
   ::
 
-  ::panel{label="Initialize project"}
-  Run the following command in your terminal to create a new project using zkSync CLI.
-
-    ```sh
-    npx zksync-cli@latest —template zksync-quickstart
-    ```
-
-  ::
 ::

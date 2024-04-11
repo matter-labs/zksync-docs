@@ -7,6 +7,40 @@ zkSync provides its own plugins which makes working with contracts on zkSync sim
 
 ## Step 1: Setting up environment
 :display-partial{path = "/_partials/_environment-setup-with-zksync-cli"}
+<!-- TODO: @dutterbutter determine best approach to leverate zksync cli for project
+bootstrapping for this guide series. -->
+::drop-panel
+  ::panel{label="Initialize project"}
+    Run the following command in your terminal to initialize the project.
+
+    ```sh
+    git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
+    cd zksync-quickstart-guide
+    git checkout db/contract-upgrade
+    ```
+    Install the dependencies:
+
+    ::code-group
+
+    ```bash [yarn]
+    yarn install
+    ```
+
+    ```bash [pnpm]
+    pnpm run install
+    ```
+
+    ```bash [npm]
+    npm run install
+    ```
+
+    ```bash [bun]
+    bun run install
+    ```
+
+    ::
+  ::
+::
 
 ## Step 2: Set up wallet
 

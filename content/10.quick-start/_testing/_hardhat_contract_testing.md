@@ -6,23 +6,52 @@ Hardhat is an Ethereum development environment, designed for easy smart contract
 zkSync provides its own plugins which makes working with contracts on zkSync simple and efficient.
 
 ## Step 1: Environment Configuration
+<!-- TODO: @dutterbutter determine best approach to leverate zksync cli for project
+bootstrapping for this guide series. -->
+::drop-panel
+  ::panel{label="Initialize project"}
+    Run the following command in your terminal to initialize the project.
+
+    ```sh
+    git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
+    cd zksync-quickstart-guide
+    git checkout db/contract-testing
+    ```
+    Install the dependencies:
+
+    ::code-group
+
+    ```bash [yarn]
+    yarn install
+    ```
+
+    ```bash [pnpm]
+    pnpm run install
+    ```
+
+    ```bash [npm]
+    npm run install
+    ```
+
+    ```bash [bun]
+    bun run install
+    ```
+
+    ::
+  ::
+::
+
 While setting up a local development environment was previously optional, testing contracts requires
 a more structured setup. We'll use `hardhat-zksync` to run tests against an In-memory node,
 which operates seamlessly within a separate process for an optimized testing workflow.
-Kickstart the project setup for this guide with the following command:
-
-<!-- TODO: consult with Danil about best approach here with zkSync-cli usage -->
-```sh
-npx zksync-cli@latest —template zksync-quickstart
-```
 
 Within the `hardhat.config.ts`, you'll observe the `zksync` flag set to `true` under the
 `hardhat` network, indicating the integration with zkSync's testing environment.
 
 ```ts
- hardhat: {
-      zksync: true,
-    },
+hardhat: {
+  zksync: true,
+},
 ```
 
 To use the In-memory node for testing, ensure the `hardhat` network is selected with

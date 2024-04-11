@@ -5,7 +5,7 @@ title: Foundry-zksync Installation
 ::drop-panel
   ::panel{label="Install foundry-zksync"}
    Begin by installing `foundry-zksync` in your environment using the command below:
-
+    <!-- TODO: @dutterbutter this should be a single curl command -->
     ```
     curl -L https://foundry-zksync.zksync.io | bash
     ```
