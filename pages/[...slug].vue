@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ParsedContent } from '@nuxt/content/types';
+import type { NavItem } from '@nuxt/content/types';
 import { withoutTrailingSlash } from 'ufo';
 
 definePageMeta({
@@ -8,6 +8,8 @@ definePageMeta({
 
 const route = useRoute();
 const { toc, seo } = useAppConfig();
+
+const navigation = inject<Ref<NavItem[]>>('navigation', ref([]));
 
 const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne());
 
@@ -35,7 +37,9 @@ defineOgImage({
   description: page.value.description,
 });
 
-const headline = computed(() => findPageHeadline(page.value as ParsedContent));
+const breadcrumb = computed(() =>
+  mapContentNavigation(findPageBreadcrumb(navigation!.value, page.value)).map(({ label }) => ({ label }))
+);
 
 const links = computed(() =>
   [
@@ -62,8 +66,11 @@ const links = computed(() =>
       :title="page.title"
       :description="page.description"
       :links="page.links"
-      :headline="headline"
-    />
+    >
+      <template #headline>
+        <UBreadcrumb :links="breadcrumb" />
+      </template>
+    </UPageHeader>
 
     <UPageBody prose>
       <ContentRenderer
