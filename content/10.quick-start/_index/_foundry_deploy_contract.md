@@ -143,7 +143,7 @@ contract DeployCrowdfundContract is Script {
 }
 ```
 
-Key Components:
+**Key Components:**
 
 - **contractArtifactName:** Identifies the `CrowdfundingCampaign` contract for deployment.
 - **constructorArguments:** Sets initialization parameters for the contract.

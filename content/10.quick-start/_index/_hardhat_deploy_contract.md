@@ -141,7 +141,7 @@ export default async function () {
 }
 ```
 
-Key Components:
+**Key Components:**
 
 - **contractArtifactName:** Identifies the `CrowdfundingCampaign` contract for deployment.
 - **constructorArguments:** Sets initialization parameters for the contract. In this case,

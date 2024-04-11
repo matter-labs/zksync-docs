@@ -202,7 +202,7 @@ describe("CrowdfundingCampaign", function () {
 });
 ```
 
-Key Components:
+**Key Components:**
 
 **Testing Workflow:**
 

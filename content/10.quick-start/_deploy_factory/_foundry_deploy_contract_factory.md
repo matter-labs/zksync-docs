@@ -147,7 +147,7 @@ contractAddress         0x95f83473b88B5599cdB273F976fB3DC66DEA1c1D
 ...
 ```
 
-Key Components:
+**Key Components:**
 
 **Deployment Workflow:**
 

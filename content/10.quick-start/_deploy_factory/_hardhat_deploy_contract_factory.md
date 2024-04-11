@@ -148,7 +148,7 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 }
 ```
 
-Key Components:
+**Key Components:**
 
 **Deployment Workflow:**
 
