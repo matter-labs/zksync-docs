@@ -7,7 +7,6 @@ nuxtdotjs
 nuxtjs
 !NuxtUI
 !NuxtContent
-NVMe
 rocksdb
 Vue
 !vue

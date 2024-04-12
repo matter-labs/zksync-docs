@@ -21,4 +21,27 @@
     "body": [":external-link{text=\"$1\" href=\"$2\"}$0"],
     "description": "External link component",
   },
+  "Callout": {
+    "scope": "markdown",
+    "prefix": "@callout",
+    "body": ["::callout{icon=\"$1\" color=\"$2\"}", "$0", "::"],
+    "description": "Callout component",
+  },
+  "AlertCallout": {
+    "scope": "markdown",
+    "prefix": "@alert",
+    "body": ["::callout{icon=\"i-heroicons-exclamation-triangle\" color=\"amber\"}", "$0", "::"],
+    "description": "Callout component",
+  },
+  "InfoCallout": {
+    "scope": "markdown",
+    "prefix": "@info",
+    "body": ["::callout{icon=\"i-heroicons-information-circle\" color=\"blue\"}", "$0", "::"],
+    "description": "Callout component",
+  },
+  "CodeGroup": {
+    "scope": "markdown",
+    "prefix": "@codegroup",
+    "body": ["::code-group", "", "```bash [yarn]", "", "```", "", "```bash [npm]", "", "```", "", "::"],
+  },
 }

@@ -1,18 +1,23 @@
 {
+  "zkevm": {
+    "label": "zkSync VM"
+  },
   "mainnet": {
     "name": "zkSync Era Mainnet",
+    "identifier": "mainnet",
     "rpc_url": "https://mainnet.era.zksync.io",
     "websocket_url": "wss://mainnet.era.zksync.io/ws",
     "chain_id": 324,
     "currency_symbol": "ETH",
-    "block_explorer_url": "https://explorer.zksync.io/"
+    "block_explorer_url": "https://explorer.zksync.io"
   },
   "testnet": {
     "name": "zkSync Era Testnet",
-    "rpc_url": "https://testnet.era.zksync.dev",
-    "websocket_url": "wss://testnet.era.zksync.dev/ws",
+    "identifier": "sepolia",
+    "rpc_url": "https://sepolia.era.zksync.dev",
+    "websocket_url": "wss://sepolia.era.zksync.dev/ws",
     "chain_id": 280,
     "currency_symbol": "ETH",
-    "block_explorer_url": "https://sepolia.explorer.zksync.io/"
+    "block_explorer_url": "https://sepolia.explorer.zksync.io"
   }
 }
