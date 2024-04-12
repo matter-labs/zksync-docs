@@ -29,35 +29,40 @@ For testnet deployments, follow these steps to secure your funds:
 ## Step 3: Deploying contract with factory
 
 With our environment and wallet configured, we're set to review the `CrowdfundingFactory.sol`
-contract that is provided during the initialization step in the `/src` directory.
+contract that is provided during the initialization step in the [`/src` directory](https://github.com/dutterbutter/zksync-foundry-quickstart-guide/blob/db/deploy-contract-factory/src/CrowdfundFactory.sol).
+
 The `CrowdfundingFactory.sol`contract will be used to deploy multiple instances of
 the `CrowdfundingCampaign.sol` contract from the previous guide.
 
-```solidity
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+::drop-panel
+  ::panel{label="CrowdfundingFactory.sol"}
+    ```solidity
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.0;
 
-// Crowdfunding campaign contract
-import "./CrowdfundingCampaign.sol";
+    // Crowdfunding campaign contract
+    import "./CrowdfundingCampaign.sol";
 
-// Factory contract to create and manage crowdfunding campaigns
-contract CrowdfundingFactory {
-    CrowdfundingCampaign[] public campaigns;
+    // Factory contract to create and manage crowdfunding campaigns
+    contract CrowdfundingFactory {
+        CrowdfundingCampaign[] public campaigns;
 
-    event CampaignCreated(address campaignAddress, uint256 fundingGoal);
+        event CampaignCreated(address campaignAddress, uint256 fundingGoal);
 
-    function createCampaign(uint256 fundingGoal) public {
-        CrowdfundingCampaign newCampaign = new CrowdfundingCampaign(fundingGoal);
-        campaigns.push(newCampaign);
+        function createCampaign(uint256 fundingGoal) public {
+            CrowdfundingCampaign newCampaign = new CrowdfundingCampaign(fundingGoal);
+            campaigns.push(newCampaign);
 
-        emit CampaignCreated(address(newCampaign), fundingGoal);
+            emit CampaignCreated(address(newCampaign), fundingGoal);
+        }
+
+        function getCampaigns() public view returns (CrowdfundingCampaign[] memory) {
+            return campaigns;
+        }
     }
-
-    function getCampaigns() public view returns (CrowdfundingCampaign[] memory) {
-        return campaigns;
-    }
-}
-```
+    ```
+  ::
+::
 
 The `CrowdfundingFactory` contract automates the creation and oversight of
 `CrowdfundingCampaign` contracts, each with its distinct funding goals, it features:
@@ -71,10 +76,11 @@ created by the factory, allowing for easy access and management of multiple crow
 initiatives.
 
 This contract factory approach streamlines the deployment of crowdfunding campaigns,
-making it efficient to launch and manage multiple campaigns concurrently.
+making it efficient to launch and manage multiple campaigns.
 
 ### Compile contract
 
+<!-- :display-partial{path = "/_partials/_compile-solidity-contracts-foundry"} -->
 Smart contracts deployed to zkSync must be compiled using our custom compiler.
 For this particular guide we are making use of `zksolc`.
 
@@ -92,8 +98,8 @@ of Solidity files compiled.
 
 ```bash
 [⠒] Compiling...
-[⠃] Compiling 22 files with 0.8.20
-[⠊] Solc 0.8.20 finished in 736.48ms
+[⠃] Compiling 3 files with 0.8.20
+[⠊] Solc 0.8.20 finished in 336.48ms
 Compiler run successful!
 Compiling contracts for zkSync Era with zksolc v1.4.0
 ```

@@ -24,7 +24,7 @@ title: Environment Setup With zkSync CLI
   **Prerequisites:**
 
   **Docker Installation:** **zksync-cli**'s local environment relies on Docker.
-  Download the appropriate version from the Docker website.
+  Download the appropriate version from the [Docker website](https://docs.docker.com/engine/install/).
   If you're new to Docker, consider exploring the Docker getting started guide.
 
   1. **Open Your Terminal:** Access it from the Applications folder or use Spotlight search (Command + Space).

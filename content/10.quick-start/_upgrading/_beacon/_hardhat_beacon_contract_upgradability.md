@@ -60,9 +60,9 @@ contract's logic (which can be upgraded) from its persistent state
 
 ### Refactoring for Proxy Compatibility
 
-We're refactoring the contract to initialize state variables through an
-`initialize` function instead of the constructor, in line with the
-proxy pattern.
+In the `contracts/` directory you'll observe the refactored the [`CrowdfundingCampaign` contract](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/contracts/CrowdfundingCampaign.sol)
+which initializes state variables through an
+`initialize` function instead of the constructor, in line with the proxy pattern.
 
 **Updated Contract Structure:**
 
@@ -110,17 +110,16 @@ contract CrowdfundingCampaign is Initializable {
 can only be called once, similar to a constructor.
 - **Initialize Function**: Replaces the constructor for setting initial state, facilitating upgrades
 through new logic contracts.
-- **Transparent Proxy Pattern**: Utilizes a proxy contract to delegate calls to this logic contract,
+- **Proxy Pattern**: Utilizes a proxy contract to delegate calls to this logic contract,
 allowing for future upgrades without losing the contract's state.
 
 This restructuring prepares the `CrowdfundingCampaign` contract for upgradeability.
 
 ## Step 4: Deploy the `CrowdfundingCampaign` contract
 
-This initial deployment sets the stage for future upgrades, enabling us
-to iterate on the contract's functionality without starting from scratch.
-As modifications have been made to the contract to support upgradability,
-a fresh compilation is necessary to reflect these changes in the deployment artifact.
+Now that the `CrowdfundingCampaign` contract is adapted for contract upgradability, let's proceed to deploy
+the contract so we may upgrade it in later steps. Since we've made changes to our contract we will
+need to re-compile.
 
 To compile the contracts in the project, run the following command:
 
@@ -152,8 +151,8 @@ of Solidity files compiled.
 
 ```bash
 Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
-Compiling 1 Solidity file
-Successfully compiled 1 Solidity file
+Compiling 3 Solidity file
+Successfully compiled 3 Solidity file
 ```
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
@@ -162,7 +161,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 This guide details the process for deploying the upgraded `CrowdfundingCampaign`
 contract, now enhanced with upgradability features.
-You'll find the necessary deployment script at `/deploy/deployBeaconProxy.ts`.
+You'll find the necessary deployment script at [`/deploy/deployBeaconProxy.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/deployBeaconProxy.ts).
 
 ```typescript
 import { getWallet } from "./utils";
@@ -185,6 +184,7 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 
     const crowdfunding = await hre.zkUpgrades.deployBeaconProxy(deployer.zkWallet, 
         await beacon.getAddress(), contractArtifact, [fundingGoalInWei]);
+    
     await crowdfunding.waitForDeployment();
 }
 ```
@@ -268,7 +268,8 @@ this constraint, ensuring contributions are made within the allowed period.
 
 **Enhanced Contract:**
 
-The upgraded contract, `CrowdfundingCampaignV2.sol`, located in the `/contracts` directory,
+The upgraded contract, [`CrowdfundingCampaignV2.sol`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/contracts/CrowdfundingCampaignV2.sol),
+located in the `/contracts` directory,
 incorporates these changes:
 
 - **Deadline Variable:** A new state variable deadline defines the campaign's end time,
@@ -311,8 +312,8 @@ of Solidity files compiled.
 
 ```bash
 Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
-Compiling 2 Solidity file
-Successfully compiled 2 Solidity file
+Compiling 4 Solidity file
+Successfully compiled 4 Solidity file
 ```
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
@@ -320,7 +321,8 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 ### Upgrading to `CrowdfundingCampaignV2`
 
 This section describes the initiating the upgrade to `CrowdfundingCampaignV2.sol` contract. Let's
-start by reviewing the `upgradeBeaconCrowdfundingCampaign.ts` script in the `deploy/upgrade-scripts` directory:
+start by reviewing the [`upgradeBeaconCrowdfundingCampaign.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts)
+script in the `deploy/upgrade-scripts` directory:
 
 ```typescript
 import { getWallet } from "../utils";

@@ -68,15 +68,15 @@ toolkit available for your project.
 import "@nomicfoundation/hardhat-chai-matchers";
 ```
 
+Certainly! Here is the information about the test wallet configuration in a list format rather than a table:
+
 ## Step 2: Test Wallet Configuration
 
-For testing purposes, we have the luxury of using pre-configured, well-funded wallets.
-Throughout this testing guide, we will leverage the following pre-configured wallet,
-eliminating the need for manual funding or setup:
+For testing purposes, we use pre-configured, well-funded wallets. During this testing guide, we will leverage the following pre-configured wallet,
+which eliminates the need for manual funding or setup:
 
-| Account Address                              | Private Key                                                          |
-| -------------------------------------------- | -------------------------------------------------------------------- |
-| `0x36615Cf349d7F6344891B1e7CA7C72883F5dc049` | `0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110` |
+- **Account Address:** `0x36615Cf349d7F6344891B1e7CA7C72883F5dc049`
+- **Private Key:** `0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110`
 
 This streamlined approach allows us to focus on writing and running effective tests.
 
@@ -86,56 +86,60 @@ Now that our setup is complete, it's time to focus on the core of this
 guide - testing our `CrowdfundingCampaign.sol` contract. Here's a quick
 refresher on its structure:
 
-```solidity
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+::drop-panel
+  ::panel{label="CrowdfundingCampaign.sol"}
+    ```solidity
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.0;
 
-contract CrowdfundingCampaign {
-    address public owner;
-    uint256 public fundingGoal;
-    uint256 public totalFundsRaised;
-    mapping(address => uint256) public contributions;
+    contract CrowdfundingCampaign {
+        address public owner;
+        uint256 public fundingGoal;
+        uint256 public totalFundsRaised;
+        mapping(address => uint256) public contributions;
 
-    event ContributionReceived(address contributor, uint256 amount);
-    event GoalReached(uint256 totalFundsRaised);
+        event ContributionReceived(address contributor, uint256 amount);
+        event GoalReached(uint256 totalFundsRaised);
 
-    constructor(uint256 _fundingGoal) {
-        owner = msg.sender;
-        fundingGoal = _fundingGoal;
-    }
+        constructor(uint256 _fundingGoal) {
+            owner = msg.sender;
+            fundingGoal = _fundingGoal;
+        }
 
-    function contribute() public payable {
-        require(msg.value > 0, "Contribution must be greater than 0");
-        contributions[msg.sender] += msg.value;
-        totalFundsRaised += msg.value;
+        function contribute() public payable {
+            require(msg.value > 0, "Contribution must be greater than 0");
+            contributions[msg.sender] += msg.value;
+            totalFundsRaised += msg.value;
 
-        emit ContributionReceived(msg.sender, msg.value);
+            emit ContributionReceived(msg.sender, msg.value);
 
-        if (totalFundsRaised >= fundingGoal) {
-            emit GoalReached(totalFundsRaised);
+            if (totalFundsRaised >= fundingGoal) {
+                emit GoalReached(totalFundsRaised);
+            }
+        }
+
+        function withdrawFunds() public {
+            require(msg.sender == owner, "Only the owner can withdraw funds");
+            require(totalFundsRaised >= fundingGoal, "Funding goal not reached");
+
+            uint256 amount = address(this).balance;
+            totalFundsRaised = 0;
+
+            (bool success, ) = payable(owner).call{value: amount}("");
+            require(success, "Transfer failed.");
+        }
+
+        function getTotalFundsRaised() public view returns (uint256) {
+            return totalFundsRaised;
+        }
+
+        function getFundingGoal() public view returns (uint256) {
+            return fundingGoal;
         }
     }
-
-    function withdrawFunds() public {
-        require(msg.sender == owner, "Only the owner can withdraw funds");
-        require(totalFundsRaised >= fundingGoal, "Funding goal not reached");
-
-        uint256 amount = address(this).balance;
-        totalFundsRaised = 0;
-
-        (bool success, ) = payable(owner).call{value: amount}("");
-        require(success, "Transfer failed.");
-    }
-
-    function getTotalFundsRaised() public view returns (uint256) {
-        return totalFundsRaised;
-    }
-
-    function getFundingGoal() public view returns (uint256) {
-        return fundingGoal;
-    }
-}
-```
+    ```
+  ::
+::
 
 Thorough testing involves scrutinizing every function and aspect of our contract,
 including potential failure scenarios. In this guide, we'll focus in on the `contribute`
@@ -148,30 +152,7 @@ reliability of the contract.
 
 ### Compile contract
 
-Smart contracts deployed to zkSync must be compiled using our custom compiler.
-For this particular guide we are making use of `zksolc`.
-
-To compile the contracts in the project, run the following command:
-
-::code-group
-
-```bash [yarn]
-yarn compile
-```
-
-```bash [pnpm]
-pnpm run compile
-```
-
-```bash [npm]
-npm run compile
-```
-
-```bash [bun]
-bun run compile
-```
-
-::
+:display-partial{path = "/_partials/_compile-solidity-contracts"}
 
 #### Expected Output
 
@@ -192,7 +173,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 This section describes testing `CrowdfundingCampaign.sol` contract. Let's
 start by reviewing the tests for `CrowdfundingCampaign.sol` contract provided
 during the initialization step in the `/tests` directory, specifically the
-`crowdFunding.test.ts` file.
+[`crowdFunding.test.ts` file](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-testing/test/crowdFunding.test.ts).
 
 ```typescript
 import { expect } from "chai";
@@ -283,7 +264,6 @@ indicating their success or failure:
       ✔ should reject contributions of 0 (45ms)
       ✔ should aggregate contributions in totalFundsRaised (213ms)
       ✔ should emit GoalReached event when funding goal is met (113ms)
-
 
   3 passing (1s)
 ```

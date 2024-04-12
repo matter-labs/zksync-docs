@@ -20,56 +20,60 @@ Now that our setup is complete, it's time to focus on the core of this
 guide - testing our `CrowdfundingCampaign.sol` contract. Here's a quick
 refresher on its structure:
 
-```solidity
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+::drop-panel
+  ::panel{label="CrowdfundingCampaign.sol"}
+    ```solidity
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.0;
 
-contract CrowdfundingCampaign {
-    address public owner;
-    uint256 public fundingGoal;
-    uint256 public totalFundsRaised;
-    mapping(address => uint256) public contributions;
+    contract CrowdfundingCampaign {
+        address public owner;
+        uint256 public fundingGoal;
+        uint256 public totalFundsRaised;
+        mapping(address => uint256) public contributions;
 
-    event ContributionReceived(address contributor, uint256 amount);
-    event GoalReached(uint256 totalFundsRaised);
+        event ContributionReceived(address contributor, uint256 amount);
+        event GoalReached(uint256 totalFundsRaised);
 
-    constructor(uint256 _fundingGoal) {
-        owner = msg.sender;
-        fundingGoal = _fundingGoal;
-    }
+        constructor(uint256 _fundingGoal) {
+            owner = msg.sender;
+            fundingGoal = _fundingGoal;
+        }
 
-    function contribute() public payable {
-        require(msg.value > 0, "Contribution must be greater than 0");
-        contributions[msg.sender] += msg.value;
-        totalFundsRaised += msg.value;
+        function contribute() public payable {
+            require(msg.value > 0, "Contribution must be greater than 0");
+            contributions[msg.sender] += msg.value;
+            totalFundsRaised += msg.value;
 
-        emit ContributionReceived(msg.sender, msg.value);
+            emit ContributionReceived(msg.sender, msg.value);
 
-        if (totalFundsRaised >= fundingGoal) {
-            emit GoalReached(totalFundsRaised);
+            if (totalFundsRaised >= fundingGoal) {
+                emit GoalReached(totalFundsRaised);
+            }
+        }
+
+        function withdrawFunds() public {
+            require(msg.sender == owner, "Only the owner can withdraw funds");
+            require(totalFundsRaised >= fundingGoal, "Funding goal not reached");
+
+            uint256 amount = address(this).balance;
+            totalFundsRaised = 0;
+
+            (bool success, ) = payable(owner).call{value: amount}("");
+            require(success, "Transfer failed.");
+        }
+
+        function getTotalFundsRaised() public view returns (uint256) {
+            return totalFundsRaised;
+        }
+
+        function getFundingGoal() public view returns (uint256) {
+            return fundingGoal;
         }
     }
-
-    function withdrawFunds() public {
-        require(msg.sender == owner, "Only the owner can withdraw funds");
-        require(totalFundsRaised >= fundingGoal, "Funding goal not reached");
-
-        uint256 amount = address(this).balance;
-        totalFundsRaised = 0;
-
-        (bool success, ) = payable(owner).call{value: amount}("");
-        require(success, "Transfer failed.");
-    }
-
-    function getTotalFundsRaised() public view returns (uint256) {
-        return totalFundsRaised;
-    }
-
-    function getFundingGoal() public view returns (uint256) {
-        return fundingGoal;
-    }
-}
-```
+    ```
+  ::
+::
 
 Thorough testing involves scrutinizing every function and aspect of our contract,
 including potential failure scenarios. In this guide, we'll focus in on the `contribute`
@@ -82,6 +86,7 @@ reliability of the contract.
 
 ### Compile contract
 
+<!-- :display-partial{path = "/_partials/_compile-solidity-contracts-foundry"} -->
 Smart contracts deployed to zkSync must be compiled using our custom compiler.
 For this particular guide we are making use of `zksolc`.
 
@@ -113,7 +118,7 @@ located in the `/out` folder.
 This section describes the testing `CrowdfundingCampaign.sol` contract. Let's
 start by reviewing the tests for `CrowdfundingCampaign.sol` contract provided
 during the initialization step in the `/test` directory, specifically the
-`CrowdfundingCampaign.t.sol` file.
+[`CrowdfundingCampaign.t.sol` file](https://github.com/dutterbutter/zksync-foundry-quickstart-guide/blob/db/contract-testing/test/CrowdfundingCampaign.t.sol).
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -167,7 +172,6 @@ contract CrowdfundingCampaignTest is Test {
         campaign.contribute{value: 1 ether}();        
     }
 }
-
 ```
 
 **Testing Workflow:**

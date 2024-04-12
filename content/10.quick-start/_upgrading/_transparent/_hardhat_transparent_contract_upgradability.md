@@ -60,7 +60,7 @@ contract's logic (which can be upgraded) from its persistent state
 
 ### Refactoring for Proxy Compatibility
 
-In the `contracts/` directory you'll observe the refactored the contract
+In the `contracts/` directory you'll observe the refactored the [`CrowdfundingCampaign` contract](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/contracts/CrowdfundingCampaign.sol)
 which initializes state variables through an
 `initialize` function instead of the constructor, in line with the
 Transparent Proxy pattern.
@@ -111,7 +111,7 @@ contract CrowdfundingCampaign is Initializable {
 can only be called once, similar to a constructor.
 - **Initialize Function**: Replaces the constructor for setting initial state, facilitating upgrades
 through new logic contracts.
-- **Transparent Proxy Pattern**: Utilizes a proxy contract to delegate calls to this logic contract,
+- **Proxy Pattern**: Utilizes a proxy contract to delegate calls to this logic contract,
 allowing for future upgrades without losing the contract's state.
 
 This restructuring prepares the `CrowdfundingCampaign` contract for upgradability.
@@ -152,8 +152,8 @@ of Solidity files compiled.
 
 ```bash
 Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
-Compiling 1 Solidity file
-Successfully compiled 1 Solidity file
+Compiling 3 Solidity file
+Successfully compiled 3 Solidity file
 ```
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
@@ -161,7 +161,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 ### Deploy
 
 This section outlines the steps to deploy the `CrowdfundingCampaign` contract that we recently updated for upgradability.
-The deployment script is located at `/deploy/deployTransparentProxy.ts`.
+The deployment script is located at [`/deploy/deployTransparentProxy.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/deployTransparentProxy.ts).
 
 ```typescript
 import { getWallet } from "./utils";
@@ -243,7 +243,7 @@ Transparent proxy was deployed to 0x68E8533acE01019CB8D07Eca822369D5De71b74D
 
 ## Step 5: Upgrading the `CrowdfundingCampaign` Contract
 
-With our initial setup deployed, we're ready to upgrade our `CrowdfundingCampaign.sol`
+With our initial setup deployed, we're ready to update our `CrowdfundingCampaign.sol`
 contract by incorporating a deadline for contributions. This addition not only brings
 a new layer of functionality but also introduces the concept of time-based conditions
 through a `modifier`.
@@ -261,8 +261,8 @@ this constraint, ensuring contributions are made within the allowed period.
 
 **Enhanced Contract:**
 
-The upgraded contract, `CrowdfundingCampaignV2.sol`, located in the `/contracts` directory,
-incorporates these changes:
+The upgraded contract, [`CrowdfundingCampaignV2.sol`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/contracts/CrowdfundingCampaignV2.sol),
+located in the `/contracts` directory, incorporates these changes:
 
 - **Deadline Variable:** A new state variable deadline defines the campaign's end time,
 enhancing the contract with time-based logic.
@@ -303,8 +303,8 @@ of Solidity files compiled.
 
 ```bash
 Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
-Compiling 2 Solidity file
-Successfully compiled 2 Solidity file
+Compiling 4 Solidity file
+Successfully compiled 4 Solidity file
 ```
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
@@ -312,7 +312,8 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 ### Upgrading to `CrowdfundingCampaignV2`
 
 This section guides you through upgrading the `CrowdfundingCampaign` contract
-to its second version, `CrowdfundingCampaignV2`. Review the `upgradeCrowdfundingCampaign.ts`
+to its second version, `CrowdfundingCampaignV2`.
+Review the [`upgradeCrowdfundingCampaign.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/upgrade-scripts/upgradeCrowdfundingCampaign.ts)
 script located within the `deploy/upgrade-scripts` directory to begin.
 
 ```typescript

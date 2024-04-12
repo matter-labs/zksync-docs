@@ -120,8 +120,8 @@ important for secure upgrade authorization.
 - **_authorizeUpgrade**: A safeguard function ensuring only the contract owner can perform upgrades,
 reinforcing the contract's security.
 
-By adopting the UUPS pattern, the `CrowdfundingCampaign_UUPS` contract becomes efficiently upgradeable,
-offering enhanced security and reduced gas costs, setting a solid foundation for future enhancements.
+By adopting the UUPS pattern, the [`CrowdfundingCampaign_UUPS`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/contracts/CrowdfundingCampaign_UUPS.sol)
+contract becomes efficiently upgradeable, offering enhanced security and reduced gas costs, setting a solid foundation for future enhancements.
 
 ## Step 4: Deploy the `CrowdfundingCampaign` contract
 
@@ -159,8 +159,8 @@ of Solidity files compiled.
 
 ```bash
 Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
-Compiling 1 Solidity file
-Successfully compiled 1 Solidity file
+Compiling 4 Solidity file
+Successfully compiled 4 Solidity file
 ```
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
@@ -168,7 +168,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 ### Deploy
 
 This section outlines the steps to deploy the `CrowdfundingCampaign_UUPS` contract that we recently updated for
-UUPS upgradability. The deployment script is located at `/deploy/deployUUPS.ts`.
+UUPS upgradability. The deployment script is located at [`/deploy/deployUUPS.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/deployUUPS.ts).
 
 ```typescript
 import { getWallet } from "./utils";
@@ -270,8 +270,8 @@ this constraint, ensuring contributions are made within the allowed period.
 
 **Enhanced Contract:**
 
-The upgraded contract, `CrowdfundingCampaignV2_UUPS.sol`, located in the `/contracts` directory,
-incorporates these changes:
+The upgraded contract, [`CrowdfundingCampaignV2_UUPS.sol`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/contracts/CrowdfundingCampaignV2_UUPS.sol),
+located in the `/contracts` directory, incorporates these changes:
 
 - **Deadline Variable:** A new state variable deadline defines the campaign's end time,
 enhancing the contract with time-based logic.
@@ -313,8 +313,8 @@ of Solidity files compiled.
 
 ```bash
 Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
-Compiling 2 Solidity file
-Successfully compiled 2 Solidity file
+Compiling 4 Solidity file
+Successfully compiled 4 Solidity file
 ```
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
@@ -322,8 +322,8 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 ### Upgrading to `CrowdfundingCampaignV2_UUPS`
 
 This section describes the initiating the upgrade to `CrowdfundingCampaignV2_UUPS.sol` contract.
-Let's start by reviewing the `upgradeUUPSCrowdfundingCampaign.ts` script in the
-`deploy/upgrade-scripts` directory:
+Let's start by reviewing the [`upgradeUUPSCrowdfundingCampaign.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts)
+script in the `deploy/upgrade-scripts` directory:
 
 ```typescript
 import { getWallet } from "../utils";

@@ -7,7 +7,7 @@ zkSync provides its own plugins which makes working with contracts on zkSync sim
 
 ## Step 1: Setting up environment
 :display-partial{path = "/_partials/_environment-setup-with-zksync-cli"}
-<!-- TODO: @dutterbutter determine best approach to leverate zksync cli for project
+<!-- TODO: @dutterbutter determine best approach to leverage zksync cli for project
 bootstrapping for this guide series. -->
 ::drop-panel
   ::panel{label="Initialize project"}
@@ -53,62 +53,66 @@ For testnet deployments, follow these steps to secure your funds:
 ## Step 3: Deploying your first contract
 
 With our environment and wallet configured, we're set to deploy our first contract. This guide
-introduces a crowdfunding campaign contract aimed at supporting Zeek's inventive ventures
-Let's start by reviewing the starter contract in the `contracts/` directory.
+introduces a crowdfunding campaign contract aimed at supporting Zeek's inventive ventures.
+Let's start by reviewing the starter contract in the [`contracts/` directory](https://github.com/dutterbutter/zksync-quickstart-guide/blob/main/contracts/Crowdfund.sol).
 
-```solidity
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+::drop-panel
+  ::panel{label="CrowdfundingCampaign.sol"}
+    ```solidity
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.0;
 
-contract CrowdfundingCampaign {
-    address public owner;
-    uint256 public fundingGoal;
-    uint256 public totalFundsRaised;
-    mapping(address => uint256) public contributions;
+    contract CrowdfundingCampaign {
+        address public owner;
+        uint256 public fundingGoal;
+        uint256 public totalFundsRaised;
+        mapping(address => uint256) public contributions;
 
-    event ContributionReceived(address contributor, uint256 amount);
-    event GoalReached(uint256 totalFundsRaised);
+        event ContributionReceived(address contributor, uint256 amount);
+        event GoalReached(uint256 totalFundsRaised);
 
-    constructor(uint256 _fundingGoal) {
-        owner = msg.sender;
-        fundingGoal = _fundingGoal;
-    }
+        constructor(uint256 _fundingGoal) {
+            owner = msg.sender;
+            fundingGoal = _fundingGoal;
+        }
 
-    function contribute() public payable {
-        require(msg.value > 0, "Contribution must be greater than 0");
-        contributions[msg.sender] += msg.value;
-        totalFundsRaised += msg.value;
+        function contribute() public payable {
+            require(msg.value > 0, "Contribution must be greater than 0");
+            contributions[msg.sender] += msg.value;
+            totalFundsRaised += msg.value;
 
-        emit ContributionReceived(msg.sender, msg.value);
+            emit ContributionReceived(msg.sender, msg.value);
 
-        if (totalFundsRaised >= fundingGoal) {
-            emit GoalReached(totalFundsRaised);
+            if (totalFundsRaised >= fundingGoal) {
+                emit GoalReached(totalFundsRaised);
+            }
+        }
+
+        function withdrawFunds() public {
+            require(msg.sender == owner, "Only the owner can withdraw funds");
+            require(totalFundsRaised >= fundingGoal, "Funding goal not reached");
+
+            uint256 amount = address(this).balance;
+            totalFundsRaised = 0;
+
+            (bool success, ) = payable(owner).call{value: amount}("");
+            require(success, "Transfer failed.");
+        }
+
+        function getTotalFundsRaised() public view returns (uint256) {
+            return totalFundsRaised;
+        }
+
+        function getFundingGoal() public view returns (uint256) {
+            return fundingGoal;
         }
     }
-
-    function withdrawFunds() public {
-        require(msg.sender == owner, "Only the owner can withdraw funds");
-        require(totalFundsRaised >= fundingGoal, "Funding goal not reached");
-
-        uint256 amount = address(this).balance;
-        totalFundsRaised = 0;
-
-        (bool success, ) = payable(owner).call{value: amount}("");
-        require(success, "Transfer failed.");
-    }
-
-    function getTotalFundsRaised() public view returns (uint256) {
-        return totalFundsRaised;
-    }
-
-    function getFundingGoal() public view returns (uint256) {
-        return fundingGoal;
-    }
-}
-```
+    ```
+  ::
+::
 
 The `CrowdfundingCampaign` contract is designed for project crowdfunding.
-Owned and deployed with a set funding goal, it features:
+Deployed with a set funding goal, it features:
 
 - A constructor to initialize the campaign's funding target.
 - The `contribute` method to log funds, triggering `ContributionReceived` and `GoalReached` events.
@@ -135,7 +139,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 ### Deploy
 
 This section outlines the steps to deploy the `CrowdfundingCampaign` contract.
-The deployment script is located at `/deploy/deploy.ts`.
+The deployment script is located at [`/deploy/deploy.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/main/deploy/deploy.ts).
 
 ```typescript
 import { deployContract } from "./utils";

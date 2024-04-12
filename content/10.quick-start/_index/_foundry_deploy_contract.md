@@ -29,59 +29,64 @@ For testnet deployments, follow these steps to secure your funds:
 ## Step 3: Deploying your first contract
 
 With our environment and wallet configured, we're set to deploy our first contract. This guide
-introduces a crowdfunding campaign contract aimed at supporting Zeek's inventive ventures
-Let's start by reviewing the starter contract in the `src/` directory.
+introduces a crowdfunding campaign contract aimed at supporting Zeek's inventive ventures.
 
-```solidity
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+Let's start by reviewing the starter contract in the [`src/` directory](https://github.com/dutterbutter/zksync-foundry-quickstart-guide/blob/main/src/Crowdfund.sol).
 
-contract CrowdfundingCampaign {
-    address public owner;
-    uint256 public fundingGoal;
-    uint256 public totalFundsRaised;
-    mapping(address => uint256) public contributions;
+::drop-panel
+  ::panel{label="CrowdfundingCampaign.sol"}
+    ```solidity
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.0;
 
-    event ContributionReceived(address contributor, uint256 amount);
-    event GoalReached(uint256 totalFundsRaised);
+    contract CrowdfundingCampaign {
+        address public owner;
+        uint256 public fundingGoal;
+        uint256 public totalFundsRaised;
+        mapping(address => uint256) public contributions;
 
-    constructor(uint256 _fundingGoal) {
-        owner = msg.sender;
-        fundingGoal = _fundingGoal;
-    }
+        event ContributionReceived(address contributor, uint256 amount);
+        event GoalReached(uint256 totalFundsRaised);
 
-    function contribute() public payable {
-        require(msg.value > 0, "Contribution must be greater than 0");
-        contributions[msg.sender] += msg.value;
-        totalFundsRaised += msg.value;
+        constructor(uint256 _fundingGoal) {
+            owner = msg.sender;
+            fundingGoal = _fundingGoal;
+        }
 
-        emit ContributionReceived(msg.sender, msg.value);
+        function contribute() public payable {
+            require(msg.value > 0, "Contribution must be greater than 0");
+            contributions[msg.sender] += msg.value;
+            totalFundsRaised += msg.value;
 
-        if (totalFundsRaised >= fundingGoal) {
-            emit GoalReached(totalFundsRaised);
+            emit ContributionReceived(msg.sender, msg.value);
+
+            if (totalFundsRaised >= fundingGoal) {
+                emit GoalReached(totalFundsRaised);
+            }
+        }
+
+        function withdrawFunds() public {
+            require(msg.sender == owner, "Only the owner can withdraw funds");
+            require(totalFundsRaised >= fundingGoal, "Funding goal not reached");
+
+            uint256 amount = address(this).balance;
+            totalFundsRaised = 0;
+
+            (bool success, ) = payable(owner).call{value: amount}("");
+            require(success, "Transfer failed.");
+        }
+
+        function getTotalFundsRaised() public view returns (uint256) {
+            return totalFundsRaised;
+        }
+
+        function getFundingGoal() public view returns (uint256) {
+            return fundingGoal;
         }
     }
-
-    function withdrawFunds() public {
-        require(msg.sender == owner, "Only the owner can withdraw funds");
-        require(totalFundsRaised >= fundingGoal, "Funding goal not reached");
-
-        uint256 amount = address(this).balance;
-        totalFundsRaised = 0;
-
-        (bool success, ) = payable(owner).call{value: amount}("");
-        require(success, "Transfer failed.");
-    }
-
-    function getTotalFundsRaised() public view returns (uint256) {
-        return totalFundsRaised;
-    }
-
-    function getFundingGoal() public view returns (uint256) {
-        return fundingGoal;
-    }
-}
-```
+    ```
+  ::
+::
 
 The `CrowdfundingCampaign` contract is designed for project crowdfunding.
 Owned and deployed with a set funding goal, it features:
@@ -92,6 +97,7 @@ Owned and deployed with a set funding goal, it features:
 
 ### Compile contract
 
+<!-- :display-partial{path = "/_partials/_compile-solidity-contracts-foundry"} -->
 Smart contracts deployed to zkSync must be compiled using our custom compiler.
 For this particular guide we are making use of `zksolc`.
 
@@ -121,7 +127,7 @@ located in the `/out` folder.
 ### Deploy
 
 This section outlines the steps to deploy the `CrowdfundingCampaign` contract.
-The deployment script is located at `/script/Deploy.s.sol`.
+The deployment script is located at [`/script/Deploy.s.sol`](https://github.com/dutterbutter/zksync-foundry-quickstart-guide/blob/main/script/Deploy.s.sol).
 
 ```solidity
 // SPDX-License-Identifier: UNLICENSED
@@ -145,8 +151,10 @@ contract DeployCrowdfundContract is Script {
 
 **Key Components:**
 
-- **contractArtifactName:** Identifies the `CrowdfundingCampaign` contract for deployment.
-- **constructorArguments:** Sets initialization parameters for the contract.
+- **Constructor Argument:** The `CrowdfundingCampaign` contract is initialized with
+a single constructor argument, `fundingGoalInWei`.
+- **Broadcast Method:** The deployment uses `vm.startBroadcast(deployerPrivateKey)` to begin
+the transaction broadcast and `vm.stopBroadcast()` to end it, facilitating the actual deployment of the contract on the blockchain.
 
 #### Deploy contract
 

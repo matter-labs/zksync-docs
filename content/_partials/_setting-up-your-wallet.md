@@ -14,7 +14,7 @@ title: Setting up your wallet
 
   1. Verify your balance:
 
-      - Check your wallet's balance using the zkSync Sepolia explorer.
+      - Check your wallet's balance using the [zkSync Sepolia explorer](https://sepolia.explorer.zksync.io/).
   ::
 
   ::panel{label="Configuring Your Wallet in the Project"}
