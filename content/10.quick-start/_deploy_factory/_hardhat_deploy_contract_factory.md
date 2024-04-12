@@ -1,61 +1,42 @@
 ---
 title: Hardhat | Deploy Contract Factory
 ---
-
-Hardhat is an Ethereum development environment, designed for easy smart contract
-development in Solidity. zkSync provides its own plugins which makes working with
-contracts on zkSync simple and efficient.
-
-## Step 1: Setting up environment
-:display-partial{path = "/_partials/_environment-setup-with-zksync-cli"}
 <!-- TODO: @dutterbutter determine best approach to leverage zksync cli for project
 bootstrapping for this guide series. -->
-::drop-panel
-  ::panel{label="Initialize project"}
-    Run the following command in your terminal to initialize the project.
+Run the following command in your terminal to initialize the project.
 
-    ```sh
-    git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
-    cd zksync-quickstart-guide
-    git checkout db/contract-factories
-    ```
-    Install the dependencies:
+```sh
+git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
+cd zksync-quickstart-guide
+git checkout db/contract-factories
+```
 
-    ::code-group
+Install the dependencies:
 
-    ```bash [yarn]
-    yarn install
-    ```
+::code-group
 
-    ```bash [pnpm]
-    pnpm run install
-    ```
+```bash [yarn]
+yarn install
+```
 
-    ```bash [npm]
-    npm run install
-    ```
+```bash [pnpm]
+pnpm install
+```
 
-    ```bash [bun]
-    bun run install
-    ```
+```bash [npm]
+npm install
+```
 
-    ::
-  ::
+```bash [bun]
+bun install
+```
+
 ::
 
-## Step 2: Set up wallet
-
-Deploying contracts on the zkSync Sepolia testnet requires having testnet ETH.
-If you're working within the local development environment,
-you can utilize pre-configured rich wallets and skip this step.
-For testnet deployments, follow these steps to secure your funds:
-
-:display-partial{path = "/_partials/_setting-up-your-wallet"}
-
-## Step 3: Deploying contract with factory
+## Deploy contract with factory
 
 With our environment and wallet configured, we're set to review the `CrowdfundingFactory.sol`
-contract that is provided during the initialization step in the [`/contracts` directory](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-factories/contracts/CrowdfundFactory.sol).
+contract that is provided under the [`/contracts` directory](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-factories/contracts/CrowdfundFactory.sol).
 
 The `CrowdfundingFactory.sol`contract will be used to deploy multiple instances of
 the `CrowdfundingCampaign.sol` contract from the previous guide.
@@ -91,7 +72,8 @@ the `CrowdfundingCampaign.sol` contract from the previous guide.
 ::
 
 The `CrowdfundingFactory` contract automates the creation and oversight of
-`CrowdfundingCampaign` contracts, each with its distinct funding goals, it features:
+`CrowdfundingCampaign` contracts, each with their own distinct funding goals.
+The factory contract features:
 
 - **Campaign Creation**: Utilizes the `createCampaign` method to initiate a new
 `CrowdfundingCampaign` contract. This function takes a `fundingGoal` as an argument,
@@ -108,8 +90,6 @@ making it efficient to launch and manage multiple campaigns.
 
 :display-partial{path = "/_partials/_compile-solidity-contracts"}
 
-#### Expected Output
-
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number
 of Solidity files compiled.
@@ -122,62 +102,59 @@ Successfully compiled 2 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-### Deploy
+### Deploy via the CrowdfundingFactory
 
 This section outlines the steps to deploy the `CrowdfundingCampaign` contract
 using our new `CrowdfundingFactory`.
 
 The deployment script is located at `/deploy/deployUsingFactory.ts`.
 
-```typescript
-import { deployContract, getWallet } from "./utils";
-import { ethers } from "ethers";
-import { HardhatRuntimeEnvironment } from "hardhat/types";
+::drop-panel
+  ::panel{label="deployUsingFactory.ts"}
 
-export default async function (hre: HardhatRuntimeEnvironment) {
-  const contractArtifactName = "CrowdfundingFactory";
-  const constructorArguments = [];
-  const crowdfundingFactory = await deployContract(contractArtifactName, constructorArguments);
+  ```typescript
+  import { deployContract, getWallet } from "./utils";
+  import { ethers } from "ethers";
+  import { HardhatRuntimeEnvironment } from "hardhat/types";
 
-  console.log(`🏭 CrowdfundingFactory address: ${crowdfundingFactory.target}`);
-  
-  const contractArtifact = await hre.artifacts.readArtifact("CrowdfundingFactory");
-  const factoryContract = new ethers.Contract(
-    crowdfundingFactory.target,
-    contractArtifact.abi,
-    getWallet()
-  );
+  export default async function (hre: HardhatRuntimeEnvironment) {
+    const contractArtifactName = "CrowdfundingFactory";
+    const constructorArguments = [];
+    const crowdfundingFactory = await deployContract(contractArtifactName, constructorArguments);
 
-  // Define funding goal for the campaign, e.g., 0.1 ether
-  const fundingGoalInWei = ethers.parseEther('0.1').toString();
+    console.log(`🏭 CrowdfundingFactory address: ${crowdfundingFactory.target}`);
 
-  // Use the factory to create a new CrowdfundingCampaign
-  const createTx = await factoryContract.createCampaign(fundingGoalInWei);
-  await createTx.wait();
+    const contractArtifact = await hre.artifacts.readArtifact("CrowdfundingFactory");
+    const factoryContract = new ethers.Contract(
+      crowdfundingFactory.target,
+      contractArtifact.abi,
+      getWallet()
+    );
 
-  // Retrieve the address of the newly created CrowdfundingCampaign
-  const campaigns = await factoryContract.getCampaigns();
-  const newCampaignAddress = campaigns[campaigns.length - 1];
+    // Define funding goal for the campaign, e.g., 0.1 ether
+    const fundingGoalInWei = ethers.parseEther('0.1').toString();
 
-  console.log(`🚀 New CrowdfundingCampaign deployed at: ${newCampaignAddress}`);
-  console.log('✅ Deployment and campaign creation complete!');
-}
-```
+    // Use the factory to create a new CrowdfundingCampaign
+    const createTx = await factoryContract.createCampaign(fundingGoalInWei);
+    await createTx.wait();
 
-**Key Components:**
+    // Retrieve the address of the newly created CrowdfundingCampaign
+    const campaigns = await factoryContract.getCampaigns();
+    const newCampaignAddress = campaigns[campaigns.length - 1];
 
-**Deployment Workflow:**
+    console.log(`🚀 New CrowdfundingCampaign deployed at: ${newCampaignAddress}`);
+    console.log('✅ Deployment and campaign creation complete!');
+  }
+  ```
 
-- Initiates by deploying the `CrowdfundingFactory` through `deployContract`.
-- Using the factory's deployed address to form a `factoryContract` instance,
-facilitating access to the factory's functionalities.
+  ::
+::
 
-**Initiating Campaigns:**
-
-- Executes the `factoryContract`'s `createCampaign` function to create and deploy a new
-crowdfunding campaign, with the specified funding target.
-
-#### Deploy factory
+- The `deployUsingFactory.ts` script deploys the `CrowdfundingFactory` through the `deployContract` method.
+- An instance of the factory is assigned to `factoryContract`.
+  This gives us access to the factory's functionalities.
+- The `createCampaign` method is called on this instance to create
+  and deploy a new crowdfunding campaign contract.
 
 Execute the deployment command corresponding to your package manager. The default command
 deploys to the configured network in your Hardhat setup. For local deployment, append
@@ -210,8 +187,6 @@ bun run hardhat deploy-zksync --script deployUsingFactory.ts
 ```
 
 ::
-
-#### Expected Output
 
 Upon successful deployment, you'll receive output detailing the deployment process,
 including the contract address, source, and encoded constructor arguments:

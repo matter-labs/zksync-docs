@@ -2,31 +2,13 @@
 title: Foundry | Deploy Contract
 ---
 
-`foundry-zksync` is a specialized fork of Foundry, tailored for zkSync.
-It extends Foundry's capabilities for Ethereum app development to support zkSync,
-allowing for the compilation, deployment, testing, and interaction with smart contracts on zkSync.
-
-::callout{icon="i-heroicons-information-circle-16-solid" color="amber"}
-`foundry-zksync` is still in an alpha stage, so some features might not be fully supported
-yet and may not work as fully intended. It is open-sourced and contributions are welcomed.
-::
-
-<!-- TODO: @dutterbutter 
-Need to update to include prerequisite of Foundry installation
-This should be a simple curl request but needs to be setup by devops  -->
-## Step 1: Setting up environment
 :display-partial{path = "/_partials/_environment-setup-with-foundry"}
 
-## Step 2: Set up wallet
+## Set up your wallet
 
-Deploying contracts on the zkSync Sepolia testnet requires having testnet ETH.
-If you're working within the local development environment,
-you can utilize pre-configured rich wallets and skip this step.
-For testnet deployments, follow these steps to secure your funds:
+:display-partial{path = "/quick-start/_partials/_setup-wallet"}
 
-:display-partial{path = "/_partials/_setting-up-your-wallet"}
-
-## Step 3: Deploying your first contract
+## Deploy your first contract
 
 With our environment and wallet configured, we're set to deploy our first contract. This guide
 introduces a crowdfunding campaign contract aimed at supporting Zeek's inventive ventures.
@@ -97,7 +79,6 @@ Owned and deployed with a set funding goal, it features:
 
 ### Compile contract
 
-<!-- :display-partial{path = "/_partials/_compile-solidity-contracts-foundry"} -->
 Smart contracts deployed to zkSync must be compiled using our custom compiler.
 For this particular guide we are making use of `zksolc`.
 
@@ -106,8 +87,6 @@ To compile the contracts in the project, run the following command:
 ```bash
 forge build --zksync
 ```
-
-#### Expected Output
 
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number
@@ -165,8 +144,6 @@ forge script script/Deploy.s.sol:DeployCrowdfundContract --rpc-url zkSyncSepolia
 # To deploy the contract on local in-memory node:
 # forge script script/Deploy.s.sol:DeployCrowdfundContract --rpc-url inMemoryNode --broadcast --zksync
 ```
-
-#### Expected Output
 
 Upon successful deployment, you'll receive output detailing the deployment process,
 including the contract address, transaction hash, and block number deployed to:

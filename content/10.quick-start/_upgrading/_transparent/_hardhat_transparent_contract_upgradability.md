@@ -1,57 +1,43 @@
 ---
 title: Hardhat | Contract Upgrading
 ---
-
-Hardhat is an Ethereum development environment, designed for easy smart contract development in Solidity.
-zkSync provides its own plugins which makes working with contracts on zkSync simple and efficient.
-
-## Step 1: Setting up environment
-:display-partial{path = "/_partials/_environment-setup-with-zksync-cli"}
 <!-- TODO: @dutterbutter determine best approach to leverate zksync cli for project
 bootstrapping for this guide series. -->
-::drop-panel
-  ::panel{label="Initialize project"}
-    Run the following command in your terminal to initialize the project.
+Run the following command in your terminal to initialize the project.
 
-    ```sh
-    git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
-    cd zksync-quickstart-guide
-    git checkout db/contract-upgrade
-    ```
-    Install the dependencies:
+```sh
+git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
+cd zksync-quickstart-guide
+git checkout db/contract-upgrade
+```
 
-    ::code-group
+Install the dependencies:
 
-    ```bash [yarn]
-    yarn install
-    ```
+::code-group
 
-    ```bash [pnpm]
-    pnpm run install
-    ```
+```bash [yarn]
+yarn install
+```
 
-    ```bash [npm]
-    npm run install
-    ```
+```bash [pnpm]
+pnpm install
+```
 
-    ```bash [bun]
-    bun run install
-    ```
+```bash [npm]
+npm install
+```
 
-    ::
-  ::
+```bash [bun]
+bun install
+```
+
 ::
 
-## Step 2: Set up wallet
+## Set up your wallet
 
-Deploying contracts on the zkSync Sepolia testnet requires having testnet ETH.
-If you're working within the local development environment,
-you can utilize pre-configured rich wallets and skip this step.
-For testnet deployments, follow these steps to secure your funds:
+:display-partial{path = "/quick-start/_partials/_setup-wallet"}
 
-:display-partial{path = "/_partials/_environment-setup-with-zksync-cli"}
-
-## Step 3: Adapting `CrowdfundingCampaign.sol` contract for upgradability
+## Adapt `CrowdfundingCampaign.sol` contract for upgradability
 
 To adapt our `CrowdfundingCampaign.sol` contract for upgradability, we're
 transitioning to a proxy pattern. This approach separates the
@@ -116,7 +102,7 @@ allowing for future upgrades without losing the contract's state.
 
 This restructuring prepares the `CrowdfundingCampaign` contract for upgradability.
 
-## Step 4: Deploy the `CrowdfundingCampaign` contract
+## Deploy the `CrowdfundingCampaign` contract
 
 Now that the `CrowdfundingCampaign` contract is adapted for contract upgradability, let's proceed to deploy
 the contract so we may upgrade it in later steps. Since we've made changes to our contract we will
@@ -143,8 +129,6 @@ bun run compile
 ```
 
 ::
-
-#### Expected Output
 
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number
@@ -195,7 +179,6 @@ This ensures the deployed contract can be upgraded in the future without losing 
 - **`initializer`**: Specifies the initialization method of the contract, `initialize` in this case,
 which is required for setting up the proxy's state upon deployment.
 
-#### Deploy contract
 Execute the deployment command corresponding to your package manager. The default command
 deploys to the configured network in your Hardhat setup. For local deployment, append
 `--network inMemoryNode` to deploy to the local in-memory node running.
@@ -228,8 +211,6 @@ bun run hardhat deploy-zksync --script deployTransparentProxy.ts
 
 ::
 
-#### Expected Output
-
 Upon successful deployment, you'll receive output detailing the deployment process,
 including the contract addresses of the implementation
 contract, the admin contract, and the transparent
@@ -241,7 +222,7 @@ Admin was deployed to 0x05198D9f93cBDfa3e332776019115512d8e0c809
 Transparent proxy was deployed to 0x68E8533acE01019CB8D07Eca822369D5De71b74D
 ```
 
-## Step 5: Upgrading the `CrowdfundingCampaign` Contract
+## Upgrade the `CrowdfundingCampaign` Contract
 
 With our initial setup deployed, we're ready to update our `CrowdfundingCampaign.sol`
 contract by incorporating a deadline for contributions. This addition not only brings
@@ -295,8 +276,6 @@ exemplifies the use of `modifiers` for enforcing contract conditions.
 ### Compile contract
 :display-partial{path = "/_partials/_compile-solidity-contracts"}
 
-#### Expected Output
-
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number
 of Solidity files compiled.
@@ -316,6 +295,9 @@ to its second version, `CrowdfundingCampaignV2`.
 Review the [`upgradeCrowdfundingCampaign.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/upgrade-scripts/upgradeCrowdfundingCampaign.ts)
 script located within the `deploy/upgrade-scripts` directory to begin.
 
+Ensure to replace `YOUR_PROXY_ADDRESS_HERE` with the actual address of your
+deployed Transparent Proxy from the previous deployment step.
+
 ```typescript
 import { getWallet } from "../utils";
 import { Deployer } from '@matterlabs/hardhat-zksync';
@@ -324,10 +306,10 @@ import { HardhatRuntimeEnvironment } from "hardhat/types";
 export default async function (hre: HardhatRuntimeEnvironment) {
     const wallet = getWallet();
     const deployer = new Deployer(hre, wallet);
-    
+
     // Placeholder for the deployed proxy address
     const proxyAddress = 'YOUR_PROXY_ADDRESS_HERE';
-    
+
     const contractV2Artifact = await deployer.loadArtifact('CrowdfundingCampaignV2');
 
     // Upgrade the proxy to V2
@@ -338,7 +320,7 @@ export default async function (hre: HardhatRuntimeEnvironment) {
     upgradedContract.connect(deployer.zkWallet);
     // wait some time before the next call
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    
+
     // Initialize V2 with a new campaign duration
     const durationInSeconds = 30 * 24 * 60 * 60; // For example, setting a 30-day duration
     const initTx = await upgradedContract.initializeV2(durationInSeconds);
@@ -347,9 +329,6 @@ export default async function (hre: HardhatRuntimeEnvironment) {
     console.log(`CrowdfundingCampaignV2 initialized. Transaction Hash: ${receipt.hash}`);
 }
 ```
-
-Ensure to replace `YOUR_PROXY_ADDRESS_HERE` with the actual address of your
-deployed Transparent Proxy from the previous deployment step.
 
 **Key Components:**
 
@@ -362,7 +341,6 @@ variables or logic introduced in `CrowdfundingCampaignV2`. In this example,
 it sets a new campaign duration, illustrating how contract upgrades can add
 functionalities without losing the existing state or funds.
 
-#### Upgrade contract
 Execute the command corresponding to your package manager:
 
 ::code-group
@@ -385,8 +363,6 @@ bun run hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampai
 
 ::
 
-#### Expected Output
-
 Upon successful deployment, you'll receive output detailing the upgrade process,
 including the contract address, and transaction hash:
 
@@ -397,12 +373,14 @@ CrowdfundingCampaignV2 initialized! 0x5adfe360187195d98d3603a82a20ffe7304cd4dec0
 Fundraising goal: 100000000000000000
 ```
 
-## Step 6: Verify upgradable contracts
+## Verify upgradable contracts
 
 For the verification of our upgradable contracts, it's essential to utilize the proxy address that was specified in our
 upgrade script.
 
 To proceed with verification, execute the following command:
+
+Replace <PROXY_ADDRESS> with the actual proxy address from your deployment.
 
 ::code-group
 
@@ -423,10 +401,6 @@ bun run hardhat verify <PROXY-ADDRESS>
 ```
 
 ::
-
-Ensure to replace <PROXY_ADDRESS> with the actual proxy address from your deployment.
-
-#### Expected Output
 
 Upon successful verification, you'll receive output detailing the verification process:
 

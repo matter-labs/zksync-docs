@@ -2,56 +2,41 @@
 title: Hardhat | Contract Upgrading
 ---
 
-Hardhat is an Ethereum development environment, designed for easy smart contract development in Solidity.
-zkSync provides its own plugins which makes working with contracts on zkSync simple and efficient.
-
-## Step 1: Setting up environment
-:display-partial{path = "/_partials/_environment-setup-with-zksync-cli"}
 <!-- TODO: @dutterbutter determine best approach to leverate zksync cli for project
 bootstrapping for this guide series. -->
-::drop-panel
-  ::panel{label="Initialize project"}
-    Run the following command in your terminal to initialize the project.
+Run the following command in your terminal to initialize the project.
 
-    ```sh
-    git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
-    cd zksync-quickstart-guide
-    git checkout db/contract-upgrade
-    ```
-    Install the dependencies:
+```sh
+git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
+cd zksync-quickstart-guide
+git checkout db/contract-upgrade
+```
 
-    ::code-group
+Install the dependencies:
 
-    ```bash [yarn]
-    yarn install
-    ```
+::code-group
 
-    ```bash [pnpm]
-    pnpm run install
-    ```
+```bash [yarn]
+yarn install
+```
 
-    ```bash [npm]
-    npm run install
-    ```
+```bash [pnpm]
+pnpm install
+```
 
-    ```bash [bun]
-    bun run install
-    ```
+```bash [npm]
+npm install
+```
 
-    ::
-  ::
-::
+```bash [bun]
+bun install
+```
 
-## Step 2: Set up wallet
+## Set up your wallet
 
-Deploying contracts on the zkSync Sepolia testnet requires having testnet ETH.
-If you're working within the local development environment,
-you can utilize pre-configured rich wallets and skip this step.
-For testnet deployments, follow these steps to secure your funds:
+:display-partial{path="quick-start/_partials/_setup-wallet"}
 
-:display-partial{path = "/_partials/_setting-up-your-wallet"}
-
-## Step 3: Adapting `CrowdfundingCampaign.sol` for UUPS Upgradability
+## Adapt the `CrowdfundingCampaign.sol` for UUPS Upgradability
 
 To align the `CrowdfundingCampaign.sol` contract with UUPS (Universal Upgradeable Proxy Standard) upgradability,
 we're integrating OpenZeppelin's UUPSUpgradeable contracts. This method offers a more secure and gas-efficient
@@ -123,7 +108,7 @@ reinforcing the contract's security.
 By adopting the UUPS pattern, the [`CrowdfundingCampaign_UUPS`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/contracts/CrowdfundingCampaign_UUPS.sol)
 contract becomes efficiently upgradeable, offering enhanced security and reduced gas costs, setting a solid foundation for future enhancements.
 
-## Step 4: Deploy the `CrowdfundingCampaign` contract
+## Deploy the `CrowdfundingCampaign` contract
 
 Now that the `CrowdfundingCampaign_UUPS` contract is adapted for contract upgradability, let's proceed to deploy
 the contract so we may upgrade it in later steps. Since we've made changes to our contract we will
@@ -150,8 +135,6 @@ bun run compile
 ```
 
 ::
-
-#### Expected Output
 
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number
@@ -205,7 +188,6 @@ The use of the UUPS pattern provides a secure and efficient mechanism for future
 This is used for setting up the initial state of the contract upon deployment, particularly important
 for upgradeable contracts where constructor usage is not possible.
 
-#### Deploy contract
 Execute the deployment command corresponding to your package manager. The default command
 deploys to the configured network in your Hardhat setup. For local deployment, append
 `--network inMemoryNode` to deploy to the local in-memory node running.
@@ -238,8 +220,6 @@ bun run hardhat deploy-zksync --script deployUUPS.ts
 
 ::
 
-#### Expected Output
-
 Upon successful deployment, you'll receive output detailing the deployment process,
 including the contract addresses of the implementation
 contract, the admin contract, and the transparent
@@ -250,7 +230,7 @@ Implementation contract was deployed to 0xF0De77041F3cF6D9C905A10ce59858b17E57E3
 UUPS proxy was deployed to 0x56882194aAe8E4B6d18cD84e4D7B0F807e0100Cb
 ```
 
-## Step 5: Upgrading the `CrowdfundingCampaign_UUPS` Contract
+## Upgrade the `CrowdfundingCampaign_UUPS` Contract
 
 With our initial setup deployed, we're ready to upgrade our `CrowdfundingCampaign_UUPS.sol`
 contract by incorporating a deadline for contributions. This addition not only brings
@@ -305,8 +285,6 @@ exemplifies the use of `modifiers` for enforcing contract conditions.
 
 :display-partial{path = "/_partials/_compile-solidity-contracts"}
 
-#### Expected Output
-
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number
 of Solidity files compiled.
@@ -325,6 +303,9 @@ This section describes the initiating the upgrade to `CrowdfundingCampaignV2_UUP
 Let's start by reviewing the [`upgradeUUPSCrowdfundingCampaign.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts)
 script in the `deploy/upgrade-scripts` directory:
 
+Replace `YOUR_PROXY_ADDRESS_HERE` with the actual address of your
+deployed Transparent Proxy from the previous deployment step.
+
 ```typescript
 import { getWallet } from "../utils";
 import { Deployer } from '@matterlabs/hardhat-zksync';
@@ -336,7 +317,7 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 
     // Placeholder for the deployed proxy address
     const proxyAddress = 'YOUR_PROXY_ADDRESS_HERE';
-    
+
     // Upgrade the proxy to V2
     const contractV2Artifact = await deployer.loadArtifact('CrowdfundingCampaignV2_UUPS');
     const upgradedContract = await hre.zkUpgrades.upgradeProxy(deployer.zkWallet, proxyAddress, contractV2Artifact);
@@ -345,7 +326,7 @@ export default async function (hre: HardhatRuntimeEnvironment) {
     upgradedContract.connect(deployer.zkWallet);
     // wait some time before the next call
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    
+
     const durationInSeconds = 30 * 24 * 60 * 60; // For example, setting a 30-day duration
 
     const initTx = await upgradedContract.initializeV2(durationInSeconds);
@@ -354,9 +335,6 @@ export default async function (hre: HardhatRuntimeEnvironment) {
     console.log('CrowdfundingCampaignV2_UUPS initialized!', receipt.hash);
 }
 ```
-
-Ensure to replace `YOUR_PROXY_ADDRESS_HERE` with the actual address of your
-deployed Transparent Proxy from the previous deployment step.
 
 **Key Components:**
 
@@ -369,7 +347,6 @@ variables or logic introduced in `CrowdfundingCampaignV2_UUPS`. In this example,
 it sets a new campaign duration, illustrating how contract upgrades can add
 functionalities without losing the existing state or funds.
 
-#### Upgrade contract
 Execute the test command corresponding to your package manager:
 
 ::code-group
@@ -392,8 +369,6 @@ bun run hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCa
 
 ::
 
-#### Expected Output
-
 Upon successful deployment, you'll receive output detailing the upgrade process,
 including the new beacon address, and transaction hash:
 
@@ -403,7 +378,7 @@ Successfully upgraded crowdfundingCampaign_UUPS to crowdfundingCampaignV2_UUPS
 CrowdfundingCampaignV2_UUPS initialized! 0xab959f588b64dc6dee1e94d5fa0da2ae205c7438cf097d26d3ba73690e2b09e8
 ```
 
-## Step 6: Verify upgradable contracts
+## Verify upgradable contracts
 
 To verify our upgradable contracts we need to the proxy address we previously used in our upgrade script.
 With that execute the following command:

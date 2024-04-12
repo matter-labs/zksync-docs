@@ -2,58 +2,46 @@
 title: Hardhat | Deploy Contract
 ---
 
-Hardhat is an Ethereum development environment, designed for easy smart contract development in Solidity.
-zkSync provides its own plugins which makes working with contracts on zkSync simple and efficient.
+Run the following command in your terminal to initialize the project.
 
-## Step 1: Setting up environment
-:display-partial{path = "/_partials/_environment-setup-with-zksync-cli"}
 <!-- TODO: @dutterbutter determine best approach to leverage zksync cli for project
 bootstrapping for this guide series. -->
-::drop-panel
-  ::panel{label="Initialize project"}
-    Run the following command in your terminal to initialize the project.
 
-    ```sh
-    git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
-    cd zksync-quickstart-guide
-    ```
-    Install the dependencies:
+```sh
+git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
+cd zksync-quickstart-guide
+```
 
-    ::code-group
+Install the dependencies:
 
-    ```bash [yarn]
-    yarn install
-    ```
+::code-group
 
-    ```bash [pnpm]
-    pnpm run install
-    ```
+```bash [yarn]
+yarn install
+```
 
-    ```bash [npm]
-    npm run install
-    ```
+```bash [pnpm]
+pnpm install
+```
 
-    ```bash [bun]
-    bun run install
-    ```
+```bash [npm]
+npm install
+```
 
-    ::
-  ::
+```bash [bun]
+bun install
+```
+
 ::
 
-## Step 2: Set up wallet
+## Set up your wallet
 
-Deploying contracts on the zkSync Sepolia testnet requires having testnet ETH.
-If you're working within the local development environment,
-you can utilize pre-configured rich wallets and skip this step.
-For testnet deployments, follow these steps to secure your funds:
+:display-partial{path="quick-start/_partials/_setup-wallet"}
 
-:display-partial{path = "/_partials/_setting-up-your-wallet"}
+## Deploy the CrowdfundingCampaign.sol contract
 
-## Step 3: Deploying your first contract
-
-With our environment and wallet configured, we're set to deploy our first contract. This guide
-introduces a crowdfunding campaign contract aimed at supporting Zeek's inventive ventures.
+With our environment and wallet configured, we're set to deploy our first contract.
+This guide introduces a crowdfunding campaign contract aimed at supporting Zeek's inventive ventures.
 Let's start by reviewing the starter contract in the [`contracts/` directory](https://github.com/dutterbutter/zksync-quickstart-guide/blob/main/contracts/Crowdfund.sol).
 
 ::drop-panel
@@ -112,7 +100,7 @@ Let's start by reviewing the starter contract in the [`contracts/` directory](ht
 ::
 
 The `CrowdfundingCampaign` contract is designed for project crowdfunding.
-Deployed with a set funding goal, it features:
+This contract features:
 
 - A constructor to initialize the campaign's funding target.
 - The `contribute` method to log funds, triggering `ContributionReceived` and `GoalReached` events.

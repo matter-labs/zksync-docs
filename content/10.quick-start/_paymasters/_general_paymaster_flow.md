@@ -3,53 +3,43 @@ title: General Paymaster
 description: Learn to deploy contract factories in the zkSync environment.
 ---
 
-## Step 1: Setting up environment
-:display-partial{path = "/_partials/_environment-setup-with-zksync-cli"}
 <!-- TODO: @dutterbutter determine best approach to leverate zksync cli for project
 bootstrapping for this guide series. -->
-::drop-panel
-  ::panel{label="Initialize project"}
-    Run the following command in your terminal to initialize the project.
+Run the following command in your terminal to initialize the project.
 
-    ```sh
-    git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
-    cd zksync-quickstart-guide
-    git checkout db/contract-paymaster
-    ```
-    Install the dependencies:
+```sh
+git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
+cd zksync-quickstart-guide
+git checkout db/contract-paymaster
+```
 
-    ::code-group
+Install the dependencies:
 
-    ```bash [yarn]
-    yarn install
-    ```
+::code-group
 
-    ```bash [pnpm]
-    pnpm run install
-    ```
+```bash [yarn]
+yarn install
+```
 
-    ```bash [npm]
-    npm run install
-    ```
+```bash [pnpm]
+pnpm install
+```
 
-    ```bash [bun]
-    bun run install
-    ```
+```bash [npm]
+npm install
+```
 
-    ::
-  ::
+```bash [bun]
+bun install
+```
+
 ::
 
-## Step 2: Set up wallet
+## Set up your wallet
 
-Deploying contracts on the zkSync Sepolia testnet requires having testnet ETH.
-If you're working within the local development environment,
-you can utilize pre-configured rich wallets and skip this step.
-For testnet deployments, follow these steps to secure your funds:
+:display-partial{path = "/quick-start/_partials/_setup-wallet"}
 
-:display-partial{path = "/_partials/_environment-setup-with-zksync-cli"}
-
-## Step 3: Understanding GeneralPaymaster contract
+## Understanding GeneralPaymaster contract
 
 Let's start by reviewing the `GeneralPaymaster.sol` contract in the `contracts/` directory:
 
@@ -151,13 +141,9 @@ due to out-of-gas errors. It receives several parameters, including the transact
 - **`onlyBootloader`** Modifier: Ensures that certain methods are
 exclusively callable by the system's bootloader, adding an extra layer of security and control.
 
-## Step 4: Deploying GeneralPaymaster contract
-
-### Compile contract
+## Deploy the GeneralPaymaster contract
 
 :display-partial{path = "/_partials/_compile-solidity-contracts"}
-
-#### Expected Output
 
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number
@@ -217,7 +203,6 @@ mirroring the deployment process used for the `CrowdfundingCampaign` contract.
 to cover transaction fees for users. The script sends a transaction
 from the deployer's wallet to the paymaster contract, ensuring it has sufficient balance to operate.
 
-#### Deploy contract
 Execute the deployment command corresponding to your package manager. The default command
 deploys to the configured network in your Hardhat setup. For local deployment, append
 `--network inMemoryNode` to deploy to the local in-memory node running.
@@ -250,8 +235,6 @@ bun run hardhat deploy-zksync --script deployGaslessPaymaster.ts
 
 ::
 
-#### Expected Output
-
 Upon successful deployment, you'll receive output detailing the deployment process,
 including the contract address, source, and encoded constructor arguments:
 
@@ -270,12 +253,14 @@ Contract successfully verified on zkSync block explorer!
 Paymaster ETH balance is now 5000000000000000
 ```
 
-## Step 5: Interacting with GeneralPaymaster contract
+## Interact with the GeneralPaymaster contract
 
 This section guides we'll navigate through the steps to interact with the `GeneralPaymaster` contract,
 using it to cover transaction fees for our operation.
 
 The interaction script is situated in the `/deploy/interact/` directory, named `interactWithPaymaster.ts`.
+
+Ensure the `CONTRACT_ADDRESS` and `PAYMASTER_ADDRESS` variables are set to your deployed contract and paymaster addresses, respectively.
 
 ::drop-panel
   ::panel{label="interactWithPaymaster.ts"}
@@ -340,7 +325,7 @@ The interaction script is situated in the `/deploy/interact/` directory, named `
     console.log(`Transaction hash: ${transaction.hash}`);
 
     await transaction.wait();
-    
+
     let balanceAfterTransaction = await provider.getBalance(getWallet().address);
     // Check the wallet balance after the transaction
     // We only pay the contribution amount, so the balance should be less than before
@@ -352,8 +337,6 @@ The interaction script is situated in the `/deploy/interact/` directory, named `
   ::
 ::
 
-Ensure the `CONTRACT_ADDRESS` and `PAYMASTER_ADDRESS` variables are set to your deployed contract and paymaster addresses, respectively.
-
 **Key Components:**
 
 - **Paymaster Parameters:** Before executing transactions that involve the contract, the script prepares paymaster parameters using
@@ -363,8 +346,6 @@ used and the type of paymaster flow, which in this case is `General`.
 - **Transaction with Paymaster:** Demonstrated by the `contribute` function call, the script shows how to include paymaster parameters
 in transactions. This allows the paymaster to cover transaction
 fees, providing a seamless experience for users.
-
-#### Use GaslessPaymaster
 
 Execute the command corresponding to your package manager:
 
@@ -387,8 +368,6 @@ bun run hardhat deploy-zksync --script interact/interactWithPaymaster.ts
 ```
 
 ::
-
-#### Expected Output
 
 Upon successful usage, you'll receive output detailing the transaction:
 

@@ -2,19 +2,9 @@
 title: Hardhat | Contract Testing
 ---
 
-`foundry-zksync` is a specialized fork of Foundry, tailored for zkSync.
-It extends Foundry's capabilities for Ethereum app development to support zkSync,
-allowing for the compilation, deployment, testing, and interaction with smart contracts on zkSync.
-
-::callout{icon="i-heroicons-information-circle-16-solid" color="amber"}
-`foundry-zksync` is still in an alpha stage, so some features might not be fully supported
-yet and may not work as fully intended. It is open-sourced and contributions are welcomed.
-::
-
-## Step 1: Environment Configuration
 :display-partial{path = "/_partials/_environment-setup-with-foundry"}
 
-## Step 2: Testing `CrowdfundingCampaign` contract
+## Test the `CrowdfundingCampaign` contract
 
 Now that our setup is complete, it's time to focus on the core of this
 guide - testing our `CrowdfundingCampaign.sol` contract. Here's a quick
@@ -86,7 +76,6 @@ reliability of the contract.
 
 ### Compile contract
 
-<!-- :display-partial{path = "/_partials/_compile-solidity-contracts-foundry"} -->
 Smart contracts deployed to zkSync must be compiled using our custom compiler.
 For this particular guide we are making use of `zksolc`.
 
@@ -95,8 +84,6 @@ To compile the contracts in the project, run the following command:
 ```bash
 forge build --zksync
 ```
-
-#### Expected Output
 
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number
@@ -113,7 +100,7 @@ Compiling contracts for zkSync Era with zksolc v1.4.0
 The compiled zkEVM artifacts will be located in the `/zkout` folder, and the solc artifacts will be
 located in the `/out` folder.
 
-### Testing
+### Run the test command
 
 This section describes the testing `CrowdfundingCampaign.sol` contract. Let's
 start by reviewing the tests for `CrowdfundingCampaign.sol` contract provided
@@ -137,7 +124,7 @@ contract CrowdfundingCampaignTest is Test {
 
     function setUp() public {
         owner = address(this);
-        
+
         addr1 = vm.addr(1);
         addr2 = vm.addr(2);
 
@@ -164,17 +151,15 @@ contract CrowdfundingCampaignTest is Test {
         assertEq(campaign.getTotalFundsRaised(), initialTotal + 0.8 ether);
     }
 
-    function test_EmitGoalReachedWhenFundingGoalMet() public {    
+    function test_EmitGoalReachedWhenFundingGoalMet() public {
         vm.prank(addr1);
         vm.deal(addr1, 2 ether);
         vm.expectEmit(true, true, false, true);
         emit GoalReached(1 ether);
-        campaign.contribute{value: 1 ether}();        
+        campaign.contribute{value: 1 ether}();
     }
 }
 ```
-
-**Testing Workflow:**
 
 - **Environment Setup**: Leverages Foundry's `Test` contract and setup functions
 to prepare the test environment, ensuring a fresh state for each test case.
@@ -192,15 +177,13 @@ contributions from various addresses, ensuring accurate tracking of the total fu
 anticipate the `GoalReached` event when the funding goal is met, validating the
 contract's event logic and state transitions.
 
-#### Execute tests
+#### Run the tests
 
 Execute the test command:
 
 ```bash
 forge test --zksync
 ```
-
-#### Expected Output
 
 Upon completion, the test suite will provide a summary of all executed tests,
 indicating their success or failure:

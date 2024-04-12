@@ -1,49 +1,45 @@
 ---
 title: Hardhat | Contract Testing
 ---
-
-Hardhat is an Ethereum development environment, designed for easy smart contract development in Solidity.
-zkSync provides its own plugins which makes working with contracts on zkSync simple and efficient.
-
-## Step 1: Environment Configuration
 <!-- TODO: @dutterbutter determine best approach to leverate zksync cli for project
 bootstrapping for this guide series. -->
-::drop-panel
-  ::panel{label="Initialize project"}
-    Run the following command in your terminal to initialize the project.
+Run the following command in your terminal to initialize the project.
 
-    ```sh
-    git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
-    cd zksync-quickstart-guide
-    git checkout db/contract-testing
-    ```
-    Install the dependencies:
+  ```sh
+  git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
+  cd zksync-quickstart-guide
+  git checkout db/contract-testing
+  ```
 
-    ::code-group
+  Install the dependencies:
 
-    ```bash [yarn]
-    yarn install
-    ```
+  ::code-group
 
-    ```bash [pnpm]
-    pnpm run install
-    ```
+  ```bash [yarn]
+  yarn install
+  ```
 
-    ```bash [npm]
-    npm run install
-    ```
+  ```bash [pnpm]
+  pnpm install
+  ```
 
-    ```bash [bun]
-    bun run install
-    ```
+  ```bash [npm]
+  npm install
+  ```
 
-    ::
+  ```bash [bun]
+  bun install
+  ```
+
   ::
-::
+
+### Local Era Node
 
 While setting up a local development environment was previously optional, testing contracts requires
 a more structured setup. We'll use `hardhat-zksync` to run tests against an In-memory node,
 which operates seamlessly within a separate process for an optimized testing workflow.
+
+If you have not set up your local era node yet, follow the instructions in the [Getting Started](/quick-start#setup-era-local-node-optional) section.
 
 Within the `hardhat.config.ts`, you'll observe the `zksync` flag set to `true` under the
 `hardhat` network, indicating the integration with zkSync's testing environment.
@@ -68,11 +64,9 @@ toolkit available for your project.
 import "@nomicfoundation/hardhat-chai-matchers";
 ```
 
-Certainly! Here is the information about the test wallet configuration in a list format rather than a table:
+## Test Wallet Configuration
 
-## Step 2: Test Wallet Configuration
-
-For testing purposes, we use pre-configured, well-funded wallets. During this testing guide, we will leverage the following pre-configured wallet,
+For testing purposes, we use pre-configured, well-funded wallets. During this testing guide, we will use the following pre-configured wallet,
 which eliminates the need for manual funding or setup:
 
 - **Account Address:** `0x36615Cf349d7F6344891B1e7CA7C72883F5dc049`
@@ -80,7 +74,7 @@ which eliminates the need for manual funding or setup:
 
 This streamlined approach allows us to focus on writing and running effective tests.
 
-## Step 3: Testing `CrowdfundingCampaign` contract
+## Test `CrowdfundingCampaign` contract
 
 Now that our setup is complete, it's time to focus on the core of this
 guide - testing our `CrowdfundingCampaign.sol` contract. Here's a quick
@@ -146,15 +140,13 @@ including potential failure scenarios. In this guide, we'll focus in on the `con
 method to ensure it's tested.
 
 As a challenge to hone your testing skills further,
-consider devising additional tests for the `withdrawFunds`, `getTotalFundsRaised`,
+consider writing additional tests for the `withdrawFunds`, `getTotalFundsRaised`,
 and `getFundingGoal` methods, expanding your test coverage and reinforcing the
 reliability of the contract.
 
 ### Compile contract
 
 :display-partial{path = "/_partials/_compile-solidity-contracts"}
-
-#### Expected Output
 
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number
@@ -170,7 +162,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 ### Testing
 
-This section describes testing `CrowdfundingCampaign.sol` contract. Let's
+This section describes testing the `CrowdfundingCampaign.sol` contract. Let's
 start by reviewing the tests for `CrowdfundingCampaign.sol` contract provided
 during the initialization step in the `/tests` directory, specifically the
 [`crowdFunding.test.ts` file](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-testing/test/crowdFunding.test.ts).
@@ -212,10 +204,6 @@ describe("CrowdfundingCampaign", function () {
 });
 ```
 
-**Key Components:**
-
-**Testing Workflow:**
-
 - **Initialization**: Each test case initializes with fresh contract instances and predefined
 rich wallet accounts to simulate various contributors and the contract owner.
 - **Deployment**: The `CrowdfundingCampaign` contract is deployed using the `deployContract`
@@ -230,7 +218,7 @@ multiple addresses and update the `totalFundsRaised` accordingly.
 - **Goal Achievement**: Checks for the `GoalReached` event emission upon meeting the funding goal,
 confirming the contract's responsiveness to achieving its set target.
 
-#### Execute tests
+#### Run the tests
 Execute the test command corresponding to your package manager:
 
 ::code-group
@@ -252,8 +240,6 @@ bun run hardhat test --network hardhat
 ```
 
 ::
-
-#### Expected Output
 
 Upon completion, the test suite will provide a summary of all executed tests,
 indicating their success or failure:

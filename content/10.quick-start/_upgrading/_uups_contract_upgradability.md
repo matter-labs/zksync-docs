@@ -8,9 +8,9 @@ within the contract itself, simplifying upgrades and enhancing security. The com
 
 1. **Proxy Contract**: Contains minimal logic, primarily delegating calls to the implementation
 contract. Unlike other proxies, it doesn't require a separate upgrade function.
-2. **Implementation Contract**: Houses the business logic and the upgrade functionality,
+1. **Implementation Contract**: Houses the business logic and the upgrade functionality,
 enabling the contract to upgrade itself from within.
-3. **Admin Role**: Assigned to an entity with the authority to initiate upgrades, ensuring
+1. **Admin Role**: Assigned to an entity with the authority to initiate upgrades, ensuring
 controlled access to the upgrade function.
 
 In UUPS contracts, upgrades are performed by invoking the upgrade function within the

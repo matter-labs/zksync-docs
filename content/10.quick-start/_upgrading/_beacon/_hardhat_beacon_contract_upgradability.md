@@ -2,56 +2,43 @@
 title: Hardhat | Contract Upgrading
 ---
 
-Hardhat is an Ethereum development environment, designed for easy smart contract development in Solidity.
-zkSync provides its own plugins which makes working with contracts on zkSync simple and efficient.
-
-## Step 1: Setting up environment
-:display-partial{path = "/_partials/_environment-setup-with-zksync-cli"}
 <!-- TODO: @dutterbutter determine best approach to leverate zksync cli for project
 bootstrapping for this guide series. -->
-::drop-panel
-  ::panel{label="Initialize project"}
-    Run the following command in your terminal to initialize the project.
+Run the following command in your terminal to initialize the project.
 
-    ```sh
-    git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
-    cd zksync-quickstart-guide
-    git checkout db/contract-upgrade
-    ```
-    Install the dependencies:
+```sh
+git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
+cd zksync-quickstart-guide
+git checkout db/contract-upgrade
+```
 
-    ::code-group
+Install the dependencies:
 
-    ```bash [yarn]
-    yarn install
-    ```
+::code-group
 
-    ```bash [pnpm]
-    pnpm run install
-    ```
+```bash [yarn]
+yarn install
+```
 
-    ```bash [npm]
-    npm run install
-    ```
+```bash [pnpm]
+pnpm install
+```
 
-    ```bash [bun]
-    bun run install
-    ```
+```bash [npm]
+npm install
+```
 
-    ::
-  ::
+```bash [bun]
+bun install
+```
+
 ::
 
-## Step 2: Set up wallet
+## Set up your wallet
 
-Deploying contracts on the zkSync Sepolia testnet requires having testnet ETH.
-If you're working within the local development environment,
-you can utilize pre-configured rich wallets and skip this step.
-For testnet deployments, follow these steps to secure your funds:
+:display-partial{path = "/quick-start/_partials/_setup-wallet"}
 
-:display-partial{path = "/_partials/_setting-up-your-wallet"}
-
-## Step 3: Adapting `CrowdfundingCampaign.sol` contract for upgradability
+## Adapt `CrowdfundingCampaign.sol` contract for upgradability
 
 To adapt our `CrowdfundingCampaign.sol` contract for upgradability, we are
 transitioning to a proxy pattern. This approach separates the
@@ -115,7 +102,7 @@ allowing for future upgrades without losing the contract's state.
 
 This restructuring prepares the `CrowdfundingCampaign` contract for upgradeability.
 
-## Step 4: Deploy the `CrowdfundingCampaign` contract
+## Deploy the `CrowdfundingCampaign` contract
 
 Now that the `CrowdfundingCampaign` contract is adapted for contract upgradability, let's proceed to deploy
 the contract so we may upgrade it in later steps. Since we've made changes to our contract we will
@@ -143,8 +130,6 @@ bun run compile
 
 ::
 
-#### Expected Output
-
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number
 of Solidity files compiled.
@@ -159,8 +144,6 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 ### Deploy
 
-This guide details the process for deploying the upgraded `CrowdfundingCampaign`
-contract, now enhanced with upgradability features.
 You'll find the necessary deployment script at [`/deploy/deployBeaconProxy.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/deployBeaconProxy.ts).
 
 ```typescript
@@ -182,9 +165,9 @@ export default async function (hre: HardhatRuntimeEnvironment) {
     );
     await beacon.waitForDeployment();
 
-    const crowdfunding = await hre.zkUpgrades.deployBeaconProxy(deployer.zkWallet, 
+    const crowdfunding = await hre.zkUpgrades.deployBeaconProxy(deployer.zkWallet,
         await beacon.getAddress(), contractArtifact, [fundingGoalInWei]);
-    
+
     await crowdfunding.waitForDeployment();
 }
 ```
@@ -202,7 +185,6 @@ allowing for seamless upgrades without altering the proxy's address.
 The `fundingGoalInWei parameter`, converted from ether to wei, is passed during
 this step to initialize the contract with a funding goal.
 
-#### Deploy contract
 Execute the deployment command corresponding to your package manager. The default command
 deploys to the configured network in your Hardhat setup. For local deployment, append
 `--network inMemoryNode` to deploy to the local in-memory node running.
@@ -235,8 +217,6 @@ bun run hardhat deploy-zksync --script deployBeaconProxy.ts
 
 ::
 
-#### Expected Output
-
 Upon successful deployment, you'll receive output detailing the deployment process,
 including the contract addresses of the implementation
 contract, the admin contract, and the beacon
@@ -248,12 +228,14 @@ Beacon deployed at:  0x26410Bebf5Df7398DCBC5f00e9EBBa0Ddf471C72
 Beacon proxy deployed at:  0xD58FA9Fb362Abf69cFc68A3545fD227165DAc167
 ```
 
-## Step 5: Upgrading the `CrowdfundingCampaign` Contract
+## Upgrade the `CrowdfundingCampaign` Contract
 
 With our initial setup deployed, we're ready to upgrade our `CrowdfundingCampaign.sol`
 contract by incorporating a deadline for contributions. This addition not only brings
 a new layer of functionality but also introduces the concept of time-based conditions
 through a `modifier`.
+<!-- TODO: explain what a modifier is.
+I still don't know what it means from the following section. -->
 
 **Current Contract Overview:**
 
@@ -300,11 +282,7 @@ function extendDeadline(uint256 _newDuration) public {
 This upgrade not only introduces the element of time to the campaign but also
 exemplifies the use of `modifiers` for enforcing contract conditions.
 
-### Compile contract
-
 :display-partial{path = "/_partials/_compile-solidity-contracts"}
-
-#### Expected Output
 
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number
@@ -320,9 +298,13 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 ### Upgrading to `CrowdfundingCampaignV2`
 
-This section describes the initiating the upgrade to `CrowdfundingCampaignV2.sol` contract. Let's
+This section describes the upgrade process to `CrowdfundingCampaignV2.sol` contract. Let's
 start by reviewing the [`upgradeBeaconCrowdfundingCampaign.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts)
 script in the `deploy/upgrade-scripts` directory:
+
+Make sure to replace `YOUR_BEACON_ADDRESS_HERE` with the address of your deployed beacon and
+`YOUR_PROXY_ADDRESS_HERE` with the actual address of your
+deployed Beacon Proxy from the previous deployment step.
 
 ```typescript
 import { getWallet } from "../utils";
@@ -337,7 +319,7 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 
     // Placeholder for the deployed beacon address
     const beaconAddress = 'YOUR_BEACON_ADDRESS_HERE';
-    
+
     const contractV2Artifact = await deployer.loadArtifact('CrowdfundingCampaignV2');
 
     // Upgrade the proxy to V2
@@ -351,7 +333,7 @@ export default async function (hre: HardhatRuntimeEnvironment) {
         deployer.zkWallet,
         deployer.deploymentType,
     );
-    
+
     // Placeholder for the deployed beacon proxy address
     const proxyAddress = 'YOUR_PROXY_ADDRESS_HERE';
 
@@ -370,10 +352,6 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 }
 ```
 
-Ensure to replace `YOUR_BEACON_ADDRESS_HERE` with the address of your deployed beacon and
-`YOUR_PROXY_ADDRESS_HERE` with the actual address of your
-deployed Beacon Proxy from the previous deployment step.
-
 **Key Components:**
 
 - **`upgradeBeacon`**: This method from the `hre.zkUpgrades` module is used to update the beacon contract
@@ -384,7 +362,6 @@ variables or logic introduced in the `CrowdfundingCampaignV2`.
 Here, it's used to set a new campaign duration, seamlessly
 integrating new functionalities while retaining the existing contract state and funds.
 
-#### Upgrade contract
 Execute the test command corresponding to your package manager:
 
 ::code-group
@@ -407,8 +384,6 @@ bun run hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfunding
 
 ::
 
-#### Expected Output
-
 Upon successful deployment, you'll receive output detailing the upgrade process,
 including the new beacon address, and transaction hash:
 
@@ -419,7 +394,7 @@ CrowdfundingCampaignV2 initialized! 0x5f3131c77fcac19390f5f644a3ad1f0e7719dee4b4
 Fundraising goal: 100000000000000000
 ```
 
-## Step 6: Verify upgradable contracts
+## Verify upgradable contracts
 
 For the verification of our upgradable contracts, it's essential to utilize the proxy address that was specified in our
 upgrade script.
@@ -445,8 +420,6 @@ bun run hardhat verify <BEACON-PROXY-ADDRESS>
 ```
 
 ::
-
-#### Expected Output
 
 Upon successful verification, you'll receive output detailing the verification process:
 
