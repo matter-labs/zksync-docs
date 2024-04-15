@@ -6,6 +6,10 @@ Initializable
 initializable
 keccak
 merkle
+nomicfoundation
+nomiclabs
+uups
+satoshi
 Sepolia
 nomicfoundation
 NVMe

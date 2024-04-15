@@ -4,7 +4,11 @@ MatterLabs
 Zeek
 MatterLabs
 zkcast
+ZKEVM
 zkforge
+zksolc
+zkvyper
+zkout
 zkSync
 zksync
 zksync-cli
