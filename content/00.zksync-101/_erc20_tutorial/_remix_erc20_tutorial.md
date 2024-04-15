@@ -42,6 +42,8 @@ The most important features are:
 
 The Remix IDE is an open-source web and desktop application that supports Ethereum smart contract development and deployment, offering tools for writing, testing, debugging, and deploying smart contracts written in Solidity to EVM compatible protocols.
 
+:display-partial{path="/_partials/enable-remix-zksync-plugin"}
+
 Click the button below to open the project in Remix.
 
 <UButton
@@ -52,9 +54,7 @@ Click the button below to open the project in Remix.
     :trailing="false"
     to="https://atlaszk.com"
     target="_blank"
-    >Open in Remix</UButton>
-
-:display-partial{partial = "Enable the zkSync plugin in Remix"}
+    >Open smart contract in Remix</UButton>
 
 You can see the contract in the Remix code editor. 
 

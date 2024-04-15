@@ -49,7 +49,7 @@ Atlas is a browser-based IDE with an integrated AI assistant that allows you to 
     :trailing="false"
     to="https://app.atlaszk.com/projects?template=https://github.com/uF4No/zksync-erc20&open=/contracts/TestToken.sol&chainId=300"
     target="_blank"
-    >Open in Atlas</UButton>
+    >Open smart contract in Atlas</UButton>
 
 You can see the contract in the Atlas code editor. On the right side, make sure the selected network is “zkSync Sepolia tesnet“ and click on **"Deploy"** to trigger the smart contract compilation and deployment. 
 
