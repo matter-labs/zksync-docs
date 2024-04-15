@@ -4,12 +4,12 @@ description: Discover community plugins for Hardhat that work on zkSync Era.
 ---
 
 The following plugins were created by the community and tested on zkSync Era.
-Feel free to suggest new plugins by :external-link{text="creating a issue(feat request) at this page" href="https://github.com/matter-labs/hardhat-zksync/issues/new?assignees=&labels=feat&projects=&template=feature_report.md&title="}.
+Feel free to suggest new plugins by :external-link{text="creating a issue(feat request) at this page" href="%%zk_git_repo_hardhat-zksync%%/issues/new?assignees=&labels=feat&projects=&template=feature_report.md&title="}.
 
 ## Supported plugins
 
 ::callout{icon="i-heroicons-information-circle" color="blue"}
-Here is :external-link{text="a template project configured with all plugins mentioned below" href="https://github.com/matter-labs/era-hardhat-with-plugins"}.
+Here is :external-link{text="a template project configured with all plugins mentioned below" href="%%zk_git_repo_era-hardhat-with-plugins%%"}.
 You can use it as a starting template for your projects.
 ::
 

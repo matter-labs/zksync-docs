@@ -15,6 +15,11 @@
   // 	],
   // 	"description": "Log output to console"
   // }
+  "ZK Snippet": {
+    "scope": "markdown",
+    "prefix": "@zk",
+    "body": ["%%zk_$1%%$0"],
+  },
   "External Link": {
     "scope": "markdown",
     "prefix": "@exlink",

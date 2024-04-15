@@ -19,5 +19,21 @@
     "chain_id": 280,
     "currency_symbol": "ETH",
     "block_explorer_url": "https://sepolia.explorer.zksync.io"
+  },
+  "git_repo": {
+    "block-explorer": "https://github.com/matter-labs/block-explorer",
+    "era-compiler-solidity": "https://github.com/matter-labs/era-compiler-solidity",
+    "era-hardhat-with-plugins": "https://github.com/matter-labs/era-hardhat-with-plugins",
+    "era-test-node": "https://github.com/matter-labs/era-test-node",
+    "era-solidity": "https://github.com/matter-labs/era-solidity",
+    "foundry-zksync": "https://github.com/matter-labs/foundry-zksync",
+    "hardhat-zksync": "https://github.com/matter-labs/hardhat-zksync",
+    "zksolc-bin": "https://github.com/matter-labs/zksolc-bin",
+    "zksync-cli": "https://github.com/matter-labs/zksync-cli",
+    "zksync-contract-templates": "https://github.com/matter-labs/zksync-contract-templates",
+    "zksync-developers": "https://github.com/zkSync-Community-Hub/zksync-developers",
+    "zksync-frontend-templates": "https://github.com/matter-labs/zksync-frontend-templates",
+    "zksync-scripting-templates": "https://github.com/matter-labs/zksync-scripting-templates",
+    "zkvyper-bin": "https://github.com/matter-labs/zkvyper-bin"
   }
 }
