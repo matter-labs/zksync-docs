@@ -2,7 +2,14 @@
 title: Hardhat | Contract Testing
 ---
 
-:display-partial{path = "/_partials/_environment-setup-with-foundry"}
+<!-- TODO: @dutterbutter update to simplify the project init step -->
+Run the following command in your terminal to initialize the Foundry project.
+
+```sh
+git clone https://github.com/dutterbutter/zksync-foundry-quickstart-guide
+cd zksync-foundry-quickstart-guide
+git checkout db/contract-testing
+```
 
 ---
 

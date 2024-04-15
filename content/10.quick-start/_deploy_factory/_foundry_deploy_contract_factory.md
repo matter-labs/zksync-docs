@@ -1,8 +1,14 @@
 ---
 title: Foundry | Deploy Contract Factory
 ---
+<!-- TODO: @dutterbutter update to simplify the project init step -->
+Run the following command in your terminal to initialize the Foundry project.
 
-:display-partial{path = "/_partials/_environment-setup-with-foundry"}
+```sh
+git clone https://github.com/dutterbutter/zksync-foundry-quickstart-guide
+cd zksync-foundry-quickstart-guide
+git checkout db/deploy-contract-factory
+```
 
 ## Set up your wallet
 

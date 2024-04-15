@@ -9,16 +9,16 @@ To compile the contracts in a project, run the following command:
 
 ::code-group
 
+```bash [npm]
+npm run compile
+```
+
 ```bash [yarn]
 yarn compile
 ```
 
 ```bash [pnpm]
 pnpm run compile
-```
-
-```bash [npm]
-npm run compile
 ```
 
 ```bash [bun]

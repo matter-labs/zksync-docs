@@ -17,16 +17,16 @@ Install the dependencies:
 
 ::code-group
 
+```bash [npm]
+npm install
+```
+
 ```bash [yarn]
 yarn install
 ```
 
 ```bash [pnpm]
 pnpm install
-```
-
-```bash [npm]
-npm install
 ```
 
 ```bash [bun]
@@ -208,6 +208,12 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 
 ::code-group
 
+```bash [npm]
+npm run hardhat deploy-zksync --script deployGaslessPaymaster.ts
+# To deploy the contract on local in-memory node:
+# npm run hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
+```
+
 ```bash [yarn]
 yarn hardhat deploy-zksync --script deployGaslessPaymaster.ts
 # To deploy the contract on local in-memory node:
@@ -218,12 +224,6 @@ yarn hardhat deploy-zksync --script deployGaslessPaymaster.ts
 pnpm run hardhat deploy-zksync --script deployGaslessPaymaster.ts
 # To deploy the contract on local in-memory node:
 # pnpm run hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
-```
-
-```bash [npm]
-npm run hardhat deploy-zksync --script deployGaslessPaymaster.ts
-# To deploy the contract on local in-memory node:
-# npm run hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
 ```
 
 ```bash [bun]
@@ -352,16 +352,16 @@ Execute the command corresponding to your package manager:
 
 ::code-group
 
+```bash [npm]
+npm run hardhat deploy-zksync --script interact/interactWithPaymaster.ts
+```
+
 ```bash [yarn]
 yarn hardhat deploy-zksync --script interact/interactWithPaymaster.ts
 ```
 
 ```bash [pnpm]
 pnpm run hardhat deploy-zksync --script interact/interactWithPaymaster.ts
-```
-
-```bash [npm]
-npm run hardhat deploy-zksync --script interact/interactWithPaymaster.ts
 ```
 
 ```bash [bun]

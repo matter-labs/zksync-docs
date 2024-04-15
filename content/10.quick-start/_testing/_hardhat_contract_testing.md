@@ -15,16 +15,16 @@ Run the following command in your terminal to initialize the project.
 
   ::code-group
 
+  ```bash [npm]
+  npm install
+  ```
+
   ```bash [yarn]
   yarn install
   ```
 
   ```bash [pnpm]
   pnpm install
-  ```
-
-  ```bash [npm]
-  npm install
   ```
 
   ```bash [bun]
@@ -226,16 +226,16 @@ Execute the test command corresponding to your package manager:
 
 ::code-group
 
+```bash [npm]
+npm run hardhat test --network hardhat
+```
+
 ```bash [yarn]
 yarn hardhat test --network hardhat
 ```
 
 ```bash [pnpm]
 pnpm run hardhat test --network hardhat
-```
-
-```bash [npm]
-npm run hardhat test --network hardhat
 ```
 
 ```bash [bun]

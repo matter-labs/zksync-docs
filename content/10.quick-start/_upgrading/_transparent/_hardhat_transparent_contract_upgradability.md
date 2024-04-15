@@ -15,16 +15,16 @@ Install the dependencies:
 
 ::code-group
 
+```bash [npm]
+npm install
+```
+
 ```bash [yarn]
 yarn install
 ```
 
 ```bash [pnpm]
 pnpm install
-```
-
-```bash [npm]
-npm install
 ```
 
 ```bash [bun]
@@ -118,16 +118,16 @@ To compile the contracts in the project, run the following command:
 
 ::code-group
 
+```bash [npm]
+npm run compile
+```
+
 ```bash [yarn]
 yarn compile
 ```
 
 ```bash [pnpm]
 pnpm run compile
-```
-
-```bash [npm]
-npm run compile
 ```
 
 ```bash [bun]
@@ -188,6 +188,12 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 
 ::code-group
 
+```bash [npm]
+npm run hardhat deploy-zksync --script deployTransparentProxy.ts
+# To deploy the contract on local in-memory node:
+# npm run hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
+```
+
 ```bash [yarn]
 yarn hardhat deploy-zksync --script deployTransparentProxy.ts
 # To deploy the contract on local in-memory node:
@@ -198,12 +204,6 @@ yarn hardhat deploy-zksync --script deployTransparentProxy.ts
 pnpm run hardhat deploy-zksync --script deployTransparentProxy.ts
 # To deploy the contract on local in-memory node:
 # pnpm run hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
-```
-
-```bash [npm]
-npm run hardhat deploy-zksync --script deployTransparentProxy.ts
-# To deploy the contract on local in-memory node:
-# npm run hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
 ```
 
 ```bash [bun]
@@ -351,16 +351,16 @@ Execute the command corresponding to your package manager:
 
 ::code-group
 
+```bash [npm]
+npm run hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
+```
+
 ```bash [yarn]
 yarn hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
 ```
 
 ```bash [pnpm]
 pnpm run hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
-```
-
-```bash [npm]
-npm run hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
 ```
 
 ```bash [bun]
@@ -392,16 +392,16 @@ Replace <PROXY_ADDRESS> with the actual proxy address from your deployment.
 
 ::code-group
 
+```bash [npm]
+npm run hardhat verify <PROXY-ADDRESS>
+```
+
 ```bash [yarn]
 yarn hardhat verify <PROXY-ADDRESS>
 ```
 
 ```bash [pnpm]
 pnpm run hardhat verify <PROXY-ADDRESS>
-```
-
-```bash [npm]
-npm run hardhat verify <PROXY-ADDRESS>
 ```
 
 ```bash [bun]
