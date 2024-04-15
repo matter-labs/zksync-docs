@@ -32,9 +32,13 @@ npm install
 bun install
 ```
 
+::
+
 ## Set up your wallet
 
 :display-partial{path="quick-start/_partials/_setup-wallet"}
+
+---
 
 ## Adapt the `CrowdfundingCampaign.sol` for UUPS Upgradability
 
@@ -108,7 +112,9 @@ reinforcing the contract's security.
 By adopting the UUPS pattern, the [`CrowdfundingCampaign_UUPS`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/contracts/CrowdfundingCampaign_UUPS.sol)
 contract becomes efficiently upgradeable, offering enhanced security and reduced gas costs, setting a solid foundation for future enhancements.
 
-## Deploy the `CrowdfundingCampaign` contract
+---
+
+## Compile the `CrowdfundingCampaign_UUPS` contract
 
 Now that the `CrowdfundingCampaign_UUPS` contract is adapted for contract upgradability, let's proceed to deploy
 the contract so we may upgrade it in later steps. Since we've made changes to our contract we will
@@ -148,10 +154,9 @@ Successfully compiled 4 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-### Deploy
+## Deploy the updated contract
 
-This section outlines the steps to deploy the `CrowdfundingCampaign_UUPS` contract that we recently updated for
-UUPS upgradability. The deployment script is located at [`/deploy/deployUUPS.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/deployUUPS.ts).
+The script to deploy the `CrowdfundingCampaign_UUPS` contract is located at [`/deploy/deployUUPS.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/deployUUPS.ts).
 
 ```typescript
 import { getWallet } from "./utils";
@@ -230,7 +235,9 @@ Implementation contract was deployed to 0xF0De77041F3cF6D9C905A10ce59858b17E57E3
 UUPS proxy was deployed to 0x56882194aAe8E4B6d18cD84e4D7B0F807e0100Cb
 ```
 
-## Upgrade the `CrowdfundingCampaign_UUPS` Contract
+---
+
+## Upgrade to the `CrowdfundingCampaignV2_UUPS` Contract
 
 With our initial setup deployed, we're ready to upgrade our `CrowdfundingCampaign_UUPS.sol`
 contract by incorporating a deadline for contributions. This addition not only brings
@@ -281,7 +288,7 @@ function extendDeadline(uint256 _newDuration) public {
 This upgrade not only introduces the element of time to the campaign but also
 exemplifies the use of `modifiers` for enforcing contract conditions.
 
-### Compile contract
+### Compile the `CrowdfundingCampaignV2_UUPS` contract
 
 :display-partial{path = "/_partials/_compile-solidity-contracts"}
 
@@ -297,7 +304,7 @@ Successfully compiled 4 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-### Upgrading to `CrowdfundingCampaignV2_UUPS`
+### Upgrade to `CrowdfundingCampaignV2_UUPS`
 
 This section describes the initiating the upgrade to `CrowdfundingCampaignV2_UUPS.sol` contract.
 Let's start by reviewing the [`upgradeUUPSCrowdfundingCampaign.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts)
@@ -378,6 +385,8 @@ Successfully upgraded crowdfundingCampaign_UUPS to crowdfundingCampaignV2_UUPS
 CrowdfundingCampaignV2_UUPS initialized! 0xab959f588b64dc6dee1e94d5fa0da2ae205c7438cf097d26d3ba73690e2b09e8
 ```
 
+---
+
 ## Verify upgradable contracts
 
 To verify our upgradable contracts we need to the proxy address we previously used in our upgrade script.
@@ -402,8 +411,6 @@ bun run hardhat verify <PROXY-ADDRESS>
 ```
 
 ::
-
-#### Expected Output
 
 Upon successful verification, you'll receive output detailing the verification process:
 

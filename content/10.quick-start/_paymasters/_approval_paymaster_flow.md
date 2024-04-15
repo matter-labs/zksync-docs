@@ -40,7 +40,9 @@ bun install
 
 :display-partial{path = "/quick-start/_partials/_setup-wallet"}
 
-## Understanding the ApprovalPaymaster contract
+---
+
+## Understanding the `ApprovalPaymaster` contract
 
 Let's start by reviewing the `ApprovalPaymaster.sol` contract in the `contracts/` directory:
 
@@ -138,7 +140,9 @@ due to out-of-gas errors. It receives several parameters, including the transact
 - **`onlyBootloader`** Modifier: Ensures that certain methods are
 exclusively callable by the system's bootloader, adding an extra layer of security and control.
 
-## Deploy ApprovalPaymaster contract
+---
+
+## Compile and deploy the `ApprovalPaymaster` contract
 
 :display-partial{path = "/_partials/_compile-solidity-contracts"}
 
@@ -154,12 +158,7 @@ Successfully compiled 1 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-### Deploy
-
-This section outlines the steps to deploy the `GaslessPaymaster` contract. Recall our initial deployment of the `CrowdfundingCampaign` contract.
-Deploying the `GaslessPaymaster` contract is the same.
-
-The deployment script is located at `/deploy/deploy.ts`.
+The script to deploy the `GaslessPaymaster` contract is located at `/deploy/deploy.ts`.
 
 ```typescript
 import { deployContract, getWallet, getProvider } from "./utils";
@@ -250,83 +249,91 @@ Contract successfully verified on zkSync block explorer!
 Paymaster ETH balance is now 5000000000000000
 ```
 
-## Interact with the ApprovalPaymaster contract
+---
 
-This section guides we'll navigate through the steps to interact with the `GaslessPaymaster` contract,
-using it to cover transaction fees for our operation.
+## Interact with the `ApprovalPaymaster` contract
+
+This section will navigate you through the steps to interact with the `GaslessPaymaster` contract,
+using it to cover transaction fees for your operation.
 
 The interaction script is situated in the `/deploy/interact/` directory, named `interactWithPaymaster.ts`.
 
 Ensure the `CONTRACT_ADDRESS` and `PAYMASTER_ADDRESS` variables are set to your deployed contract and paymaster addresses, respectively.
 
-```typescript
-import * as hre from "hardhat";
-import { getWallet, getProvider } from "../utils";
-import { ethers } from "ethers";
-import { utils } from "zksync-ethers";
+::drop-panel
+  ::panel{label="interactWithPaymaster.ts"}
 
-// Address of the contract to interact with
-const CONTRACT_ADDRESS = "YOUR-CONTRACT-ADDRESS";
-const PAYMASTER_ADDRESS = "YOUR-PAYMASTER-ADDRESS";
-if (!CONTRACT_ADDRESS || !PAYMASTER_ADDRESS)
-    throw new Error("Contract and Paymaster addresses are required.");
+  ```typescript
+  import * as hre from "hardhat";
+  import { getWallet, getProvider } from "../utils";
+  import { ethers } from "ethers";
+  import { utils } from "zksync-ethers";
 
-export default async function() {
-  console.log(`Running script to interact with contract ${CONTRACT_ADDRESS} using paymaster ${PAYMASTER_ADDRESS}`);
+  // Address of the contract to interact with
+  const CONTRACT_ADDRESS = "YOUR-CONTRACT-ADDRESS";
+  const PAYMASTER_ADDRESS = "YOUR-PAYMASTER-ADDRESS";
+  if (!CONTRACT_ADDRESS || !PAYMASTER_ADDRESS)
+      throw new Error("Contract and Paymaster addresses are required.");
 
-  // Load compiled contract info
-  const contractArtifact = await hre.artifacts.readArtifact(
-    "CrowdfundingCampaignV2"
-  );
+  export default async function() {
+    console.log(`Running script to interact with contract ${CONTRACT_ADDRESS} using paymaster ${PAYMASTER_ADDRESS}`);
 
-  // Initialize contract instance for interaction
-  const contract = new ethers.Contract(
-    CONTRACT_ADDRESS,
-    contractArtifact.abi,
-    getWallet()
-  );
+    // Load compiled contract info
+    const contractArtifact = await hre.artifacts.readArtifact(
+      "CrowdfundingCampaignV2"
+    );
 
-  const provider = getProvider();
-  let balanceBeforeTransaction = await provider.getBalance(getWallet().address);
-  console.log(`Wallet balance before contribution: ${ethers.formatEther(balanceBeforeTransaction)} ETH`);
+    // Initialize contract instance for interaction
+    const contract = new ethers.Contract(
+      CONTRACT_ADDRESS,
+      contractArtifact.abi,
+      getWallet()
+    );
 
-  const contributionAmount = ethers.parseEther("0.01");
-  // Get paymaster params
-  const paymasterParams = utils.getPaymasterParams(PAYMASTER_ADDRESS, {
-    type: "General",
-    innerInput: new Uint8Array(),
-  });
+    const provider = getProvider();
+    let balanceBeforeTransaction = await provider.getBalance(getWallet().address);
+    console.log(`Wallet balance before contribution: ${ethers.formatEther(balanceBeforeTransaction)} ETH`);
 
-  const gasLimit = await contract.contribute.estimateGas({
-    value: contributionAmount,
-    customData: {
-      gasPerPubdata: utils.DEFAULT_GAS_PER_PUBDATA_LIMIT,
-      paymasterParams: paymasterParams,
-    },
-  });
+    const contributionAmount = ethers.parseEther("0.01");
+    // Get paymaster params
+    const paymasterParams = utils.getPaymasterParams(PAYMASTER_ADDRESS, {
+      type: "General",
+      innerInput: new Uint8Array(),
+    });
 
-  const transaction = await contract.contribute({
-    value: contributionAmount,
-    maxPriorityFeePerGas: 0n,
-    maxFeePerGas: await provider.getGasPrice(),
-    gasLimit,
-    // Pass the paymaster params as custom data
-    customData: {
-      gasPerPubdata: utils.DEFAULT_GAS_PER_PUBDATA_LIMIT,
-      paymasterParams,
-    },
-  });
-  console.log(`Transaction hash: ${transaction.hash}`);
+    const gasLimit = await contract.contribute.estimateGas({
+      value: contributionAmount,
+      customData: {
+        gasPerPubdata: utils.DEFAULT_GAS_PER_PUBDATA_LIMIT,
+        paymasterParams: paymasterParams,
+      },
+    });
 
-  await transaction.wait();
+    const transaction = await contract.contribute({
+      value: contributionAmount,
+      maxPriorityFeePerGas: 0n,
+      maxFeePerGas: await provider.getGasPrice(),
+      gasLimit,
+      // Pass the paymaster params as custom data
+      customData: {
+        gasPerPubdata: utils.DEFAULT_GAS_PER_PUBDATA_LIMIT,
+        paymasterParams,
+      },
+    });
+    console.log(`Transaction hash: ${transaction.hash}`);
 
-  let balanceAfterTransaction = await provider.getBalance(getWallet().address);
-  // Check the wallet balance after the transaction
-  // We only pay the contribution amount, so the balance should be less than before
-  // Gas fees are covered by the paymaster
-  console.log(`Wallet balance after contribution: ${ethers.formatEther(balanceAfterTransaction)} ETH`);
-}
-```
+    await transaction.wait();
+
+    let balanceAfterTransaction = await provider.getBalance(getWallet().address);
+    // Check the wallet balance after the transaction
+    // We only pay the contribution amount, so the balance should be less than before
+    // Gas fees are covered by the paymaster
+    console.log(`Wallet balance after contribution: ${ethers.formatEther(balanceAfterTransaction)} ETH`);
+  }
+  ```
+
+  ::
+::
 
 **Key Components:**
 
@@ -337,8 +344,6 @@ used and the type of paymaster flow, which in this case is `General`.
 - **Transaction with Paymaster:** Demonstrated by the `contribute` function call, the script shows how to include paymaster parameters
 in transactions. This allows the paymaster to cover transaction
 fees, providing a seamless experience for users.
-
-#### Use GaslessPaymaster
 
 Execute the command corresponding to your package manager:
 

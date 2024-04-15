@@ -33,9 +33,13 @@ bun install
 
 ::
 
+---
+
 ## Set up your wallet
 
 :display-partial{path = "/quick-start/_partials/_setup-wallet"}
+
+---
 
 ## Adapt `CrowdfundingCampaign.sol` contract for upgradability
 
@@ -102,6 +106,8 @@ allowing for future upgrades without losing the contract's state.
 
 This restructuring prepares the `CrowdfundingCampaign` contract for upgradability.
 
+---
+
 ## Deploy the `CrowdfundingCampaign` contract
 
 Now that the `CrowdfundingCampaign` contract is adapted for contract upgradability, let's proceed to deploy
@@ -142,9 +148,6 @@ Successfully compiled 3 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-### Deploy
-
-This section outlines the steps to deploy the `CrowdfundingCampaign` contract that we recently updated for upgradability.
 The deployment script is located at [`/deploy/deployTransparentProxy.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/deployTransparentProxy.ts).
 
 ```typescript
@@ -222,6 +225,8 @@ Admin was deployed to 0x05198D9f93cBDfa3e332776019115512d8e0c809
 Transparent proxy was deployed to 0x68E8533acE01019CB8D07Eca822369D5De71b74D
 ```
 
+---
+
 ## Upgrade the `CrowdfundingCampaign` Contract
 
 With our initial setup deployed, we're ready to update our `CrowdfundingCampaign.sol`
@@ -272,6 +277,7 @@ function extendDeadline(uint256 _newDuration) public {
 
 This upgrade not only introduces the element of time to the campaign but also
 exemplifies the use of `modifiers` for enforcing contract conditions.
+<!-- TODO: maybe make this a callout and link to what modifiers are. -->
 
 ### Compile contract
 :display-partial{path = "/_partials/_compile-solidity-contracts"}
@@ -288,14 +294,14 @@ Successfully compiled 4 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-### Upgrading to `CrowdfundingCampaignV2`
+### Upgrade to `CrowdfundingCampaignV2`
 
 This section guides you through upgrading the `CrowdfundingCampaign` contract
 to its second version, `CrowdfundingCampaignV2`.
 Review the [`upgradeCrowdfundingCampaign.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/upgrade-scripts/upgradeCrowdfundingCampaign.ts)
 script located within the `deploy/upgrade-scripts` directory to begin.
 
-Ensure to replace `YOUR_PROXY_ADDRESS_HERE` with the actual address of your
+Replace `YOUR_PROXY_ADDRESS_HERE` with the actual address of your
 deployed Transparent Proxy from the previous deployment step.
 
 ```typescript
@@ -372,6 +378,8 @@ Successfully upgraded crowdfundingCampaign to crowdfundingCampaignV2
 CrowdfundingCampaignV2 initialized! 0x5adfe360187195d98d3603a82a20ffe7304cd4dec030d1bdf456fa1690879668
 Fundraising goal: 100000000000000000
 ```
+
+---
 
 ## Verify upgradable contracts
 

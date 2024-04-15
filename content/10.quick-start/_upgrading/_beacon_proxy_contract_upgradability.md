@@ -19,6 +19,8 @@ the logic contract address in the beacon, streamlining the upgrade process. It p
 the state and balance of each proxy contract, offering an efficient way to roll out new
 features or fixes while maintaining a uniform interface for users.
 
+---
+
 ::content-switcher
 ---
 items: [{

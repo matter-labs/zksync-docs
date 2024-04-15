@@ -39,7 +39,9 @@ bun install
 
 :display-partial{path = "/quick-start/_partials/_setup-wallet"}
 
-## Understanding GeneralPaymaster contract
+---
+
+## Understanding the `GeneralPaymaster` contract
 
 Let's start by reviewing the `GeneralPaymaster.sol` contract in the `contracts/` directory:
 
@@ -141,7 +143,9 @@ due to out-of-gas errors. It receives several parameters, including the transact
 - **`onlyBootloader`** Modifier: Ensures that certain methods are
 exclusively callable by the system's bootloader, adding an extra layer of security and control.
 
-## Deploy the GeneralPaymaster contract
+---
+
+## Compile and deploy the `GeneralPaymaster` contract
 
 :display-partial{path = "/_partials/_compile-solidity-contracts"}
 
@@ -157,12 +161,7 @@ Successfully compiled 4 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-### Deploy
-
-This section outlines the steps to deploy the `GaslessPaymaster` contract. Recall our initial deployment `CrowdfundingCampaign` contract.
-Deploying the `GaslessPaymaster` contract is the same.
-
-The deployment script is located at `/deploy/deploy.ts`.
+The script to deploy the `GaslessPaymaster` is located at `/deploy/deploy.ts`.
 
 ```typescript
 import { deployContract, getWallet, getProvider } from "./utils";
@@ -253,10 +252,12 @@ Contract successfully verified on zkSync block explorer!
 Paymaster ETH balance is now 5000000000000000
 ```
 
+---
+
 ## Interact with the GeneralPaymaster contract
 
-This section guides we'll navigate through the steps to interact with the `GeneralPaymaster` contract,
-using it to cover transaction fees for our operation.
+This section will navigate you through the steps to interact with the `GeneralPaymaster` contract,
+using it to cover transaction fees for your operation.
 
 The interaction script is situated in the `/deploy/interact/` directory, named `interactWithPaymaster.ts`.
 

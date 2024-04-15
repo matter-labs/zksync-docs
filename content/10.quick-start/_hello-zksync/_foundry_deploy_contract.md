@@ -8,9 +8,9 @@ title: Foundry | Deploy Contract
 
 :display-partial{path = "/quick-start/_partials/_setup-wallet"}
 
-## Deploy your first contract
+## Compile your first contract
 
-With our environment and wallet configured, we're set to deploy our first contract. This guide
+This guide
 introduces a crowdfunding campaign contract aimed at supporting Zeek's inventive ventures.
 
 Let's start by reviewing the starter contract in the [`src/` directory](https://github.com/dutterbutter/zksync-foundry-quickstart-guide/blob/main/src/Crowdfund.sol).
@@ -77,8 +77,6 @@ Owned and deployed with a set funding goal, it features:
 - The `contribute` method to log funds, triggering `ContributionReceived` and `GoalReached` events.
 - The `withdrawFunds` method, allowing the owner to collect accumulated funds post-goal achievement.
 
-### Compile contract
-
 Smart contracts deployed to zkSync must be compiled using our custom compiler.
 For this particular guide we are making use of `zksolc`.
 
@@ -103,9 +101,8 @@ Compiling contracts for zkSync Era with zksolc v1.4.0
 The compiled zkEVM artifacts will be located in the `/zkout` folder, and the solc artifacts will be
 located in the `/out` folder.
 
-### Deploy
+### Deploy the CrowdfundingCampaign contract
 
-This section outlines the steps to deploy the `CrowdfundingCampaign` contract.
 The deployment script is located at [`/script/Deploy.s.sol`](https://github.com/dutterbutter/zksync-foundry-quickstart-guide/blob/main/script/Deploy.s.sol).
 
 ```solidity
@@ -134,8 +131,6 @@ contract DeployCrowdfundContract is Script {
 a single constructor argument, `fundingGoalInWei`.
 - **Broadcast Method:** The deployment uses `vm.startBroadcast(deployerPrivateKey)` to begin
 the transaction broadcast and `vm.stopBroadcast()` to end it, facilitating the actual deployment of the contract on the blockchain.
-
-#### Deploy contract
 
 Execute the deployment command.
 

@@ -3,9 +3,9 @@ title: Compile Solidity Contract
 ---
 
 Smart contracts deployed to zkSync must be compiled using our custom compiler.
-For this particular guide we are making use of `zksolc`.
+`zksolc` is the compiler used for Solidity.
 
-To compile the contracts in the project, run the following command:
+To compile the contracts in a project, run the following command:
 
 ::code-group
 

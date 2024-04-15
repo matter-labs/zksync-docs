@@ -33,7 +33,9 @@ Run the following command in your terminal to initialize the project.
 
   ::
 
-### Local Era Node
+---
+
+## Local Era Node
 
 While setting up a local development environment was previously optional, testing contracts requires
 a more structured setup. We'll use `hardhat-zksync` to run tests against an In-memory node,
@@ -64,7 +66,7 @@ toolkit available for your project.
 import "@nomicfoundation/hardhat-chai-matchers";
 ```
 
-## Test Wallet Configuration
+### Test Wallet Configuration
 
 For testing purposes, we use pre-configured, well-funded wallets. During this testing guide, we will use the following pre-configured wallet,
 which eliminates the need for manual funding or setup:
@@ -74,7 +76,9 @@ which eliminates the need for manual funding or setup:
 
 This streamlined approach allows us to focus on writing and running effective tests.
 
-## Test `CrowdfundingCampaign` contract
+---
+
+## Compile the `CrowdfundingCampaign` contract
 
 Now that our setup is complete, it's time to focus on the core of this
 guide - testing our `CrowdfundingCampaign.sol` contract. Here's a quick
@@ -144,8 +148,6 @@ consider writing additional tests for the `withdrawFunds`, `getTotalFundsRaised`
 and `getFundingGoal` methods, expanding your test coverage and reinforcing the
 reliability of the contract.
 
-### Compile contract
-
 :display-partial{path = "/_partials/_compile-solidity-contracts"}
 
 Upon successful compilation, you'll receive output detailing the
@@ -160,7 +162,9 @@ Successfully compiled 2 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-### Testing
+---
+
+## Test `CrowdfundingCampaign`
 
 This section describes testing the `CrowdfundingCampaign.sol` contract. Let's
 start by reviewing the tests for `CrowdfundingCampaign.sol` contract provided
@@ -218,7 +222,6 @@ multiple addresses and update the `totalFundsRaised` accordingly.
 - **Goal Achievement**: Checks for the `GoalReached` event emission upon meeting the funding goal,
 confirming the contract's responsiveness to achieving its set target.
 
-#### Run the tests
 Execute the test command corresponding to your package manager:
 
 ::code-group

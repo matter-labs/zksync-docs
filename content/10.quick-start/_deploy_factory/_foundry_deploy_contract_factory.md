@@ -8,10 +8,11 @@ title: Foundry | Deploy Contract Factory
 
 :display-partial{path="quick-start/_partials/_setup-wallet"}
 
+---
+
 ## Review the CrowdfundingFactory contract
 
-With our environment and wallet configured, we're set to review the `CrowdfundingFactory.sol`
-contract that is provided under the [`/src` directory](https://github.com/dutterbutter/zksync-foundry-quickstart-guide/blob/db/deploy-contract-factory/src/CrowdfundFactory.sol).
+The `CrowdfundingFactory.sol` we will compile and deploy is provided under the [`/src` directory](https://github.com/dutterbutter/zksync-foundry-quickstart-guide/blob/db/deploy-contract-factory/src/CrowdfundFactory.sol).
 
 The `CrowdfundingFactory.sol`contract will be used to deploy multiple instances of
 the `CrowdfundingCampaign.sol` contract from the previous guide.
@@ -62,7 +63,6 @@ making it efficient to launch and manage multiple campaigns.
 
 ### Compile contract
 
-<!-- :display-partial{path = "/_partials/_compile-solidity-contracts-foundry"} -->
 Smart contracts deployed to zkSync must be compiled using our custom compiler.
 For this particular guide we are making use of `zksolc`.
 
@@ -71,8 +71,6 @@ To compile the contracts in the project, run the following command:
 ```bash
 forge build --zksync
 ```
-
-#### Expected Output
 
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number
@@ -88,6 +86,8 @@ Compiling contracts for zkSync Era with zksolc v1.4.0
 
 The compiled zkEVM artifacts will be located in the `/zkout` folder, and the solc
 artifacts will be located in the `/out` folder.
+
+---
 
 ## Deploy a CrowdfundingCampaign with CrowdfundingFactory
 

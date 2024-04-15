@@ -18,9 +18,7 @@ while keeping the original proxy intact, the contract's state and balance are pr
 This facilitates improvements or bug fixes without changing the proxy, maintaining a
 consistent user interface.
 
-## Framework selection
-
-Select the framework you want to get started using zkSync Era with.
+---
 
 ::content-switcher
 ---

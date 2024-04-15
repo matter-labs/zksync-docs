@@ -4,6 +4,8 @@ title: Hardhat | Contract Testing
 
 :display-partial{path = "/_partials/_environment-setup-with-foundry"}
 
+---
+
 ## Test the `CrowdfundingCampaign` contract
 
 Now that our setup is complete, it's time to focus on the core of this
@@ -176,8 +178,6 @@ contributions from various addresses, ensuring accurate tracking of the total fu
 - **Event Emission Upon Goal Achievement**: Utilizes Foundry's `vm.expectEmit` to
 anticipate the `GoalReached` event when the funding goal is met, validating the
 contract's event logic and state transitions.
-
-#### Run the tests
 
 Execute the test command:
 

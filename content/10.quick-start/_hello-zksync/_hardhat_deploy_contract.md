@@ -38,9 +38,8 @@ bun install
 
 :display-partial{path="quick-start/_partials/_setup-wallet"}
 
-## Deploy the CrowdfundingCampaign.sol contract
+## Compile the CrowdfundingCampaign.sol contract
 
-With our environment and wallet configured, we're set to deploy our first contract.
 This guide introduces a crowdfunding campaign contract aimed at supporting Zeek's inventive ventures.
 Let's start by reviewing the starter contract in the [`contracts/` directory](https://github.com/dutterbutter/zksync-quickstart-guide/blob/main/contracts/Crowdfund.sol).
 
@@ -106,11 +105,7 @@ This contract features:
 - The `contribute` method to log funds, triggering `ContributionReceived` and `GoalReached` events.
 - The `withdrawFunds` method, allowing the owner to collect accumulated funds post-goal achievement.
 
-### Compile contract
-
 :display-partial{path = "/_partials/_compile-solidity-contracts"}
-
-#### Expected Output
 
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number
@@ -124,9 +119,8 @@ Successfully compiled 1 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-### Deploy
+## Deploy the contract
 
-This section outlines the steps to deploy the `CrowdfundingCampaign` contract.
 The deployment script is located at [`/deploy/deploy.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/main/deploy/deploy.ts).
 
 ```typescript
@@ -148,8 +142,7 @@ export default async function () {
 - **constructorArguments:** Sets initialization parameters for the contract. In this case,
 the fundraising goal, converted from ether to `wei` to match Solidity's `uint256` type.
 
-#### Deploy contract
-Execute the deployment command corresponding to your package manager. The default command
+1. Execute the deployment command corresponding to your package manager. The default command
 deploys to the configured network in your Hardhat setup. For local deployment, append
 `--network inMemoryNode` to deploy to the local in-memory node running.
 
@@ -180,8 +173,6 @@ bun run hardhat deploy-zksync --script deploy.ts
 ```
 
 ::
-
-#### Expected Output
 
 Upon successful deployment, you'll receive output detailing the deployment process,
 including the contract address, source, and encoded constructor arguments:

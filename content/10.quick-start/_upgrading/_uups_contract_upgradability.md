@@ -20,6 +20,8 @@ implementation contract's built-in upgrade mechanism ensures only authorized upg
 The contract's state remains intact across upgrades, facilitating continuous improvement
 with a stable user experience.
 
+---
+
 ::content-switcher
 ---
 items: [{

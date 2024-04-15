@@ -38,14 +38,14 @@ bun install
 
 :display-partial{path = "/quick-start/_partials/_setup-wallet"}
 
+---
+
 ## Adapt `CrowdfundingCampaign.sol` contract for upgradability
 
 To adapt our `CrowdfundingCampaign.sol` contract for upgradability, we are
 transitioning to a proxy pattern. This approach separates the
 contract's logic (which can be upgraded) from its persistent state
 (stored in the proxy).
-
-### Refactoring for Proxy Compatibility
 
 In the `contracts/` directory you'll observe the refactored the [`CrowdfundingCampaign` contract](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/contracts/CrowdfundingCampaign.sol)
 which initializes state variables through an
@@ -102,7 +102,9 @@ allowing for future upgrades without losing the contract's state.
 
 This restructuring prepares the `CrowdfundingCampaign` contract for upgradeability.
 
-## Deploy the `CrowdfundingCampaign` contract
+---
+
+## Compile the updated `CrowdfundingCampaign` contract
 
 Now that the `CrowdfundingCampaign` contract is adapted for contract upgradability, let's proceed to deploy
 the contract so we may upgrade it in later steps. Since we've made changes to our contract we will
@@ -142,7 +144,7 @@ Successfully compiled 3 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-### Deploy
+## Deploy the beacon and contract
 
 You'll find the necessary deployment script at [`/deploy/deployBeaconProxy.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/deployBeaconProxy.ts).
 
@@ -228,7 +230,9 @@ Beacon deployed at:  0x26410Bebf5Df7398DCBC5f00e9EBBa0Ddf471C72
 Beacon proxy deployed at:  0xD58FA9Fb362Abf69cFc68A3545fD227165DAc167
 ```
 
-## Upgrade the `CrowdfundingCampaign` Contract
+---
+
+## Compile the `CrowdfundingCampaignV2` Contract
 
 With our initial setup deployed, we're ready to upgrade our `CrowdfundingCampaign.sol`
 contract by incorporating a deadline for contributions. This addition not only brings
@@ -296,7 +300,7 @@ Successfully compiled 4 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-### Upgrading to `CrowdfundingCampaignV2`
+## Upgrade to `CrowdfundingCampaignV2`
 
 This section describes the upgrade process to `CrowdfundingCampaignV2.sol` contract. Let's
 start by reviewing the [`upgradeBeaconCrowdfundingCampaign.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts)
@@ -393,6 +397,8 @@ Successfully upgraded crowdfundingCampaign to crowdfundingCampaignV2 0x26410Bebf
 CrowdfundingCampaignV2 initialized! 0x5f3131c77fcac19390f5f644a3ad1f0e7719dee4b4b5b4746c992de00db743f7
 Fundraising goal: 100000000000000000
 ```
+
+---
 
 ## Verify upgradable contracts
 

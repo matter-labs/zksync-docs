@@ -33,13 +33,21 @@ bun install
 
 ::
 
-## Deploy contract with factory
+## Set up your wallet
 
-With our environment and wallet configured, we're set to review the `CrowdfundingFactory.sol`
+:display-partial{path="quick-start/_partials/_setup-wallet"}
+
+---
+
+## Compile the contracts
+
+This section will focus on compiling and deploying the `CrowdfundingFactory.sol`
 contract that is provided under the [`/contracts` directory](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-factories/contracts/CrowdfundFactory.sol).
 
 The `CrowdfundingFactory.sol`contract will be used to deploy multiple instances of
 the `CrowdfundingCampaign.sol` contract from the previous guide.
+This contract factory approach streamlines the deployment of crowdfunding campaigns,
+making it efficient to launch and manage multiple campaigns.
 
 ::drop-panel
   ::panel{label="CrowdfundingFactory.sol"}
@@ -83,11 +91,6 @@ deploys a new campaign contract with this goal, and tracks the created campaign 
 created by the factory, allowing for easy access and management of multiple crowdfunding
 initiatives.
 
-This contract factory approach streamlines the deployment of crowdfunding campaigns,
-making it efficient to launch and manage multiple campaigns.
-
-### Compile contract
-
 :display-partial{path = "/_partials/_compile-solidity-contracts"}
 
 Upon successful compilation, you'll receive output detailing the
@@ -102,7 +105,7 @@ Successfully compiled 2 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-### Deploy via the CrowdfundingFactory
+### Deploy CrowdfundingCampaigns via the CrowdfundingFactory
 
 This section outlines the steps to deploy the `CrowdfundingCampaign` contract
 using our new `CrowdfundingFactory`.
@@ -156,7 +159,7 @@ The deployment script is located at `/deploy/deployUsingFactory.ts`.
 - The `createCampaign` method is called on this instance to create
   and deploy a new crowdfunding campaign contract.
 
-Execute the deployment command corresponding to your package manager. The default command
+Run the deployment command. The default command
 deploys to the configured network in your Hardhat setup. For local deployment, append
 `--network inMemoryNode` to deploy to the local in-memory node running.
 
