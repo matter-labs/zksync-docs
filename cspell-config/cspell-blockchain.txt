@@ -3,6 +3,13 @@ EVM
 ethereum
 keccak
 merkle
+upgradability
+Initializable
+initializable
+UUPS
+merkle
+uups
+Sepolia
 Weth
 Geth
 gwei

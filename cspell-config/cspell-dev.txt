@@ -14,3 +14,22 @@ Vue
 
 // devs
 dutterbutter
+zksolc
+zkvyper
+ZKEVM
+zkout
+nomicfoundation
+Nuxt
+nuxi
+nuxt
+nuxtdotjs
+nuxtjs
+!NuxtUI
+!NuxtContent
+NVMe
+rocksdb
+Vue
+!vue
+
+// devs
+dutterbutter
