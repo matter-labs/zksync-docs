@@ -7,7 +7,7 @@ The Remix IDE is an open-source web and desktop application that supports Ethere
 
 :display_partial{path="/_partials/enable-remix-zksync-plugin"}
     
-Click the button below to open the project in Remix.
+Click the button below to open the project in Remix and see the contract in the Remix code editor.
 
 <UButton
     icon="i-heroicons-code-bracket"
@@ -18,8 +18,6 @@ Click the button below to open the project in Remix.
     to="https://remix.ethereum.org/#url=https://github.com/uF4No/zksync-101-quickstart/blob/master/contracts/ZeekSecretMessages.sol"
     target="_blank"
     >Open smart contract in Remix</UButton>
-
-You can see the contract in the Remix code editor. 
 
 To compile the contract, click on  Compile ZeeksSecretMessages.sol. If you get a popup message requesting permissions to access **`ACCESS TO "WRITEFILE" OF "FILE MANAGER"`,** click on Accept.
 
