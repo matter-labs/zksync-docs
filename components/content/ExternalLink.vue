@@ -25,6 +25,6 @@ withDefaults(defineProps<Props>(), {
   text: '',
   href: '',
   target: '_blank',
-  rel: 'noopener noreferrer',
+  rel: 'noopener',
 });
 </script>

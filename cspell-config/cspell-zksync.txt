@@ -3,5 +3,6 @@ boojum
 Zeek
 MatterLabs
 zkSync
+zksync
 zksync-cli
 zksync

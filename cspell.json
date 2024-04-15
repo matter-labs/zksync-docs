@@ -58,5 +58,5 @@
     }
   ],
   "allowCompoundWords": true,
-  "flagWords": ["hte", "hve", "teh"]
+  "flagWords": ["hte", "hve", "teh", "cna"]
 }

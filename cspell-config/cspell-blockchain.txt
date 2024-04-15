@@ -1,4 +1,6 @@
+blake2s256
 EVM
+ethereum
 keccak
 upgradability
 Initializable
@@ -7,3 +9,8 @@ UUPS
 merkle
 uups
 Sepolia
+Weth
+Geth
+gwei
+sepolia
+Unifra

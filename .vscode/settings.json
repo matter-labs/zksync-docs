@@ -10,6 +10,13 @@
   "[markdown]": {
     "editor.wordWrap": "on",
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.suggest.showWords": false,
+    "editor.quickSuggestions": {
+      "other": "on",
+      "comments": "off",
+      "strings": "off"
+    },
+    "editor.tabCompletion": "onlySnippets"
   }
 }
