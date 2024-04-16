@@ -1,7 +1,13 @@
 <script setup lang="ts">
 const { data: navigation } = await useAsyncData('navigation', () =>
-  fetchContentNavigation(queryContent('build').only(['_path', 'title']).find())
+  fetchContentNavigation(
+    queryContent('/zk-stack')
+      // .where({ _path: { $contains: '/zk-stack' } })
+      .only(['_path', 'title'])
+      .findOne()
+  )
 );
+console.log('NAVIGATION', navigation.value);
 
 const contentNavigation = (navigation.value && (navigation.value[0].children ?? [])) || [];
 </script>

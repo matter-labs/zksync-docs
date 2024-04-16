@@ -148,7 +148,7 @@ consider writing additional tests for the `withdrawFunds`, `getTotalFundsRaised`
 and `getFundingGoal` methods, expanding your test coverage and reinforcing the
 reliability of the contract.
 
-:display-partial{path = "/_partials/_compile-solidity-contracts"}
+:display-partial{path = "_partials/_compile-solidity-contracts"}
 
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number

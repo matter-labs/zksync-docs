@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { data: navigation } = await useAsyncData('navigation', () =>
-  fetchContentNavigation(queryContent('build').only(['_path', 'title']).find())
+  fetchContentNavigation(queryContent('external-node').only(['_path', 'title']).find())
 );
 
 const contentNavigation = (navigation.value && (navigation.value[0].children ?? [])) || [];

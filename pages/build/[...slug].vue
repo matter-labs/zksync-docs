@@ -3,7 +3,7 @@ import type { NavItem } from '@nuxt/content/types';
 import { withoutTrailingSlash } from 'ufo';
 
 definePageMeta({
-  layout: 'docs',
+  layout: 'build',
 });
 
 const route = useRoute();

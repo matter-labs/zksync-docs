@@ -35,7 +35,7 @@ bun install
 
 ## Set up your wallet
 
-:display-partial{path="quick-start/_partials/_setup-wallet"}
+:display-partial{path="build/quick-start/_partials/_setup-wallet"}
 
 ---
 

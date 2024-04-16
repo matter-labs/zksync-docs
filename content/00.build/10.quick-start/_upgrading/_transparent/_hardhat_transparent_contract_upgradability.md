@@ -1,7 +1,6 @@
 ---
 title: Hardhat | Contract Upgrading
 ---
-
 <!-- TODO: @dutterbutter determine best approach to leverate zksync cli for project
 bootstrapping for this guide series. -->
 Run the following command in your terminal to initialize the project.
@@ -34,22 +33,27 @@ bun install
 
 ::
 
+---
+
 ## Set up your wallet
 
-:display-partial{path = "/quick-start/_partials/_setup-wallet"}
+:display-partial{path = "build/quick-start/_partials/_setup-wallet"}
 
 ---
 
 ## Adapt `CrowdfundingCampaign.sol` contract for upgradability
 
-To adapt our `CrowdfundingCampaign.sol` contract for upgradability, we are
+To adapt our `CrowdfundingCampaign.sol` contract for upgradability, we're
 transitioning to a proxy pattern. This approach separates the
 contract's logic (which can be upgraded) from its persistent state
 (stored in the proxy).
 
+### Refactoring for Proxy Compatibility
+
 In the `contracts/` directory you'll observe the refactored the [`CrowdfundingCampaign` contract](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/contracts/CrowdfundingCampaign.sol)
 which initializes state variables through an
-`initialize` function instead of the constructor, in line with the proxy pattern.
+`initialize` function instead of the constructor, in line with the
+Transparent Proxy pattern.
 
 **Updated Contract Structure:**
 
@@ -100,11 +104,11 @@ through new logic contracts.
 - **Proxy Pattern**: Utilizes a proxy contract to delegate calls to this logic contract,
 allowing for future upgrades without losing the contract's state.
 
-This restructuring prepares the `CrowdfundingCampaign` contract for upgradeability.
+This restructuring prepares the `CrowdfundingCampaign` contract for upgradability.
 
 ---
 
-## Compile the updated `CrowdfundingCampaign` contract
+## Deploy the `CrowdfundingCampaign` contract
 
 Now that the `CrowdfundingCampaign` contract is adapted for contract upgradability, let's proceed to deploy
 the contract so we may upgrade it in later steps. Since we've made changes to our contract we will
@@ -144,9 +148,7 @@ Successfully compiled 3 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-## Deploy the beacon and contract
-
-You'll find the necessary deployment script at [`/deploy/deployBeaconProxy.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/deployBeaconProxy.ts).
+The deployment script is located at [`/deploy/deployTransparentProxy.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/deployTransparentProxy.ts).
 
 ```typescript
 import { getWallet } from "./utils";
@@ -160,15 +162,13 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 
     const contractArtifact = await deployer.loadArtifact("CrowdfundingCampaign");
     const fundingGoalInWei = ethers.parseEther('0.1').toString();
-
-    const beacon = await hre.zkUpgrades.deployBeacon(
+    // Deploy the contract using a transparent proxy
+    const crowdfunding = await hre.zkUpgrades.deployProxy(
         getWallet(),
-        contractArtifact
+        contractArtifact,
+        [fundingGoalInWei],
+        { initializer: 'initialize' }
     );
-    await beacon.waitForDeployment();
-
-    const crowdfunding = await hre.zkUpgrades.deployBeaconProxy(deployer.zkWallet,
-        await beacon.getAddress(), contractArtifact, [fundingGoalInWei]);
 
     await crowdfunding.waitForDeployment();
 }
@@ -176,16 +176,11 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 
 **Key Components:**
 
-- **`deployBeacon` Method:** Initiates the deployment of a beacon contract,
-which acts as a central point for managing future upgrades of the `CrowdfundingCampaign`
-contract. The beacon's address is a critical component as it links the deployed proxy
-to the actual contract logic.
-
-- **`deployBeaconProxy` Method:** This step involves deploying the beacon proxy,
-which serves as the user-facing contract instance. It references the beacon for its logic,
-allowing for seamless upgrades without altering the proxy's address.
-The `fundingGoalInWei parameter`, converted from ether to wei, is passed during
-this step to initialize the contract with a funding goal.
+- **`hre.zkUpgrades.deployProxy`**: The method call to deploy the `CrowdfundingCampaign`
+contract via a transparent proxy, leveraging Hardhat's runtime environment for zkSync upgrades.
+This ensures the deployed contract can be upgraded in the future without losing its state or funds.
+- **`initializer`**: Specifies the initialization method of the contract, `initialize` in this case,
+which is required for setting up the proxy's state upon deployment.
 
 Execute the deployment command corresponding to your package manager. The default command
 deploys to the configured network in your Hardhat setup. For local deployment, append
@@ -194,52 +189,50 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script deployBeaconProxy.ts
+npm run hardhat deploy-zksync --script deployTransparentProxy.ts
 # To deploy the contract on local in-memory node:
-# npm run hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
+# npm run hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-zksync --script deployBeaconProxy.ts
+yarn hardhat deploy-zksync --script deployTransparentProxy.ts
 # To deploy the contract on local in-memory node:
-# yarn hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
+# yarn hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script deployBeaconProxy.ts
+pnpm run hardhat deploy-zksync --script deployTransparentProxy.ts
 # To deploy the contract on local in-memory node:
-# pnpm run hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
+# pnpm run hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
 ```
 
 ```bash [bun]
-bun run hardhat deploy-zksync --script deployBeaconProxy.ts
+bun run hardhat deploy-zksync --script deployTransparentProxy.ts
 # To deploy the contract on local in-memory node:
-# bun run hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
+# bun run hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
 ```
 
 ::
 
 Upon successful deployment, you'll receive output detailing the deployment process,
 including the contract addresses of the implementation
-contract, the admin contract, and the beacon
+contract, the admin contract, and the transparent
 proxy contract.
 
 ```bash
-Beacon impl deployed at 0xE3F814fa915A75bA47230537726C99f6517Da58e
-Beacon deployed at:  0x26410Bebf5Df7398DCBC5f00e9EBBa0Ddf471C72
-Beacon proxy deployed at:  0xD58FA9Fb362Abf69cFc68A3545fD227165DAc167
+Implementation contract was deployed to 0xE3F814fa915A75bA47230537726C99f6517Da58e
+Admin was deployed to 0x05198D9f93cBDfa3e332776019115512d8e0c809
+Transparent proxy was deployed to 0x68E8533acE01019CB8D07Eca822369D5De71b74D
 ```
 
 ---
 
-## Compile the `CrowdfundingCampaignV2` Contract
+## Upgrade the `CrowdfundingCampaign` Contract
 
-With our initial setup deployed, we're ready to upgrade our `CrowdfundingCampaign.sol`
+With our initial setup deployed, we're ready to update our `CrowdfundingCampaign.sol`
 contract by incorporating a deadline for contributions. This addition not only brings
 a new layer of functionality but also introduces the concept of time-based conditions
 through a `modifier`.
-<!-- TODO: explain what a modifier is.
-I still don't know what it means from the following section. -->
 
 **Current Contract Overview:**
 
@@ -255,8 +248,7 @@ this constraint, ensuring contributions are made within the allowed period.
 **Enhanced Contract:**
 
 The upgraded contract, [`CrowdfundingCampaignV2.sol`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/contracts/CrowdfundingCampaignV2.sol),
-located in the `/contracts` directory,
-incorporates these changes:
+located in the `/contracts` directory, incorporates these changes:
 
 - **Deadline Variable:** A new state variable deadline defines the campaign's end time,
 enhancing the contract with time-based logic.
@@ -285,8 +277,10 @@ function extendDeadline(uint256 _newDuration) public {
 
 This upgrade not only introduces the element of time to the campaign but also
 exemplifies the use of `modifiers` for enforcing contract conditions.
+<!-- TODO: maybe make this a callout and link to what modifiers are. -->
 
-:display-partial{path = "/_partials/_compile-solidity-contracts"}
+### Compile contract
+:display-partial{path = "_partials/_compile-solidity-contracts"}
 
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number
@@ -300,48 +294,34 @@ Successfully compiled 4 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-## Upgrade to `CrowdfundingCampaignV2`
+### Upgrade to `CrowdfundingCampaignV2`
 
-This section describes the upgrade process to `CrowdfundingCampaignV2.sol` contract. Let's
-start by reviewing the [`upgradeBeaconCrowdfundingCampaign.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts)
-script in the `deploy/upgrade-scripts` directory:
+This section guides you through upgrading the `CrowdfundingCampaign` contract
+to its second version, `CrowdfundingCampaignV2`.
+Review the [`upgradeCrowdfundingCampaign.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/upgrade-scripts/upgradeCrowdfundingCampaign.ts)
+script located within the `deploy/upgrade-scripts` directory to begin.
 
-Make sure to replace `YOUR_BEACON_ADDRESS_HERE` with the address of your deployed beacon and
-`YOUR_PROXY_ADDRESS_HERE` with the actual address of your
-deployed Beacon Proxy from the previous deployment step.
+Replace `YOUR_PROXY_ADDRESS_HERE` with the actual address of your
+deployed Transparent Proxy from the previous deployment step.
 
 ```typescript
 import { getWallet } from "../utils";
 import { Deployer } from '@matterlabs/hardhat-zksync';
 import { HardhatRuntimeEnvironment } from "hardhat/types";
-import * as zk from 'zksync-ethers';
-import { Contract } from 'ethers';
 
 export default async function (hre: HardhatRuntimeEnvironment) {
     const wallet = getWallet();
     const deployer = new Deployer(hre, wallet);
 
-    // Placeholder for the deployed beacon address
-    const beaconAddress = 'YOUR_BEACON_ADDRESS_HERE';
+    // Placeholder for the deployed proxy address
+    const proxyAddress = 'YOUR_PROXY_ADDRESS_HERE';
 
     const contractV2Artifact = await deployer.loadArtifact('CrowdfundingCampaignV2');
 
     // Upgrade the proxy to V2
-    await hre.zkUpgrades.upgradeBeacon(deployer.zkWallet, beaconAddress, contractV2Artifact);
+    const upgradedContract = await hre.zkUpgrades.upgradeProxy(deployer.zkWallet, proxyAddress, contractV2Artifact);
 
     console.log('Successfully upgraded crowdfundingCampaign to crowdfundingCampaignV2');
-
-    const attachTo = new zk.ContractFactory<any[], Contract>(
-        crowdfundingCampaignV2.abi,
-        crowdfundingCampaignV2.bytecode,
-        deployer.zkWallet,
-        deployer.deploymentType,
-    );
-
-    // Placeholder for the deployed beacon proxy address
-    const proxyAddress = 'YOUR_PROXY_ADDRESS_HERE';
-
-    const upgradedContract  = attachTo.attach(proxyAddress);
 
     upgradedContract.connect(deployer.zkWallet);
     // wait some time before the next call
@@ -352,49 +332,50 @@ export default async function (hre: HardhatRuntimeEnvironment) {
     const initTx = await upgradedContract.initializeV2(durationInSeconds);
     const receipt = await initTx.wait();
 
-   console.log(`CrowdfundingCampaignV2 initialized. Transaction Hash: ${receipt.hash}`);
+    console.log(`CrowdfundingCampaignV2 initialized. Transaction Hash: ${receipt.hash}`);
 }
 ```
 
 **Key Components:**
 
-- **`upgradeBeacon`**: This method from the `hre.zkUpgrades` module is used to update the beacon contract
-with the new version of the contract logic, `CrowdfundingCampaignV2`.
-It ensures that all proxies pointing to this beacon will now execute the updated contract code.
-- **`initializeV2`:** This method is specifically called post-upgrade to initialize or reconfigure any new state
-variables or logic introduced in the `CrowdfundingCampaignV2`.
-Here, it's used to set a new campaign duration, seamlessly
-integrating new functionalities while retaining the existing contract state and funds.
+- **`upgradeProxy`:** A critical method from the `hre.zkUpgrades` module that
+performs the contract upgrade. It takes the wallet, the proxy address, and the
+new contract artifact as arguments to transition the proxy to use the `CrowdfundingCampaignV2` logic.
 
-Execute the test command corresponding to your package manager:
+- **`initializeV2`:** Post-upgrade, this function is invoked to initialize the new
+variables or logic introduced in `CrowdfundingCampaignV2`. In this example,
+it sets a new campaign duration, illustrating how contract upgrades can add
+functionalities without losing the existing state or funds.
+
+Execute the command corresponding to your package manager:
 
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
+npm run hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
+yarn hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
+pnpm run hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
 ```
 
 ```bash [bun]
-bun run hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
+bun run hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
 ```
 
 ::
 
 Upon successful deployment, you'll receive output detailing the upgrade process,
-including the new beacon address, and transaction hash:
+including the contract address, and transaction hash:
 
 ```bash
-New beacon impl deployed at 0x58BD5adb462CF087E5838d53aE38A3Fe0EAf7A31
-Successfully upgraded crowdfundingCampaign to crowdfundingCampaignV2 0x26410Bebf5Df7398DCBC5f00e9EBBa0Ddf471C72
-CrowdfundingCampaignV2 initialized! 0x5f3131c77fcac19390f5f644a3ad1f0e7719dee4b4b5b4746c992de00db743f7
+Contract successfully upgraded to 0x58BD5adb462CF087E5838d53aE38A3Fe0EAf7A31 with tx 0xe30c017c52376507ab55bb51bc27eb300832dc46b8b9ac14549d2f9014cee97e
+Successfully upgraded crowdfundingCampaign to crowdfundingCampaignV2
+CrowdfundingCampaignV2 initialized! 0x5adfe360187195d98d3603a82a20ffe7304cd4dec030d1bdf456fa1690879668
 Fundraising goal: 100000000000000000
 ```
 
@@ -407,22 +388,24 @@ upgrade script.
 
 To proceed with verification, execute the following command:
 
+Replace <PROXY_ADDRESS> with the actual proxy address from your deployment.
+
 ::code-group
 
 ```bash [npm]
-npm run hardhat verify <BEACON-PROXY-ADDRESS>
+npm run hardhat verify <PROXY-ADDRESS>
 ```
 
 ```bash [yarn]
-yarn hardhat verify <BEACON-PROXY-ADDRESS>
+yarn hardhat verify <PROXY-ADDRESS>
 ```
 
 ```bash [pnpm]
-pnpm run hardhat verify <BEACON-PROXY-ADDRESS>
+pnpm run hardhat verify <PROXY-ADDRESS>
 ```
 
 ```bash [bun]
-bun run hardhat verify <BEACON-PROXY-ADDRESS>
+bun run hardhat verify <PROXY-ADDRESS>
 ```
 
 ::
@@ -431,13 +414,13 @@ Upon successful verification, you'll receive output detailing the verification p
 
 ```bash
 Verifying implementation: 0x58BD5adb462CF087E5838d53aE38A3Fe0EAf7A31
-Your verification ID is: 10547
+Your verification ID is: 10543
 Contract successfully verified on zkSync block explorer!
-Verifying beacon: 0x26410Bebf5Df7398DCBC5f00e9EBBa0Ddf471C72
-Your verification ID is: 10548
+Verifying proxy: 0x68E8533acE01019CB8D07Eca822369D5De71b74D
+Your verification ID is: 10544
 Contract successfully verified on zkSync block explorer!
-Verifying beacon proxy: 0xD58FA9Fb362Abf69cFc68A3545fD227165DAc167
-Your verification ID is: 10549
+Verifying proxy admin: 0x05198D9f93cBDfa3e332776019115512d8e0c809
+Your verification ID is: 10545
 Contract successfully verified on zkSync block explorer!
 ```
 
