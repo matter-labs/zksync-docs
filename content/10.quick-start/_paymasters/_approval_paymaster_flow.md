@@ -44,105 +44,139 @@ bun install
 
 ## Understanding the `ApprovalPaymaster` contract
 
-Let's start by reviewing the `ApprovalPaymaster.sol` contract in the `contracts/` directory:
+Let's start by reviewing the `ApprovalFlowPaymaster.sol` contract in the `contracts/` directory:
 
-```solidity
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+::drop-panel
+  ::panel{label="ApprovalFlowPaymaster.sol"}
+    ```solidity
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.0;
 
-import {IPaymaster, ExecutionResult, PAYMASTER_VALIDATION_SUCCESS_MAGIC} from "@matterlabs/zksync-contracts/l2/system-contracts/interfaces/IPaymaster.sol";
-import {IPaymasterFlow} from "@matterlabs/zksync-contracts/l2/system-contracts/interfaces/IPaymasterFlow.sol";
-import {TransactionHelper, Transaction} from "@matterlabs/zksync-contracts/l2/system-contracts/libraries/TransactionHelper.sol";
-import "@matterlabs/zksync-contracts/l2/system-contracts/Constants.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+    import {IPaymaster, ExecutionResult, PAYMASTER_VALIDATION_SUCCESS_MAGIC} from "@matterlabs/zksync-contracts/l2/system-contracts/interfaces/IPaymaster.sol";
+    import {IPaymasterFlow} from "@matterlabs/zksync-contracts/l2/system-contracts/interfaces/IPaymasterFlow.sol";
+    import {TransactionHelper, Transaction} from "@matterlabs/zksync-contracts/l2/system-contracts/libraries/TransactionHelper.sol";
 
-/// @notice This contract does not include any validations other than using the paymaster general flow.
-contract GaslessPaymaster is IPaymaster, Ownable {
-    modifier onlyBootloader() {
-        require(
-            msg.sender == BOOTLOADER_FORMAL_ADDRESS,
-            "Only bootloader can call this method"
-        );
-        // Continue execution if called from the bootloader.
-        _;
-    }
+    import "@matterlabs/zksync-contracts/l2/system-contracts/Constants.sol";
 
-    function validateAndPayForPaymasterTransaction(
-        bytes32,
-        bytes32,
-        Transaction calldata _transaction
-    )
-        external
-        payable
-        onlyBootloader
-        returns (bytes4 magic, bytes memory context)
-    {
-        // By default we consider the transaction as accepted.
-        magic = PAYMASTER_VALIDATION_SUCCESS_MAGIC;
-        require(
-            _transaction.paymasterInput.length >= 4,
-            "The standard paymaster input must be at least 4 bytes long"
-        );
+    import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+    import "@openzeppelin/contracts/access/Ownable.sol";
 
-        bytes4 paymasterInputSelector = bytes4(
-            _transaction.paymasterInput[0:4]
-        );
-        if (paymasterInputSelector == IPaymasterFlow.general.selector) {
-            // Note, that while the minimal amount of ETH needed is tx.gasPrice * tx.gasLimit,
-            // neither paymaster nor account are allowed to access this context variable.
-            uint256 requiredETH = _transaction.gasLimit *
-                _transaction.maxFeePerGas;
+    /// @notice This smart contract pays the gas fees for accounts with balance of a specific ERC20 token. It makes use of the approval-based flow paymaster.
+    contract ApprovalFlowPaymaster is IPaymaster, Ownable {
+        uint256 constant PRICE_FOR_PAYING_FEES = 1;
 
-            // The bootloader never returns any data, so it can safely be ignored here.
-            (bool success, ) = payable(BOOTLOADER_FORMAL_ADDRESS).call{
-                value: requiredETH
-            }("");
+        address public allowedToken;
+
+        modifier onlyBootloader() {
             require(
-                success,
-                "Failed to transfer tx fee to the Bootloader. Paymaster balance might not be enough."
+                msg.sender == BOOTLOADER_FORMAL_ADDRESS,
+                "Only bootloader can call this method"
             );
-        } else {
-            revert("Unsupported paymaster flow in paymasterParams.");
+            _;
         }
-    }
 
-    function postTransaction(
-        bytes calldata _context,
-        Transaction calldata _transaction,
-        bytes32,
-        bytes32,
-        ExecutionResult _txResult,
-        uint256 _maxRefundedGas
-    ) external payable override onlyBootloader {
-        // Refunds are not supported yet.
-    }
+        constructor() {
+            // Sepolia CROWN token address
+            allowedToken = 0x927488F48ffbc32112F1fF721759649A89721F8F;
+        }
 
-    function withdraw(address payable _to) external onlyOwner {
-        // send paymaster funds to the owner
-        uint256 balance = address(this).balance;
-        (bool success, ) = _to.call{value: balance}("");
-        require(success, "Failed to withdraw funds from paymaster.");
-    }
+        function validateAndPayForPaymasterTransaction(
+            bytes32,
+            bytes32,
+            Transaction calldata _transaction
+        )
+            external
+            payable
+            onlyBootloader
+            returns (bytes4 magic, bytes memory context)
+        {
+            // Default to transaction acceptance
+            magic = PAYMASTER_VALIDATION_SUCCESS_MAGIC;
+            require(
+                _transaction.paymasterInput.length >= 4,
+                "The standard paymaster input must be at least 4 bytes long"
+            );
 
-    receive() external payable {}
-}
-```
+            bytes4 paymasterInputSelector = bytes4(
+                _transaction.paymasterInput[0:4]
+            );
+            // Check if it's approval-based flow
+            if (paymasterInputSelector == IPaymasterFlow.approvalBased.selector) {
+                (address token, uint256 amount, bytes memory data) = abi.decode(
+                    _transaction.paymasterInput[4:],
+                    (address, uint256, bytes)
+                );
+
+                // Ensure the token is the allowed one
+                require(token == allowedToken, "Invalid token");
+
+                // Check user's allowance
+                address userAddress = address(uint160(_transaction.from));
+                address thisAddress = address(this);
+                uint256 providedAllowance = IERC20(token).allowance(userAddress, thisAddress);
+                require(
+                    providedAllowance >= PRICE_FOR_PAYING_FEES,
+                    "Min allowance too low"
+                );
+
+                uint256 requiredETH = _transaction.gasLimit * _transaction.maxFeePerGas;
+                try IERC20(token).transferFrom(userAddress, thisAddress, amount) {} 
+                catch (bytes memory revertReason) {
+                    if (revertReason.length <= 4) {
+                        revert("Failed to transferFrom from user's account");
+                    } else {
+                        assembly {
+                            revert(add(0x20, revertReason), mload(revertReason))
+                        }
+                    }
+                }
+
+                (bool success, ) = payable(BOOTLOADER_FORMAL_ADDRESS).call{value: requiredETH}("");
+                require(success, "Failed to transfer tx fee to bootloader.");
+            } else {
+                revert("Unsupported paymaster flow");
+            }
+        }
+
+        function postTransaction(
+            bytes calldata _context,
+            Transaction calldata _transaction,
+            bytes32,
+            bytes32,
+            ExecutionResult _txResult,
+            uint256 _maxRefundedGas
+        ) external payable override onlyBootloader {}
+
+        function withdraw(address _to) external onlyOwner {
+            (bool success, ) = payable(_to).call{value: address(this).balance}("");
+            require(success, "Failed to withdraw funds from paymaster.");
+        }
+
+        receive() external payable {}
+    }
+    ```
+  ::
+::
 
 **Key components:**
 
-- The `GaslessPaymaster` contract ensures that transaction fees are handled automatically without user intervention.
-- **`validateAndPayForPaymasterTransaction` Method:** This mandatory method assesses whether the paymaster agrees to cover the
-transaction fees. If affirmative, it transfers the necessary funds
-(calculated as tx.gasprice * tx.gasLimit) to the operator. It returns a context for the `postTransaction` method.
+- The `ApprovalFlowPaymaster` contract allows for transactions costs to be covered using an allowed ERC20 token at the
+exchange of 1.
+- **Allowed Token:** Transactions are facilitated using the `CROWN` token at address [0x927488F48ffbc32112F1fF721759649A89721F8F](https://sepolia.explorer.zksync.io/address/0x927488F48ffbc32112F1fF721759649A89721F8F#contract),
+with a fee set at a constant value of 1.
+- **`validateAndPayForPaymasterTransaction` Method:** This critical method evaluates transactions
+to decide if the contract will cover the gas fees. It confirms the token used matches the allowed token
+and checks if the token allowance is adequate. If conditions are met, it proceeds to transfer funds calculated
+as `tx.gasprice * tx.gasLimit` to the `bootloader`.
 - **`postTransaction`** Method: An optional method invoked
 post-transaction execution, provided the transaction doesn't fail
 due to out-of-gas errors. It receives several parameters, including the transaction's context and result, aiding in finalizing paymaster duties.
-- **`onlyBootloader`** Modifier: Ensures that certain methods are
-exclusively callable by the system's bootloader, adding an extra layer of security and control.
+- **`onlyBootloader`** Modifier: Ensures that certain methods are exclusively callable by the system's bootloader,
+adding an extra layer of security and control.
 
 ---
 
-## Compile and deploy the `ApprovalPaymaster` contract
+## Compile and deploy the `ApprovalFlowPaymaster` contract
 
 :display-partial{path = "/_partials/_compile-solidity-contracts"}
 
@@ -158,7 +192,7 @@ Successfully compiled 1 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-The script to deploy the `GaslessPaymaster` contract is located at `/deploy/deploy.ts`.
+The script to deploy the `ApprovalFlowPaymaster` contract is located at `/deploy/deployApprovalFlowPaymaster.ts`.
 
 ```typescript
 import { deployContract, getWallet, getProvider } from "./utils";
@@ -168,7 +202,7 @@ import { ethers } from "ethers";
 // It will deploy a CrowdfundingCampaign contract to selected network
 // `parseEther` converts ether to wei, and `.toString()` ensures serialization compatibility.
 export default async function() {
-  const contractArtifactName = "GaslessPaymaster";
+  const contractArtifactName = "ApprovalFlowPaymaster";
   const constructorArguments = [];
   const contract = await deployContract(
     contractArtifactName,
@@ -178,6 +212,8 @@ export default async function() {
   const provider = getProvider();
 
   // Supplying paymaster with ETH
+  // Paymaster will receive CROWN tokens from users and 
+  // cover the gas fees for the transactions using ETH
   await (
     await wallet.sendTransaction({
       to: contract.target,
@@ -192,10 +228,10 @@ export default async function() {
 
 **Key Components:**
 
-- **`deployContract` Method:** Utilized for deploying the `GaslessPaymaster` contract. This method takes the name of the
+- **`deployContract` Method:** Utilized for deploying the `ApprovalFlowPaymaster` contract. This method takes the name of the
 contract and any constructor arguments needed for initialization,
 mirroring the deployment process used for the `CrowdfundingCampaign` contract.
-- **Funding the Paymaster:** An important step where the deployed `GaslessPaymaster` contract is funded with ETH
+- **Funding the Paymaster:** An important step where the deployed `ApprovalFlowPaymaster` contract is funded with ETH
 to cover transaction fees for users. The script sends a transaction
 from the deployer's wallet to the paymaster contract, ensuring it has sufficient balance to operate.
 
@@ -206,27 +242,27 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script deployGaslessPaymaster.ts
+npm run hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts
 # To deploy the contract on local in-memory node:
-# npm run hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
+# npm run hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-zksync --script deployGaslessPaymaster.ts
+yarn hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts
 # To deploy the contract on local in-memory node:
-# yarn hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
+# yarn hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script deployGaslessPaymaster.ts
+pnpm run hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts
 # To deploy the contract on local in-memory node:
-# pnpm run hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
+# pnpm run hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
 ```
 
 ```bash [bun]
-bun run hardhat deploy-zksync --script deployGaslessPaymaster.ts
+bun run hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts
 # To deploy the contract on local in-memory node:
-# bun run hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
+# bun run hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
 ```
 
 ::
@@ -235,33 +271,33 @@ Upon successful deployment, you'll receive output detailing the deployment proce
 including the contract address, source, and encoded constructor arguments:
 
 ```bash
-Starting deployment process of "GaslessPaymaster"...
-Estimated deployment cost: 0.0004922112 ETH
+Starting deployment process of "ApprovalFlowPaymaster"...
+Estimated deployment cost: 0.0006278488 ETH
 
-"GaslessPaymaster" was successfully deployed:
- - Contract address: 0x6f72f0d7bDba2E2a923beC09fBEE64cD134680F2
- - Contract source: contracts/GaslessPaymaster.sol:GaslessPaymaster
+"ApprovalFlowPaymaster" was successfully deployed:
+ - Contract address: 0x4653CDB4D46c7CdFc5B1ff14ca1B15Db2B0b7819
+ - Contract source: contracts/ApprovalFlowPaymaster.sol:ApprovalFlowPaymaster
  - Encoded constructor arguments: 0x
 
 Requesting contract verification...
-Your verification ID is: 10634
+Your verification ID is: 10923
 Contract successfully verified on zkSync block explorer!
 Paymaster ETH balance is now 5000000000000000
 ```
 
 ---
 
-## Interact with the `ApprovalPaymaster` contract
+## Interact with the `ApprovalFlowPaymaster` contract
 
-This section will navigate you through the steps to interact with the `GaslessPaymaster` contract,
+This section will navigate you through the steps to interact with the `ApprovalFlowPaymaster` contract,
 using it to cover transaction fees for your operation.
 
-The interaction script is situated in the `/deploy/interact/` directory, named `interactWithPaymaster.ts`.
+The interaction script is situated in the `/deploy/interact/` directory, named `interactWithApprovalFlowPaymaster.ts`.
 
 Ensure the `CONTRACT_ADDRESS` and `PAYMASTER_ADDRESS` variables are set to your deployed contract and paymaster addresses, respectively.
 
 ::drop-panel
-  ::panel{label="interactWithPaymaster.ts"}
+  ::panel{label="interactWithApprovalFlowPaymaster.ts"}
 
   ```typescript
   import * as hre from "hardhat";
@@ -272,6 +308,9 @@ Ensure the `CONTRACT_ADDRESS` and `PAYMASTER_ADDRESS` variables are set to your 
   // Address of the contract to interact with
   const CONTRACT_ADDRESS = "YOUR-CONTRACT-ADDRESS";
   const PAYMASTER_ADDRESS = "YOUR-PAYMASTER-ADDRESS";
+  // Sepolia CROWN token address
+  const TOKEN_ADDRESS = "0x927488F48ffbc32112F1fF721759649A89721F8F"
+
   if (!CONTRACT_ADDRESS || !PAYMASTER_ADDRESS)
       throw new Error("Contract and Paymaster addresses are required.");
 
@@ -282,7 +321,7 @@ Ensure the `CONTRACT_ADDRESS` and `PAYMASTER_ADDRESS` variables are set to your 
     const contractArtifact = await hre.artifacts.readArtifact(
       "CrowdfundingCampaignV2"
     );
-
+    const provider = getProvider();
     // Initialize contract instance for interaction
     const contract = new ethers.Contract(
       CONTRACT_ADDRESS,
@@ -290,14 +329,12 @@ Ensure the `CONTRACT_ADDRESS` and `PAYMASTER_ADDRESS` variables are set to your 
       getWallet()
     );
 
-    const provider = getProvider();
-    let balanceBeforeTransaction = await provider.getBalance(getWallet().address);
-    console.log(`Wallet balance before contribution: ${ethers.formatEther(balanceBeforeTransaction)} ETH`);
-
-    const contributionAmount = ethers.parseEther("0.01");
-    // Get paymaster params
+    const contributionAmount = ethers.parseEther("0.001");
+    // Get paymaster params for the ApprovalBased paymaster
     const paymasterParams = utils.getPaymasterParams(PAYMASTER_ADDRESS, {
-      type: "General",
+      type: "ApprovalBased",
+      token: TOKEN_ADDRESS, 
+      minimalAllowance: 1n,
       innerInput: new Uint8Array(),
     });
 
@@ -323,12 +360,6 @@ Ensure the `CONTRACT_ADDRESS` and `PAYMASTER_ADDRESS` variables are set to your 
     console.log(`Transaction hash: ${transaction.hash}`);
 
     await transaction.wait();
-
-    let balanceAfterTransaction = await provider.getBalance(getWallet().address);
-    // Check the wallet balance after the transaction
-    // We only pay the contribution amount, so the balance should be less than before
-    // Gas fees are covered by the paymaster
-    console.log(`Wallet balance after contribution: ${ethers.formatEther(balanceAfterTransaction)} ETH`);
   }
   ```
 
@@ -339,30 +370,31 @@ Ensure the `CONTRACT_ADDRESS` and `PAYMASTER_ADDRESS` variables are set to your 
 
 - **Paymaster Parameters:** Before executing transactions that involve the contract, the script prepares paymaster parameters using
 `getPaymasterParams`. This specifies the paymaster contract to be
-used and the type of paymaster flow, which in this case is `General`.
+used and the type of paymaster flow, which in this case is `Approval`, and includes the token address
+of the ERC20 token, and the minimum allowance set to 1.
 
 - **Transaction with Paymaster:** Demonstrated by the `contribute` function call, the script shows how to include paymaster parameters
 in transactions. This allows the paymaster to cover transaction
-fees, providing a seamless experience for users.
+fees using the `CROWN` token, providing a seamless experience for users.
 
 Execute the command corresponding to your package manager:
 
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script interact/interactWithPaymaster.ts
+npm run hardhat deploy-zksync --script interact/interactWithApprovalFlowPaymaster.ts
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-zksync --script interact/interactWithPaymaster.ts
+yarn hardhat deploy-zksync --script interact/interactWithApprovalFlowPaymaster.ts
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script interact/interactWithPaymaster.ts
+pnpm run hardhat deploy-zksync --script interact/interactWithApprovalFlowPaymaster.ts
 ```
 
 ```bash [bun]
-bun run hardhat deploy-zksync --script interact/interactWithPaymaster.ts
+bun run hardhat deploy-zksync --script interact/interactWithApprovalFlowPaymaster.ts
 ```
 
 ::
@@ -370,10 +402,9 @@ bun run hardhat deploy-zksync --script interact/interactWithPaymaster.ts
 Upon successful usage, you'll receive output detailing the transaction:
 
 ```bash
-Running script to interact with contract 0x68E8533acE01019CB8D07Eca822369D5De71b74D using paymaster 0x6f72f0d7bDba2E2a923beC09fBEE64cD134680F2
-Wallet balance before contribution: 5.879909434005856127 ETH
-Transaction hash: 0x41c463abf7905552b69b25e7918374aab27f2d7e8cbebe212a0eb6ef8deb81e8
-Wallet balance after contribution: 5.869909434005856127 ETH
+Running script to interact with contract 0x68E8533acE01019CB8D07Eca822369D5De71b74D using paymaster 0x4653CDB4D46c7CdFc5B1ff14ca1B15Db2B0b7819
+Estimated gas limit: 459220
+Transaction hash: 0x6a5a5e8e7d7668a46260b6daf19c7a5579fa4a5ba4591977a944abb1a618187a
 ```
 
-🎉 Great job! You've successfully interacted with the `CrowdfundingCampaignV2` using a paymaster to cover the transaction fees.
+🎉 Great job! You've successfully interacted with the `CrowdfundingCampaignV2` using a paymaster to cover the transaction fees using the `CROWN` token.
