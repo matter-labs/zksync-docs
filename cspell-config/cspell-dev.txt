@@ -1,3 +1,5 @@
+Dockerized
+dockerized
 Diataxis
 fontaine
 Nuxt
@@ -7,6 +9,8 @@ nuxtdotjs
 nuxtjs
 !NuxtUI
 !NuxtContent
+NVMe
+postgres
 rocksdb
 Vue
 !vue

@@ -38,7 +38,8 @@
     "typescript",
     "dict-zksync",
     "dict-blockchain",
-    "dict-dev"
+    "dict-dev",
+    "dict-misc"
   ],
   "dictionaryDefinitions": [
     {
