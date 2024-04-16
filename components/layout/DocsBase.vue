@@ -2,6 +2,13 @@
 import type { NavItem } from '@nuxt/content/types';
 import { withoutTrailingSlash } from 'ufo';
 
+<<<<<<<< HEAD:components/layout/DocsBase.vue
+========
+definePageMeta({
+  layout: 'build',
+});
+
+>>>>>>>> 06963bc (chore: wip):pages/build/[...slug].vue
 const route = useRoute();
 const { seo } = useAppConfig();
 const navigation = inject<Ref<NavItem[]>>('navigation', ref([]));

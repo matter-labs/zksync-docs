@@ -9,7 +9,6 @@ keccak
 merkle
 nomicfoundation
 nomiclabs
-uups
 satoshi
 Sepolia
 sepolia
@@ -18,5 +17,7 @@ Unifra
 Upgradability
 UUPS
 uups
+validium
+validiums
 vyper
 Weth
