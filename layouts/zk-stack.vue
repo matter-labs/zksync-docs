@@ -1,15 +1,14 @@
 <script setup lang="ts">
-const { data: navigation } = await useAsyncData('navigation', () =>
-  fetchContentNavigation(
-    queryContent('/zk-stack')
-      // .where({ _path: { $contains: '/zk-stack' } })
-      .only(['_path', 'title'])
-      .findOne()
-  )
-);
-console.log('NAVIGATION', navigation.value);
+const query = queryContent({
+  _partial: false,
+  where: [
+    {
+      _path: { $contains: '/zk-stack' },
+    },
+  ],
+});
 
-const contentNavigation = (navigation.value && (navigation.value[0].children ?? [])) || [];
+const { data: navigation } = await useAsyncData('zk-stack-navigation', () => fetchContentNavigation(query));
 </script>
 
 <template>
@@ -18,7 +17,7 @@ const contentNavigation = (navigation.value && (navigation.value[0].children ?? 
       <template #left>
         <UAside>
           <UNavigationTree
-            :links="mapContentNavigation(contentNavigation)"
+            :links="mapContentNavigation(navigation || [])"
             default-open
             :multiple="false"
           />

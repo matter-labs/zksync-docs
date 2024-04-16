@@ -1,9 +1,14 @@
 <script setup lang="ts">
-const { data: navigation } = await useAsyncData('navigation', () =>
-  fetchContentNavigation(queryContent('external-node').only(['_path', 'title']).find())
-);
+const query = queryContent({
+  _partial: false,
+  where: [
+    {
+      _path: { $contains: '/external-node' },
+    },
+  ],
+});
 
-const contentNavigation = (navigation.value && (navigation.value[0].children ?? [])) || [];
+const { data: navigation } = await useAsyncData('external-node-navigation', () => fetchContentNavigation(query));
 </script>
 
 <template>
@@ -12,7 +17,7 @@ const contentNavigation = (navigation.value && (navigation.value[0].children ?? 
       <template #left>
         <UAside>
           <UNavigationTree
-            :links="mapContentNavigation(contentNavigation)"
+            :links="mapContentNavigation(navigation || [])"
             default-open
             :multiple="false"
           />

@@ -19,7 +19,7 @@ if (!page.value) {
 
 const { data: surround }: any = await useAsyncData(`${route.path}-surround`, () =>
   queryContent()
-    .where({ _extension: 'md', navigation: { $ne: false } })
+    .where({ _extension: 'md', navigation: { $ne: false }, _partial: false })
     .only(['title', 'description', '_path'])
     .findSurround(withoutTrailingSlash(route.path))
 );
