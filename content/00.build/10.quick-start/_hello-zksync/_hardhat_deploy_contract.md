@@ -105,7 +105,7 @@ This contract features:
 - The `contribute` method to log funds, triggering `ContributionReceived` and `GoalReached` events.
 - The `withdrawFunds` method, allowing the owner to collect accumulated funds post-goal achievement.
 
-:display-partial{path = "_partials/_compile-solidity-contracts"}
+:display-partial{path = "/_partials/_compile-solidity-contracts"}
 
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number

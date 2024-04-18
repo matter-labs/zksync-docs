@@ -4,6 +4,6 @@
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'external-node',
+  layout: 'external-node-section',
 });
 </script>

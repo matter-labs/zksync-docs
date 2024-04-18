@@ -1,10 +1,11 @@
 <script setup lang="ts">
-const { data: navigation } = await useAsyncData('build-navigation', () => {
+const { data: navigation } = await useAsyncData('zk-stack-navigation', () => {
   const query = queryContent({
     _partial: false,
+    _extension: 'md',
     where: [
       {
-        _path: { $contains: 'build' },
+        _path: { $contains: 'zk-stack' },
       },
     ],
   });

@@ -38,7 +38,7 @@ bun install
 
 ## Set up your wallet
 
-:display-partial{path = "build/quick-start/_partials/_setup-wallet"}
+:display-partial{path = "/build/quick-start/_partials/_setup-wallet"}
 
 ---
 
@@ -120,7 +120,7 @@ Let's start by reviewing the `ApprovalFlowPaymaster.sol` contract in the `contra
                 );
 
                 uint256 requiredETH = _transaction.gasLimit * _transaction.maxFeePerGas;
-                try IERC20(token).transferFrom(userAddress, thisAddress, amount) {} 
+                try IERC20(token).transferFrom(userAddress, thisAddress, amount) {}
                 catch (bytes memory revertReason) {
                     if (revertReason.length <= 4) {
                         revert("Failed to transferFrom from user's account");
@@ -178,7 +178,7 @@ adding an extra layer of security and control.
 
 ## Compile and deploy the `ApprovalFlowPaymaster` contract
 
-:display-partial{path = "_partials/_compile-solidity-contracts"}
+:display-partial{path = "/_partials/_compile-solidity-contracts"}
 
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number
@@ -212,7 +212,7 @@ export default async function() {
   const provider = getProvider();
 
   // Supplying paymaster with ETH
-  // Paymaster will receive CROWN tokens from users and 
+  // Paymaster will receive CROWN tokens from users and
   // cover the gas fees for the transactions using ETH
   await (
     await wallet.sendTransaction({
@@ -333,7 +333,7 @@ Ensure the `CONTRACT_ADDRESS` and `PAYMASTER_ADDRESS` variables are set to your 
     // Get paymaster params for the ApprovalBased paymaster
     const paymasterParams = utils.getPaymasterParams(PAYMASTER_ADDRESS, {
       type: "ApprovalBased",
-      token: TOKEN_ADDRESS, 
+      token: TOKEN_ADDRESS,
       minimalAllowance: 1n,
       innerInput: new Uint8Array(),
     });

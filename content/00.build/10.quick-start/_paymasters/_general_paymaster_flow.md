@@ -37,7 +37,7 @@ bun install
 
 ## Set up your wallet
 
-:display-partial{path = build/quick-start/_partials/_setup-wallet"}
+:display-partial{path = /build/quick-start/_partials/_setup-wallet"}
 
 ---
 
@@ -147,7 +147,7 @@ exclusively callable by the system's bootloader, adding an extra layer of securi
 
 ## Compile and deploy the `GeneralPaymaster` contract
 
-:display-partial{path = "_partials/_compile-solidity-contracts"}
+:display-partial{path = "/_partials/_compile-solidity-contracts"}
 
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number

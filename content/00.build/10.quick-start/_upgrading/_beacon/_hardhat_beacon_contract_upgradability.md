@@ -286,7 +286,7 @@ function extendDeadline(uint256 _newDuration) public {
 This upgrade not only introduces the element of time to the campaign but also
 exemplifies the use of `modifiers` for enforcing contract conditions.
 
-:display-partial{path = "_partials/_compile-solidity-contracts"}
+:display-partial{path = "/_partials/_compile-solidity-contracts"}
 
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number

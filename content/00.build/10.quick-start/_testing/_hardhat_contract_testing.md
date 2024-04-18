@@ -41,7 +41,7 @@ While setting up a local development environment was previously optional, testin
 a more structured setup. We'll use `hardhat-zksync` to run tests against an In-memory node,
 which operates seamlessly within a separate process for an optimized testing workflow.
 
-If you have not set up your local era node yet, follow the instructions in the [Getting Started](/quick-start#setup-era-local-node-optional) section.
+If you have not set up your local era node yet, follow the instructions in the [Getting Started](/build/quick-start#setup-era-local-node-optional) section.
 
 Within the `hardhat.config.ts`, you'll observe the `zksync` flag set to `true` under the
 `hardhat` network, indicating the integration with zkSync's testing environment.
@@ -148,7 +148,7 @@ consider writing additional tests for the `withdrawFunds`, `getTotalFundsRaised`
 and `getFundingGoal` methods, expanding your test coverage and reinforcing the
 reliability of the contract.
 
-:display-partial{path = "_partials/_compile-solidity-contracts"}
+:display-partial{path = "/_partials/_compile-solidity-contracts"}
 
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number

@@ -4,6 +4,6 @@
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'zk-stack',
+  layout: 'zk-stack-section',
 });
 </script>

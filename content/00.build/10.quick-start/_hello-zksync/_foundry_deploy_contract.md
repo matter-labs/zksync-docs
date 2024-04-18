@@ -2,11 +2,11 @@
 title: Foundry | Deploy Contract
 ---
 
-:display-partial{path = "_partials/_environment-setup-with-foundry"}
+:display-partial{path = "/_partials/_environment-setup-with-foundry"}
 
 ## Set up your wallet
 
-:display-partial{path = "build/quick-start/_partials/_setup-wallet"}
+:display-partial{path = "/build/quick-start/_partials/_setup-wallet"}
 
 ## Compile your first contract
 
