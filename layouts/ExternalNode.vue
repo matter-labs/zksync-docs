@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const { data: navigation } = await useAsyncData('build-navigation', () => {
+const { data: navigation } = await useAsyncData('external-node-navigation', () => {
   const query = queryContent({
     _partial: false,
     where: [
       {
-        _path: { $contains: 'build' },
+        _path: { $contains: 'external-node' },
       },
     ],
   });
