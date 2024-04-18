@@ -28,10 +28,12 @@
     "era-solidity": "https://github.com/matter-labs/era-solidity",
     "foundry-zksync": "https://github.com/matter-labs/foundry-zksync",
     "hardhat-zksync": "https://github.com/matter-labs/hardhat-zksync",
+    "local-setup": "https://github.com/matter-labs/local-setup",
     "zksolc-bin": "https://github.com/matter-labs/zksolc-bin",
     "zksync-cli": "https://github.com/matter-labs/zksync-cli",
     "zksync-contract-templates": "https://github.com/matter-labs/zksync-contract-templates",
     "zksync-developers": "https://github.com/zkSync-Community-Hub/zksync-developers",
+    "zksync-docs": "https://github.com/matter-labs/zksync-docs",
     "zksync-frontend-templates": "https://github.com/matter-labs/zksync-frontend-templates",
     "zksync-scripting-templates": "https://github.com/matter-labs/zksync-scripting-templates",
     "zkvyper-bin": "https://github.com/matter-labs/zkvyper-bin"

@@ -2,7 +2,13 @@
 boojum
 MatterLabs
 Zeek
+zkcast
+ZKEVM
+zkevm
+zkforge
+zkout
+zksolc
 zkSync
 zksync
 zksync-cli
-zkevm
+zkvyper
