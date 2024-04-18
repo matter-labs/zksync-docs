@@ -8,9 +8,11 @@ function onTabChange(index: number) {
   selectedIndex.value = index;
 }
 const route = useRoute();
-// This splits the path into segments and takes the first one
-// TODO: This is a temporary solution, we need to find a better way to get the base path
-const basePath = route.path.split('/')[1];
+const basePath = computed(() => {
+  const path = route.path.split('/');
+  path.pop();
+  return path.join('/');
+});
 </script>
 
 <template>
@@ -26,12 +28,12 @@ const basePath = route.path.split('/')[1];
       :key="item.partial"
     >
       <ContentQuery
-        v-slot="{ data }"
-        :path="basePath"
+        v-slot="dataQuery"
+        :path="`${basePath}/${item.partial}`"
         find="one"
-        :where="{ _partial: true, _path: { $icontains: item.partial } }"
+        :where="{ _partial: true }"
       >
-        <ContentRenderer :value="data" />
+        <ContentRenderer :value="dataQuery.data" />
       </ContentQuery>
     </div>
     <UDivider />
