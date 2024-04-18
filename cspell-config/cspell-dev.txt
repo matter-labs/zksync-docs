@@ -13,7 +13,7 @@ NVMe
 postgres
 rocksdb
 Vue
-!vue
+vue
 
 // devs
 dutterbutter
