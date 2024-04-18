@@ -3,8 +3,6 @@ title: Rich Wallets
 github: https://github.com/matter-labs/local-setup/blob/main/rich-wallets.json
 ---
 
-<!-- TODO: is this still up to date? -->
-
 - **Address:** `0x36615Cf349d7F6344891B1e7CA7C72883F5dc049`
 
   **Private Key:** `0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110`
