@@ -53,7 +53,7 @@ export default defineAppConfig({
       light: '/logos/zksync_logo_black.svg',
       dark: '/logos/zksync_logo.svg',
     },
-    search: false,
+    search: true,
     colorMode: true,
     links: [
       {

@@ -43,6 +43,8 @@ const { header } = useAppConfig();
           v-bind="{ color: 'gray', variant: 'ghost', ...link }"
         />
       </template>
+
+      <UContentSearchButton class="hidden max-w-[180px] lg:flex" />
     </template>
 
     <template #panel>
