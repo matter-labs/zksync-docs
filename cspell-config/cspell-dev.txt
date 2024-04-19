@@ -19,6 +19,13 @@ postgres
 rocksdb
 Vue
 vue
+Viem
+viem
+Zerion
+Rabby
+tesnet
+devs
+
 
 // devs
 dutterbutter
