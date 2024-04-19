@@ -4,11 +4,13 @@ title: Paymaster with Remix
 
 REMIX DOES NOT SUPPORT ZKSYNC-ETHERS YET
 
-To open the project in Remix, use the “Clone” option from the file explorer to import it from the following GitHub repository:`https://github.com/uF4No/zksync-101-remix`
+To open the project in Remix, use the “Clone” option from the file explorer to import it from the following GitHub
+repository:`https://github.com/uF4No/zksync-101-remix`
 
 ![Clone repo in Remix](/images/remix-plugin-clone-repo.gif)
 
-Once the project is imported, open the `scripts/paymaster-transaction.ts` file, which contains the code to send a transaction via the paymaster. Let’s go through the most important parts:
+Once the project is imported, open the `scripts/paymaster-transaction.ts` file, which contains the code to send a
+transaction via the paymaster. Let’s go through the most important parts:
 
 ### Retrieve the token balance
 
@@ -20,7 +22,8 @@ console.log(`Account ${walletAddress} has ${ethers.utils.formatEther(ethBalance)
 console.log(`Account ${walletAddress} has ${ethers.utils.formatUnits(tokenBalance, 18)} tokens`);
 ```
 
-In this part we’re retrieving the ETH and ERC20 token balances of the account. We’ll compare them after the transaction is executed to see the difference.
+In this part we’re retrieving the ETH and ERC20 token balances of the account. We’ll compare them after the transaction
+is executed to see the difference.
 
 ### Estimate transaction fee
 
@@ -58,7 +61,8 @@ const fee = gasPrice * gasLimit;
 In this part of the script we:
 
 1. Retrieve the testnet paymaster address.
-2. Generate the paymaster parameters to estimate the transaction fees passing the paymaster address, token address, and `ApprovalBased` as the paymaster flow type.
+2. Generate the paymaster parameters to estimate the transaction fees passing the paymaster address, token address, and
+   `ApprovalBased` as the paymaster flow type.
 3. Retrieve the `gasLimit` of sending the transaction with the paymaster params.
 4. Calculate the final estimated fee which is equal to `gasPrice` multiplied by `gasLimit`.
 
@@ -109,7 +113,10 @@ Finally we retrieve and print the ETH and ERC20 balances to see how they’ve ch
 
 ## Run the script
 
-To run the script, first enter the addresses of the `ZeekSecretMessages.sol` and `TestToken.sol` contracts that we deployed previously ([here](https://www.notion.so/6385bbbc22b14d1797eeb7648d9a926d?pvs=21) and [here](https://www.notion.so/6385bbbc22b14d1797eeb7648d9a926d?pvs=21)) in the following variables at the beginning of the script:
+To run the script, first enter the addresses of the `ZeekSecretMessages.sol` and `TestToken.sol` contracts that we
+deployed previously ([here](https://www.notion.so/6385bbbc22b14d1797eeb7648d9a926d?pvs=21) and
+[here](https://www.notion.so/6385bbbc22b14d1797eeb7648d9a926d?pvs=21)) in the following variables at the beginning of
+the script:
 
 ```typescript
 // Address of the ZeekMessages contract
@@ -126,4 +133,5 @@ Next, make sure the script file is selected in the Remix editor and click on the
 
 You’ll see the progress in the console.
 
-If everything worked as expected, only the ERC20 balance will decrease, meaning the fee was paid with the ERC20 token instead of ETH.
+If everything worked as expected, only the ERC20 balance will decrease, meaning the fee was paid with the ERC20 token
+instead of ETH.

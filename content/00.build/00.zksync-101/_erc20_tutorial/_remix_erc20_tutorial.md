@@ -3,9 +3,11 @@ title: ERC20 with Remix
 ---
 ## Custom ERC20 token code
     
-ERC20 tokens are a standard for fungible tokens, which can be traded and represent a fixed value. You’ve used ERC20 tokens if you’ve transacted with USDC, DAI, USDT, LINK or UNI.
+ERC20 tokens are a standard for fungible tokens, which can be traded and represent a fixed value. You’ve used ERC20
+tokens if you’ve transacted with USDC, DAI, USDT, LINK or UNI.
 
-The ERC20 token we’re going to deploy will allow users to mint and burn tokens. The entire smart contract code is as follows:
+The ERC20 token we’re going to deploy will allow users to mint and burn tokens. The entire smart contract code is as
+follows:
 
 ```solidity
 // SPDX-License-Identifier: Unlicensed
@@ -33,10 +35,14 @@ zkSync is EVM compatible, so you can use existing popular libraries like OpenZep
 
 The most important features are:
 
-- `Ownable` : this extension sets the deployer account as owner of the smart contract. It also introduces the `onlyOwner` modifier that restricts the execution of certain functions to the owner of the contract.
-- `ERC20Burnable`: this extension adds the `burn` and `burnFrom` functions to the smart contract. These functions destroy tokens from a given account.
-- `constructor`: called on deployment, the constructor will assign the given name and symbol to the token and mint 100 units of it to the account that deployed the contract.
-- `mint` : this function creates new token units to a given account. It uses the `onlyOwner` modifier so it can only be called from the owner account.
+- `Ownable` : this extension sets the deployer account as owner of the smart contract. It also introduces the
+  `onlyOwner` modifier that restricts the execution of certain functions to the owner of the contract.
+- `ERC20Burnable`: this extension adds the `burn` and `burnFrom` functions to the smart contract. These functions
+  destroy tokens from a given account.
+- `constructor`: called on deployment, the constructor will assign the given name and symbol to the token and mint 100
+  units of it to the account that deployed the contract.
+- `mint` : this function creates new token units to a given account. It uses the `onlyOwner` modifier so it can only be
+  called from the owner account.
 
 ## Deploy the smart contract
 
@@ -74,9 +80,9 @@ In the `scripts` folder you can find the `interact.ts`  script containing the fo
 import {ethers} from "ethers";
 
 // Address of the ERC20 token contract
-const TOKEN_CONTRACT_ADDRESS = "0x68a0B41320cD6489A661523bBd7093cE5c918039"
+const TOKEN_CONTRACT_ADDRESS = ""
 // Wallet that will receive tokens
-const RECEIVER_WALLET    = "0x46C61CCb7dA11C1285B32Ef7168503AD7c5BFfb2";
+const RECEIVER_WALLET    = "";
 // Amount of tokens to mint in ETH format, e.g. 1.23
 const TOKEN_AMOUNT    = "123.55";
 

@@ -26,7 +26,8 @@ console.log(`Account ${walletAddress} has ${ethers.utils.formatEther(ethBalance)
 console.log(`Account ${walletAddress} has ${ethers.utils.formatUnits(tokenBalance, 18)} tokens`);
 ```
 
-In this part we’re retrieving the ETH and ERC20 token balances of the account. We’ll compare them after the transaction is executed to see the difference.
+In this part we’re retrieving the ETH and ERC20 token balances of the account. We’ll compare them after the transaction
+is executed to see the difference.
 
 ### Estimate transaction fee
 
@@ -62,7 +63,8 @@ const fee = gasPrice * gasLimit;
 ```
 
 1. Retrieve the testnet paymaster address.
-2. Generate the paymaster parameters to estimate the transaction fees passing the paymaster address, token address, and `ApprovalBased` as the paymaster flow type.
+2. Generate the paymaster parameters to estimate the transaction fees passing the paymaster address, token address, and
+   `ApprovalBased` as the paymaster flow type.
 3. Retrieve the `gasLimit` of sending the transaction with the paymaster params.
 4. Calculate the final estimated fee which is equal to `gasPrice` multiplied by `gasLimit`.
 
@@ -113,7 +115,10 @@ Finally we retrieve and print the ETH and ERC20 balances to see how they’ve ch
 
 ## Run the script
 
-To run the script, first enter the addresses of the `ZeekSecretMessages.sol` and `TestToken.sol` contracts that we deployed previously ([here](https://www.notion.so/6385bbbc22b14d1797eeb7648d9a926d?pvs=21) and [here](https://www.notion.so/6385bbbc22b14d1797eeb7648d9a926d?pvs=21)) in the following variables at the beginning of the script:
+To run the script, first enter the addresses of the `ZeekSecretMessages.sol` and `TestToken.sol` contracts that we
+deployed previously ([here](https://www.notion.so/6385bbbc22b14d1797eeb7648d9a926d?pvs=21) and
+[here](https://www.notion.so/6385bbbc22b14d1797eeb7648d9a926d?pvs=21)) in the following variables at the beginning of
+the script:
 
 ```typescript
 // Address of the ZeekMessages contract
@@ -126,8 +131,9 @@ const NEW_MESSAGE = "This tx cost me no ETH!";
 
 Next, make sure the script file is selected in the Atlas editor and click on the “Deploy” button.
 
-![CleanShot 2024-04-18 at 12.17.24@2x.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/703ee435-9e35-441a-b595-a8f42972ac1a/54a62457-581e-420e-b5ca-807e5e3a33af/CleanShot_2024-04-18_at_12.17.242x.png)
+![ERC20 interact script in Remix](/images/101-paymaster/atlas-paymaster-script.png)
 
 You’ll see the progress in the console.
 
-If everything worked as expected, only the ERC20 balance will decrease, meaning the fee was paid with the ERC20 token instead of ETH.
+If everything worked as expected, only the ERC20 balance will decrease, meaning the fee was paid with the ERC20 token
+instead of ETH.

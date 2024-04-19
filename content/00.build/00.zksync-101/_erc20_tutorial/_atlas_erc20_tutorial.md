@@ -3,9 +3,11 @@ title: ERC20 token with Atlas
 ---
 ## Custom ERC20 token code
     
-ERC20 tokens are a standard for fungible tokens, which can be traded and represent a fixed value. You’ve used ERC20 tokens if you’ve transacted with USDC, DAI, USDT, LINK or UNI.
+ERC20 tokens are a standard for fungible tokens, which can be traded and represent a fixed value. You’ve used ERC20
+tokens if you’ve transacted with USDC, DAI, USDT, LINK or UNI.
 
-The ERC20 token we’re going to deploy will allow users to mint and burn tokens. The entire smart contract code is as follows:
+The ERC20 token we’re going to deploy will allow users to mint and burn tokens. The entire smart contract code is as
+follows:
 
 ```solidity
 // SPDX-License-Identifier: Unlicensed
@@ -32,14 +34,19 @@ zkSync is EVM compatible, so you can use existing popular libraries like OpenZep
 
 The most important features are:
 
-- `Ownable` : this extension sets the deployer account as owner of the smart contract. It also introduces the `onlyOwner` modifier that restricts the execution of certain functions to the owner of the contract.
-- `ERC20Burnable`: this extension adds the `burn` and `burnFrom` functions to the smart contract. These functions destroy tokens from a given account.
-- `constructor`: called on deployment, the constructor will assign the given name and symbol to the token and mint 100 units of it to the account that deployed the contract.
-- `mint` : this function creates new token units to a given account. It uses the `onlyOwner` modifier so it can only be called from the owner account.
+- `Ownable` : this extension sets the deployer account as owner of the smart contract. It also introduces the
+  `onlyOwner` modifier that restricts the execution of certain functions to the owner of the contract.
+- `ERC20Burnable`: this extension adds the `burn` and `burnFrom` functions to the smart contract. These functions
+  destroy tokens from a given account.
+- `constructor`: called on deployment, the constructor will assign the given name and symbol to the token and mint 100
+  units of it to the account that deployed the contract.
+- `mint` : this function creates new token units to a given account. It uses the `onlyOwner` modifier so it can only be
+  called from the owner account.
 
 ## Deploy the smart contract
 
-Atlas is a browser-based IDE with an integrated AI assistant that allows you to write, test and deploy smart contracts directly from your browser. Click the button below to open the project in Atlas.
+Atlas is a browser-based IDE with an integrated AI assistant that allows you to write, test and deploy smart contracts
+directly from your browser. Click the button below to open the project in Atlas.
 
 <UButton
     icon="i-heroicons-code-bracket"
@@ -51,13 +58,14 @@ Atlas is a browser-based IDE with an integrated AI assistant that allows you to 
     target="_blank"
     >Open smart contract in Atlas</UButton>
 
-You can see the contract in the Atlas code editor. On the right side, make sure the selected network is “zkSync Sepolia tesnet“ and click on **"Deploy"** to trigger the smart contract compilation and deployment. 
+You can see the contract in the Atlas code editor. On the right side, make sure the selected network is “zkSync Sepolia
+tesnet“ and click on **"Deploy"** to trigger the smart contract compilation and deployment. 
 
-::callout{icon="i-heroicons-light-bulb"}
-Behind the scenes, Atlas is using the zkSync Era custom solidity compiler (named `zksolc` ) to generate ZKEVM compatible bytecode. [Learn more about zkSync custom compilers]().
-::
+::callout{icon="i-heroicons-light-bulb"} Behind the scenes, Atlas is using the zkSync Era custom solidity compiler
+(named `zksolc` ) to generate ZKEVM compatible bytecode. [Learn more about zkSync custom compilers](). ::
 
-Once compiled sign the transaction with your wallet and wait until its processed. You’ll see the contract in the **“Deployed contracts”** section. 
+Once compiled sign the transaction with your wallet and wait until its processed. You’ll see the contract in the
+**“Deployed contracts”** section. 
 
 ## Interact with the ERC20 contract
 
@@ -105,10 +113,12 @@ Fill the following variables:
 - `RECEIVER_WALLET`: address of a different account that will receive new tokens.
 - `TOKEN_AMOUNT`: the amount of tokens we’ll send to the account.
 
-With the `interact.ts` file open in the Atlas editor, click on the “Deploy” button to run the script and see the output in the terminal.
+With the `interact.ts` file open in the Atlas editor, click on the “Deploy” button to run the script and see the output
+in the terminal.
 
 ![ERC20 interact script in Atlas](/images/101-erc20/atlas-erc20-interact.png)
 
-To confirm the account has received the tokens, visit the zkSync Sepolia explorer and search the receiver wallet address. You’ll see the new token balance in the assets table:
+To confirm the account has received the tokens, visit the zkSync Sepolia explorer and search the receiver wallet
+address. You’ll see the new token balance in the assets table:
 
 ![ERC20 tokens in account balance](/images/101-erc20/erc20-tokens-minted.png)
