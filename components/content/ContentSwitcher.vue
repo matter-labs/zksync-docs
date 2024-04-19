@@ -28,18 +28,11 @@ const basePath = computed(() => {
       :key="item.partial"
     >
       <ContentQuery
-        v-slot="{ data }"
         v-slot="dataQuery"
-        <<<<<<<
-        HEAD
-        :path="basePath"
-        =="====="
         :path="`${basePath}/${item.partial}`"
-      >
-        >>>>>> fe627486df666e093463d5e92ad4cfc576d89bdd
         find="one"
         :where="{ _partial: true }"
-        >
+      >
         <ContentRenderer :value="dataQuery.data" />
       </ContentQuery>
     </div>
