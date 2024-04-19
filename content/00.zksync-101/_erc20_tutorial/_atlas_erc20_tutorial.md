@@ -107,8 +107,8 @@ Fill the following variables:
 
 With the `interact.ts` file open in the Atlas editor, click on the “Deploy” button to run the script and see the output in the terminal.
 
-![CleanShot 2024-04-11 at 11.32.42@2x.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/703ee435-9e35-441a-b595-a8f42972ac1a/b0fb4351-effb-4f68-938c-006e4e9fc8f2/CleanShot_2024-04-11_at_11.32.422x.png)
+![ERC20 interact script in Atlas](/images/101-erc20/atlas-erc20-interact.png)
 
 To confirm the account has received the tokens, visit the zkSync Sepolia explorer and search the receiver wallet address. You’ll see the new token balance in the assets table:
 
-![CleanShot 2024-04-11 at 12.34.32@2x.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/703ee435-9e35-441a-b595-a8f42972ac1a/4306bd3d-b0bc-46ba-9722-b783548a6ea9/CleanShot_2024-04-11_at_12.34.322x.png)
+![ERC20 tokens in account balance](/images/101-erc20/erc20-tokens-minted.png)

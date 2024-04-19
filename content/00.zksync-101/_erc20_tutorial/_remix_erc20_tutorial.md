@@ -70,7 +70,7 @@ To deploy the contract, click on “Deploy” and sign the transaction on your w
 
 In the `scripts` folder you can find the `interact.ts`  script containing the following code:
 
-```tsx
+```typescript
 import {ethers} from "ethers";
 
 // Address of the ERC20 token contract
@@ -130,8 +130,8 @@ Fill the following variables:
 
 With the `interact.ts` file open in the editor, click on the “▶️” button to run the script and see the output in the terminal.
 
-![CleanShot 2024-04-11 at 13.23.04@2x.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/703ee435-9e35-441a-b595-a8f42972ac1a/d310a1ac-4924-4ee6-9d1e-35eaa99235e5/CleanShot_2024-04-11_at_13.23.042x.png)
+![ERC20 interact script in Remix](/images/101-erc20/remix-erc20-interact.png)
 
 To confirm the account has received the tokens, visit the zkSync Sepolia explorer and search the receiver wallet address. You’ll see the new token balance in the assets table:
 
-![CleanShot 2024-04-11 at 12.34.32@2x.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/703ee435-9e35-441a-b595-a8f42972ac1a/4306bd3d-b0bc-46ba-9722-b783548a6ea9/CleanShot_2024-04-11_at_12.34.322x.png)
+![ERC20 tokens in account balance](/images/101-erc20/erc20-tokens-minted.png)
