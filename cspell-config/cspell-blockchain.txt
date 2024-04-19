@@ -5,7 +5,7 @@ Eigen
 ethereum
 EVM
 evmla
-Geth
+geth
 gwei
 IERC
 inversed
@@ -32,3 +32,4 @@ Vitalik
 vyper
 Weth
 Yul
+Zeeve
