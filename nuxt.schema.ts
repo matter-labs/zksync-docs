@@ -241,6 +241,13 @@ export default defineNuxtSchema({
               icon: 'i-mdi-link-variant',
               default: [],
             }),
+            feedback: field({
+              type: 'string',
+              title: 'Feedback Link',
+              description: 'URL of your feedback form.',
+              icon: 'i-ph-note-pencil',
+              default: '',
+            }),
           },
         }),
       },

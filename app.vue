@@ -4,6 +4,7 @@ import FooterComponent from './components/FooterComponent.vue';
 import HeaderComponent from './components/HeaderComponent.vue';
 
 const { seo } = useAppConfig();
+const route = useRoute();
 
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation());
 const { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', {
@@ -48,13 +49,33 @@ useSeoMeta({
 });
 
 provide('navigation', navigation);
+
+const links = computed(() => {
+  return [
+    {
+      label: 'Build',
+      to: '/build/quick-start',
+      active: route.path.startsWith('/build'),
+    },
+    {
+      label: 'ZK Stack',
+      to: '/zk-stack',
+      active: route.path.startsWith('/zk-stack'),
+    },
+    {
+      label: 'External Node',
+      to: '/external-node',
+      active: route.path.startsWith('/external-node'),
+    },
+  ];
+});
 </script>
 
 <template>
   <div>
     <NuxtLoadingIndicator />
 
-    <HeaderComponent />
+    <HeaderComponent :links />
 
     <UMain>
       <NuxtLayout>

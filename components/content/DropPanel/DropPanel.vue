@@ -28,6 +28,13 @@
  * for multiple panels to be open at once.
  *
  * Use Panel component to slot in panels.
+ *
+ * @example
+ * ::drop-panel
+ *  ::panel{label="Tab Label"}
+ *  Panel Content
+ *  ::
+ * ::
  */
 import { useSlots, computed } from 'vue';
 

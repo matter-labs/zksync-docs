@@ -1,3 +1,5 @@
+Dockerized
+dockerized
 Diataxis
 fontaine
 zksolc
@@ -13,9 +15,10 @@ nuxtjs
 !NuxtUI
 !NuxtContent
 NVMe
+postgres
 rocksdb
 Vue
-!vue
+vue
 
 // devs
 dutterbutter

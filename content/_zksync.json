@@ -1,18 +1,41 @@
 {
+  "zkevm": {
+    "label": "zkSync VM"
+  },
   "mainnet": {
     "name": "zkSync Era Mainnet",
+    "identifier": "mainnet",
     "rpc_url": "https://mainnet.era.zksync.io",
     "websocket_url": "wss://mainnet.era.zksync.io/ws",
     "chain_id": 324,
     "currency_symbol": "ETH",
-    "block_explorer_url": "https://explorer.zksync.io/"
+    "block_explorer_url": "https://explorer.zksync.io"
   },
   "testnet": {
     "name": "zkSync Era Testnet",
-    "rpc_url": "https://testnet.era.zksync.dev",
-    "websocket_url": "wss://testnet.era.zksync.dev/ws",
+    "identifier": "sepolia",
+    "rpc_url": "https://sepolia.era.zksync.dev",
+    "websocket_url": "wss://sepolia.era.zksync.dev/ws",
     "chain_id": 280,
     "currency_symbol": "ETH",
-    "block_explorer_url": "https://sepolia.explorer.zksync.io/"
+    "block_explorer_url": "https://sepolia.explorer.zksync.io"
+  },
+  "git_repo": {
+    "block-explorer": "https://github.com/matter-labs/block-explorer",
+    "era-compiler-solidity": "https://github.com/matter-labs/era-compiler-solidity",
+    "era-hardhat-with-plugins": "https://github.com/matter-labs/era-hardhat-with-plugins",
+    "era-test-node": "https://github.com/matter-labs/era-test-node",
+    "era-solidity": "https://github.com/matter-labs/era-solidity",
+    "foundry-zksync": "https://github.com/matter-labs/foundry-zksync",
+    "hardhat-zksync": "https://github.com/matter-labs/hardhat-zksync",
+    "local-setup": "https://github.com/matter-labs/local-setup",
+    "zksolc-bin": "https://github.com/matter-labs/zksolc-bin",
+    "zksync-cli": "https://github.com/matter-labs/zksync-cli",
+    "zksync-contract-templates": "https://github.com/matter-labs/zksync-contract-templates",
+    "zksync-developers": "https://github.com/zkSync-Community-Hub/zksync-developers",
+    "zksync-docs": "https://github.com/matter-labs/zksync-docs",
+    "zksync-frontend-templates": "https://github.com/matter-labs/zksync-frontend-templates",
+    "zksync-scripting-templates": "https://github.com/matter-labs/zksync-scripting-templates",
+    "zkvyper-bin": "https://github.com/matter-labs/zkvyper-bin"
   }
 }

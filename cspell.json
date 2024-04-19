@@ -38,7 +38,8 @@
     "typescript",
     "dict-zksync",
     "dict-blockchain",
-    "dict-dev"
+    "dict-dev",
+    "dict-misc"
   ],
   "dictionaryDefinitions": [
     {
@@ -55,6 +56,11 @@
       "name": "dict-dev",
       "addWords": true,
       "path": "./cspell-config/cspell-dev.txt"
+    },
+    {
+      "name": "dict-misc",
+      "addWords": true,
+      "path": "./cspell-config/cspell-misc.txt"
     }
   ],
   "allowCompoundWords": true,
