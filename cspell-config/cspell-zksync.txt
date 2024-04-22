@@ -9,6 +9,7 @@ zkevm
 zkforge
 zkout
 zksolc
+zkstack
 zkSync
 zksync
 zksync-cli

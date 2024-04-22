@@ -1,5 +1,6 @@
 import { getIconCollections } from '@egoist/tailwindcss-icons';
 import { zksyncIcons } from './assets/zksync-icons';
+import { readFileSync } from 'node:fs';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
@@ -54,19 +55,19 @@ export default defineNuxtConfig({
     },
     highlight: {
       langs: [
-        'solidity',
-        'go',
-        'jsx',
-        'swift',
-        'python',
-        'rust',
-        'toml',
-        'java',
-        'xml',
-        'graphql',
-        'groovy',
         'asm',
         'c++',
+        'go',
+        'graphql',
+        'groovy',
+        'java',
+        'jsx',
+        'python',
+        'rust',
+        'solidity',
+        'swift',
+        'toml',
+        'xml',
       ],
       theme: {
         default: 'github-light',
