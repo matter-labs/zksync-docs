@@ -31,14 +31,6 @@ const props = defineProps({
 });
 
 const isExternalLink = computed(() => {
-  if (props.href.startsWith('http') || props.href.startsWith('//')) {
-    if (!props.href.includes('.zksync.io')) {
-      return true;
-    } else {
-      return false;
-    }
-  } else {
-    return false;
-  }
+  return (props.href.startsWith('http') || props.href.startsWith('//')) && !props.href.includes('.zksync.io');
 });
 </script>
