@@ -1,6 +1,6 @@
 import { getIconCollections } from '@egoist/tailwindcss-icons';
 import { zksyncIcons } from './assets/zksync-icons';
-import { readFileSync } from 'node:fs';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
