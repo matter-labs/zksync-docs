@@ -3,6 +3,7 @@ boojum
 Zeek
 MatterLabs
 Zeek
+Zeeks
 zkcast
 ZKEVM
 zkevm
