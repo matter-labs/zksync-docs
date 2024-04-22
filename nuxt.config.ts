@@ -3,6 +3,11 @@ import { zksyncIcons } from './assets/zksync-icons';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
+  app: {
+    head: {
+      link: [{ rel: 'stylesheet', href: '/katex.min.css' }],
+    },
+  },
   modules: [
     '@nuxt/content',
     '@nuxt/ui',
@@ -38,6 +43,15 @@ export default defineNuxtConfig({
     strict: false,
   },
   content: {
+    markdown: {
+      remarkPlugins: ['remark-math'],
+      rehypePlugins: {
+        'rehype-katex': {
+          output: 'html',
+          displayMode: true,
+        },
+      },
+    },
     highlight: {
       langs: [
         'solidity',
