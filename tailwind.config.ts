@@ -5,8 +5,9 @@ export default <Partial<Config>>{
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        sans: ['Raleway', ...defaultTheme.fontFamily.sans],
         serif: ['Montserrat', ...defaultTheme.fontFamily.serif],
+        mono: ['Fira Code', ...defaultTheme.fontFamily.mono],
       },
       colors: {
         zkSlate: {
