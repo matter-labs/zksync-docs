@@ -7,7 +7,7 @@ export default <Partial<Config>>{
       fontFamily: {
         sans: ['Raleway', ...defaultTheme.fontFamily.sans],
         serif: ['Montserrat', ...defaultTheme.fontFamily.serif],
-        mono: ['Fira Code', ...defaultTheme.fontFamily.mono],
+        mono: ['Fira Mono', ...defaultTheme.fontFamily.mono],
       },
       colors: {
         zkSlate: {

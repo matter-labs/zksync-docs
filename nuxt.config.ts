@@ -31,7 +31,7 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       { name: 'Raleway', provider: 'google' },
-      { name: 'Fira Code', provider: 'google' },
+      { name: 'Fira Mono', provider: 'google' },
     ],
   },
   ui: {
