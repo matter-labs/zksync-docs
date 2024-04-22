@@ -2,7 +2,7 @@
 title: ERC20 token with Atlas
 ---
 ## Custom ERC20 token code
-    
+  
 ERC20 tokens are a standard for fungible tokens, which can be traded and represent a fixed value. You’ve used ERC20
 tokens if you’ve transacted with USDC, DAI, USDT, LINK or UNI.
 
@@ -59,13 +59,13 @@ directly from your browser. Click the button below to open the project in Atlas.
     >Open smart contract in Atlas</UButton>
 
 You can see the contract in the Atlas code editor. On the right side, make sure the selected network is “zkSync Sepolia
-tesnet“ and click on **"Deploy"** to trigger the smart contract compilation and deployment. 
+tesnet“ and click on **"Deploy"** to trigger the smart contract compilation and deployment.
 
 ::callout{icon="i-heroicons-light-bulb"} Behind the scenes, Atlas is using the zkSync Era custom solidity compiler
-(named `zksolc` ) to generate ZKEVM compatible bytecode. [Learn more about zkSync custom compilers](). ::
+(named `zksolc` ) to generate ZKEVM compatible bytecode. Learn more about zkSync custom compilers ::
 
 Once compiled sign the transaction with your wallet and wait until its processed. You’ll see the contract in the
-**“Deployed contracts”** section. 
+**“Deployed contracts”** section.
 
 ## Interact with the ERC20 contract
 
@@ -101,7 +101,7 @@ export async function main (atlas: AtlasEnvironment) {
 }
 ```
 
-This scripts uses `ethers` to interact with the contract we’ve just deployed. 
+This scripts uses `ethers` to interact with the contract we’ve just deployed.
 
 ::callout{icon="i-heroicons-light-bulb"}
 Existing libraries like `ethers` , `viem` and `web3.js` can be used to interact with smart contracts deployed on zkSync.

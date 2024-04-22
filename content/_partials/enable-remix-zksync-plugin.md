@@ -11,6 +11,7 @@ To deploy smart contracts to zkSync via Remix we need to enable the zkSync plugi
 
 ![Enable zkSync plugin in Remix](/images/enable-remix-plugin.gif)
 
-Once activated, you’ll see a new menu item with the zkSync logo. Click on it to see the different options to compile and deploy the contract to zkSync. 
+Once activated, you’ll see a new menu item with the zkSync logo. Click on it to see the different options to compile and
+deploy the contract to zkSync.
 
 <hr />
