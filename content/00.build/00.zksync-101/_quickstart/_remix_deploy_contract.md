@@ -23,8 +23,10 @@ Click the button below to open the project in Remix and see the contract in the 
 To compile the contract, click on  Compile ZeeksSecretMessages.sol. If you get a popup message requesting permissions to
 access **`ACCESS TO "WRITEFILE" OF "FILE MANAGER"`,** click on Accept.
 
-::callout{icon="i-heroicons-light-bulb"} Behind the scenes, Remix is using the zkSync Era custom solidity compiler
-(named `zksolc` ) to generate ZKEVM compatible bytecode. Learn more about zkSync custom compilers. ::
+::callout{icon="i-heroicons-light-bulb"} 
+Behind the scenes, Remix is using the zkSync Era custom solidity compiler
+(named `zksolc` ) to generate ZKEVM compatible bytecode. Learn more about zkSync custom compilers.
+::
 
 We will use our wallet’s configured network to connect and deploy our smart contract so make sure your wallet is
 currently connected to the zkSync Sepolia testnet. In Remix, under the Environment Section, select “Wallet” and click on
