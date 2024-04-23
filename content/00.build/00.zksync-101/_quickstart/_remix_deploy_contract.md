@@ -16,7 +16,7 @@ Click the button below to open the project in Remix and see the contract in the 
     color="primary"
     variant="solid"
     :trailing="false"
-    to="https://remix.ethereum.org/#url=https://github.com/uF4No/zksync-101-quickstart/blob/master/contracts/ZeekSecretMessages.sol"
+    to="https://remix.ethereum.org/#url=https://github.com/uF4No/zksync-101-remix/blob/master/contracts/ZeekSecretMessages.sol"
     target="_blank"
     >Open smart contract in Remix</UButton>
 
