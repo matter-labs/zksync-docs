@@ -51,7 +51,7 @@ making it efficient to launch and manage multiple campaigns.
 
 ::drop-panel
   ::panel{label="CrowdfundingFactory.sol"}
-    ```solidity
+    ```solidity [CrowdfundingFactory.sol]
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
 
@@ -115,7 +115,7 @@ The deployment script is located at `/deploy/deployUsingFactory.ts`.
 ::drop-panel
   ::panel{label="deployUsingFactory.ts"}
 
-  ```typescript
+  ```typescript [deployUsingFactory.ts]
   import { deployContract, getWallet } from "./utils";
   import { ethers } from "ethers";
   import { HardhatRuntimeEnvironment } from "hardhat/types";
