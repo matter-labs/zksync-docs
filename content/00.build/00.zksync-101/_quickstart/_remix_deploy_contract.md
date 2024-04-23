@@ -23,7 +23,7 @@ Click the button below to open the project in Remix and see the contract in the 
 To compile the contract, click on  Compile ZeeksSecretMessages.sol. If you get a popup message requesting permissions to
 access **`ACCESS TO "WRITEFILE" OF "FILE MANAGER"`,** click on Accept.
 
-::callout{icon="i-heroicons-light-bulb"} 
+::callout{icon="i-heroicons-light-bulb"}
 Behind the scenes, Remix is using the zkSync Era custom solidity compiler
 (named `zksolc` ) to generate ZKEVM compatible bytecode. Learn more about zkSync custom compilers.
 ::
