@@ -60,7 +60,7 @@ Click the button below to open the project in Remix and see the contract in the 
     color="primary"
     variant="solid"
     :trailing="false"
-    to="https://remix.ethereum.org/#url=https://github.com/uF4No/zksync-erc20/blob/main/contracts/TestToken.sol"
+    to="https://remix.ethereum.org/#url=https://github.com/uF4No/zksync-101-remix/blob/main/contracts/TestToken.sol"
     target="_blank"
     >Open smart contract in Remix</UButton>
 

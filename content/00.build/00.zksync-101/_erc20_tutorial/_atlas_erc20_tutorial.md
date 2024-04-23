@@ -54,7 +54,7 @@ directly from your browser. Click the button below to open the project in Atlas.
     color="primary"
     variant="solid"
     :trailing="false"
-    to="https://app.atlaszk.com/projects?template=https://github.com/uF4No/zksync-erc20&open=/contracts/TestToken.sol&chainId=300"
+    to="https://app.atlaszk.com/projects?template=https://github.com/uF4No/zksync-101-atlas&open=/contracts/TestToken.sol&chainId=300"
     target="_blank"
     >Open smart contract in Atlas</UButton>
 

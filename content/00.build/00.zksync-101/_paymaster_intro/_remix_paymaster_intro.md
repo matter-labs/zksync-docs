@@ -114,8 +114,8 @@ Finally we retrieve and print the ETH and ERC20 balances to see how they’ve ch
 ## Run the script
 
 To run the script, first enter the addresses of the `ZeekSecretMessages.sol` and `TestToken.sol` contracts that we
-deployed previously ([here](https://www.notion.so/6385bbbc22b14d1797eeb7648d9a926d?pvs=21) and
-[here](https://www.notion.so/6385bbbc22b14d1797eeb7648d9a926d?pvs=21)) in the following variables at the beginning of
+deployed previously ([here](../3.quickstart.md) and
+[here](../4.erc20-token.md)) in the following variables at the beginning of
 the script:
 
 ```typescript
