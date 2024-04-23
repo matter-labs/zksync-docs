@@ -6,7 +6,10 @@ export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
   app: {
     head: {
-      link: [{ rel: 'stylesheet', href: '/katex.min.css' }],
+      link: [
+        { rel: 'stylesheet', href: '/main.css' },
+        { rel: 'stylesheet', href: '/katex.min.css' },
+      ],
     },
   },
   modules: [
@@ -25,6 +28,13 @@ export default defineNuxtConfig({
 
       globals.forEach((c) => (c.global = true));
     },
+  },
+  fonts: {
+    families: [
+      { name: 'Raleway', provider: 'google' },
+      { name: 'Montserrat', provider: 'google' },
+      { name: 'Fira Mono', provider: 'google' },
+    ],
   },
   ui: {
     icons: {
