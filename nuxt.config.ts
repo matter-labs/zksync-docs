@@ -1,5 +1,6 @@
 import { getIconCollections } from '@egoist/tailwindcss-icons';
 import { zksyncIcons } from './assets/zksync-icons';
+import { customIcons } from './assets/custom-icons';
 import { readFileSync } from 'node:fs';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -30,6 +31,7 @@ export default defineNuxtConfig({
     icons: {
       collections: {
         ...zksyncIcons,
+        ...customIcons,
         ...getIconCollections(['heroicons', 'simple-icons', 'zondicons']),
       },
     },

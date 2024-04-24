@@ -38,31 +38,11 @@ function addNetwork() {
 <template>
   <UButton
     type="button"
-    icon="metamask"
+    icon="i-custom-metamask-logo"
+    size="xl"
+    :variant="chainName === 'zkSync Era Mainnet' ? 'solid' : 'soft'"
     @click="addNetwork"
   >
-    <img
-      width="32"
-      src="/images/metamask_logo.svg"
-      class="m-0 p-0"
-      :alt="Metamask"
-    />
     Add {{ chainName }}
   </UButton>
 </template>
-
-<style scoped>
-.add-network {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 8px;
-  gap: 4px;
-  cursor: pointer;
-  border: 1px solid #000;
-}
-
-img[src*='/images/metamask_logo.svg'] {
-  content: url('/images/metamask_logo.svg');
-}
-</style>
