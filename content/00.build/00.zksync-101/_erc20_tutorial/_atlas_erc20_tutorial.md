@@ -29,7 +29,7 @@ contract TestToken is ERC20, Ownable, ERC20Burnable {
 ```
 
 ::callout{icon="i-heroicons-light-bulb"}
-zkSync is EVM compatible, so you can use existing popular libraries like OpenZeppelin.
+zkSync is [EVM compatible](/build/resources/glossary#evm-compatible), so you can use existing popular libraries like OpenZeppelin.
 ::
 
 The most important features are:
@@ -58,12 +58,12 @@ directly from your browser. Click the button below to open the project in Atlas.
     target="_blank"
     >Open smart contract in Atlas</UButton>
 
-You can see the contract in the Atlas code editor. On the right side, make sure the selected network is “zkSync Sepolia
+You can see the contract in the Atlas code editor. In the right sidebar, make sure the selected network is “zkSync Sepolia
 tesnet“ and click on **"Deploy"** to trigger the smart contract compilation and deployment.
 
 ::callout{icon="i-heroicons-light-bulb"}
 Behind the scenes, Atlas is using the zkSync Era custom solidity compiler
-(named `zksolc` ) to generate ZKEVM compatible bytecode. Learn more about zkSync custom compilers.
+(named `zksolc` ) to generate ZKEVM compatible bytecode. [Learn more about zkSync custom compilers](/zk-stack/components/compiler/toolchain/overview).
 ::
 
 Once compiled sign the transaction with your wallet and wait until its processed. You’ll see the contract in the
@@ -90,15 +90,25 @@ export async function main (atlas: AtlasEnvironment) {
   const wallet = provider.getSigner();
 
   // initialise token contract with address, abi and signer
-  const tokenContract= new ethers.Contract(TOKEN_CONTRACT_ADDRESS, TokenArtifact.TestToken.abi, wallet);
+  const tokenContract= new ethers.Contract(
+    TOKEN_CONTRACT_ADDRESS, 
+    TokenArtifact.TestToken.abi, 
+    wallet
+  );
 
   console.log("Minting tokens...");
-  const tx = await tokenContract.mint(RECEIVER_WALLET, ethers.utils.parseEther(TOKEN_AMOUNT));
+  const tx = await tokenContract.mint(
+    RECEIVER_WALLET, 
+    ethers.utils.parseEther(TOKEN_AMOUNT)
+  );
   await tx.wait();
   
 
   console.log("Success!");
-  console.log(`The account ${RECEIVER_WALLET} now has ${await tokenContract.balanceOf(RECEIVER_WALLET)} tokens`)
+  console.log(`
+    The account ${RECEIVER_WALLET} now has 
+    ${await tokenContract.balanceOf(RECEIVER_WALLET)} tokens`
+  );
 
 }
 ```

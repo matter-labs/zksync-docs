@@ -2,7 +2,9 @@
 title: Paymaster with Remix
 ---
 
-REMIX DOES NOT SUPPORT ZKSYNC-ETHERS YET
+::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
+Remix does not support `zksync-ethers` yet so you can not use it to run this script. Use Atlas instead.
+::
 
 To open the project in Remix, use the “Clone” option from the file explorer to import it from the following GitHub
 repository:`https://github.com/uF4No/zksync-101-remix`
@@ -129,7 +131,7 @@ const NEW_MESSAGE = "This tx cost me no ETH!";
 
 Next, make sure the script file is selected in the Remix editor and click on the “▶️” button.
 
-[REMIX IMAGE]
+<!-- TODO: @uF4No add Remix image to showcase how to run scripts -->
 
 You’ll see the progress in the console.
 

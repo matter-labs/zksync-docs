@@ -30,7 +30,7 @@ contract TestToken is ERC20, Ownable, ERC20Burnable {
 ```
 
 ::callout{icon="i-heroicons-light-bulb"}
-zkSync is EVM compatible, so you can use existing popular libraries like OpenZeppelin.
+zkSync is [EVM compatible](/build/resources/glossary#evm-compatible), so you can use existing popular libraries like OpenZeppelin.
 ::
 
 The most important features are:
@@ -50,7 +50,7 @@ The Remix IDE is an open-source web and desktop application that supports Ethere
 deployment, offering tools for writing, testing, debugging, and deploying smart contracts written in Solidity to EVM
 compatible protocols.
 
-:display-partial{path="/_partials/enable-remix-zksync-plugin"}
+:display-partial{path="/_partials/_enable-remix-zksync-plugin"}
 
 Click the button below to open the project in Remix and see the contract in the Remix code editor.
 
@@ -69,7 +69,7 @@ To compile the contract, click on  Compile TestToken.sol. If you get a popup mes
 
 ::callout{icon="i-heroicons-light-bulb"}
 Behind the scenes, Remix is using the zkSync Era custom solidity compiler (named `zksolc` ) to generate ZKEVM compatible
-bytecode. Learn more about zkSync custom compilers.
+bytecode. [Learn more about zkSync custom compilers](/zk-stack/components/compiler/toolchain/overview).
 ::
 
 We will use our wallet’s configured network to connect and deploy our smart contract so make sure your wallet is
@@ -96,30 +96,29 @@ const TOKEN_AMOUNT    = "123.55";
 (async () => {
   try {
     
-// Note that the script needs the ABI which is generated from the compilation artifact.
-  // Make sure contract is compiled and artifacts are generated
+  // Note that the script needs the ABI which is generated from the compilation artifact.
+  // Make sure contract is compiled for zkSync and artifacts are generated
   const artifactsPath = `browser/contracts/artifacts/TestToken.json` // Change this for different path
-  console.log(artifactsPath)
 
   const metadata = JSON.parse(await remix.call('fileManager', 'getFile', artifactsPath))
+  
   // 'web3Provider' is a remix global variable object
-//   console.log(metadata)
-
   const signer = (new ethers.providers.Web3Provider(web3Provider)).getSigner(0)
 
   // initialise token contract with address, abi and signer
   const tokenContract= new ethers.Contract(TOKEN_CONTRACT_ADDRESS, metadata.abi, signer);
 
   console.log("Minting tokens...");
-  const tx = await tokenContract.mint(RECEIVER_WALLET, ethers.utils.parseEther(TOKEN_AMOUNT));
+  const tx = await tokenContract.mint(
+    RECEIVER_WALLET,
+    ethers.utils.parseEther(TOKEN_AMOUNT)
+  );
   console.log(`Mint transaction is ${tx.hash}`)
   await tx.wait();
   console.log("Success!");
 
   const balance = await tokenContract.balanceOf(RECEIVER_WALLET)
-  console.log(balance)
   
-
   console.log(`The account ${RECEIVER_WALLET} now has ${balance} tokens`)
 
   } catch (e) {

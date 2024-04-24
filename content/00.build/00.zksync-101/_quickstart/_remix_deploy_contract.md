@@ -6,7 +6,7 @@ The Remix IDE is an open-source web and desktop application that supports Ethere
 deployment, offering tools for writing, testing, debugging, and deploying smart contracts written in Solidity to EVM
 compatible protocols.
 
-:display_partial{path="/_partials/enable-remix-zksync-plugin"}
+:display_partial{path="/_partials/_enable-remix-zksync-plugin"}
 
 Click the button below to open the project in Remix and see the contract in the Remix code editor.
 
@@ -25,7 +25,7 @@ access **`ACCESS TO "WRITEFILE" OF "FILE MANAGER"`,** click on Accept.
 
 ::callout{icon="i-heroicons-light-bulb"}
 Behind the scenes, Remix is using the zkSync Era custom solidity compiler
-(named `zksolc` ) to generate ZKEVM compatible bytecode. Learn more about zkSync custom compilers.
+(named `zksolc` ) to generate ZKEVM compatible bytecode. [Learn more about zkSync custom compilers](/zk-stack/components/compiler/toolchain/overview).
 ::
 
 We will use our wallet’s configured network to connect and deploy our smart contract so make sure your wallet is

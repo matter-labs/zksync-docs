@@ -19,7 +19,7 @@ tesnet“ and click on **“Deploy”** to trigger the smart contract compilatio
 
 ::callout{icon="i-heroicons-light-bulb"}
 Behind the scenes, Atlas is using the zkSync Era custom solidity compiler
-(named `zksolc` ) to generate ZKEVM compatible bytecode. Learn more about zkSync custom compilers.
+(named `zksolc` ) to generate ZKEVM compatible bytecode. [Learn more about zkSync custom compilers](/zk-stack/components/compiler/toolchain/overview).
 ::
 
 ![Contract in Atlas](/images/101-quickstart/101-atlas-contract.png)
