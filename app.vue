@@ -67,6 +67,11 @@ const links = computed(() => {
       to: '/external-node',
       active: route.path.startsWith('/external-node'),
     },
+    {
+      label: 'Ecosystem',
+      to: '/ecosystem',
+      active: route.path.startsWith('/ecosystem'),
+    },
   ];
 });
 </script>
