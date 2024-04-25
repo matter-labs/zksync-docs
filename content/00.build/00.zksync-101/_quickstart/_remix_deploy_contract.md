@@ -10,15 +10,9 @@ compatible protocols.
 
 Click the button below to open the project in Remix and see the contract in the Remix code editor.
 
-<UButton
-    icon="i-heroicons-code-bracket"
-    size="xl"
-    color="primary"
-    variant="solid"
-    :trailing="false"
-    to="https://remix.ethereum.org/#url=https://github.com/uF4No/zksync-101-remix/blob/master/contracts/ZeekSecretMessages.sol"
-    target="_blank"
-    >Open smart contract in Remix</UButton>
+:u-button{ icon="i-heroicons-code-bracket" size="xl" color="primary" variant="solid" :trailing="false"
+to="https://remix.ethereum.org/#url=https://github.com/uF4No/zksync-101-remix/blob/master/contracts/ZeekSecretMessages.sol"
+target="_blank" label="Open smart contract in Remix"}
 
 To compile the contract, click on  Compile ZeeksSecretMessages.sol. If you get a popup message requesting permissions to
 access **`ACCESS TO "WRITEFILE" OF "FILE MANAGER"`,** click on Accept.
