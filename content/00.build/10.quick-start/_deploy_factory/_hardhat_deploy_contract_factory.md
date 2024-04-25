@@ -1,37 +1,13 @@
 ---
 title: Hardhat | Deploy Contract Factory
 ---
-<!-- TODO: @dutterbutter determine best approach to leverage zksync cli for project
-bootstrapping for this guide series. -->
+
 Run the following command in your terminal to initialize the project.
 
 ```sh
-git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
-cd zksync-quickstart-guide
-git checkout db/contract-factories
+npx zksync-cli create --template qs-factories contract-factory-quickstart
+cd contract-factory-quickstart
 ```
-
-Install the dependencies:
-
-::code-group
-
-```bash [npm]
-npm install
-```
-
-```bash [yarn]
-yarn install
-```
-
-```bash [pnpm]
-pnpm install
-```
-
-```bash [bun]
-bun install
-```
-
-::
 
 ## Set up your wallet
 
