@@ -47,7 +47,7 @@ export default defineNuxtConfig({
       collections: {
         ...zksyncIcons,
         ...customIcons,
-        ...getIconCollections(['heroicons', 'simple-icons']),
+        ...getIconCollections(['heroicons', 'simple-icons', 'logos', 'devicon']),
       },
     },
   },
