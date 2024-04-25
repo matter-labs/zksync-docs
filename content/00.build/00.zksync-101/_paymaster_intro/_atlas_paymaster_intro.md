@@ -125,7 +125,7 @@ const NEW_MESSAGE = "This tx cost me no ETH!";
 
 Next, make sure the script file is selected in the Atlas editor and click on the “Deploy” button.
 
-![ERC20 interact script in Remix](/images/101-paymaster/atlas-paymaster-script.png)
+![ERC20 interact script in Remix](/images/101-paymasters/atlas-paymaster-script.png)
 
 You’ll see the progress in the console.
 
