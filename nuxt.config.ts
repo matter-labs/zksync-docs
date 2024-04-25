@@ -7,7 +7,10 @@ export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
   app: {
     head: {
-      link: [{ rel: 'stylesheet', href: '/katex.min.css' }],
+      link: [
+        { rel: 'stylesheet', href: '/main.css' },
+        { rel: 'stylesheet', href: '/katex.min.css' },
+      ],
     },
   },
   modules: [
@@ -18,6 +21,7 @@ export default defineNuxtConfig({
     'nuxt-og-image',
     'nuxt-headlessui',
     '@nuxt/devtools',
+    '@nuxt/image',
   ],
   hooks: {
     // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
@@ -26,6 +30,17 @@ export default defineNuxtConfig({
 
       globals.forEach((c) => (c.global = true));
     },
+  },
+  image: {
+    quality: 90,
+    format: ['avif', 'webp'],
+  },
+  fonts: {
+    families: [
+      { name: 'Raleway', provider: 'google' },
+      { name: 'Montserrat', provider: 'google' },
+      { name: 'Fira Mono', provider: 'google' },
+    ],
   },
   ui: {
     icons: {
@@ -82,6 +97,13 @@ export default defineNuxtConfig({
   nitro: {
     firebase: {
       gen: 2,
+    },
+  },
+  runtimeConfig: {
+    public: {
+      mdc: {
+        useNuxtImage: true,
+      },
     },
   },
 });

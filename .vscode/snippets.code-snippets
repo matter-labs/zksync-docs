@@ -20,12 +20,6 @@
     "prefix": "@zk",
     "body": ["%%zk_$1%%$0"],
   },
-  "External Link": {
-    "scope": "markdown",
-    "prefix": "@exlink",
-    "body": [":external-link{text=\"$1\" href=\"$2\"}$0"],
-    "description": "External link component",
-  },
   "Callout": {
     "scope": "markdown",
     "prefix": "@callout",

@@ -32,6 +32,8 @@ export default defineAppConfig({
         code: {
           icon: {
             go: 'vscode-icons:file-type-go',
+            vyper: 'devicon:vyper',
+            sol: 'vscode-icons:file-type-solidity',
           },
         },
       },
