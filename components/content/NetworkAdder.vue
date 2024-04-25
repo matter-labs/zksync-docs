@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const props = defineProps<{
-  network: { type: String; required: true };
-}>();
+const props = defineProps({
+  network: { type: String, required: true },
+});
 
 const chainName = props.network === 'mainnet' ? 'zkSync Era Mainnet' : 'zkSync Sepolia Testnet';
 
