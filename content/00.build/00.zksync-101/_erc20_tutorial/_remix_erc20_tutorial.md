@@ -67,11 +67,11 @@ bytecode. [Learn more about zkSync custom compilers](/zk-stack/components/compil
 ::
 
 We will use our wallet’s configured network to connect and deploy our smart contract so make sure your wallet is
-currently connected to the zkSync Sepolia testnet. In Remix, under the Environment Section, select “Wallet” and click on
+currently connected to the %%zk_testnet_name%%. In Remix, under the Environment Section, select “Wallet” and click on
 “Connect Wallet”.
 
 To deploy the contract, click on “Deploy” and sign the transaction on your wallet. Congratulations, your ERC20 token
-contract is now deployed on zkSync Sepolia testnet!
+contract is now deployed on %%zk_testnet_name%%!
 
 ## Interact with the ERC20 contract
 

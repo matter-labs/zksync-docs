@@ -23,11 +23,11 @@ Behind the scenes, Remix is using the zkSync Era custom solidity compiler
 ::
 
 We will use our wallet’s configured network to connect and deploy our smart contract so make sure your wallet is
-currently connected to the zkSync Sepolia testnet. In Remix, under the Environment Section, select “Wallet” and click on
+currently connected to the %%zk_testnet_name%%. In Remix, under the Environment Section, select “Wallet” and click on
 “Connect Wallet”.
 
 To deploy the contract, click on “Deploy” and sign the transaction on your wallet. Congratulations, you’ve deployed your
-first contract to zkSync Era testnet!
+first contract to %%zk_testnet_name%%!
 
 Below the contract name you can find the address where the contract is deployed. The “Interact” section displays the
 forms to interact with the `getTotalMessages` and `sendMessage` functions.

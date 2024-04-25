@@ -19,7 +19,7 @@ Behind the scenes, Atlas is using the zkSync Era custom solidity compiler
 ![Contract in Atlas](/images/101-quickstart/101-atlas-contract.png)
 
 Once compiled sign the transaction with your wallet and wait until its processed. You’ll see the contract in the
-“Deployed contracts” section. Congratulations, you’ve deployed your first smart contract to zkSync Era testnet!
+“Deployed contracts” section. Congratulations, you’ve deployed your first smart contract to %%zk_testnet_name%%!
 
 Below the contract name you can find its deployment address. The “Live Contract State” section displays the smart
 contract balance and the value returned by the `getTotalMessages` function.
