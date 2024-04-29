@@ -1,10 +1,16 @@
 <template>
   <ClientOnly>
     <template #default>
-      <button class="underline" @click="addZeek()">
+      <button
+        class="underline"
+        @click="addZeek()"
+      >
         {{ text }}
       </button>
-      <div ref="el" class="fixed z-10 w-full h-full inset-0 pointer-events-none isolate" />
+      <div
+        ref="el"
+        class="pointer-events-none fixed inset-0 isolate z-10 h-full w-full"
+      />
     </template>
     <template #fallback>
       {{ text }}
@@ -13,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { useElementSize, useRafFn } from "@vueuse/core";
+import { useElementSize, useRafFn } from '@vueuse/core';
 
 defineProps({
   text: {
@@ -22,7 +28,21 @@ defineProps({
   },
 });
 
-const images = ["zeek-astronaut.svg", "zeek-banker.svg", "zeek-champion.svg", "zeek-coffee.svg", "zeek-davinci.svg", "zeek-dj.svg", "zeek-firstmate.svg", "zeek-foundry.svg", "zeek-ice-cream.svg", "zeek-indiana-jones.svg", "zeek-matrix.svg", "zeek-passport.svg", "zeek-pirate.svg"]
+const images = [
+  'zeek-astronaut.svg',
+  'zeek-banker.svg',
+  'zeek-champion.svg',
+  'zeek-coffee.svg',
+  'zeek-davinci.svg',
+  'zeek-dj.svg',
+  'zeek-firstmate.svg',
+  'zeek-foundry.svg',
+  'zeek-ice-cream.svg',
+  'zeek-indiana-jones.svg',
+  'zeek-matrix.svg',
+  'zeek-passport.svg',
+  'zeek-pirate.svg',
+];
 const el = ref<HTMLElement | null>(null);
 
 const { width, height } = useElementSize(el);
@@ -45,7 +65,7 @@ class Particle {
     this.image = new Image();
     this.image.onload = () => {
       this.loaded = true;
-      this.image.classList.add("absolute");
+      this.image.classList.add('absolute');
       this.image.style.width = `${this.size}px`;
       this.image.style.height = `${this.size}px`;
       this.image.style.willChange = `transform`;
@@ -98,12 +118,12 @@ const addZeek = () => {
   for (let a = 0; a < 2; a++) {
     particles.push(new Particle());
   }
-}
+};
 
 const particles: Particle[] = [];
 
 function animate(_delta: number) {
-  particles.forEach(particle => {
+  particles.forEach((particle) => {
     particle.update(_delta);
     particle.draw();
   });
