@@ -3,7 +3,7 @@ const props = defineProps({
   network: { type: String, required: true },
 });
 
-const chainName = props.network === 'mainnet' ? 'zkSync Era Mainnet' : 'zkSync Sepolia Testnet';
+const chainName = props.network === 'mainnet' ? 'ZKsync Era Mainnet' : 'ZKsync Sepolia Testnet';
 
 function addNetwork() {
   const config = {
@@ -40,7 +40,7 @@ function addNetwork() {
     type="button"
     icon="i-custom-metamask-logo"
     size="xl"
-    :variant="chainName === 'zkSync Era Mainnet' ? 'solid' : 'soft'"
+    :variant="chainName === 'ZKsync Era Mainnet' ? 'solid' : 'soft'"
     @click="addNetwork"
   >
     Add {{ chainName }}

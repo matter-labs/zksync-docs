@@ -8,12 +8,12 @@ directly from your browser. Click the button below to open the project in Atlas.
 to="https://app.atlaszk.com/projects?template=https://github.com/uF4No/zksync-101-atlas&open=/contracts/ZeekSecretMessages.sol&chainId=300"
 target="_blank" label="Open smart contract in Atlas"}
   
-You can see the contract in the Atlas code editor. On the right side, make sure the selected network is “zkSync Sepolia
+You can see the contract in the Atlas code editor. On the right side, make sure the selected network is “ZKsync Sepolia
 tesnet“ and click on **“Deploy”** to trigger the smart contract compilation and deployment.
 
 ::callout{icon="i-heroicons-light-bulb"}
-Behind the scenes, Atlas is using the zkSync Era custom solidity compiler
-(named `zksolc` ) to generate ZKEVM compatible bytecode. [Learn more about zkSync custom compilers](/zk-stack/components/compiler/toolchain/overview).
+Behind the scenes, Atlas is using the ZKsync Era custom solidity compiler
+(named `zksolc` ) to generate ZKEVM compatible bytecode. [Learn more about ZKsync custom compilers](/zk-stack/components/compiler/toolchain/overview).
 ::
 
 ![Contract in Atlas](/images/101-quickstart/101-atlas-contract.png)
