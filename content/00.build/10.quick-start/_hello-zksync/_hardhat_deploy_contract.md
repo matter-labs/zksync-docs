@@ -9,7 +9,7 @@ bootstrapping for this guide series. -->
 
 ```sh
 git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
-cd zksync-quickstart-guide
+cd zksync-quickstart-guide/templates/hello-zksync
 ```
 
 Install the dependencies:
