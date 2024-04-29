@@ -9,7 +9,10 @@ export default defineNitroPlugin((nitroApp) => {
     if (file._id.endsWith('.md')) {
       Object.keys(tags).forEach((key) => {
         file.body = file.body.replace(new RegExp(`%%${key}%%`, 'g'), tags[key]);
+        // replace all "zeek" or "Zeek" with "<ZeekEasterEgg :text="replacedWord"></ZeekEasterEgg>"
+        // make sure it case-insensitive and actually new word
       });
+      file.body = file.body.replace(/zeek/gi, '<ZeekEasterEgg />');
     }
   });
 });
