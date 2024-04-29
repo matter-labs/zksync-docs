@@ -2,7 +2,7 @@
 title: Hardhat | Contract Upgrading
 ---
 
-<!-- TODO: @dutterbutter determine best approach to leverate zksync cli for project
+<!-- TODO: @dutterbutter determine best approach to leverate ZKsync cli for project
 bootstrapping for this guide series. -->
 Run the following command in your terminal to initialize the project.
 
@@ -137,7 +137,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 3 Solidity file
 Successfully compiled 3 Solidity file
 ```
@@ -194,27 +194,27 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script deployBeaconProxy.ts
+npm run hardhat deploy-ZKsync --script deployBeaconProxy.ts
 # To deploy the contract on local in-memory node:
-# npm run hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
+# npm run hardhat deploy-ZKsync --script deployBeaconProxy.ts --network inMemoryNode
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-zksync --script deployBeaconProxy.ts
+yarn hardhat deploy-ZKsync --script deployBeaconProxy.ts
 # To deploy the contract on local in-memory node:
-# yarn hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
+# yarn hardhat deploy-ZKsync --script deployBeaconProxy.ts --network inMemoryNode
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script deployBeaconProxy.ts
+pnpm run hardhat deploy-ZKsync --script deployBeaconProxy.ts
 # To deploy the contract on local in-memory node:
-# pnpm run hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
+# pnpm run hardhat deploy-ZKsync --script deployBeaconProxy.ts --network inMemoryNode
 ```
 
 ```bash [bun]
-bun run hardhat deploy-zksync --script deployBeaconProxy.ts
+bun run hardhat deploy-ZKsync --script deployBeaconProxy.ts
 # To deploy the contract on local in-memory node:
-# bun run hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
+# bun run hardhat deploy-ZKsync --script deployBeaconProxy.ts --network inMemoryNode
 ```
 
 ::
@@ -293,7 +293,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 4 Solidity file
 Successfully compiled 4 Solidity file
 ```
@@ -371,19 +371,19 @@ Execute the test command corresponding to your package manager:
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
+npm run hardhat deploy-ZKsync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
+yarn hardhat deploy-ZKsync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
+pnpm run hardhat deploy-ZKsync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
 ```
 
 ```bash [bun]
-bun run hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
+bun run hardhat deploy-ZKsync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
 ```
 
 ::
@@ -432,13 +432,13 @@ Upon successful verification, you'll receive output detailing the verification p
 ```bash
 Verifying implementation: 0x58BD5adb462CF087E5838d53aE38A3Fe0EAf7A31
 Your verification ID is: 10547
-Contract successfully verified on zkSync block explorer!
+Contract successfully verified on ZKsync block explorer!
 Verifying beacon: 0x26410Bebf5Df7398DCBC5f00e9EBBa0Ddf471C72
 Your verification ID is: 10548
-Contract successfully verified on zkSync block explorer!
+Contract successfully verified on ZKsync block explorer!
 Verifying beacon proxy: 0xD58FA9Fb362Abf69cFc68A3545fD227165DAc167
 Your verification ID is: 10549
-Contract successfully verified on zkSync block explorer!
+Contract successfully verified on ZKsync block explorer!
 ```
 
 🎉 Congratulations! The `CrowdfundingCampaignV2` contract has been upgraded and verified!

@@ -2,7 +2,7 @@
 title: Hardhat | Contract Upgrading
 ---
 
-<!-- TODO: @dutterbutter determine best approach to leverate zksync cli for project
+<!-- TODO: @dutterbutter determine best approach to leverate ZKsync cli for project
 bootstrapping for this guide series. -->
 Run the following command in your terminal to initialize the project.
 
@@ -147,7 +147,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 4 Solidity file
 Successfully compiled 4 Solidity file
 ```
@@ -200,27 +200,27 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script deployUUPS.ts
+npm run hardhat deploy-ZKsync --script deployUUPS.ts
 # To deploy the contract on local in-memory node:
-# npm run hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
+# npm run hardhat deploy-ZKsync --script deployUUPS.ts --network inMemoryNode
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-zksync --script deployUUPS.ts
+yarn hardhat deploy-ZKsync --script deployUUPS.ts
 # To deploy the contract on local in-memory node:
-# yarn hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
+# yarn hardhat deploy-ZKsync --script deployUUPS.ts --network inMemoryNode
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script deployUUPS.ts
+pnpm run hardhat deploy-ZKsync --script deployUUPS.ts
 # To deploy the contract on local in-memory node:
-# pnpm run hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
+# pnpm run hardhat deploy-ZKsync --script deployUUPS.ts --network inMemoryNode
 ```
 
 ```bash [bun]
-bun run hardhat deploy-zksync --script deployUUPS.ts
+bun run hardhat deploy-ZKsync --script deployUUPS.ts
 # To deploy the contract on local in-memory node:
-# bun run hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
+# bun run hardhat deploy-ZKsync --script deployUUPS.ts --network inMemoryNode
 ```
 
 ::
@@ -297,7 +297,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 4 Solidity file
 Successfully compiled 4 Solidity file
 ```
@@ -359,19 +359,19 @@ Execute the test command corresponding to your package manager:
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
+npm run hardhat deploy-ZKsync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
+yarn hardhat deploy-ZKsync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
+pnpm run hardhat deploy-ZKsync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
 ```
 
 ```bash [bun]
-bun run hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
+bun run hardhat deploy-ZKsync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
 ```
 
 ::
@@ -417,10 +417,10 @@ Upon successful verification, you'll receive output detailing the verification p
 ```bash
 Verifying implementation: 0x9BE22706966D717d7b0C8aEC99A1a9d1b3bFeC50
 Your verification ID is: 10618
-Contract successfully verified on zkSync block explorer!
+Contract successfully verified on ZKsync block explorer!
 Verifying proxy: 0x91921fDb0F8942c18eCeE4E3896b369ca0650483
 Your verification ID is: 10619
-Contract successfully verified on zkSync block explorer!
+Contract successfully verified on ZKsync block explorer!
 ```
 
 🎉 Congratulations! The `CrowdfundingCampaignV2_UUPS` contract has been upgraded and verified!

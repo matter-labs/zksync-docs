@@ -4,7 +4,7 @@ title: Hardhat | Deploy Contract
 
 Run the following command in your terminal to initialize the project.
 
-<!-- TODO: @dutterbutter determine best approach to leverage zksync cli for project
+<!-- TODO: @dutterbutter determine best approach to leverage ZKsync cli for project
 bootstrapping for this guide series. -->
 
 ```sh
@@ -112,7 +112,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 1 Solidity file
 Successfully compiled 1 Solidity file
 ```
@@ -149,27 +149,27 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script deploy.ts
+npm run hardhat deploy-ZKsync --script deploy.ts
 # To deploy the contract on local in-memory node:
-# npm run hardhat deploy-zksync --script deploy.ts --network inMemoryNode
+# npm run hardhat deploy-ZKsync --script deploy.ts --network inMemoryNode
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-zksync --script deploy.ts
+yarn hardhat deploy-ZKsync --script deploy.ts
 # To deploy the contract on local in-memory node:
-# yarn hardhat deploy-zksync --script deploy.ts --network inMemoryNode
+# yarn hardhat deploy-ZKsync --script deploy.ts --network inMemoryNode
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script deploy.ts
+pnpm run hardhat deploy-ZKsync --script deploy.ts
 # To deploy the contract on local in-memory node:
-# pnpm run hardhat deploy-zksync --script deploy.ts --network inMemoryNode
+# pnpm run hardhat deploy-ZKsync --script deploy.ts --network inMemoryNode
 ```
 
 ```bash [bun]
-bun run hardhat deploy-zksync --script deploy.ts
+bun run hardhat deploy-ZKsync --script deploy.ts
 # To deploy the contract on local in-memory node:
-# bun run hardhat deploy-zksync --script deploy.ts --network inMemoryNode
+# bun run hardhat deploy-ZKsync --script deploy.ts --network inMemoryNode
 ```
 
 ::
@@ -188,7 +188,7 @@ Estimated deployment cost: 0.000501 ETH
 
 Requesting contract verification...
 Your verification ID is: 10067
-Contract successfully verified on zkSync block explorer!
+Contract successfully verified on ZKsync block explorer!
 ```
 
 🥳 Congratulations! Your smart contract is now deployed. 🚀

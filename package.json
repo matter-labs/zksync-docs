@@ -1,7 +1,7 @@
 {
   "name": "zksync-docs",
   "type": "module",
-  "description": "zkSync Docs V3",
+  "description": "ZKsync Docs V3",
   "version": "0.0.0",
   "license": "MIT",
   "author": "Matter Labs",

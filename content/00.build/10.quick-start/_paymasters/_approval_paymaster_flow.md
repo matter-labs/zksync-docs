@@ -1,9 +1,9 @@
 ---
 title: Approval Paymaster
-description: Learn to deploy contract factories in the zkSync environment.
+description: Learn to deploy contract factories in the ZKsync environment.
 ---
 
-<!-- TODO: @dutterbutter determine best approach to leverate zksync cli for project
+<!-- TODO: @dutterbutter determine best approach to leverate ZKsync cli for project
 bootstrapping for this guide series. -->
 Run the following command in your terminal to initialize the project.
 
@@ -185,7 +185,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 1 Solidity file
 Successfully compiled 1 Solidity file
 ```
@@ -242,27 +242,27 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts
+npm run hardhat deploy-ZKsync --script deployApprovalFlowPaymaster.ts
 # To deploy the contract on local in-memory node:
-# npm run hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
+# npm run hardhat deploy-ZKsync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts
+yarn hardhat deploy-ZKsync --script deployApprovalFlowPaymaster.ts
 # To deploy the contract on local in-memory node:
-# yarn hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
+# yarn hardhat deploy-ZKsync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts
+pnpm run hardhat deploy-ZKsync --script deployApprovalFlowPaymaster.ts
 # To deploy the contract on local in-memory node:
-# pnpm run hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
+# pnpm run hardhat deploy-ZKsync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
 ```
 
 ```bash [bun]
-bun run hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts
+bun run hardhat deploy-ZKsync --script deployApprovalFlowPaymaster.ts
 # To deploy the contract on local in-memory node:
-# bun run hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
+# bun run hardhat deploy-ZKsync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
 ```
 
 ::
@@ -281,7 +281,7 @@ Estimated deployment cost: 0.0006278488 ETH
 
 Requesting contract verification...
 Your verification ID is: 10923
-Contract successfully verified on zkSync block explorer!
+Contract successfully verified on ZKsync block explorer!
 Paymaster ETH balance is now 5000000000000000
 ```
 
@@ -382,19 +382,19 @@ Execute the command corresponding to your package manager:
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script interact/interactWithApprovalFlowPaymaster.ts
+npm run hardhat deploy-ZKsync --script interact/interactWithApprovalFlowPaymaster.ts
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-zksync --script interact/interactWithApprovalFlowPaymaster.ts
+yarn hardhat deploy-ZKsync --script interact/interactWithApprovalFlowPaymaster.ts
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script interact/interactWithApprovalFlowPaymaster.ts
+pnpm run hardhat deploy-ZKsync --script interact/interactWithApprovalFlowPaymaster.ts
 ```
 
 ```bash [bun]
-bun run hardhat deploy-zksync --script interact/interactWithApprovalFlowPaymaster.ts
+bun run hardhat deploy-ZKsync --script interact/interactWithApprovalFlowPaymaster.ts
 ```
 
 ::

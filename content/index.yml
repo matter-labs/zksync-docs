@@ -1,18 +1,18 @@
-title: 'zkSync Docs'
+title: 'ZKsync Docs'
 description:
   Nuxt UI Pro is a collection of premium Vue components built on top of Nuxt UI to create beautiful & responsive Nuxt
   applications in minutes.
 navigation: false
 hero:
-  title: 'Unlock the Potential of Layer 2 Scaling with zkSync'
-  description: 'Explore comprehensive guides, developer tools, and resources to innovate on the zkSync platform.'
+  title: 'Unlock the Potential of Layer 2 Scaling with ZKsync'
+  description: 'Explore comprehensive guides, developer tools, and resources to innovate on the ZKsync platform.'
   orientation: vertical
   headline:
     label: See what's new in 21.1.0
     to: https://github.com/matter-labs/zksync-era/releases
     icon: i-heroicons-arrow-top-right-on-square-20-solid
   links:
-    - label: Start building on zkSync
+    - label: Start building on ZKsync
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
       to: '/build/quick-start'
@@ -24,10 +24,10 @@ hero:
     #   to: https://github.com/nuxt-ui-pro/docs
     #   target: _blank
 features:
-  title: 'Explore zkSync Docs'
+  title: 'Explore ZKsync Docs'
   items:
-    - title: 'Getting Started with zkSync'
-      description: 'Jumpstart your zkSync journey with quickstart guides and fundamental concepts for developers.'
+    - title: 'Getting Started with ZKsync'
+      description: 'Jumpstart your ZKsync journey with quickstart guides and fundamental concepts for developers.'
       icon: 'i-zksync-zksync-logo'
       to: '#'
     - title: 'Develop with zksync-cli'
@@ -35,13 +35,13 @@ features:
       icon: 'i-simple-icons-windowsterminal'
       to: '#'
     - title: 'Architecture'
-      description: 'Learn about the zkSync architecture and how it works under the hood.'
+      description: 'Learn about the ZKsync architecture and how it works under the hood.'
       icon: 'i-heroicons-sparkles-20-solid'
       to: '#'
 community:
-  title: 'Join the zkSync Community'
+  title: 'Join the ZKsync Community'
   links:
-    - label: 'Learn more about zkSync'
+    - label: 'Learn more about ZKsync'
       icon: 'i-zksync-zksync-logo'
       trailingIcon: 'i-heroicons-arrow-right-20-solid'
       color: 'gray'
@@ -49,14 +49,14 @@ community:
       size: lg
   items:
     - title: 'Developer Updates'
-      description: 'Keep up to date with the latest from the zkSync team on X.'
+      description: 'Keep up to date with the latest from the ZKsync team on X.'
       icon: 'i-simple-icons-x'
       to: '#'
     - title: 'GitHub Discussions'
-      description: 'Get help from the community and contribute to the zkSync project.'
+      description: 'Get help from the community and contribute to the ZKsync project.'
       icon: 'i-simple-icons-github'
       to: '#'
-    - title: 'zkSync Discord'
-      description: 'Connect with devs and zkSync enthusiasts on Discord.'
+    - title: 'ZKsync Discord'
+      description: 'Connect with devs and ZKsync enthusiasts on Discord.'
       icon: 'i-simple-icons-discord'
       to: '#'

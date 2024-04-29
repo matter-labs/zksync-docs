@@ -1,7 +1,7 @@
 ---
 title: Hardhat | Contract Upgrading
 ---
-<!-- TODO: @dutterbutter determine best approach to leverate zksync cli for project
+<!-- TODO: @dutterbutter determine best approach to leverate ZKsync cli for project
 bootstrapping for this guide series. -->
 Run the following command in your terminal to initialize the project.
 
@@ -141,7 +141,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 3 Solidity file
 Successfully compiled 3 Solidity file
 ```
@@ -177,7 +177,7 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 **Key Components:**
 
 - **`hre.zkUpgrades.deployProxy`**: The method call to deploy the `CrowdfundingCampaign`
-contract via a transparent proxy, leveraging Hardhat's runtime environment for zkSync upgrades.
+contract via a transparent proxy, leveraging Hardhat's runtime environment for ZKsync upgrades.
 This ensures the deployed contract can be upgraded in the future without losing its state or funds.
 - **`initializer`**: Specifies the initialization method of the contract, `initialize` in this case,
 which is required for setting up the proxy's state upon deployment.
@@ -189,27 +189,27 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script deployTransparentProxy.ts
+npm run hardhat deploy-ZKsync --script deployTransparentProxy.ts
 # To deploy the contract on local in-memory node:
-# npm run hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
+# npm run hardhat deploy-ZKsync --script deployTransparentProxy.ts --network inMemoryNode
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-zksync --script deployTransparentProxy.ts
+yarn hardhat deploy-ZKsync --script deployTransparentProxy.ts
 # To deploy the contract on local in-memory node:
-# yarn hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
+# yarn hardhat deploy-ZKsync --script deployTransparentProxy.ts --network inMemoryNode
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script deployTransparentProxy.ts
+pnpm run hardhat deploy-ZKsync --script deployTransparentProxy.ts
 # To deploy the contract on local in-memory node:
-# pnpm run hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
+# pnpm run hardhat deploy-ZKsync --script deployTransparentProxy.ts --network inMemoryNode
 ```
 
 ```bash [bun]
-bun run hardhat deploy-zksync --script deployTransparentProxy.ts
+bun run hardhat deploy-ZKsync --script deployTransparentProxy.ts
 # To deploy the contract on local in-memory node:
-# bun run hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
+# bun run hardhat deploy-ZKsync --script deployTransparentProxy.ts --network inMemoryNode
 ```
 
 ::
@@ -287,7 +287,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 4 Solidity file
 Successfully compiled 4 Solidity file
 ```
@@ -352,19 +352,19 @@ Execute the command corresponding to your package manager:
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
+npm run hardhat deploy-ZKsync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
+yarn hardhat deploy-ZKsync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
+pnpm run hardhat deploy-ZKsync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
 ```
 
 ```bash [bun]
-bun run hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
+bun run hardhat deploy-ZKsync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
 ```
 
 ::
@@ -415,13 +415,13 @@ Upon successful verification, you'll receive output detailing the verification p
 ```bash
 Verifying implementation: 0x58BD5adb462CF087E5838d53aE38A3Fe0EAf7A31
 Your verification ID is: 10543
-Contract successfully verified on zkSync block explorer!
+Contract successfully verified on ZKsync block explorer!
 Verifying proxy: 0x68E8533acE01019CB8D07Eca822369D5De71b74D
 Your verification ID is: 10544
-Contract successfully verified on zkSync block explorer!
+Contract successfully verified on ZKsync block explorer!
 Verifying proxy admin: 0x05198D9f93cBDfa3e332776019115512d8e0c809
 Your verification ID is: 10545
-Contract successfully verified on zkSync block explorer!
+Contract successfully verified on ZKsync block explorer!
 ```
 
 🎉 Congratulations! The `CrowdfundingCampaignV2` contract has been upgraded and verified!

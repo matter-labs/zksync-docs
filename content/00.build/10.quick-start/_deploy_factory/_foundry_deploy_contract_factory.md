@@ -69,7 +69,7 @@ making it efficient to launch and manage multiple campaigns.
 
 ### Compile contract
 
-Smart contracts deployed to zkSync must be compiled using our custom compiler.
+Smart contracts deployed to ZKsync must be compiled using our custom compiler.
 For this particular guide we are making use of `zksolc`.
 
 To compile the contracts in the project, run the following command:
@@ -87,7 +87,7 @@ of Solidity files compiled.
 [⠃] Compiling 3 files with 0.8.20
 [⠊] Solc 0.8.20 finished in 336.48ms
 Compiler run successful!
-Compiling contracts for zkSync Era with zksolc v1.4.0
+Compiling contracts for ZKsync Era with zksolc v1.4.0
 ```
 
 The compiled zkEVM artifacts will be located in the `/zkout` folder, and the solc
