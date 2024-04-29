@@ -47,7 +47,7 @@ export default defineAppConfig({
     },
   },
   seo: {
-    siteName: 'zkSync Docs',
+    siteName: 'ZKsync Docs',
   },
   header: {
     logo: {
@@ -62,8 +62,8 @@ export default defineAppConfig({
         icon: 'i-simple-icons-github',
         to: 'https://github.com/matter-labs/zksync-docs',
         target: '_blank',
-        'aria-label': 'zkSync Docs on GitHub',
-        title: 'zkSync Docs on GitHub',
+        'aria-label': 'ZKsync Docs on GitHub',
+        title: 'ZKsync Docs on GitHub',
       },
     ],
   },
@@ -81,19 +81,19 @@ export default defineAppConfig({
         icon: 'i-simple-icons-x',
         to: 'https://x.com/zksync',
         target: '_blank',
-        'aria-label': 'zkSync on X',
+        'aria-label': 'ZKsync on X',
       },
       {
         icon: 'i-simple-icons-github',
         to: 'https://github.com/matter-labs',
         target: '_blank',
-        'aria-label': 'zkSync on GitHub',
+        'aria-label': 'ZKsync on GitHub',
       },
       {
         icon: 'i-simple-icons-discord',
         to: 'https://join.zksync.dev/',
         target: '_blank',
-        'aria-label': 'zkSync on Discord',
+        'aria-label': 'ZKsync on Discord',
       },
     ],
   },
@@ -113,7 +113,7 @@ export default defineAppConfig({
         {
           icon: 'i-heroicons-user-group-20-solid',
           label: 'Developer Forum',
-          to: 'https://github.com/zkSync-Community-Hub/zkync-developers/discussions',
+          to: 'https://github.com/ZKsync-Community-Hub/zkync-developers/discussions',
           target: '_blank',
         },
       ],

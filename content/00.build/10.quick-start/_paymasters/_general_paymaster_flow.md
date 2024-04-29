@@ -1,9 +1,9 @@
 ---
 title: General Paymaster
-description: Learn to deploy contract factories in the zkSync environment.
+description: Learn to deploy contract factories in the ZKsync environment.
 ---
 
-<!-- TODO: @dutterbutter determine best approach to leverate zksync cli for project
+<!-- TODO: @dutterbutter determine best approach to leverate ZKsync cli for project
 bootstrapping for this guide series. -->
 Run the following command in your terminal to initialize the project.
 
@@ -154,7 +154,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 4 Solidity file
 Successfully compiled 4 Solidity file
 ```
@@ -209,27 +209,27 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script deployGaslessPaymaster.ts
+npm run hardhat deploy-ZKsync --script deployGaslessPaymaster.ts
 # To deploy the contract on local in-memory node:
-# npm run hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
+# npm run hardhat deploy-ZKsync --script deployGaslessPaymaster.ts --network inMemoryNode
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-zksync --script deployGaslessPaymaster.ts
+yarn hardhat deploy-ZKsync --script deployGaslessPaymaster.ts
 # To deploy the contract on local in-memory node:
-# yarn hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
+# yarn hardhat deploy-ZKsync --script deployGaslessPaymaster.ts --network inMemoryNode
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script deployGaslessPaymaster.ts
+pnpm run hardhat deploy-ZKsync --script deployGaslessPaymaster.ts
 # To deploy the contract on local in-memory node:
-# pnpm run hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
+# pnpm run hardhat deploy-ZKsync --script deployGaslessPaymaster.ts --network inMemoryNode
 ```
 
 ```bash [bun]
-bun run hardhat deploy-zksync --script deployGaslessPaymaster.ts
+bun run hardhat deploy-ZKsync --script deployGaslessPaymaster.ts
 # To deploy the contract on local in-memory node:
-# bun run hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
+# bun run hardhat deploy-ZKsync --script deployGaslessPaymaster.ts --network inMemoryNode
 ```
 
 ::
@@ -248,7 +248,7 @@ Estimated deployment cost: 0.0004922112 ETH
 
 Requesting contract verification...
 Your verification ID is: 10634
-Contract successfully verified on zkSync block explorer!
+Contract successfully verified on ZKsync block explorer!
 Paymaster ETH balance is now 5000000000000000
 ```
 
@@ -353,19 +353,19 @@ Execute the command corresponding to your package manager:
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script interact/interactWithGaslessPaymaster.ts
+npm run hardhat deploy-ZKsync --script interact/interactWithGaslessPaymaster.ts
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-zksync --script interact/interactWithGaslessPaymaster.ts
+yarn hardhat deploy-ZKsync --script interact/interactWithGaslessPaymaster.ts
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script interact/interactWithGaslessPaymaster.ts
+pnpm run hardhat deploy-ZKsync --script interact/interactWithGaslessPaymaster.ts
 ```
 
 ```bash [bun]
-bun run hardhat deploy-zksync --script interact/interactWithGaslessPaymaster.ts
+bun run hardhat deploy-ZKsync --script interact/interactWithGaslessPaymaster.ts
 ```
 
 ::
