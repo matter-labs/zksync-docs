@@ -9,7 +9,7 @@
       </button>
       <div
         ref="el"
-        class="pointer-events-none fixed inset-0 isolate z-10 h-full w-full"
+        class="pointer-events-none fixed inset-0 isolate z-[100] h-full w-full"
       />
     </template>
     <template #fallback>
@@ -55,13 +55,15 @@ class Particle {
   vy: number = 0;
   image: HTMLImageElement;
   loaded: boolean = false;
-  static gravity = 0.5;
+  static gravity = 0.15;
+  static minSpeed = 1;
 
   constructor() {
-    this.size = Math.random() * 90 + 70; // Customise emoji size. Increase for larger emojis, decrease for smaller.
+    this.size = Math.random() * 90 + 70;
     this.x = Math.random() * width.value - this.size;
     this.y = Math.random() * height.value - this.size;
-    this.generateRandomSpeed();
+    this.vx = (Math.random() + Particle.minSpeed) * Particle.gravity * (Math.random() > 0.5 ? -1 : 1);
+    this.vy = (Math.random() + Particle.minSpeed) * Particle.gravity * (Math.random() > 0.5 ? -1 : 1);
     this.image = new Image();
     this.image.onload = () => {
       this.loaded = true;
@@ -78,13 +80,6 @@ class Particle {
     };
     this.image.onclick = () => this.destroy();
     this.image.src = `/images/zeek/${images[Math.floor(Math.random() * images.length)]}`;
-  }
-  generateRandomSpeed() {
-    this.vx = Math.random() * Particle.gravity * (Math.random() > 0.5 ? -1 : 1); // Adjust speed for more lively or calm movement.
-    this.vy = Math.random() * Particle.gravity * (Math.random() > 0.5 ? -1 : 1);
-    if (Math.abs(this.vx) <= 0.01 || Math.abs(this.vy) <= 0.01) {
-      this.generateRandomSpeed();
-    }
   }
   update(delta: number) {
     // Reverse direction upon hitting canvas edges to keep emojis within view
