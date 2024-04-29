@@ -1,5 +1,6 @@
 import { getIconCollections } from '@egoist/tailwindcss-icons';
 import { zksyncIcons } from './assets/zksync-icons';
+import { customIcons } from './assets/custom-icons';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -45,6 +46,7 @@ export default defineNuxtConfig({
     icons: {
       collections: {
         ...zksyncIcons,
+        ...customIcons,
         ...getIconCollections(['heroicons', 'simple-icons', 'logos', 'devicon']),
       },
     },
