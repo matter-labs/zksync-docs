@@ -121,7 +121,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 ## Deploy the contract
 
-The deployment script is located at [`/deploy/deploy.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/main/deploy/deploy.ts).
+The deployment script is located at [`/deploy/deploy.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/main/templates/hello-zksync/deploy/deploy.ts).
 
 ```typescript
 import { deployContract } from "./utils";
