@@ -200,27 +200,27 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-ZKsync --script deployUUPS.ts
+npm run hardhat deploy-zksync --script deployUUPS.ts
 # To deploy the contract on local in-memory node:
-# npm run hardhat deploy-ZKsync --script deployUUPS.ts --network inMemoryNode
+# npm run hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-ZKsync --script deployUUPS.ts
+yarn hardhat deploy-zksync --script deployUUPS.ts
 # To deploy the contract on local in-memory node:
-# yarn hardhat deploy-ZKsync --script deployUUPS.ts --network inMemoryNode
+# yarn hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-ZKsync --script deployUUPS.ts
+pnpm run hardhat deploy-zksync --script deployUUPS.ts
 # To deploy the contract on local in-memory node:
-# pnpm run hardhat deploy-ZKsync --script deployUUPS.ts --network inMemoryNode
+# pnpm run hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
 ```
 
 ```bash [bun]
-bun run hardhat deploy-ZKsync --script deployUUPS.ts
+bun run hardhat deploy-zksync --script deployUUPS.ts
 # To deploy the contract on local in-memory node:
-# bun run hardhat deploy-ZKsync --script deployUUPS.ts --network inMemoryNode
+# bun run hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
 ```
 
 ::
@@ -359,19 +359,19 @@ Execute the test command corresponding to your package manager:
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-ZKsync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
+npm run hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-ZKsync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
+yarn hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-ZKsync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
+pnpm run hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
 ```
 
 ```bash [bun]
-bun run hardhat deploy-ZKsync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
+bun run hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
 ```
 
 ::

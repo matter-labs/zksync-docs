@@ -242,27 +242,27 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-ZKsync --script deployApprovalFlowPaymaster.ts
+npm run hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts
 # To deploy the contract on local in-memory node:
-# npm run hardhat deploy-ZKsync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
+# npm run hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-ZKsync --script deployApprovalFlowPaymaster.ts
+yarn hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts
 # To deploy the contract on local in-memory node:
-# yarn hardhat deploy-ZKsync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
+# yarn hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-ZKsync --script deployApprovalFlowPaymaster.ts
+pnpm run hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts
 # To deploy the contract on local in-memory node:
-# pnpm run hardhat deploy-ZKsync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
+# pnpm run hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
 ```
 
 ```bash [bun]
-bun run hardhat deploy-ZKsync --script deployApprovalFlowPaymaster.ts
+bun run hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts
 # To deploy the contract on local in-memory node:
-# bun run hardhat deploy-ZKsync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
+# bun run hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
 ```
 
 ::
@@ -382,19 +382,19 @@ Execute the command corresponding to your package manager:
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-ZKsync --script interact/interactWithApprovalFlowPaymaster.ts
+npm run hardhat deploy-zksync --script interact/interactWithApprovalFlowPaymaster.ts
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-ZKsync --script interact/interactWithApprovalFlowPaymaster.ts
+yarn hardhat deploy-zksync --script interact/interactWithApprovalFlowPaymaster.ts
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-ZKsync --script interact/interactWithApprovalFlowPaymaster.ts
+pnpm run hardhat deploy-zksync --script interact/interactWithApprovalFlowPaymaster.ts
 ```
 
 ```bash [bun]
-bun run hardhat deploy-ZKsync --script interact/interactWithApprovalFlowPaymaster.ts
+bun run hardhat deploy-zksync --script interact/interactWithApprovalFlowPaymaster.ts
 ```
 
 ::

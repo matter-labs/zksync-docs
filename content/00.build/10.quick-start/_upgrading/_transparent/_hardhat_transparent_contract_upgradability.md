@@ -189,27 +189,27 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-ZKsync --script deployTransparentProxy.ts
+npm run hardhat deploy-zksync --script deployTransparentProxy.ts
 # To deploy the contract on local in-memory node:
-# npm run hardhat deploy-ZKsync --script deployTransparentProxy.ts --network inMemoryNode
+# npm run hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-ZKsync --script deployTransparentProxy.ts
+yarn hardhat deploy-zksync --script deployTransparentProxy.ts
 # To deploy the contract on local in-memory node:
-# yarn hardhat deploy-ZKsync --script deployTransparentProxy.ts --network inMemoryNode
+# yarn hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-ZKsync --script deployTransparentProxy.ts
+pnpm run hardhat deploy-zksync --script deployTransparentProxy.ts
 # To deploy the contract on local in-memory node:
-# pnpm run hardhat deploy-ZKsync --script deployTransparentProxy.ts --network inMemoryNode
+# pnpm run hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
 ```
 
 ```bash [bun]
-bun run hardhat deploy-ZKsync --script deployTransparentProxy.ts
+bun run hardhat deploy-zksync --script deployTransparentProxy.ts
 # To deploy the contract on local in-memory node:
-# bun run hardhat deploy-ZKsync --script deployTransparentProxy.ts --network inMemoryNode
+# bun run hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
 ```
 
 ::
@@ -352,19 +352,19 @@ Execute the command corresponding to your package manager:
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-ZKsync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
+npm run hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-ZKsync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
+yarn hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-ZKsync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
+pnpm run hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
 ```
 
 ```bash [bun]
-bun run hardhat deploy-ZKsync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
+bun run hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
 ```
 
 ::
