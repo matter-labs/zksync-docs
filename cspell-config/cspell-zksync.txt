@@ -12,5 +12,6 @@ zksolc
 zkstack
 ZKsync
 zksync
+!zkSync
 zksync-cli
 zkvyper
