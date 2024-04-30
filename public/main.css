@@ -3,3 +3,11 @@ body {
   text-rendering: optimizeLegibility;
   letter-spacing: 0.1px;
 }
+
+.google-translate-select-language {
+  font-size: 14px;
+  line-height: 12px;
+}
+.google-translate-select-flag {
+  display: none !important;
+}

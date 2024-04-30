@@ -34,6 +34,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@google-translate-select/vue3": "^0.1.8",
     "@iconify-json/devicon": "^1.1.39",
     "@iconify-json/heroicons": "^1.1.20",
     "@iconify-json/simple-icons": "^1.1.95",

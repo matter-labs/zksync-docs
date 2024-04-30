@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { NavItem } from '@nuxt/content/dist/runtime/types';
 import type { Link } from '@nuxt/ui-pro/types';
+// import GoogleTranslateSelect from '@google-translate-select/vue3';
 
 defineProps<{
   links: Link[];
@@ -28,12 +29,6 @@ const { header } = useAppConfig();
     </template>
 
     <template #right>
-      <UContentSearchButton
-        v-if="header?.search"
-        :label="undefined"
-        class="lg:hidden"
-      />
-
       <UColorModeButton v-if="header?.colorMode" />
 
       <template v-if="header?.links">
@@ -44,11 +39,33 @@ const { header } = useAppConfig();
         />
       </template>
 
-      <UContentSearchButton class="hidden max-w-[180px] lg:flex" />
+      <UContentSearchButton
+        v-if="header?.search"
+        :label="undefined"
+        class="hidden max-w-[160px] lg:flex"
+      />
+
+      <ClientOnly>
+        <GoogleTranslate
+          default-language-code="en"
+          default-page-language-code="en"
+          :fetch-browser-language="false"
+          trigger="click"
+        />
+      </ClientOnly>
     </template>
 
     <template #panel>
-      <UNavigationTree :links="mapContentNavigation(navigation)" />
+      <UContentSearchButton
+        v-if="header?.search"
+        :label="undefined"
+        class="mb-4 w-full"
+      />
+      <UNavigationTree
+        :links="mapContentNavigation(navigation)"
+        default-open
+        :multiple="false"
+      />
     </template>
   </UHeader>
 </template>

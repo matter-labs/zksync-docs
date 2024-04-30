@@ -57,15 +57,7 @@ export default defineAppConfig({
     },
     search: true,
     colorMode: true,
-    links: [
-      {
-        icon: 'i-simple-icons-github',
-        to: 'https://github.com/matter-labs/zksync-docs',
-        target: '_blank',
-        'aria-label': 'zkSync Docs on GitHub',
-        title: 'zkSync Docs on GitHub',
-      },
-    ],
+    links: [],
   },
   footer: {
     credits: 'Made with ❤️ by Matter Labs & Community',
