@@ -12,7 +12,7 @@
     "block_explorer_url": "https://explorer.zksync.io"
   },
   "testnet": {
-    "name": "zkSync Era Testnet",
+    "name": "zkSync Sepolia Testnet",
     "identifier": "sepolia",
     "rpc_url": "https://sepolia.era.zksync.dev",
     "websocket_url": "wss://sepolia.era.zksync.dev/ws",
