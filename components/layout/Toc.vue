@@ -24,12 +24,19 @@ const links = computed(() =>
     ...(toc?.bottom?.links || []),
   ].filter(Boolean)
 );
+
+const ui = {
+  links: {
+    base: 'text-pretty text-sm/4 py-1',
+  },
+};
 </script>
 
 <template>
   <UContentToc
     :title="toc?.title"
     :links="page.body?.toc?.links"
+    :ui
   >
     <template
       v-if="toc?.bottom"

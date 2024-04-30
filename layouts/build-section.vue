@@ -13,6 +13,20 @@ const { data: navigation } = await useAsyncData('build-navigation', () => {
   return fetchContentNavigation(query);
 });
 const navTree = (navigation.value && navigation.value[0] && navigation.value[0].children) || [];
+
+const ui = {
+  accordion: {
+    button: {
+      label: 'text-left text-pretty text-sm/4 py-1',
+    },
+    links: {
+      label: 'text-pretty text-sm/4 py-1',
+    },
+  },
+  links: {
+    label: 'text-pretty text-sm/4 py-1',
+  },
+};
 </script>
 
 <template>
@@ -24,6 +38,7 @@ const navTree = (navigation.value && navigation.value[0] && navigation.value[0].
             :links="mapContentNavigation(navTree)"
             default-open
             :multiple="false"
+            :ui
           />
         </UAside>
       </template>

@@ -38,13 +38,6 @@ export default defineAppConfig({
         },
       },
     },
-    navigation: {
-      accordion: {
-        button: {
-          label: 'text-left text-pretty',
-        },
-      },
-    },
   },
   seo: {
     siteName: 'zkSync Docs',
