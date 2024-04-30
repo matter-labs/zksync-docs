@@ -209,27 +209,27 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-ZKsync --script deployGaslessPaymaster.ts
+npm run hardhat deploy-zksync --script deployGaslessPaymaster.ts
 # To deploy the contract on local in-memory node:
-# npm run hardhat deploy-ZKsync --script deployGaslessPaymaster.ts --network inMemoryNode
+# npm run hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-ZKsync --script deployGaslessPaymaster.ts
+yarn hardhat deploy-zksync --script deployGaslessPaymaster.ts
 # To deploy the contract on local in-memory node:
-# yarn hardhat deploy-ZKsync --script deployGaslessPaymaster.ts --network inMemoryNode
+# yarn hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-ZKsync --script deployGaslessPaymaster.ts
+pnpm run hardhat deploy-zksync --script deployGaslessPaymaster.ts
 # To deploy the contract on local in-memory node:
-# pnpm run hardhat deploy-ZKsync --script deployGaslessPaymaster.ts --network inMemoryNode
+# pnpm run hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
 ```
 
 ```bash [bun]
-bun run hardhat deploy-ZKsync --script deployGaslessPaymaster.ts
+bun run hardhat deploy-zksync --script deployGaslessPaymaster.ts
 # To deploy the contract on local in-memory node:
-# bun run hardhat deploy-ZKsync --script deployGaslessPaymaster.ts --network inMemoryNode
+# bun run hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
 ```
 
 ::
@@ -353,19 +353,19 @@ Execute the command corresponding to your package manager:
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-ZKsync --script interact/interactWithGaslessPaymaster.ts
+npm run hardhat deploy-zksync --script interact/interactWithGaslessPaymaster.ts
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-ZKsync --script interact/interactWithGaslessPaymaster.ts
+yarn hardhat deploy-zksync --script interact/interactWithGaslessPaymaster.ts
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-ZKsync --script interact/interactWithGaslessPaymaster.ts
+pnpm run hardhat deploy-zksync --script interact/interactWithGaslessPaymaster.ts
 ```
 
 ```bash [bun]
-bun run hardhat deploy-ZKsync --script interact/interactWithGaslessPaymaster.ts
+bun run hardhat deploy-zksync --script interact/interactWithGaslessPaymaster.ts
 ```
 
 ::
