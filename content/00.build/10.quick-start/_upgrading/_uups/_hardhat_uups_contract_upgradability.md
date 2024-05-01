@@ -2,7 +2,7 @@
 title: Hardhat | Contract Upgrading
 ---
 
-<!-- TODO: @dutterbutter determine best approach to leverate zksync cli for project
+<!-- TODO: @dutterbutter determine best approach to leverate ZKsync cli for project
 bootstrapping for this guide series. -->
 Run the following command in your terminal to initialize the project.
 
@@ -147,7 +147,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 4 Solidity file
 Successfully compiled 4 Solidity file
 ```
@@ -297,7 +297,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 4 Solidity file
 Successfully compiled 4 Solidity file
 ```
@@ -417,10 +417,10 @@ Upon successful verification, you'll receive output detailing the verification p
 ```bash
 Verifying implementation: 0x9BE22706966D717d7b0C8aEC99A1a9d1b3bFeC50
 Your verification ID is: 10618
-Contract successfully verified on zkSync block explorer!
+Contract successfully verified on ZKsync block explorer!
 Verifying proxy: 0x91921fDb0F8942c18eCeE4E3896b369ca0650483
 Your verification ID is: 10619
-Contract successfully verified on zkSync block explorer!
+Contract successfully verified on ZKsync block explorer!
 ```
 
 🎉 Congratulations! The `CrowdfundingCampaignV2_UUPS` contract has been upgraded and verified!
