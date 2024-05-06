@@ -80,6 +80,17 @@ tokio
 Vue
 vue
 zext
+zksolc
+zkvyper
+ZKEVM
+zkout
+nomicfoundation
+Viem
+viem
+Zerion
+Rabby
+!tesnet
+devs
 
 // devs
 dutterbutter

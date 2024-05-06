@@ -1,7 +1,8 @@
-// zkSync-related words
+// ZKsync-related words
 boojum
 MatterLabs
 Zeek
+Zeeks
 zkcast
 ZKEVM
 zkevm
@@ -9,7 +10,8 @@ zkforge
 zkout
 zksolc
 zkstack
-zkSync
+ZKsync
 zksync
+!zkSync
 zksync-cli
 zkvyper
