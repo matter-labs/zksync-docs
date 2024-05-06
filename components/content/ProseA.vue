@@ -10,7 +10,7 @@
     <UIcon
       v-if="isExternalLink"
       name="i-heroicons-arrow-up-right-20-solid"
-      class="absolute -right-2.5 top-0.5 h-3 w-3 text-xs font-light"
+      class="absolute -ml-[2px] mt-[4px] h-3 w-3 text-xs font-light"
     />
   </NuxtLink>
 </template>
