@@ -2,37 +2,12 @@
 title: Hardhat | Contract Upgrading
 ---
 
-<!-- TODO: @dutterbutter determine best approach to leverate ZKsync cli for project
-bootstrapping for this guide series. -->
 Run the following command in your terminal to initialize the project.
 
 ```sh
-git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
-cd zksync-quickstart-guide
-git checkout db/contract-upgrade
+npx zksync-cli create --template qs-upgrade contract-upgrade-quickstart
+cd contract-upgrade-quickstart
 ```
-
-Install the dependencies:
-
-::code-group
-
-```bash [npm]
-npm install
-```
-
-```bash [yarn]
-yarn install
-```
-
-```bash [pnpm]
-pnpm install
-```
-
-```bash [bun]
-bun install
-```
-
-::
 
 ## Set up your wallet
 

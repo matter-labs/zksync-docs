@@ -3,38 +3,12 @@ title: Approval Paymaster
 description: Learn to deploy contract factories in the ZKsync environment.
 ---
 
-<!-- TODO: @dutterbutter determine best approach to leverate ZKsync cli for project
-bootstrapping for this guide series. -->
 Run the following command in your terminal to initialize the project.
 
 ```sh
-git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
-cd zksync-quickstart-guide
-git checkout db/contract-paymaster
+npx zksync-cli create --template qs-paymaster contract-paymaster-quickstart
+cd contract-paymaster-quickstart
 ```
-
-Install the dependencies:
-
-::code-group
-
-```bash [npm]
-npm install
-```
-
-```bash [yarn]
-yarn install
-
-```
-
-```bash [pnpm]
-pnpm install
-```
-
-```bash [bun]
-bun install
-```
-
-::
 
 ## Set up your wallet
 
