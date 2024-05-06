@@ -15,7 +15,7 @@ hero:
     - label: Start building on ZKsync
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
-      to: '/build/quick-start'
+      to: '/build'
       size: lg
     # - label: Use this template
     #   icon: i-simple-icons-github
