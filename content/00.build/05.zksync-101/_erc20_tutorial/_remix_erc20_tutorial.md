@@ -50,6 +50,8 @@ The Remix IDE is an open-source web and desktop application that supports Ethere
 deployment, offering tools for writing, testing, debugging, and deploying smart contracts written in Solidity to EVM
 compatible protocols.
 
+### Enable the Remix ZKsync plugin
+
 :display-partial{path="/_partials/_enable-remix-zksync-plugin"}
 
 Click the button below to open the project in Remix and see the contract in the Remix code editor.
