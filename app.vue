@@ -54,7 +54,7 @@ const links = computed(() => {
   return [
     {
       label: 'Build',
-      to: '/build/quick-start',
+      to: '/build',
       active: route.path.startsWith('/build'),
     },
     {

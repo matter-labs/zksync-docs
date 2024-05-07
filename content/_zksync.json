@@ -16,7 +16,7 @@
     "identifier": "sepolia",
     "rpc_url": "https://sepolia.era.zksync.dev",
     "websocket_url": "wss://sepolia.era.zksync.dev/ws",
-    "chain_id": 280,
+    "chain_id": 300,
     "currency_symbol": "ETH",
     "block_explorer_url": "https://sepolia.explorer.zksync.io"
   },
