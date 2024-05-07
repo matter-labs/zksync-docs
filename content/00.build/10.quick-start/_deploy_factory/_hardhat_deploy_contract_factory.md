@@ -1,37 +1,12 @@
 ---
 title: Hardhat | Deploy Contract Factory
 ---
-<!-- TODO: @dutterbutter determine best approach to leverage zksync cli for project
-bootstrapping for this guide series. -->
 Run the following command in your terminal to initialize the project.
 
 ```sh
-git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
-cd zksync-quickstart-guide
-git checkout db/contract-factories
+npx zksync-cli create --template qs-factories contract-factory-quickstart
+cd contract-factory-quickstart
 ```
-
-Install the dependencies:
-
-::code-group
-
-```bash [npm]
-npm install
-```
-
-```bash [yarn]
-yarn install
-```
-
-```bash [pnpm]
-pnpm install
-```
-
-```bash [bun]
-bun install
-```
-
-::
 
 ## Set up your wallet
 
@@ -98,7 +73,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 2 Solidity file
 Successfully compiled 2 Solidity file
 ```
@@ -205,7 +180,7 @@ Estimated deployment cost: 0.0002500236 ETH
 
 Requesting contract verification...
 Your verification ID is: 10097
-Contract successfully verified on zkSync block explorer!
+Contract successfully verified on ZKsync block explorer!
 🏭 CrowdfundingFactory address: 0xD084EF36f8F5353f70498cD84cb8D2B844C120a8
 🚀 New CrowdfundingCampaign deployed at: 0x060B748eC3512795E94045c406CFd5877DD84e4D
 ✅ Deployment and campaign creation complete!

@@ -89,7 +89,7 @@ Viem
 viem
 Zerion
 Rabby
-tesnet
+!tesnet
 devs
 hexlify
 insize
