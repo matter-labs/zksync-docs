@@ -47,7 +47,8 @@
     "nuxt": "^3.11.2",
     "nuxt-og-image": "^3.0.0-rc.45",
     "rehype-katex": "^7.0.0",
-    "remark-math": "^6.0.0"
+    "remark-math": "^6.0.0",
+    "vue-easy-lightbox": "^1.19.0"
   },
   "scripts": {
     "build": "nuxt build",
