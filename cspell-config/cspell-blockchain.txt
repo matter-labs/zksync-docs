@@ -12,6 +12,7 @@ EVM
 evmla
 geth
 gwei
+!HardHat
 IERC
 inversed
 keccak
