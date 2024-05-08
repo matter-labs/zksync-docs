@@ -266,6 +266,27 @@ Paymaster ETH balance is now 5000000000000000
 This section will navigate you through the steps to interact with the `ApprovalFlowPaymaster` contract,
 using it to cover transaction fees for your operation.
 
+### Obtain CROWN tokens
+
+The `ApprovalFlowPaymaster` requires CROWN tokens to cover transaction gas costs. To use this
+paymaster, you will first need to acquire CROWN tokens by minting them yourself. Follow these
+steps to mint CROWN tokens:
+
+1. Go to the [CROWN token contract on Sepolia](https://sepolia.explorer.zksync.io/address/0x927488F48ffbc32112F1fF721759649A89721F8F#contract).
+2. Click on the **Contract** tab.
+3. Navigate to the **Write** tab.
+4. Locate the **mint** function, which is typically labeled as **6.mint**:
+    - In the `_to` field, enter your wallet address where you want the tokens to be deposited.
+    - In the `_amount` field, specify the number of tokens you wish to mint.
+5. Click on the **mint** button to execute the transaction.
+
+Here is a visual guide to assist you:
+![CROWN mint](/images/quickstart-paymasters/crown-mint.png)
+
+Ensure that your wallet is connected and configured for the Sepolia network before attempting to mint tokens.
+
+### Interaction script
+
 The interaction script is situated in the `/deploy/interact/` directory, named `interactWithApprovalFlowPaymaster.ts`.
 
 Ensure the `CONTRACT_ADDRESS` and `PAYMASTER_ADDRESS` variables are set to your deployed contract and paymaster addresses, respectively.
