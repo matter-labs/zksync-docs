@@ -59,7 +59,7 @@ repository:`https://github.com/uF4No/zksync-101-remix`
 
 ![Clone repo in Remix](/images/remix-plugin-clone-repo.gif)
 
-Once the project is imported, open the `contracts/TestToken.sol` file. To compile the contract, click on the zkSync
+Once the project is imported, open the `contracts/TestToken.sol` file. To compile the contract, click on the ZKsync
 plugin on the left menu and then "Compile TestToken.sol". If you get a popup message requesting permissions to access
 **`ACCESS TO "WRITEFILE" OF "FILE MANAGER"`,** click on Accept.
 
