@@ -1,10 +1,20 @@
 <template>
+  <vue-easy-lightbox
+    :visible="isVisible"
+    :imgs="refinedSrc"
+    :rotate-disabled="true"
+    @hide="onHide"
+  />
+
   <component
     :is="imgComponent"
+    class="cursor-pointer dark:bg-white"
     :src="refinedSrc"
     :alt="alt"
     :width="width"
     :height="height"
+    loading="lazy"
+    @click="isVisible = true"
   />
 </template>
 
@@ -14,6 +24,7 @@
  */
 import { withTrailingSlash, withLeadingSlash, joinURL } from 'ufo';
 import { useRuntimeConfig, computed, resolveComponent } from '#imports';
+import VueEasyLightbox from 'vue-easy-lightbox';
 
 const imgComponent = useRuntimeConfig().public.mdc.useNuxtImage ? resolveComponent('NuxtImg') : 'img';
 
@@ -45,4 +56,7 @@ const refinedSrc = computed(() => {
   }
   return props.src;
 });
+
+const isVisible = ref(false);
+const onHide = () => (isVisible.value = false);
 </script>
