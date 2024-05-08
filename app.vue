@@ -58,6 +58,10 @@ const links = computed(() => {
       active: route.path.startsWith('/build'),
     },
     {
+      label: 'SDK Docs',
+      to: 'https://staging-docs.zksync.io/sdk',
+    },
+    {
       label: 'ZK Stack',
       to: '/zk-stack',
       active: route.path.startsWith('/zk-stack'),
