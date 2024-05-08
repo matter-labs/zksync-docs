@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
-import FooterComponent from './components/FooterComponent.vue';
-import HeaderComponent from './components/HeaderComponent.vue';
+
+provideHeadlessUseId(() => useId());
 
 const { seo } = useAppConfig();
 const route = useRoute();
