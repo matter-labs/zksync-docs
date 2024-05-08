@@ -54,17 +54,17 @@ compatible protocols.
 
 :display-partial{path="/_partials/_enable-remix-zksync-plugin"}
 
-Click the button below to open the project in Remix and see the contract in the Remix code editor.
+To open this project in Remix, use the “Clone” option from the file explorer to import it from the following GitHub
+repository:`https://github.com/uF4No/zksync-101-remix`
 
-:u-button{ icon="i-heroicons-code-bracket" size="xl" color="primary" variant="solid" :trailing="false"
-to="https://remix.ethereum.org/#url=https://github.com/uF4No/zksync-101-remix/blob/main/contracts/TestToken.sol"
-target="_blank" label="Open smart contract in Remix" }
+![Clone repo in Remix](/images/remix-plugin-clone-repo.gif)
 
-To compile the contract, click on  Compile TestToken.sol. If you get a popup message requesting permissions to access
+Once the project is imported, open the `contracts/TestToken.sol` file. To compile the contract, click on the zkSync
+plugin on the left menu and then "Compile TestToken.sol". If you get a popup message requesting permissions to access
 **`ACCESS TO "WRITEFILE" OF "FILE MANAGER"`,** click on Accept.
 
 ::callout{icon="i-heroicons-light-bulb"}
-Behind the scenes, Remix is using the ZKsync Era custom solidity compiler (named `zksolc` ) to generate ZKEVM compatible
+Behind the scenes, Remix is using the ZKsync Era custom Solidity compiler (named `zksolc` ) to generate ZKEVM compatible
 bytecode.
 [Learn more about ZKsync custom compilers](/zk-stack/components/compiler/toolchain/overview).
 ::
@@ -78,7 +78,7 @@ contract is now deployed on %%zk_testnet_name%%!
 
 ## Interact with the ERC20 contract
 
-In the `scripts` folder you can find the `interact.ts`  script containing the following code:
+In the `scripts` folder you can find the `mint-token.ts`  script containing the following code:
 
 ```typescript
 import {ethers} from "ethers";
@@ -137,7 +137,7 @@ Fill the following variables:
 - `RECEIVER_WALLET`: address of a different account that will receive new tokens.
 - `TOKEN_AMOUNT`: the amount of tokens we’ll send to the account.
 
-With the `interact.ts` file open in the editor, click on the “▶️” button to run the script and see the output in the
+With the `mint-token.ts` file open in the editor, click on the “▶️” button to run the script and see the output in the
 terminal.
 
 ![ERC20 interact script in Remix](/images/101-erc20/remix-erc20-interact.png)
