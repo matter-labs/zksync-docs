@@ -31,7 +31,7 @@ currently connected to the %%zk_testnet_name%%. In Remix, under the Environment 
 To deploy the contract, click on “Deploy” and sign the transaction on your wallet. Congratulations, you’ve deployed your
 first contract to %%zk_testnet_name%%!
 
-Below the contract name you can find the address where the contract is deployed. The “Interact” section displays the
+Next to the contract name you can find the address where the contract is deployed. The “Interact” section displays the
 forms to interact with the `getTotalMessages` and `sendMessage` functions.
 
 ![Remix interact ZKsync contract](/images/101-quickstart/101-remix-interact.png)

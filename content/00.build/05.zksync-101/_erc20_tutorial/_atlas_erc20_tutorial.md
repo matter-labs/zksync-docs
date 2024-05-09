@@ -61,12 +61,14 @@ Behind the scenes, Atlas is using the ZKsync Era custom solidity compiler
 (named `zksolc` ) to generate ZKEVM compatible bytecode. [Learn more about ZKsync custom compilers](/zk-stack/components/compiler/toolchain/overview).
 ::
 
+![ERC20 interact script in Atlas](/images/101-erc20/atlas-deploy-erc20.png)
+
 Once compiled sign the transaction with your wallet and wait until its processed. You’ll see the contract in the
 **“Deployed contracts”** section.
 
 ## Interact with the ERC20 contract
 
-In the `scripts` folder you can find the `interact.ts`  script containing the following code:
+In the `scripts` folder you can find the `mint-token.ts`  script containing the following code:
 
 ```ts
 import { AtlasEnvironment } from "atlas-ide";
@@ -120,12 +122,13 @@ Fill the following variables:
 - `RECEIVER_WALLET`: address of a different account that will receive new tokens.
 - `TOKEN_AMOUNT`: the amount of tokens we’ll send to the account.
 
-With the `interact.ts` file open in the Atlas editor, click on the “Deploy” button to run the script and see the output
+With the `mint-token.ts` file open in the Atlas editor, click on the “Deploy” button to run the script and see the output
 in the terminal.
 
 ![ERC20 interact script in Atlas](/images/101-erc20/atlas-erc20-interact.png)
 
-To confirm the account has received the tokens, visit the %%zk_testnet_name%% explorer and search the receiver wallet
+To confirm the account has received the tokens, visit the [%%zk_testnet_name%%
+explorer](%%zk_testnet_block_explorer_url%%) and search the receiver wallet
 address. You’ll see the new token balance in the assets table:
 
 ![ERC20 tokens in account balance](/images/101-erc20/erc20-tokens-minted.png)
