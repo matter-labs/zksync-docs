@@ -73,7 +73,7 @@ const links = computed(() => {
       active: route.path.startsWith('/ecosystem'),
     },
     {
-      label: 'Cookbook',
+      label: 'Community Code',
       to: 'https://community-cookbook-staging.web.app/',
     },
   ];
