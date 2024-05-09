@@ -22,7 +22,7 @@ transitioning to a proxy pattern. This approach separates the
 contract's logic (which can be upgraded) from its persistent state
 (stored in the proxy).
 
-In the `contracts/` directory you'll observe the refactored the [`CrowdfundingCampaign` contract](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/contracts/CrowdfundingCampaign.sol)
+In the `contracts/` directory you'll observe the refactored the [`CrowdfundingCampaign` contract](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/contracts/CrowdfundingCampaign.sol)
 which initializes state variables through an
 `initialize` function instead of the constructor, in line with the proxy pattern.
 
@@ -121,7 +121,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 ## Deploy the beacon and contract
 
-You'll find the necessary deployment script at [`/deploy/deployBeaconProxy.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/deployBeaconProxy.ts).
+You'll find the necessary deployment script at [`/deploy/deployBeaconProxy.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/deploy/deployBeaconProxy.ts).
 
 ```typescript
 import { getWallet } from "./utils";
@@ -229,7 +229,7 @@ this constraint, ensuring contributions are made within the allowed period.
 
 **Enhanced Contract:**
 
-The upgraded contract, [`CrowdfundingCampaignV2.sol`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/contracts/CrowdfundingCampaignV2.sol),
+The upgraded contract, [`CrowdfundingCampaignV2.sol`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/contracts/CrowdfundingCampaignV2.sol),
 located in the `/contracts` directory,
 incorporates these changes:
 
@@ -278,7 +278,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 ## Upgrade to `CrowdfundingCampaignV2`
 
 This section describes the upgrade process to `CrowdfundingCampaignV2.sol` contract. Let's
-start by reviewing the [`upgradeBeaconCrowdfundingCampaign.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-upgrade/deploy/upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts)
+start by reviewing the [`upgradeBeaconCrowdfundingCampaign.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/deploy/upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts)
 script in the `deploy/upgrade-scripts` directory:
 
 Make sure to replace `YOUR_BEACON_ADDRESS_HERE` with the address of your deployed beacon and

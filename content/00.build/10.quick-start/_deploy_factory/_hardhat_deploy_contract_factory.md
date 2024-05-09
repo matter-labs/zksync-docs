@@ -17,7 +17,7 @@ cd contract-factory-quickstart
 ## Compile the contracts
 
 This section will focus on compiling and deploying the `CrowdfundingFactory.sol`
-contract that is provided under the [`/contracts` directory](https://github.com/dutterbutter/zksync-quickstart-guide/blob/db/contract-factories/contracts/CrowdfundFactory.sol).
+contract that is provided under the [`/contracts` directory](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/factories/contracts/CrowdfundFactory.sol).
 
 The `CrowdfundingFactory.sol`contract will be used to deploy multiple instances of
 the `CrowdfundingCampaign.sol` contract from the previous guide.
