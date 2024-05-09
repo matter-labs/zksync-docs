@@ -59,7 +59,7 @@ const links = computed(() => {
     },
     {
       label: 'SDK Docs',
-      to: 'https://staging-docs.zksync.io/sdk',
+      to: 'https://staging-docs-sdk.zksync.io/',
     },
     {
       label: 'ZK Stack',
