@@ -1,15 +1,14 @@
 ---
-title: Enable zkSync plugin in Remix
+title: Enable ZKsync plugin in Remix
 ---
-### Enable the Remix zkSync plugin
 
-To deploy smart contracts to zkSync via Remix you need to enable the zkSync plugin.
+To deploy smart contracts to ZKsync via Remix you need to enable the ZKsync plugin.
 
-1. Open :external-link{text="the Remix website" href="https://remix.ethereum.org/"}
+1. Open [the Remix website](https://remix.ethereum.org/)
 2. Click on the **“🔌 Plugin Manager”** button in the bottom-left corner
 3. Search “zksync” and click on the **"Activate"** button.
 
-![Enable zkSync plugin in Remix](/images/enable-remix-plugin.gif)
+![Enable ZKsync plugin in Remix](/images/enable-remix-plugin.gif)
 
-Once activated, you’ll see a new menu item with the zkSync logo. Click on it to see the different options to compile,
-deploy, and interact with smart contracts on zkSync.
+Once activated, you’ll see a new menu item with the ZKsync logo. Click on it to see the different options to compile,
+deploy, and interact with smart contracts on ZKsync.

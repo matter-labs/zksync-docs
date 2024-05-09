@@ -4,35 +4,10 @@ title: Hardhat | Deploy Contract
 
 Run the following command in your terminal to initialize the project.
 
-<!-- TODO: @dutterbutter determine best approach to leverage zksync cli for project
-bootstrapping for this guide series. -->
-
 ```sh
-git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
-cd zksync-quickstart-guide/templates/hello-zksync
+npx zksync-cli create --template qs-hello-zksync hello-zksync-quickstart
+cd hello-zksync-quickstart
 ```
-
-Install the dependencies:
-
-::code-group
-
-```bash [npm]
-npm install
-```
-
-```bash [yarn]
-yarn install
-```
-
-```bash [pnpm]
-pnpm install
-```
-
-```bash [bun]
-bun install
-```
-
-::
 
 ## Set up your wallet
 
@@ -112,7 +87,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 1 Solidity file
 Successfully compiled 1 Solidity file
 ```
@@ -192,7 +167,7 @@ Estimated deployment cost: 0.000501 ETH
 
 Requesting contract verification...
 Your verification ID is: 10067
-Contract successfully verified on zkSync block explorer!
+Contract successfully verified on ZKsync block explorer!
 ```
 
 🥳 Congratulations! Your smart contract is now deployed. 🚀

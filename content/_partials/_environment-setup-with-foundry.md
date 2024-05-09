@@ -1,5 +1,5 @@
 ---
-title: Foundry-zksync Installation
+title: foundry-zksync Installation
 ---
 
 ::callout{icon="i-heroicons-information-circle-16-solid" color="amber"}

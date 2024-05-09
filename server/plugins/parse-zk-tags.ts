@@ -12,6 +12,16 @@ export default defineNitroPlugin((nitroApp) => {
       });
     }
   });
+
+  nitroApp.hooks.hook('content:file:afterParse', (file) => {
+    if (file._id.endsWith('.md')) {
+      const regex = /%%/gm;
+      const body = JSON.stringify(file.body);
+      if (process.env.NODE_ENV !== 'production' && regex.test(body)) {
+        console.error(`Unparsed %% zk_tag found in ${file._file}`);
+      }
+    }
+  });
 });
 
 function parseConfig(config: any, prefix: string) {

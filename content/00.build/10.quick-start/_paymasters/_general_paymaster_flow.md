@@ -1,39 +1,14 @@
 ---
 title: General Paymaster
-description: Learn to deploy contract factories in the zkSync environment.
+description: Learn to deploy contract factories in the ZKsync environment.
 ---
 
-<!-- TODO: @dutterbutter determine best approach to leverate zksync cli for project
-bootstrapping for this guide series. -->
 Run the following command in your terminal to initialize the project.
 
 ```sh
-git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
-cd zksync-quickstart-guide
-git checkout db/contract-paymaster
+npx zksync-cli create --template qs-paymaster contract-paymaster-quickstart
+cd contract-paymaster-quickstart
 ```
-
-Install the dependencies:
-
-::code-group
-
-```bash [npm]
-npm install
-```
-
-```bash [yarn]
-yarn install
-```
-
-```bash [pnpm]
-pnpm install
-```
-
-```bash [bun]
-bun install
-```
-
-::
 
 ## Set up your wallet
 
@@ -154,7 +129,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 4 Solidity file
 Successfully compiled 4 Solidity file
 ```
@@ -248,7 +223,7 @@ Estimated deployment cost: 0.0004922112 ETH
 
 Requesting contract verification...
 Your verification ID is: 10634
-Contract successfully verified on zkSync block explorer!
+Contract successfully verified on ZKsync block explorer!
 Paymaster ETH balance is now 5000000000000000
 ```
 
