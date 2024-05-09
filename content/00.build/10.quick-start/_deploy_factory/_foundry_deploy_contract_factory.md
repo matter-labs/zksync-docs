@@ -69,7 +69,7 @@ making it efficient to launch and manage multiple campaigns.
 
 ### Compile contract
 
-Smart contracts deployed to zkSync must be compiled using our custom compiler.
+Smart contracts deployed to ZKsync must be compiled using our custom compiler.
 For this particular guide we are making use of `zksolc`.
 
 To compile the contracts in the project, run the following command:
@@ -87,7 +87,7 @@ of Solidity files compiled.
 [⠃] Compiling 3 files with 0.8.20
 [⠊] Solc 0.8.20 finished in 336.48ms
 Compiler run successful!
-Compiling contracts for zkSync Era with zksolc v1.4.0
+Compiling contracts for ZKsync Era with zksolc v1.4.0
 ```
 
 The compiled zkEVM artifacts will be located in the `/zkout` folder, and the solc
@@ -104,7 +104,7 @@ our new `CrowdfundingFactory`.
 command:
 
     ```bash
-    forge create src/CrowdfundFactory.sol:CrowdfundingFactory --factory-deps src/CrowdfundingCampaign.sol:CrowdfundingCampaign --rpc-url zkSyncSepoliaTestnet --chain 300 --private-key <YOUR-PRIVATE-KEY> --zksync
+    forge create src/CrowdfundFactory.sol:CrowdfundingFactory --factory-deps src/CrowdfundingCampaign.sol:CrowdfundingCampaign --rpc-url zkSyncSepoliaTestnet --chain %%zk_testnet_chain_id%% --private-key <YOUR-PRIVATE-KEY> --zksync
     # To deploy the contract on local in-memory node:
     # forge script script/DeployFactory.s.sol:DeployFactoryAndCreateCampaign --rpc-url inMemoryNode --broadcast --zksync
     ```
@@ -121,7 +121,7 @@ command:
 1. Using the `CrowdfundingFactory` contract address let's deploy our `CrowdfundingCampaign`:
 
     ```bash
-    cast send 0x607545Fd35ef49d7445555ddFa22938fD4Efb219 "createCampaign(uint256)" "1" --rpc-url zkSyncSepoliaTestnet --chain 300 --private-key <YOUR-PRIVATE-KEY>
+    cast send 0x607545Fd35ef49d7445555ddFa22938fD4Efb219 "createCampaign(uint256)" "1" --rpc-url zkSyncSepoliaTestnet --chain %%zk_testnet_chain_id%% --private-key <YOUR-PRIVATE-KEY>
     # To use the contract factory on local in-memory node:
     # cast send 0x607545Fd35ef49d7445555ddFa22938fD4Efb219 "createCampaign(uint256)" "1" --rpc-url inMemoryNode --chain 260 --private-key <YOUR-PRIVATE-KEY>
     ```

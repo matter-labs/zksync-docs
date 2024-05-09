@@ -1,37 +1,14 @@
 ---
 title: Hardhat | Contract Testing
 ---
-<!-- TODO: @dutterbutter determine best approach to leverate zksync cli for project
+<!-- TODO: @dutterbutter determine best approach to leverate ZKsync cli for project
 bootstrapping for this guide series. -->
 Run the following command in your terminal to initialize the project.
 
-  ```sh
-  git clone https://github.com/dutterbutter/zksync-quickstart-guide.git
-  cd zksync-quickstart-guide
-  git checkout db/contract-testing
-  ```
-
-  Install the dependencies:
-
-  ::code-group
-
-  ```bash [npm]
-  npm install
-  ```
-
-  ```bash [yarn]
-  yarn install
-  ```
-
-  ```bash [pnpm]
-  pnpm install
-  ```
-
-  ```bash [bun]
-  bun install
-  ```
-
-  ::
+```sh
+npx zksync-cli create --template qs-testing contract-testing-quickstart
+cd contract-testing-quickstart
+```
 
 ---
 
@@ -44,7 +21,7 @@ which operates seamlessly within a separate process for an optimized testing wor
 If you have not set up your local era node yet, follow the instructions in the [Getting Started](/build/quick-start#setup-era-local-node-optional) section.
 
 Within the `hardhat.config.ts`, you'll observe the `zksync` flag set to `true` under the
-`hardhat` network, indicating the integration with zkSync's testing environment.
+`hardhat` network, indicating the integration with ZKsync's testing environment.
 
 ```ts
 hardhat: {
@@ -155,7 +132,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 2 Solidity file
 Successfully compiled 2 Solidity file
 ```

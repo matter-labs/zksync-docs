@@ -1,14 +1,18 @@
 ---
-title: Paymaster with Atlas
+title: Paymaster with Remix
 ---
 
-Click the following button to open the project in Atlas:
+::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
+Remix does not support `zksync-ethers` yet so you can not use it to run this script. Use Atlas instead.
+::
 
-:u-button{ icon="i-heroicons-code-bracket" size="xl" color="primary" variant="solid" :trailing="false"
-to="https://app.atlaszk.com/projects?template=https://github.com/uF4No/zksync-101-atlas&open=/scripts/paymaster-transaction.ts&chainId=300"
-target="_blank" label="Open script in Atlas"}
+To open the project in Remix, use the “Clone” option from the file explorer to import it from the following GitHub
+repository:`https://github.com/uF4No/zksync-101-remix`
 
-It’ll open the script to send a transaction via the paymaster. Let’s go through the most important parts:
+![Clone repo in Remix](/images/remix-plugin-clone-repo.gif)
+
+Once the project is imported, open the `scripts/paymaster-transaction.ts` file, which contains the code to send a
+transaction via the paymaster. Let’s go through the most important parts:
 
 ### Retrieve the token balance
 
@@ -56,6 +60,8 @@ const gasLimit = await messagesContract.estimateGas.sendMessage(NEW_MESSAGE, {
 const fee = gasPrice * gasLimit;
 ```
 
+In this part of the script we:
+
 1. Retrieve the testnet paymaster address.
 2. Generate the paymaster parameters to estimate the transaction fees passing the paymaster address, token address, and
    `ApprovalBased` as the paymaster flow type.
@@ -66,30 +72,30 @@ const fee = gasPrice * gasLimit;
 
 ```typescript
 // new paymaster params with fee as minimalAllowance
-  const paymasterParams = utils.getPaymasterParams(testnetPaymasterAddress, {
-    type: "ApprovalBased",
-    token: TOKEN_CONTRACT_ADDRESS,
-    // provide estimated fee as allowance
-    minimalAllowance: fee,
-    // empty bytes as testnet paymaster does not use innerInput
-    innerInput: new Uint8Array(0),
-  });
+const paymasterParams = utils.getPaymasterParams(testnetPaymasterAddress, {
+  type: "ApprovalBased",
+  token: TOKEN_CONTRACT_ADDRESS,
+  // provide estimated fee as allowance
+  minimalAllowance: fee,
+  // empty bytes as testnet paymaster does not use innerInput
+  innerInput: new Uint8Array(0),
+});
 
-  // full overrides object including maxFeePerGas and maxPriorityFeePerGas
-  const txOverrides = {
-    maxFeePerGas: gasPrice,
-    maxPriorityFeePerGas: "1",
-    gasLimit,
-    customData: {
-      gasPerPubdata: utils.DEFAULT_GAS_PER_PUBDATA_LIMIT,
-      paymasterParams,
-    }
+// full overrides object including maxFeePerGas and maxPriorityFeePerGas
+const txOverrides = {
+  maxFeePerGas: gasPrice,
+  maxPriorityFeePerGas: "1",
+  gasLimit,
+  customData: {
+    gasPerPubdata: utils.DEFAULT_GAS_PER_PUBDATA_LIMIT,
+    paymasterParams,
   }
+}
 
-  console.log(`Sign the transaction in your wallet`);
+console.log(`Sign the transaction in your wallet`);
 
-  // send transaction with additional paymaster params as overrides
-  const txHandle = await messagesContract.sendMessage(NEW_MESSAGE, txOverrides);
+// send transaction with additional paymaster params as overrides
+const txHandle = await messagesContract.sendMessage(NEW_MESSAGE, txOverrides);
 ```
 
 1. Create the new paymaster params with the calculated `fee` as `minimalAllowance` .
@@ -110,8 +116,8 @@ Finally we retrieve and print the ETH and ERC20 balances to see how they’ve ch
 ## Run the script
 
 To run the script, first enter the addresses of the `ZeekSecretMessages.sol` and `TestToken.sol` contracts that we
-deployed previously ([here](/build/zksync-101/quickstart) and
-[here](/build/zksync-101/erc20-token)) in the following variables at the beginning of
+deployed previously ([Deploy your first contract](/build/zksync-101/deploy-your-first-contract) and
+[Erc20 Token](/build/zksync-101/erc20-token)) in the following variables at the beginning of
 the script:
 
 ```typescript
@@ -123,9 +129,9 @@ const TOKEN_CONTRACT_ADDRESS = ""
 const NEW_MESSAGE = "This tx cost me no ETH!";
 ```
 
-Next, make sure the script file is selected in the Atlas editor and click on the “Deploy” button.
+Next, make sure the script file is selected in the Remix editor and click on the “▶️” button.
 
-![ERC20 interact script in Remix](/images/101-paymasters/atlas-paymaster-script.png)
+<!-- TODO: @uF4No add Remix image to showcase how to run scripts -->
 
 You’ll see the progress in the console.
 
