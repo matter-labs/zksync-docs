@@ -30,6 +30,7 @@
     "@nuxt/eslint": "^0.3.10",
     "@nuxt/fonts": "^0.3.0",
     "@nuxt/image": "^1.6.0",
+    "@nuxt/ui": "^2.16.0",
     "@nuxt/ui-pro": "^1.0.2",
     "@tsparticles/slim": "^3.3.0",
     "@tsparticles/vue3": "^3.0.1",
@@ -40,9 +41,8 @@
     "vue-easy-lightbox": "^1.19.0"
   },
   "scripts": {
-    "build": "nuxt build",
+    "build": "nuxt generate",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "lint:spelling": "cspell **/*.md --config=./cspell.json",
     "lint:markdown": "markdownlint-cli2 \"content/**/*.md\" --config \".markdownlint.json\"",

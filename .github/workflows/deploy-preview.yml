@@ -21,7 +21,7 @@ jobs:
         run: bun install
 
       - name: "Deploy target: staging"
-        run: bun run generate
+        run: bun run build
 
       - uses: untitaker/hyperlink@0.1.32
         with:
