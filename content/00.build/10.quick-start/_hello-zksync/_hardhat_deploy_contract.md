@@ -124,25 +124,29 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script deploy.ts
+npm run deploy
+# The deploy keyword will trigger the `deploy` script command on `package.json`
 # To deploy the contract on local in-memory node:
 # npm run hardhat deploy-zksync --script deploy.ts --network inMemoryNode
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-zksync --script deploy.ts
+yarn deploy
+# The deploy keyword will trigger the `deploy` script command on `package.json`
 # To deploy the contract on local in-memory node:
 # yarn hardhat deploy-zksync --script deploy.ts --network inMemoryNode
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script deploy.ts
+pnpm run deploy
+# The deploy keyword will trigger the `deploy` script command on `package.json`
 # To deploy the contract on local in-memory node:
 # pnpm run hardhat deploy-zksync --script deploy.ts --network inMemoryNode
 ```
 
 ```bash [bun]
-bun run hardhat deploy-zksync --script deploy.ts
+bun run deploy
+# The deploy keyword will trigger the `deploy` script command on `package.json`
 # To deploy the contract on local in-memory node:
 # bun run hardhat deploy-zksync --script deploy.ts --network inMemoryNode
 ```
