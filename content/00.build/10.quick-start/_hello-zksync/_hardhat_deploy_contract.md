@@ -16,7 +16,7 @@ cd hello-zksync-quickstart
 ## Compile the CrowdfundingCampaign.sol contract
 
 This guide introduces a crowdfunding campaign contract aimed at supporting Zeek's inventive ventures.
-Let's start by reviewing the starter contract in the [`contracts/` directory](https://github.com/dutterbutter/zksync-quickstart-guide/blob/main/contracts/Crowdfund.sol).
+Let's start by reviewing the starter contract in the [`contracts/` directory](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hello-zksync/contracts/Crowdfund.sol).
 
 ::drop-panel
   ::panel{label="CrowdfundingCampaign.sol"}
@@ -96,7 +96,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 ## Deploy the contract
 
-The deployment script is located at [`/deploy/deploy.ts`](https://github.com/dutterbutter/zksync-quickstart-guide/blob/main/deploy/deploy.ts).
+The deployment script is located at [`/deploy/deploy.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hello-zksync/deploy/deploy.ts).
 
 ```typescript
 import { deployContract } from "./utils";
@@ -124,25 +124,29 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script deploy.ts
+npm run deploy
+# The deploy keyword will trigger the `deploy` script command on `package.json`
 # To deploy the contract on local in-memory node:
 # npm run hardhat deploy-zksync --script deploy.ts --network inMemoryNode
 ```
 
 ```bash [yarn]
-yarn hardhat deploy-zksync --script deploy.ts
+yarn deploy
+# The deploy keyword will trigger the `deploy` script command on `package.json`
 # To deploy the contract on local in-memory node:
 # yarn hardhat deploy-zksync --script deploy.ts --network inMemoryNode
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script deploy.ts
+pnpm run deploy
+# The deploy keyword will trigger the `deploy` script command on `package.json`
 # To deploy the contract on local in-memory node:
 # pnpm run hardhat deploy-zksync --script deploy.ts --network inMemoryNode
 ```
 
 ```bash [bun]
-bun run hardhat deploy-zksync --script deploy.ts
+bun run deploy
+# The deploy keyword will trigger the `deploy` script command on `package.json`
 # To deploy the contract on local in-memory node:
 # bun run hardhat deploy-zksync --script deploy.ts --network inMemoryNode
 ```

@@ -91,6 +91,10 @@ Zerion
 Rabby
 !tesnet
 devs
+hexlify
+insize
+ecadd
+ecmul
 
 // devs
 dutterbutter

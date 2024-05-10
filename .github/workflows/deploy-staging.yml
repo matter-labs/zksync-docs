@@ -2,6 +2,7 @@ name: "deploy staging 🏗️"
 on:
   push:
     branches: [staging]
+  workflow_dispatch:
 
 jobs:
   build_and_deploy:
