@@ -1,8 +1,7 @@
 title: 'ZKsync Docs'
 description:
-  Nuxt UI Pro is a collection of premium Vue components built on top of Nuxt UI to create beautiful & responsive Nuxt
-  applications in minutes.
-navigation: false
+  ZKsync Docs bring you all information you need about our protocol, APIs, SDKs, ZK Stack, and hyperchains. Start with
+  our guides and tutorials, or go deep into our architecture and protocol specification.
 hero:
   title: 'Unlock the Potential of Layer 2 Scaling with ZKsync'
   description: 'Explore comprehensive guides, developer tools, and resources to innovate on the ZKsync platform.'
@@ -17,12 +16,6 @@ hero:
       trailing: true
       to: '/build'
       size: lg
-    # - label: Use this template
-    #   icon: i-simple-icons-github
-    #   size: lg
-    #   color: gray
-    #   to: https://github.com/nuxt-ui-pro/docs
-    #   target: _blank
 features:
   title: 'Explore ZKsync Docs'
   items:
