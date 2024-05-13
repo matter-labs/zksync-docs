@@ -11,7 +11,7 @@ if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true });
 }
 
-const { data: surround }: any = await useAsyncData(`${route.path}-surround`, () =>
+const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
   queryContent()
     .where({
       _partial: false,

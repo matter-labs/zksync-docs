@@ -18,7 +18,7 @@ const { header } = useAppConfig();
         <UColorModeImage v-bind="{ class: 'h-6 w-auto', ...header?.logo }" />
       </template>
       <template v-else>
-        Nuxt UI Pro
+        ZKsync
         <UBadge
           label="Docs"
           variant="subtle"
@@ -29,12 +29,11 @@ const { header } = useAppConfig();
 
     <template #right>
       <UContentSearchButton
-        v-if="header?.search"
         :label="undefined"
         class="lg:hidden"
       />
 
-      <UColorModeButton v-if="header?.colorMode" />
+      <UColorModeButton />
 
       <template v-if="header?.links">
         <UButton
