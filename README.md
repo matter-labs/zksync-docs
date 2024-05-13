@@ -32,7 +32,7 @@ bun run dev -o
 
 ## Local Preview
 
-To locally preview the production build, first run `bun run generate` to build the project, then run the following:
+To locally preview the production build, first run `bun run build` to build the project, then run the following:
 
 ```shell
 bun run preview
