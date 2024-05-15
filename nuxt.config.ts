@@ -5,4 +5,9 @@ export default defineNuxtConfig({
   routeRules: {
     '/api/search.json': { prerender: true },
   },
+  runtimeConfig: {
+    public: {
+      app: 'docs',
+    },
+  },
 });

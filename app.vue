@@ -46,6 +46,10 @@ useSeoMeta({
   twitterImageAlt: 'ZKsync — Accelerating the mass adoption of crypto for personal sovereignty.',
 });
 
+defineOgImage({
+  component: 'OgImageZK',
+});
+
 provide('navigation', navigation);
 
 const links = computed(() => {
@@ -86,7 +90,7 @@ const links = computed(() => {
   <div>
     <NuxtLoadingIndicator />
 
-    <HeaderComponent :links />
+    <HeaderComponent :search="true" />
 
     <UMain>
       <NuxtLayout>
