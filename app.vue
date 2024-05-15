@@ -2,7 +2,6 @@
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
 
 const { seo } = useAppConfig();
-const route = useRoute();
 
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation());
 const { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', {
@@ -51,39 +50,6 @@ defineOgImage({
 });
 
 provide('navigation', navigation);
-
-const links = computed(() => {
-  return [
-    {
-      label: 'Build',
-      to: '/build',
-      active: route.path.startsWith('/build'),
-    },
-    {
-      label: 'SDK Docs',
-      to: 'https://zksync-sdk-docs-staging.web.app',
-    },
-    {
-      label: 'ZK Stack',
-      to: '/zk-stack',
-      active: route.path.startsWith('/zk-stack'),
-    },
-    {
-      label: 'External Node',
-      to: '/external-node',
-      active: route.path.startsWith('/external-node'),
-    },
-    {
-      label: 'Ecosystem',
-      to: '/ecosystem',
-      active: route.path.startsWith('/ecosystem'),
-    },
-    {
-      label: 'Community Code',
-      to: 'https://community-cookbook-staging.web.app/',
-    },
-  ];
-});
 </script>
 
 <template>
