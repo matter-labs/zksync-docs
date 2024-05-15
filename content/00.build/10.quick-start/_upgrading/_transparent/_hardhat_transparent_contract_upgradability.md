@@ -25,7 +25,7 @@ contract's logic (which can be upgraded) from its persistent state
 
 ### Refactoring for Proxy Compatibility
 
-In the `contracts/` directory you'll observe the refactored the [`CrowdfundingCampaign` contract](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/contracts/CrowdfundingCampaign.sol)
+In the `contracts/` directory you'll observe the refactored the [`CrowdfundingCampaign` contract](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/contracts/CrowdfundingCampaign.sol)
 which initializes state variables through an
 `initialize` function instead of the constructor, in line with the
 Transparent Proxy pattern.
@@ -123,7 +123,7 @@ Successfully compiled 3 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-The deployment script is located at [`/deploy/deployTransparentProxy.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/deploy/deployTransparentProxy.ts).
+The deployment script is located at [`/deploy/deployTransparentProxy.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/deploy/deployTransparentProxy.ts).
 
 ```typescript
 import { getWallet } from "./utils";
@@ -222,7 +222,7 @@ this constraint, ensuring contributions are made within the allowed period.
 
 **Enhanced Contract:**
 
-The upgraded contract, [`CrowdfundingCampaignV2.sol`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/contracts/CrowdfundingCampaignV2.sol),
+The upgraded contract, [`CrowdfundingCampaignV2.sol`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/contracts/CrowdfundingCampaignV2.sol),
 located in the `/contracts` directory, incorporates these changes:
 
 - **Deadline Variable:** A new state variable deadline defines the campaign's end time,
@@ -273,7 +273,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 This section guides you through upgrading the `CrowdfundingCampaign` contract
 to its second version, `CrowdfundingCampaignV2`.
-Review the [`upgradeCrowdfundingCampaign.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/deploy/upgrade-scripts/upgradeCrowdfundingCampaign.ts)
+Review the [`upgradeCrowdfundingCampaign.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/deploy/upgrade-scripts/upgradeCrowdfundingCampaign.ts)
 script located within the `deploy/upgrade-scripts` directory to begin.
 
 Replace `YOUR_PROXY_ADDRESS_HERE` with the actual address of your

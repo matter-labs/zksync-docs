@@ -84,7 +84,7 @@ important for secure upgrade authorization.
 - **_authorizeUpgrade**: A safeguard function ensuring only the contract owner can perform upgrades,
 reinforcing the contract's security.
 
-By adopting the UUPS pattern, the [`CrowdfundingCampaign_UUPS`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/contracts/CrowdfundingCampaign_UUPS.sol)
+By adopting the UUPS pattern, the [`CrowdfundingCampaign_UUPS`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/contracts/CrowdfundingCampaign_UUPS.sol)
 contract becomes efficiently upgradeable, offering enhanced security and reduced gas costs, setting a solid foundation for future enhancements.
 
 ---
@@ -131,7 +131,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 ## Deploy the updated contract
 
-The script to deploy the `CrowdfundingCampaign_UUPS` contract is located at [`/deploy/deployUUPS.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/deploy/deployUUPS.ts).
+The script to deploy the `CrowdfundingCampaign_UUPS` contract is located at [`/deploy/deployUUPS.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/deploy/deployUUPS.ts).
 
 ```typescript
 import { getWallet } from "./utils";
@@ -232,7 +232,7 @@ this constraint, ensuring contributions are made within the allowed period.
 
 **Enhanced Contract:**
 
-The upgraded contract, [`CrowdfundingCampaignV2_UUPS.sol`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/contracts/CrowdfundingCampaignV2_UUPS.sol),
+The upgraded contract, [`CrowdfundingCampaignV2_UUPS.sol`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/contracts/CrowdfundingCampaignV2_UUPS.sol),
 located in the `/contracts` directory, incorporates these changes:
 
 - **Deadline Variable:** A new state variable deadline defines the campaign's end time,
@@ -282,7 +282,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 ### Upgrade to `CrowdfundingCampaignV2_UUPS`
 
 This section describes the initiating the upgrade to `CrowdfundingCampaignV2_UUPS.sol` contract.
-Let's start by reviewing the [`upgradeUUPSCrowdfundingCampaign.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/deploy/upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts)
+Let's start by reviewing the [`upgradeUUPSCrowdfundingCampaign.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/deploy/upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts)
 script in the `deploy/upgrade-scripts` directory:
 
 Replace `YOUR_PROXY_ADDRESS_HERE` with the actual address of your

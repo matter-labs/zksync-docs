@@ -1,14 +1,14 @@
 ---
-title: Hardhat | Contract Testing
+title: Foundry | Contract Testing
 ---
 
-<!-- TODO: @dutterbutter update to simplify the project init step -->
+:display-partial{path = "/_partials/_foundry_alpha_warning"}
+
 Run the following command in your terminal to initialize the Foundry project.
 
 ```sh
-git clone https://github.com/dutterbutter/zksync-foundry-quickstart-guide
-cd zksync-foundry-quickstart-guide
-git checkout db/contract-testing
+npx zksync-cli create --template qs-fs-testing foundry-contract-testing-quickstart
+cd foundry-contract-testing-quickstart
 ```
 
 ---
@@ -91,7 +91,7 @@ For this particular guide we are making use of `zksolc`.
 To compile the contracts in the project, run the following command:
 
 ```bash
-forge build --zksync
+forge build --zksync --use 0.8.20
 ```
 
 Upon successful compilation, you'll receive output detailing the
@@ -114,7 +114,7 @@ located in the `/out` folder.
 This section describes the testing `CrowdfundingCampaign.sol` contract. Let's
 start by reviewing the tests for `CrowdfundingCampaign.sol` contract provided
 during the initialization step in the `/test` directory, specifically the
-[`CrowdfundingCampaign.t.sol` file](https://github.com/dutterbutter/zksync-foundry-quickstart-guide/blob/db/contract-testing/test/CrowdfundingCampaign.t.sol).
+[`CrowdfundingCampaign.t.sol` file](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/foundry/testing/test/CrowdfundingCampaign.t.sol).
 
 ```solidity
 // SPDX-License-Identifier: MIT

@@ -2,7 +2,14 @@
 title: Foundry | Deploy Contract
 ---
 
-:display-partial{path = "/_partials/_environment-setup-with-foundry"}
+:display-partial{path = "/_partials/_foundry_alpha_warning"}
+
+Run the following command in your terminal to initialize the Foundry project.
+
+```sh
+npx zksync-cli create --template qs-fs-hello-zksync hello-zksync-foundry-quickstart
+cd hello-zksync-foundry-quickstart
+```
 
 ## Set up your wallet
 
@@ -13,7 +20,7 @@ title: Foundry | Deploy Contract
 This guide
 introduces a crowdfunding campaign contract aimed at supporting Zeek's inventive ventures.
 
-Let's start by reviewing the starter contract in the [`src/` directory](https://github.com/dutterbutter/zksync-foundry-quickstart-guide/blob/main/src/Crowdfund.sol).
+Let's start by reviewing the starter contract in the [`src/` directory](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/foundry/hello-zksync/src/Crowdfund.sol).
 
 ::drop-panel
   ::panel{label="CrowdfundingCampaign.sol"}
@@ -103,7 +110,7 @@ located in the `/out` folder.
 
 ### Deploy the CrowdfundingCampaign contract
 
-The deployment script is located at [`/script/Deploy.s.sol`](https://github.com/dutterbutter/zksync-foundry-quickstart-guide/blob/main/script/Deploy.s.sol).
+The deployment script is located at [`/script/Deploy.s.sol`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/foundry/hello-zksync/script/Deploy.s.sol).
 
 ```solidity
 // SPDX-License-Identifier: UNLICENSED

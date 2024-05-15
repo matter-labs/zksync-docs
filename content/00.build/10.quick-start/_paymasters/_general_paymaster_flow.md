@@ -18,7 +18,8 @@ cd contract-paymaster-quickstart
 
 ## Understanding the `GeneralPaymaster` contract
 
-Let's start by reviewing the `GeneralPaymaster.sol` contract in the `contracts/` directory:
+Let's start by reviewing the [`GeneralPaymaster.sol`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/contracts/GaslessPaymaster.sol)
+contract in the `contracts/` directory:
 
 ::drop-panel
   ::panel{label="GeneralPaymaster.sol"}
@@ -136,7 +137,7 @@ Successfully compiled 4 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-The script to deploy the `GaslessPaymaster` is located at `/deploy/deployGaslessPaymaster.ts`.
+The script to deploy the `GaslessPaymaster` is located at [`/deploy/deployGaslessPaymaster.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/deploy/deployGaslessPaymaster.ts).
 
 ```typescript
 import { deployContract, getWallet, getProvider } from "./utils";
@@ -234,7 +235,7 @@ Paymaster ETH balance is now 5000000000000000
 This section will navigate you through the steps to interact with the `GeneralPaymaster` contract,
 using it to cover transaction fees for your operation.
 
-The interaction script is situated in the `/deploy/interact/` directory, named `interactWithGaslessPaymaster.ts`.
+The interaction script is situated in the `/deploy/interact/` directory, named [`interactWithGaslessPaymaster.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/deploy/interact/interactWithGaslessPaymaster.ts).
 
 Ensure the `CONTRACT_ADDRESS` and `PAYMASTER_ADDRESS` variables are set to your deployed contract and paymaster addresses, respectively.
 
