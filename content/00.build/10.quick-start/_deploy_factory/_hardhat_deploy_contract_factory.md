@@ -4,7 +4,7 @@ title: Hardhat | Deploy Contract Factory
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli create --template qs-factories contract-factory-quickstart
+npx zksync-cli@latest create --template qs-factories contract-factory-quickstart
 cd contract-factory-quickstart
 ```
 
@@ -17,7 +17,7 @@ cd contract-factory-quickstart
 ## Compile the contracts
 
 This section will focus on compiling and deploying the `CrowdfundingFactory.sol`
-contract that is provided under the [`/contracts` directory](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/factories/contracts/CrowdfundFactory.sol).
+contract that is provided under the [`/contracts` directory](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/factory/contracts/CrowdfundFactory.sol).
 
 The `CrowdfundingFactory.sol`contract will be used to deploy multiple instances of
 the `CrowdfundingCampaign.sol` contract from the previous guide.

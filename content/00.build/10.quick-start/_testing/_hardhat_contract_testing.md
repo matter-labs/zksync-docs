@@ -5,7 +5,7 @@ title: Hardhat | Contract Testing
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli create --template qs-testing contract-testing-quickstart
+npx zksync-cli@latest create --template qs-testing contract-testing-quickstart
 cd contract-testing-quickstart
 ```
 
@@ -145,7 +145,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 This section describes testing the `CrowdfundingCampaign.sol` contract. Let's
 start by reviewing the tests for `CrowdfundingCampaign.sol` contract provided
 during the initialization step in the `/tests` directory, specifically the
-[`crowdFunding.test.ts` file](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/testing/test/crowdFunding.test.ts).
+[`crowdFunding.test.ts` file](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/testing/test/crowdFunding.test.ts).
 
 ```typescript
 import { expect } from "chai";

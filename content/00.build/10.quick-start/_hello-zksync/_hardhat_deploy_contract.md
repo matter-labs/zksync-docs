@@ -5,7 +5,7 @@ title: Hardhat | Deploy Contract
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli create --template qs-hello-zksync hello-zksync-quickstart
+npx zksync-cli@latest create --template qs-hello-zksync hello-zksync-quickstart
 cd hello-zksync-quickstart
 ```
 
@@ -16,7 +16,7 @@ cd hello-zksync-quickstart
 ## Compile the CrowdfundingCampaign.sol contract
 
 This guide introduces a crowdfunding campaign contract aimed at supporting Zeek's inventive ventures.
-Let's start by reviewing the starter contract in the [`contracts/` directory](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hello-zksync/contracts/Crowdfund.sol).
+Let's start by reviewing the starter contract in the [`contracts/` directory](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/hello-zksync/contracts/Crowdfund.sol).
 
 ::drop-panel
   ::panel{label="CrowdfundingCampaign.sol"}
@@ -96,7 +96,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 ## Deploy the contract
 
-The deployment script is located at [`/deploy/deploy.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hello-zksync/deploy/deploy.ts).
+The deployment script is located at [`/deploy/deploy.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/hello-zksync/deploy/deploy.ts).
 
 ```typescript
 import { deployContract } from "./utils";

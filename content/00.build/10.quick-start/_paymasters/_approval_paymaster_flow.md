@@ -6,7 +6,7 @@ description: Learn to deploy contract factories in the ZKsync environment.
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli create --template qs-paymaster contract-paymaster-quickstart
+npx zksync-cli@latest create --template qs-paymaster contract-paymaster-quickstart
 cd contract-paymaster-quickstart
 ```
 
@@ -166,7 +166,7 @@ Successfully compiled 1 Solidity file
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-The script to deploy the `ApprovalFlowPaymaster` contract is located at `/deploy/deployApprovalFlowPaymaster.ts`.
+The script to deploy the `ApprovalFlowPaymaster` contract is located at [`/deploy/deployApprovalFlowPaymaster.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/deploy/deployApprovalFlowPaymaster.ts).
 
 ```typescript
 import { deployContract, getWallet, getProvider } from "./utils";
@@ -263,8 +263,9 @@ Paymaster ETH balance is now 5000000000000000
 
 ## Interact with the `ApprovalFlowPaymaster` contract
 
-This section will navigate you through the steps to interact with the `ApprovalFlowPaymaster` contract,
-using it to cover transaction fees for your operation.
+This section will navigate you through the steps to interact with the
+[`ApprovalFlowPaymaster`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/contracts/ApprovalFlowPaymaster.sol)
+contract, using it to cover transaction fees for your operation.
 
 ### Obtain CROWN tokens
 
@@ -287,7 +288,7 @@ Ensure that your wallet is connected and configured for the Sepolia network befo
 
 ### Interaction script
 
-The interaction script is situated in the `/deploy/interact/` directory, named `interactWithApprovalFlowPaymaster.ts`.
+The interaction script is situated in the `/deploy/interact/` directory, named [`interactWithApprovalFlowPaymaster.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/deploy/interact/interactWithApprovalFlowPaymaster.ts).
 
 Ensure the `CONTRACT_ADDRESS` and `PAYMASTER_ADDRESS` variables are set to your deployed contract and paymaster addresses, respectively.
 

@@ -1,13 +1,14 @@
 ---
 title: Foundry | Deploy Contract Factory
 ---
-<!-- TODO: @dutterbutter update to simplify the project init step -->
+
+:display-partial{path = "/_partials/_foundry_alpha_warning"}
+
 Run the following command in your terminal to initialize the Foundry project.
 
 ```sh
-git clone https://github.com/dutterbutter/zksync-foundry-quickstart-guide
-cd zksync-foundry-quickstart-guide
-git checkout db/deploy-contract-factory
+npx zksync-cli@latest create --template qs-fs-factories foundry-contract-factory-quickstart
+cd foundry-contract-factory-quickstart
 ```
 
 ## Set up your wallet
@@ -18,7 +19,7 @@ git checkout db/deploy-contract-factory
 
 ## Review the CrowdfundingFactory contract
 
-The `CrowdfundingFactory.sol` we will compile and deploy is provided under the [`/src` directory](https://github.com/dutterbutter/zksync-foundry-quickstart-guide/blob/db/deploy-contract-factory/src/CrowdfundFactory.sol).
+The `CrowdfundingFactory.sol` we will compile and deploy is provided under the [`/src` directory](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/foundry/factory/src/CrowdfundFactory.sol).
 
 The `CrowdfundingFactory.sol`contract will be used to deploy multiple instances of
 the `CrowdfundingCampaign.sol` contract from the previous guide.
@@ -75,7 +76,7 @@ For this particular guide we are making use of `zksolc`.
 To compile the contracts in the project, run the following command:
 
 ```bash
-forge build --zksync
+forge build --zksync --use 0.8.20
 ```
 
 Upon successful compilation, you'll receive output detailing the
