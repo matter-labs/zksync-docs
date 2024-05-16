@@ -7,9 +7,8 @@ All EVM call instructions are handled similarly.
 
 The call type is encoded on the assembly level, so we will describe the common handling workflow, mentioning distinctions if there are any.
 
-<!-- TODO: update link -->
-<!-- For more information, see the
-[zkSync Era documentation](https://era.zksync.io/docs/reference/architecture/differences-with-ethereum.html#call-staticcall-delegatecall). -->
+For more information, see the
+[zkSync Era documentation](/build/developer-reference/ethereum-differences/evm-instructions).
 
 ## CALL
 
