@@ -5,7 +5,7 @@ title: Hardhat | Contract Testing
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli create --template qs-testing contract-testing-quickstart
+npx zksync-cli@latest create --template qs-testing contract-testing-quickstart
 cd contract-testing-quickstart
 ```
 
@@ -20,9 +20,9 @@ which operates seamlessly within a separate process for an optimized testing wor
 If you have not set up your local era node yet, follow the instructions in the [Getting Started](/build/quick-start#setup-era-local-node-optional) section.
 
 Within the `hardhat.config.ts`, you'll observe the `zksync` flag set to `true` under the
-`hardhat` network, indicating the integration with ZKsync's testing environment.
+`hardhat` network, indicating the integration with zkSync's testing environment.
 
-```ts
+```typescript [hardhat.config.ts]
 hardhat: {
   zksync: true,
 },
@@ -62,7 +62,7 @@ refresher on its structure:
 
 ::drop-panel
   ::panel{label="CrowdfundingCampaign.sol"}
-    ```solidity
+    ```solidity [CrowdfundingCampaign.sol]
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
 
@@ -131,7 +131,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 2 Solidity file
 Successfully compiled 2 Solidity file
 ```
@@ -145,9 +145,9 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 This section describes testing the `CrowdfundingCampaign.sol` contract. Let's
 start by reviewing the tests for `CrowdfundingCampaign.sol` contract provided
 during the initialization step in the `/tests` directory, specifically the
-[`crowdFunding.test.ts` file](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/testing/test/crowdFunding.test.ts).
+[`crowdFunding.test.ts` file](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/testing/test/crowdFunding.test.ts).
 
-```typescript
+```typescript [crowdFunding.test.ts]
 import { expect } from "chai";
 import { ethers } from "hardhat";
 import { getWallet, LOCAL_RICH_WALLETS, deployContract } from "../deploy/utils";

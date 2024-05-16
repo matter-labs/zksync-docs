@@ -9,7 +9,7 @@ The call type is encoded on the assembly level, so we will describe the common h
 
 <!-- TODO: update link -->
 <!-- For more information, see the
-[ZKsync Era documentation](https://era.zksync.io/docs/reference/architecture/differences-with-ethereum.html#call-staticcall-delegatecall). -->
+[zkSync Era documentation](https://era.zksync.io/docs/reference/architecture/differences-with-ethereum.html#call-staticcall-delegatecall). -->
 
 ## CALL
 

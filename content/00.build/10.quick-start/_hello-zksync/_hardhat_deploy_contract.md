@@ -5,7 +5,7 @@ title: Hardhat | Deploy Contract
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli create --template qs-hello-zksync hello-zksync-quickstart
+npx zksync-cli@latest create --template qs-hello-zksync hello-zksync-quickstart
 cd hello-zksync-quickstart
 ```
 
@@ -16,11 +16,11 @@ cd hello-zksync-quickstart
 ## Compile the CrowdfundingCampaign.sol contract
 
 This guide introduces a crowdfunding campaign contract aimed at supporting Zeek's inventive ventures.
-Let's start by reviewing the starter contract in the [`contracts/` directory](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hello-zksync/contracts/Crowdfund.sol).
+Let's start by reviewing the starter contract in the [`contracts/` directory](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/hello-zksync/contracts/Crowdfund.sol).
 
 ::drop-panel
   ::panel{label="CrowdfundingCampaign.sol"}
-    ```solidity
+    ```solidity [CrowdfundingCampaign.sol]
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
 
@@ -87,7 +87,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 1 Solidity file
 Successfully compiled 1 Solidity file
 ```
@@ -96,9 +96,9 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 ## Deploy the contract
 
-The deployment script is located at [`/deploy/deploy.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hello-zksync/deploy/deploy.ts).
+The deployment script is located at [`/deploy/deploy.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/hello-zksync/deploy/deploy.ts).
 
-```typescript
+```typescript [deploy.ts]
 import { deployContract } from "./utils";
 
 // An example of a basic deploy script
@@ -167,7 +167,7 @@ Estimated deployment cost: 0.000501 ETH
 
 Requesting contract verification...
 Your verification ID is: 10067
-Contract successfully verified on ZKsync block explorer!
+Contract successfully verified on zkSync block explorer!
 ```
 
 🥳 Congratulations! Your smart contract is now deployed. 🚀

@@ -5,7 +5,7 @@
  */
 export default defineAppConfig({
   seo: {
-    siteName: 'ZKsync Docs',
+    siteName: 'zkSync Docs',
   },
   header: {
     links: [
@@ -13,8 +13,8 @@ export default defineAppConfig({
         icon: 'i-simple-icons-github',
         to: 'https://github.com/matter-labs/zksync-docs',
         target: '_blank',
-        'aria-label': 'ZKsync Docs on GitHub',
-        title: 'ZKsync Docs on GitHub',
+        'aria-label': 'zkSync Docs on GitHub',
+        title: 'zkSync Docs on GitHub',
       },
     ],
   },

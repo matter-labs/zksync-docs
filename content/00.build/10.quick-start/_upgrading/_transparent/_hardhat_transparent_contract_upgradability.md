@@ -4,7 +4,7 @@ title: Hardhat | Contract Upgrading
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli create --template qs-upgrade contract-upgrade-quickstart
+npx zksync-cli@latest create --template qs-upgrade contract-upgrade-quickstart
 cd contract-upgrade-quickstart
 ```
 
@@ -25,14 +25,14 @@ contract's logic (which can be upgraded) from its persistent state
 
 ### Refactoring for Proxy Compatibility
 
-In the `contracts/` directory you'll observe the refactored the [`CrowdfundingCampaign` contract](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/contracts/CrowdfundingCampaign.sol)
+In the `contracts/` directory you'll observe the refactored the [`CrowdfundingCampaign` contract](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/contracts/CrowdfundingCampaign.sol)
 which initializes state variables through an
 `initialize` function instead of the constructor, in line with the
 Transparent Proxy pattern.
 
 **Updated Contract Structure:**
 
-```solidity
+```solidity [CrowdfundingCampaign.sol]
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -116,16 +116,16 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 3 Solidity file
 Successfully compiled 3 Solidity file
 ```
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-The deployment script is located at [`/deploy/deployTransparentProxy.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/deploy/deployTransparentProxy.ts).
+The deployment script is located at [`/deploy/deployTransparentProxy.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/deploy/deployTransparentProxy.ts).
 
-```typescript
+```typescript [deployTransparentProxy.ts]
 import { getWallet } from "./utils";
 import { Deployer } from '@matterlabs/hardhat-zksync';
 import { ethers } from "ethers";
@@ -152,7 +152,7 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 **Key Components:**
 
 - **`hre.zkUpgrades.deployProxy`**: The method call to deploy the `CrowdfundingCampaign`
-contract via a transparent proxy, leveraging Hardhat's runtime environment for ZKsync upgrades.
+contract via a transparent proxy, leveraging Hardhat's runtime environment for zkSync upgrades.
 This ensures the deployed contract can be upgraded in the future without losing its state or funds.
 - **`initializer`**: Specifies the initialization method of the contract, `initialize` in this case,
 which is required for setting up the proxy's state upon deployment.
@@ -222,7 +222,7 @@ this constraint, ensuring contributions are made within the allowed period.
 
 **Enhanced Contract:**
 
-The upgraded contract, [`CrowdfundingCampaignV2.sol`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/contracts/CrowdfundingCampaignV2.sol),
+The upgraded contract, [`CrowdfundingCampaignV2.sol`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/contracts/CrowdfundingCampaignV2.sol),
 located in the `/contracts` directory, incorporates these changes:
 
 - **Deadline Variable:** A new state variable deadline defines the campaign's end time,
@@ -243,7 +243,7 @@ safeguarding the contract from late contributions.
 To provide flexibility, a new function allows the owner to extend the deadline,
 offering adaptability to changing campaign needs.
 
-```solidity
+```solidity [CrowdfundingCampaignV2.sol]
 function extendDeadline(uint256 _newDuration) public {
     require(msg.sender == owner, "Only the owner can extend the deadline");
     deadline = block.timestamp + _newDuration;
@@ -251,8 +251,7 @@ function extendDeadline(uint256 _newDuration) public {
 ```
 
 This upgrade not only introduces the element of time to the campaign but also
-exemplifies the use of `modifiers` for enforcing contract conditions.
-<!-- TODO: maybe make this a callout and link to what modifiers are. -->
+exemplifies the use of [`modifiers`](https://docs.soliditylang.org/en/latest/contracts.html#function-modifiers) for enforcing contract conditions.
 
 ### Compile contract
 :display-partial{path = "_partials/_compile-solidity-contracts"}
@@ -262,7 +261,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 4 Solidity file
 Successfully compiled 4 Solidity file
 ```
@@ -273,13 +272,13 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 This section guides you through upgrading the `CrowdfundingCampaign` contract
 to its second version, `CrowdfundingCampaignV2`.
-Review the [`upgradeCrowdfundingCampaign.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/deploy/upgrade-scripts/upgradeCrowdfundingCampaign.ts)
+Review the [`upgradeCrowdfundingCampaign.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/deploy/upgrade-scripts/upgradeCrowdfundingCampaign.ts)
 script located within the `deploy/upgrade-scripts` directory to begin.
 
 Replace `YOUR_PROXY_ADDRESS_HERE` with the actual address of your
 deployed Transparent Proxy from the previous deployment step.
 
-```typescript
+```typescript [upgradeCrowdfundingCampaign.ts]
 import { getWallet } from "../utils";
 import { Deployer } from '@matterlabs/hardhat-zksync';
 import { HardhatRuntimeEnvironment } from "hardhat/types";
@@ -390,13 +389,13 @@ Upon successful verification, you'll receive output detailing the verification p
 ```bash
 Verifying implementation: 0x58BD5adb462CF087E5838d53aE38A3Fe0EAf7A31
 Your verification ID is: 10543
-Contract successfully verified on ZKsync block explorer!
+Contract successfully verified on zkSync block explorer!
 Verifying proxy: 0x68E8533acE01019CB8D07Eca822369D5De71b74D
 Your verification ID is: 10544
-Contract successfully verified on ZKsync block explorer!
+Contract successfully verified on zkSync block explorer!
 Verifying proxy admin: 0x05198D9f93cBDfa3e332776019115512d8e0c809
 Your verification ID is: 10545
-Contract successfully verified on ZKsync block explorer!
+Contract successfully verified on zkSync block explorer!
 ```
 
 🎉 Congratulations! The `CrowdfundingCampaignV2` contract has been upgraded and verified!

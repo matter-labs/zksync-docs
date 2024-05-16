@@ -2,7 +2,14 @@
 title: Foundry | Deploy Contract
 ---
 
-:display-partial{path = "/_partials/_environment-setup-with-foundry"}
+:display-partial{path = "/_partials/_foundry_alpha_warning"}
+
+Run the following command in your terminal to initialize the Foundry project.
+
+```sh
+npx zksync-cli@latest create --template qs-fs-hello-zksync hello-zksync-foundry-quickstart
+cd hello-zksync-foundry-quickstart
+```
 
 ## Set up your wallet
 
@@ -13,11 +20,11 @@ title: Foundry | Deploy Contract
 This guide
 introduces a crowdfunding campaign contract aimed at supporting Zeek's inventive ventures.
 
-Let's start by reviewing the starter contract in the [`src/` directory](https://github.com/dutterbutter/zksync-foundry-quickstart-guide/blob/main/src/Crowdfund.sol).
+Let's start by reviewing the starter contract in the [`src/` directory](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/foundry/hello-zksync/src/Crowdfund.sol).
 
 ::drop-panel
   ::panel{label="CrowdfundingCampaign.sol"}
-    ```solidity
+    ```solidity [CrowdfundingCampaign.sol]
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
 
@@ -77,7 +84,7 @@ Owned and deployed with a set funding goal, it features:
 - The `contribute` method to log funds, triggering `ContributionReceived` and `GoalReached` events.
 - The `withdrawFunds` method, allowing the owner to collect accumulated funds post-goal achievement.
 
-Smart contracts deployed to ZKsync must be compiled using our custom compiler.
+Smart contracts deployed to zkSync must be compiled using our custom compiler.
 For this particular guide we are making use of `zksolc`.
 
 To compile the contracts in the project, run the following command:
@@ -95,7 +102,7 @@ of Solidity files compiled.
 [⠃] Compiling 2 files with 0.8.20
 [⠊] Solc 0.8.20 finished in 736.48ms
 Compiler run successful!
-Compiling contracts for ZKsync Era with zksolc v1.4.0
+Compiling contracts for zkSync Era with zksolc v1.4.0
 ```
 
 The compiled zkEVM artifacts will be located in the `/zkout` folder, and the solc artifacts will be
@@ -103,9 +110,9 @@ located in the `/out` folder.
 
 ### Deploy the CrowdfundingCampaign contract
 
-The deployment script is located at [`/script/Deploy.s.sol`](https://github.com/dutterbutter/zksync-foundry-quickstart-guide/blob/main/script/Deploy.s.sol).
+The deployment script is located at [`/script/Deploy.s.sol`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/foundry/hello-zksync/script/Deploy.s.sol).
 
-```solidity
+```solidity [Deploy.s.sol]
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 

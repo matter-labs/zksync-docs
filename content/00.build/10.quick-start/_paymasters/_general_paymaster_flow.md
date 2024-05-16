@@ -1,12 +1,12 @@
 ---
 title: General Paymaster
-description: Learn to deploy contract factories in the ZKsync environment.
+description: Learn to deploy contract factories in the zkSync environment.
 ---
 
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli create --template qs-paymaster contract-paymaster-quickstart
+npx zksync-cli@latest create --template qs-paymaster contract-paymaster-quickstart
 cd contract-paymaster-quickstart
 ```
 
@@ -18,11 +18,12 @@ cd contract-paymaster-quickstart
 
 ## Understanding the `GeneralPaymaster` contract
 
-Let's start by reviewing the `GeneralPaymaster.sol` contract in the `contracts/` directory:
+Let's start by reviewing the [`GeneralPaymaster.sol`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/contracts/GaslessPaymaster.sol)
+contract in the `contracts/` directory:
 
 ::drop-panel
   ::panel{label="GeneralPaymaster.sol"}
-    ```solidity
+    ```solidity [GeneralPaymaster.sol]
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
 
@@ -129,16 +130,16 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 4 Solidity file
 Successfully compiled 4 Solidity file
 ```
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-The script to deploy the `GaslessPaymaster` is located at `/deploy/deployGaslessPaymaster.ts`.
+The script to deploy the `GaslessPaymaster` is located at [`/deploy/deployGaslessPaymaster.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/deploy/deployGaslessPaymaster.ts).
 
-```typescript
+```typescript [deployGaslessPaymaster.ts]
 import { deployContract, getWallet, getProvider } from "./utils";
 import { ethers } from "ethers";
 
@@ -223,7 +224,7 @@ Estimated deployment cost: 0.0004922112 ETH
 
 Requesting contract verification...
 Your verification ID is: 10634
-Contract successfully verified on ZKsync block explorer!
+Contract successfully verified on zkSync block explorer!
 Paymaster ETH balance is now 5000000000000000
 ```
 
@@ -234,14 +235,14 @@ Paymaster ETH balance is now 5000000000000000
 This section will navigate you through the steps to interact with the `GeneralPaymaster` contract,
 using it to cover transaction fees for your operation.
 
-The interaction script is situated in the `/deploy/interact/` directory, named `interactWithGaslessPaymaster.ts`.
+The interaction script is situated in the `/deploy/interact/` directory, named [`interactWithGaslessPaymaster.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/deploy/interact/interactWithGaslessPaymaster.ts).
 
 Ensure the `CONTRACT_ADDRESS` and `PAYMASTER_ADDRESS` variables are set to your deployed contract and paymaster addresses, respectively.
 
 ::drop-panel
   ::panel{label="interactWithGaslessPaymaster.ts"}
 
-  ```typescript
+  ```typescript [interactWithGaslessPaymaster.ts]
   import * as hre from "hardhat";
   import { getWallet, getProvider } from "../utils";
   import { ethers } from "ethers";

@@ -1,12 +1,12 @@
 ---
 title: Approval Paymaster
-description: Learn to deploy contract factories in the ZKsync environment.
+description: Learn to deploy contract factories in the zkSync environment.
 ---
 
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli create --template qs-paymaster contract-paymaster-quickstart
+npx zksync-cli@latest create --template qs-paymaster contract-paymaster-quickstart
 cd contract-paymaster-quickstart
 ```
 
@@ -22,7 +22,7 @@ Let's start by reviewing the `ApprovalFlowPaymaster.sol` contract in the `contra
 
 ::drop-panel
   ::panel{label="ApprovalFlowPaymaster.sol"}
-    ```solidity
+    ```solidity [ApprovalFlowPaymaster.sol]
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
 
@@ -159,16 +159,16 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 1 Solidity file
 Successfully compiled 1 Solidity file
 ```
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-The script to deploy the `ApprovalFlowPaymaster` contract is located at `/deploy/deployApprovalFlowPaymaster.ts`.
+The script to deploy the `ApprovalFlowPaymaster` contract is located at [`/deploy/deployApprovalFlowPaymaster.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/deploy/deployApprovalFlowPaymaster.ts).
 
-```typescript
+```typescript [deployApprovalFlowPaymaster.ts]
 import { deployContract, getWallet, getProvider } from "./utils";
 import { ethers } from "ethers";
 
@@ -255,7 +255,7 @@ Estimated deployment cost: 0.0006278488 ETH
 
 Requesting contract verification...
 Your verification ID is: 10923
-Contract successfully verified on ZKsync block explorer!
+Contract successfully verified on zkSync block explorer!
 Paymaster ETH balance is now 5000000000000000
 ```
 
@@ -263,8 +263,9 @@ Paymaster ETH balance is now 5000000000000000
 
 ## Interact with the `ApprovalFlowPaymaster` contract
 
-This section will navigate you through the steps to interact with the `ApprovalFlowPaymaster` contract,
-using it to cover transaction fees for your operation.
+This section will navigate you through the steps to interact with the
+[`ApprovalFlowPaymaster`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/contracts/ApprovalFlowPaymaster.sol)
+contract, using it to cover transaction fees for your operation.
 
 ### Obtain CROWN tokens
 
@@ -287,14 +288,14 @@ Ensure that your wallet is connected and configured for the Sepolia network befo
 
 ### Interaction script
 
-The interaction script is situated in the `/deploy/interact/` directory, named `interactWithApprovalFlowPaymaster.ts`.
+The interaction script is situated in the `/deploy/interact/` directory, named [`interactWithApprovalFlowPaymaster.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/deploy/interact/interactWithApprovalFlowPaymaster.ts).
 
 Ensure the `CONTRACT_ADDRESS` and `PAYMASTER_ADDRESS` variables are set to your deployed contract and paymaster addresses, respectively.
 
 ::drop-panel
   ::panel{label="interactWithApprovalFlowPaymaster.ts"}
 
-  ```typescript
+  ```typescript [interactWithApprovalFlowPaymaster.ts]
   import * as hre from "hardhat";
   import { getWallet, getProvider } from "../utils";
   import { ethers } from "ethers";
