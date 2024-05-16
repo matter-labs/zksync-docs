@@ -30,7 +30,7 @@ contract TestToken is ERC20, Ownable, ERC20Burnable {
 ```
 
 ::callout{icon="i-heroicons-light-bulb"}
-ZKsync is [EVM compatible](/build/resources/glossary#evm-compatible), so you can use existing popular libraries like OpenZeppelin.
+zkSync is [EVM compatible](/build/resources/glossary#evm-compatible), so you can use existing popular libraries like OpenZeppelin.
 ::
 
 The most important features are:
@@ -50,7 +50,7 @@ The Remix IDE is an open-source web and desktop application that supports Ethere
 deployment, offering tools for writing, testing, debugging, and deploying smart contracts written in Solidity to EVM
 compatible protocols.
 
-### Enable the Remix ZKsync plugin
+### Enable the Remix zkSync plugin
 
 :display-partial{path="/_partials/_enable-remix-zksync-plugin"}
 
@@ -59,14 +59,14 @@ repository:`https://github.com/uF4No/zksync-101-remix`
 
 ![Clone repo in Remix](/images/remix-plugin-clone-repo.gif)
 
-Once the project is imported, open the `contracts/TestToken.sol` file. To compile the contract, click on the ZKsync
+Once the project is imported, open the `contracts/TestToken.sol` file. To compile the contract, click on the zkSync
 plugin on the left menu and then "Compile TestToken.sol". If you get a popup message requesting permissions to access
 **`ACCESS TO "WRITEFILE" OF "FILE MANAGER"`,** click on Accept.
 
 ::callout{icon="i-heroicons-light-bulb"}
-Behind the scenes, Remix is using the ZKsync Era custom Solidity compiler (named `zksolc` ) to generate ZKEVM compatible
+Behind the scenes, Remix is using the zkSync Era custom Solidity compiler (named `zksolc` ) to generate ZKEVM compatible
 bytecode.
-[Learn more about ZKsync custom compilers](/zk-stack/components/compiler/toolchain/overview).
+[Learn more about zkSync custom compilers](/zk-stack/components/compiler/toolchain/overview).
 ::
 
 We will use our wallet’s configured network to connect and deploy our smart contract so make sure your wallet is
@@ -94,7 +94,7 @@ const TOKEN_AMOUNT    = "123.55";
   try {
 
   // Note that the script needs the ABI which is generated from the compilation artifact.
-  // Make sure contract is compiled for ZKsync and artifacts are generated
+  // Make sure contract is compiled for zkSync and artifacts are generated
   const artifactsPath = `browser/contracts/artifacts/TestToken.json` // Change this for different path
 
   const metadata = JSON.parse(await remix.call('fileManager', 'getFile', artifactsPath))
@@ -128,7 +128,7 @@ const TOKEN_AMOUNT    = "123.55";
 This scripts uses `ethers` to interact with the contract we’ve just deployed.
 
 ::callout{icon="i-heroicons-light-bulb"}
-Existing libraries like `ethers` , `viem` and `web3.js` can be used to interact with smart contracts deployed on ZKsync.
+Existing libraries like `ethers` , `viem` and `web3.js` can be used to interact with smart contracts deployed on zkSync.
 ::
 
 Fill the following variables:

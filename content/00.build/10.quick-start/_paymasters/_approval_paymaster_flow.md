@@ -1,6 +1,6 @@
 ---
 title: Approval Paymaster
-description: Learn to deploy contract factories in the ZKsync environment.
+description: Learn to deploy contract factories in the zkSync environment.
 ---
 
 Run the following command in your terminal to initialize the project.
@@ -159,7 +159,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 1 Solidity file
 Successfully compiled 1 Solidity file
 ```
@@ -255,7 +255,7 @@ Estimated deployment cost: 0.0006278488 ETH
 
 Requesting contract verification...
 Your verification ID is: 10923
-Contract successfully verified on ZKsync block explorer!
+Contract successfully verified on zkSync block explorer!
 Paymaster ETH balance is now 5000000000000000
 ```
 

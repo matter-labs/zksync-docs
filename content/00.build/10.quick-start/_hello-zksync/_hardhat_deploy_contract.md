@@ -87,7 +87,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 1 Solidity file
 Successfully compiled 1 Solidity file
 ```
@@ -167,7 +167,7 @@ Estimated deployment cost: 0.000501 ETH
 
 Requesting contract verification...
 Your verification ID is: 10067
-Contract successfully verified on ZKsync block explorer!
+Contract successfully verified on zkSync block explorer!
 ```
 
 🥳 Congratulations! Your smart contract is now deployed. 🚀
