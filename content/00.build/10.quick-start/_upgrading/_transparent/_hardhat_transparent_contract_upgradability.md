@@ -94,7 +94,7 @@ To compile the contracts in the project, run the following command:
 ::code-group
 
 ```bash [npm]
-npm run compile
+npx run compile
 ```
 
 ```bash [yarn]
@@ -102,7 +102,7 @@ yarn compile
 ```
 
 ```bash [pnpm]
-pnpm run compile
+pnpx run compile
 ```
 
 ```bash [bun]
@@ -164,9 +164,9 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script deployTransparentProxy.ts
+npx hardhat deploy-zksync --script deployTransparentProxy.ts
 # To deploy the contract on local in-memory node:
-# npm run hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
+# npx hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
 ```
 
 ```bash [yarn]
@@ -176,9 +176,9 @@ yarn hardhat deploy-zksync --script deployTransparentProxy.ts
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script deployTransparentProxy.ts
+pnpx exec hardhat deploy-zksync --script deployTransparentProxy.ts
 # To deploy the contract on local in-memory node:
-# pnpm run hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
+# pnpx exec hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
 ```
 
 ```bash [bun]
@@ -262,8 +262,8 @@ of Solidity files compiled.
 
 ```bash
 Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
-Compiling 4 Solidity file
-Successfully compiled 4 Solidity file
+Compiling 29 Solidity file
+Successfully compiled 29 Solidity file
 ```
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
@@ -326,7 +326,7 @@ Execute the command corresponding to your package manager:
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
+npx hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
 ```
 
 ```bash [yarn]
@@ -334,7 +334,7 @@ yarn hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
+pnpx exec hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
 ```
 
 ```bash [bun]
@@ -367,7 +367,7 @@ Replace <PROXY_ADDRESS> with the actual proxy address from your deployment.
 ::code-group
 
 ```bash [npm]
-npm run hardhat verify <PROXY-ADDRESS>
+npx hardhat verify <PROXY-ADDRESS>
 ```
 
 ```bash [yarn]
@@ -375,7 +375,7 @@ yarn hardhat verify <PROXY-ADDRESS>
 ```
 
 ```bash [pnpm]
-pnpm run hardhat verify <PROXY-ADDRESS>
+pnpx exec hardhat verify <PROXY-ADDRESS>
 ```
 
 ```bash [bun]

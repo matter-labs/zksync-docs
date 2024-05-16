@@ -113,8 +113,8 @@ of Solidity files compiled.
 
 ```bash
 Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
-Compiling 3 Solidity file
-Successfully compiled 3 Solidity file
+Compiling 29 Solidity file
+Successfully compiled 29 Solidity file
 ```
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
@@ -169,9 +169,9 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script deployBeaconProxy.ts
+npx hardhat deploy-zksync --script deployBeaconProxy.ts
 # To deploy the contract on local in-memory node:
-# npm run hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
+# npx hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
 ```
 
 ```bash [yarn]
@@ -181,9 +181,9 @@ yarn hardhat deploy-zksync --script deployBeaconProxy.ts
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script deployBeaconProxy.ts
+pnpx exec hardhat deploy-zksync --script deployBeaconProxy.ts
 # To deploy the contract on local in-memory node:
-# pnpm run hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
+# pnpx exec hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
 ```
 
 ```bash [bun]
@@ -344,7 +344,7 @@ Execute the test command corresponding to your package manager:
 ::code-group
 
 ```bash [npm]
-npm run hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
+npx hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
 ```
 
 ```bash [yarn]
@@ -352,7 +352,7 @@ yarn hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCam
 ```
 
 ```bash [pnpm]
-pnpm run hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
+pnpx exec hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
 ```
 
 ```bash [bun]
@@ -383,7 +383,7 @@ To proceed with verification, execute the following command:
 ::code-group
 
 ```bash [npm]
-npm run hardhat verify <BEACON-PROXY-ADDRESS>
+npx hardhat verify <BEACON-PROXY-ADDRESS>
 ```
 
 ```bash [yarn]
@@ -391,7 +391,7 @@ yarn hardhat verify <BEACON-PROXY-ADDRESS>
 ```
 
 ```bash [pnpm]
-pnpm run hardhat verify <BEACON-PROXY-ADDRESS>
+pnpx exec hardhat verify <BEACON-PROXY-ADDRESS>
 ```
 
 ```bash [bun]

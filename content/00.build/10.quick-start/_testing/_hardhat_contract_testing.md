@@ -131,9 +131,9 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
-Compiling 2 Solidity file
-Successfully compiled 2 Solidity file
+Compiling contracts for zkSync Era with zksolc v1.4.1 and solc v0.8.17
+Compiling 15 Solidity files
+Successfully compiled 15 Solidity files
 ```
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
@@ -148,8 +148,9 @@ during the initialization step in the `/tests` directory, specifically the
 [`crowdFunding.test.ts` file](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/testing/test/crowdFunding.test.ts).
 
 ```typescript [crowdFunding.test.ts]
+import "@nomicfoundation/hardhat-chai-matchers";
 import { expect } from "chai";
-import { ethers } from "hardhat";
+import { ethers } from "ethers";
 import { getWallet, LOCAL_RICH_WALLETS, deployContract } from "../deploy/utils";
 
 describe("CrowdfundingCampaign", function () {
@@ -203,7 +204,7 @@ Execute the test command corresponding to your package manager:
 ::code-group
 
 ```bash [npm]
-npm run hardhat test --network hardhat
+npx hardhat test --network hardhat
 ```
 
 ```bash [yarn]
@@ -211,7 +212,7 @@ yarn hardhat test --network hardhat
 ```
 
 ```bash [pnpm]
-pnpm run hardhat test --network hardhat
+pnpx exec hardhat test --network hardhat
 ```
 
 ```bash [bun]
