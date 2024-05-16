@@ -5,13 +5,14 @@ const { data: navigation } = await useAsyncData('ecosystem-navigation', () => {
     _extension: 'md',
     where: [
       {
-        _path: { $contains: 'ecosystem' },
+        _path: { $contains: '/ecosystem' },
       },
     ],
   });
 
   return fetchContentNavigation(query);
 });
+console.log('WUT', navigation.value);
 const navTree = (navigation.value && navigation.value[0] && navigation.value[0].children) || [];
 </script>
 

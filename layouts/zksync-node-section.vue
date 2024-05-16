@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const { data: navigation } = await useAsyncData('zksync-node-navigation', () => {
+const { data: navigation } = await useAsyncData('ecosystem-navigation', () => {
   const query = queryContent({
     _partial: false,
     _extension: 'md',
     where: [
       {
-        _path: { $contains: 'zksync-node' },
+        _path: { $contains: '/zksync-node' },
       },
     ],
   });

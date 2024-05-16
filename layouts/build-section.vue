@@ -5,7 +5,7 @@ const { data: navigation } = await useAsyncData('build-navigation', () => {
     _extension: 'md',
     where: [
       {
-        _path: { $contains: 'build' },
+        _path: { $contains: '/build' },
       },
     ],
   });
