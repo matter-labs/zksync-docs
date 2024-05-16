@@ -5,7 +5,7 @@ title: Hardhat | Deploy Contract
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli create --template qs-hello-zksync hello-zksync-quickstart
+npx zksync-cli@latest create --template qs-hello-zksync hello-zksync-quickstart
 cd hello-zksync-quickstart
 ```
 

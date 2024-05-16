@@ -6,7 +6,7 @@ description: Learn to deploy contract factories in the zkSync environment.
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli create --template qs-paymaster contract-paymaster-quickstart
+npx zksync-cli@latest create --template qs-paymaster contract-paymaster-quickstart
 cd contract-paymaster-quickstart
 ```
 

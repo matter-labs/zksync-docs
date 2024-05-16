@@ -4,7 +4,7 @@ title: Hardhat | Deploy Contract Factory
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli create --template qs-factories contract-factory-quickstart
+npx zksync-cli@latest create --template qs-factories contract-factory-quickstart
 cd contract-factory-quickstart
 ```
 

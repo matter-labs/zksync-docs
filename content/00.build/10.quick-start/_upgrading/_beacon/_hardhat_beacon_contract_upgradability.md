@@ -5,7 +5,7 @@ title: Hardhat | Contract Upgrading
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli create --template qs-upgrade contract-upgrade-quickstart
+npx zksync-cli@latest create --template qs-upgrade contract-upgrade-quickstart
 cd contract-upgrade-quickstart
 ```
 

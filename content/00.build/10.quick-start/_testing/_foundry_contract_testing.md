@@ -7,7 +7,7 @@ title: Foundry | Contract Testing
 Run the following command in your terminal to initialize the Foundry project.
 
 ```sh
-npx zksync-cli create --template qs-fs-testing foundry-contract-testing-quickstart
+npx zksync-cli@latest create --template qs-fs-testing foundry-contract-testing-quickstart
 cd foundry-contract-testing-quickstart
 ```
 
