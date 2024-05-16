@@ -7,6 +7,8 @@
   "author": "Matter Labs",
   "homepage": "https://zksync.io",
   "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@types/bun": "^1.0.8",
     "@vue/test-utils": "^2.4.5",
     "cspell": "^8.6.0",
@@ -18,6 +20,7 @@
     "particles.vue3": "^2.12.0",
     "prettier": "^3.1.0",
     "prettier-plugin-tailwindcss": "^0.5.12",
+    "semantic-release": "",
     "vue-tsc": "^2.0.6"
   },
   "peerDependencies": {
@@ -49,6 +52,7 @@
     "fix:prettier": "prettier --write .",
     "prepare": "husky",
     "postinstall": "nuxt prepare",
-    "ci:check": "bun run lint:eslint && bun run lint:prettier && bun run lint:spelling && bun run lint:markdown"
+    "ci:check": "bun run lint:eslint && bun run lint:prettier && bun run lint:spelling && bun run lint:markdown",
+    "semantic-release": "semantic-release"
   }
 }
