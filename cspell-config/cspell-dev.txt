@@ -95,6 +95,10 @@ hexlify
 insize
 ecadd
 ecmul
+Gbps
+ansible
+Gelato
+VRFs
 
 // devs
 dutterbutter

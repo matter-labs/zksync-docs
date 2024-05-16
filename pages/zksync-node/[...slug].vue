@@ -4,6 +4,6 @@
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'external-node-section',
+  layout: 'zksync-node-section',
 });
 </script>

@@ -5,7 +5,7 @@ title: Hardhat | Contract Upgrading
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli create --template qs-upgrade contract-upgrade-quickstart
+npx zksync-cli@latest create --template qs-upgrade contract-upgrade-quickstart
 cd contract-upgrade-quickstart
 ```
 
@@ -29,7 +29,7 @@ functions and the UUPS upgrade mechanism.
 
 **UUPS-Enabled Contract Structure:**
 
-```solidity
+```solidity [CrowdfundingCampaign_UUPS.sol]
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -84,7 +84,7 @@ important for secure upgrade authorization.
 - **_authorizeUpgrade**: A safeguard function ensuring only the contract owner can perform upgrades,
 reinforcing the contract's security.
 
-By adopting the UUPS pattern, the [`CrowdfundingCampaign_UUPS`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/contracts/CrowdfundingCampaign_UUPS.sol)
+By adopting the UUPS pattern, the [`CrowdfundingCampaign_UUPS`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/contracts/CrowdfundingCampaign_UUPS.sol)
 contract becomes efficiently upgradeable, offering enhanced security and reduced gas costs, setting a solid foundation for future enhancements.
 
 ---
@@ -122,7 +122,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 4 Solidity file
 Successfully compiled 4 Solidity file
 ```
@@ -131,9 +131,9 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 ## Deploy the updated contract
 
-The script to deploy the `CrowdfundingCampaign_UUPS` contract is located at [`/deploy/deployUUPS.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/deploy/deployUUPS.ts).
+The script to deploy the `CrowdfundingCampaign_UUPS` contract is located at [`/deploy/deployUUPS.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/deploy/deployUUPS.ts).
 
-```typescript
+```typescript [deployUUPS.ts]
 import { getWallet } from "./utils";
 import { Deployer } from '@matterlabs/hardhat-zksync';
 import { ethers } from "ethers";
@@ -232,7 +232,7 @@ this constraint, ensuring contributions are made within the allowed period.
 
 **Enhanced Contract:**
 
-The upgraded contract, [`CrowdfundingCampaignV2_UUPS.sol`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/contracts/CrowdfundingCampaignV2_UUPS.sol),
+The upgraded contract, [`CrowdfundingCampaignV2_UUPS.sol`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/contracts/CrowdfundingCampaignV2_UUPS.sol),
 located in the `/contracts` directory, incorporates these changes:
 
 - **Deadline Variable:** A new state variable deadline defines the campaign's end time,
@@ -253,7 +253,7 @@ safeguarding the contract from late contributions.
 To provide flexibility, a new function allows the owner to extend the deadline,
 offering adaptability to changing campaign needs.
 
-```solidity
+```solidity [CrowdfundingCampaignV2_UUPS.sol]
 function extendDeadline(uint256 _newDuration) public {
     require(msg.sender == owner, "Only the owner can extend the deadline");
     deadline = block.timestamp + _newDuration;
@@ -272,7 +272,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 4 Solidity file
 Successfully compiled 4 Solidity file
 ```
@@ -282,13 +282,13 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 ### Upgrade to `CrowdfundingCampaignV2_UUPS`
 
 This section describes the initiating the upgrade to `CrowdfundingCampaignV2_UUPS.sol` contract.
-Let's start by reviewing the [`upgradeUUPSCrowdfundingCampaign.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/deploy/upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts)
+Let's start by reviewing the [`upgradeUUPSCrowdfundingCampaign.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/deploy/upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts)
 script in the `deploy/upgrade-scripts` directory:
 
 Replace `YOUR_PROXY_ADDRESS_HERE` with the actual address of your
 deployed Transparent Proxy from the previous deployment step.
 
-```typescript
+```typescript [upgradeUUPSCrowdfundingCampaign.ts]
 import { getWallet } from "../utils";
 import { Deployer } from '@matterlabs/hardhat-zksync';
 import { HardhatRuntimeEnvironment } from "hardhat/types";
@@ -392,10 +392,10 @@ Upon successful verification, you'll receive output detailing the verification p
 ```bash
 Verifying implementation: 0x9BE22706966D717d7b0C8aEC99A1a9d1b3bFeC50
 Your verification ID is: 10618
-Contract successfully verified on ZKsync block explorer!
+Contract successfully verified on zkSync block explorer!
 Verifying proxy: 0x91921fDb0F8942c18eCeE4E3896b369ca0650483
 Your verification ID is: 10619
-Contract successfully verified on ZKsync block explorer!
+Contract successfully verified on zkSync block explorer!
 ```
 
 🎉 Congratulations! The `CrowdfundingCampaignV2_UUPS` contract has been upgraded and verified!
