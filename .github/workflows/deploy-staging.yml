@@ -4,11 +4,13 @@ on:
     branches: [staging]
   workflow_dispatch:
 
+env:
+  NUXT_SITE_ENV: staging # used for NuxtSEO to disable things like indexing on staging
+
 jobs:
   build_and_deploy:
     env:
       NUXT_UI_PRO_LICENSE: ${{ secrets.NUXT_UI_PRO_LICENSE }}
-      NUXT_PUBLIC_SITE_URL: ${{ secrets.NUXT_PUBLIC_SITE_URL }}
     if: ${{ github.event.repository.full_name == github.repository }}
     runs-on: ubuntu-latest
     steps:
