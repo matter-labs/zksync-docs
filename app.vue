@@ -65,9 +65,9 @@ const links = computed(() => {
       active: route.path.startsWith('/zk-stack'),
     },
     {
-      label: 'External Node',
-      to: '/external-node',
-      active: route.path.startsWith('/external-node'),
+      label: 'zkSync Node',
+      to: '/zksync-node',
+      active: route.path.startsWith('/zksync-node'),
     },
     {
       label: 'Ecosystem',
