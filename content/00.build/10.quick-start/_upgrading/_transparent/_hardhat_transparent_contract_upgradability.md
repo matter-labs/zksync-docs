@@ -32,7 +32,7 @@ Transparent Proxy pattern.
 
 **Updated Contract Structure:**
 
-```solidity
+```solidity [CrowdfundingCampaign.sol]
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -125,7 +125,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 The deployment script is located at [`/deploy/deployTransparentProxy.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/deploy/deployTransparentProxy.ts).
 
-```typescript
+```typescript [deployTransparentProxy.ts]
 import { getWallet } from "./utils";
 import { Deployer } from '@matterlabs/hardhat-zksync';
 import { ethers } from "ethers";
@@ -243,7 +243,7 @@ safeguarding the contract from late contributions.
 To provide flexibility, a new function allows the owner to extend the deadline,
 offering adaptability to changing campaign needs.
 
-```solidity
+```solidity [CrowdfundingCampaignV2.sol]
 function extendDeadline(uint256 _newDuration) public {
     require(msg.sender == owner, "Only the owner can extend the deadline");
     deadline = block.timestamp + _newDuration;
@@ -251,8 +251,7 @@ function extendDeadline(uint256 _newDuration) public {
 ```
 
 This upgrade not only introduces the element of time to the campaign but also
-exemplifies the use of `modifiers` for enforcing contract conditions.
-<!-- TODO: maybe make this a callout and link to what modifiers are. -->
+exemplifies the use of [`modifiers`](https://docs.soliditylang.org/en/latest/contracts.html#function-modifiers) for enforcing contract conditions.
 
 ### Compile contract
 :display-partial{path = "_partials/_compile-solidity-contracts"}
@@ -279,7 +278,7 @@ script located within the `deploy/upgrade-scripts` directory to begin.
 Replace `YOUR_PROXY_ADDRESS_HERE` with the actual address of your
 deployed Transparent Proxy from the previous deployment step.
 
-```typescript
+```typescript [upgradeCrowdfundingCampaign.ts]
 import { getWallet } from "../utils";
 import { Deployer } from '@matterlabs/hardhat-zksync';
 import { HardhatRuntimeEnvironment } from "hardhat/types";
