@@ -4,6 +4,8 @@ import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
 const { seo } = useAppConfig();
 
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation());
+provide('navigation', navigation);
+
 const { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', {
   default: () => [],
   server: false,
@@ -30,70 +32,30 @@ useHead({
   },
 });
 
-const route = useRoute();
 useSeoMeta({
   titleTemplate: `%s - ${seo?.siteName}`,
   ogSiteName: seo?.siteName,
   ogUrl: 'https://docs.zksync.io/',
-  ogImage: 'https://docs.zksync.io/social-card.png',
   ogImageAlt: 'zkSync — Accelerating the mass adoption of crypto for personal sovereignty.',
-  ogDescription:
+  description:
     'zkSync Docs bring you all information you need about our protocol, APIs, SDKs, ZK Stack, and ZK Chains. Start with our guides and tutorials, or go deep into our architecture and protocol specification.',
-  twitterImage: 'https://docs.zksync.io/social-card.png',
+  twitterTitle: `%s - ${seo?.siteName}`,
+  twitterDescription:
+    'zkSync Docs bring you all information you need about our protocol, APIs, SDKs, ZK Stack, and ZK Chains. Start with our guides and tutorials, or go deep into our architecture and protocol specification.',
   twitterCard: 'summary_large_image',
   twitterSite: '@zksync',
   twitterCreator: '@the_matter_labs',
   twitterImageAlt: 'zkSync — Accelerating the mass adoption of crypto for personal sovereignty.',
 });
 
-defineOgImage({
-  component: 'OgImageZK',
-});
-
-provide('navigation', navigation);
-
-const links = computed(() => {
-  return [
-    {
-      label: 'Build',
-      to: '/build',
-      active: route.path.startsWith('/build'),
-    },
-    {
-      label: 'SDK Docs',
-      to: 'https://staging-sdk-docs.zksync.io/',
-    },
-    {
-      label: 'ZK Stack',
-      to: '/zk-stack',
-      active: route.path.startsWith('/zk-stack'),
-    },
-    {
-      label: 'zkSync Node',
-      to: '/zksync-node',
-      active: route.path.startsWith('/zksync-node'),
-    },
-    {
-      label: 'Ecosystem',
-      to: '/ecosystem',
-      active: route.path.startsWith('/ecosystem'),
-    },
-    {
-      label: 'Community Code',
-      to: 'https://community-cookbook-staging.web.app/',
-    },
-  ];
-});
+defineOgImageComponent('OgImageZK');
 </script>
 
 <template>
   <div>
     <NuxtLoadingIndicator />
 
-    <HeaderComponent
-      :search="true"
-      :links
-    />
+    <HeaderComponent :search="true" />
 
     <UMain>
       <NuxtLayout>
