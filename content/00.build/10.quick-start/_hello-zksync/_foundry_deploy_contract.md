@@ -7,7 +7,7 @@ title: Foundry | Deploy Contract
 Run the following command in your terminal to initialize the Foundry project.
 
 ```sh
-npx zksync-cli create --template qs-fs-hello-zksync hello-zksync-foundry-quickstart
+npx zksync-cli@latest create --template qs-fs-hello-zksync hello-zksync-foundry-quickstart
 cd hello-zksync-foundry-quickstart
 ```
 

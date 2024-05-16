@@ -5,7 +5,7 @@ title: Hardhat | Contract Testing
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli create --template qs-testing contract-testing-quickstart
+npx zksync-cli@latest create --template qs-testing contract-testing-quickstart
 cd contract-testing-quickstart
 ```
 
