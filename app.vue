@@ -30,6 +30,7 @@ useHead({
   },
 });
 
+const route = useRoute();
 useSeoMeta({
   titleTemplate: `%s - ${seo?.siteName}`,
   ogSiteName: seo?.siteName,
@@ -50,13 +51,49 @@ defineOgImage({
 });
 
 provide('navigation', navigation);
+
+const links = computed(() => {
+  return [
+    {
+      label: 'Build',
+      to: '/build',
+      active: route.path.startsWith('/build'),
+    },
+    {
+      label: 'SDK Docs',
+      to: 'https://staging-sdk-docs.zksync.io/',
+    },
+    {
+      label: 'ZK Stack',
+      to: '/zk-stack',
+      active: route.path.startsWith('/zk-stack'),
+    },
+    {
+      label: 'zkSync Node',
+      to: '/zksync-node',
+      active: route.path.startsWith('/zksync-node'),
+    },
+    {
+      label: 'Ecosystem',
+      to: '/ecosystem',
+      active: route.path.startsWith('/ecosystem'),
+    },
+    {
+      label: 'Community Code',
+      to: 'https://community-cookbook-staging.web.app/',
+    },
+  ];
+});
 </script>
 
 <template>
   <div>
     <NuxtLoadingIndicator />
 
-    <HeaderComponent :search="true" />
+    <HeaderComponent
+      :search="true"
+      :links
+    />
 
     <UMain>
       <NuxtLayout>

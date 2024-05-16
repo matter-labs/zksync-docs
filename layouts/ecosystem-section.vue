@@ -12,7 +12,7 @@ const { data: navigation } = await useAsyncData('ecosystem-navigation', () => {
 
   return fetchContentNavigation(query);
 });
-console.log('WUT', navigation.value);
+
 const navTree = (navigation.value && navigation.value[0] && navigation.value[0].children) || [];
 </script>
 
