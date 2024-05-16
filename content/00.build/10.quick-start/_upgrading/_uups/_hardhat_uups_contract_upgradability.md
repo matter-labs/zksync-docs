@@ -29,7 +29,7 @@ functions and the UUPS upgrade mechanism.
 
 **UUPS-Enabled Contract Structure:**
 
-```solidity
+```solidity [CrowdfundingCampaign_UUPS.sol]
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -133,7 +133,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 The script to deploy the `CrowdfundingCampaign_UUPS` contract is located at [`/deploy/deployUUPS.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/deploy/deployUUPS.ts).
 
-```typescript
+```typescript [deployUUPS.ts]
 import { getWallet } from "./utils";
 import { Deployer } from '@matterlabs/hardhat-zksync';
 import { ethers } from "ethers";
@@ -253,7 +253,7 @@ safeguarding the contract from late contributions.
 To provide flexibility, a new function allows the owner to extend the deadline,
 offering adaptability to changing campaign needs.
 
-```solidity
+```solidity [CrowdfundingCampaignV2_UUPS.sol]
 function extendDeadline(uint256 _newDuration) public {
     require(msg.sender == owner, "Only the owner can extend the deadline");
     deadline = block.timestamp + _newDuration;
@@ -288,7 +288,7 @@ script in the `deploy/upgrade-scripts` directory:
 Replace `YOUR_PROXY_ADDRESS_HERE` with the actual address of your
 deployed Transparent Proxy from the previous deployment step.
 
-```typescript
+```typescript [upgradeUUPSCrowdfundingCampaign.ts]
 import { getWallet } from "../utils";
 import { Deployer } from '@matterlabs/hardhat-zksync';
 import { HardhatRuntimeEnvironment } from "hardhat/types";

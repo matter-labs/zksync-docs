@@ -20,7 +20,7 @@ Let's start by reviewing the starter contract in the [`contracts/` directory](ht
 
 ::drop-panel
   ::panel{label="CrowdfundingCampaign.sol"}
-    ```solidity
+    ```solidity [CrowdfundingCampaign.sol]
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
 
@@ -98,7 +98,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 The deployment script is located at [`/deploy/deploy.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/hello-zksync/deploy/deploy.ts).
 
-```typescript
+```typescript [deploy.ts]
 import { deployContract } from "./utils";
 
 // An example of a basic deploy script

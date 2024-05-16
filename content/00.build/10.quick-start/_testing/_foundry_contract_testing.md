@@ -21,7 +21,7 @@ refresher on its structure:
 
 ::drop-panel
   ::panel{label="CrowdfundingCampaign.sol"}
-    ```solidity
+    ```solidity [CrowdfundingCampaign.sol]
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
 
@@ -116,7 +116,7 @@ start by reviewing the tests for `CrowdfundingCampaign.sol` contract provided
 during the initialization step in the `/test` directory, specifically the
 [`CrowdfundingCampaign.t.sol` file](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/foundry/testing/test/CrowdfundingCampaign.t.sol).
 
-```solidity
+```solidity [CrowdfundingCampaign.sol]
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 

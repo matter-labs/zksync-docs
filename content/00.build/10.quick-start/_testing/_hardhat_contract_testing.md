@@ -22,7 +22,7 @@ If you have not set up your local era node yet, follow the instructions in the [
 Within the `hardhat.config.ts`, you'll observe the `zksync` flag set to `true` under the
 `hardhat` network, indicating the integration with zkSync's testing environment.
 
-```ts
+```typescript [hardhat.config.ts]
 hardhat: {
   zksync: true,
 },
@@ -62,7 +62,7 @@ refresher on its structure:
 
 ::drop-panel
   ::panel{label="CrowdfundingCampaign.sol"}
-    ```solidity
+    ```solidity [CrowdfundingCampaign.sol]
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
 
@@ -147,7 +147,7 @@ start by reviewing the tests for `CrowdfundingCampaign.sol` contract provided
 during the initialization step in the `/tests` directory, specifically the
 [`crowdFunding.test.ts` file](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/testing/test/crowdFunding.test.ts).
 
-```typescript
+```typescript [crowdFunding.test.ts]
 import { expect } from "chai";
 import { ethers } from "hardhat";
 import { getWallet, LOCAL_RICH_WALLETS, deployContract } from "../deploy/utils";
