@@ -87,9 +87,9 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
-Compiling 1 Solidity file
-Successfully compiled 1 Solidity file
+Compiling contracts for zkSync Era with zksolc v1.4.1 and solc v0.8.17
+Compiling 15 Solidity files
+Successfully compiled 15 Solidity files
 ```
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
@@ -124,28 +124,28 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 ::code-group
 
 ```bash [npm]
-npm run deploy
+npx hardhat deploy-zksync --script deploy.ts
 # The deploy keyword will trigger the `deploy` script command on `package.json`
 # To deploy the contract on local in-memory node:
-# npm run hardhat deploy-zksync --script deploy.ts --network inMemoryNode
+# npx hardhat deploy-zksync --script deploy.ts --network inMemoryNode
 ```
 
 ```bash [yarn]
-yarn deploy
+yarn hardhat deploy-zksync --script deploy.ts
 # The deploy keyword will trigger the `deploy` script command on `package.json`
 # To deploy the contract on local in-memory node:
 # yarn hardhat deploy-zksync --script deploy.ts --network inMemoryNode
 ```
 
 ```bash [pnpm]
-pnpm run deploy
+pnpx exec hardhat deploy-zksync --script deploy.ts
 # The deploy keyword will trigger the `deploy` script command on `package.json`
 # To deploy the contract on local in-memory node:
-# pnpm run hardhat deploy-zksync --script deploy.ts --network inMemoryNode
+# pnpx exec hardhat deploy-zksync --script deploy.ts --network inMemoryNode
 ```
 
 ```bash [bun]
-bun run deploy
+bun run hardhat deploy-zksync --script deploy.ts
 # The deploy keyword will trigger the `deploy` script command on `package.json`
 # To deploy the contract on local in-memory node:
 # bun run hardhat deploy-zksync --script deploy.ts --network inMemoryNode
