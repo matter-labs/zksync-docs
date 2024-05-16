@@ -5,7 +5,7 @@ on:
     branches: [main, staging]
   workflow_dispatch:
 
-jobs: 
+jobs:
   format:
     name: code_format
     runs-on: ubuntu-latest
@@ -53,7 +53,6 @@ jobs:
   link-check:
     env:
       NUXT_UI_PRO_LICENSE: ${{ secrets.NUXT_UI_PRO_LICENSE }}
-      NUXT_PUBLIC_SITE_URL: ${{ secrets.NUXT_PUBLIC_SITE_URL }}
     name: link_check
     runs-on: ubuntu-latest
     steps:

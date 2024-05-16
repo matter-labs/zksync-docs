@@ -29,10 +29,6 @@ useSeoMeta({
   ogDescription: page.value.description,
 });
 
-defineOgImage({
-  component: 'Docs',
-});
-
 const breadcrumb = computed(() =>
   mapContentNavigation(findPageBreadcrumb(navigation!.value, page.value)).map(({ label }) => ({ label }))
 );
