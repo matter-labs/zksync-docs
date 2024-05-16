@@ -17,7 +17,7 @@ Let's start by reviewing the starter contract in the [`src/` directory](https://
 
 ::drop-panel
   ::panel{label="CrowdfundingCampaign.sol"}
-    ```solidity
+    ```solidity [CrowdfundingCampaign.sol]
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
 
@@ -105,7 +105,7 @@ located in the `/out` folder.
 
 The deployment script is located at [`/script/Deploy.s.sol`](https://github.com/dutterbutter/zksync-foundry-quickstart-guide/blob/main/script/Deploy.s.sol).
 
-```solidity
+```solidity [Deploy.s.sol]
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 

@@ -22,7 +22,7 @@ Let's start by reviewing the `ApprovalFlowPaymaster.sol` contract in the `contra
 
 ::drop-panel
   ::panel{label="ApprovalFlowPaymaster.sol"}
-    ```solidity
+    ```solidity [ApprovalFlowPaymaster.sol]
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
 
@@ -168,7 +168,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 The script to deploy the `ApprovalFlowPaymaster` contract is located at `/deploy/deployApprovalFlowPaymaster.ts`.
 
-```typescript
+```typescript [deployApprovalFlowPaymaster.ts]
 import { deployContract, getWallet, getProvider } from "./utils";
 import { ethers } from "ethers";
 
@@ -294,7 +294,7 @@ Ensure the `CONTRACT_ADDRESS` and `PAYMASTER_ADDRESS` variables are set to your 
 ::drop-panel
   ::panel{label="interactWithApprovalFlowPaymaster.ts"}
 
-  ```typescript
+  ```typescript [interactWithApprovalFlowPaymaster.ts]
   import * as hre from "hardhat";
   import { getWallet, getProvider } from "../utils";
   import { ethers } from "ethers";

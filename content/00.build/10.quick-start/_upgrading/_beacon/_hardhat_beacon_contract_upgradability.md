@@ -28,7 +28,7 @@ which initializes state variables through an
 
 **Updated Contract Structure:**
 
-```solidity
+```solidity [CrowdfundingCampaign.sol]
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -123,7 +123,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 You'll find the necessary deployment script at [`/deploy/deployBeaconProxy.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/upgradability/deploy/deployBeaconProxy.ts).
 
-```typescript
+```typescript [deployBeaconProxy.ts]
 import { getWallet } from "./utils";
 import { Deployer } from '@matterlabs/hardhat-zksync';
 import { ethers } from "ethers";
@@ -212,9 +212,7 @@ Beacon proxy deployed at:  0xD58FA9Fb362Abf69cFc68A3545fD227165DAc167
 With our initial setup deployed, we're ready to upgrade our `CrowdfundingCampaign.sol`
 contract by incorporating a deadline for contributions. This addition not only brings
 a new layer of functionality but also introduces the concept of time-based conditions
-through a `modifier`.
-<!-- TODO: explain what a modifier is.
-I still don't know what it means from the following section. -->
+through a [`modifier`](https://docs.soliditylang.org/en/latest/contracts.html#function-modifiers).
 
 **Current Contract Overview:**
 
@@ -251,7 +249,7 @@ safeguarding the contract from late contributions.
 To provide flexibility, a new function allows the owner to extend the deadline,
 offering adaptability to changing campaign needs.
 
-```solidity
+```solidity [CrowdfundingCampaignV2.sol]
 function extendDeadline(uint256 _newDuration) public {
     require(msg.sender == owner, "Only the owner can extend the deadline");
     deadline = block.timestamp + _newDuration;
@@ -285,7 +283,7 @@ Make sure to replace `YOUR_BEACON_ADDRESS_HERE` with the address of your deploye
 `YOUR_PROXY_ADDRESS_HERE` with the actual address of your
 deployed Beacon Proxy from the previous deployment step.
 
-```typescript
+```typescript [upgradeBeaconCrowdfundingCampaign.ts]
 import { getWallet } from "../utils";
 import { Deployer } from '@matterlabs/hardhat-zksync';
 import { HardhatRuntimeEnvironment } from "hardhat/types";

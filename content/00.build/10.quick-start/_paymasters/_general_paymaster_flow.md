@@ -22,7 +22,7 @@ Let's start by reviewing the `GeneralPaymaster.sol` contract in the `contracts/`
 
 ::drop-panel
   ::panel{label="GeneralPaymaster.sol"}
-    ```solidity
+    ```solidity [GeneralPaymaster.sol]
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
 
@@ -138,7 +138,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 The script to deploy the `GaslessPaymaster` is located at `/deploy/deployGaslessPaymaster.ts`.
 
-```typescript
+```typescript [deployGaslessPaymaster.ts]
 import { deployContract, getWallet, getProvider } from "./utils";
 import { ethers } from "ethers";
 
@@ -241,7 +241,7 @@ Ensure the `CONTRACT_ADDRESS` and `PAYMASTER_ADDRESS` variables are set to your 
 ::drop-panel
   ::panel{label="interactWithGaslessPaymaster.ts"}
 
-  ```typescript
+  ```typescript [interactWithGaslessPaymaster.ts]
   import * as hre from "hardhat";
   import { getWallet, getProvider } from "../utils";
   import { ethers } from "ethers";
