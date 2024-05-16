@@ -116,7 +116,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 3 Solidity file
 Successfully compiled 3 Solidity file
 ```
@@ -152,7 +152,7 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 **Key Components:**
 
 - **`hre.zkUpgrades.deployProxy`**: The method call to deploy the `CrowdfundingCampaign`
-contract via a transparent proxy, leveraging Hardhat's runtime environment for ZKsync upgrades.
+contract via a transparent proxy, leveraging Hardhat's runtime environment for zkSync upgrades.
 This ensures the deployed contract can be upgraded in the future without losing its state or funds.
 - **`initializer`**: Specifies the initialization method of the contract, `initialize` in this case,
 which is required for setting up the proxy's state upon deployment.
@@ -261,7 +261,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 4 Solidity file
 Successfully compiled 4 Solidity file
 ```
@@ -389,13 +389,13 @@ Upon successful verification, you'll receive output detailing the verification p
 ```bash
 Verifying implementation: 0x58BD5adb462CF087E5838d53aE38A3Fe0EAf7A31
 Your verification ID is: 10543
-Contract successfully verified on ZKsync block explorer!
+Contract successfully verified on zkSync block explorer!
 Verifying proxy: 0x68E8533acE01019CB8D07Eca822369D5De71b74D
 Your verification ID is: 10544
-Contract successfully verified on ZKsync block explorer!
+Contract successfully verified on zkSync block explorer!
 Verifying proxy admin: 0x05198D9f93cBDfa3e332776019115512d8e0c809
 Your verification ID is: 10545
-Contract successfully verified on ZKsync block explorer!
+Contract successfully verified on zkSync block explorer!
 ```
 
 🎉 Congratulations! The `CrowdfundingCampaignV2` contract has been upgraded and verified!

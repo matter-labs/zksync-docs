@@ -1,7 +1,7 @@
-# ZK Sync Docs
+# zkSync Docs
 
-Welcome to the ZK Sync Docs repository. This project serves as the community hub for ZKsync, providing comprehensive
-documentation for developers. Whether you're a beginner looking to get started with ZKsync or an experienced developer
+Welcome to the zkSync Docs repository. This project serves as the community hub for zkSync, providing comprehensive
+documentation for developers. Whether you're a beginner looking to get started with zkSync or an experienced developer
 seeking advanced guides, you'll find the resources you need here.
 
 ## Tools used
@@ -62,9 +62,9 @@ bun run lint:eslint
 
 ## Contributions
 
-We welcome contributions from the community to ZKsync Docs.
+We welcome contributions from the community to zkSync Docs.
 If you're looking for ideas on where to start with contributing, check out the [Contribution Overview](./content/90.contributing-to-documentation/10.index.md).
-To learn more on how to follow best practices when contributing to ZKsync Docs,
+To learn more on how to follow best practices when contributing to zkSync Docs,
 refer to the [Contribution Guidelines](./content/90.contributing-to-documentation/20.contribution-guidelines.md).
 If you are writing new content to add to the docs, the [Documentation Styleguide](./content/90.contributing-to-documentation/30.documentation-styleguide.md)
 can provide additional guidance.

@@ -18,7 +18,7 @@ const { header } = useAppConfig();
         <UColorModeImage v-bind="{ class: 'h-6 w-auto', ...header?.logo }" />
       </template>
       <template v-else>
-        ZKsync
+        zkSync
         <UBadge
           label="Docs"
           variant="subtle"

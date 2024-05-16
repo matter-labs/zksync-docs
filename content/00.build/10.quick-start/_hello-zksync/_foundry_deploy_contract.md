@@ -84,7 +84,7 @@ Owned and deployed with a set funding goal, it features:
 - The `contribute` method to log funds, triggering `ContributionReceived` and `GoalReached` events.
 - The `withdrawFunds` method, allowing the owner to collect accumulated funds post-goal achievement.
 
-Smart contracts deployed to ZKsync must be compiled using our custom compiler.
+Smart contracts deployed to zkSync must be compiled using our custom compiler.
 For this particular guide we are making use of `zksolc`.
 
 To compile the contracts in the project, run the following command:
@@ -102,7 +102,7 @@ of Solidity files compiled.
 [⠃] Compiling 2 files with 0.8.20
 [⠊] Solc 0.8.20 finished in 736.48ms
 Compiler run successful!
-Compiling contracts for ZKsync Era with zksolc v1.4.0
+Compiling contracts for zkSync Era with zksolc v1.4.0
 ```
 
 The compiled zkEVM artifacts will be located in the `/zkout` folder, and the solc artifacts will be

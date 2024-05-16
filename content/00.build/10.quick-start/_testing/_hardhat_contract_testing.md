@@ -20,7 +20,7 @@ which operates seamlessly within a separate process for an optimized testing wor
 If you have not set up your local era node yet, follow the instructions in the [Getting Started](/build/quick-start#setup-era-local-node-optional) section.
 
 Within the `hardhat.config.ts`, you'll observe the `zksync` flag set to `true` under the
-`hardhat` network, indicating the integration with ZKsync's testing environment.
+`hardhat` network, indicating the integration with zkSync's testing environment.
 
 ```typescript [hardhat.config.ts]
 hardhat: {
@@ -131,7 +131,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 2 Solidity file
 Successfully compiled 2 Solidity file
 ```

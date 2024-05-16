@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-### 🐛 Bug Report for ZKsync Docs
+### 🐛 Bug Report for zkSync Docs
 
 #### 📝 Description
 

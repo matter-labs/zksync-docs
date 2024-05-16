@@ -5,7 +5,7 @@ const { data: navigation } = await useAsyncData('zk-stack-navigation', () => {
     _extension: 'md',
     where: [
       {
-        _path: { $contains: 'zk-stack' },
+        _path: { $contains: '/zk-stack' },
       },
     ],
   });
