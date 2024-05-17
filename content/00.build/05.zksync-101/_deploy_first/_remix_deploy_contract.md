@@ -16,20 +16,29 @@ Click the button below to open the project in Remix and see the contract in the 
 to="https://remix.ethereum.org/#url=https://github.com/uF4No/zksync-101-remix/blob/master/contracts/ZeekSecretMessages.sol"
 target="_blank" label="Open smart contract in Remix"}
 
-To compile the contract, click on  Compile ZeeksSecretMessages.sol. If you get a popup message requesting permissions to
-access **`ACCESS TO "WRITEFILE" OF "FILE MANAGER"`,** click on Accept.
+### Connect your wallet
+
+Make sure your wallet is currently connected to the %%zk_testnet_name%% as we will use our wallet’s configured
+network to deploy our smart contract. In Remix, under the Environment Section, select “Wallet” and click on
+“Connect Wallet”.
+
+### Compile the contract
+
+To compile the contract, click on "Compile ZeeksSecretMessages.sol". If you get a popup message requesting permissions to
+access **`ACCESS TO "WRITEFILE" OF "FILE MANAGER"`,** click on "Accept".
 
 ::callout{icon="i-heroicons-light-bulb"}
 Behind the scenes, Remix is using the zkSync Era custom solidity compiler
 (named `zksolc`) to generate zkSync VM compatible bytecode. [Learn more about zkSync custom compilers](/zk-stack/components/compiler/toolchain/overview).
 ::
 
-We will use our wallet’s configured network to connect and deploy our smart contract so make sure your wallet is
-currently connected to the %%zk_testnet_name%%. In Remix, under the Environment Section, select “Wallet” and click on
-“Connect Wallet”.
+### Deploy the contract
 
-To deploy the contract, click on “Deploy” and sign the transaction on your wallet. Congratulations, you’ve deployed your
-first contract to %%zk_testnet_name%%!
+To deploy the contract, open the "Deploy" dropdown, check the "Verify contract" checkbox, and click on “Deploy &
+Verify”. Sign the transaction in your wallet and wait a few seconds until it's processed. Congratulations, you’ve
+deployed your first contract to %%zk_testnet_name%%!
+
+### Interact with the contract
 
 Next to the contract name you can find the address where the contract is deployed. The “Interact” section displays the
 forms to interact with the `getTotalMessages` and `sendMessage` functions.
