@@ -94,7 +94,7 @@ To compile the contracts in the project, run the following command:
 ::code-group
 
 ```bash [npm]
-npx run compile
+npm compile
 ```
 
 ```bash [yarn]
@@ -102,7 +102,7 @@ yarn compile
 ```
 
 ```bash [pnpm]
-pnpx run compile
+pnpm compile
 ```
 
 ```bash [bun]
