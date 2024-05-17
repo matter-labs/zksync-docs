@@ -8,6 +8,8 @@ directly from your browser. Click the button below to open the project in Atlas.
 to="https://app.atlaszk.com/projects?template=https://github.com/uF4No/zksync-101-atlas&open=/contracts/ZeekSecretMessages.sol&chainId=%%zk_testnet_chain_id%%"
 target="_blank" label="Open smart contract in Atlas"}
 
+### Compile and deploy the contract
+
 Enter a name for the project and you will see the contract in the Atlas code editor.
 On the right side, make sure the selected network is “%%zk_testnet_name%%“
 and click on **“Deploy”** to trigger the smart contract compilation and deployment.
@@ -19,8 +21,10 @@ Behind the scenes, Atlas is using the zkSync Era custom solidity compiler
 (named `zksolc` ) to generate ZKEVM compatible bytecode. [Learn more about zkSync custom compilers](/zk-stack/components/compiler/toolchain/overview).
 ::
 
-Once compiled sign the transaction with your wallet and wait until its processed. You’ll see the contract in the
+Once compiled sign the transaction with your wallet and wait until it's processed. You’ll see the contract in the
 “Deployed contracts” section. Congratulations, you’ve deployed your first smart contract to %%zk_testnet_name%%!
+
+### Interact with the contract
 
 Below the contract name you can find its deployment address. The “Live Contract State” section displays the smart
 contract balance and the value returned by the `getTotalMessages` function.
