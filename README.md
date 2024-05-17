@@ -1,10 +1,45 @@
-# zkSync Docs
+# 🌟 zkSync Developer Documentation
 
-Welcome to the zkSync Docs repository. This project serves as the community hub for zkSync, providing comprehensive
-documentation for developers. Whether you're a beginner looking to get started with zkSync or an experienced developer
-seeking advanced guides, you'll find the resources you need here.
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-orange)
 
-## Tools used
+Welcome to the **zkSync Docs** repository! This is your go-to hub for all things
+zkSync. Dive into our comprehensive documentation whether you're just starting out or looking for advanced guides.
+
+## 🚀 Quick Start
+
+1. **Install Bun:** Follow the [installation instructions](https://bun.sh/docs/installation).
+2. **Install Dependencies:**
+
+   ```sh
+   bun install
+   ```
+
+3. **Run Locally:** Start the development server at `http://localhost:3000`.
+
+   ```sh
+   bun run dev
+   ```
+
+## 📚 Documentation Overview
+
+Unlock the full potential of zkSync with our comprehensive resources:
+
+- **🛠️ Build:** Learn how to develop and deploy your smart contracts and
+applications on zkSync Era. Our step-by-step guides and tutorials will help you get started quickly and efficiently.
+  
+- **🔗 ZK Stack:** Dive into the Zero-Knowledge (ZK) Stack to discover how to
+configure and build a ZK chain tailored for your application. Explore the architecture, components, and best practices.
+
+- **🌐 zkSync Node:** Set up and run your own zkSync full node. Gain a deeper
+understanding of node operations, observability, and maintenance to ensure optimal performance and reliability.
+
+- **🌍 Ecosystem:** Explore the vibrant zkSync ecosystem. Discover a wide array
+of projects and tooling built for zkSync developers and users, from wallets and
+explorers to integrations and developer tools. Stay updated with the latest innovations and community contributions.
+
+## 🛠️ Built With
 
 - [Vue](https://vuejs.org/)
 - [Nuxt](https://nuxt.com/)
@@ -13,24 +48,15 @@ seeking advanced guides, you'll find the resources you need here.
 - [Tailwind](https://tailwindcss.com/)
 - [Bun](https://bun.sh/)
 
-## Local Setup
+## 🖥️ Local Development
 
-This project uses bun to run, follow the [bun installation instructions](https://bun.sh/docs/installation). Once bun is
-installed, run the following command to install all project dependencies:
+Run the project locally:
 
-```shell
-bun install
+```sh
+bun run dev
 ```
 
-## Development
-
-To run the project locally at `http://localhost:3000`
-
-```shell
-bun run dev -o
-```
-
-## Local Preview
+## Local Preview 👀
 
 To locally preview the production build, first run `bun run build` to build the project, then run the following:
 
@@ -38,11 +64,17 @@ To locally preview the production build, first run `bun run build` to build the 
 bun run preview
 ```
 
-## Lint & Formatting
+## Lint & Formatting ✨
 
 This project provides lint commands to check the project.
 
-### Markdown Linting
+### Run CI Checks ✔️
+
+```shell
+bun run ci:check
+```
+
+### Markdown Linting 📝
 
 Markdown files are found in the `/content` directory. The following lint commands will run within that directory:
 
@@ -51,7 +83,7 @@ bun run lint:spelling
 bun run lint:markdown
 ```
 
-### Linting
+### Linting 🧹
 
 The following commands are available to run linting on the project:
 
@@ -60,11 +92,17 @@ bun run lint:prettier
 bun run lint:eslint
 ```
 
-## Contributions
+## 📜 Conventional Commits
 
-We welcome contributions from the community to zkSync Docs.
-If you're looking for ideas on where to start with contributing, check out the [Contribution Overview](./content/90.contributing-to-documentation/10.index.md).
-To learn more on how to follow best practices when contributing to zkSync Docs,
-refer to the [Contribution Guidelines](./content/90.contributing-to-documentation/20.contribution-guidelines.md).
-If you are writing new content to add to the docs, the [Documentation Styleguide](./content/90.contributing-to-documentation/30.documentation-styleguide.md)
-can provide additional guidance.
+We follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) specification.
+Make sure your commit messages adhere to these guidelines.
+
+## 🤝 Contributions
+
+We welcome contributions from the community! Check out the following resources to get started:
+
+- [Contribution Overview](./content/00.build/90.contributing-to-documentation/10.index.md)
+- [Contribution Guidelines](./content/00.build/90.contributing-to-documentation/20.contribution-guidelines.md)
+- [Documentation Styleguide](./content/00.build/90.contributing-to-documentation/30.documentation-styleguide.md)
+
+Join us in making zkSync Docs better for everyone! 🌐✨
