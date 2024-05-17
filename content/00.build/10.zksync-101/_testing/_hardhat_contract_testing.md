@@ -17,7 +17,7 @@ While setting up a local development environment was previously optional, testin
 a more structured setup. We'll use `hardhat-zksync` to run tests against an In-memory node,
 which operates seamlessly within a separate process for an optimized testing workflow.
 
-If you have not set up your local era node yet, follow the instructions in the [Getting Started](/build/quick-start#setup-era-local-node-optional) section.
+If you have not set up your local era node yet, follow the instructions in the [Getting Started](/build/zksync-101#setup-era-local-node-optional) section.
 
 Within the `hardhat.config.ts`, you'll observe the `zksync` flag set to `true` under the
 `hardhat` network, indicating the integration with zkSync's testing environment.

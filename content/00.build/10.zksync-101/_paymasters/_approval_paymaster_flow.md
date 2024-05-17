@@ -12,7 +12,7 @@ cd contract-paymaster-quickstart
 
 ## Set up your wallet
 
-:display-partial{path = "/build/quick-start/_partials/_setup-wallet"}
+:display-partial{path = "/build/zksync-101/_partials/_setup-wallet"}
 
 ---
 
