@@ -175,9 +175,9 @@ deploys to the configured network in your Hardhat setup. For local deployment, a
 ::code-group
 
 ```bash [npm]
-npx run hardhat deploy-zksync --script deployUUPS.ts
+npx hardhat deploy-zksync --script deployUUPS.ts
 # To deploy the contract on local in-memory node:
-# npx run hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
+# npx hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
 ```
 
 ```bash [yarn]
@@ -187,9 +187,9 @@ yarn hardhat deploy-zksync --script deployUUPS.ts
 ```
 
 ```bash [pnpm]
-pnpx run hardhat deploy-zksync --script deployUUPS.ts
+pnpx exec hardhat deploy-zksync --script deployUUPS.ts
 # To deploy the contract on local in-memory node:
-# pnpx run hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
+# pnpx exec hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
 ```
 
 ```bash [bun]
@@ -334,7 +334,7 @@ Execute the test command corresponding to your package manager:
 ::code-group
 
 ```bash [npm]
-npx run hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
+npx hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
 ```
 
 ```bash [yarn]
@@ -342,7 +342,7 @@ yarn hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampa
 ```
 
 ```bash [pnpm]
-pnpx run hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
+pnpx exec hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
 ```
 
 ```bash [bun]
