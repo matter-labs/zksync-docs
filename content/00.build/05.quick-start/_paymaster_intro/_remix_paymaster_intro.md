@@ -7,7 +7,7 @@ Remix does not support `zksync-ethers` yet so you can not use it to run this scr
 ::
 
 To open the project in Remix, use the “Clone” option from the file explorer to import it from the following GitHub
-repository:`https://github.com/uF4No/zksync-101-remix`
+repository:`https://github.com/zkSync-Community-Hub/zksync-quickstart-remix`
 
 ![Clone repo in Remix](/images/remix-plugin-clone-repo.gif)
 
