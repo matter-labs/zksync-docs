@@ -55,7 +55,7 @@ compatible protocols.
 :display-partial{path="/_partials/_enable-remix-zksync-plugin"}
 
 To open this project in Remix, use the “Clone” option from the file explorer to import it from the following GitHub
-repository:`https://github.com/uF4No/zksync-101-remix`
+repository:`https://github.com/zkSync-Community-Hub/zksync-quickstart-remix`
 
 ![Clone repo in Remix](/images/remix-plugin-clone-repo.gif)
 
