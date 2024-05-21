@@ -1,18 +1,8 @@
 <script setup lang="ts">
-const { data: navigation } = await useAsyncData('zksync-node-navigation', () => {
-  const query = queryContent({
-    _partial: false,
-    _extension: 'md',
-    where: [
-      {
-        _path: { $contains: '/zksync-node' },
-      },
-    ],
-  });
+import type { NavItem } from '@nuxt/content/types';
 
-  return fetchContentNavigation(query);
-});
-const navTree = (navigation.value && navigation.value[0] && navigation.value[0].children) || [];
+const navigation = inject<Ref<NavItem[]>>('navigation', ref([]));
+const navTree = computed(() => navigation!.value.find((nav) => nav._path === '/zksync-node')?.children || []);
 </script>
 
 <template>

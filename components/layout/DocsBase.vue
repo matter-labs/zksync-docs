@@ -3,7 +3,6 @@ import type { NavItem } from '@nuxt/content/types';
 import { withoutTrailingSlash } from 'ufo';
 
 const route = useRoute();
-const { seo } = useAppConfig();
 const navigation = inject<Ref<NavItem[]>>('navigation', ref([]));
 const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne());
 
@@ -22,11 +21,13 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
     .findSurround(withoutTrailingSlash(route.path))
 );
 
+const { seo } = useAppConfig();
 useSeoMeta({
   title: page.value.title,
   ogTitle: `${page.value.title} - ${seo?.siteName}`,
   description: page.value.description,
   ogDescription: page.value.description,
+  twitterDescription: page.value.description,
 });
 
 const breadcrumb = computed(() =>
