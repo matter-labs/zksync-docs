@@ -37,7 +37,11 @@ useSeoMeta({
   twitterImageAlt: 'Hyperscaling Ethereum with ZK tech.',
 });
 
-defineOgImageComponent('OgImageZK');
+defineOgImage({
+  component: 'OgImageZK',
+  title: seo?.siteName,
+  description: 'Access detailed guides, references and resources that will help you build with zkSync Era.',
+});
 </script>
 
 <template>

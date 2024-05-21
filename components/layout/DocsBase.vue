@@ -30,6 +30,12 @@ useSeoMeta({
   twitterDescription: page.value.description,
 });
 
+defineOgImage({
+  component: 'OgImageZK',
+  title: page.value.title,
+  description: page.value.description,
+});
+
 const breadcrumb = computed(() =>
   mapContentNavigation(findPageBreadcrumb(navigation!.value, page.value)).map(({ label }) => ({ label }))
 );
