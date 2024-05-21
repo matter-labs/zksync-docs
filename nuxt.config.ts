@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  extends: [['github:matter-labs/docs-nuxt-template', { install: true }], ['github:zksync-sdk/sdk-docs#staging']],
+  extends: [
+    ['github:matter-labs/docs-nuxt-template#edit-links', { install: true }],
+    ['github:zksync-sdk/sdk-docs#staging'],
+  ],
   modules: ['@nuxt/content', '@nuxt/ui', '@nuxt/eslint', '@nuxtjs/seo'],
   routeRules: {
     '/api/search.json': { prerender: true },
