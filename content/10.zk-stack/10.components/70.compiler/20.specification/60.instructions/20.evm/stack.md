@@ -13,7 +13,7 @@ In Yul, only used to mark unused values, and is not translated to LLVM IR.
 pop(staticcall(gas(), address(), 0, 64, 0, 32))
 ```
 
-For EVMLA, see [EVM Legacy Assembly Translator](../../evmla-translator).
+For EVMLA, see [EVM Legacy Assembly Translator](/zk-stack/components/compiler/specification/evmla-translator).
 
 [The LLVM IR generator code](https://github.com/matter-labs/era-compiler-solidity/blob/main/src/evmla/assembly/instruction/stack.rs#L108).
 
@@ -23,7 +23,7 @@ Original [EVM](https://www.evm.codes/#5b?fork=shanghai) instruction.
 
 Is not available in Yul.
 
-Ignored in EVMLA. See [EVM Legacy Assembly Translator](../../evmla-translator) for more information.
+Ignored in EVMLA. See [EVM Legacy Assembly Translator](/zk-stack/components/compiler/specification/evmla-translator) for more information.
 
 ## PUSH - PUSH32
 
@@ -31,7 +31,7 @@ Original [EVM](https://www.evm.codes/#5f?fork=shanghai) instructions.
 
 Is not available in Yul.
 
-For EVMLA, see [EVM Legacy Assembly Translator](../../evmla-translator).
+For EVMLA, see [EVM Legacy Assembly Translator](/zk-stack/components/compiler/specification/evmla-translator).
 
 [The LLVM IR generator code](https://github.com/matter-labs/era-compiler-solidity/blob/main/src/evmla/assembly/instruction/stack.rs#L10).
 
@@ -41,7 +41,7 @@ Original [EVM](https://www.evm.codes/#80?fork=shanghai) instructions.
 
 Is not available in Yul.
 
-For EVMLA, see [EVM Legacy Assembly Translator](../../evmla-translator).
+For EVMLA, see [EVM Legacy Assembly Translator](/zk-stack/components/compiler/specification/evmla-translator).
 
 [The LLVM IR generator code](https://github.com/matter-labs/era-compiler-solidity/blob/main/src/evmla/assembly/instruction/stack.rs#L48).
 
@@ -51,6 +51,6 @@ Original [EVM](https://www.evm.codes/#90?fork=shanghai) instructions.
 
 Is not available in Yul.
 
-For EVMLA, see [EVM Legacy Assembly Translator](../../evmla-translator).
+For EVMLA, see [EVM Legacy Assembly Translator](/zk-stack/components/compiler/specification/evmla-translator).
 
 [The LLVM IR generator code](https://github.com/matter-labs/era-compiler-solidity/blob/main/src/evmla/assembly/instruction/stack.rs#L74).

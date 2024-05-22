@@ -23,7 +23,7 @@ Original [EVM](https://www.evm.codes/#a0?fork=shanghai) instructions.
 
 This information is requested a System Contract called [EventWriter](https://github.com/matter-labs/era-system-contracts/blob/main/contracts/EventWriter.yul).
 
-On how the System Contract is called, see [this section](../../system-contracts#event-handler).
+On how the System Contract is called, see [this section](/zk-stack/components/compiler/specification/system-contracts#event-handler).
 
 [The LLVM IR generator code](https://github.com/matter-labs/era-compiler-llvm-context/blob/main/src/eravm/evm/event.rs#L20)
 is common for Yul and EVMLA representations.

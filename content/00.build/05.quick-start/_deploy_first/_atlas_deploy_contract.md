@@ -18,7 +18,7 @@ and click on **“Deploy”** to trigger the smart contract compilation and depl
 
 ::callout{icon="i-heroicons-light-bulb"}
 Behind the scenes, Atlas is using the zkSync Era custom solidity compiler
-(named `zksolc` ) to generate ZKEVM compatible bytecode. [Learn more about zkSync custom compilers](/zk-stack/components/compiler/toolchain/overview).
+(named `zksolc` ) to generate ZKEVM compatible bytecode. [Learn more about zkSync custom compilers](/zk-stack/components/compiler/toolchain).
 ::
 
 Once compiled sign the transaction with your wallet and wait until it's processed. You’ll see the contract in the
