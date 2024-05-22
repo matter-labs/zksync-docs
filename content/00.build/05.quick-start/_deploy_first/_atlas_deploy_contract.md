@@ -4,7 +4,7 @@ title: Quickstart with Atlas
 Atlas is a browser-based IDE with an integrated AI assistant that allows you to write, test and deploy smart contracts
 directly from your browser. Click the button below to open the project in Atlas.
 
-:u-button{ icon="i-heroicons-code-bracket" size="xl" color="primary" variant="solid" :trailing="false"
+:u-button{ icon="i-heroicons-code-bracket" size="lg" color="primary" variant="solid" :trailing="false"
 to="https://app.atlaszk.com/projects?template=https://github.com/zkSync-Community-Hub/zksync-quickstart-atlas&open=/contracts/ZeekSecretMessages.sol&chainId=%%zk_testnet_chain_id%%"
 target="_blank" label="Open smart contract in Atlas"}
 
