@@ -1,19 +1,8 @@
 <script setup lang="ts">
-const { data: navigation } = await useAsyncData('ecosystem-navigation', () => {
-  const query = queryContent({
-    _partial: false,
-    _extension: 'md',
-    where: [
-      {
-        _path: { $contains: '/ecosystem' },
-      },
-    ],
-  });
+import type { NavItem } from '@nuxt/content/types';
 
-  return fetchContentNavigation(query);
-});
-
-const navTree = (navigation.value && navigation.value[0] && navigation.value[0].children) || [];
+const navigation = inject<Ref<NavItem[]>>('navigation', ref([]));
+const navTree = computed(() => navigation!.value.find((nav) => nav._path === '/ecosystem')?.children || []);
 </script>
 
 <template>

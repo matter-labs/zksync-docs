@@ -9,16 +9,16 @@ const props = defineProps<{
 
 const links = computed(() =>
   [
-    toc?.bottom?.edit && {
+    {
       icon: 'i-heroicons-pencil-square',
       label: 'Edit this page',
-      to: `${toc.bottom.edit}/${props.page?._file}`,
+      to: `https://github.com/matter-labs/zksync-docs/edit/staging/content/${props.page?._file}`,
       target: '_blank',
     },
-    toc?.bottom?.feedback && {
+    {
       icon: 'i-heroicons-chat-bubble-oval-left-ellipsis',
       label: 'Share feedback',
-      to: `${toc.bottom.feedback}&title=Feedback for ${props.page?.title}&body=Page: ${props.page?._path}`,
+      to: `https://github.com/matter-labs/zksync-docs/issues/new?&title=Feedback for ${props.page?.title}&body=Page: ${props.page?._path}`,
       target: '_blank',
     },
     ...(toc?.bottom?.links || []),
