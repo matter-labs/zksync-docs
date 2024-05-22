@@ -38,7 +38,7 @@ community:
     - title: 'Developer Updates'
       description: 'Keep up to date with the latest from the zkSync team on X.'
       icon: 'i-simple-icons-x'
-      to: 'https://x.com/zksync'
+      to: 'https://x.com/zksyncDevs'
     - title: 'GitHub Discussions'
       description: 'Get help from the community and contribute to the zkSync project.'
       icon: 'i-simple-icons-github'
