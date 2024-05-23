@@ -21,7 +21,7 @@ Original [EVM](https://www.evm.codes/#31?fork=shanghai) instruction.
 
 This information is requested a System Contract called [L2EthToken](https://github.com/matter-labs/era-system-contracts/blob/main/contracts/L2EthToken.sol).
 
-On how the System Contract is called, see [this section](../../system-contracts#environmental-data-storage).
+On how the System Contract is called, see [this section](/zk-stack/components/compiler/specification/system-contracts#environmental-data-storage).
 
 ### LLVM IR
 
@@ -39,7 +39,7 @@ Original [EVM](https://www.evm.codes/#32?fork=shanghai) instruction.
 
 This information is requested a System Contract called [SystemContext](https://github.com/matter-labs/era-system-contracts/blob/main/contracts/SystemContext.sol).
 
-On how the System Contract is called, see [this section](../../system-contracts#environmental-data-storage).
+On how the System Contract is called, see [this section](/zk-stack/components/compiler/specification/system-contracts#environmental-data-storage).
 
 ### LLVM IR
 
@@ -208,7 +208,7 @@ Original [EVM](https://www.evm.codes/#3a?fork=shanghai) instruction.
 
 This information is requested a System Contract called [SystemContext](https://github.com/matter-labs/era-system-contracts/blob/main/contracts/SystemContext.sol).
 
-On how the System Contract is called, see [this section](../../system-contracts#environmental-data-storage).
+On how the System Contract is called, see [this section](/zk-stack/components/compiler/specification/system-contracts#environmental-data-storage).
 
 ### LLVM IR
 
@@ -226,7 +226,7 @@ Original [EVM](https://www.evm.codes/#3b?fork=shanghai) instruction.
 
 This information is requested a System Contract called [AccountCodeStorage](https://github.com/matter-labs/era-system-contracts/blob/main/contracts/AccountCodeStorage.sol).
 
-On how the System Contract is called, see [this section](../../system-contracts#environmental-data-storage).
+On how the System Contract is called, see [this section](/zk-stack/components/compiler/specification/system-contracts#environmental-data-storage).
 
 ### LLVM IR
 
@@ -321,7 +321,7 @@ Original [EVM](https://www.evm.codes/#3f?fork=shanghai) instruction.
 
 This information is requested a System Contract called [AccountCodeStorage](https://github.com/matter-labs/era-system-contracts/blob/main/contracts/AccountCodeStorage.sol).
 
-On how the System Contract is called, see [this section](../../system-contracts.md#environmental-data-storage).
+On how the System Contract is called, see [this section](/zk-stack/components/compiler/specification/system-contracts#environmental-data-storage).
 
 ### LLVM IR
 

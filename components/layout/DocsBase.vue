@@ -36,9 +36,16 @@ defineOgImage({
   description: page.value.description,
 });
 
-const breadcrumb = computed(() =>
-  mapContentNavigation(findPageBreadcrumb(navigation!.value, page.value)).map(({ label }) => ({ label }))
-);
+const breadcrumb = computed(() => {
+  const crumbs = mapContentNavigation(findPageBreadcrumb(navigation!.value, page.value)).map(({ label, to }) => ({
+    label,
+    to,
+  }));
+  // removes the link to the current page, unnecessary
+  delete crumbs[crumbs.length - 1].to;
+
+  return crumbs;
+});
 </script>
 
 <template>

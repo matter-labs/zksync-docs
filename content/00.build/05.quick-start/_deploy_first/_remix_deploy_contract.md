@@ -12,7 +12,7 @@ compatible protocols.
 
 Click the button below to open the project in Remix and see the contract in the Remix code editor.
 
-:u-button{ icon="i-heroicons-code-bracket" size="xl" color="primary" variant="solid" :trailing="false"
+:u-button{ icon="i-heroicons-code-bracket" size="lg" color="primary" variant="solid" :trailing="false"
 to="https://remix.ethereum.org/#url=https://github.com/zkSync-Community-Hub/zksync-quickstart-remix/blob/master/contracts/ZeekSecretMessages.sol"
 target="_blank" label="Open smart contract in Remix"}
 
@@ -29,7 +29,7 @@ access **`ACCESS TO "WRITEFILE" OF "FILE MANAGER"`,** click on "Accept".
 
 ::callout{icon="i-heroicons-light-bulb"}
 Behind the scenes, Remix is using the zkSync Era custom solidity compiler
-(named `zksolc`) to generate zkSync VM compatible bytecode. [Learn more about zkSync custom compilers](/zk-stack/components/compiler/toolchain/overview).
+(named `zksolc`) to generate zkSync VM compatible bytecode. [Learn more about zkSync custom compilers](/zk-stack/components/compiler/toolchain).
 ::
 
 ### Deploy the contract
