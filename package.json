@@ -39,6 +39,7 @@
     "@tsparticles/slim": "^3.3.0",
     "@tsparticles/vue3": "^3.0.1",
     "nuxt": "^3.11.2",
+    "nuxt-gtag": "^2.0.6",
     "nuxt-og-image": "^3.0.0-rc.45",
     "rehype-katex": "^7.0.0",
     "remark-math": "^6.0.0",
