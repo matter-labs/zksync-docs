@@ -23,7 +23,7 @@ It'll return an address (keystore address), **copy it for later use**.
 Note that the name `myKeystore` is arbitrary and can be updated. For our docs, we've chosen this name for consistency.
 If you decide to use another name, be sure to reference it when using `cast`.
 ::
-
+<!-- markdownlint-disable-next-line MD029 -->
 3. **Using the keystore:** When running commands that require a private key, use `--account myKeystore --sender
    <KEYSTORE_ADDRESS>` instead of `--private-key <PRIVATE_KEY>`. This will require you to enter the keystore password
    you provided before.
