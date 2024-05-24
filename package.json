@@ -17,9 +17,9 @@
     "cspell": "^8.6.0",
     "eslint": "^8.52.0",
     "husky": "^9.0.11",
+    "lint-staged": "^15.2.4",
     "markdownlint": "^0.33.0",
     "markdownlint-cli2": "^0.12.1",
-    "nuxt-headlessui": "^1.2.0",
     "particles.vue3": "^2.12.0",
     "prettier": "^3.1.0",
     "prettier-plugin-tailwindcss": "^0.5.12",
@@ -36,6 +36,7 @@
     "@nuxt/image": "^1.6.0",
     "@nuxt/ui-pro": "^1.0.2",
     "@nuxtjs/seo": "^2.0.0-rc.10",
+    "nuxt-headlessui": "^1.2.0",
     "@tsparticles/slim": "^3.3.0",
     "@tsparticles/vue3": "^3.0.1",
     "nuxt": "^3.11.2",
@@ -54,9 +55,9 @@
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --check .",
     "fix:prettier": "prettier --write .",
-    "prepare": "husky",
+    "prepare": "node .husky/install.mjs",
     "postinstall": "nuxt prepare",
     "ci:check": "bun run lint:eslint && bun run lint:prettier && bun run lint:spelling && bun run lint:markdown",
-    "semantic-release": "semantic-release"
+    "release": "semantic-release"
   }
 }
