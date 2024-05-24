@@ -110,7 +110,7 @@ command:
     # forge script script/DeployFactory.s.sol:DeployFactoryAndCreateCampaign --account myKeystore --sender <KEYSTORE_ADDRESS> --rpc-url inMemoryNode --broadcast --zksync
     ```
 
-    Enter your keystore password when propted.
+    Enter your keystore password when prompted.
 
     Upon a successfull deployment you'll receive details of the deploying address, the contract address,
     and the transaction hash, like so:
