@@ -147,7 +147,7 @@ forge script script/Deploy.s.sol:DeployCrowdfundContract --account myKeystore --
 # forge script script/Deploy.s.sol:DeployCrowdfundContract --account myKeystore --sender <KEYSTORE_ADDRESS> --rpc-url inMemoryNode --broadcast --zksync
 ```
 
-Enter your keystore password when propted.
+Enter your keystore password when prompted.
 
 Upon successful deployment, you'll receive output detailing the deployment process,
 including the contract address, transaction hash, and block number deployed to:

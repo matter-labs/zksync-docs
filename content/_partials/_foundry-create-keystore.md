@@ -2,8 +2,6 @@
 title: foundry create keystore
 ---
 
-## Private key setup with Foundry keystore
-
 Follow these steps to securely store your wallet's private key to use it in Foundry projects:
 
 1. **Extract Your Private Key:** If you are using the local era node, use a private key from the available rich
@@ -17,20 +15,15 @@ cast wallet import myKeystore --interactive
 # enter your PK when prompted, provide a password, and copy the returned address
 ```
 
-It'll return an address (keystore address), **copy it for later use**.
+It'll return an address (keystore address), **copy it for later use**. If you plan to use zkSync in-memory node,
+consider creating an additional keystore for one of the provided rich wallets.
 
 ::callout{icon="i-heroicons-information-circle" color="blue"}
 Note that the name `myKeystore` is arbitrary and can be updated. For our docs, we've chosen this name for consistency.
 If you decide to use another name, be sure to reference it when using `cast`.
 ::
 <!-- markdownlint-disable-next-line MD029 -->
-3. **Using the keystore:** When running commands that require a private key, use `--account myKeystore --sender
-   <KEYSTORE_ADDRESS>` instead of `--private-key <PRIVATE_KEY>`. This will require you to enter the keystore password
-   you provided before.
+#### Using the keystore
 
-::callout{icon="i-heroicons-information-circle" color="blue"}
-If you plan to use zkSync in-memory node, consider creating an additional
-keystore for one of the provided rich wallets.
-::
-
----
+When running commands that require a private key, like `forge create` or `cast send`, use `--account myKeystore --sender <KEYSTORE_ADDRESS>`. This will
+require you to enter the keystore password you provided before.
