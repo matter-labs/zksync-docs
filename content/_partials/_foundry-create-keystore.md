@@ -15,8 +15,7 @@ cast wallet import myKeystore --interactive
 # enter your PK when prompted, provide a password, and copy the returned address
 ```
 
-It'll return an address (keystore address). If you plan to use zkSync in-memory node,
-consider creating an additional keystore for one of the provided rich wallets.
+It'll return an address (keystore address).
 
 ::callout{icon="i-heroicons-information-circle" color="blue"}
 Note that the name `myKeystore` is arbitrary and can be updated. For our docs, we've chosen this name for consistency.
