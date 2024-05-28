@@ -370,7 +370,7 @@ With that execute the following command:
 ::code-group
 
 ```bash [npm]
-npm run hardhat verify <PROXY-ADDRESS>
+npx hardhat verify <PROXY-ADDRESS>
 ```
 
 ```bash [yarn]
@@ -378,7 +378,7 @@ yarn hardhat verify <PROXY-ADDRESS>
 ```
 
 ```bash [pnpm]
-pnpm run hardhat verify <PROXY-ADDRESS>
+pnpx exec hardhat verify <PROXY-ADDRESS>
 ```
 
 ```bash [bun]
