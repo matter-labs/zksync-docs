@@ -142,9 +142,9 @@ the transaction broadcast and `vm.stopBroadcast()` to end it, facilitating the a
 Execute the deployment command.
 
 ```bash
-forge script script/Deploy.s.sol:DeployCrowdfundContract --rpc-url zkSyncSepoliaTestnet --broadcast --zksync
+forge script script/Deploy.s.sol:DeployCrowdfundContract --account myKeystore --sender <KEYSTORE_ADDRESS> --rpc-url zkSyncSepoliaTestnet --broadcast --zksync
 # To deploy the contract on local in-memory node:
-# forge script script/Deploy.s.sol:DeployCrowdfundContract --rpc-url inMemoryNode --broadcast --zksync
+# forge script script/Deploy.s.sol:DeployCrowdfundContract --account myKeystore --sender <KEYSTORE_ADDRESS> --rpc-url inMemoryNode --broadcast --zksync
 ```
 
 Upon successful deployment, you'll receive output detailing the deployment process,
