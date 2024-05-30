@@ -2,6 +2,7 @@ Code4rena
 Consensys
 Cyfrin
 Hola
+Icones
 Immunefi
 initializable
 Initializable

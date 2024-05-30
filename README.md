@@ -1,9 +1,10 @@
 # 🌟 zkSync Developer Documentation
 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-blue)
-![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-orange)
-![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-orange)
+[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE-MIT)
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-orange)](LICENSE-APACHE)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](https://www.contributor-covenant.org/)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-orange)](CONTRIBUTING.md)
+[![X (formerly Twitter) Follow](https://badgen.net/badge/twitter/@zksyncDevs/1DA1F2?icon&label)](https://x.com/zksyncDevs)
 
 Welcome to the **zkSync Docs** repository! This is your go-to hub for all things
 zkSync. Dive into our comprehensive documentation whether you're just starting out or looking for advanced guides.
@@ -29,7 +30,7 @@ Unlock the full potential of zkSync with our comprehensive resources:
 
 - **🛠️ Build:** Learn how to develop and deploy your smart contracts and
 applications on zkSync Era. Our step-by-step guides and tutorials will help you get started quickly and efficiently.
-  
+
 - **🔗 ZK Stack:** Dive into the Zero-Knowledge (ZK) Stack to discover how to
 configure and build a ZK chain tailored for your application. Explore the architecture, components, and best practices.
 
@@ -92,11 +93,6 @@ The following commands are available to run linting on the project:
 bun run lint:prettier
 bun run lint:eslint
 ```
-
-## 📜 Conventional Commits
-
-We follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) specification.
-Make sure your commit messages adhere to these guidelines.
 
 ## 🤝 Contributions
 
