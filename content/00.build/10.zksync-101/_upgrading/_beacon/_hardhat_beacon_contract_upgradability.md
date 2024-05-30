@@ -9,6 +9,10 @@ npx zksync-cli@latest create --template qs-upgrade contract-upgrade-quickstart
 cd contract-upgrade-quickstart
 ```
 
+::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
+If you encounter an error while installing project dependencies using NPM as your package manager, try running `npm install --force`.
+::
+
 ## Set up your wallet
 
 :display-partial{path = "/build/zksync-101/_partials/_setup-wallet"}
