@@ -185,9 +185,9 @@ yarn hardhat deploy-zksync --script deployBeaconProxy.ts
 ```
 
 ```bash [pnpm]
-pnpx exec hardhat deploy-zksync --script deployBeaconProxy.ts
+pnpm exec hardhat deploy-zksync --script deployBeaconProxy.ts
 # To deploy the contract on local in-memory node:
-# pnpx exec hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
+# pnpm exec hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
 ```
 
 ```bash [bun]
@@ -356,7 +356,7 @@ yarn hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCam
 ```
 
 ```bash [pnpm]
-pnpx exec hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
+pnpm exec hardhat deploy-zksync --script upgrade-scripts/upgradeBeaconCrowdfundingCampaign.ts
 ```
 
 ```bash [bun]
@@ -395,7 +395,7 @@ yarn hardhat verify <BEACON-PROXY-ADDRESS>
 ```
 
 ```bash [pnpm]
-pnpx exec hardhat verify <BEACON-PROXY-ADDRESS>
+pnpm exec hardhat verify <BEACON-PROXY-ADDRESS>
 ```
 
 ```bash [bun]

@@ -197,9 +197,9 @@ yarn hardhat deploy-zksync --script deployGaslessPaymaster.ts
 ```
 
 ```bash [pnpm]
-pnpx exec hardhat deploy-zksync --script deployGaslessPaymaster.ts
+pnpm exec hardhat deploy-zksync --script deployGaslessPaymaster.ts
 # To deploy the contract on local in-memory node:
-# pnpx exec hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
+# pnpm exec hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
 ```
 
 ```bash [bun]
@@ -337,7 +337,7 @@ yarn hardhat deploy-zksync --script interact/interactWithGaslessPaymaster.ts
 ```
 
 ```bash [pnpm]
-pnpx exec hardhat deploy-zksync --script interact/interactWithGaslessPaymaster.ts
+pnpm exec hardhat deploy-zksync --script interact/interactWithGaslessPaymaster.ts
 ```
 
 ```bash [bun]
