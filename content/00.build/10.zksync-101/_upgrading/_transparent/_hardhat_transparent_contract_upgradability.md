@@ -178,9 +178,9 @@ yarn hardhat deploy-zksync --script deployTransparentProxy.ts
 ```
 
 ```bash [pnpm]
-pnpx exec hardhat deploy-zksync --script deployTransparentProxy.ts
+pnpm exec hardhat deploy-zksync --script deployTransparentProxy.ts
 # To deploy the contract on local in-memory node:
-# pnpx exec hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
+# pnpm exec hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
 ```
 
 ```bash [bun]
@@ -336,7 +336,7 @@ yarn hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.
 ```
 
 ```bash [pnpm]
-pnpx exec hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
+pnpm exec hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
 ```
 
 ```bash [bun]
@@ -377,7 +377,7 @@ yarn hardhat verify <PROXY-ADDRESS>
 ```
 
 ```bash [pnpm]
-pnpx exec hardhat verify <PROXY-ADDRESS>
+pnpm exec hardhat verify <PROXY-ADDRESS>
 ```
 
 ```bash [bun]

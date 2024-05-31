@@ -212,7 +212,7 @@ yarn hardhat test --network hardhat
 ```
 
 ```bash [pnpm]
-pnpx exec hardhat test --network hardhat
+pnpm exec hardhat test --network hardhat
 ```
 
 ```bash [bun]

@@ -228,9 +228,9 @@ yarn hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts
 ```
 
 ```bash [pnpm]
-pnpx exec hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts
+pnpm exec hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts
 # To deploy the contract on local in-memory node:
-# pnpx exec hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
+# pnpm exec hardhat deploy-zksync --script deployApprovalFlowPaymaster.ts --network inMemoryNode
 ```
 
 ```bash [bun]
@@ -386,7 +386,7 @@ yarn hardhat deploy-zksync --script interact/interactWithApprovalFlowPaymaster.t
 ```
 
 ```bash [pnpm]
-pnpx exec hardhat deploy-zksync --script interact/interactWithApprovalFlowPaymaster.ts
+pnpm exec hardhat deploy-zksync --script interact/interactWithApprovalFlowPaymaster.ts
 ```
 
 ```bash [bun]
