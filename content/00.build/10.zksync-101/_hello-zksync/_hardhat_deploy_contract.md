@@ -138,10 +138,10 @@ yarn hardhat deploy-zksync --script deploy.ts
 ```
 
 ```bash [pnpm]
-pnpx exec hardhat deploy-zksync --script deploy.ts
+pnpm exec hardhat deploy-zksync --script deploy.ts
 # The deploy keyword will trigger the `deploy` script command on `package.json`
 # To deploy the contract on local in-memory node:
-# pnpx exec hardhat deploy-zksync --script deploy.ts --network inMemoryNode
+# pnpm exec hardhat deploy-zksync --script deploy.ts --network inMemoryNode
 ```
 
 ```bash [bun]

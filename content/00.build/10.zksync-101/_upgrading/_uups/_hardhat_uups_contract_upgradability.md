@@ -191,9 +191,9 @@ yarn hardhat deploy-zksync --script deployUUPS.ts
 ```
 
 ```bash [pnpm]
-pnpx exec hardhat deploy-zksync --script deployUUPS.ts
+pnpm exec hardhat deploy-zksync --script deployUUPS.ts
 # To deploy the contract on local in-memory node:
-# pnpx exec hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
+# pnpm exec hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
 ```
 
 ```bash [bun]
@@ -346,7 +346,7 @@ yarn hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampa
 ```
 
 ```bash [pnpm]
-pnpx exec hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
+pnpm exec hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
 ```
 
 ```bash [bun]
@@ -382,7 +382,7 @@ yarn hardhat verify <PROXY-ADDRESS>
 ```
 
 ```bash [pnpm]
-pnpx exec hardhat verify <PROXY-ADDRESS>
+pnpm exec hardhat verify <PROXY-ADDRESS>
 ```
 
 ```bash [bun]
