@@ -140,7 +140,7 @@
       },
       {
         "source": "/build/developer-reference/*.@(html|md)",
-        "destination": "/build",
+        "destination": "/build/developer-reference",
         "type": 301
       },
       {
@@ -245,12 +245,12 @@
       },
       {
         "source": "/build/tutorials/tooling-guides/subquery.html",
-        "destination": "https://staging-code.zksync.io/tutorials/guide-subquery",
+        "destination": "https://code.zksync.io/tutorials/guide-subquery",
         "type": 301
       },
       {
         "source": "/build/tutorials/tooling-guides/dipdup.html",
-        "destination": "https://staging-code.zksync.io/tutorials/guide-dipdup-indexer",
+        "destination": "https://code.zksync.io/tutorials/guide-dipdup-indexer",
         "type": 301
       },
       {
