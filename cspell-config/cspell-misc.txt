@@ -3,6 +3,7 @@ Consensys
 Cyfrin
 GRVT
 Hola
+Icones
 Immunefi
 initializable
 Initializable

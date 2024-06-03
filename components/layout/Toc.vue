@@ -18,7 +18,7 @@ const links = computed(() =>
     {
       icon: 'i-heroicons-chat-bubble-oval-left-ellipsis',
       label: 'Share feedback',
-      to: `https://github.com/matter-labs/zksync-docs/issues/new?&title=Feedback for ${props.page?.title}&body=Page: ${props.page?._path}`,
+      to: `https://github.com/matter-labs/zksync-docs/issues/new?&template=feedback&page=https://docs.zksync.io${props.page?._path}`,
       target: '_blank',
     },
     ...(toc?.bottom?.links || []),

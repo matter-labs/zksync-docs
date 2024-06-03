@@ -1,0 +1,31 @@
+name: Feedback
+description: Please share any feedback for us on our content!
+title: "[Feedback]: "
+labels: ["feedback", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If you have feedback on our content, please fill out this form.
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: If this is related to a specific page, please provide the URL.
+      placeholder: https://docs.zksync.io/page
+      value: ""
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Please provide a brief description of the feedback you would like to share.
+      placeholder: Tell us what you would like to share!
+      value: ""
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/matter-labs/zksync-docs/blob/main/CODE_OF_CONDUCT.md).
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
