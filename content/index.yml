@@ -5,7 +5,7 @@ description:
 navigation: false
 hero:
   title: 'Unlock the Potential of Layer 2 Scaling with zkSync'
-  description: 'Explore comprehensive guides, developer tools, and resources to innovate on the zkSync platform.'
+  description: 'Explore comprehensive guides, developer tools, and resources to innovate on zkSync.'
   orientation: vertical
   links:
     - label: Start building on zkSync

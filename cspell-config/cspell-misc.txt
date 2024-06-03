@@ -1,12 +1,13 @@
 Code4rena
 Consensys
 Cyfrin
+GRVT
 Hola
 Immunefi
 initializable
 Initializable
+Lukka
 mathbb
 mundo
 permissioned
-upgradability
 Winternitz
