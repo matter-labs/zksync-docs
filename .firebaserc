@@ -3,5 +3,142 @@
     "default": "zksync-docs-staging-5eb09",
     "prod": "zksync-docs"
   },
-  "etags": {}
+  "etags": {},
+  "rewrites": [
+    {
+      "source": "/build/quick-start/hello-world.html",
+      "destination": "/build/quick-start",
+      "type": 301
+    },
+    {
+      "source": "/build/api.html",
+      "destination": "/build/api-reference",
+      "type": 301
+    },
+    {
+      "source": "/build/tooling/zksync-cli/getting-started.html",
+      "destination": "/build/tooling/zksync-cli",
+      "type": 301
+    },
+    {
+      "source": "/build/tooling/network-faucets.html",
+      "destination": "/ecosystem/network-faucets",
+      "type": 301
+    },
+    {
+      "source": "/build/tooling/hardhat/getting-started.html",
+      "destination": "/build/tooling/hardhat/getting-started",
+      "type": 301
+    },
+    {
+      "source": "/build/test-and-debug/era-test-node.html",
+      "destination": "/build/test-and-debug/in-memory-node",
+      "type": 301
+    },
+    {
+      "source": "/build/sdks/js{,/**}",
+      "destination": "/sdk/js/ethers/v6/getting-started",
+      "type": 301
+    },
+    {
+      "source": "/zk-stack/concepts/zk-chains.html",
+      "destination": "/zk-stack/concepts/zk-chains",
+      "type": 301
+    },
+    {
+      "source": "/build/developer-reference/rollups.html",
+      "destination": "/build/developer-reference/intro-rollups",
+      "type": 301
+    },
+    {
+      "source": "/build/developer-reference/differences-with-ethereum.html",
+      "destination": "/build/developer-reference/ethereum-differences/evm-instructions",
+      "type": 301
+    },
+    {
+      "source": "/build/developer-reference/account-abstraction.html",
+      "destination": "/build/developer-reference/account-abstraction",
+      "type": 301
+    },
+    {
+      "source": "/build/support/audit-bug-bounty.html#audits",
+      "destination": "/build/resources/audit-bug-bounty#audits",
+      "type": 301
+    },
+    {
+      "source": "/build/tutorials/smart-contract-development/paymasters/custom-paymaster-tutorial.html",
+      "destination": "https://code.zksync.io/tutorials/erc20-paymaster",
+      "type": 301
+    },
+    {
+      "source": "/build/tutorials/dapp-development/frontend-quickstart-paymaster.html",
+      "destination": "https://code.zksync.io/tutorials/frontend-paymaster",
+      "type": 301
+    },
+    {
+      "source": "/build/tutorials/dapp-development/gated-nft-paymaster-tutorial.html",
+      "destination": "https://code.zksync.io/tutorials/dapp-nft-paymaster",
+      "type": 301
+    },
+    {
+      "source": "/build/tutorials/how-to/deposit-eth-to-l2.html",
+      "destination": "https://code.zksync.io/tutorials/how-to-deposit-eth",
+      "type": 301
+    },
+    {
+      "source": "/build/tutorials/smart-contract-development/account-abstraction/daily-spend-limit.html",
+      "destination": "https://code.zksync.io/tutorials/daily-spend-limit-account",
+      "type": 301
+    },
+    {
+      "source": "/build/tutorials/smart-contract-development/paymasters/gasless.html",
+      "destination": "https://code.zksync.io/tutorials/dapp-nft-paymaster",
+      "type": 301
+    },
+    {
+      "source": "/build/tutorials/smart-contract-development/cross-chain-tutorial.html",
+      "destination": "https://code.zksync.io/tutorials/cross-chain-governance",
+      "type": 301
+    },
+    {
+      "source": "/build/tutorials/how-to/verify-contracts.html",
+      "destination": "https://code.zksync.io/tutorials/how-to-verify-contracts",
+      "type": 301
+    },
+    {
+      "source": "/build/tutorials/how-to/withdraw-eth-to-l1.html",
+      "destination": "https://code.zksync.io/tutorials/how-to-withdraw-eth",
+      "type": 301
+    },
+    {
+      "source": "/build/tutorials/how-to/deposit-erc-20-to-l2.html",
+      "destination": "https://code.zksync.io/tutorials/how-to-deposit-erc20",
+      "type": 301
+    },
+    {
+      "source": "/build/tutorials/how-to/withdraw-erc-20-to-l1.html",
+      "destination": "https://code.zksync.io/tutorials/how-to-withdraw-erc20",
+      "type": 301
+    },
+    {
+      "source": "/build/tutorials/how-to/send-message-l2-l1.html",
+      "destination": "https://code.zksync.io/tutorials/how-to-send-l2-l1-message",
+      "type": 301
+    },
+    {
+      "source": "/build/tutorials/how-to/deploy-contract.html",
+      "destination": "https://code.zksync.io/tutorials/how-to-deploy-contract",
+      "type": 301
+    },
+    {
+      "source": "/build/tutorials/how-to/test-contracts.html",
+      "destination": "https://code.zksync.io/tutorials/how-to-test-contracts",
+      "type": 301
+    },
+    {
+      "source": "/build/tutorials{,/**}",
+      "destination": "https://code.zksync.io/tutorials",
+      "type": 301
+    }
+  ]
 }
