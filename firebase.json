@@ -144,11 +144,6 @@
         "type": 301
       },
       {
-        "source": "",
-        "destination": "",
-        "type": 301
-      },
-      {
         "source": "/build/support/:post*.@(html|md)",
         "destination": "/build/resources/:post",
         "type": 301
