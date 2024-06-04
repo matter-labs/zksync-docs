@@ -32,5 +32,6 @@ contract balance and the value returned by the `getTotalMessages` function.
 ![Contract deployed](/images/101-quickstart/101-atlas-deployed.png)
 
 The “Write Functions” section contains the form to interact with the `sendMessage` function. Write a message, click the
-“Run” button and confirm the transaction in your wallet. You’ll see that the `getTotalMessages` is updated to `1`. That
-means our contract is storing the messages as expected! But how can you see the replies from Zeek?
+“Run” button and confirm the transaction in your wallet. You’ll see that the `getTotalMessages` is updated to `1` and
+`getLastMessage` returns the message you just sent. That means our contract is storing the messages as expected! But how
+can you see the replies from Zeek?
