@@ -15,14 +15,12 @@ body:
       label: Page
       description: If this is related to a specific page, please provide the URL.
       placeholder: https://docs.zksync.io/page
-      value: ""
   - type: textarea
     id: description
     attributes:
       label: Description
       description: Please provide a brief description of the feedback you would like to share.
       placeholder: Tell us what you would like to share!
-      value: ""
   - type: checkboxes
     id: terms
     attributes:
