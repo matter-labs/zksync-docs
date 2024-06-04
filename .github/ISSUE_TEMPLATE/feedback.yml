@@ -2,6 +2,8 @@ name: Feedback
 description: Please share any feedback for us on our content!
 title: "[Feedback]: "
 labels: ["feedback", "triage"]
+assignees:
+  - matter-labs/devxp
 body:
   - type: markdown
     attributes:
