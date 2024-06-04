@@ -12,7 +12,7 @@ const links = computed(() =>
     {
       icon: 'i-heroicons-pencil-square',
       label: 'Edit this page',
-      to: `https://github.com/matter-labs/zksync-docs/edit/staging/content/${props.page?._file}`,
+      to: `https://github.com/matter-labs/zksync-docs/edit/main/content/${props.page?._file}`,
       target: '_blank',
     },
     {

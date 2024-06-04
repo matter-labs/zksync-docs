@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  extends: [['github:matter-labs/docs-nuxt-template', { install: true }], ['github:zksync-sdk/sdk-docs#staging']],
+  extends: [['github:matter-labs/docs-nuxt-template', { install: true }], ['github:zksync-sdk/sdk-docs']],
   modules: ['@nuxt/content', '@nuxt/ui', '@nuxt/eslint', '@nuxtjs/seo', 'nuxt-gtag'],
   site: {
     name: 'zkSync Docs',
@@ -12,7 +12,7 @@ export default defineNuxtConfig({
         prefix: '/sdk',
         driver: 'github',
         repo: 'zksync-sdk/sdk-docs',
-        branch: 'staging',
+        branch: 'main',
         dir: 'content/sdk',
       },
     },
