@@ -1,6 +1,268 @@
 {
   "hosting": {
     "public": ".output/public",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "redirects": [
+      {
+        "source": "/build/quick-start/*.@(html|md)",
+        "destination": "/build/quick-start",
+        "type": 301
+      },
+      {
+        "source": "/build/api.html",
+        "destination": "/build/api-reference",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/zksync-cli/getting-started.html",
+        "destination": "/build/tooling/zksync-cli",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/network-faucets.html",
+        "destination": "/ecosystem/network-faucets",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat/getting-started.html",
+        "destination": "/build/tooling/hardhat/getting-started",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/bridges.html",
+        "destination": "/ecosystem/bridges",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/cross-chain.html",
+        "destination": "/ecosystem/cross-chain",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/data-indexers.html",
+        "destination": "/ecosystem/data-indexers",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/monitoring.html",
+        "destination": "/ecosystem/monitoring",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/network-faucets.html",
+        "destination": "/ecosystem/network-faucets",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/node-providers.html",
+        "destination": "/ecosystem/node-providers",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/oracles.html",
+        "destination": "/ecosystem/oracles",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/wallets.html",
+        "destination": "/ecosystem/wallets",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/nft-marketplaces.html",
+        "destination": "/ecosystem/nft-marketplaces",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/ide.html",
+        "destination": "/ecosystem/ide",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/block-explorer/*.@(html|md)",
+        "destination": "/build/tooling/zksync-block-explorers",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat/*.@(html|md)",
+        "destination": "/build/tooling/hardhat/getting-started",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/foundry/*.@(html|md)",
+        "destination": "/build/tooling/foundry/overview",
+        "type": 301
+      },
+      {
+        "source": "/build/test-and-debug/getting-started.html",
+        "destination": "/build/test-and-debug",
+        "type": 301
+      },
+      {
+        "source": "/build/test-and-debug/era-test-node.html",
+        "destination": "/build/test-and-debug/in-memory-node",
+        "type": 301
+      },
+      {
+        "source": "/build/test-and-debug/:page.@(html|md)",
+        "destination": "/build/test-and-debug/:page",
+        "type": 301
+      },
+      {
+        "source": "/build/sdks/js{,/**}",
+        "destination": "/sdk/js/ethers/v6/getting-started",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/concepts/zk-chains.html",
+        "destination": "/zk-stack/concepts/zk-chains",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/rollups.html",
+        "destination": "/build/developer-reference/intro-rollups",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/differences-with-ethereum.html",
+        "destination": "/build/developer-reference/ethereum-differences/evm-instructions",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/account-abstraction.html",
+        "destination": "/build/developer-reference/account-abstraction",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/system-contracts.html",
+        "destination": "/build/developer-reference/era-contracts/l1-contracts",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/*.@(html|md)",
+        "destination": "/build/developer-reference",
+        "type": 301
+      },
+      {
+        "source": "/build/support/:post*.@(html|md)",
+        "destination": "/build/resources/:post",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/smart-contract-development/paymasters/custom-paymaster-tutorial.html",
+        "destination": "https://code.zksync.io/tutorials/erc20-paymaster",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/dapp-development/frontend-quickstart-paymaster.html",
+        "destination": "https://code.zksync.io/tutorials/frontend-paymaster",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/dapp-development/gated-nft-paymaster-tutorial.html",
+        "destination": "https://code.zksync.io/tutorials/dapp-nft-paymaster",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/how-to/deposit-eth-to-l2.html",
+        "destination": "https://code.zksync.io/tutorials/how-to-deposit-eth",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/smart-contract-development/account-abstraction/daily-spend-limit.html",
+        "destination": "https://code.zksync.io/tutorials/daily-spend-limit-account",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/smart-contract-development/paymasters/gasless.html",
+        "destination": "https://code.zksync.io/tutorials/dapp-nft-paymaster",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/smart-contract-development/cross-chain-tutorial.html",
+        "destination": "https://code.zksync.io/tutorials/cross-chain-governance",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/how-to/verify-contracts.html",
+        "destination": "https://code.zksync.io/tutorials/how-to-verify-contracts",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/how-to/withdraw-eth-to-l1.html",
+        "destination": "https://code.zksync.io/tutorials/how-to-withdraw-eth",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/how-to/deposit-erc-20-to-l2.html",
+        "destination": "https://code.zksync.io/tutorials/how-to-deposit-erc20",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/how-to/withdraw-erc-20-to-l1.html",
+        "destination": "https://code.zksync.io/tutorials/how-to-withdraw-erc20",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/how-to/send-message-l2-l1.html",
+        "destination": "https://code.zksync.io/tutorials/how-to-send-l2-l1-message",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/how-to/deploy-contract.html",
+        "destination": "https://code.zksync.io/tutorials/how-to-deploy-contract",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/how-to/test-contracts.html",
+        "destination": "https://code.zksync.io/tutorials/how-to-test-contracts",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/tooling-guides/wallet-connect.html",
+        "destination": "https://code.zksync.io/tutorials/guide-walletconnect",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/tooling-guides/wagmi.html",
+        "destination": "https://code.zksync.io/tutorials/guide-wagmi",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/tooling-guides/viem.html",
+        "destination": "https://code.zksync.io/tutorials/guide-viem",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/tooling-guides/web3js.html",
+        "destination": "https://code.zksync.io/tutorials/guide-web3js",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/tooling-guides/the-graph.html",
+        "destination": "https://code.zksync.io/tutorials/guide-the-graph",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/tooling-guides/subquery.html",
+        "destination": "https://code.zksync.io/tutorials/guide-subquery",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/tooling-guides/dipdup.html",
+        "destination": "https://code.zksync.io/tutorials/guide-dipdup-indexer",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials{,/**}",
+        "destination": "https://code.zksync.io/tutorials",
+        "type": 301
+      },
+      {
+        "source": "/build/**/*.@(html|md)",
+        "destination": "/build",
+        "type": 301
+      }
+    ]
   }
 }
