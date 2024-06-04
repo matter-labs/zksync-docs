@@ -2,6 +2,8 @@ name: Feature Request
 description: Is there a feature missing you would like to see? Let us know!
 title: "[Feature]: "
 labels: ["feature", "triage"]
+assignees:
+  - matter-labs/devxp
 body:
   - type: markdown
     attributes:
@@ -13,14 +15,12 @@ body:
       label: Description
       description: Please provide a brief description of the feature you would like to see.
       placeholder: Tell us what you would like to see!
-      value: ""
   - type: textarea
     id: rationale
     attributes:
       label: Rationale
       description: Why do you think this feature would be beneficial to the project?
       placeholder: Tell us why you think this feature would be beneficial!
-      value: ""
   - type: checkboxes
     id: terms
     attributes:
