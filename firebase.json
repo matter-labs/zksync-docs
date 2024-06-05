@@ -4,6 +4,21 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "redirects": [
       {
+        "source": "/sdks/js/:path*.@(html|md)",
+        "destination": "/sdk/js/ethers/v5/:path",
+        "type": 301
+      },
+      {
+        "source": "/sdks/js/zksync-ethers/:path*.@(html|md)",
+        "destination": "/sdk/js/ethers/v6/:path",
+        "type": 301
+      },
+      {
+        "source": "/sdks/:path*.@(html|md)",
+        "destination": "/sdk/:path",
+        "type": 301
+      },
+      {
         "source": "/build/quick-start/*.@(html|md)",
         "destination": "/build/quick-start",
         "type": 301
