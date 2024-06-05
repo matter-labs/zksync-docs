@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "zksync-docs-staging-5eb09",
+    "prod": "zksync-docs"
+  },
+  "etags": {}
+}

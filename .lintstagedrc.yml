@@ -1,0 +1,8 @@
+'*.{js,ts,vue}':
+  - prettier --list-different
+  - eslint
+'*.md':
+  - markdownlint-cli2
+  - cspell check
+'*.{json,yml}':
+  - prettier --list-different

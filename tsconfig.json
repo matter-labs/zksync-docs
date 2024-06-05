@@ -1,0 +1,11 @@
+{
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "strict": true,
+    "downlevelIteration": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "typeRoots": ["./node_modules/@types", "./types", ".nuxt/nuxt.d.ts"]
+  }
+}
