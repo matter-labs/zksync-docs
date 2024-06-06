@@ -129,11 +129,9 @@ const TOKEN_CONTRACT_ADDRESS = ""
 const NEW_MESSAGE = "This tx cost me no ETH!";
 ```
 
-Next, make sure the script file is selected in the Remix editor and click on the “▶️” button.
+Next, make sure the script file is selected in the Remix editor and click on the “▶️” button. You’ll see the progress in the console.
 
-<!-- TODO: @uF4No add Remix image to showcase how to run scripts -->
-
-You’ll see the progress in the console.
+![Contract events in zkSync explorer](/images/101-paymasters/remix-paymaster-tx.png)
 
 If everything worked as expected, only the ERC20 balance will decrease, meaning the fee was paid with the ERC20 token
 instead of ETH.
