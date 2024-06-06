@@ -1,7 +1,7 @@
 name: Feature Request
 description: Is there a feature missing you would like to see? Let us know!
 title: "[Feature]: "
-labels: ["feature", "triage"]
+labels: ["enhancement", "triage"]
 assignees:
   - matter-labs/devxp
 body:
