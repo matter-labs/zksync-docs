@@ -17,10 +17,10 @@ transaction via the paymaster. Let’s go through the most important parts:
 ### Retrieve the token balance
 
 ```typescript
-// retrieve and print the current balance of the wallet
-let ethBalance = await provider.getBalance(walletAddress)
-let tokenBalance = await tokenContract.balanceOf(walletAddress)
+// retrieve and print the current balances of the wallet
+let ethBalance = await zkProvider.getBalance(walletAddress)
 console.log(`Account ${walletAddress} has ${ethers.utils.formatEther(ethBalance)} ETH`);
+let tokenBalance = await tokenContract.balanceOf(walletAddress)
 console.log(`Account ${walletAddress} has ${ethers.utils.formatUnits(tokenBalance, 18)} tokens`);
 ```
 
@@ -35,7 +35,7 @@ const testnetPaymasterAddress = await zkProvider.getTestnetPaymasterAddress();
 
 console.log(`Testnet paymaster address is ${testnetPaymasterAddress}`);
 
-const gasPrice = await provider.getGasPrice();
+const gasPrice = await zkProvider.getGasPrice();
 
 // define paymaster parameters for gas estimation
 const paramsForFeeEstimation = utils.getPaymasterParams(testnetPaymasterAddress, {
@@ -94,8 +94,8 @@ const txOverrides = {
 
 console.log(`Sign the transaction in your wallet`);
 
-// send transaction with additional paymaster params as overrides
-const txHandle = await messagesContract.sendMessage(NEW_MESSAGE, txOverrides);
+  // send transaction with additional paymaster params as overrides
+  const txHandle = await messagesContract.sendMessage(NEW_MESSAGE, txOverrides);
 ```
 
 1. Create the new paymaster params with the calculated `fee` as `minimalAllowance` .
@@ -105,7 +105,7 @@ const txHandle = await messagesContract.sendMessage(NEW_MESSAGE, txOverrides);
 ### Compare the final balance
 
 ```typescript
-ethBalance = await provider.getBalance(walletAddress)
+ethBalance = await zkProvider.getBalance(walletAddress)
 tokenBalance = await tokenContract.balanceOf(walletAddress)
 console.log(`Account ${walletAddress} now has ${ethers.utils.formatEther(ethBalance)} ETH`);
 console.log(`Account ${walletAddress} now has ${ethers.utils.formatUnits(tokenBalance, 18)} tokens`);
@@ -115,7 +115,7 @@ Finally we retrieve and print the ETH and ERC20 balances to see how they’ve ch
 
 ## Run the script
 
-To run the script, first enter the addresses of the `ZeekSecretMessages.sol` and `TestToken.sol` contracts that we
+To run the script, first enter the addresses of the `ZeekMessages.sol` and `TestToken.sol` contracts that we
 deployed previously ([Deploy your first contract](/build/quick-start/deploy-your-first-contract) and
 [Erc20 Token](/build/quick-start/erc20-token)) in the following variables at the beginning of
 the script:
@@ -129,11 +129,9 @@ const TOKEN_CONTRACT_ADDRESS = ""
 const NEW_MESSAGE = "This tx cost me no ETH!";
 ```
 
-Next, make sure the script file is selected in the Remix editor and click on the “▶️” button.
+Next, make sure the script file is selected in the Remix editor and click on the “▶️” button. You’ll see the progress in the console.
 
-<!-- TODO: @uF4No add Remix image to showcase how to run scripts -->
-
-You’ll see the progress in the console.
+![Contract events in zkSync explorer](/images/101-paymasters/remix-paymaster-tx.png)
 
 If everything worked as expected, only the ERC20 balance will decrease, meaning the fee was paid with the ERC20 token
 instead of ETH.
