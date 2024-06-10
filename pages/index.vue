@@ -1,12 +1,20 @@
 <script setup lang="ts">
 const { data: page } = await useAsyncData('index', () => queryContent('/').findOne());
 
+const { seo } = useAppConfig();
+
 useSeoMeta({
   titleTemplate: '',
   title: page.value?.title,
   ogTitle: page.value?.title,
   description: page.value?.description,
   ogDescription: page.value?.description,
+});
+
+defineOgImage({
+  component: 'OgImageZK',
+  title: seo?.siteName,
+  description: 'Access detailed guides, references and resources that will help you build with zkSync Era.',
 });
 </script>
 
