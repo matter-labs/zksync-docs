@@ -277,6 +277,22 @@
         "source": "/build/**/*.@(html|md)",
         "destination": "/build",
         "type": 301
+      },
+      {
+        "source": "/zk-stack/:path*.@(html|md)",
+        "destination": "/zk-stack/:path",
+        "type": 301
+      },
+
+      {
+        "source": "/infra/introduction",
+        "destination": "/zksync-node",
+        "type": 301
+      },
+      {
+        "source": "/infra/:path*.@(html|md)",
+        "destination": "/zksync-node/:path",
+        "type": 301
       }
     ]
   }
