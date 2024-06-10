@@ -22,7 +22,7 @@ useHead({
 useSeoMeta({
   titleTemplate: `%s - ${seo?.siteName}`,
   ogSiteName: seo?.siteName,
-  ogUrl: 'https://docs.zksync.io/',
+  ogUrl: 'https://docs.zksync.io',
   ogImageAlt: 'Hyperscaling Ethereum with ZK tech.',
   ogDescription:
     'zkSync Docs bring you all information you need about our protocol, APIs, SDKs, ZK Stack, and ZK Chains. Start with our guides and tutorials, or go deep into our architecture and protocol specification.',
