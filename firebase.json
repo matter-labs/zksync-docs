@@ -279,6 +279,21 @@
         "type": 301
       },
       {
+        "source": "/zk-stack/concepts/validiums.html",
+        "destination": "/zk-stack/concepts/data-availability/validiums",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/zkEVM/:path*.@(html|md)",
+        "destination": "/zk-stack/components/zksync-evm/:path",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/overview.html",
+        "destination": "/zk-stack/components/prover",
+        "type": 301
+      },
+      {
         "source": "/zk-stack/:path*.@(html|md)",
         "destination": "/zk-stack/:path",
         "type": 301
