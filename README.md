@@ -58,14 +58,6 @@ Run the project locally:
 bun run dev
 ```
 
-## Local Preview 👀
-
-To locally preview the production build, first run `bun run build` to build the project, then run the following:
-
-```shell
-bun run preview
-```
-
 ## Lint & Formatting ✨
 
 This project provides lint commands to check the project.
@@ -98,8 +90,15 @@ bun run lint:eslint
 
 We welcome contributions from the community! Check out the following resources to get started:
 
-- [Contribution Overview](./content/00.build/90.contributing-to-documentation/10.index.md)
-- [Contribution Guidelines](./content/00.build/90.contributing-to-documentation/20.contribution-guidelines.md)
-- [Documentation Styleguide](./content/00.build/90.contributing-to-documentation/30.documentation-styleguide.md)
+- [Contribution Overview](https://docs.zksync.io/build/contributing-to-documentation)
+- To get started with the project locally and learn how to submit PRs for the project,
+  read the [Contribution Guidelines](https://docs.zksync.io/build/contributing-to-documentation/contribution-guidelines)
+- To learn how to write your content for documentation, read the
+  [Documentation Styleguide](https://docs.zksync.io/build/contributing-to-documentation/documentation-styleguide)
+
+### Check out Community Code
+
+If you want to contribute tutorials to our Docs, check out the
+[Community Code repo](https://github.com/zkSync-Community-Hub/community-code?tab=readme-ov-file#community-code)!
 
 Join us in making zkSync Docs better for everyone! 🌐✨
