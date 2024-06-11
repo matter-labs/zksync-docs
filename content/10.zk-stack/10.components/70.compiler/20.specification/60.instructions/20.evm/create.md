@@ -5,7 +5,7 @@ description:
 
 The EVM CREATE instructions are handled similarly.
 
-For more information, see the [zkSync Era documentation](/build/developer-reference/ethereum-differences/evm-instructions#create-create2).
+For more information, see the [ZKsync Era documentation](/build/developer-reference/ethereum-differences/evm-instructions#create-create2).
 
 ## CREATE
 

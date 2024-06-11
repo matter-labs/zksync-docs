@@ -1,4 +1,4 @@
-# 🌟 zkSync Developer Documentation
+# 🌟 ZKsync Developer Documentation
 
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE-MIT)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-orange)](LICENSE-APACHE)
@@ -6,8 +6,8 @@
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-orange)](CONTRIBUTING.md)
 [![X (formerly Twitter) Follow](https://badgen.net/badge/twitter/@zksyncDevs/1DA1F2?icon&label)](https://x.com/zksyncDevs)
 
-Welcome to the **zkSync Docs** repository! This is your go-to hub for all things
-zkSync. Dive into our comprehensive documentation whether you're just starting out or looking for advanced guides.
+Welcome to the **ZKsync Docs** repository! This is your go-to hub for all things
+ZKsync. Dive into our comprehensive documentation whether you're just starting out or looking for advanced guides.
 
 ## 🚀 Quick Start
 
@@ -26,19 +26,19 @@ zkSync. Dive into our comprehensive documentation whether you're just starting o
 
 ## 📚 Documentation Overview
 
-Unlock the full potential of zkSync with our comprehensive resources:
+Unlock the full potential of ZKsync with our comprehensive resources:
 
 - **🛠️ Build:** Learn how to develop and deploy your smart contracts and
-applications on zkSync Era. Our step-by-step guides and tutorials will help you get started quickly and efficiently.
+applications on ZKsync Era. Our step-by-step guides and tutorials will help you get started quickly and efficiently.
 
 - **🔗 ZK Stack:** Dive into the Zero-Knowledge (ZK) Stack to discover how to
 configure and build a ZK chain tailored for your application. Explore the architecture, components, and best practices.
 
-- **🌐 zkSync Node:** Set up and run your own zkSync full node. Gain a deeper
+- **🌐 ZKsync Node:** Set up and run your own ZKsync full node. Gain a deeper
 understanding of node operations, observability, and maintenance to ensure optimal performance and reliability.
 
-- **🌍 Ecosystem:** Explore the vibrant zkSync ecosystem. Discover a wide array
-of projects and tooling built for zkSync developers and users, from wallets and
+- **🌍 Ecosystem:** Explore the vibrant ZKsync ecosystem. Discover a wide array
+of projects and tooling built for ZKsync developers and users, from wallets and
 explorers to integrations and developer tools. Stay updated with the latest innovations and community contributions.
 
 ## 🛠️ Built With
@@ -102,4 +102,4 @@ We welcome contributions from the community! Check out the following resources t
 - [Contribution Guidelines](./content/00.build/90.contributing-to-documentation/20.contribution-guidelines.md)
 - [Documentation Styleguide](./content/00.build/90.contributing-to-documentation/30.documentation-styleguide.md)
 
-Join us in making zkSync Docs better for everyone! 🌐✨
+Join us in making ZKsync Docs better for everyone! 🌐✨

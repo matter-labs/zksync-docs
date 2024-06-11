@@ -14,7 +14,7 @@ useSeoMeta({
 defineOgImage({
   component: 'OgImageZK',
   title: seo?.siteName,
-  description: 'Access detailed guides, references and resources that will help you build with zkSync Era.',
+  description: 'Access detailed guides, references and resources that will help you build with ZKsync Era.',
 });
 </script>
 

@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   extends: [['github:matter-labs/docs-nuxt-template', { install: true }], ['github:zksync-sdk/sdk-docs']],
   modules: ['@nuxt/content', '@nuxt/ui', '@nuxt/eslint', '@nuxtjs/seo', 'nuxt-gtag'],
   site: {
-    name: 'zkSync Docs',
+    name: 'ZKsync Docs',
     url: process.env.NUXT_SITE_ENV ? 'https://staging-docs.zksync.io' : 'https://docs.zksync.io',
   },
   content: {

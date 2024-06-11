@@ -1,23 +1,23 @@
-title: 'zkSync Docs'
+title: 'ZKsync Docs'
 description:
-  zkSync Docs bring you all information you need about our protocol, APIs, SDKs, ZK Stack, and ZK chains. Start with our
+  ZKsync Docs bring you all information you need about our protocol, APIs, SDKs, ZK Stack, and ZK chains. Start with our
   guides and tutorials, or go deep into our architecture and protocol specification.
 navigation: false
 hero:
-  title: 'Unlock the Potential of Layer 2 Scaling with zkSync'
-  description: 'Explore comprehensive guides, developer tools, and resources to innovate on zkSync.'
+  title: 'Unlock the Potential of Layer 2 Scaling with ZKsync'
+  description: 'Explore comprehensive guides, developer tools, and resources to innovate on ZKsync.'
   orientation: vertical
   links:
-    - label: Start building on zkSync
+    - label: Start building on ZKsync
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
       to: '/build'
       size: xl
 features:
-  title: 'Explore zkSync Docs'
+  title: 'Explore ZKsync Docs'
   items:
-    - title: 'Getting Started with zkSync'
-      description: 'Jumpstart your zkSync journey with quickstart guides and fundamental concepts for developers.'
+    - title: 'Getting Started with ZKsync'
+      description: 'Jumpstart your ZKsync journey with quickstart guides and fundamental concepts for developers.'
       icon: 'i-zksync-zksync-logo'
       to: '/build/quick-start'
     - title: 'Develop with zksync-cli'
@@ -25,21 +25,21 @@ features:
       icon: 'i-simple-icons-windowsterminal'
       to: '/build/tooling/zksync-cli'
     - title: 'Architecture'
-      description: 'Learn about the zkSync architecture and how it works under the hood.'
+      description: 'Learn about the ZKsync architecture and how it works under the hood.'
       icon: 'i-heroicons-sparkles-20-solid'
       to: '/zk-stack'
 community:
-  title: 'Join the zkSync Community'
+  title: 'Join the ZKsync Community'
   items:
     - title: 'Developer Updates'
-      description: 'Keep up to date with the latest from the zkSync team on X.'
+      description: 'Keep up to date with the latest from the ZKsync team on X.'
       icon: 'i-simple-icons-x'
       to: 'https://x.com/zksyncDevs'
     - title: 'GitHub Discussions'
-      description: 'Get help from the community and contribute to the zkSync project.'
+      description: 'Get help from the community and contribute to the ZKsync project.'
       icon: 'i-simple-icons-github'
-      to: 'https://github.com/zkSync-Community-Hub/zksync-developers/discussions'
-    - title: 'zkSync Discord'
-      description: 'Connect with devs and zkSync enthusiasts on Discord.'
+      to: 'https://github.com/ZKsync-Community-Hub/zksync-developers/discussions'
+    - title: 'ZKsync Discord'
+      description: 'Connect with devs and ZKsync enthusiasts on Discord.'
       icon: 'i-simple-icons-discord'
       to: 'https://join.zksync.dev/'

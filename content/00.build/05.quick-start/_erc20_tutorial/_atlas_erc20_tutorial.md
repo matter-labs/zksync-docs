@@ -29,7 +29,7 @@ contract TestToken is ERC20, Ownable, ERC20Burnable {
 ```
 
 ::callout{icon="i-heroicons-light-bulb"}
-zkSync is [EVM compatible](/build/resources/glossary#evm-compatible), so you can use existing popular libraries like OpenZeppelin.
+ZKsync Era is [EVM compatible](/build/resources/glossary#evm-compatible), so you can use existing popular libraries like OpenZeppelin.
 ::
 
 The most important features are:
@@ -49,7 +49,7 @@ Atlas is a browser-based IDE with an integrated AI assistant that allows you to 
 directly from your browser. Click the button below to open the project in Atlas.
 
 :u-button{ icon="i-heroicons-code-bracket" size="lg" color="primary" variant="solid" :trailing="false"
-to="https://app.atlaszk.com/projects?template=https://github.com/zkSync-Community-Hub/zksync-quickstart-atlas&open=/contracts/TestToken.sol&chainId=%%zk_testnet_chain_id%%"
+to="https://app.atlaszk.com/projects?template=https://github.com/ZKsync-Community-Hub/zksync-quickstart-atlas&open=/contracts/TestToken.sol&chainId=%%zk_testnet_chain_id%%"
 target="_blank" label="Open smart contract in Atlas"}
 
 You can see the contract in the Atlas code editor. In the right sidebar,
@@ -57,8 +57,8 @@ make sure the selected network is “%%zk_testnet_name%%“
 and click on **"Deploy"** to trigger the smart contract compilation and deployment.
 
 ::callout{icon="i-heroicons-light-bulb"}
-Behind the scenes, Atlas is using the zkSync Era custom solidity compiler
-(named `zksolc` ) to generate ZKEVM compatible bytecode. [Learn more about zkSync custom compilers](/zk-stack/components/compiler/toolchain).
+Behind the scenes, Atlas is using the ZKsync Era custom solidity compiler
+(named `zksolc` ) to generate ZKEVM compatible bytecode. [Learn more about ZKsync custom compilers](/zk-stack/components/compiler/toolchain).
 ::
 
 ![ERC20 interact script in Atlas](/images/101-erc20/atlas-deploy-erc20.png)
@@ -113,7 +113,7 @@ export async function main (atlas: AtlasEnvironment) {
 This scripts uses `ethers` to interact with the contract we’ve just deployed.
 
 ::callout{icon="i-heroicons-light-bulb"}
-Existing libraries like `ethers` , `viem` and `web3.js` can be used to interact with smart contracts deployed on zkSync.
+Existing libraries like `ethers` , `viem` and `web3.js` can be used to interact with smart contracts deployed on ZKsync.
 ::
 
 Fill the following variables:
