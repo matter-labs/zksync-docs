@@ -1,5 +1,5 @@
 ---
-  name: Validate PR title
+  name: check 📓
 
   on:
     pull_request_target:
@@ -13,10 +13,13 @@
 
   jobs:
     main:
-      name: Validate PR title
+      name: validate PR title
       runs-on: ubuntu-latest
+      permissions:
+        pull-requests: read
+        statuses: write
       steps:
-        - uses: amannn/action-semantic-pull-request@v5.5.2
+        - uses: amannn/action-semantic-pull-request@c3cd5d1ea3580753008872425915e343e351ab54 # v5.2.0
           id: lint_pr_title
           env:
             GITHUB_TOKEN: ${{ github.token }}
