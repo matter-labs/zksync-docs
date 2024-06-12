@@ -5,7 +5,7 @@ Atlas is a browser-based IDE with an integrated AI assistant that allows you to 
 directly from your browser. Click the button below to open the project in Atlas.
 
 :u-button{ icon="i-heroicons-code-bracket" size="lg" color="primary" variant="solid" :trailing="false"
-to="https://app.atlaszk.com/projects?template=https://github.com/zkSync-Community-Hub/zksync-quickstart-atlas&open=/contracts/ZeekMessages.sol&chainId=%%zk_testnet_chain_id%%"
+to="https://app.atlaszk.com/projects?template=https://github.com/ZKsync-Community-Hub/zksync-quickstart-atlas&open=/contracts/ZeekMessages.sol&chainId=%%zk_testnet_chain_id%%"
 target="_blank" label="Open smart contract in Atlas"}
 
 ### Compile and deploy the contract
@@ -17,8 +17,8 @@ and click on **“Deploy”** to trigger the smart contract compilation and depl
 ![Contract in Atlas](/images/101-quickstart/101-atlas-contract.png)
 
 ::callout{icon="i-heroicons-light-bulb"}
-Behind the scenes, Atlas is using the zkSync Era custom solidity compiler
-(named `zksolc` ) to generate ZKEVM compatible bytecode. [Learn more about zkSync custom compilers](/zk-stack/components/compiler/toolchain).
+Behind the scenes, Atlas is using the ZKsync Era custom solidity compiler
+(named `zksolc` ) to generate ZKEVM compatible bytecode. [Learn more about ZKsync custom compilers](/zk-stack/components/compiler/toolchain).
 ::
 
 Once compiled sign the transaction with your wallet and wait until it's processed. You’ll see the contract in the

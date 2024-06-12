@@ -5,7 +5,7 @@ title: Paymaster with Atlas
 Click the following button to open the project in Atlas:
 
 :u-button{ icon="i-heroicons-code-bracket" size="lg" color="primary" variant="solid" :trailing="false"
-to="https://app.atlaszk.com/projects?template=https://github.com/zkSync-Community-Hub/zksync-quickstart-atlas&open=/scripts/paymaster-transaction.ts&chainId=%%zk_testnet_chain_id%%"
+to="https://app.atlaszk.com/projects?template=https://github.com/ZKsync-Community-Hub/zksync-quickstart-atlas&open=/scripts/paymaster-transaction.ts&chainId=%%zk_testnet_chain_id%%"
 target="_blank" label="Open script in Atlas"}
 
 It’ll open the script to send a transaction via the paymaster. Let’s go through the most important parts:
