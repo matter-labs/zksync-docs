@@ -2,6 +2,47 @@
   "hosting": {
     "public": ".output/public",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "headers": [
+      {
+        "source": "/sw.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-store, no-cache, must-revalidate, private"
+          },
+          {
+            "key": "Max-Age",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "source": "/manifest.webmanifest",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-store, no-cache, must-revalidate, private"
+          },
+          {
+            "key": "Max-Age",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "source": "/index.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-store, no-cache, must-revalidate, private"
+          },
+          {
+            "key": "Max-Age",
+            "value": "0"
+          }
+        ]
+      }
+    ],
     "redirects": [
       {
         "source": "/sdks/js/:path*.@(html|md)",
