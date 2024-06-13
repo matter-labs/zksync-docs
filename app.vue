@@ -12,7 +12,10 @@ const { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', {
 });
 
 useHead({
-  meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
+  meta: [
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { name: 'theme-color', content: '#F2F2F2' },
+  ],
   link: [
     { rel: 'icon', href: '/favicon.ico', sizes: '48x48' },
     { rel: 'icon', href: '/zksync-icon_48.svg', sizes: 'any', type: 'image/svg+xml' },

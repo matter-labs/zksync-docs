@@ -63,6 +63,12 @@ export default defineNuxtConfig({
           type: 'image/png',
         },
         {
+          src: '/zksync-maskable.png',
+          sizes: '128x128',
+          type: 'image/png',
+          purpose: 'maskable',
+        },
+        {
           src: '/zksync-icon_180.png',
           sizes: '180x180',
           type: 'image/png',
