@@ -45,6 +45,8 @@ export default defineNuxtConfig({
     manifest: {
       name: 'ZKsync Developer Documentation',
       short_name: 'ZKsync Docs',
+      description:
+        'ZKsync Docs bring you all information you need about our protocol, APIs, SDKs, ZK Stack, and ZK chains. Start with our guides and tutorials, or go deep into our architecture and protocol specification.',
       theme_color: '#F2F2F2',
       icons: [
         {

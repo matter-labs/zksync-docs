@@ -18,7 +18,7 @@ useHead({
   ],
   link: [
     { rel: 'icon', href: '/favicon.ico', sizes: '48x48' },
-    { rel: 'icon', href: '/zksync-icon_48.svg', sizes: 'any', type: 'image/svg+xml' },
+    { rel: 'icon', href: '/zksync-icon_150.svg', sizes: 'any', type: 'image/svg+xml' },
     { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
   ],
   htmlAttrs: {
