@@ -47,7 +47,7 @@ useSeoMeta({
 
 <template>
   <div>
-    <NuxtPwaAssets />
+    <NuxtPwaManifest />
     <NuxtLoadingIndicator />
 
     <HeaderComponent :search="true" />

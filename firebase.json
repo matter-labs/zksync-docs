@@ -4,6 +4,19 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "headers": [
       {
+        "source": "/",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-store, no-cache, must-revalidate, private"
+          },
+          {
+            "key": "Max-Age",
+            "value": "0"
+          }
+        ]
+      },
+      {
         "source": "/sw.js",
         "headers": [
           {
@@ -43,20 +56,16 @@
         ]
       },
       {
-        "source": "/",
+        "source": "**/*.@(eot|otf|ttf|ttc|woff|woff2|ico|font.css)",
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "no-store, no-cache, must-revalidate, private"
-          },
-          {
-            "key": "Max-Age",
-            "value": "0"
+            "value": "max-age=31536000"
           }
         ]
       },
       {
-        "source": "**/*.@(eot|otf|ttf|ttc|woff|woff2|ico|font.css)",
+        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|tiff|css|js|json)",
         "headers": [
           {
             "key": "Cache-Control",
