@@ -49,7 +49,7 @@ Atlas is a browser-based IDE with an integrated AI assistant that allows you to 
 directly from your browser. Click the button below to open the project in Atlas.
 
 :u-button{ icon="i-heroicons-code-bracket" size="lg" color="primary" variant="solid" :trailing="false"
-to="https://app.atlaszk.com/projects?template=https://github.com/ZKsync-Community-Hub/zksync-quickstart-atlas&open=/contracts/TestToken.sol&chainId=%%zk_testnet_chain_id%%"
+to="https://app.atlaszk.com/templates/veztvqXQe4IL2CN89_YVf?chainId=%%zk_testnet_chain_id%%&openFile=/contracts/TestToken.sol"
 target="_blank" label="Open smart contract in Atlas"}
 
 You can see the contract in the Atlas code editor. In the right sidebar,
@@ -71,43 +71,41 @@ Once compiled sign the transaction with your wallet and wait until its processed
 In the `scripts` folder you can find the `mint-token.ts`  script containing the following code:
 
 ```ts
-import { AtlasEnvironment } from "atlas-ide";
-import TokenArtifact from "../artifacts/TestToken";
-import * as ethers from "ethers";
+import { ethers } from "hardhat";
 
 // Address of the ERC20 token contract
-const TOKEN_CONTRACT_ADDRESS = ""
+const TOKEN_CONTRACT_ADDRESS = "";
 // Wallet that will receive tokens
-const RECEIVER_WALLET    = "";
+const RECEIVER_WALLET = "";
 // Amount of tokens to mint in ETH format, e.g. 1.23
-const TOKEN_AMOUNT    = "";
+const TOKEN_AMOUNT = "";
 
-export async function main (atlas: AtlasEnvironment) {
-  const provider = new ethers.providers.Web3Provider(atlas.provider);
-  const wallet = provider.getSigner();
-
-  // initialise token contract with address, abi and signer
-  const tokenContract= new ethers.Contract(
-    TOKEN_CONTRACT_ADDRESS,
-    TokenArtifact.TestToken.abi,
-    wallet
-  );
+async function main() {
+  const Token = await ethers.getContractFactory("TestToken");
+  const tokenContract = Token.attach(TOKEN_CONTRACT_ADDRESS);
 
   console.log("Minting tokens...");
+
   const tx = await tokenContract.mint(
     RECEIVER_WALLET,
-    ethers.utils.parseEther(TOKEN_AMOUNT)
+    ethers.parseEther(TOKEN_AMOUNT),
   );
   await tx.wait();
 
-
   console.log("Success!");
-  console.log(`
-    The account ${RECEIVER_WALLET} now has
-    ${await tokenContract.balanceOf(RECEIVER_WALLET)} tokens`
+  console.log(
+    `The account ${RECEIVER_WALLET} now has ${await tokenContract.balanceOf(
+      RECEIVER_WALLET,
+    )} tokens`,
   );
-
 }
+
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
 ```
 
 This scripts uses `ethers` to interact with the contract we’ve just deployed.
