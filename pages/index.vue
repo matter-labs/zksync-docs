@@ -28,6 +28,7 @@ defineOgImage({
         <vue-particles
           id="tsparticles"
           url="particles.json"
+          style="z-index: -10"
         />
       </ClientOnly>
       <template #headline>

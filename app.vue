@@ -12,8 +12,15 @@ const { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', {
 });
 
 useHead({
-  meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
-  link: [{ rel: 'icon', href: '/favicon.ico' }],
+  meta: [
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { name: 'theme-color', content: '#F2F2F2' },
+  ],
+  link: [
+    { rel: 'icon', href: '/favicon.ico', sizes: '48x48' },
+    { rel: 'icon', href: '/zksync-icon_150.svg', sizes: 'any', type: 'image/svg+xml' },
+    { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+  ],
   htmlAttrs: {
     lang: 'en',
   },
@@ -40,6 +47,7 @@ useSeoMeta({
 
 <template>
   <div>
+    <NuxtPwaManifest />
     <NuxtLoadingIndicator />
 
     <HeaderComponent :search="true" />
