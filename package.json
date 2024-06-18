@@ -53,5 +53,10 @@
     "prepare": "node .husky/install.mjs",
     "postinstall": "nuxt prepare",
     "ci:check": "bun run lint:eslint && bun run lint:prettier && bun run lint:spelling && bun run lint:markdown"
+  },
+  "stackblitz": {
+    "installDependencies": true,
+    "startCommanad": "bun run dev",
+    "corsProxy": true
   }
 }
