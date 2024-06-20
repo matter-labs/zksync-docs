@@ -1,6 +1,6 @@
 ---
 title: General Paymaster
-description: Learn to deploy contract factories in the zkSync environment.
+description: Learn to deploy contract factories in the ZKsync environment.
 ---
 
 Run the following command in your terminal to initialize the project.
@@ -16,14 +16,14 @@ cd contract-paymaster-quickstart
 
 ---
 
-## Understanding the `GeneralPaymaster` contract
+## Understanding the `GaslessPaymaster` contract
 
-Let's start by reviewing the [`GeneralPaymaster.sol`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/contracts/GaslessPaymaster.sol)
+Let's start by reviewing the [`GaslessPaymaster.sol`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/contracts/GaslessPaymaster.sol)
 contract in the `contracts/` directory:
 
 ::drop-panel
-  ::panel{label="GeneralPaymaster.sol"}
-    ```solidity [GeneralPaymaster.sol]
+  ::panel{label="GaslessPaymaster.sol"}
+    ```solidity [GaslessPaymaster.sol]
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
 
@@ -121,7 +121,7 @@ exclusively callable by the system's bootloader, adding an extra layer of securi
 
 ---
 
-## Compile and deploy the `GeneralPaymaster` contract
+## Compile and deploy the `GaslessPaymaster` contract
 
 :display-partial{path = "/_partials/_compile-solidity-contracts"}
 
@@ -130,7 +130,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for zkSync Era with zksolc v1.4.0 and solc v0.8.17
+Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
 Compiling 4 Solidity file
 Successfully compiled 4 Solidity file
 ```
@@ -224,15 +224,15 @@ Estimated deployment cost: 0.0004922112 ETH
 
 Requesting contract verification...
 Your verification ID is: 10634
-Contract successfully verified on zkSync block explorer!
+Contract successfully verified on ZKsync block explorer!
 Paymaster ETH balance is now 5000000000000000
 ```
 
 ---
 
-## Interact with the GeneralPaymaster contract
+## Interact with the GaslessPaymaster contract
 
-This section will navigate you through the steps to interact with the `GeneralPaymaster` contract,
+This section will navigate you through the steps to interact with the `GaslessPaymaster` contract,
 using it to cover transaction fees for your operation.
 
 The interaction script is situated in the `/deploy/interact/` directory, named [`interactWithGaslessPaymaster.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/deploy/interact/interactWithGaslessPaymaster.ts).

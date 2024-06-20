@@ -20,7 +20,7 @@ is common for Yul and EVMLA representations.
 
 Original [EVM](https://www.evm.codes/#f3?fork=shanghai) instruction.
 
-This instruction works differently in deploy code. For more information, see [the zkSync Era documentation](/build/developer-reference/ethereum-differences/evm-instructions#return-stop).
+This instruction works differently in deploy code. For more information, see [the ZKsync Era documentation](/build/developer-reference/ethereum-differences/evm-instructions#return-stop).
 
 ### LLVM IR
 

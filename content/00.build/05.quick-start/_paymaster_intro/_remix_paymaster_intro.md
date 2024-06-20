@@ -7,7 +7,7 @@ Remix does not support `zksync-ethers` yet so you can not use it to run this scr
 ::
 
 To open the project in Remix, use the “Clone” option from the file explorer to import it from the following GitHub
-repository:`https://github.com/zkSync-Community-Hub/zksync-quickstart-remix`
+repository:`https://github.com/ZKsync-Community-Hub/zksync-quickstart-remix`
 
 ![Clone repo in Remix](/images/remix-plugin-clone-repo.gif)
 
@@ -131,7 +131,7 @@ const NEW_MESSAGE = "This tx cost me no ETH!";
 
 Next, make sure the script file is selected in the Remix editor and click on the “▶️” button. You’ll see the progress in the console.
 
-![Contract events in zkSync explorer](/images/101-paymasters/remix-paymaster-tx.png)
+![Contract events in ZKsync explorer](/images/101-paymasters/remix-paymaster-tx.png)
 
 If everything worked as expected, only the ERC20 balance will decrease, meaning the fee was paid with the ERC20 token
 instead of ETH.
