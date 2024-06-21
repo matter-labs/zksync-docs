@@ -10,7 +10,7 @@ zkevm
 zkforge
 zkout
 zksolc
-ZK Stack
+zkstack
 zksync
 zksync-cli
 zkvyper
