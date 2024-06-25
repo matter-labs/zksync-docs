@@ -2,6 +2,7 @@
 boojum
 !MatterLabs
 Matter Labs
+!Hyperchain
 Zeek
 Zeeks
 zkcast
@@ -10,7 +11,11 @@ zkevm
 zkforge
 zkout
 zksolc
-zkstack
+ZK Chain
+!ZKChain
+!zkStack
+-zkstack-
+ZK Stack
 zksync
 zksync-cli
 zkvyper

@@ -81,11 +81,6 @@
         "type": 301
       },
       {
-        "source": "/build/developer-reference/fee-model",
-        "destination": "/build/developer-reference/fee-model",
-        "type": 301
-      },
-      {
         "source": "/build/developer-reference/zksync-overview",
         "destination": "/build/developer-reference/protocol",
         "type": 301
