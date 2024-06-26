@@ -5,7 +5,7 @@ Atlas is a browser-based IDE with an integrated AI assistant that allows you to 
 directly from your browser. Click the button below to open the project in Atlas.
 
 :u-button{ icon="i-heroicons-code-bracket" size="lg" color="primary" variant="solid" :trailing="false"
-to="https://app.atlaszk.com/templates/5kudywViAzLg5v5apIQan?chainId=%%zk_testnet_chain_id%%&openFile=/contracts/ZeekSecretMessages.sol"
+to="https://app.atlaszk.com/templates/33EAJkwrTKFaDJiEuy9Om?chainId=%%zk_testnet_chain_id%%&openFile=/contracts/ZeekSecretMessages.sol"
 target="_blank" label="Open smart contract in Atlas"}
 
 ### Compile and deploy the contract
