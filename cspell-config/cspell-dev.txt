@@ -30,6 +30,7 @@ Diataxis
 dockerized
 Dockerized
 dutterbutter
+ebnf
 ecadd
 ecmul
 ewasm
@@ -90,6 +91,7 @@ sstore
 syncvm
 tlsv1
 tokio
+unroller
 viem
 Viem
 VRFs
@@ -101,3 +103,4 @@ ZKEVM
 zkout
 zksolc
 zkvyper
+zasm
