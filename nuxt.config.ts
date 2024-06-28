@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  extends: [['github:matter-labs/docs-nuxt-template', { install: true }], ['github:zksync-sdk/sdk-docs']],
+  extends: [['@matterlabs/docs-nuxt-template'], ['github:zksync-sdk/sdk-docs']],
   modules: ['@nuxt/content', '@nuxt/ui', '@nuxt/eslint', '@nuxtjs/seo', 'nuxt-gtag', '@vite-pwa/nuxt'],
   site: {
     name: 'ZKsync Docs',
