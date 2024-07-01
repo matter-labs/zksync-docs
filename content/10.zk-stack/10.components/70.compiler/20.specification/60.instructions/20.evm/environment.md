@@ -19,7 +19,7 @@ Original [EVM](https://www.evm.codes/#31?fork=shanghai) instruction.
 
 ### System Contract
 
-This information is requested a System Contract called [L2EthToken](https://github.com/matter-labs/era-system-contracts/blob/main/contracts/L2EthToken.sol).
+This information is requested a System Contract called [L2BaseToken](https://github.com/code-423n4/2024-03-zksync/blob/main/code/system-contracts/contracts/L2BaseToken.sol).
 
 On how the System Contract is called, see [this section](/zk-stack/components/compiler/specification/system-contracts#environmental-data-storage).
 

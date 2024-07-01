@@ -3,6 +3,6 @@
   - eslint
 '*.md':
   - markdownlint-cli2
-  - cspell lint --file
+  - cspell lint --no-must-find-files --files
 '*.{json,yml}':
   - prettier --list-different

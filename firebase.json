@@ -76,6 +76,16 @@
     ],
     "redirects": [
       {
+        "source": "/build/developer-reference/intro-rollups",
+        "destination": "/build/developer-reference/protocol",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/zksync-overview",
+        "destination": "/build/developer-reference/protocol",
+        "type": 301
+      },
+      {
         "source": "/sdks/js/:path*.@(html|md)",
         "destination": "/sdk/js/ethers/v5/:path",
         "type": 301
