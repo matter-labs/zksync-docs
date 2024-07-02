@@ -1,22 +1,20 @@
 ---
-title: Hashes
+title: Sha3
 description:
 ---
 
-## SHA3
+Original [EVM instruction](https://www.evm.codes/#20?fork=shanghai).
 
-Original [EVM](https://www.evm.codes/#20?fork=shanghai) instruction.
-
-### System Contract
+## System Contract
 
 This instruction is handled by a System Contract called [Keccak256](https://github.com/matter-labs/era-system-contracts/blob/main/contracts/precompiles/Keccak256.yul),
 which is a wrapper around the EraVM precompile.
 
-On how the System Contract is called, see [this section](/zk-stack/components/compiler/specification/system-contracts#keccak256-hash-function).
+On how the System Contract is called, see [this section](https://github.com/code-423n4/2024-03-zksync/blob/main/docs/VM%20Section/How%20compiler%20works/system_contracts.md).
 
-### LLVM IR
+## LLVM IR
 
-```txt
+```text
 define i256 @__sha3(i8 addrspace(1)* nocapture nofree noundef %0, i256 %1, i1 %throw_at_failure) "noinline-oz" #1 personality i32()* @__personality {
 entry:
   %addr_int = ptrtoint i8 addrspace(1)* %0 to i256
