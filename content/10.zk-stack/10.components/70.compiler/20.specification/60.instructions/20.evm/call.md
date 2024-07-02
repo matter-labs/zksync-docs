@@ -1,5 +1,5 @@
 ---
-title: Calls
+title: Call
 description:
 ---
 
