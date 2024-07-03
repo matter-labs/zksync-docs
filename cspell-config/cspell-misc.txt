@@ -1,9 +1,14 @@
+code4rena
 Code4rena
 Consensys
 Cyfrin
+danksharding
+Danksharding
+decommitted
 GRVT
 Hola
 Icones
+immediates
 Immunefi
 initializable
 Initializable
