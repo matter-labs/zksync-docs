@@ -5,6 +5,6 @@
  */
 export default defineAppConfig({
   seo: {
-    siteName: 'ZKsyncDocs',
+    siteName: 'ZKsync Docs',
   },
 });
