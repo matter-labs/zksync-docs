@@ -116,7 +116,7 @@
         "type": 301
       },
       {
-        "source": "/build/tooling/zksync-cli/*.@(html|md)",
+        "source": "/build/tooling/zksync-cli/*",
         "destination": "/build/zksync-cli",
         "type": 301
       },
