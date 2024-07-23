@@ -111,8 +111,13 @@
         "type": 301
       },
       {
-        "source": "/build/tooling/zksync-cli/getting-started.html",
-        "destination": "/build/tooling/zksync-cli",
+        "source": "/build/tooling/zksync-cli",
+        "destination": "/build/zksync-cli",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/zksync-cli/*.@(html|md)",
+        "destination": "/build/zksync-cli",
         "type": 301
       },
       {

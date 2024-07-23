@@ -23,7 +23,7 @@ features:
     - title: 'Develop with zksync-cli'
       description: 'Boost your development workflow with the zksync-cli tool.'
       icon: 'i-simple-icons-windowsterminal'
-      to: '/build/tooling/zksync-cli'
+      to: '/build/zksync-cli'
     - title: 'Architecture'
       description: 'Learn about the ZKsync architecture and how it works under the hood.'
       icon: 'i-heroicons-sparkles-20-solid'
