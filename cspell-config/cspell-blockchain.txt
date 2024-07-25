@@ -2,6 +2,7 @@ Aave
 arithmetization
 BoxUups
 Buterin
+Cronos
 Dappradar
 DRPC
 Echoo
