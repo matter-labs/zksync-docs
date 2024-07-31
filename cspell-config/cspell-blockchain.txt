@@ -8,6 +8,7 @@ DRPC
 Echoo
 Eigen
 Enkrypt
+Envio
 ethereum
 EVM
 evmla
