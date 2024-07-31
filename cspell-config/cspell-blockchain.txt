@@ -12,6 +12,7 @@ ethereum
 EVM
 evmla
 geth
+reth
 gwei
 !HardHat
 IERC
@@ -55,3 +56,4 @@ Zeeve
 Zerion
 Zetta
 Zonic
+paradigmxyz

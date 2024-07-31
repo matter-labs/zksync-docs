@@ -2,7 +2,89 @@
   "hosting": {
     "public": ".output/public",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "headers": [
+      {
+        "source": "/",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-store, no-cache, must-revalidate, private"
+          },
+          {
+            "key": "Max-Age",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "source": "/sw.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-store, no-cache, must-revalidate, private"
+          },
+          {
+            "key": "Max-Age",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "source": "/manifest.webmanifest",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-store, no-cache, must-revalidate, private"
+          },
+          {
+            "key": "Max-Age",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "source": "/index.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-store, no-cache, must-revalidate, private"
+          },
+          {
+            "key": "Max-Age",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(eot|otf|ttf|ttc|woff|woff2|ico|font.css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|tiff|css|js|json)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      }
+    ],
     "redirects": [
+      {
+        "source": "/build/developer-reference/intro-rollups",
+        "destination": "/build/developer-reference/protocol",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/zksync-overview",
+        "destination": "/build/developer-reference/protocol",
+        "type": 301
+      },
       {
         "source": "/sdks/js/:path*.@(html|md)",
         "destination": "/sdk/js/ethers/v5/:path",
@@ -19,8 +101,13 @@
         "type": 301
       },
       {
-        "source": "/build/quick-start/*.@(html|md)",
-        "destination": "/build/quick-start",
+        "source": "/build/quick-start/*",
+        "destination": "/build/start-coding/quick-start",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-101/*",
+        "destination": "/build/start-coding/zksync-101",
         "type": 301
       },
       {
@@ -29,8 +116,18 @@
         "type": 301
       },
       {
-        "source": "/build/tooling/zksync-cli/getting-started.html",
-        "destination": "/build/tooling/zksync-cli",
+        "source": "/build/tooling/zksync-cli",
+        "destination": "/build/zksync-cli",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/zksync-cli/troubleshooting",
+        "destination": "/build/zksync-cli/troubleshooting",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/zksync-cli/*",
+        "destination": "/build/zksync-cli/reference",
         "type": 301
       },
       {

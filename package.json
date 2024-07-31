@@ -1,7 +1,7 @@
 {
   "name": "zksync-docs",
   "type": "module",
-  "description": "zkSync Docs V3",
+  "description": "ZKsync Docs V3",
   "version": "0.0.0",
   "license": "MIT",
   "devDependencies": {
@@ -24,17 +24,19 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@matterlabs/docs-nuxt-template": "2.3.0",
     "@nuxt/content": "^2.12.1",
     "@nuxt/eslint": "^0.3.12",
     "@nuxt/fonts": "^0.3.0",
     "@nuxt/image": "^1.6.0",
     "@nuxt/ui-pro": "^1.0.2",
     "@nuxtjs/seo": "^2.0.0-rc.10",
-    "nuxt-headlessui": "^1.2.0",
     "@tsparticles/slim": "^3.3.0",
     "@tsparticles/vue3": "^3.0.1",
+    "@vite-pwa/nuxt": "^0.8.0",
     "nuxt": "^3.11.2",
     "nuxt-gtag": "^2.0.6",
+    "nuxt-headlessui": "^1.2.0",
     "nuxt-og-image": "^3.0.0-rc.45",
     "rehype-katex": "^7.0.0",
     "remark-math": "^6.0.0",
@@ -52,5 +54,10 @@
     "prepare": "node .husky/install.mjs",
     "postinstall": "nuxt prepare",
     "ci:check": "bun run lint:eslint && bun run lint:prettier && bun run lint:spelling && bun run lint:markdown"
+  },
+  "stackblitz": {
+    "installDependencies": true,
+    "startCommanad": "bun run dev",
+    "corsProxy": true
   }
 }

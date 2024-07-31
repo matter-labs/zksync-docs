@@ -12,8 +12,15 @@ const { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', {
 });
 
 useHead({
-  meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
-  link: [{ rel: 'icon', href: '/favicon.ico' }],
+  meta: [
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { name: 'theme-color', content: '#F2F2F2' },
+  ],
+  link: [
+    { rel: 'icon', href: '/favicon.ico', sizes: '48x48' },
+    { rel: 'icon', href: '/zksync-icon_150.svg', sizes: 'any', type: 'image/svg+xml' },
+    { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+  ],
   htmlAttrs: {
     lang: 'en',
   },
@@ -22,30 +29,25 @@ useHead({
 useSeoMeta({
   titleTemplate: `%s - ${seo?.siteName}`,
   ogSiteName: seo?.siteName,
-  ogUrl: 'https://docs.zksync.io/',
+  ogUrl: 'https://docs.zksync.io',
   ogImageAlt: 'Hyperscaling Ethereum with ZK tech.',
   ogDescription:
-    'zkSync Docs bring you all information you need about our protocol, APIs, SDKs, ZK Stack, and ZK Chains. Start with our guides and tutorials, or go deep into our architecture and protocol specification.',
+    'ZKsync Docs bring you all information you need about our protocol, APIs, SDKs, ZK Stack, and ZK chains. Start with our guides and tutorials, or go deep into our architecture and protocol specification.',
   description:
-    'zkSync Docs bring you all information you need about our protocol, APIs, SDKs, ZK Stack, and ZK Chains. Start with our guides and tutorials, or go deep into our architecture and protocol specification.',
+    'ZKsync Docs bring you all information you need about our protocol, APIs, SDKs, ZK Stack, and ZK chains. Start with our guides and tutorials, or go deep into our architecture and protocol specification.',
   twitterDescription:
-    'zkSync Docs bring you all information you need about our protocol, APIs, SDKs, ZK Stack, and ZK Chains. Start with our guides and tutorials, or go deep into our architecture and protocol specification.',
+    'ZKsync Docs bring you all information you need about our protocol, APIs, SDKs, ZK Stack, and ZK chains. Start with our guides and tutorials, or go deep into our architecture and protocol specification.',
   twitterTitle: `%s`,
   twitterCard: 'summary_large_image',
   twitterSite: '@zksync',
   twitterCreator: '@zkSyncDevs',
   twitterImageAlt: 'Hyperscaling Ethereum with ZK tech.',
 });
-
-defineOgImage({
-  component: 'OgImageZK',
-  title: seo?.siteName,
-  description: 'Access detailed guides, references and resources that will help you build with zkSync Era.',
-});
 </script>
 
 <template>
   <div>
+    <NuxtPwaManifest />
     <NuxtLoadingIndicator />
 
     <HeaderComponent :search="true" />

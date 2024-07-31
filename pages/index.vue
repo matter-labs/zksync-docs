@@ -1,12 +1,20 @@
 <script setup lang="ts">
 const { data: page } = await useAsyncData('index', () => queryContent('/').findOne());
 
+const { seo } = useAppConfig();
+
 useSeoMeta({
   titleTemplate: '',
   title: page.value?.title,
   ogTitle: page.value?.title,
   description: page.value?.description,
   ogDescription: page.value?.description,
+});
+
+defineOgImage({
+  component: 'OgImageZK',
+  title: seo?.siteName,
+  description: 'Access detailed guides, references and resources that will help you build with ZKsync Era.',
 });
 </script>
 
@@ -20,6 +28,7 @@ useSeoMeta({
         <vue-particles
           id="tsparticles"
           url="particles.json"
+          style="z-index: -10"
         />
       </ClientOnly>
       <template #headline>
