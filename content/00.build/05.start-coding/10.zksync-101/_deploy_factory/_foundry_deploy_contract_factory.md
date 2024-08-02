@@ -99,7 +99,7 @@ our new `CrowdfundingFactory`.
 command:
 
     ```bash
-    forge script script/DeployFactory.s.sol:DeployFactoryAndCreateCampaign --account myKeystore --sender <KEYSTORE_ADDRESS> --rpc-url inMemoryNode --broadcast --zksync --rpc-url inMemoryNode --zksync
+    forge create src/CrowdfundFactory.sol:CrowdfundingFactory --account myKeystore --rpc-url inMemoryNode --zksync
     ```
 
     Upon a successfull deployment you'll receive details of the deploying address, the contract address,
@@ -114,9 +114,7 @@ command:
 1. Using the `CrowdfundingFactory` contract address let's deploy our `CrowdfundingCampaign`:
 
     ```bash
-    cast send 0x607545Fd35ef49d7445555ddFa22938fD4Efb219 "createCampaign(uint256)" "1" --rpc-url zkSyncSepoliaTestnet --chain %%zk_testnet_chain_id%% --account myKeystore --sender <KEYSTORE_ADDRESS>
-    # To use the contract factory on local in-memory node:
-    # cast send 0x607545Fd35ef49d7445555ddFa22938fD4Efb219 "createCampaign(uint256)" "1" --rpc-url inMemoryNode --chain 260 --account myKeystore --sender <KEYSTORE_ADDRESS>
+    cast send 0x607545Fd35ef49d7445555ddFa22938fD4Efb219 "createCampaign(uint256)" "1" --rpc-url inMemoryNode --account myKeystore
     ```
 
     Upon a successfull deployment you'll receive details of the transaction, including the
