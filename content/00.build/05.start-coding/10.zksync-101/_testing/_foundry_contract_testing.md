@@ -7,7 +7,7 @@ title: Foundry | Contract Testing
 Run the following command in your terminal to initialize the Foundry project.
 
 ```sh
-npx zksync-cli@latest create --template qs-fs-testing foundry-contract-testing-quickstart
+zksync-cli create --template qs-fs-testing foundry-contract-testing-quickstart
 cd foundry-contract-testing-quickstart
 ```
 
@@ -20,8 +20,8 @@ guide - testing our `CrowdfundingCampaign.sol` contract. Here's a quick
 refresher on its structure:
 
 ::drop-panel
-  ::panel{label="CrowdfundingCampaign.sol"}
-    ```solidity [CrowdfundingCampaign.sol]
+  ::panel{label="src/CrowdfundingCampaign.sol"}
+    ```solidity [src/CrowdfundingCampaign.sol]
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
 
@@ -116,7 +116,7 @@ start by reviewing the tests for `CrowdfundingCampaign.sol` contract provided
 during the initialization step in the `/test` directory, specifically the
 [`CrowdfundingCampaign.t.sol` file](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/foundry/testing/test/CrowdfundingCampaign.t.sol).
 
-```solidity [CrowdfundingCampaign.sol]
+```solidity [test/CrowdfundingCampaign.t.sol]
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 

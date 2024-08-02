@@ -5,7 +5,7 @@ title: Hardhat | Contract Upgrading
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli@latest create --template qs-upgrade contract-upgrade-quickstart
+zksync-cli create --template qs-upgrade contract-upgrade-quickstart
 cd contract-upgrade-quickstart
 ```
 
@@ -13,9 +13,19 @@ cd contract-upgrade-quickstart
 If you encounter an error while installing project dependencies using NPM as your package manager, try running `npm install --force`.
 ::
 
-## Set up your wallet
+## Update the hardhat.config.ts
 
-:display-partial{path = "/build/start-coding/zksync-101/_partials/_setup-wallet"}
+Since we are using the "In memory node" with ZKsync CLI, we need to set the default network Hardhat uses
+for deploying.
+
+Open up the `hardhat.config.ts` file and set the `defaultNetwork` to `inMemoryNode`.
+
+```ts
+// ...
+const config: HardhatUserConfig = {
+  defaultNetwork: "inMemoryNode",
+// ...
+```
 
 ---
 
@@ -26,13 +36,13 @@ transitioning to a proxy pattern. This approach separates the
 contract's logic (which can be upgraded) from its persistent state
 (stored in the proxy).
 
-In the `contracts/` directory you'll observe the refactored the [`CrowdfundingCampaign` contract](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/contracts/CrowdfundingCampaign.sol)
+In the `contracts/` directory you'll observe the refactored [`CrowdfundingCampaign` contract](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/contracts/CrowdfundingCampaign.sol)
 which initializes state variables through an
 `initialize` function instead of the constructor, in line with the proxy pattern.
 
 **Updated Contract Structure:**
 
-```solidity [CrowdfundingCampaign.sol]
+```solidity [contracts/CrowdfundingCampaign.sol]
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -91,25 +101,9 @@ need to re-compile.
 
 To compile the contracts in the project, run the following command:
 
-::code-group
-
 ```bash [npm]
 npm run compile
 ```
-
-```bash [yarn]
-yarn compile
-```
-
-```bash [pnpm]
-pnpm run compile
-```
-
-```bash [bun]
-bun run compile
-```
-
-::
 
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number
@@ -125,9 +119,9 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 ## Deploy the beacon and contract
 
-You'll find the necessary deployment script at [`/deploy/deployBeaconProxy.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/deploy/deployBeaconProxy.ts).
+You'll find the necessary deployment script at [`deploy/deployBeaconProxy.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/deploy/deployBeaconProxy.ts).
 
-```typescript [deployBeaconProxy.ts]
+```typescript [deploy/deployBeaconProxy.ts]
 import { getWallet } from "./utils";
 import { Deployer } from '@matterlabs/hardhat-zksync';
 import { ethers } from "ethers";
@@ -166,37 +160,11 @@ allowing for seamless upgrades without altering the proxy's address.
 The `fundingGoalInWei parameter`, converted from ether to wei, is passed during
 this step to initialize the contract with a funding goal.
 
-Execute the deployment command corresponding to your package manager. The default command
-deploys to the configured network in your Hardhat setup. For local deployment, append
-`--network inMemoryNode` to deploy to the local in-memory node running.
-
-::code-group
+Run the following command to deploy our contract with a beacon proxy:
 
 ```bash [npm]
 npx hardhat deploy-zksync --script deployBeaconProxy.ts
-# To deploy the contract on local in-memory node:
-# npx hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
 ```
-
-```bash [yarn]
-yarn hardhat deploy-zksync --script deployBeaconProxy.ts
-# To deploy the contract on local in-memory node:
-# yarn hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
-```
-
-```bash [pnpm]
-pnpm exec hardhat deploy-zksync --script deployBeaconProxy.ts
-# To deploy the contract on local in-memory node:
-# pnpm exec hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
-```
-
-```bash [bun]
-bun run hardhat deploy-zksync --script deployBeaconProxy.ts
-# To deploy the contract on local in-memory node:
-# bun run hardhat deploy-zksync --script deployBeaconProxy.ts --network inMemoryNode
-```
-
-::
 
 Upon successful deployment, you'll receive output detailing the deployment process,
 including the contract addresses of the implementation
@@ -379,30 +347,21 @@ Fundraising goal: 100000000000000000
 
 ## Verify upgradable contracts
 
+::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
+Since we are using inMemoryNode for our smart contracts, we do not have the feature
+available to verify the smart contract.
+
+The following explains how you will need to verify an upgraded smart contract on testnet or mainnet.
+::
+
 For the verification of our upgradable contracts, it's essential to utilize the proxy address that was specified in our
 upgrade script.
 
 To proceed with verification, execute the following command:
 
-::code-group
-
 ```bash [npm]
 npx hardhat verify <BEACON-PROXY-ADDRESS>
 ```
-
-```bash [yarn]
-yarn hardhat verify <BEACON-PROXY-ADDRESS>
-```
-
-```bash [pnpm]
-pnpm exec hardhat verify <BEACON-PROXY-ADDRESS>
-```
-
-```bash [bun]
-bun run hardhat verify <BEACON-PROXY-ADDRESS>
-```
-
-::
 
 Upon successful verification, you'll receive output detailing the verification process:
 

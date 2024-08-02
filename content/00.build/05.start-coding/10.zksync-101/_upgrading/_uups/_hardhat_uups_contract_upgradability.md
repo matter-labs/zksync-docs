@@ -5,17 +5,23 @@ title: Hardhat | Contract Upgrading
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli@latest create --template qs-upgrade contract-upgrade-quickstart
+zksync-cli create --template qs-upgrade contract-upgrade-quickstart
 cd contract-upgrade-quickstart
 ```
 
-::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
-If you encounter an error while installing project dependencies using NPM as your package manager, try running `npm install --force`.
-::
+## Update the hardhat.config.ts
 
-## Set up your wallet
+Since we are using the "In memory node" with ZKsync CLI, we need to set the default network Hardhat uses
+for deploying.
 
-:display-partial{path="build/start-coding/zksync-101/_partials/_setup-wallet"}
+Open up the `hardhat.config.ts` file and set the `defaultNetwork` to `inMemoryNode`.
+
+```ts
+// ...
+const config: HardhatUserConfig = {
+  defaultNetwork: "inMemoryNode",
+// ...
+```
 
 ---
 
@@ -33,7 +39,7 @@ functions and the UUPS upgrade mechanism.
 
 **UUPS-Enabled Contract Structure:**
 
-```solidity [CrowdfundingCampaign_UUPS.sol]
+```solidity [contracts/CrowdfundingCampaign_UUPS.sol]
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -101,25 +107,9 @@ need to re-compile.
 
 To compile the contracts in the project, run the following command:
 
-::code-group
-
 ```bash [npm]
 npm run compile
 ```
-
-```bash [yarn]
-yarn compile
-```
-
-```bash [pnpm]
-pnpm run compile
-```
-
-```bash [bun]
-bun run compile
-```
-
-::
 
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number
@@ -137,7 +127,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 The script to deploy the `CrowdfundingCampaign_UUPS` contract is located at [`/deploy/deployUUPS.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/deploy/deployUUPS.ts).
 
-```typescript [deployUUPS.ts]
+```typescript [deploy/deployUUPS.ts]
 import { getWallet } from "./utils";
 import { Deployer } from '@matterlabs/hardhat-zksync';
 import { ethers } from "ethers";
@@ -172,37 +162,9 @@ The use of the UUPS pattern provides a secure and efficient mechanism for future
 This is used for setting up the initial state of the contract upon deployment, particularly important
 for upgradeable contracts where constructor usage is not possible.
 
-Execute the deployment command corresponding to your package manager. The default command
-deploys to the configured network in your Hardhat setup. For local deployment, append
-`--network inMemoryNode` to deploy to the local in-memory node running.
-
-::code-group
-
 ```bash [npm]
 npx hardhat deploy-zksync --script deployUUPS.ts
-# To deploy the contract on local in-memory node:
-# npx hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
 ```
-
-```bash [yarn]
-yarn hardhat deploy-zksync --script deployUUPS.ts
-# To deploy the contract on local in-memory node:
-# yarn hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
-```
-
-```bash [pnpm]
-pnpm exec hardhat deploy-zksync --script deployUUPS.ts
-# To deploy the contract on local in-memory node:
-# pnpm exec hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
-```
-
-```bash [bun]
-bun run hardhat deploy-zksync --script deployUUPS.ts
-# To deploy the contract on local in-memory node:
-# bun run hardhat deploy-zksync --script deployUUPS.ts --network inMemoryNode
-```
-
-::
 
 Upon successful deployment, you'll receive output detailing the deployment process,
 including the contract addresses of the implementation
@@ -265,7 +227,7 @@ function extendDeadline(uint256 _newDuration) public {
 ```
 
 This upgrade not only introduces the element of time to the campaign but also
-exemplifies the use of `modifiers` for enforcing contract conditions.
+demonstrates the use of `modifiers` for enforcing contract conditions.
 
 ### Compile the `CrowdfundingCampaignV2_UUPS` contract
 
@@ -286,13 +248,13 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 ### Upgrade to `CrowdfundingCampaignV2_UUPS`
 
 This section describes the initiating the upgrade to `CrowdfundingCampaignV2_UUPS.sol` contract.
-Let's start by reviewing the [`upgradeUUPSCrowdfundingCampaign.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/deploy/upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts)
-script in the `deploy/upgrade-scripts` directory:
+Let's start by reviewing the [`deploy/upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/deploy/upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts)
+script:
 
 Replace `YOUR_PROXY_ADDRESS_HERE` with the actual address of your
-deployed Transparent Proxy from the previous deployment step.
+deployed UUPS Proxy from the previous deployment step.
 
-```typescript [upgradeUUPSCrowdfundingCampaign.ts]
+```typescript [deploy/upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts]
 import { getWallet } from "../utils";
 import { Deployer } from '@matterlabs/hardhat-zksync';
 import { HardhatRuntimeEnvironment } from "hardhat/types";
@@ -335,25 +297,9 @@ functionalities without losing the existing state or funds.
 
 Execute the test command corresponding to your package manager:
 
-::code-group
-
 ```bash [npm]
 npx hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
 ```
-
-```bash [yarn]
-yarn hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
-```
-
-```bash [pnpm]
-pnpm exec hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
-```
-
-```bash [bun]
-bun run hardhat deploy-zksync --script upgrade-scripts/upgradeUUPSCrowdfundingCampaign.ts
-```
-
-::
 
 Upon successful deployment, you'll receive output detailing the upgrade process,
 including the new beacon address, and transaction hash:
@@ -368,28 +314,19 @@ CrowdfundingCampaignV2_UUPS initialized! 0xab959f588b64dc6dee1e94d5fa0da2ae205c7
 
 ## Verify upgradable contracts
 
+::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
+Since we are using inMemoryNode for our smart contracts, we do not have the feature
+available to verify the smart contract.
+
+The following explains how you will need to verify an upgraded smart contract on testnet or mainnet.
+::
+
 To verify our upgradable contracts we need to the proxy address we previously used in our upgrade script.
 With that execute the following command:
-
-::code-group
 
 ```bash [npm]
 npx hardhat verify <PROXY-ADDRESS>
 ```
-
-```bash [yarn]
-yarn hardhat verify <PROXY-ADDRESS>
-```
-
-```bash [pnpm]
-pnpm exec hardhat verify <PROXY-ADDRESS>
-```
-
-```bash [bun]
-bun run hardhat verify <PROXY-ADDRESS>
-```
-
-::
 
 Upon successful verification, you'll receive output detailing the verification process:
 
