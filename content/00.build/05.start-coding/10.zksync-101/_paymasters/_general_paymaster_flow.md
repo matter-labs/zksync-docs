@@ -6,24 +6,40 @@ description: Learn to deploy contract factories in the ZKsync environment.
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli@latest create --template qs-paymaster contract-paymaster-quickstart
+zksync-cli create --template qs-paymaster contract-paymaster-quickstart
 cd contract-paymaster-quickstart
 ```
 
-## Set up your wallet
+## Update the hardhat.config.ts
 
-:display-partial{path = "/build/start-coding/zksync-101/_partials/_setup-wallet"}
+Since we are using the "In memory node" with ZKsync CLI, we need to set the default network Hardhat uses
+for deploying.
+
+Open up the `hardhat.config.ts` file and set the `defaultNetwork` to `inMemoryNode`.
+
+```ts
+// ...
+const config: HardhatUserConfig = {
+  defaultNetwork: "inMemoryNode",
+// ...
+```
+
+::callout{icon="i-heroicons-information-circle" color="blue"}
+If you have not started up a local node yet from the Getting started page, run `zksync-cli dev start`.
+Make sure you are running the "In memory node" option.
+::
 
 ---
 
 ## Understanding the `GaslessPaymaster` contract
 
-Let's start by reviewing the [`GaslessPaymaster.sol`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/contracts/GaslessPaymaster.sol)
-contract in the `contracts/` directory:
+Let's start by reviewing the
+[`contracts/GaslessPaymaster.sol`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/contracts/GaslessPaymaster.sol)
+contract:
 
 ::drop-panel
-  ::panel{label="GaslessPaymaster.sol"}
-    ```solidity [GaslessPaymaster.sol]
+  ::panel{label="contracts/GaslessPaymaster.sol"}
+    ```solidity [contracts/GaslessPaymaster.sol]
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
 
@@ -139,7 +155,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 The script to deploy the `GaslessPaymaster` is located at [`/deploy/deployGaslessPaymaster.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/deploy/deployGaslessPaymaster.ts).
 
-```typescript [deployGaslessPaymaster.ts]
+```typescript [deploy/deployGaslessPaymaster.ts]
 import { deployContract, getWallet, getProvider } from "./utils";
 import { ethers } from "ethers";
 
@@ -182,33 +198,9 @@ Execute the deployment command corresponding to your package manager. The defaul
 deploys to the configured network in your Hardhat setup. For local deployment, append
 `--network inMemoryNode` to deploy to the local in-memory node running.
 
-::code-group
-
 ```bash [npm]
 npx hardhat deploy-zksync --script deployGaslessPaymaster.ts
-# To deploy the contract on local in-memory node:
-# npx hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
 ```
-
-```bash [yarn]
-yarn hardhat deploy-zksync --script deployGaslessPaymaster.ts
-# To deploy the contract on local in-memory node:
-# yarn hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
-```
-
-```bash [pnpm]
-pnpm exec hardhat deploy-zksync --script deployGaslessPaymaster.ts
-# To deploy the contract on local in-memory node:
-# pnpm exec hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
-```
-
-```bash [bun]
-bun run hardhat deploy-zksync --script deployGaslessPaymaster.ts
-# To deploy the contract on local in-memory node:
-# bun run hardhat deploy-zksync --script deployGaslessPaymaster.ts --network inMemoryNode
-```
-
-::
 
 Upon successful deployment, you'll receive output detailing the deployment process,
 including the contract address, source, and encoded constructor arguments:
@@ -222,9 +214,6 @@ Estimated deployment cost: 0.0004922112 ETH
  - Contract source: contracts/GaslessPaymaster.sol:GaslessPaymaster
  - Encoded constructor arguments: 0x
 
-Requesting contract verification...
-Your verification ID is: 10634
-Contract successfully verified on ZKsync block explorer!
 Paymaster ETH balance is now 5000000000000000
 ```
 
@@ -240,7 +229,7 @@ The interaction script is situated in the `/deploy/interact/` directory, named [
 Ensure the `CONTRACT_ADDRESS` and `PAYMASTER_ADDRESS` variables are set to your deployed contract and paymaster addresses, respectively.
 
 ::drop-panel
-  ::panel{label="interactWithGaslessPaymaster.ts"}
+  ::panel{label="deploy/interact/interactWithGaslessPaymaster.ts"}
 
   ```typescript [interactWithGaslessPaymaster.ts]
   import * as hre from "hardhat";
@@ -326,25 +315,9 @@ fees, providing a seamless experience for users.
 
 Execute the command corresponding to your package manager:
 
-::code-group
-
 ```bash [npm]
 npx hardhat deploy-zksync --script interact/interactWithGaslessPaymaster.ts
 ```
-
-```bash [yarn]
-yarn hardhat deploy-zksync --script interact/interactWithGaslessPaymaster.ts
-```
-
-```bash [pnpm]
-pnpm exec hardhat deploy-zksync --script interact/interactWithGaslessPaymaster.ts
-```
-
-```bash [bun]
-bun run hardhat deploy-zksync --script interact/interactWithGaslessPaymaster.ts
-```
-
-::
 
 Upon successful usage, you'll receive output detailing the transaction:
 
