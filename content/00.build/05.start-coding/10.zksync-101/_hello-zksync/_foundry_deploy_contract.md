@@ -7,7 +7,7 @@ title: Foundry | Deploy Contract
 Run the following command in your terminal to initialize the Foundry project.
 
 ```sh
-npx zksync-cli@latest create --template qs-fs-hello-zksync hello-zksync-foundry-quickstart
+zksync-cli create --template qs-fs-hello-zksync hello-zksync-foundry-quickstart
 cd hello-zksync-foundry-quickstart
 ```
 
@@ -142,9 +142,7 @@ the transaction broadcast and `vm.stopBroadcast()` to end it, facilitating the a
 Execute the deployment command.
 
 ```bash
-forge script script/Deploy.s.sol:DeployCrowdfundContract --account myKeystore --sender <KEYSTORE_ADDRESS> --rpc-url zkSyncSepoliaTestnet --broadcast --zksync
-# To deploy the contract on local in-memory node:
-# forge script script/Deploy.s.sol:DeployCrowdfundContract --account myKeystore --sender <KEYSTORE_ADDRESS> --rpc-url inMemoryNode --broadcast --zksync
+forge script script/Deploy.s.sol:DeployCrowdfundContract --account myKeystore --sender <KEYSTORE_ADDRESS> --rpc-url inMemoryNode --broadcast --zksync
 ```
 
 Upon successful deployment, you'll receive output detailing the deployment process,

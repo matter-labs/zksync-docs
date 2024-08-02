@@ -7,15 +7,9 @@ title: Foundry | Deploy Contract Factory
 Run the following command in your terminal to initialize the Foundry project.
 
 ```sh
-npx zksync-cli@latest create --template qs-fs-factories foundry-contract-factory-quickstart
+zksync-cli create --template qs-fs-factories foundry-contract-factory-quickstart
 cd foundry-contract-factory-quickstart
 ```
-
-## Set up your wallet
-
-:display-partial{path="build/start-coding/zksync-101/_partials/_setup-wallet"}
-
----
 
 ## Review the CrowdfundingFactory contract
 
@@ -105,9 +99,7 @@ our new `CrowdfundingFactory`.
 command:
 
     ```bash
-    forge create src/CrowdfundFactory.sol:CrowdfundingFactory --factory-deps src/CrowdfundingCampaign.sol:CrowdfundingCampaign --account myKeystore --sender <KEYSTORE_ADDRESS> --rpc-url zkSyncSepoliaTestnet --chain %%zk_testnet_chain_id%% --zksync
-    # To deploy the contract on local in-memory node:
-    # forge script script/DeployFactory.s.sol:DeployFactoryAndCreateCampaign --account myKeystore --sender <KEYSTORE_ADDRESS> --rpc-url inMemoryNode --broadcast --zksync
+    forge script script/DeployFactory.s.sol:DeployFactoryAndCreateCampaign --account myKeystore --sender <KEYSTORE_ADDRESS> --rpc-url inMemoryNode --broadcast --zksync --rpc-url inMemoryNode --zksync
     ```
 
     Upon a successfull deployment you'll receive details of the deploying address, the contract address,
