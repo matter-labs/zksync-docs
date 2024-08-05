@@ -4,15 +4,23 @@ title: Hardhat | Deploy Contract Factory
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli@latest create --template qs-factories contract-factory-quickstart
+zksync-cli create --template qs-factories contract-factory-quickstart
 cd contract-factory-quickstart
 ```
 
-## Set up your wallet
+## Update the hardhat.config.ts
 
-:display-partial{path="build/start-coding/zksync-101/_partials/_setup-wallet"}
+Since we are using the "In memory node" with ZKsync CLI, we need to set the default network Hardhat uses
+for deploying.
 
----
+Open up the `hardhat.config.ts` file and set the `defaultNetwork` to `inMemoryNode`.
+
+```ts
+// ...
+const config: HardhatUserConfig = {
+  defaultNetwork: "inMemoryNode",
+// ...
+```
 
 ## Compile the contracts
 
@@ -134,37 +142,11 @@ The deployment script is located at `/deploy/deployUsingFactory.ts`.
 - The `createCampaign` method is called on this instance to create
   and deploy a new crowdfunding campaign contract.
 
-Run the deployment command. The default command
-deploys to the configured network in your Hardhat setup. For local deployment, append
-`--network inMemoryNode` to deploy to the local in-memory node running.
-
-::code-group
+Run the deployment command.
 
 ```bash [npm]
-npx hardhat deploy-zksync --script deployUsingFactory.ts
-# To deploy the contract on local in-memory node:
-# npx hardhat deploy-zksync --script deployUsingFactory.ts --network inMemoryNode
+npm run deploy
 ```
-
-```bash [yarn]
-yarn hardhat deploy-zksync --script deployUsingFactory.ts
-# To deploy the contract on local in-memory node:
-# yarn hardhat deploy-zksync --script deployUsingFactory.ts --network inMemoryNode
-```
-
-```bash [pnpm]
-pnpx exec hardhat deploy-zksync --script deployUsingFactory.ts
-# To deploy the contract on local in-memory node:
-# pnpx exec hardhat deploy-zksync --script deployUsingFactory.ts --network inMemoryNode
-```
-
-```bash [bun]
-bun run hardhat deploy-zksync --script deployUsingFactory.ts
-# To deploy the contract on local in-memory node:
-# bun run hardhat deploy-zksync --script deployUsingFactory.ts --network inMemoryNode
-```
-
-::
 
 Upon successful deployment, you'll receive output detailing the deployment process,
 including the contract address, source, and encoded constructor arguments:

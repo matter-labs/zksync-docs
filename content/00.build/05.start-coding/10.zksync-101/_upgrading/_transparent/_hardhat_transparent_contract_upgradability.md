@@ -4,17 +4,23 @@ title: Hardhat | Contract Upgrading
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli@latest create --template qs-upgrade contract-upgrade-quickstart
+zksync-cli create --template qs-upgrade contract-upgrade-quickstart
 cd contract-upgrade-quickstart
 ```
 
-::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
-If you encounter an error while installing project dependencies using NPM as your package manager, try running `npm install --force`.
-::
+## Update the hardhat.config.ts
 
-## Set up your wallet
+Since we are using the "In memory node" with ZKsync CLI, we need to set the default network Hardhat uses
+for deploying.
 
-:display-partial{path = "build/start-coding/zksync-101/_partials/_setup-wallet"}
+Open up the `hardhat.config.ts` file and set the `defaultNetwork` to `inMemoryNode`.
+
+```ts
+// ...
+const config: HardhatUserConfig = {
+  defaultNetwork: "inMemoryNode",
+// ...
+```
 
 ---
 
@@ -27,14 +33,14 @@ contract's logic (which can be upgraded) from its persistent state
 
 ### Refactoring for Proxy Compatibility
 
-In the `contracts/` directory you'll observe the refactored the [`CrowdfundingCampaign` contract](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/contracts/CrowdfundingCampaign.sol)
+In the `contracts/` directory you'll observe the refactored [`CrowdfundingCampaign` contract](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/contracts/CrowdfundingCampaign.sol)
 which initializes state variables through an
 `initialize` function instead of the constructor, in line with the
 Transparent Proxy pattern.
 
 **Updated Contract Structure:**
 
-```solidity [CrowdfundingCampaign.sol]
+```solidity [contracts/CrowdfundingCampaign.sol]
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -93,25 +99,9 @@ need to re-compile.
 
 To compile the contracts in the project, run the following command:
 
-::code-group
-
 ```bash [npm]
 npm run compile
 ```
-
-```bash [yarn]
-yarn compile
-```
-
-```bash [pnpm]
-pnpm run compile
-```
-
-```bash [bun]
-bun run compile
-```
-
-::
 
 Upon successful compilation, you'll receive output detailing the
 `zksolc` and `solc` versions used during compiling and the number
@@ -127,7 +117,7 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 The deployment script is located at [`/deploy/deployTransparentProxy.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/deploy/deployTransparentProxy.ts).
 
-```typescript [deployTransparentProxy.ts]
+```typescript [deploy/deployTransparentProxy.ts]
 import { getWallet } from "./utils";
 import { Deployer } from '@matterlabs/hardhat-zksync';
 import { ethers } from "ethers";
@@ -159,37 +149,9 @@ This ensures the deployed contract can be upgraded in the future without losing 
 - **`initializer`**: Specifies the initialization method of the contract, `initialize` in this case,
 which is required for setting up the proxy's state upon deployment.
 
-Execute the deployment command corresponding to your package manager. The default command
-deploys to the configured network in your Hardhat setup. For local deployment, append
-`--network inMemoryNode` to deploy to the local in-memory node running.
-
-::code-group
-
 ```bash [npm]
 npx hardhat deploy-zksync --script deployTransparentProxy.ts
-# To deploy the contract on local in-memory node:
-# npx hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
 ```
-
-```bash [yarn]
-yarn hardhat deploy-zksync --script deployTransparentProxy.ts
-# To deploy the contract on local in-memory node:
-# yarn hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
-```
-
-```bash [pnpm]
-pnpm exec hardhat deploy-zksync --script deployTransparentProxy.ts
-# To deploy the contract on local in-memory node:
-# pnpm exec hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
-```
-
-```bash [bun]
-bun run hardhat deploy-zksync --script deployTransparentProxy.ts
-# To deploy the contract on local in-memory node:
-# bun run hardhat deploy-zksync --script deployTransparentProxy.ts --network inMemoryNode
-```
-
-::
 
 Upon successful deployment, you'll receive output detailing the deployment process,
 including the contract addresses of the implementation
@@ -245,7 +207,7 @@ safeguarding the contract from late contributions.
 To provide flexibility, a new function allows the owner to extend the deadline,
 offering adaptability to changing campaign needs.
 
-```solidity [CrowdfundingCampaignV2.sol]
+```solidity [contracts/CrowdfundingCampaignV2.sol]
 function extendDeadline(uint256 _newDuration) public {
     require(msg.sender == owner, "Only the owner can extend the deadline");
     deadline = block.timestamp + _newDuration;
@@ -253,7 +215,7 @@ function extendDeadline(uint256 _newDuration) public {
 ```
 
 This upgrade not only introduces the element of time to the campaign but also
-exemplifies the use of [`modifiers`](https://docs.soliditylang.org/en/latest/contracts.html#function-modifiers) for enforcing contract conditions.
+demonstrates the use of [`modifiers`](https://docs.soliditylang.org/en/latest/contracts.html#function-modifiers) for enforcing contract conditions.
 
 ### Compile contract
 :display-partial{path = "_partials/_compile-solidity-contracts"}
@@ -274,13 +236,13 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 This section guides you through upgrading the `CrowdfundingCampaign` contract
 to its second version, `CrowdfundingCampaignV2`.
-Review the [`upgradeCrowdfundingCampaign.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/deploy/upgrade-scripts/upgradeCrowdfundingCampaign.ts)
-script located within the `deploy/upgrade-scripts` directory to begin.
+Review the [`deploy/upgrade-scripts/upgradeCrowdfundingCampaign.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/upgradability/deploy/upgrade-scripts/upgradeCrowdfundingCampaign.ts)
+script to begin.
 
 Replace `YOUR_PROXY_ADDRESS_HERE` with the actual address of your
 deployed Transparent Proxy from the previous deployment step.
 
-```typescript [upgradeCrowdfundingCampaign.ts]
+```typescript [deploy/upgrade-scripts/upgradeCrowdfundingCampaign.ts]
 import { getWallet } from "../utils";
 import { Deployer } from '@matterlabs/hardhat-zksync';
 import { HardhatRuntimeEnvironment } from "hardhat/types";
@@ -325,25 +287,9 @@ functionalities without losing the existing state or funds.
 
 Execute the command corresponding to your package manager:
 
-::code-group
-
 ```bash [npm]
 npx hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
 ```
-
-```bash [yarn]
-yarn hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
-```
-
-```bash [pnpm]
-pnpm exec hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
-```
-
-```bash [bun]
-bun run hardhat deploy-zksync --script upgrade-scripts/upgradeCrowdfundingCampaign.ts
-```
-
-::
 
 Upon successful deployment, you'll receive output detailing the upgrade process,
 including the contract address, and transaction hash:
@@ -359,32 +305,24 @@ Fundraising goal: 100000000000000000
 
 ## Verify upgradable contracts
 
+::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
+Since we are using inMemoryNode for our smart contracts, we do not have the feature
+available to verify the smart contract.
+
+The following explains how you will need to verify an upgraded smart contract on testnet or mainnet.
+::
+
 For the verification of our upgradable contracts, it's essential to utilize the proxy address that was specified in our
 upgrade script.
 
 To proceed with verification, execute the following command:
 
 Replace <PROXY_ADDRESS> with the actual proxy address from your deployment.
-
-::code-group
+This is the address from the earlier deployment message: `Contract successfully upgraded to <PROXY_ADDRESS>`.
 
 ```bash [npm]
 npx hardhat verify <PROXY-ADDRESS>
 ```
-
-```bash [yarn]
-yarn hardhat verify <PROXY-ADDRESS>
-```
-
-```bash [pnpm]
-pnpm exec hardhat verify <PROXY-ADDRESS>
-```
-
-```bash [bun]
-bun run hardhat verify <PROXY-ADDRESS>
-```
-
-::
 
 Upon successful verification, you'll receive output detailing the verification process:
 

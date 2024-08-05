@@ -5,7 +5,7 @@ title: Hardhat | Contract Testing
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli@latest create --template qs-testing contract-testing-quickstart
+zksync-cli create --template qs-testing contract-testing-quickstart
 cd contract-testing-quickstart
 ```
 
@@ -13,24 +13,34 @@ cd contract-testing-quickstart
 
 ## Local Era Node
 
-While setting up a local development environment was previously optional, testing contracts requires
-a more structured setup. We'll use `hardhat-zksync` to run tests against an In-memory node,
+Testing contracts requires a more structured setup.
+We'll use `hardhat-zksync` to run tests against our In-memory node,
 which operates seamlessly within a separate process for an optimized testing workflow.
 
-If you have not set up your local era node yet, follow the instructions in the
-[Getting Started](/build/start-coding/zksync-101#setup-era-local-node-optional) section.
+::callout{icon="i-heroicons-information-circle" color="blue"}
+If you have not started up a local node yet from the Getting started page, run `zksync-cli dev start`.
+Make sure you are running the "In memory node" option.
+::
 
 Within the `hardhat.config.ts`, you'll observe the `zksync` flag set to `true` under the
 `hardhat` network, indicating the integration with ZKsync's testing environment.
 
 ```typescript [hardhat.config.ts]
-hardhat: {
-  zksync: true,
-},
+const config: HardhatUserConfig = {
+  defaultNetwork: "hardhat"
+  networks: {
+    ...
+    hardhat: {
+      zksync: true,
+    },
+    ...
+  }
+  ...
+}
 ```
 
-To use the In-memory node for testing, ensure the `hardhat` network is selected with
-the `zksync` flag enabled. This setup initiates the node alongside your tests and ensures
+To use the In-memory node for testing, change the `defaultNetwork` to `"hardhat"`.
+This setup initiates the node alongside your tests and ensures
 it terminates once testing is complete. The node's port allocation starts at the default
 `8011`, facilitating smooth and isolated test execution.
 
@@ -45,7 +55,8 @@ import "@nomicfoundation/hardhat-chai-matchers";
 
 ### Test Wallet Configuration
 
-For testing purposes, we use pre-configured, well-funded wallets. During this testing guide, we will use the following pre-configured wallet,
+For testing purposes, we use pre-configured, well-funded wallets.
+During this testing guide, we will use the following pre-configured wallet,
 which eliminates the need for manual funding or setup:
 
 - **Account Address:** `0x36615Cf349d7F6344891B1e7CA7C72883F5dc049`
@@ -62,8 +73,8 @@ guide - testing our `CrowdfundingCampaign.sol` contract. Here's a quick
 refresher on its structure:
 
 ::drop-panel
-  ::panel{label="CrowdfundingCampaign.sol"}
-    ```solidity [CrowdfundingCampaign.sol]
+  ::panel{label="contracts/CrowdfundingCampaign.sol"}
+    ```solidity [contracts/CrowdfundingCampaign.sol]
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
 
@@ -144,11 +155,11 @@ The compiled artifacts will be located in the `/artifacts-zk` folder.
 ## Test `CrowdfundingCampaign`
 
 This section describes testing the `CrowdfundingCampaign.sol` contract. Let's
-start by reviewing the tests for `CrowdfundingCampaign.sol` contract provided
-during the initialization step in the `/tests` directory, specifically the
+start by reviewing the tests for `CrowdfundingCampaign.sol` contract
+in the `/test` directory, specifically the
 [`crowdFunding.test.ts` file](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/testing/test/crowdFunding.test.ts).
 
-```typescript [crowdFunding.test.ts]
+```typescript [test/crowdFunding.test.ts]
 import "@nomicfoundation/hardhat-chai-matchers";
 import { expect } from "chai";
 import { ethers } from "ethers";
@@ -186,38 +197,38 @@ describe("CrowdfundingCampaign", function () {
 });
 ```
 
-- **Initialization**: Each test case initializes with fresh contract instances and predefined
-rich wallet accounts to simulate various contributors and the contract owner.
-- **Deployment**: The `CrowdfundingCampaign` contract is deployed using the `deployContract`
-utility, setting a specific funding goal for each test scenario.
+- **Initialization**: Each test case initializes with fresh contract instances
+  and predefined rich wallet accounts to simulate various contributors and the contract owner.
+- **Deployment**: The `CrowdfundingCampaign` contract is deployed using
+  the `deployContract` utility, setting a specific funding goal for each test scenario.
 
 **`contribute` Method Tests:**
 
-- **Zero Contributions**: Verifies that the contract correctly rejects contribution attempts with
-zero value, ensuring the integrity of the contribution process.
-- **Funds Aggregation**: Tests the contract's ability to accurately aggregate contributions from
-multiple addresses and update the `totalFundsRaised` accordingly.
+- **Zero Contributions**: Verifies that the contract correctly rejects contribution attempts
+  with zero value, ensuring the integrity of the contribution process.
+- **Funds Aggregation**: Tests the contract's ability to accurately aggregate contributions
+  from multiple addresses and update the `totalFundsRaised` accordingly.
 - **Goal Achievement**: Checks for the `GoalReached` event emission upon meeting the funding goal,
-confirming the contract's responsiveness to achieving its set target.
+  confirming the contract's responsiveness to achieving its set target.
 
 Execute the test command corresponding to your package manager:
 
 ::code-group
 
 ```bash [npm]
-npx hardhat test --network hardhat
+npx hardhat test
 ```
 
 ```bash [yarn]
-yarn hardhat test --network hardhat
+yarn hardhat test
 ```
 
 ```bash [pnpm]
-pnpm exec hardhat test --network hardhat
+pnpm exec hardhat test
 ```
 
 ```bash [bun]
-bun run hardhat test --network hardhat
+bunx hardhat test
 ```
 
 ::
