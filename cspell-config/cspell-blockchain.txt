@@ -2,11 +2,13 @@ Aave
 arithmetization
 BoxUups
 Buterin
+Cronos
 Dappradar
 DRPC
 Echoo
 Eigen
 Enkrypt
+Envio
 ethereum
 EVM
 evmla

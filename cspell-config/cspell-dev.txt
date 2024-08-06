@@ -10,6 +10,7 @@ ansible
 binop
 blake2s
 blake2s256
+bunx
 cccond
 ccret
 CHAINID
@@ -97,10 +98,10 @@ Viem
 VRFs
 vue
 Vue
+zasm
 Zerion
 zext
 ZKEVM
 zkout
 zksolc
 zkvyper
-zasm
