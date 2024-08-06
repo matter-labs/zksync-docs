@@ -6,7 +6,7 @@ description: Learn to deploy contract factories in the ZKsync environment.
 Run the following command in your terminal to initialize the project.
 
 ```sh
-npx zksync-cli@latest create --template qs-paymaster contract-paymaster-quickstart
+zksync-cli create --template qs-paymaster contract-paymaster-quickstart
 cd contract-paymaster-quickstart
 ```
 
@@ -21,8 +21,8 @@ cd contract-paymaster-quickstart
 Let's start by reviewing the `ApprovalFlowPaymaster.sol` contract in the `contracts/` directory:
 
 ::drop-panel
-  ::panel{label="ApprovalFlowPaymaster.sol"}
-    ```solidity [ApprovalFlowPaymaster.sol]
+  ::panel{label="contracts/ApprovalFlowPaymaster.sol"}
+    ```solidity [contracts/ApprovalFlowPaymaster.sol]
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
 
