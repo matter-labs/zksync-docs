@@ -21,6 +21,36 @@ useHead({
     { rel: 'icon', href: '/zksync-icon_150.svg', sizes: 'any', type: 'image/svg+xml' },
     { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
   ],
+  script: [
+    {
+      children: `
+      (function() {
+        // Cookbook Onboard (AI Assistant). API key is public so it's fine to just hardcode it here.
+        var COOKBOOK_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NWNlNzUwZmZiMDBlZWUyNThjNmUxMjkiLCJpYXQiOjE3MDgwMjkxOTksImV4cCI6MjAyMzYwNTE5OX0.vrpJUZNG2jBFegOyENxgLJfStfyP7R1sQYE_I4XNo40";
+
+        document.addEventListener('DOMContentLoaded', function() {
+          var element = document.getElementById('__cookbook');
+          if (!element) {
+            element = document.createElement('div');
+            element.id = '__cookbook';
+            element.dataset.apiKey = COOKBOOK_API_KEY;
+            document.body.appendChild(element);
+          }
+
+          var script = document.getElementById('__cookbook-script');
+          if (!script) {
+            script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/@cookbookdev/docsbot/dist/standalone/index.cjs.js';
+            script.id = '__cookbook-script';
+            script.defer = true;
+            document.body.appendChild(script);
+          }
+        });
+      })();
+  `,
+      key: 'a',
+    },
+  ],
   htmlAttrs: {
     lang: 'en',
   },
