@@ -3,125 +3,11 @@ title: General Paymaster
 description: Learn to deploy contract factories in the ZKsync environment.
 ---
 
-Run the following command in your terminal to initialize the project.
-
-```sh
-zksync-cli create --template qs-paymaster contract-paymaster-quickstart
-cd contract-paymaster-quickstart
-```
-
-## Update the hardhat.config.ts
-
-Since we are using the "In memory node" with ZKsync CLI, we need to set the default network Hardhat uses
-for deploying.
-
-Open up the `hardhat.config.ts` file and set the `defaultNetwork` to `inMemoryNode`.
-
-```ts
-// ...
-const config: HardhatUserConfig = {
-  defaultNetwork: "inMemoryNode",
-// ...
-```
-
-::callout{icon="i-heroicons-information-circle" color="blue"}
-If you have not started up a local node yet from the Getting started page, run `zksync-cli dev start`.
-Make sure you are running the "In memory node" option.
-::
-
----
-
 ## Understanding the `GaslessPaymaster` contract
 
 Let's start by reviewing the
-[`contracts/GaslessPaymaster.sol`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/contracts/GaslessPaymaster.sol)
+[`contracts/4-paymaster/gasless/GaslessPaymaster.sol`][gasless-paymaster-sol]
 contract:
-
-::drop-panel
-  ::panel{label="contracts/GaslessPaymaster.sol"}
-    ```solidity [contracts/GaslessPaymaster.sol]
-    // SPDX-License-Identifier: MIT
-    pragma solidity ^0.8.0;
-
-    import {IPaymaster, ExecutionResult, PAYMASTER_VALIDATION_SUCCESS_MAGIC} from "@matterlabs/zksync-contracts/l2/system-contracts/interfaces/IPaymaster.sol";
-    import {IPaymasterFlow} from "@matterlabs/zksync-contracts/l2/system-contracts/interfaces/IPaymasterFlow.sol";
-    import {TransactionHelper, Transaction} from "@matterlabs/zksync-contracts/l2/system-contracts/libraries/TransactionHelper.sol";
-    import "@matterlabs/zksync-contracts/l2/system-contracts/Constants.sol";
-    import "@openzeppelin/contracts/access/Ownable.sol";
-
-    /// @notice This contract does not include any validations other than using the paymaster general flow.
-    contract GaslessPaymaster is IPaymaster, Ownable {
-        modifier onlyBootloader() {
-            require(
-                msg.sender == BOOTLOADER_FORMAL_ADDRESS,
-                "Only bootloader can call this method"
-            );
-            // Continue execution if called from the bootloader.
-            _;
-        }
-
-        function validateAndPayForPaymasterTransaction(
-            bytes32,
-            bytes32,
-            Transaction calldata _transaction
-        )
-            external
-            payable
-            onlyBootloader
-            returns (bytes4 magic, bytes memory context)
-        {
-            // By default we consider the transaction as accepted.
-            magic = PAYMASTER_VALIDATION_SUCCESS_MAGIC;
-            require(
-                _transaction.paymasterInput.length >= 4,
-                "The standard paymaster input must be at least 4 bytes long"
-            );
-
-            bytes4 paymasterInputSelector = bytes4(
-                _transaction.paymasterInput[0:4]
-            );
-            if (paymasterInputSelector == IPaymasterFlow.general.selector) {
-                // Note, that while the minimal amount of ETH needed is tx.gasPrice * tx.gasLimit,
-                // neither paymaster nor account are allowed to access this context variable.
-                uint256 requiredETH = _transaction.gasLimit *
-                    _transaction.maxFeePerGas;
-
-                // The bootloader never returns any data, so it can safely be ignored here.
-                (bool success, ) = payable(BOOTLOADER_FORMAL_ADDRESS).call{
-                    value: requiredETH
-                }("");
-                require(
-                    success,
-                    "Failed to transfer tx fee to the Bootloader. Paymaster balance might not be enough."
-                );
-            } else {
-                revert("Unsupported paymaster flow in paymasterParams.");
-            }
-        }
-
-        function postTransaction(
-            bytes calldata _context,
-            Transaction calldata _transaction,
-            bytes32,
-            bytes32,
-            ExecutionResult _txResult,
-            uint256 _maxRefundedGas
-        ) external payable override onlyBootloader {
-            // Refunds are not supported yet.
-        }
-
-        function withdraw(address payable _to) external onlyOwner {
-            // send paymaster funds to the owner
-            uint256 balance = address(this).balance;
-            (bool success, ) = _to.call{value: balance}("");
-            require(success, "Failed to withdraw funds from paymaster.");
-        }
-
-        receive() external payable {}
-    }
-    ```
-  ::
-::
 
 **Key components:**
 
@@ -139,51 +25,15 @@ exclusively callable by the system's bootloader, adding an extra layer of securi
 
 ## Compile and deploy the `GaslessPaymaster` contract
 
-:display-partial{path = "/_partials/_compile-solidity-contracts"}
+Run the npm script `compile` to compile the contracts:
 
-Upon successful compilation, you'll receive output detailing the
-`zksolc` and `solc` versions used during compiling and the number
-of Solidity files compiled.
-
-```bash
-Compiling contracts for ZKsync Era with zksolc v1.4.0 and solc v0.8.17
-Compiling 4 Solidity file
-Successfully compiled 4 Solidity file
+```bash [npm]
+npm run compile
 ```
 
 The compiled artifacts will be located in the `/artifacts-zk` folder.
 
-The script to deploy the `GaslessPaymaster` is located at [`/deploy/deployGaslessPaymaster.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/deploy/deployGaslessPaymaster.ts).
-
-```typescript [deploy/deployGaslessPaymaster.ts]
-import { deployContract, getWallet, getProvider } from "./utils";
-import { ethers } from "ethers";
-
-// An example of a basic deploy script
-// It will deploy a CrowdfundingCampaign contract to selected network
-// `parseEther` converts ether to wei, and `.toString()` ensures serialization compatibility.
-export default async function() {
-  const contractArtifactName = "GaslessPaymaster";
-  const constructorArguments = [];
-  const contract = await deployContract(
-    contractArtifactName,
-    constructorArguments
-  );
-  const wallet = getWallet();
-  const provider = getProvider();
-
-  // Supplying paymaster with ETH
-  await (
-    await wallet.sendTransaction({
-      to: contract.target,
-      value: ethers.parseEther("0.005"),
-    })
-  ).wait();
-
-  let paymasterBalance = await provider.getBalance(contract.target.toString());
-  console.log(`Paymaster ETH balance is now ${paymasterBalance.toString()}`);
-}
-```
+The script to deploy the `GaslessPaymaster` is located at [`/deploy/4-paymaster/gasless/deploy.ts][deploy-script].
 
 **Key Components:**
 
@@ -194,114 +44,32 @@ mirroring the deployment process used for the `CrowdfundingCampaign` contract.
 to cover transaction fees for users. The script sends a transaction
 from the deployer's wallet to the paymaster contract, ensuring it has sufficient balance to operate.
 
-Execute the deployment command corresponding to your package manager. The default command
-deploys to the configured network in your Hardhat setup. For local deployment, append
-`--network inMemoryNode` to deploy to the local in-memory node running.
+Execute the deploy npm script command to upgrade:
 
 ```bash [npm]
-npx hardhat deploy-zksync --script deployGaslessPaymaster.ts
+npm run deploy:gasless-paymaster
 ```
 
 Upon successful deployment, you'll receive output detailing the deployment process,
 including the contract address, source, and encoded constructor arguments:
 
 ```bash
-Starting deployment process of "GaslessPaymaster"...
-Estimated deployment cost: 0.0004922112 ETH
+GaslessPaymaster contract deployed at 0xC00515D76a50D523550C1DA1727cf9Eab8f560F2
 
-"GaslessPaymaster" was successfully deployed:
- - Contract address: 0x6f72f0d7bDba2E2a923beC09fBEE64cD134680F2
- - Contract source: contracts/GaslessPaymaster.sol:GaslessPaymaster
- - Encoded constructor arguments: 0x
-
-Paymaster ETH balance is now 5000000000000000
+Paymaster ETH balance is now 0.005
 ```
 
 ---
 
 ## Interact with the GaslessPaymaster contract
 
-This section will navigate you through the steps to interact with the `GaslessPaymaster` contract,
-using it to cover transaction fees for your operation.
+We will interact with the `GaslessPaymaster` by creating a `CrowdfundCampaign`
+and have the paymaster pay for the transaction fees for your contribution.
 
-The interaction script is situated in the `/deploy/interact/` directory, named [`interactWithGaslessPaymaster.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/quickstart/hardhat/paymaster/deploy/interact/interactWithGaslessPaymaster.ts).
+The interaction script is situated in the `/deploy/4-paymaster/gasless` directory,
+named [`interact.ts`][interact-script].
 
-Ensure the `CONTRACT_ADDRESS` and `PAYMASTER_ADDRESS` variables are set to your deployed contract and paymaster addresses, respectively.
-
-::drop-panel
-  ::panel{label="deploy/interact/interactWithGaslessPaymaster.ts"}
-
-  ```typescript [interactWithGaslessPaymaster.ts]
-  import * as hre from "hardhat";
-  import { getWallet, getProvider } from "../utils";
-  import { ethers } from "ethers";
-  import { utils } from "zksync-ethers";
-
-  // Address of the contract to interact with
-  const CONTRACT_ADDRESS = "YOUR-CONTRACT-ADDRESS";
-  const PAYMASTER_ADDRESS = "YOUR-PAYMASTER-ADDRESS";
-  if (!CONTRACT_ADDRESS || !PAYMASTER_ADDRESS)
-      throw new Error("Contract and Paymaster addresses are required.");
-
-  export default async function() {
-    console.log(`Running script to interact with contract ${CONTRACT_ADDRESS} using paymaster ${PAYMASTER_ADDRESS}`);
-
-    // Load compiled contract info
-    const contractArtifact = await hre.artifacts.readArtifact(
-      "CrowdfundingCampaignV2"
-    );
-
-    // Initialize contract instance for interaction
-    const contract = new ethers.Contract(
-      CONTRACT_ADDRESS,
-      contractArtifact.abi,
-      getWallet()
-    );
-
-    const provider = getProvider();
-    let balanceBeforeTransaction = await provider.getBalance(getWallet().address);
-    console.log(`Wallet balance before contribution: ${ethers.formatEther(balanceBeforeTransaction)} ETH`);
-
-    const contributionAmount = ethers.parseEther("0.01");
-    // Get paymaster params
-    const paymasterParams = utils.getPaymasterParams(PAYMASTER_ADDRESS, {
-      type: "General",
-      innerInput: new Uint8Array(),
-    });
-
-    const gasLimit = await contract.contribute.estimateGas({
-      value: contributionAmount,
-      customData: {
-        gasPerPubdata: utils.DEFAULT_GAS_PER_PUBDATA_LIMIT,
-        paymasterParams: paymasterParams,
-      },
-    });
-
-    const transaction = await contract.contribute({
-      value: contributionAmount,
-      maxPriorityFeePerGas: 0n,
-      maxFeePerGas: await provider.getGasPrice(),
-      gasLimit,
-      // Pass the paymaster params as custom data
-      customData: {
-        gasPerPubdata: utils.DEFAULT_GAS_PER_PUBDATA_LIMIT,
-        paymasterParams,
-      },
-    });
-    console.log(`Transaction hash: ${transaction.hash}`);
-
-    await transaction.wait();
-
-    let balanceAfterTransaction = await provider.getBalance(getWallet().address);
-    // Check the wallet balance after the transaction
-    // We only pay the contribution amount, so the balance should be less than before
-    // Gas fees are covered by the paymaster
-    console.log(`Wallet balance after contribution: ${ethers.formatEther(balanceAfterTransaction)} ETH`);
-  }
-  ```
-
-  ::
-::
+Ensure the `YOUR_PAYMASTER_ADDRESS` variable is set to your deployed paymaster address.
 
 **Key Components:**
 
@@ -313,19 +81,23 @@ used and the type of paymaster flow, which in this case is `General`.
 in transactions. This allows the paymaster to cover transaction
 fees, providing a seamless experience for users.
 
-Execute the command corresponding to your package manager:
+Run the npm script that interacts with the gasless paymaster:
 
 ```bash [npm]
-npx hardhat deploy-zksync --script interact/interactWithGaslessPaymaster.ts
+npm run interact:gasless-paymaster
 ```
 
 Upon successful usage, you'll receive output detailing the transaction:
 
 ```bash
-Running script to interact with contract 0x68E8533acE01019CB8D07Eca822369D5De71b74D using paymaster 0x6f72f0d7bDba2E2a923beC09fBEE64cD134680F2
-Wallet balance before contribution: 5.879909434005856127 ETH
-Transaction hash: 0x41c463abf7905552b69b25e7918374aab27f2d7e8cbebe212a0eb6ef8deb81e8
-Wallet balance after contribution: 5.869909434005856127 ETH
+Deploying a CrowdfundingCampaign contract...
+Contributing 0.01 to the crowdfund contract...
+Transaction hash: 0x1281592537c81f4d4ca259022b649dc582b186911af8f6b3612568383ea99b1b
+Contribution successful!
 ```
 
-🎉 Great job! You've successfully interacted with the `CrowdfundingCampaignV2` using a paymaster to cover the transaction fees.
+🎉 Great job! You've successfully interacted with the `CrowdfundingCampaign` using a paymaster to cover the transaction fees.
+
+[gasless-paymaster-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/contracts/4-paymaster/gasless/GaslessPaymaster.sol
+[deploy-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/deploy/4-paymaster/gasless/deploy.ts
+[interact-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/deploy/4-paymaster/gasless/interact.ts
