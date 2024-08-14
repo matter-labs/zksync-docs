@@ -86,18 +86,23 @@
         "type": 301
       },
       {
+        "source": "/sdk/:path",
+        "destination": "https://sdk.zksnc.io/:path",
+        "type": 301
+      },
+      {
         "source": "/sdks/js/:path*.@(html|md)",
-        "destination": "/sdk/js/ethers/v5/:path",
+        "destination": "https://sdk.zksnc.io/js/ethers/v5/:path",
         "type": 301
       },
       {
         "source": "/sdks/js/zksync-ethers/:path*.@(html|md)",
-        "destination": "/sdk/js/ethers/v6/:path",
+        "destination": "https://sdk.zksnc.io/js/ethers/v6/:path",
         "type": 301
       },
       {
         "source": "/sdks/:path*.@(html|md)",
-        "destination": "/sdk/:path",
+        "destination": "https://sdk.zksnc.io/:path",
         "type": 301
       },
       {
@@ -222,7 +227,7 @@
       },
       {
         "source": "/build/sdks/js{,/**}",
-        "destination": "/sdk/js/ethers/v6/getting-started",
+        "destination": "https://sdk.zksnc.io/js/ethers/v6/getting-started",
         "type": 301
       },
       {
