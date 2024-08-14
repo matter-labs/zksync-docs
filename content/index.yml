@@ -19,7 +19,7 @@ features:
     - title: 'Getting Started with ZKsync'
       description: 'Jumpstart your ZKsync journey with quickstart guides and fundamental concepts for developers.'
       icon: 'i-zksync-zksync-logo'
-      to: '/build/quick-start'
+      to: '/build/start-coding/quick-start'
     - title: 'Develop with zksync-cli'
       description: 'Boost your development workflow with the zksync-cli tool.'
       icon: 'i-simple-icons-windowsterminal'
