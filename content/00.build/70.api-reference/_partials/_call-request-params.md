@@ -16,5 +16,6 @@ title: CallRequest Params
 - **nonce**: DATA, 32 bytes - Transaction nonce.
 - **transaction_type**: QUANTITY, 8 bytes - Type of the transaction.
 - **access_list**: AccessList - EIP-2930 access list.
-- **eip712_meta**: Eip712Meta - EIP-712 meta information.
+- **customData**: OBJECT - Extra parameters for
+[EIP712 transactions](zk-stack/concepts/transaction-lifecycle#eip-712-0x71), like `paymasterParams` or `customSignature`.
 ::
