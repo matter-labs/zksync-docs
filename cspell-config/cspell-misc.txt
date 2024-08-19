@@ -17,3 +17,4 @@ mathbb
 mundo
 permissioned
 Winternitz
+zkicon

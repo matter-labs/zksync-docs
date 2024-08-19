@@ -25,6 +25,7 @@ export default defineNuxtConfig({
     '/zk-stack/running-a-zk-chain': { redirect: '/zk-stack/running-a-zk-chain/locally' },
   },
   pwa: {
+    selfDestroying: true,
     strategies: 'generateSW',
     registerType: 'autoUpdate',
     workbox: {
