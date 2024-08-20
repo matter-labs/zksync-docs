@@ -31,8 +31,6 @@ Run the npm script `compile` to compile the contracts:
 npm run compile
 ```
 
-The compiled artifacts will be located in the `/artifacts-zk` folder.
-
 The script to deploy the `GaslessPaymaster` is located at [`/deploy/4-paymaster/gasless/deploy.ts][deploy-script].
 
 **Key Components:**
@@ -54,7 +52,7 @@ Upon successful deployment, you'll receive output detailing the deployment proce
 including the contract address, source, and encoded constructor arguments:
 
 ```bash
-GaslessPaymaster contract deployed at 0xC00515D76a50D523550C1DA1727cf9Eab8f560F2
+GaslessPaymaster contract deployed at <0xYOUR_PAYMASTER_ADDRESS>
 
 Paymaster ETH balance is now 0.005
 ```

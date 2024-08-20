@@ -36,8 +36,6 @@ Run the npm script `compile` to compile the contracts:
 npm run compile
 ```
 
-The compiled artifacts will be located in the `/artifacts-zk` folder.
-
 The script to deploy the `ApprovalFlowPaymaster` contract is located at [`/deploy/4-paymaster/approval/deploy.ts`][deploy-script].
 
 The script deploys the `Crown` token and the `ApprovalFlowPaymaster` contracts.
@@ -54,8 +52,8 @@ On success, the console will return the addresses of the `Crown` token
 as well as the `ApprovalFlowPaymaster`.
 
 ```bash
-CrownToken contract deployed at 0x4f4A0F99981E9884C9a3FfDeD9C33FF8D088bC30
-ApprovalFlowPaymaster contract deployed at 0xd00aA47887597f95a68f87f1a5C96Df1B3fF0bdF
+CrownToken contract deployed at <0xCROWN_TOKEN_ADDRESS>
+ApprovalFlowPaymaster contract deployed at <0xYOUR_PAYMASTER_ADDRESS>
 
 Paymaster ETH balance is now 0.005
 ```
@@ -81,7 +79,7 @@ The private key is for the local rich wallet used to deploy the smart contracts.
 zksync-cli contract write \
 --chain in-memory-node \
 --abi artifacts-zk/contracts/4-paymaster/approval/CrownToken.sol/CrownToken.json \
---contract 0x4f4A0F99981E9884C9a3FfDeD9C33FF8D088bC30 \
+--contract <0xCROWN_TOKEN_ADDRESS> \
 --pk 0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110
 ```
 

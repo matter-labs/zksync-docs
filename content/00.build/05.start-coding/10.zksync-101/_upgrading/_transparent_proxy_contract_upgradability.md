@@ -141,8 +141,6 @@ Run the npm script `compile` to compile the contracts:
 npm run compile
 ```
 
-The compiled artifacts will be located in the `/artifacts-zk` folder.
-
 ### Update to `V2_ProxyableCrowdfundingCampaign`
 
 This section guides you through upgrading the `ProxyableCrowdfundingCampaign` contract
@@ -184,10 +182,10 @@ V2CrowdfundingCampaign initialized. Transaction Hash: 0x3a7cbf9d584457bc6b452964
 ## Verify upgradable contracts
 
 ::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
-Since we are using in-memory node for our smart contracts, we do not have the feature
+Since we are using in memory node for our smart contracts, we do not have the feature
 available to verify the smart contract.
 
-The following explains how you will need to verify an upgraded smart contract on testnet or mainnet.
+The following explains how you can verify an upgraded smart contract on testnet or mainnet.
 ::
 
 For the verification of our upgradable contracts, it's essential to utilize the proxy address that was specified in our
@@ -199,7 +197,7 @@ Replace <PROXY_ADDRESS> with the actual proxy address from your deployment.
 This is the address from the earlier deployment message: `Contract successfully upgraded to <PROXY_ADDRESS>`.
 
 ```bash [npm]
-npx hardhat verify <PROXY-ADDRESS>
+npx hardhat verify <PROXY_ADDRESS>
 ```
 
 Upon successful verification, you'll receive output detailing the verification process:

@@ -3,8 +3,9 @@ title: Beacon Proxy Contract Upgradeability
 ---
 
 ### What is a beacon proxy upgradeable contract?
-Beacon Proxy Upgradeable Contracts leverage a beacon to manage upgrades, allowing
-for centralized logic updates across multiple proxies. The structure includes:
+Beacon Proxy Upgradeable Contracts allows
+for centralized logic updates across multiple proxies.
+The structure includes:
 
 1. **Beacon Contract**: Acts as the central point holding the address of the current logic contract.
 It enables updating the logic for all associated proxies through a single transaction.
@@ -21,7 +22,7 @@ features or fixes while maintaining a uniform interface for users.
 
 ---
 
-## Adapt the crowdfunding campaign contract for upgradeability
+## Adapt the Crowdfunding Campaign contract for upgradeability
 
 To adapt our Crowdfunding Campaign contract for upgradeability, we are
 transitioning to a proxy pattern. This approach separates the
@@ -56,8 +57,6 @@ To compile the contracts in the project, run the following command:
 ```bash [npm]
 npm run compile
 ```
-
-The compiled artifacts will be located in the `/artifacts-zk` folder.
 
 ## Deploy the beacon and contract
 
@@ -144,8 +143,6 @@ Run the npm script `compile` to compile the contracts:
 npm run compile
 ```
 
-The compiled artifacts will be located in the `/artifacts-zk` folder.
-
 ## Deploy the upgrade to `V2_BeaconCrowdfundingCampaign`
 
 This section describes the upgrade process to the `V2_BeaconCrowdfundingCampaign.sol` contract. Let's
@@ -184,16 +181,16 @@ Fundraising goal: 100000000000000000
 
 ---
 
-## Verify upgradable contracts
+## Verify upgradeable contracts
 
 ::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
-Since we are using the in-memory node for our smart contracts, we do not have the feature
+Since we are using the in memory node for our smart contracts, we do not have the feature
 available to verify the smart contract.
 
-The following explains how you will need to verify an upgraded smart contract on testnet or mainnet.
+The following explains how you can verify an upgraded smart contract on testnet or mainnet.
 ::
 
-For the verification of our upgradable contracts, it's essential to utilize the proxy address that was specified in our
+For the verification of our upgradeable contracts, it's essential to utilize the proxy address that was specified in our
 upgrade script.
 
 To proceed with verification, execute the following command:
