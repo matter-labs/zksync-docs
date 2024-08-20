@@ -86,7 +86,7 @@
         "type": 301
       },
       {
-        "source": "/sdk/:path",
+        "source": "/sdk/:path*",
         "destination": "https://sdk.zksync.io/:path",
         "type": 301
       },
@@ -106,13 +106,13 @@
         "type": 301
       },
       {
-        "source": "/build/quick-start/*",
-        "destination": "/build/start-coding/quick-start",
+        "source": "/build/quick-start/:path*",
+        "destination": "/build/start-coding/quick-start/:path",
         "type": 301
       },
       {
-        "source": "/build/zksync-101/*",
-        "destination": "/build/start-coding/zksync-101",
+        "source": "/build/zksync-101/:path*",
+        "destination": "/build/start-coding/zksync-101/:path",
         "type": 301
       },
       {
@@ -131,7 +131,7 @@
         "type": 301
       },
       {
-        "source": "/build/tooling/zksync-cli/*",
+        "source": "/build/tooling/zksync-cli/**",
         "destination": "/build/zksync-cli/reference",
         "type": 301
       },
