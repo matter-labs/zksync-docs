@@ -24,6 +24,13 @@ export default defineNuxtConfig({
     '/zk-stack/concepts': { redirect: '/zk-stack/concepts/transaction-lifecycle' },
     '/zk-stack/running-a-zk-chain': { redirect: '/zk-stack/running-a-zk-chain/locally' },
   },
+  experimental: {
+    defaults: {
+      nuxtLink: {
+        trailingSlash: 'remove',
+      },
+    },
+  },
   pwa: {
     selfDestroying: true,
     strategies: 'generateSW',
