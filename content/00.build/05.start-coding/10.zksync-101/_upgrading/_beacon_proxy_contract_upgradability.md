@@ -174,9 +174,8 @@ including the new beacon address, and transaction hash:
 
 ```bash
 New beacon impl deployed at 0x58BD5adb462CF087E5838d53aE38A3Fe0EAf7A31
-Successfully upgraded crowdfundingCampaign to crowdfundingCampaignV2 0x26410Bebf5Df7398DCBC5f00e9EBBa0Ddf471C72
-CrowdfundingCampaignV2 initialized! 0x5f3131c77fcac19390f5f644a3ad1f0e7719dee4b4b5b4746c992de00db743f7
-Fundraising goal: 100000000000000000
+Successfully upgraded BeaconCrowdfundingCampaign to V2_BeaconCrowdfundingCampaign
+V2_BeaconCrowdfundingCampaign initialized. Transaction Hash: 0x5f3131c77fcac19390f5f644a3ad1f0e7719dee4b4b5b4746c992de00db743f7
 ```
 
 ---

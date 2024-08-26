@@ -179,7 +179,7 @@ including the new uups address, and transaction hash:
 ```bash
 Contract successfully upgraded to 0x9BE22706966D717d7b0C8aEC99A1a9d1b3bFeC50 with tx 0x24ad582828b23b98d207ec7c057cd6a9c911bea22dbe85e0affd7479b00d90e9
 Successfully upgraded UUPSCrowdfundingCampaign to V2_UUPSCrowdfundingCampaign
-V2_UUPSCrowdfundingCampaign initialized! 0xab959f588b64dc6dee1e94d5fa0da2ae205c7438cf097d26d3ba73690e2b09e8
+V2_UUPSCrowdfundingCampaign initialized! Transaction Hash: 0xab959f588b64dc6dee1e94d5fa0da2ae205c7438cf097d26d3ba73690e2b09e8
 ```
 
 ---
