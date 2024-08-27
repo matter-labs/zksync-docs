@@ -1,21 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  extends: [['@matterlabs/docs-nuxt-template'], ['github:zksync-sdk/sdk-docs']],
+  extends: [['@matterlabs/docs-nuxt-template']],
   modules: ['@nuxt/content', '@nuxt/ui', '@nuxt/eslint', '@nuxtjs/seo', 'nuxt-gtag', '@vite-pwa/nuxt'],
   site: {
     name: 'ZKsync Docs',
     url: process.env.NUXT_SITE_ENV ? 'https://staging-docs.zksync.io' : 'https://docs.zksync.io',
-  },
-  content: {
-    sources: {
-      sdk: {
-        prefix: '/sdk',
-        driver: 'github',
-        repo: 'zksync-sdk/sdk-docs',
-        branch: 'main',
-        dir: 'content/sdk',
-      },
-    },
   },
   runtimeConfig: {
     public: {
@@ -35,7 +24,15 @@ export default defineNuxtConfig({
     '/zk-stack/concepts': { redirect: '/zk-stack/concepts/transaction-lifecycle' },
     '/zk-stack/running-a-zk-chain': { redirect: '/zk-stack/running-a-zk-chain/locally' },
   },
+  experimental: {
+    defaults: {
+      nuxtLink: {
+        trailingSlash: 'remove',
+      },
+    },
+  },
   pwa: {
+    selfDestroying: true,
     strategies: 'generateSW',
     registerType: 'autoUpdate',
     workbox: {

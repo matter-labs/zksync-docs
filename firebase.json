@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "trailingSlash": false,
     "public": ".output/public",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "headers": [
@@ -86,28 +87,33 @@
         "type": 301
       },
       {
+        "source": "/sdk/:path*",
+        "destination": "https://sdk.zksync.io/:path",
+        "type": 301
+      },
+      {
         "source": "/sdks/js/:path*.@(html|md)",
-        "destination": "/sdk/js/ethers/v5/:path",
+        "destination": "https://sdk.zksync.io/js/ethers/v5/:path",
         "type": 301
       },
       {
         "source": "/sdks/js/zksync-ethers/:path*.@(html|md)",
-        "destination": "/sdk/js/ethers/v6/:path",
+        "destination": "https://sdk.zksync.io/js/ethers/v6/:path",
         "type": 301
       },
       {
         "source": "/sdks/:path*.@(html|md)",
-        "destination": "/sdk/:path",
+        "destination": "https://sdk.zksync.io/:path",
         "type": 301
       },
       {
-        "source": "/build/quick-start/*",
-        "destination": "/build/start-coding/quick-start",
+        "source": "/build/quick-start/:path*",
+        "destination": "/build/start-coding/quick-start/:path",
         "type": 301
       },
       {
-        "source": "/build/zksync-101/*",
-        "destination": "/build/start-coding/zksync-101",
+        "source": "/build/zksync-101/:path*",
+        "destination": "/build/start-coding/zksync-101/:path",
         "type": 301
       },
       {
@@ -126,7 +132,7 @@
         "type": 301
       },
       {
-        "source": "/build/tooling/zksync-cli/*",
+        "source": "/build/tooling/zksync-cli/**",
         "destination": "/build/zksync-cli/reference",
         "type": 301
       },
@@ -222,7 +228,7 @@
       },
       {
         "source": "/build/sdks/js{,/**}",
-        "destination": "/sdk/js/ethers/v6/getting-started",
+        "destination": "https://sdk.zksync.io/js/ethers/v6/getting-started",
         "type": 301
       },
       {
