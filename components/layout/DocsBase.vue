@@ -3,6 +3,7 @@ import type { NavItem } from '@nuxt/content/types';
 import { withoutTrailingSlash } from 'ufo';
 
 const route = useRoute();
+const category = useCategory();
 const navigation = inject<Ref<NavItem[]>>('navigation', ref([]));
 const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne());
 
@@ -50,27 +51,33 @@ const breadcrumb = computed(() => {
 
 <template>
   <UPage v-if="page">
-    <UPageHeader
-      :title="page.title"
-      :description="page.description"
-      :links="page.links"
-    >
-      <template #headline>
-        <UBreadcrumb :links="breadcrumb" />
-      </template>
-    </UPageHeader>
+    <article>
+      <span
+        id="docsearch-lv0"
+        hidden
+        >{{ category }}</span
+      >
+      <UPageHeader
+        :title="page.title"
+        :description="page.description"
+        :links="page.links"
+      >
+        <template #headline>
+          <UBreadcrumb :links="breadcrumb" />
+        </template>
+      </UPageHeader>
 
-    <UPageBody prose>
-      <ContentRenderer
-        v-if="page.body"
-        :value="page"
-      />
+      <UPageBody prose>
+        <ContentRenderer
+          v-if="page.body"
+          :value="page"
+        />
 
-      <hr v-if="surround?.length" />
+        <hr v-if="surround?.length" />
 
-      <UContentSurround :surround="surround" />
-    </UPageBody>
-
+        <UContentSurround :surround="surround" />
+      </UPageBody>
+    </article>
     <template
       v-if="page.toc !== false"
       #right

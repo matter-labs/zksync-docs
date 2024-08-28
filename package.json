@@ -23,9 +23,9 @@
     "vue-tsc": "^2.0.6"
   },
   "dependencies": {
-    "@matterlabs/docs-nuxt-template": "2.7.0",
+    "@matterlabs/docs-nuxt-template": "2.7.1",
     "@nuxt/content": "^2.13.2",
-    "@nuxt/eslint": "^0.3.13",
+    "@nuxt/eslint": "^0.5.3",
     "@nuxt/fonts": "^0.3.0",
     "@nuxt/image": "^1.7.0",
     "@nuxt/ui-pro": "^1.4.1",
