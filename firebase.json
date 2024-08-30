@@ -143,7 +143,32 @@
       },
       {
         "source": "/build/tooling/hardhat/getting-started.html",
-        "destination": "/build/tooling/hardhat/getting-started",
+        "destination": "/build/tooling/hardhat",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat/getting-started",
+        "destination": "/build/tooling/hardhat/guides/getting-started",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat/migrating-to-zksync",
+        "destination": "/build/tooling/hardhat/guides/migrating-to-zksync",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat/compiling-libraries",
+        "destination": "/build/tooling/hardhat/guides/compiling-libraries",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat/hardhat-:plugin",
+        "destination": "/build/tooling/hardhat/plugins/hardhat-:plugin",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat/other-plugins",
+        "destination": "/build/tooling/hardhat/plugins/other-plugins",
         "type": 301
       },
       {
@@ -203,7 +228,7 @@
       },
       {
         "source": "/build/tooling/hardhat/*.@(html|md)",
-        "destination": "/build/tooling/hardhat/getting-started",
+        "destination": "/build/tooling/hardhat",
         "type": 301
       },
       {
