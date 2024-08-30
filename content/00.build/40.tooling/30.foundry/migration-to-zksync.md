@@ -3,8 +3,13 @@ title: Migrating Foundry project to ZKsync Era
 description: Learn how to migrate an existing Foundry project to ZKsync Era.
 ---
 
-First of all, we highly recommend you to check the ZKsync Foundry short [overview](/build/tooling/foundry/overview) page
-to learn about made changes, features and limitations.
+::callout{icon="i-heroicons-information-circle-16-solid" color="amber"}
+We are actively working on an analogue of the original Foundry book for ZKsync. It will provide in-depth information
+about ZKsync foundry. Stay tuned!
+::
+
+We highly recommend you to check out the ZKsync Foundry short [overview](/build/tooling/foundry/overview)
+page to learn about made changes, features and limitations as well as [discrepancies guide](/build/tooling/foundry/discrepancies).
 
 First step you need to do to migrate your project, is install ZKsync foundry. You can do this
 by following our [installation guide](/build/foundry/getting-started#installation-guide).
@@ -13,24 +18,23 @@ Now you are ready to migrate.
 
 ### Compilation
 
-You have to rebuild your foundry project. To do this, follow [`Compilation with forge build --zksync`](/build/foundry/getting-started#compilation-with-forge-build-zksync) guide.
+You have to rebuild your foundry project. To do this, follow
+[Compilation with `forge build --zksync`](/build/foundry/getting-started#compilation-with-forge-build-zksync) guide.
 
 ### Deployment
 
-To deploy your contracts on ZKsync Era, follow [`Deployment with `forge create --zksync`](/build/foundry/getting-started#deployment-with-forge-create-zksync) guide.
-
-
-### ZKsync Chain Interactions with `cast`
-TODO
-
+To deploy your contracts on ZKsync Era, follow
+[Deployment with `forge create --zksync`](/build/foundry/getting-started#deployment-with-forge-create-zksync) guide.
 
 ### Configuration
 
 More about configuration is described in Getting Started [configuration](/build/foundry/getting-started#configuration) guide.
 
-::callout{icon="i-heroicons-information-circle-16-solid" color="amber"}
-We are going to introduce the `ZK Foundry Discrepancies Guide` soon, where we will cover the differences, potential challenges, and best practices for a successful migration. Besides we are working on ZKsync Foundry book. Stay tuned!
-::
-
 ## Testing
 Check out our guide for foundry testing [here](/build/test-and-debug/foundry).
+
+## Support
+
+If you're having issues migrating a Foundry project to ZKsync, please check out an existing list of issues in
+`foundry-zksync` github issues [page](https://github.com/matter-labs/foundry-zksync/issues) or reach out to us
+by creating a GitHub discussion [here](%%zk_git_repo_zksync-developers%%/discussions/).
