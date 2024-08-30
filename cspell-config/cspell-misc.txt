@@ -16,5 +16,7 @@ Lukka
 mathbb
 mundo
 permissioned
+pnpx
 Winternitz
 zkicon
+zkvm
