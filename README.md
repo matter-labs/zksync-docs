@@ -102,10 +102,3 @@ If you want to contribute tutorials to our Docs, check out the
 [Community Code repo](https://github.com/zkSync-Community-Hub/community-code?tab=readme-ov-file#community-code)!
 
 Join us in making ZKsync Docs better for everyone! 🌐✨
-
-## Issues
-
-### 'failed to fetch git tree'
-
-If your bun install fails with 'failed to fetch git tree', this is probably due to the github rate limiting the API
-for unauthorized accesses. You either have to wait, change ip address or pass the github authorization token.

@@ -12,7 +12,6 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    '/api/search.json': { prerender: true },
     '/build/tooling': { redirect: '/build/tooling/zksync-block-explorers' },
     '/build/tooling/foundry': { redirect: '/build/tooling/foundry/overview' },
     '/build/developer-reference/ethereum-differences': {
