@@ -28,3 +28,4 @@ ZKP
 ZKVM
 eravm
 ERAVM
+foundryup-zksync
