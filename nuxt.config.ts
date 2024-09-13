@@ -12,9 +12,7 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    '/api/search.json': { prerender: true },
     '/build/tooling': { redirect: '/build/tooling/zksync-block-explorers' },
-    '/build/tooling/hardhat': { redirect: '/build/tooling/hardhat/getting-started' },
     '/build/tooling/foundry': { redirect: '/build/tooling/foundry/overview' },
     '/build/developer-reference/ethereum-differences': {
       redirect: '/build/developer-reference/ethereum-differences/evm-instructions',
