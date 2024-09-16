@@ -25,3 +25,4 @@ zkvyper
 !ZkSync
 ZKsync
 ZKP
+zkvm
