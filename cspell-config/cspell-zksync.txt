@@ -29,4 +29,5 @@ ZKVM
 eravm
 ERAVM
 foundryup-zksync
+foundryup
 zkvm
