@@ -25,4 +25,9 @@ zkvyper
 !ZkSync
 ZKsync
 ZKP
+ZKVM
+eravm
+ERAVM
+foundryup-zksync
+foundryup
 zkvm
