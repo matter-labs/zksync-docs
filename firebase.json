@@ -167,6 +167,11 @@
         "type": 301
       },
       {
+        "source": "/build/tooling/hardhat/hardhat-:plugin.@(html|md)",
+        "destination": "/build/tooling/hardhat/plugins/hardhat-:plugin",
+        "type": 301
+      },
+      {
         "source": "/build/tooling/hardhat/other-plugins",
         "destination": "/build/tooling/hardhat/plugins/other-plugins",
         "type": 301
