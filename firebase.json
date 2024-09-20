@@ -167,7 +167,7 @@
         "type": 301
       },
       {
-        "source": "/build/tooling/hardhat/hardhat-:plugin.@(html|md)",
+        "source": "/docs/tools/hardhat/hardhat-:plugin.@(html|md)",
         "destination": "/build/tooling/hardhat/plugins/hardhat-:plugin",
         "type": 301
       },
