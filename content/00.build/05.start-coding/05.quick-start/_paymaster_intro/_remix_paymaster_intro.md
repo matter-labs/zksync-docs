@@ -3,13 +3,15 @@ title: Paymaster with Remix
 ---
 
 ::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
-Remix does not support `zksync-ethers` yet so you can not use it to run this script. Use Atlas instead.
+**The Remix provider does not support EIP712 transactions yet, which are required to interact with paymaster contracts.
+Please use Atlas for this part.**
 ::
 
-To open the project in Remix, use the “Clone” option from the file explorer to import it from the following GitHub
-repository:`https://github.com/ZKsync-Community-Hub/zksync-quickstart-remix`
+Click the button below to open the project in Remix and see the contract in the Remix code editor.
 
-![Clone repo in Remix](/images/remix-plugin-clone-repo.gif)
+:u-button{ icon="i-heroicons-code-bracket" size="lg" color="primary" variant="solid" :trailing="false"
+to="https://remix.ethereum.org/?#activate=zkSync&call=zkSync//loadFromGithub//ZKsync-Community-Hub//zksync-quickstart-remix//"
+target="_blank" label="Open project in Remix"}
 
 Once the project is imported, open the `scripts/paymaster-transaction.ts` file, which contains the code to send a
 transaction via the paymaster. Let’s go through the most important parts:
@@ -128,6 +130,11 @@ const TOKEN_CONTRACT_ADDRESS = ""
 // Message to be sent to the contract
 const NEW_MESSAGE = "This tx cost me no ETH!";
 ```
+
+::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
+Open the "Deploy & run transactions" menu in Remix and select "Injected Provider - Metamask"
+from the environment dropdown to target the network selected in your wallet when running scripts.
+::
 
 Next, make sure the script file is selected in the Remix editor and click on the “▶️” button. You’ll see the progress in the console.
 

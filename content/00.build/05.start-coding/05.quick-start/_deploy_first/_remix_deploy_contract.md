@@ -13,18 +13,21 @@ compatible protocols.
 Click the button below to open the project in Remix and see the contract in the Remix code editor.
 
 :u-button{ icon="i-heroicons-code-bracket" size="lg" color="primary" variant="solid" :trailing="false"
-to="https://remix.ethereum.org/#url=https://github.com/ZKsync-Community-Hub/zksync-quickstart-remix/blob/master/contracts/ZeekMessages.sol"
-target="_blank" label="Open smart contract in Remix"}
+to="https://remix.ethereum.org/?#activate=zkSync&call=zkSync//loadFromGithub//ZKsync-Community-Hub//zksync-quickstart-remix//"
+target="_blank" label="Open project in Remix"}
 
 ### Connect your wallet
 
 Make sure your wallet is currently connected to the %%zk_testnet_name%% as we will use our wallet’s configured
-network to deploy our smart contract. In Remix, under the Environment Section, select “Wallet” and click on
-“Connect Wallet”.
+network to deploy our smart contract. In the ZKsync Remix plugin, under the Environment Section, select “Wallet” and click on
+“Connect Wallet” as shown below:
+
+![Connect wallet in Remix](/images/remix-connect-wallet.gif)
 
 ### Compile the contract
 
-To compile the contract, click on "Compile ZeeksSecretMessages.sol". If you get a popup message requesting permissions to
+To compile the contract, open the `ZeeksSecretMessages.sol` file in the editor, go the ZKsync plugin, and click on "Compile ZeeksSecretMessages.sol".
+If you get a popup message requesting permissions to
 access **`ACCESS TO "WRITEFILE" OF "FILE MANAGER"`,** click on "Accept".
 
 ::callout{icon="i-heroicons-light-bulb"}
