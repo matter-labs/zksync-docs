@@ -1,10 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['@matterlabs/docs-nuxt-template'],
-  modules: ['@nuxt/content', '@nuxt/ui', '@nuxt/eslint', '@nuxtjs/seo', 'nuxt-gtag', '@vite-pwa/nuxt'],
+  modules: ['nuxt-gtag', '@vite-pwa/nuxt'],
   site: {
     name: 'ZKsync Docs',
-    url: process.env.NUXT_SITE_ENV ? 'https://staging-docs.zksync.io' : 'https://docs.zksync.io',
+    url: process.env.NUXT_SITE_ENV === 'production' ? 'https://docs.zksync.io' : 'https://staging-docs.zksync.io',
   },
   runtimeConfig: {
     public: {
@@ -84,11 +84,16 @@ export default defineNuxtConfig({
       ],
     },
   },
-  $production: process.env.NUXT_SITE_ENV
-    ? {}
-    : {
-        gtag: {
-          id: 'G-ELFWXSL45V',
+  $production:
+    process.env.NUXT_SITE_ENV === 'production'
+      ? {
+          gtag: {
+            id: 'G-ELFWXSL45V',
+          },
+        }
+      : {
+          gtag: {
+            enabled: false,
+          },
         },
-      },
 });
