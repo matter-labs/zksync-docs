@@ -45,7 +45,6 @@
   },
   "stackblitz": {
     "installDependencies": true,
-    "startCommanad": "bun run dev",
-    "corsProxy": true
+    "startCommanad": "bun run dev"
   }
 }
