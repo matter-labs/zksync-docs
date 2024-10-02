@@ -22,18 +22,13 @@
     "vue-tsc": "2.1.6"
   },
   "dependencies": {
-    "@iconify-json/heroicons": "1.2.0",
-    "@iconify-json/simple-icons": "1.2.5",
-    "@iconify-json/vscode-icons": "1.2.2",
     "@matterlabs/docs-nuxt-template": "2.9.2",
     "@tsparticles/slim": "3.5.0",
     "@tsparticles/vue3": "3.0.1",
     "@vite-pwa/nuxt": "0.10.5",
     "nuxt-gtag": "3.0.1",
-    "nuxt-headlessui": "1.2.0",
     "rehype-katex": "7.0.1",
-    "remark-math": "6.0.0",
-    "vue-easy-lightbox": "1.19.0"
+    "remark-math": "6.0.0"
   },
   "scripts": {
     "build": "nuxt generate",
