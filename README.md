@@ -6,7 +6,7 @@
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-orange)](CONTRIBUTING.md)
 [![X (formerly Twitter) Follow](https://badgen.net/badge/twitter/@zksyncDevs/1DA1F2?icon&label)](https://x.com/zksyncDevs)
 
-Welcome to the **ZKsync Docs** repository! This is your go-to hub for all things
+Welcome to the **ZKsync Docs** repository! This is your go-to hub for all things 2
 ZKsync. Dive into our comprehensive documentation whether you're just starting out or looking for advanced guides.
 
 ## 🚀 Quick Start
