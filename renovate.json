@@ -1,13 +1,16 @@
 {
-  "extends": [
-    "github>nuxt/renovate-config-nuxt",
-    "config:recommended",
-    "group:allNonMajor",
-    ":semanticCommitTypeAll(chore)"
-  ],
+  "extends": ["config:best-practices", ":semanticCommitTypeAll(chore)", "group:allNonMajor"],
   "timezone": "Europe/London",
-  "schedule": ["every weekend"],
+  "schedule": ["before 5am on monday"],
   "semanticCommits": "enabled",
+  "npm": {
+    "minimumReleaseAge": "1 week"
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
+  },
+  "separateMajorMinor": true,
   "packageRules": [
     {
       "groupName": "Nuxt Dependencies",
@@ -15,24 +18,19 @@
       "matchPackageNames": [
         "@matterlabs/docs-nuxt-template",
         "@iconify-json/**",
-        "@nuxt**",
-        "nuxt**",
+        "/@*(nuxt)(js)*/",
         "vue-easy-lightbox",
-        "@docsearch/**",
         "rehype-katex",
         "remark-math",
-        "dayjs"
+        "@tsparticles/**",
+        "@vite-pwa/nuxt"
       ]
-    },
-    {
-      "groupName": "ZK Dependencies",
-      "groupSlug": "zk-deps",
-      "matchPackageNames": ["ethers", "hardhat", "zksync-ethers"]
     },
     {
       "groupName": "Tooling Dependencies",
       "groupSlug": "tooling-deps",
       "matchPackageNames": [
+        "@types/bun",
         "eslint",
         "@commitlint/**",
         "cspell",
@@ -42,11 +40,7 @@
         "markdownlint**",
         "prettier**",
         "typescript",
-        "vue-tsc",
-        "@playwright/test",
-        "@vue/test-utils",
-        "node-pty",
-        "pm2"
+        "vue-tsc"
       ]
     }
   ]
