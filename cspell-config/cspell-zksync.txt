@@ -16,6 +16,7 @@ ZK Chain
 !ZKChain
 !zkStack
 -zkstack-
+zkstack
 ZK Stack
 zksync
 zksync-cli
