@@ -90,8 +90,10 @@ smod
 sqlx-cli
 sstore
 syncvm
+sendtransaction
 tlsv1
 tokio
+txorigin
 unroller
 viem
 Viem
