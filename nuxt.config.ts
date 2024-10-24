@@ -1,10 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['@matterlabs/docs-nuxt-template'],
-  modules: ['@nuxt/content', '@nuxt/ui', '@nuxt/eslint', '@nuxtjs/seo', 'nuxt-gtag', '@vite-pwa/nuxt'],
+  modules: ['nuxt-gtag', '@vite-pwa/nuxt'],
   site: {
     name: 'ZKsync Docs',
-    url: process.env.NUXT_SITE_ENV ? 'https://staging-docs.zksync.io' : 'https://docs.zksync.io',
+    url: process.env.NUXT_SITE_ENV === 'production' ? 'https://docs.zksync.io' : 'https://staging-docs.zksync.io',
   },
   runtimeConfig: {
     public: {
@@ -84,11 +84,26 @@ export default defineNuxtConfig({
       ],
     },
   },
-  $production: process.env.NUXT_SITE_ENV
-    ? {}
-    : {
-        gtag: {
-          id: 'G-ELFWXSL45V',
+  icon: {
+    clientBundle: {
+      // scan all components in the project and include icons
+      scan: true,
+      // include all custom collections in the client bundle
+      includeCustomCollections: true,
+      // guard for uncompressed bundle size, will fail the build if exceeds
+      sizeLimitKb: 256,
+    },
+  },
+  $production:
+    process.env.NUXT_SITE_ENV === 'production'
+      ? {
+          gtag: {
+            id: 'G-ELFWXSL45V',
+          },
+        }
+      : {
+          gtag: {
+            enabled: false,
+          },
         },
-      },
 });

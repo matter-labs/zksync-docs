@@ -4,6 +4,7 @@ on:
     branches: [main]
 
 env:
+  NUXT_SITE_ENV: production # used for NuxtSEO to disable things like indexing on staging
   HUSKY: 0
   CI: true
 
@@ -21,11 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-      - uses: actions/checkout@v4 # v4
+      - uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
         with:
           persist-credentials: false # <--- checking this in commit context
 
-      - uses: oven-sh/setup-bun@v1
+      - uses: oven-sh/setup-bun@v2
 
       - name: "Install dependencies"
         run: bun install --production --frozen-lockfile
