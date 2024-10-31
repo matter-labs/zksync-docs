@@ -107,3 +107,4 @@ ZKEVM
 zkout
 zksolc
 zkvyper
+retryable

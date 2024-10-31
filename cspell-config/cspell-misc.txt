@@ -20,3 +20,8 @@ pnpx
 Winternitz
 zkicon
 zkvm
+Celestia
+celestia
+Eigen
+eigen
+turing
