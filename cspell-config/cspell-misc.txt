@@ -18,5 +18,6 @@ mundo
 permissioned
 pnpx
 Winternitz
+Yubi
 zkicon
 zkvm
