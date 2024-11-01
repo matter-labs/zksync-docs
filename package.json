@@ -46,9 +46,5 @@
   "stackblitz": {
     "installDependencies": true,
     "startCommanad": "bun run dev"
-  },
-  "trustedDependencies": [
-    "@matterlabs/docs-nuxt-template",
-    "@tsparticles/engine"
-  ]
+  }
 }
