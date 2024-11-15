@@ -5,6 +5,11 @@ import { readFileSync } from 'fs';
 // files cache
 const files = new Map<string, string>();
 
+// Scans the file to look for `:code-import{filePath:<path/to/file:anchor_name>}` templates, and replaces
+// them with the corresponding code snippet from the `examples` directory. `anchor_name` is optional.
+//
+// The code snippets are also scanned for the `ANCHOR` and `ANCHOR_END` markers,
+// which are used to mark that only the part of the snippet should be used.
 export default defineNitroPlugin((nitroApp) => {
   nitroApp.hooks.hook('content:file:beforeParse', (file) => {
     if (file.body.includes(':code-import{filePath')) {
