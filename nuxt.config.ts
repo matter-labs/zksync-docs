@@ -6,6 +6,9 @@ export default defineNuxtConfig({
     name: 'ZKsync Docs',
     url: process.env.NUXT_SITE_ENV === 'production' ? 'https://docs.zksync.io' : 'https://staging-docs.zksync.io',
   },
+  nitro: {
+    plugins: ['./plugins/code-snippet-import.ts'],
+  },
   runtimeConfig: {
     public: {
       app: 'docs',
