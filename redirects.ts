@@ -16,9 +16,9 @@ const redirects = {
 
 // In Nov 2024, the structure of docs has been reworked significantly, so all the old links were moved to new places.
 const docsReorgRedirects = {
-  '/zksync-node': { redirect: 'TODO' },
-  '/zk-stack': { redirect: 'TODO' },
-  '/build': { redirect: 'TODO' },
+  // '/zksync-node': { redirect: 'TODO' },
+  // '/zk-stack': { redirect: 'TODO' },
+  // '/build': { redirect: 'TODO' },
 };
 
 export default {

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { NuxtError } from '#app';
+import { headerLinks } from './header-links';
 
 useSeoMeta({
   title: 'Page not found',
@@ -26,7 +27,7 @@ provide('navigation', navigation);
 
 <template>
   <div>
-    <HeaderComponent />
+    <HeaderComponent :links="headerLinks()" />
 
     <UMain>
       <UContainer>

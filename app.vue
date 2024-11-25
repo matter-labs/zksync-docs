@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { headerLinks } from './header-links';
+
 const { seo } = useAppConfig();
 
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation());
@@ -43,7 +45,7 @@ useSeoMeta({
     <NuxtPwaManifest />
     <NuxtLoadingIndicator />
 
-    <HeaderComponent />
+    <HeaderComponent :links="headerLinks()" />
 
     <UMain>
       <NuxtLayout>
