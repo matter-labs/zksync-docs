@@ -32,7 +32,7 @@ access **`ACCESS TO "WRITEFILE" OF "FILE MANAGER"`,** click on "Accept".
 
 ::callout{icon="i-heroicons-light-bulb"}
 Behind the scenes, Remix is using the ZKsync Era custom solidity compiler
-(named `zksolc`) to generate ZKsync VM compatible bytecode. [Learn more about ZKsync custom compilers](/zk-stack/components/compiler/toolchain).
+(named `zksolc`) to generate ZKsync VM compatible bytecode. [Learn more about ZKsync custom compilers](/zksync-protocol/compiler/toolchain).
 ::
 
 ### Deploy the contract

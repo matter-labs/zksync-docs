@@ -17,7 +17,7 @@ and click on **"Deploy"** to trigger the smart contract compilation and deployme
 
 ::callout{icon="i-heroicons-light-bulb"}
 Behind the scenes, Atlas is using the ZKsync Era custom solidity compiler
-(named `zksolc` ) to generate ZKEVM compatible bytecode. [Learn more about ZKsync custom compilers](/zk-stack/components/compiler/toolchain).
+(named `zksolc` ) to generate ZKEVM compatible bytecode. [Learn more about ZKsync custom compilers](/zksync-protocol/compiler/toolchain).
 ::
 
 ![ERC20 interact script in Atlas](/images/101-erc20/atlas-deploy-erc20.png)
