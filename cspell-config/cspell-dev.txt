@@ -110,7 +110,6 @@ zkout
 zksolc
 zkvyper
 retryable
-itsacoyote
 arrayify
 applyl
 zbin
