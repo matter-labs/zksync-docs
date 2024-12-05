@@ -24,11 +24,6 @@ export const headerLinks = () => {
       active: route.path.startsWith('/zksync-protocol'),
     },
     {
-      label: 'Ecosystem',
-      to: isDocsApp ? '/ecosystem' : `${config.public.urls.docs}/ecosystem`,
-      active: route.path.startsWith('/ecosystem'),
-    },
-    {
       label: 'Community Code',
       to: isCodeApp ? '/' : `${config.public.urls.code}`,
       active: isCodeApp,
