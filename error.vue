@@ -27,7 +27,8 @@ provide('navigation', navigation);
 
 <template>
   <div>
-    <HeaderComponent :links="headerLinks()" />
+    <!-- FIXME: Hack, we want to pass computed property while `useHeaderNav` expects an array -->
+    <HeaderComponent :links="computed(() => headerLinks()) as any" />
 
     <UMain>
       <UContainer>
