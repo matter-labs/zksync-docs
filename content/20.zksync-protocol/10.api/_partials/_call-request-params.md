@@ -17,5 +17,5 @@ title: CallRequest Params
 - **transaction_type**: QUANTITY, 8 bytes - Type of the transaction.
 - **access_list**: AccessList - EIP-2930 access list.
 - **customData**: OBJECT - Extra parameters for
-[EIP712 transactions](/zk-stack/concepts/transaction-lifecycle#eip-712-0x71), like `paymasterParams` or `customSignature`.
+[EIP712 transactions](/zksync-protocol/rollup/transaction-lifecycle#eip-712-0x71), like `paymasterParams` or `customSignature`.
 ::

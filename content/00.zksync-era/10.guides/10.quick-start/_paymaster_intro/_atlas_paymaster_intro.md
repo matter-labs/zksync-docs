@@ -110,8 +110,8 @@ Finally we retrieve and print the ETH and ERC20 balances to see how they’ve ch
 ## Run the script
 
 To run the script, first enter the addresses of the `ZeekMessages.sol` and `TestToken.sol` contracts that we
-deployed previously ([Deploy your first contract](/build/start-coding/quick-start/deploy-your-first-contract) and
-[Erc20 Token](/build/start-coding/quick-start/erc20-token)) in the following variables at the beginning of
+deployed previously ([Deploy your first contract](/zksync-era/guides/quick-start/deploy-your-first-contract) and
+[Erc20 Token](/zksync-era/guides/quick-start/erc20-token)) in the following variables at the beginning of
 the script:
 
 ```typescript
