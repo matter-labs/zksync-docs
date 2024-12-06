@@ -1,4 +1,3 @@
-// TODO: `active` prop is not working properly, need to fix it
 export const headerLinks = () => {
   const config = useRuntimeConfig();
   const route = useRoute();
