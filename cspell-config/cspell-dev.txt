@@ -110,3 +110,8 @@ zkout
 zksolc
 zkvyper
 retryable
+arrayify
+applyl
+zbin
+scaleb
+chainid

@@ -11,23 +11,23 @@ hero:
     - label: Start building on ZKsync
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
-      to: '/build'
+      to: '/zksync-era'
       size: xl
 features:
   title: 'Explore ZKsync Docs'
   items:
-    - title: 'Getting Started with ZKsync'
-      description: 'Jumpstart your ZKsync journey with quickstart guides and fundamental concepts for developers.'
+    - title: 'ZKsync Era'
+      description: 'Start building apps on the ZKsync Era.'
       icon: 'i-zkicon-zksync'
-      to: '/build/start-coding/quick-start'
-    - title: 'Develop with zksync-cli'
-      description: 'Boost your development workflow with the zksync-cli tool.'
-      icon: 'i-simple-icons-windowsterminal'
-      to: '/build/zksync-cli'
-    - title: 'Architecture'
-      description: 'Learn about the ZKsync architecture and how it works under the hood.'
-      icon: 'i-heroicons-sparkles-20-solid'
+      to: '/zksync-era'
+    - title: 'ZK Stack'
+      description: 'Build your own ZK Chain. Fully custom.'
+      icon: 'i-heroicons-bars-4-16-solid'
       to: '/zk-stack'
+    - title: 'ZKsync protocol'
+      description: 'Learn the magic behind ZKsync.'
+      icon: 'i-heroicons-cpu-chip-16-solid'
+      to: '/zksync-protocol'
 community:
   title: 'Join the ZKsync Community'
   items:
