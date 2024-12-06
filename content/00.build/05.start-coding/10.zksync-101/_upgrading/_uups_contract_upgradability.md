@@ -187,7 +187,7 @@ V2_UUPSCrowdfundingCampaign initialized! Transaction Hash: 0xab959f588b64dc6dee1
 ## Verify upgradable contracts
 
 ::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
-Since we are using the in memory node for our smart contracts, we do not have the feature
+Since we are using the in memory anvil-zksync node for our smart contracts, we do not have the feature
 available to verify the smart contract.
 
 The following explains how you can verify an upgraded smart contract on testnet or mainnet.

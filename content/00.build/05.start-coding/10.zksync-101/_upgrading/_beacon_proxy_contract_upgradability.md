@@ -183,7 +183,7 @@ V2_BeaconCrowdfundingCampaign initialized. Transaction Hash: 0x5f3131c77fcac1939
 ## Verify upgradeable contracts
 
 ::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
-Since we are using the in memory node for our smart contracts, we do not have the feature
+Since we are using the in memory anvil-zksync node for our smart contracts, we do not have the feature
 available to verify the smart contract.
 
 The following explains how you can verify an upgraded smart contract on testnet or mainnet.
