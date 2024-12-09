@@ -69,6 +69,7 @@ const docsReorgRedirects = {
   },
 
   // ZKsync SSO
+  '/build/zksync-sso': { redirect: '/zksync-era/unique-features/zksync-sso' },
   '/build/zksync-sso/getting-started': { redirect: '/zksync-era/unique-features/zksync-sso/getting-started' },
   '/build/zksync-sso/architecture': { redirect: '/zksync-era/unique-features/zksync-sso/architecture' },
   '/build/zksync-sso/features': { redirect: '/zksync-era/unique-features/zksync-sso/features' },
