@@ -69,6 +69,7 @@ const docsReorgRedirects = {
   },
 
   // ZKsync SSO
+  '/build/zksync-sso': { redirect: '/zksync-era/unique-features/zksync-sso' },
   '/build/zksync-sso/getting-started': { redirect: '/zksync-era/unique-features/zksync-sso/getting-started' },
   '/build/zksync-sso/architecture': { redirect: '/zksync-era/unique-features/zksync-sso/architecture' },
   '/build/zksync-sso/features': { redirect: '/zksync-era/unique-features/zksync-sso/features' },
@@ -114,6 +115,7 @@ const docsReorgRedirects = {
   // Test and debug
   '/build/test-and-debug/hardhat': { redirect: '/zksync-era/guides/testing/testing-with-hardhat' },
   '/build/test-and-debug/foundry': { redirect: '/zksync-era/guides/testing/testing-with-foundry' },
+  '/build/test-and-debug/in-memory-node': { redirect: '/zksync-era/tooling/local-setup/in-memory-node' },
   '/build/test-and-debug': { redirect: '/zksync-era/tooling/local-setup' },
 
   // Dev reference
