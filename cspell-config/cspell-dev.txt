@@ -91,6 +91,7 @@ sqlx-cli
 sstore
 syncvm
 sendtransaction
+tabler
 tlsv1
 tokio
 txorigin
