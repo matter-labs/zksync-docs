@@ -116,3 +116,5 @@ applyl
 zbin
 scaleb
 chainid
+nvcc
+CUDA
