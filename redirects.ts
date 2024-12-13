@@ -72,10 +72,15 @@ const docsReorgRedirects = {
   '/build/zksync-sso': { redirect: '/zksync-era/unique-features/zksync-sso' },
   '/build/zksync-sso/getting-started': { redirect: '/zksync-era/unique-features/zksync-sso/getting-started' },
   '/build/zksync-sso/architecture': { redirect: '/zksync-era/unique-features/zksync-sso/architecture' },
-  '/build/zksync-sso/features': { redirect: '/zksync-era/unique-features/zksync-sso/features' },
-  '/build/zksync-sso/interfaces': { redirect: '/zksync-era/unique-features/zksync-sso/interfaces' },
+  '/build/zksync-sso/features': { redirect: '/zksync-era/unique-features/zksync-sso/architecture' },
+  '/zksync-era/unique-features/zksync-sso/features': {
+    redirect: '/zksync-era/unique-features/zksync-sso/architecture',
+  },
+  '/build/zksync-sso/interfaces': { redirect: '/zksync-era/unique-features/zksync-sso/sessions' },
+  '/zksync-era/unique-features/zksync-sso/interfaces': { redirect: '/zksync-era/unique-features/zksync-sso/sessions' },
   '/build/zksync-sso/transaction-flow': { redirect: '/zksync-era/unique-features/zksync-sso/transaction-flow' },
-  '/build/zksync-sso/transaction-fees': { redirect: '/zksync-era/unique-features/zksync-sso/transaction-fees' },
+  '/build/zksync-sso/transaction-fees': { redirect: '/zksync-era/unique-features/zksync-sso/faq' },
+  '/zksync-era/unique-features/zksync-sso/transaction-fees': { redirect: '/zksync-era/unique-features/zksync-sso/faq' },
   '/build/zksync-sso/supported-environments': {
     redirect: '/zksync-era/unique-features/zksync-sso/supported-environments',
   },
