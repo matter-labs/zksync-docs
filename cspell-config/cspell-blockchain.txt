@@ -60,3 +60,4 @@ Zonic
 paradigmxyz
 weth
 usdc
+Reown
