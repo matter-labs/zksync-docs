@@ -15,7 +15,7 @@
     "lint-staged": "15.2.10",
     "markdownlint": "0.35.0",
     "markdownlint-cli2": "0.14.0",
-    "nuxt": "3.13.2",
+    "nuxt": "3.14.1592",
     "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "0.6.8",
     "typescript": "5.6.2",
@@ -23,10 +23,10 @@
   },
   "dependencies": {
     "@matterlabs/docs-nuxt-template": "2.9.2",
-    "@tsparticles/slim": "3.5.0",
+    "@tsparticles/slim": "3.7.1",
     "@tsparticles/vue3": "3.0.1",
-    "@vite-pwa/nuxt": "0.10.5",
-    "nuxt-gtag": "3.0.1",
+    "@vite-pwa/nuxt": "0.10.6",
+    "nuxt-gtag": "3.0.2",
     "rehype-katex": "7.0.1",
     "remark-math": "6.0.0"
   },
