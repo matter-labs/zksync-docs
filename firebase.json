@@ -172,6 +172,16 @@
         "type": 301
       },
       {
+        "source": "/build/tooling/hardhat/plugins/hardhat-:plugin",
+        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat/plugins/hardhat-:plugin.@(html|md)",
+        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin",
+        "type": 301
+      },
+      {
         "source": "/build/tooling/hardhat/other-plugins",
         "destination": "/zksync-era/tooling/hardhat/plugins/other-plugins",
         "type": 301
