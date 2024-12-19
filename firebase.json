@@ -143,37 +143,47 @@
       },
       {
         "source": "/build/tooling/hardhat/getting-started.html",
-        "destination": "/build/tooling/hardhat",
+        "destination": "/zksync-era/tooling/hardhat",
         "type": 301
       },
       {
         "source": "/build/tooling/hardhat/getting-started",
-        "destination": "/build/tooling/hardhat/guides/getting-started",
+        "destination": "/zksync-era/tooling/hardhat/guides/getting-started",
         "type": 301
       },
       {
         "source": "/build/tooling/hardhat/migrating-to-zksync",
-        "destination": "/build/tooling/hardhat/guides/migrating-to-zksync",
+        "destination": "/zksync-era/tooling/hardhat/guides/migrating-to-zksync",
         "type": 301
       },
       {
         "source": "/build/tooling/hardhat/compiling-libraries",
-        "destination": "/build/tooling/hardhat/guides/compiling-libraries",
+        "destination": "/zksync-era/tooling/hardhat/guides/compiling-libraries",
         "type": 301
       },
       {
         "source": "/build/tooling/hardhat/hardhat-:plugin",
-        "destination": "/build/tooling/hardhat/plugins/hardhat-:plugin",
+        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin",
         "type": 301
       },
       {
         "source": "/docs/tools/hardhat/hardhat-:plugin.@(html|md)",
-        "destination": "/build/tooling/hardhat/plugins/hardhat-:plugin",
+        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat/plugins/hardhat-:plugin",
+        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat/plugins/hardhat-:plugin.@(html|md)",
+        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin",
         "type": 301
       },
       {
         "source": "/build/tooling/hardhat/other-plugins",
-        "destination": "/build/tooling/hardhat/plugins/other-plugins",
+        "destination": "/zksync-era/tooling/hardhat/plugins/other-plugins",
         "type": 301
       },
       {
