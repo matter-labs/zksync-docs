@@ -383,34 +383,91 @@ const docsReorgRedirects = {
   '/zk-stack/components/compiler/toolchain/llvm': { redirect: '/zksync-protocol/compiler/toolchain/llvm' },
   '/zk-stack/components/compiler/toolchain/solidity': { redirect: '/zksync-protocol/compiler/toolchain/solidity' },
 
-  '/zksync-protocol/compiler/toolchain/solidity': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/' },
+  '/zksync-protocol/compiler/toolchain/solidity': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/',
+  },
   '/zksync-protocol/compiler/toolchain/vyper': { redirect: 'https://matter-labs.github.io/era-compiler-vyper/latest/' },
-  '/zksync-protocol/compiler/specification/code-separation': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/01-code-separation.html' },
-  '/zksync-protocol/compiler/specification/evmla-translator': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/02-evm-assembly-translator.html' },
-  '/zksync-protocol/compiler/specification/system-contracts': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/03-system-contracts.html' },
-  '/zksync-protocol/compiler/specification/exception-handling': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/04-exception-handling.html' },
-  '/zksync-protocol/compiler/specification/instructions': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/01-reference.html' },
-  '/zksync-protocol/compiler/specification/instructions/index': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/01-reference.html' },
-  '/zksync-protocol/compiler/specification/instructions/evm': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/01-reference.html' },
-  '/zksync-protocol/compiler/specification/instructions/evm/arithmetic': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/02-arithmetic.html' },
-  '/zksync-protocol/compiler/specification/instructions/evm/bitwise': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/03-bitwise.html' },
-  '/zksync-protocol/compiler/specification/instructions/evm/block': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/04-block.html' },
-  '/zksync-protocol/compiler/specification/instructions/evm/call': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/05-calls.html' },
-  '/zksync-protocol/compiler/specification/instructions/evm/create': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/06-create.html' },
-  '/zksync-protocol/compiler/specification/instructions/evm/environment': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/07-environment.html' },
-  '/zksync-protocol/compiler/specification/instructions/evm/logging': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/08-logging.html' },
-  '/zksync-protocol/compiler/specification/instructions/evm/logical': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/09-logical.html' },
-  '/zksync-protocol/compiler/specification/instructions/evm/memory': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/10-memory.html' },
-  '/zksync-protocol/compiler/specification/instructions/evm/return': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/11-return.html' },
-  '/zksync-protocol/compiler/specification/instructions/evm/sha3': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/12-sha3.html' },
-  '/zksync-protocol/compiler/specification/instructions/evm/stack': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/13-stack.html' },
-  '/zksync-protocol/compiler/specification/instructions/evmla': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/03-evm-assembly.html' },
-  '/zksync-protocol/compiler/specification/instructions/yul': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/04-yul.html' },
-  '/zksync-protocol/compiler/specification/instructions/extensions': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/06-extensions.html' },
-  '/zksync-protocol/compiler/specification/instructions/extensions/index': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/06-extensions.html' },
-  '/zksync-protocol/compiler/specification/instructions/extensions/call': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/06-extensions.html' },
-  '/zksync-protocol/compiler/specification/instructions/extensions/verbatim': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/06-extensions.html' },
-  '/zksync-protocol/compiler/specification/binary-layout': { redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/07-binary-layout.html' },
+  '/zksync-protocol/compiler/specification/code-separation': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/01-code-separation.html',
+  },
+  '/zksync-protocol/compiler/specification/evmla-translator': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/02-evm-assembly-translator.html',
+  },
+  '/zksync-protocol/compiler/specification/system-contracts': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/03-system-contracts.html',
+  },
+  '/zksync-protocol/compiler/specification/exception-handling': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/04-exception-handling.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/01-reference.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/index': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/01-reference.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/evm': {
+    redirect:
+      'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/01-reference.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/evm/arithmetic': {
+    redirect:
+      'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/02-arithmetic.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/evm/bitwise': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/03-bitwise.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/evm/block': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/04-block.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/evm/call': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/05-calls.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/evm/create': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/06-create.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/evm/environment': {
+    redirect:
+      'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/07-environment.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/evm/logging': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/08-logging.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/evm/logical': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/09-logical.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/evm/memory': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/10-memory.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/evm/return': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/11-return.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/evm/sha3': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/12-sha3.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/evm/stack': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/13-stack.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/evmla': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/03-evm-assembly.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/yul': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/04-yul.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/extensions': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/06-extensions.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/extensions/index': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/06-extensions.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/extensions/call': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/06-extensions.html',
+  },
+  '/zksync-protocol/compiler/specification/instructions/extensions/verbatim': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/06-extensions.html',
+  },
+  '/zksync-protocol/compiler/specification/binary-layout': {
+    redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/07-binary-layout.html',
+  },
 
   // Running a zk chain
   '/zk-stack/running-a-zk-chain': { redirect: '/zk-stack/running' },
