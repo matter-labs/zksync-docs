@@ -91,6 +91,7 @@ sqlx-cli
 sstore
 syncvm
 sendtransaction
+tabler
 tlsv1
 tokio
 txorigin
@@ -100,6 +101,8 @@ Viem
 VRFs
 vue
 Vue
+Wagmi
+wagmi
 zasm
 Zerion
 zext
@@ -107,3 +110,11 @@ ZKEVM
 zkout
 zksolc
 zkvyper
+retryable
+arrayify
+applyl
+zbin
+scaleb
+chainid
+nvcc
+CUDA

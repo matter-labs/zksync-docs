@@ -18,5 +18,12 @@ mundo
 permissioned
 pnpx
 Winternitz
+Yubi
 zkicon
 zkvm
+Celestia
+celestia
+Eigen
+eigen
+turing
+undol

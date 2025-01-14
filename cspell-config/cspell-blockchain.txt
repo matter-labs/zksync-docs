@@ -58,3 +58,6 @@ Zerion
 Zetta
 Zonic
 paradigmxyz
+weth
+usdc
+Reown
