@@ -31,3 +31,5 @@ ERAVM
 foundryup-zksync
 foundryup
 zkvm
+zksyncsepolia
+zksyncmainnet
