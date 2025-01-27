@@ -4,15 +4,15 @@ import '@matterlabs/hardhat-zksync';
 // ANCHOR_END: zksync-import
 const config: HardhatUserConfig = {
   // ANCHOR: networks
-  defaultNetwork: 'zkSyncSepoliaTestnet',
+  defaultNetwork: 'ZKsyncEraSepolia',
   networks: {
-    zkSyncSepoliaTestnet: {
+    ZKsyncEraSepolia: {
       url: 'https://sepolia.era.zksync.dev',
       ethNetwork: 'sepolia',
       zksync: true,
       verifyURL: 'https://explorer.sepolia.era.zksync.dev/contract_verification',
     },
-    zkSyncMainnet: {
+    ZKsyncEraMainnet: {
       url: 'https://mainnet.era.zksync.io',
       ethNetwork: 'mainnet',
       zksync: true,
@@ -23,7 +23,7 @@ const config: HardhatUserConfig = {
       ethNetwork: 'http://localhost:8545',
       zksync: true,
     },
-    inMemoryNode: {
+    anvilZKsync: {
       url: 'http://127.0.0.1:8011',
       ethNetwork: 'localhost', // in-memory node doesn't support eth node; removing this line will cause an error
       zksync: true,
@@ -40,7 +40,7 @@ const config: HardhatUserConfig = {
   },
   // ANCHOR_END: zksolc
   solidity: {
-    version: '0.8.17',
+    version: '0.8.24',
   },
 };
 
