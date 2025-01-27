@@ -447,6 +447,11 @@
         "type": 301
       },
       {
+        "source": "/zk-stack/concepts/data-availability:ext(.html|.md|)*",
+        "destination": "/zk-stack/running/validium",
+        "type": 301
+      },
+      {
         "source": "/zk-stack/concepts/data-availability/validiums:ext(.html|.md|)*",
         "destination": "/zk-stack/running/validium",
         "type": 301
