@@ -87,6 +87,16 @@
         "type": 301
       },
       {
+        "source": "/sdk:ext(.html|.md|)*",
+        "destination": "/zksync-era/sdk",
+        "type": 301
+      },
+      {
+        "source": "/sdk/:path*",
+        "destination": "/zksync-era/sdk/:path",
+        "type": 301
+      },
+      {
         "source": "/sdk/:path*",
         "destination": "https://docs.zksync.io/zksync-era/sdk/:path",
         "type": 301
@@ -209,6 +219,16 @@
       {
         "source": "/build/tooling/hardhat/other-plugins",
         "destination": "/zksync-era/tooling/hardhat/plugins/other-plugins",
+        "type": 301
+      },
+      {
+        "source": "/ecosystem:ext(.html|.md|)*",
+        "destination": "/zksync-era/ecosystem",
+        "type": 301
+      },
+      {
+        "source": "/ecosystem/:path*",
+        "destination": "/new-destination",
         "type": 301
       },
       {
