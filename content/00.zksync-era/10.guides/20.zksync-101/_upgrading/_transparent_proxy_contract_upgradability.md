@@ -102,7 +102,7 @@ funding goal, without any time constraints.
 
 **Proposed Upgrade:**
 
-We're introducing a dealine on creation of a crowdfunding campaign.
+We're introducing a deadline on creation of a crowdfunding campaign.
 Contributions can only be made within the allowed time period.
 
 **Enhanced Contract:**
