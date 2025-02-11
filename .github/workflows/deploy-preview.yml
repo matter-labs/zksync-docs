@@ -27,7 +27,9 @@ jobs:
         run: bun install --production --frozen-lockfile
 
       - name: "Deploy target: staging"
-        run: bun run build
+        run: |
+          export NODE_OPTIONS="--unhandled-rejections=strict"
+          bun run build
 
       - name: "Deploy preview"
         uses: matter-labs/action-hosting-deploy@main
