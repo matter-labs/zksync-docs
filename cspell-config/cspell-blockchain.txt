@@ -1,5 +1,7 @@
 Aave
 arithmetization
+blake
+blake2f
 BoxUups
 Buterin
 Cronos
