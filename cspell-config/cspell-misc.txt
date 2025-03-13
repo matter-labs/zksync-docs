@@ -18,6 +18,7 @@ Lukka
 mathbb
 mundo
 permissioned
+pcaversaccio
 pnpx
 Winternitz
 Yubi
@@ -29,3 +30,4 @@ Eigen
 eigen
 turing
 undol
+Zoltu
