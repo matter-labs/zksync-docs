@@ -12,6 +12,7 @@ immediates
 Immunefi
 initializable
 Initializable
+Kado
 Lukka
 mathbb
 mundo
