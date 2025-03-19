@@ -9,6 +9,9 @@ env:
   HUSKY: 0
   CI: true
 
+permissions:
+  contents: read
+
 jobs:
   format:
     name: code_format
