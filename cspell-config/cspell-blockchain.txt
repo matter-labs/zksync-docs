@@ -6,6 +6,8 @@ BoxUups
 Buterin
 Cronos
 Dappradar
+defi
+Defi
 DRPC
 Echoo
 Eigen
