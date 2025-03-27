@@ -29,3 +29,5 @@ eigen
 eigenda
 turing
 undol
+trustlessly
+permissionlessly
