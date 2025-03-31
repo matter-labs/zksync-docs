@@ -12,6 +12,7 @@ immediates
 Immunefi
 initializable
 Initializable
+Kado
 Lukka
 mathbb
 mundo
@@ -25,6 +26,7 @@ Celestia
 celestia
 Eigen
 eigen
+eigenda
 turing
 undol
 trustlessly
