@@ -5,6 +5,8 @@ Cyfrin
 danksharding
 Danksharding
 decommitted
+deployers
+Deployers
 GRVT
 Hola
 Icones
@@ -17,6 +19,7 @@ Lukka
 mathbb
 mundo
 permissioned
+pcaversaccio
 pnpx
 Winternitz
 Yubi
@@ -31,3 +34,4 @@ turing
 undol
 trustlessly
 permissionlessly
+Zoltu
