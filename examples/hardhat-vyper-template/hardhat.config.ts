@@ -14,14 +14,14 @@ const config: HardhatUserConfig = {
       url: 'https://sepolia.era.zksync.dev',
       ethNetwork: 'sepolia',
       zksync: true,
-      verifyURL: 'https://block-explorer-api.sepolia.zksync.dev/api',
+      verifyURL: 'https://explorer.sepolia.era.zksync.dev/contract_verification',
       accounts: process.env.WALLET_PRIVATE_KEY ? [process.env.WALLET_PRIVATE_KEY] : [],
     },
     ZKsyncEraMainnet: {
       url: 'https://mainnet.era.zksync.io',
       ethNetwork: 'mainnet',
       zksync: true,
-      verifyURL: 'https://block-explorer-api.mainnet.zksync.io/api',
+      verifyURL: 'https://zksync2-mainnet-explorer.zksync.io/contract_verification',
       accounts: process.env.WALLET_PRIVATE_KEY ? [process.env.WALLET_PRIVATE_KEY] : [],
     },
     dockerizedNode: {
