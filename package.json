@@ -25,7 +25,7 @@
     "@matterlabs/docs-nuxt-template": "2.10.0",
     "@tsparticles/slim": "3.5.0",
     "@tsparticles/vue3": "3.0.1",
-    "@vite-pwa/nuxt": "0.10.5",
+    "@vite-pwa/nuxt": "1.0.0",
     "nuxt-gtag": "3.0.1",
     "rehype-katex": "7.0.1",
     "remark-math": "6.0.0"
