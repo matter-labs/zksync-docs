@@ -27,9 +27,7 @@ exclusively callable by the system's bootloader, adding an extra layer of securi
 
 Run the npm script `compile` to compile the contracts:
 
-```bash [npm]
-npm run compile
-```
+:display_partial{path="/_partials/commands/_compile"}
 
 The script to deploy the `GaslessPaymaster` is located at [`/deploy/4-paymaster/gasless/deploy.ts][deploy-script].
 

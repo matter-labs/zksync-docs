@@ -58,9 +58,7 @@ the contract so we may upgrade it in later steps.
 
 To compile the contracts in the project, run the following command:
 
-```bash [npm]
-npm run compile
-```
+:display_partial{path="/_partials/commands/_compile"}
 
 ## Deploy the updated contract
 
@@ -142,9 +140,7 @@ demonstrates the use of [`modifiers`](https://docs.soliditylang.org/en/latest/co
 
 Run the npm script `compile` to compile the contracts:
 
-```bash [npm]
-npm run compile
-```
+:display_partial{path="/_partials/commands/_compile"}
 
 ### Deploy the upgrade to `V2_UUPSCrowdfundingCampaign`
 
@@ -187,7 +183,7 @@ V2_UUPSCrowdfundingCampaign initialized! Transaction Hash: 0xab959f588b64dc6dee1
 ## Verify upgradable contracts
 
 ::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
-Since we are using the in memory anvil-zksync node for our smart contracts, we do not have the feature
+Since we are using the in-memory anvil-zksync node for our smart contracts, we do not have the feature
 available to verify the smart contract.
 
 The following explains how you can verify an upgraded smart contract on testnet or mainnet.

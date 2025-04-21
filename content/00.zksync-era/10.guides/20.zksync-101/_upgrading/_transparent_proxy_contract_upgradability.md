@@ -56,9 +56,7 @@ the contract so we may upgrade it in later steps.
 
 To compile the contracts in the project, run the following command:
 
-```bash [npm]
-npm run compile
-```
+:display_partial{path="/_partials/commands/_compile"}
 
 The deployment script is located at
 [`/deploy/3-proxy-contracts/transparent/deploy.ts`][deploy-script].
@@ -137,9 +135,7 @@ demonstrates the use of [`modifiers`](https://docs.soliditylang.org/en/latest/co
 
 Run the npm script `compile` to compile the contracts:
 
-```bash [npm]
-npm run compile
-```
+:display_partial{path="/_partials/commands/_compile"}
 
 ### Update to `V2_ProxyableCrowdfundingCampaign`
 
@@ -182,7 +178,7 @@ V2CrowdfundingCampaign initialized. Transaction Hash: 0x3a7cbf9d584457bc6b452964
 ## Verify upgradable contracts
 
 ::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
-Since we are using in memory anvil-zksync node for our smart contracts, we do not have the feature
+Since we are using in-memory anvil-zksync node for our smart contracts, we do not have the feature
 available to verify the smart contract.
 
 The following explains how you can verify an upgraded smart contract on testnet or mainnet.

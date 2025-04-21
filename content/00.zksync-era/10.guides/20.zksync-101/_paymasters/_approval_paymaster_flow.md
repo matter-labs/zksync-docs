@@ -32,9 +32,7 @@ exchange of 1.
 
 Run the npm script `compile` to compile the contracts:
 
-```bash [npm]
-npm run compile
-```
+:display_partial{path="/_partials/commands/_compile"}
 
 The script to deploy the `ApprovalFlowPaymaster` contract is located at [`/deploy/4-paymaster/approval/deploy.ts`][deploy-script].
 
