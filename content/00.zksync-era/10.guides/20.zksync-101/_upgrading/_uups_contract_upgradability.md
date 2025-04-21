@@ -207,7 +207,7 @@ Your verification ID is: 10619
 Contract successfully verified on ZKsync block explorer!
 ```
 
-[uups-crowdfunding-campaign-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/contracts/3-proxy-contracts/uups/UUPSCrowdfundingCampaign.sol
-[deploy-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/deploy/3-proxy-contracts/uups/deploy.ts
-[v2-uups-crowdfunding-campaign-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/contracts/3-proxy-contracts/uups/V2_UUPSCrowdfundingCampaign.sol
-[upgrade-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/deploy/3-proxy-contracts/uups/upgrade.ts
+[uups-crowdfunding-campaign-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/contracts/3-proxy-contracts/uups/UUPSCrowdfundingCampaign.sol
+[deploy-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/deploy/3-proxy-contracts/uups/deploy.ts
+[v2-uups-crowdfunding-campaign-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/contracts/3-proxy-contracts/uups/V2_UUPSCrowdfundingCampaign.sol
+[upgrade-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/deploy/3-proxy-contracts/uups/upgrade.ts

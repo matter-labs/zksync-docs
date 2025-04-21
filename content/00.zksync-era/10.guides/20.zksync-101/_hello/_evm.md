@@ -32,6 +32,11 @@ rich wallets for transactions and deployments.
 
 Copy one of the private keys logged after starting the node to the `.env` file, using the `.env.example` file as an example.
 
+## Deploy the contract
+
+The deployment script is located at
+[`/deploy/1-hello-zksync/deploy.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/evm/deploy/1-hello-zksync/deploy.ts).
+
 :display_partial{path="/_partials/101/hello/_deploy"}
 
 Upon successful deployment, you'll receive output showing the contract name and address.

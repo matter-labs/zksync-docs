@@ -17,4 +17,4 @@ This contract features:
 - The `getTotalFundsRaised` method to return the total amount of funds that's been raised.
 - The `getFundingGoal` method to return the goal for the campaign to reach.
 
-[crowdfunding-campaign-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/contracts/1-hello-zksync/CrowdfundingCampaign.sol
+[crowdfunding-campaign-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/contracts/1-hello-zksync/CrowdfundingCampaign.sol

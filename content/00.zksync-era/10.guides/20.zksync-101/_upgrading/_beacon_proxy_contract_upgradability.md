@@ -208,7 +208,7 @@ Your verification ID is: 10549
 Contract successfully verified on ZKsync block explorer!
 ```
 
-[beacon-crowdfunding-campaign-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/contracts/3-proxy-contracts/beacon/BeaconCrowdfundingCampaign.sol
-[deploy-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/deploy/3-proxy-contracts/beacon/deploy.ts
-[v2-beacon-crowdfunding-campaign-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/contracts/3-proxy-contracts/beacon/V2_BeaconCrowdfundingCampaign.sol
-[upgrade-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/deploy/3-proxy-contracts/beacon/upgrade.ts
+[beacon-crowdfunding-campaign-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/contracts/3-proxy-contracts/beacon/BeaconCrowdfundingCampaign.sol
+[deploy-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/deploy/3-proxy-contracts/beacon/deploy.ts
+[v2-beacon-crowdfunding-campaign-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/contracts/3-proxy-contracts/beacon/V2_BeaconCrowdfundingCampaign.sol
+[upgrade-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/deploy/3-proxy-contracts/beacon/upgrade.ts

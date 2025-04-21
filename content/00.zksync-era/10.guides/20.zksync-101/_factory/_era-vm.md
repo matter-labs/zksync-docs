@@ -4,6 +4,23 @@ title: EraVM - Factory
 
 :display_partial{path="/_partials/101/factory/_setup"}
 
+If you haven't started up your local in-memory `anvil-zksync` node or you're not sure, run the following:
+
+```bash
+zksync-cli dev restart
+```
+
+## Compile the contracts
+
+This section will focus on compiling and deploying the `CrowdfundingFactory.sol`
+contract that is provided under the [`/contracts/2-contract-factory` directory](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/contracts/2-contract-factory).
+
+:display_partial{path="/_partials/101/factory/_setup2"}
+
+The deployment script is located at [`/deploy/2-contract-factory/deploy.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/deploy/2-contract-factory/deploy.ts).
+
+:display_partial{path="/_partials/101/factory/_deploy"}
+
 Upon successful deployment, you'll receive output detailing the deployment process,
 including the contract address, source, and encoded constructor arguments:
 

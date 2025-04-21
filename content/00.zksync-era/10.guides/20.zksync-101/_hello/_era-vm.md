@@ -71,7 +71,7 @@ We are going to use the "in-memory node" module for our local node setup.
     zksync-cli dev start
     ```
 
-    anvil-zksync node includes pre-configured rich wallets for use, see [anvil-zksync rich wallets](/build/test-and-debug/in-memory-node#pre-configured-rich-wallets).
+    `anvil-zksync` node includes pre-configured rich wallets for use, see [anvil-zksync rich wallets](/build/test-and-debug/in-memory-node#pre-configured-rich-wallets).
 
 Your `anvil-zksync` node is accessible at **[http://127.0.0.1:8011](http://127.0.0.1:8011/)**, ready for deployment or testing purposes.
 You can use the Docker Desktop app to view logs from the running ZKsync Era node or use the `zksync-cli dev logs` command.
@@ -89,6 +89,11 @@ Copy the private key for the first rich wallet from `.env.example` to the `.env`
 ::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
 Never save a real private key to the `.env` file!
 ::
+
+## Deploy the contract
+
+The deployment script is located at
+[`/deploy/1-hello-zksync/deploy.ts`](https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/deploy/1-hello-zksync/deploy.ts).
 
 :display_partial{path="/_partials/101/hello/_deploy"}
 
@@ -149,7 +154,14 @@ You will get a response with the amount that we passed in to the constructor on 
 ✔ Decoded method response: 20000000000000000
 ```
 
-:display_partial{path="/_partials/101/hello/_interact2"}
+### Write to the contract using ZKsync CLI
+
+Let's fund this crowdfunding campaign and make Zeek happy!
+
+We will write to the contract using ZKsync CLI, which requires a private key.
+In this demonstration we will use the second wallet provided in the list of rich wallets.
+
+In the terminal, run the following command with your deployed contract's address:
 
 ```bash
 zksync-cli contract write \

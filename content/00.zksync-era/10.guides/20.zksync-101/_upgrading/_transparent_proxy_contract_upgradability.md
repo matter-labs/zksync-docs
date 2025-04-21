@@ -210,7 +210,7 @@ Your verification ID is: 10545
 Contract successfully verified on ZKsync block explorer!
 ```
 
-[proxyable-crowdfunding-campaign-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/contracts/3-proxy-contracts/transparent/ProxyableCrowdfundingCampaign.sol
-[deploy-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/deploy/3-proxy-contracts/transparent/deploy.ts
-[v2-proxyable-crowdfunding-campaign-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/contracts/3-proxy-contracts/transparent/V2_ProxyableCrowdfundingCampaign.sol
-[upgrade-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/deploy/3-proxy-contracts/transparent/upgrade.ts
+[proxyable-crowdfunding-campaign-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/contracts/3-proxy-contracts/transparent/ProxyableCrowdfundingCampaign.sol
+[deploy-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/deploy/3-proxy-contracts/transparent/deploy.ts
+[v2-proxyable-crowdfunding-campaign-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/contracts/3-proxy-contracts/transparent/V2_ProxyableCrowdfundingCampaign.sol
+[upgrade-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/deploy/3-proxy-contracts/transparent/upgrade.ts

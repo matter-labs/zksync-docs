@@ -2,11 +2,6 @@
 title: Deploy the contract
 ---
 
-## Deploy the contract
-
-The deployment script is located at
-[`/deploy/1-hello-zksync/deploy.ts`][deploy-script].
-
 **Key Components:**
 
 - **contractArtifactName:** Identifies the `CrowdfundingCampaign` contract for deployment.
@@ -34,5 +29,3 @@ bun deploy:hello-zksync
 ```
 
 ::
-
-[deploy-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/deploy/1-hello-zksync/deploy.ts
