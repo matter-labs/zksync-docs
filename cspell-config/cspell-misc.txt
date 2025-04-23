@@ -36,3 +36,5 @@ undol
 trustlessly
 permissionlessly
 Zoltu
+Zyfi
+Gravita
