@@ -44,3 +44,9 @@ Copy the smart contract address from Remix and search it via the [%%zk_testnet_n
 explorer](%%zk_testnet_block_explorer_url%%). You’ll see the contract has a transaction from the message you just sent.
 
 ![Contract in ZKsync explorer](/images/101-quickstart/101-contract-deployed.png)
+
+:display_partial{path="/_partials/remix/deploy/_status"}
+
+In the “Contract” tab you’ll see the contract source code as Remix automatically verified the contract for us.
+
+:display_partial{path="/_partials/remix/deploy/_verification"}
