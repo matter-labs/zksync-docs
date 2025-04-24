@@ -2,7 +2,6 @@
 title: Deploy ERC20 with Remix EraVM
 ---
 
-### Enable the Remix ZKsync plugin
 
 :display-partial{path="/_partials/remix/deploy/_enable-remix-zksync-plugin"}
 
