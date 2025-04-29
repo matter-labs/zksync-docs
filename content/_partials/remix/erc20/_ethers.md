@@ -5,7 +5,7 @@ title: Ethers with Remix
 This scripts uses `ethers` to interact with the contract we’ve just deployed.
 
 ::callout{icon="i-heroicons-light-bulb"}
-Existing libraries like `ethers` , `viem` and `web3.js` can be used to interact with smart contracts deployed on ZKsync Era.
+Existing libraries like `ethers` , and `viem` can be used to interact with smart contracts deployed on ZKsync Era.
 ::
 
 Fill the following variables:
