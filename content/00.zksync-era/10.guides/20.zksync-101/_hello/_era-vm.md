@@ -13,7 +13,7 @@ Upon successful compilation, you'll receive output detailing the
 of Solidity files compiled.
 
 ```bash
-Compiling contracts for ZKsync Era with zksolc v1.4.1 and solc v0.8.17
+Compiling contracts for ZKsync Era with zksolc v1.5.13 and solc v0.8.17
 Compiling 15 Solidity files
 Successfully compiled 15 Solidity files
 ```
