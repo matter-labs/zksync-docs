@@ -492,6 +492,11 @@
         "type": 301
       },
       {
+        "source": "/zk-stack/running/using-a-local-zk-chain",
+        "destination": "/zk-stack/running/quickstart",
+        "type": 301
+      },
+      {
         "source": "/zk-stack/:path*.@(html|md)",
         "destination": "/zk-stack/:path",
         "type": 301
