@@ -58,9 +58,7 @@ the contract so we may upgrade it in later steps.
 
 To compile the contracts in the project, run the following command:
 
-```bash [npm]
-npm run compile
-```
+:display_partial{path="/_partials/commands/_compile"}
 
 ## Deploy the updated contract
 
@@ -142,9 +140,7 @@ demonstrates the use of [`modifiers`](https://docs.soliditylang.org/en/latest/co
 
 Run the npm script `compile` to compile the contracts:
 
-```bash [npm]
-npm run compile
-```
+:display_partial{path="/_partials/commands/_compile"}
 
 ### Deploy the upgrade to `V2_UUPSCrowdfundingCampaign`
 
@@ -187,7 +183,7 @@ V2_UUPSCrowdfundingCampaign initialized! Transaction Hash: 0xab959f588b64dc6dee1
 ## Verify upgradable contracts
 
 ::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
-Since we are using the in memory anvil-zksync node for our smart contracts, we do not have the feature
+Since we are using the in-memory anvil-zksync node for our smart contracts, we do not have the feature
 available to verify the smart contract.
 
 The following explains how you can verify an upgraded smart contract on testnet or mainnet.
@@ -211,7 +207,7 @@ Your verification ID is: 10619
 Contract successfully verified on ZKsync block explorer!
 ```
 
-[uups-crowdfunding-campaign-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/contracts/3-proxy-contracts/uups/UUPSCrowdfundingCampaign.sol
-[deploy-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/deploy/3-proxy-contracts/uups/deploy.ts
-[v2-uups-crowdfunding-campaign-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/contracts/3-proxy-contracts/uups/V2_UUPSCrowdfundingCampaign.sol
-[upgrade-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/deploy/3-proxy-contracts/uups/upgrade.ts
+[uups-crowdfunding-campaign-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/contracts/3-proxy-contracts/uups/UUPSCrowdfundingCampaign.sol
+[deploy-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/deploy/3-proxy-contracts/uups/deploy.ts
+[v2-uups-crowdfunding-campaign-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/contracts/3-proxy-contracts/uups/V2_UUPSCrowdfundingCampaign.sol
+[upgrade-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/deploy/3-proxy-contracts/uups/upgrade.ts
