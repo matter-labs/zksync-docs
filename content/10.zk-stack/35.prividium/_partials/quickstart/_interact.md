@@ -17,7 +17,7 @@ and copy/paste the script below:
 This script:
 
 - Registers the deployer address as a user
-- Uses the generated user token to access the prividium network
+- Uses the generated user token to access the Proxy RPC API
 - Sends tokens from the deployer address to another address
 
 There is no method available to fetch a token that was previously generated.

@@ -11,6 +11,12 @@ export default defineNuxtConfig({
   nitro: {
     plugins: ['./plugins/code-snippet-import.ts'],
   },
+  components: [
+    {
+      path: '~/components',
+      global: true,
+    },
+  ],
   runtimeConfig: {
     public: {
       app: 'docs',

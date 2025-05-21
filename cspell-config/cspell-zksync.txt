@@ -5,8 +5,6 @@ Matter Labs
 Hyperchain
 Prividium
 prividium
-Prividiums
-prividiums
 Zeek
 Zeeks
 zkcast

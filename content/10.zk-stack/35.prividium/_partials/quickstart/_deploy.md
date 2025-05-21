@@ -8,8 +8,8 @@ Now that your chain is deployed and your wallet is funded, let's create a templa
 Move out of your ecosystem folder and initialize a new hardhat project using ZKsync CLI:
 
 ```bash
-npx zksync-cli create prividium-quickstart --template hardhat_solidity --project contracts
-cd prividium-quickstart
+npx zksync-cli create prividium-token --template hardhat_solidity --project contracts
+cd prividium-token
 ```
 
 Use the same private key for the rich wallet:
