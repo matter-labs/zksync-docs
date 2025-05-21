@@ -20,7 +20,9 @@ This script:
 - Uses the generated user token to access the prividium network
 - Sends tokens from the deployer address to another address
 
-(Q: how to verify the user is registered?)
+There is no method available to fetch a token that was previously generated.
+If you generate a user token and it's forgotten,
+you can simply generate a new token.
 
 Before running, update your `.env` file with the `RECIPIENT_ADDRESS` and `CONTRACT_ADDRESS`.
 Use the deployed ERC20 contract address for `CONTRACT_ADDRESS`,

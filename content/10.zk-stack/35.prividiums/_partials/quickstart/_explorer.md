@@ -10,14 +10,22 @@ The next step is to set up the block explorer and contract verifier service.
 The contract verifier is used to check contract source code against deployed bytecode.
 This is going to be used in the explorer to display the source code and ABIs of contracts.
 
-You are going to be prompted about the versions of compilers that you want to support.
-Choose `0.8.24` as the minimum version for solc, `1.56` for zksolc.
+In a new terminal run:
 
-In a new terminal run the following commands:
+```bash
+zkstack contract-verifier init \
+--zksolc-version v1.5.6 \
+--zkvyper-version v1.5.10  \
+--solc-version 0.8.24 \
+--era-vm-solc-version 0.8.28-1.0.1 \
+--vyper-version v0.4.1
+```
 
-```sh
-zkstack contract-verifier init
+This will download the needed binaries for verifying contracts on the block explorer.
 
+Next, run:
+
+```bash
 zkstack contract-verifier run
 ```
 
@@ -31,8 +39,10 @@ In a new terminal run:
 zkstack explorer init
 ```
 
+You can select the default options in the prompts.
+
 This command creates a database to store explorer data and generates a docker compose file with explorer services
-(`explorer-docker-compose.yml`).
+(`prividium_chain/configs/explorer-docker-compose.yml`).
 
 Next, for each chain you want to have an explorer, you need to start its backend services:
 
@@ -42,16 +52,6 @@ zkstack explorer backend
 
 This command uses the previously created docker compose file to start the services (api, data fetcher, worker) required for
 the explorer.
-
-Before running the front-end you need to select a port that don’t collides with the ports already in use.
-You can do that by editing `configs/apps.yaml` and change the port of the explorer to `3011`:
-
-```yaml
-portal:
-  http_port: 3030
-explorer:
-  http_port: 3011 # this won't collide
-```
 
 Finally, you can run the explorer app:
 

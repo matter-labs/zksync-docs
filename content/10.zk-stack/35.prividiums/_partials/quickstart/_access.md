@@ -28,20 +28,7 @@ it can only be accessed via the standard RPC API.
 For a given contract address, the `methods` field defines the contract functions that can be called.
 
 The function signature is used to identify functions and define rules for them.
-The format should be nearly identical to the function signature in the target contract, with a few exceptions.
-The following items can be omitted:
-
-- `memory` or `calldata` keywords
-- the `returns` keyword
-- `virtual` and `override` keywords
-- the variable names of arguments
-
-```solidity
-function <functionName>(<type of param1>, <type of param2>, ...)
-    <public | private | internal | external>
-    <pure | view | payable>
-    returns (<type of return1>, <type of return2>, …)
-```
+The format should the same signature as "canonical" signature defined in [Solidity ABI](https://docs.soliditylang.org/en/latest/abi-spec.html).
 
 #### Method Access
 
@@ -65,10 +52,9 @@ In addition to these rules,
 there is a universal rule applied
 so that users can only see transactions where
 their address is equal to the `msg.sender`.
-(how does this affect `read` access ?)
 
 You can fully customize the types by editing the `zksync-era/private-rpc/src/permissions/yaml-parser.ts` file.
-For more details about configuring this file, see (/zk-stack/prividium/components#TODO: add section).
+For more details about configuring this file, see the [components page](/zk-stack/prividium/components).
 
 #### ERC-20 Config
 
