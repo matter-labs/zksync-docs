@@ -54,7 +54,7 @@ so that users can only see transactions where
 their address is equal to the `msg.sender`.
 
 You can fully customize the types by editing the `zksync-era/private-rpc/src/permissions/yaml-parser.ts` file.
-For more details about configuring this file, see the [components page](/zk-stack/prividium/components).
+For more details about configuring this file, see the [components page](/zk-stack/prividiums/components).
 
 #### ERC-20 Config
 
