@@ -74,9 +74,13 @@ For more details about configuring this file, see (/zk-stack/prividium/component
 
 Replace the generated access config with the one below:
 
-```yaml
-:code-import{filePath="prividium/permissions.yaml"}
-```
+::drop-panel
+  ::panel{label="permissions.yaml"}
+    ```ts
+    :code-import{filePath="prividium/permissions.yaml"}
+    ```
+  ::
+::
 
 Replace `<0xYOUR_CONTRACT_ADDRESS>` with the deployed ERC-20 contract address.
 

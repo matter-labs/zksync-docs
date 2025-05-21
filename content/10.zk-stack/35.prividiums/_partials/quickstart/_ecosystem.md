@@ -19,44 +19,48 @@ You will be prompted with a series of options to customize your ecosystem and ge
 For this tutorial, use the options shown below.
 If you choose different names for your ecosystem or chain, remember to update the names in the commands later on.
 
-```bash
-❯ zkstack ecosystem create
+::drop-panel
+  ::panel{label="Prompt Options"}
+    ```bash
+    ❯ zkstack ecosystem create
 
-┌   ZK Stack CLI
-│
-◇  What do you want to name the ecosystem?
-│  my_elastic_network
-│
-◇  Select the origin of zksync-era repository
-│  Clone for me (recommended)
-│
-◇  Select the L1 network
-│  Localhost
-│
-◇  What do you want to name the chain?
-│  prividium_chain
-│
-◇  What's the chain id?
-│  548394
-│
-◇  Select how do you want to create the wallet
-│  Localhost
-│
-◇  Select the prover mode
-│  NoProofs
-│
-◇  Select the commit data generator mode
-│  Validium
-│
-◇  Select the base token to use
-│  Eth
-│
-◇  Enable EVM emulator?
-│  No
-│
-◇  Enable EVM emulator?
-│  No
-│
-◇  Do you want to start containers after creating the ecosystem?
-│  Yes
-```
+    ┌   ZK Stack CLI
+    │
+    ◇  What do you want to name the ecosystem?
+    │  my_elastic_network
+    │
+    ◇  Select the origin of zksync-era repository
+    │  Clone for me (recommended)
+    │
+    ◇  Select the L1 network
+    │  Localhost
+    │
+    ◇  What do you want to name the chain?
+    │  prividium_chain
+    │
+    ◇  What's the chain id?
+    │  548394
+    │
+    ◇  Select how do you want to create the wallet
+    │  Localhost
+    │
+    ◇  Select the prover mode
+    │  NoProofs
+    │
+    ◇  Select the commit data generator mode
+    │  Validium
+    │
+    ◇  Select the base token to use
+    │  Eth
+    │
+    ◇  Enable EVM emulator?
+    │  No
+    │
+    ◇  Enable EVM emulator?
+    │  No
+    │
+    ◇  Do you want to start containers after creating the ecosystem?
+    │  Yes
+    ```
+  ::
+::

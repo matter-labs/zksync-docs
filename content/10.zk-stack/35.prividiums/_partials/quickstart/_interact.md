@@ -6,9 +6,13 @@ description: Interact with token contract
 Make a new file in the `scripts` folder called `priv-interact.ts`
 and copy/paste the script below:
 
-```ts
-:code-import{filePath="prividium/scripts/priv-interact.ts"}
-```
+::drop-panel
+  ::panel{label="scripts/priv-interact.ts"}
+    ```ts
+    :code-import{filePath="prividium/scripts/priv-interact.ts"}
+    ```
+  ::
+::
 
 This script:
 
@@ -52,9 +56,13 @@ If you try to access the balance from a different wallet (or without a wallet), 
 Make a new file called `check-balance.ts` in the scripts folder
 and copy/paste the script below.
 
-```ts
-:code-import{filePath="prividium/scripts/check-balance.ts"}
-```
+::drop-panel
+  ::panel{label="scripts/check-balance.ts"}
+    ```ts
+    :code-import{filePath="prividium/scripts/check-balance.ts"}
+    ```
+  ::
+::
 
 This script just checks the ERC20 balance of the default wallet.
 
