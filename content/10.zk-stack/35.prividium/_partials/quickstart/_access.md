@@ -32,6 +32,18 @@ For a given contract address, the `methods` field defines the contract functions
 The function signature is used to identify functions and define rules for them.
 The format should the same signature as "canonical" signature defined in [Solidity ABI](https://docs.soliditylang.org/en/latest/abi-spec.html).
 
+To generate a list of your contract's functions in this format,
+you can use the `formatAbiItem` method from [`abitype`](https://abitype.dev/api/human#formatabiitem-1),
+as shown in the example below.
+
+::drop-panel
+  ::panel{label="print-format.ts"}
+    ```ts
+    :code-import{filePath="prividium/scripts/print-format.ts:function-signature"}
+    ```
+  ::
+::
+
 #### Method Access
 
 For each function, you can define a rule for `read` and `write` regardless of whether the function itself is a pure function.

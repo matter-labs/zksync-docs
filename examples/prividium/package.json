@@ -9,6 +9,7 @@
     "deploy-erc20": "hardhat run ./scripts/deploy-erc20.ts",
     "priv-interact": "hardhat run ./scripts/priv-interact.ts",
     "check-balance": "hardhat run ./scripts/check-balance.ts",
+    "print-format": "hardhat run ./scripts/print-format.ts",
     "compile": "hardhat compile",
     "clean": "hardhat clean",
     "test": "hardhat test --network hardhat"
@@ -28,6 +29,7 @@
     "mocha": "^11.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2",
+    "viem": "^2.30.0",
     "zksync-ethers": "^6.15.3"
   }
 }
