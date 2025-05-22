@@ -24,6 +24,6 @@ however this doesn't mean that anyone can see the details of these transactions.
 This is because for these methods, the private proxy RPC API validates that current user is equal to the `msg.sender` in the transactions.
 
 To apply changes to the permissions file,
-you will need to restart the proxy API.
+you will need to restart the Proxy API.
 If your config file isn't correctly configured,
 the API won't start.

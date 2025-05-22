@@ -4,7 +4,7 @@ description: Understand the access config
 ---
 
 The permissions config file at
-`my_elastic_network/chains/prividium_chain/configs/private-rpc-permissions.yaml`
+`/chains/prividium_chain/configs/private-rpc-permissions.yaml`
 can be edited based on what access you want end users to have.
 
 There are two sections in the permissions file: `groups` and `contracts`.
@@ -22,6 +22,8 @@ the group name can be used in the `contracts` section to grant the entire group 
 The `contracts` section defines the level of access available to specific contracts and their functions.
 If a contract is not included here, or a function not defined,
 it can only be accessed via the standard RPC API.
+
+Note that contracts can only be deployed via the standard RPC API.
 
 #### Defining Methods
 
