@@ -73,6 +73,9 @@ you must register a user token for that address,
 update the private key in your `.env` file,
 and then run the `check-balance` script.
 
+Before running, update your `.env` file with the `USER_TOKEN`
+obtained during the previous step.
+
 You can run the script with:
 
 ::code-group
