@@ -17,7 +17,7 @@ zkstack contract-verifier init \
 --zksolc-version v1.5.6 \
 --zkvyper-version v1.5.10  \
 --solc-version 0.8.24 \
---era-vm-solc-version 0.8.28-1.0.1 \
+--era-vm-solc-version 0.8.28-1.0.2 \
 --vyper-version v0.4.1
 ```
 
