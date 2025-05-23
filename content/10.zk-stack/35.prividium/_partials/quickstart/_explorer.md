@@ -67,5 +67,4 @@ You can now navigate to the explorer web-app. By default, explorer frontend star
 
 ### Checking the Block Explorer
 
-You can check for the example transactions done in the script by logging in with the deployer wallet.
-To see all transactions, log in with the admin wallet.
+You can check for the example transactions done in the script by logging in with the deployer wallet...

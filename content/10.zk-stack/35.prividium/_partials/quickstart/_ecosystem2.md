@@ -20,10 +20,8 @@ cd my_elastic_network
 Next, run the `zkstack ecosystem init` command below to deploy the ecosystem:
 
 ```bash
-zkstack ecosystem init --dev
+zkstack ecosystem init --dev --validium-type no-da
 ```
-
-When prompted to select the Validium type, select `NoDA`.
 
 ::callout{icon="i-heroicons-light-bulb"}
 If you have any issues at this step, try reinstalling the dependencies in the prerequisites.
