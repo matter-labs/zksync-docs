@@ -4,7 +4,7 @@ import { Provider } from 'zksync-ethers';
 // Address of the ERC20 contract
 const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS || '';
 const BASE_URL = process.env.BASE_URL || 'http://localhost:4041';
-const USER_TOKEN = process.env.USER_TOKEN || 'is9nByLPpgQmkVPxfbJJGvjAdJabBTAp';
+const USER_TOKEN = process.env.USER_TOKEN || '';
 if (!CONTRACT_ADDRESS || !USER_TOKEN) throw '⛔️ Provide address of the contract and user token.';
 
 async function main() {

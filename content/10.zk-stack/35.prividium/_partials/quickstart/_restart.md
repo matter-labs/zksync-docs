@@ -13,12 +13,4 @@ To restart the chain and RPC APIs, go to the ecosystem folder and:
 1. Run `zkstack server` to start the standard RPC API.
 1. In a new terminal, run `zkstack private-rpc run`.
 
-For the admin block explorer:
-
-1. In another terminal, run `zkstack contract-verifier run`.
-1. In another terminal, run `zkstack explorer backend`.
-1. In another terminal, run `zkstack explorer run`.
-
-For the public-facing block explorer with user authentication:
-
-TODO: add here
+For the block explorer...

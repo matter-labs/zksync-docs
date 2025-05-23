@@ -30,7 +30,7 @@ Note that contracts can only be deployed via the standard RPC API.
 For a given contract address, the `methods` field defines the contract functions that can be called.
 
 The function signature is used to identify functions and define rules for them.
-The format should the same signature as "canonical" signature defined in [Solidity ABI](https://docs.soliditylang.org/en/latest/abi-spec.html).
+The format should the same signature as the canonical signature defined in [Solidity ABI](https://docs.soliditylang.org/en/latest/abi-spec.html).
 
 To generate a list of your contract's functions in this format,
 you can use the `formatAbiItem` method from [`abitype`](https://abitype.dev/api/human#formatabiitem-1),
