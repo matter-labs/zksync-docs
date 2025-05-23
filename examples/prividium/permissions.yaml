@@ -1,0 +1,46 @@
+groups:
+  - name: 'admins_group1'
+    members:
+      - '0xa61464658AfeAf65CccaaFD3a512b69A83B77618'
+      - '0x0D43eB5B8a47bA8900d84AA36656c92024e9772e'
+contracts:
+  - address: '<0xYOUR_CONTRACT_ADDRESS>'
+    methods:
+      - signature: 'function name() view returns (string)'
+        read:
+          type: 'public'
+        write:
+          type: 'public'
+      - signature: 'function symbol() view returns (string)'
+        read:
+          type: 'public'
+        write:
+          type: 'public'
+      - signature: 'function totalSupply() view returns (uint256)'
+        read:
+          type: 'group'
+          groups: ['admins_group1']
+        write:
+          type: 'group'
+          groups: ['admins_group1']
+      - signature: 'function balanceOf(address account) view returns (uint256)'
+        read:
+          type: 'checkArgument'
+          argIndex: 0
+        write:
+          type: 'checkArgument'
+          argIndex: 0
+      - signature: 'function transfer(address to, uint256 value) returns (bool)'
+        # This doesn't leak information because the current user
+        # is automatically validated to be the msg.sender.
+        read:
+          type: 'public'
+        write:
+          type: 'public'
+      - signature: 'function approve(address spender, uint256 value) returns (bool)'
+        # This doesn't leak information because the current user
+        # is automatically validated to be the msg.sender.
+        read:
+          type: 'public'
+        write:
+          type: 'public'
