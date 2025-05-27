@@ -24,5 +24,5 @@ zkstack ecosystem init --dev --validium-type no-da
 ```
 
 ::callout{icon="i-heroicons-light-bulb"}
-If you have any issues at this step, try reinstalling the dependencies in the prerequisites.
+If you have any issues at this step, try reinstalling the dependencies at the top.
 ::

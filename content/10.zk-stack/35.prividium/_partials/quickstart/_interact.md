@@ -26,7 +26,8 @@ you can simply generate a new token.
 
 Before running, update your `.env` file with the `RECIPIENT_ADDRESS` and `CONTRACT_ADDRESS`.
 Use the deployed ERC20 contract address for `CONTRACT_ADDRESS`,
-and any other wallet address for the recipient (ideally choose an address you have the private key for).
+and any other wallet address for the recipient.
+Choose an address you also have the private key for.
 
 Then, run the interact script with:
 

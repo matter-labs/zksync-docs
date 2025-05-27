@@ -56,9 +56,6 @@ If you choose different names for your ecosystem or chain, remember to update th
     ◇  Enable EVM emulator?
     │  No
     │
-    ◇  Enable EVM emulator?
-    │  No
-    │
     ◇  Do you want to start containers after creating the ecosystem?
     │  Yes
     ```

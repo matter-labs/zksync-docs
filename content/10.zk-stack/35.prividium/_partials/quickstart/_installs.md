@@ -4,15 +4,13 @@ description: Installations for quickstart
 ---
 
 Before getting started, make sure to install all of the dependencies for the `zksync-era` repo
-by following the instructions in the matter-labs/zksync-era project's [Setup dev guide](https://github.com/matter-labs/zksync-era/blob/main/docs/src/guides/setup-dev.md).
+by following the instructions in the `matter-labs/zksync-era` project's [Setup dev guide](https://github.com/matter-labs/zksync-era/blob/main/docs/src/guides/setup-dev.md).
 
 You can use `zkstackup` to install and manage `zkstack`:
 
 ```bash
 curl -L https://raw.githubusercontent.com/matter-labs/zksync-era/main/zkstack_cli/zkstackup/install | bash
 ```
-
-Then install the most recent version of `zkstack` with:
 
 ```bash
 zkstackup

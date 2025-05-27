@@ -3,8 +3,6 @@ title: Quickstart - Config 2
 description: Understand the access config
 ---
 
-For more details about configuring this file, see the [components page](/zk-stack/prividium/components).
-
 #### ERC-20 Config
 
 Replace the generated access config with the one below:
@@ -17,7 +15,7 @@ Replace the generated access config with the one below:
   ::
 ::
 
-Replace `<0xYOUR_CONTRACT_ADDRESS>` with the deployed ERC-20 contract address.
+Then replace `<0xYOUR_CONTRACT_ADDRESS>` with the deployed ERC-20 contract address.
 
 Note that the `transfer` and `approve` methods are marked as `public`,
 however this doesn't mean that anyone can see the details of these transactions.

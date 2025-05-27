@@ -25,10 +25,10 @@ In the `hardhat.config.ts` file, let's configure the local network as the defaul
 defaultNetwork: "dockerizedNode",
 ```
 
-Note that this will connect hardhat to your private RPC API,
+Note that this will connect hardhat to your standard full-access RPC API,
 which allows you to deploy contracts.
 
-Finally, compile the contract and run the deploy script:
+Finally, compile the contracts and run the deploy script for the ERC20 token contract:
 
 :display_partial{path="/_partials/commands/_compile-deploy-erc20"}
 
