@@ -39,13 +39,9 @@ To generate a list of your contract's functions in this format,
 you can use the `formatAbiItem` method from [`abitype`](https://abitype.dev/api/human#formatabiitem-1),
 as shown in the example script below.
 
-::drop-panel
-  ::panel{label="print-format.ts"}
-    ```ts
-    :code-import{filePath="prividium/scripts/print-format.ts:function-signature"}
-    ```
-  ::
-::
+```ts
+:code-import{filePath="prividium/scripts/print-format.ts:function-signature"}
+```
 
 #### Method Access
 
