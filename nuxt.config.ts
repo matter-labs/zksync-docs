@@ -95,6 +95,7 @@ export default defineNuxtConfig({
       // guard for uncompressed bundle size, will fail the build if exceeds
       sizeLimitKb: 256,
     },
+    fallbackToApi: true,
   },
   $production:
     process.env.NUXT_SITE_ENV === 'production'
