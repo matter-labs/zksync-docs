@@ -92,10 +92,8 @@ export default defineNuxtConfig({
       scan: true,
       // include all custom collections in the client bundle
       includeCustomCollections: true,
-      // guard for uncompressed bundle size, will fail the build if exceeds
-      sizeLimitKb: 256,
     },
-    fallbackToApi: true,
+    fallbackToApi: false,
   },
   $production:
     process.env.NUXT_SITE_ENV === 'production'
