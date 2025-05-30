@@ -13,11 +13,16 @@ The next step is to deploy your ecosystem contracts to the L1 and register your 
 
 Move into the ecosystem folder:
 
+:test-action{actionId="move-to-ecosystem-folder"}
+
 ```bash
 cd my_elastic_network
 ```
 
 Next, run the `zkstack ecosystem init` command below to deploy the ecosystem:
+
+:test-action{actionId="add-tsconfig"}
+:test-action{actionId="init-ecosystem"}
 
 ```bash
 zkstack ecosystem init --dev --validium-type no-da

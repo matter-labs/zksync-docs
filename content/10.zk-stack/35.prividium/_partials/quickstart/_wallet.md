@@ -14,6 +14,8 @@ Never use these wallets in production or send real funds to them.
 
 Open a new terminal and run the command below to bridge some ETH to `prividium_chain` using ZKsync CLI:
 
+:test-action{actionId="deposit-eth"}
+
 ```bash
 npx zksync-cli bridge deposit --rpc=http://localhost:3050 --l1-rpc=http://localhost:8545
 ```
@@ -27,6 +29,8 @@ For testing purposes, we'll use one of the rich wallets as both the sender and r
 ```
 
 To see that it worked, let's check the balance of that address on `prividium_chain`:
+
+:test-action{actionId="check-balance"}
 
 ```bash
 npx zksync-cli wallet balance \

@@ -7,6 +7,8 @@ description: Setup block explorer
 
 In a new terminal run:
 
+:test-action{actionId="init-explorer"}
+
 ```bash
 zkstack explorer init --prividium
 ```
@@ -18,6 +20,8 @@ at `prividium_chain/configs/explorer-docker-compose.yml`.
 
 Next, you need to start the explorer backend services:
 
+:test-action{actionId="explorer-backend"}
+
 ```bash
 zkstack explorer backend
 ```
@@ -26,6 +30,8 @@ This command uses the previously created docker compose file to start the servic
 the explorer.
 
 Finally, in a new terminal you can run the explorer app:
+
+:test-action{actionId="explorer-frontend"}
 
 ```bash
 zkstack explorer run
