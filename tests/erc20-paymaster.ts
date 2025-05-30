@@ -168,6 +168,17 @@ const steps: IStepConfig = {
     commandFolder: 'tests-output/prividium/prividium-token',
     checkForOutput: 'token balance: 999999.0',
   },
+  'init-verifier': {
+    action: 'runCommand',
+    commandFolder: 'tests-output/prividium/my_elastic_network',
+    waitTime: 15000,
+  },
+  'run-verifier': {
+    action: 'runCommand',
+    commandFolder: 'tests-output/prividium/my_elastic_network',
+    preCommand: "bun pm2 start '<COMMAND>' --name prividium_verifier",
+    waitTime: 15000,
+  },
   'init-explorer': {
     action: 'runCommand',
     commandFolder: 'tests-output/prividium/my_elastic_network',

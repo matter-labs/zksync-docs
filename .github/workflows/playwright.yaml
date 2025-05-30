@@ -20,7 +20,9 @@ jobs:
       run: bun install --frozen-lockfile
     - uses: actions/setup-node@v4
     - name: Start the docs
-      run: bun pm2 start 'PORT=3030 bun dev' --name docs
+      run: |
+        bun pm2 start 'PORT=3030 bun dev' --name docs
+        sleep 45
     - name: Run test for ${{ matrix.tutorial }}
       uses: sarahschwartz/tutorial-tester@main
       with:
