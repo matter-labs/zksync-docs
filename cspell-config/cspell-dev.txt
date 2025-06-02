@@ -86,6 +86,7 @@ rustup
 secp
 signv
 sload
+SLDA
 smod
 sqlx-cli
 sstore
