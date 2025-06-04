@@ -45,8 +45,6 @@ jobs:
 
     - name: Start the docs
       run: bun pm2 start 'PORT=3030 bun dev' --name docs
-    - name: Install ZK Stack CLI
-      run:
     - name: Run test for ${{ matrix.tutorial }}
       uses: sarahschwartz/tutorial-tester@main
       with:
