@@ -6,6 +6,9 @@ description: Interact with token contract
 Make a new file in the `scripts` folder called `priv-interact.ts`
 and copy/paste the script below:
 
+:test-action{actionId="open-interact"}
+:test-action{actionId="interact-script"}
+
 ::drop-panel
   ::panel{label="scripts/priv-interact.ts"}
     ```ts
@@ -30,6 +33,10 @@ and any other wallet address for the recipient.
 Choose an address you also have the private key for.
 
 Then, run the interact script with:
+
+:test-action{actionId="get-token-address"}
+:test-action{actionId="add-recipient"}
+:test-action{actionId="run-interact"}
 
 ::code-group
 
@@ -59,6 +66,9 @@ If you try to access the balance from a different wallet (or without a wallet), 
 Make a new file called `check-balance.ts` in the scripts folder
 and copy/paste the script below.
 
+:test-action{actionId="open-balance"}
+:test-action{actionId="check-priv-balance"}
+
 ::drop-panel
   ::panel{label="scripts/check-balance.ts"}
     ```ts
@@ -78,6 +88,9 @@ Before running, update your `.env` file with the `USER_TOKEN`
 obtained during the previous step.
 
 You can run the script with:
+
+:test-action{actionId="get-user-token"}
+:test-action{actionId="check-user-balance"}
 
 ::code-group
 
