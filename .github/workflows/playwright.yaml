@@ -5,8 +5,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  test-tutorials:
-    timeout-minutes: 40
+  test-guides:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -18,9 +18,35 @@ jobs:
     - uses: oven-sh/setup-bun@v1
     - name: Install Dependencies
       run: bun install --frozen-lockfile
+
+      # ZK STACK DEPENCENCIES
     - uses: actions/setup-node@v4
+    - name: Install Rust Toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+            toolchain: stable
+    - name: Install System Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential pkg-config cmake clang lldb lld libssl-dev libpq-dev curl
+        cargo install cargo-nextest --locked
+        cargo install sqlx-cli --version 0.8.1 --locked
+    - name: Install Foundry-ZKsync
+      uses: dutterbutter/foundry-zksync-toolchain@v1
+    - name: Install ZK Stack CLI
+      run: |
+        curl -L https://raw.githubusercontent.com/matter-labs/zksync-era/main/zkstack_cli/zkstackup/install | bash
+        export PATH="$HOME/.local/bin:$PATH"
+        echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+        zkstackup
+    - name: Check Version
+      run: |
+        zkstack --version
+
     - name: Start the docs
       run: bun pm2 start 'PORT=3030 bun dev' --name docs
+    - name: Install ZK Stack CLI
+      run:
     - name: Run test for ${{ matrix.tutorial }}
       uses: sarahschwartz/tutorial-tester@main
       with:
@@ -28,3 +54,5 @@ jobs:
         config-path: 'tests/prividium.ts'
         folder-name: 'prividium'
         wait-time: 300000
+        custom-timoeout: 3000000
+
