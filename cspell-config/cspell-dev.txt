@@ -118,3 +118,5 @@ scaleb
 chainid
 nvcc
 CUDA
+ripemd
+ecpairing
