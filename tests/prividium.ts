@@ -3,14 +3,14 @@ import type { IStepConfig } from './utils/types';
 const steps: IStepConfig = {
   'project-folder': {
     action: 'runCommand',
-    useSetCommand: 'mkdir prividium',
+    useSetCommand: 'rm -rf prividium && mkdir prividium',
   },
   'create-ecosystem': {
     action: 'runCommand',
     commandFolder: 'tests-output/prividium',
     useSetCommand: `zkstack ecosystem create --ecosystem-name my_elastic_network --l1-network localhost --chain-name prividium_chain --chain-id 548394 --prover-mode no-proofs --wallet-creation localhost --l1-batch-commit-data-generator-mode validium --evm-emulator false --base-token-address 0x0000000000000000000000000000000000000001 --start-containers true --base-token-price-nominator 1 --base-token-price-denominator 1`,
     prompts: 'Clone for me:',
-    waitTime: 60000 * 4,
+    waitTime: 4 * 60 * 1000,
   },
   'move-to-ecosystem-folder': {
     action: 'runCommand',
@@ -33,7 +33,7 @@ const steps: IStepConfig = {
   'init-ecosystem': {
     action: 'runCommand',
     commandFolder: 'tests-output/prividium/my_elastic_network',
-    waitTime: 12 * 60 * 1000,
+    waitTime: 13 * 60 * 1000,
   },
   'start-server': {
     action: 'runCommand',
