@@ -33,7 +33,7 @@ const steps: IStepConfig = {
   'init-ecosystem': {
     action: 'runCommand',
     commandFolder: 'tests-output/prividium/my_elastic_network',
-    waitTime: 30 * 60 * 1000,
+    waitTime: 1400 * 1000,
   },
   'start-server': {
     action: 'runCommand',
@@ -45,7 +45,7 @@ const steps: IStepConfig = {
     action: 'runCommand',
     commandFolder: 'tests-output/prividium/my_elastic_network',
     prompts:
-      'Amount to deposit:9|Private key of the sender:0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110|Recipient address on L2:',
+      'Amount to deposit:9|Private key of the sender:0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110|Recipient address on L2:0x36615Cf349d7F6344891B1e7CA7C72883F5dc049',
   },
   'check-balance': {
     action: 'runCommand',
