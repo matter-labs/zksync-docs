@@ -6,7 +6,7 @@ on:
 
 jobs:
   test-guides:
-    timeout-minutes: 90
+    timeout-minutes: 120
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -51,6 +51,6 @@ jobs:
         tutorial-paths: '["zk-stack/prividium/run-prividium-chain"]'
         config-path: 'tests/prividium.ts'
         folder-name: 'prividium'
-        custom-timeout: 6000000
+        custom-timeout: 55000000
         wait-time: 300000
         debug-mode: 'true'

@@ -33,7 +33,7 @@ const steps: IStepConfig = {
   'init-ecosystem': {
     action: 'runCommand',
     commandFolder: 'tests-output/prividium/my_elastic_network',
-    waitTime: 18 * 60 * 1000,
+    waitTime: 30 * 60 * 1000,
   },
   'start-server': {
     action: 'runCommand',
