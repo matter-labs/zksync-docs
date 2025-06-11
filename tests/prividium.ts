@@ -55,6 +55,7 @@ const steps: IStepConfig = {
     action: 'runCommand',
     commandFolder: 'tests-output/prividium',
     prompts: 'Private key of the wallet responsible:',
+    waitTime: 30000,
   },
   'npm-install': {
     action: 'runCommand',
