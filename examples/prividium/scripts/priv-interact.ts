@@ -19,7 +19,7 @@ async function main() {
   const userToken = await registerUser(deployer.address);
   // You can reuse the token after the first registration
   // const userToken = '';
-  console.log('Deloyer user token:', userToken);
+  console.log('User token:', userToken);
 
   // Connect to user-specific url
   const provider = new Provider(`${BASE_URL}/rpc/${userToken}`);

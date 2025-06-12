@@ -106,7 +106,7 @@ const steps: IStepConfig = {
     dataFilepath: 'tests-output/prividium/prividium-token/deployments.txt',
     envFilepath: '.env',
     variableName: 'PRIVIDIUM_TOKEN_ADDRESS',
-    selector: { regex: /Contract ID: (0x[a-fA-F0-9]{40})/ },
+    selector: { regex: /0x[a-fA-F0-9]{40}/i },
   },
   'update-token-address': {
     action: 'modifyFile',
@@ -134,7 +134,7 @@ const steps: IStepConfig = {
     dataFilepath: 'tests-output/prividium/prividium-token/deployments.txt',
     envFilepath: 'tests-output/prividium/prividium-token/.env',
     variableName: 'CONTRACT_ADDRESS',
-    selector: { regex: /Contract ID: (0x[a-fA-F0-9]{40})/ },
+    selector: { regex: /0x[a-fA-F0-9]{40}/i },
   },
   'add-recipient': {
     action: 'modifyFile',
@@ -160,7 +160,7 @@ const steps: IStepConfig = {
     dataFilepath: 'tests-output/prividium/prividium-token/interact-output.txt',
     envFilepath: 'tests-output/prividium/prividium-token/.env',
     variableName: 'USER_TOKEN',
-    selector: { regex: /(?<=Deloyer user token:\s*)[A-Za-z0-9]+/ },
+    selector: { regex: /User token:\s*([A-Za-z0-9_-]+)/ },
   },
   'check-user-balance': {
     action: 'runCommand',
