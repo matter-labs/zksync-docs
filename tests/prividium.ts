@@ -121,6 +121,11 @@ const steps: IStepConfig = {
     useSetCommand: 'bun pm2 restart prividium_proxy',
     waitTime: 5000,
   },
+  'add-interact-file': {
+    action: 'runCommand',
+    useSetCommand: 'touch scripts/priv-interact.ts',
+    commandFolder: 'tests-output/prividium/prividium-token',
+  },
   'open-interact': {
     action: 'clickButtonByText',
     buttonText: 'scripts/priv-interact.ts',
@@ -160,7 +165,7 @@ const steps: IStepConfig = {
     dataFilepath: 'tests-output/prividium/prividium-token/interact-output.txt',
     envFilepath: 'tests-output/prividium/prividium-token/.env',
     variableName: 'USER_TOKEN',
-    selector: { regex: /User token:\s*([A-Za-z0-9_-]+)/ },
+    selector: { regex: /token:\s*([A-Za-z0-9_-]+)/ },
   },
   'check-user-balance': {
     action: 'runCommand',

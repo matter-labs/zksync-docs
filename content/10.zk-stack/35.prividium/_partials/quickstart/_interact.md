@@ -6,6 +6,7 @@ description: Interact with token contract
 Make a new file in the `scripts` folder called `priv-interact.ts`
 and copy/paste the script below:
 
+:test-action{actionId="add-interact-file"}
 :test-action{actionId="open-interact"}
 :test-action{actionId="interact-script"}
 
