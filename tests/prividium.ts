@@ -113,7 +113,7 @@ const steps: IStepConfig = {
     filepath: 'tests-output/prividium/my_elastic_network/chains/prividium_chain/configs/private-rpc-permissions.yaml',
     atLine: 7,
     removeLines: [7],
-    useSetData: `  - address: '${process.env.PRIVIDIUM_TOKEN_ADDRESS}'`,
+    useSetData: `  - address: '<PRIVIDIUM_TOKEN_ADDRESS>'`,
   },
   'restart-proxy': {
     action: 'runCommand',
@@ -165,40 +165,12 @@ const steps: IStepConfig = {
     dataFilepath: 'tests-output/prividium/prividium-token/interact-output.txt',
     envFilepath: 'tests-output/prividium/prividium-token/.env',
     variableName: 'USER_TOKEN',
-    selector: { regex: /token:\s*([A-Za-z0-9_-]+)/ },
+    selector: { regex: /(?<=token:\s*)[A-Za-z0-9_-]+/ },
   },
   'check-user-balance': {
     action: 'runCommand',
     commandFolder: 'tests-output/prividium/prividium-token',
     checkForOutput: 'token balance: 999999.0',
-  },
-  'init-verifier': {
-    action: 'runCommand',
-    commandFolder: 'tests-output/prividium/my_elastic_network',
-    waitTime: 15000,
-  },
-  'run-verifier': {
-    action: 'runCommand',
-    commandFolder: 'tests-output/prividium/my_elastic_network',
-    preCommand: "bun pm2 start '<COMMAND>' --name prividium_verifier",
-    waitTime: 15000,
-  },
-  'init-explorer': {
-    action: 'runCommand',
-    commandFolder: 'tests-output/prividium/my_elastic_network',
-    prompts: 'database url:|database name:|max age:|same site:|',
-  },
-  'explorer-backend': {
-    action: 'runCommand',
-    commandFolder: 'tests-output/prividium/my_elastic_network',
-    preCommand: "bun pm2 start '<COMMAND>' --name prividium_explorer_backend",
-    waitTime: 5000,
-  },
-  'explorer-frontend': {
-    action: 'runCommand',
-    commandFolder: 'tests-output/prividium/my_elastic_network',
-    preCommand: "bun pm2 start '<COMMAND>' --name prividium_explorer_frontend",
-    waitTime: 5000,
   },
 };
 

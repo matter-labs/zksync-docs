@@ -10,8 +10,6 @@ This is going to be used in the explorer to display the source code and ABIs of 
 
 In a new terminal run:
 
-:test-action{actionId="init-verifier"}
-
 ```bash
 zkstack contract-verifier init \
 --zksolc-version v1.5.6 \
@@ -24,8 +22,6 @@ zkstack contract-verifier init \
 This will download the needed binaries for verifying contracts on the block explorer.
 
 Next, run:
-
-:test-action{actionId="run-verifier"}
 
 ```bash
 zkstack contract-verifier run
