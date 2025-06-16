@@ -122,3 +122,6 @@ CUDA
 ripemd
 ecpairing
 zlogs
+IOPP
+FFLONK
+CSRRW
