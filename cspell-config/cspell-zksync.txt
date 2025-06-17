@@ -36,3 +36,4 @@ foundryup
 zkvm
 zksyncsepolia
 zksyncmainnet
+zksyncos
