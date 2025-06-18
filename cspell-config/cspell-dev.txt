@@ -119,4 +119,9 @@ scaleb
 chainid
 nvcc
 CUDA
+ripemd
+ecpairing
 zlogs
+IOPP
+FFLONK
+CSRRW
