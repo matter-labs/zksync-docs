@@ -11,6 +11,9 @@ Make sure Docker is running on your machine.
 
 Move to a directory where you want your ecosystem folder to be, and run the command below to generate an ecosystem folder.
 
+:test-action{actionId="project-folder"}
+:test-action{actionId="create-ecosystem"}
+
 ```bash
 zkstack ecosystem create
 ```

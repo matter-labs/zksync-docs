@@ -7,13 +7,21 @@ description: Understand the access config
 
 Replace the generated access config with the one below:
 
+:test-action{actionId="open-permissions"}
+:test-action{actionId="update-permissions"}
+
 ::drop-panel
-  ::panel{label="permissions.yaml"}
+  ::panel{label="private-rpc-permissions.yaml"}
     ```ts
     :code-import{filePath="prividium/permissions.yaml"}
     ```
   ::
 ::
+
+:test-action{actionId="make-env-file"}
+:test-action{actionId="extract-contract-id"}
+:test-action{actionId="update-token-address"}
+:test-action{actionId="restart-proxy"}
 
 Then replace `<0xYOUR_CONTRACT_ADDRESS>` with the deployed ERC-20 contract address.
 
