@@ -149,6 +149,7 @@ const steps: IStepConfig = {
   'run-interact': {
     action: 'runCommand',
     commandFolder: 'tests-output/prividium/prividium-token',
+    waitTime: 30000,
     checkForOutput: '✅ Transferred',
     saveOutput: 'tests-output/prividium/prividium-token/interact-output.txt',
   },
