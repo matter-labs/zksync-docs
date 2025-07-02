@@ -32,6 +32,7 @@ pnpx
 Transak
 trustlessly
 turing
+uncompromised
 undol
 Winternitz
 Yubi

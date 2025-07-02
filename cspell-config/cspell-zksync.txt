@@ -3,6 +3,8 @@ boojum
 !MatterLabs
 Matter Labs
 Hyperchain
+Prividium
+prividium
 Zeek
 Zeeks
 zkcast
@@ -17,6 +19,7 @@ ZK Chain
 !zkStack
 -zkstack-
 zkstack
+zkstackup
 ZK Stack
 zksync
 zksync-cli
@@ -33,3 +36,4 @@ foundryup
 zkvm
 zksyncsepolia
 zksyncmainnet
+zksyncos

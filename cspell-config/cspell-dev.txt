@@ -86,6 +86,7 @@ rustup
 secp
 signv
 sload
+SLDA
 smod
 sqlx-cli
 sstore
@@ -118,3 +119,9 @@ scaleb
 chainid
 nvcc
 CUDA
+ripemd
+ecpairing
+zlogs
+IOPP
+FFLONK
+CSRRW
