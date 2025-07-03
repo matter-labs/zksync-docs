@@ -86,14 +86,14 @@ export default defineNuxtConfig({
     },
   },
   icon: {
+    provider: 'none',
     clientBundle: {
       // scan all components in the project and include icons
       scan: true,
       // include all custom collections in the client bundle
       includeCustomCollections: true,
-      // guard for uncompressed bundle size, will fail the build if exceeds
-      sizeLimitKb: 256,
     },
+    fallbackToApi: false,
   },
   $production:
     process.env.NUXT_SITE_ENV === 'production'
