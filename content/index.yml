@@ -1,7 +1,7 @@
 title: 'ZKsync Docs'
 description:
-  ZKsync Docs bring you all information you need about our protocol, APIs, SDKs, ZK Stack, and ZK chains. Start with our
-  guides and tutorials, or go deep into our architecture and protocol specification.
+  ZKsync Docs bring you all information you need about our protocol, APIs, SDKs, ZKsync Stack, and ZKsync chains. Start
+  with our guides and tutorials, or go deep into our architecture and protocol specification.
 navigation: false
 hero:
   title: 'Unlock the Potential of Layer 2 Scaling with ZKsync'
@@ -20,8 +20,8 @@ features:
       description: 'Start building apps on the ZKsync Era.'
       icon: 'i-zkicon-zksync'
       to: '/zksync-era'
-    - title: 'ZK Stack'
-      description: 'Build your own ZK Chain. Fully custom.'
+    - title: 'ZKsync Stack'
+      description: 'Build your own ZKsync Chain. Fully custom.'
       icon: 'i-heroicons-bars-4-16-solid'
       to: '/zk-stack'
     - title: 'ZKsync protocol'
