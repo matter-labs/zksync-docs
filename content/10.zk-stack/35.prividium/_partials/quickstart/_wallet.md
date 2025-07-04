@@ -6,7 +6,7 @@ description: Funding a wallet
 Because you chose to use a local reth node for your L1 and selected ETH as the base asset,
 you have access to several rich wallets on the L1 that you can use to bridge ETH to `prividium_chain`.
 
-You can find a full list of rich wallet addresses and their private keys in the [ZKsync docs](https://docs.zksync.io/build/test-and-debug/in-memory-node#pre-configured-rich-wallets).
+You can find a full list of rich wallet addresses and their private keys in the [ZKsync docs](../../../../zksync-era/tooling/local-setup/anvil-zksync-node.md#pre-configured-rich-wallets).
 
 ::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
 Never use these wallets in production or send real funds to them.
