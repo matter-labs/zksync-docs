@@ -23,6 +23,7 @@ jobs:
 
       # ZK STACK DEPENCENCIES
     - uses: actions/setup-node@v4
+    - run: npm install -g yarn
     - name: Install Rust Toolchain
       uses: actions-rs/toolchain@v1
       with:
