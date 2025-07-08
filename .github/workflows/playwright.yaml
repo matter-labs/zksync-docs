@@ -54,4 +54,4 @@ jobs:
         folder-name: 'prividium'
         custom-timeout: 55000000
         wait-time: 300000
-        # debug-mode: 'true'
+        debug-mode: 'true'
