@@ -14,20 +14,24 @@ async function main() {
 
   // Get deployer address
   const [deployer] = await ethers.getWallets();
+  console.log(`Deployer address: ${deployer.address}`);
 
   // Register the user and get user access token
   const userToken = await registerUser(deployer.address);
   // You can reuse the token after the first registration
   // const userToken = '';
-  console.log('Deloyer user token:', userToken);
+  console.log('User token:', userToken);
 
   // Connect to user-specific url
   const provider = new Provider(`${BASE_URL}/rpc/${userToken}`);
+  console.log('Connected to provider:');
   const signer = new ethers.Wallet(deployer.privateKey, provider);
+  console.log(`Signer address: ${signer.address}`);
 
   // Get the ERC20 deployed contract
   const ERC20Factory = await ethers.getContractFactory('MyERC20Token');
   const ERC20Contract = ERC20Factory.connect(signer).attach(CONTRACT_ADDRESS);
+  console.log('got contract');
 
   // get the token balance of the deployer wallet
   let balance = await ERC20Contract.balanceOf(signer.address);
