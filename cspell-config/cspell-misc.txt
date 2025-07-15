@@ -5,6 +5,8 @@ Cyfrin
 danksharding
 Danksharding
 decommitted
+deployers
+Deployers
 GRVT
 Hola
 Icones
@@ -12,10 +14,12 @@ immediates
 Immunefi
 initializable
 Initializable
+Transak
 Lukka
 mathbb
 mundo
 permissioned
+pcaversaccio
 pnpx
 Winternitz
 Yubi
@@ -25,5 +29,12 @@ Celestia
 celestia
 Eigen
 eigen
+eigenda
 turing
+uncompromised
 undol
+trustlessly
+permissionlessly
+Zoltu
+Zyfi
+Gravita
