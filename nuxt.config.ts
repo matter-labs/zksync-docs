@@ -2,7 +2,7 @@ import redirects from './redirects';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  extends: ['gh:matterlabs/docs-nuxt-template#sarah/test-icons-fix'],
+  extends: ['gh:matterlabs/docs-nuxt-template/sarah/test-icons-fix'],
   // extends: ['@matterlabs/docs-nuxt-template'],
   modules: ['nuxt-gtag', '@vite-pwa/nuxt'],
   site: {
