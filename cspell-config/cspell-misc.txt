@@ -14,7 +14,6 @@ immediates
 Immunefi
 initializable
 Initializable
-Kado
 Transak
 Lukka
 mathbb
@@ -32,6 +31,7 @@ Eigen
 eigen
 eigenda
 turing
+uncompromised
 undol
 trustlessly
 permissionlessly

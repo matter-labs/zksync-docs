@@ -13,7 +13,7 @@ export const headerLinks = () => {
       active: route.path.startsWith('/zksync-era'),
     },
     {
-      label: 'ZK Stack',
+      label: 'ZKsync Stack',
       to: isDocsApp ? '/zk-stack' : `${config.public.urls.docs}/zk-stack`,
       active: route.path.startsWith('/zk-stack'),
     },
