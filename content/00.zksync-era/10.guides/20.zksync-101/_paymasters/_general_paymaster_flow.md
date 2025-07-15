@@ -27,9 +27,7 @@ exclusively callable by the system's bootloader, adding an extra layer of securi
 
 Run the npm script `compile` to compile the contracts:
 
-```bash [npm]
-npm run compile
-```
+:display_partial{path="/_partials/commands/_compile"}
 
 The script to deploy the `GaslessPaymaster` is located at [`/deploy/4-paymaster/gasless/deploy.ts][deploy-script].
 
@@ -96,6 +94,6 @@ Contribution successful!
 
 🎉 Great job! You've successfully interacted with the `CrowdfundingCampaign` using a paymaster to cover the transaction fees.
 
-[gasless-paymaster-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/contracts/4-paymaster/gasless/GaslessPaymaster.sol
-[deploy-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/deploy/4-paymaster/gasless/deploy.ts
-[interact-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/deploy/4-paymaster/gasless/interact.ts
+[gasless-paymaster-sol]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/contracts/4-paymaster/gasless/GaslessPaymaster.sol
+[deploy-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/deploy/4-paymaster/gasless/deploy.ts
+[interact-script]: https://github.com/matter-labs/zksync-contract-templates/blob/main/templates/101/eravm/deploy/4-paymaster/gasless/interact.ts

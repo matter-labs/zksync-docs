@@ -7,22 +7,4 @@ Smart contracts deployed to ZKsync must be compiled using our custom compiler.
 
 To compile the contracts in a project, run the following command:
 
-::code-group
-
-```bash [npm]
-npm run compile
-```
-
-```bash [yarn]
-yarn compile
-```
-
-```bash [pnpm]
-pnpm run compile
-```
-
-```bash [bun]
-bun run compile
-```
-
-::
+:display_partial{path="/_partials/commands/_compile"}
