@@ -7,9 +7,6 @@
   "devDependencies": {
     "@commitlint/cli": "19.5.0",
     "@commitlint/config-conventional": "19.5.0",
-    "@iconify-json/heroicons": "^1.2.2",
-    "@iconify-json/heroicons-outline": "^1.2.1",
-    "@iconify-json/heroicons-solid": "^1.2.1",
     "@types/bun": "1.1.10",
     "@vue/test-utils": "2.4.6",
     "cspell": "8.14.4",
@@ -26,7 +23,7 @@
   },
   "dependencies": {
     "@matterlabs/docs-nuxt-template": "2.10.0",
-    "@nuxt/icon": "^1.13.0",
+    "@nuxt/icon": "^1.7.2",
     "@tsparticles/slim": "3.5.0",
     "@tsparticles/vue3": "3.0.1",
     "@vite-pwa/nuxt": "0.10.5",
