@@ -1,9 +1,13 @@
 Aave
 arithmetization
+blake
+blake2f
 BoxUups
 Buterin
 Cronos
 Dappradar
+defi
+Defi
 DRPC
 Echoo
 Eigen

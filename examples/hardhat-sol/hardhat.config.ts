@@ -45,7 +45,7 @@ const config: HardhatUserConfig = {
   },
   // ANCHOR_END: zksolc
   solidity: {
-    version: '0.8.17',
+    version: '0.8.24',
   },
 };
 
