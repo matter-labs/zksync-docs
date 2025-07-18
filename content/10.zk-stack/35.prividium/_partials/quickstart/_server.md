@@ -5,6 +5,8 @@ description: Start the chain server
 
 The last step here is to start a server for `prividium_chain`:
 
+:test-action{actionId="start-server"}
+
 ```bash
 zkstack server
 ```
