@@ -82,12 +82,12 @@ const steps: IStepConfig = {
     action: 'runCommand',
     commandFolder: 'tests-output/prividium/my_elastic_network',
   },
-  'run-proxy': {
-    action: 'runCommand',
-    commandFolder: 'tests-output/prividium/my_elastic_network',
-    preCommand: "bun pm2 start '<COMMAND>' --name prividium_proxy",
-    waitTime: 30000,
-  },
+  // 'run-proxy': {
+  //   action: 'runCommand',
+  //   commandFolder: 'tests-output/prividium/my_elastic_network',
+  //   preCommand: "bun pm2 start '<COMMAND>' --name prividium_proxy",
+  //   waitTime: 30000,
+  // },
   'open-permissions': {
     action: 'clickButtonByText',
     buttonText: 'private-rpc-permissions.yaml',
@@ -118,61 +118,61 @@ const steps: IStepConfig = {
   'restart-proxy': {
     action: 'runCommand',
     commandFolder: 'tests-output/prividium/my_elastic_network',
-    useSetCommand: 'bun pm2 restart prividium_proxy',
-    waitTime: 5000,
+    useSetCommand: 'zkstack private-rpc run',
+    waitTime: 20000,
   },
-  'add-interact-file': {
-    action: 'runCommand',
-    useSetCommand: 'touch scripts/priv-interact.ts',
-    commandFolder: 'tests-output/prividium/prividium-token',
-  },
-  'open-interact': {
-    action: 'clickButtonByText',
-    buttonText: 'scripts/priv-interact.ts',
-  },
-  'interact-script': {
-    action: 'writeToFile',
-    filepath: 'tests-output/prividium/prividium-token/scripts/priv-interact.ts',
-  },
-  'get-token-address': {
-    action: 'extractDataToEnv',
-    dataFilepath: 'tests-output/prividium/prividium-token/deployments.txt',
-    envFilepath: 'tests-output/prividium/prividium-token/.env',
-    variableName: 'CONTRACT_ADDRESS',
-    selector: { regex: /0x[a-fA-F0-9]{40}/i },
-  },
-  'add-recipient': {
-    action: 'modifyFile',
-    filepath: 'tests-output/prividium/prividium-token/.env',
-    useSetData: 'RECIPIENT_ADDRESS=0x70997970C51812dc3A010C7d01b50e0d17dc79C8',
-  },
-  'run-interact': {
-    action: 'runCommand',
-    commandFolder: 'tests-output/prividium/prividium-token',
-    waitTime: 60000,
-    // checkForOutput: '✅ Transferred',
-    saveOutput: 'tests-output/prividium/prividium-token/interact-output.txt',
-  },
-  'open-balance': {
-    action: 'clickButtonByText',
-    buttonText: 'scripts/check-balance.ts',
-  },
-  'check-priv-balance': {
-    action: 'writeToFile',
-    filepath: 'tests-output/prividium/prividium-token/scripts/check-balance.ts',
-  },
-  'get-user-token': {
-    action: 'extractDataToEnv',
-    dataFilepath: 'tests-output/prividium/prividium-token/interact-output.txt',
-    envFilepath: 'tests-output/prividium/prividium-token/.env',
-    variableName: 'USER_TOKEN',
-    selector: { regex: /(?<=token:\s*)[A-Za-z0-9_-]+/ },
-  },
-  'check-user-balance': {
-    action: 'runCommand',
-    commandFolder: 'tests-output/prividium/prividium-token',
-    // checkForOutput: 'token balance: 999999.0',
-  },
+  // 'add-interact-file': {
+  //   action: 'runCommand',
+  //   useSetCommand: 'touch scripts/priv-interact.ts',
+  //   commandFolder: 'tests-output/prividium/prividium-token',
+  // },
+  // 'open-interact': {
+  //   action: 'clickButtonByText',
+  //   buttonText: 'scripts/priv-interact.ts',
+  // },
+  // 'interact-script': {
+  //   action: 'writeToFile',
+  //   filepath: 'tests-output/prividium/prividium-token/scripts/priv-interact.ts',
+  // },
+  // 'get-token-address': {
+  //   action: 'extractDataToEnv',
+  //   dataFilepath: 'tests-output/prividium/prividium-token/deployments.txt',
+  //   envFilepath: 'tests-output/prividium/prividium-token/.env',
+  //   variableName: 'CONTRACT_ADDRESS',
+  //   selector: { regex: /0x[a-fA-F0-9]{40}/i },
+  // },
+  // 'add-recipient': {
+  //   action: 'modifyFile',
+  //   filepath: 'tests-output/prividium/prividium-token/.env',
+  //   useSetData: 'RECIPIENT_ADDRESS=0x70997970C51812dc3A010C7d01b50e0d17dc79C8',
+  // },
+  // 'run-interact': {
+  //   action: 'runCommand',
+  //   commandFolder: 'tests-output/prividium/prividium-token',
+  //   waitTime: 60000,
+  //   // checkForOutput: '✅ Transferred',
+  //   saveOutput: 'tests-output/prividium/prividium-token/interact-output.txt',
+  // },
+  // 'open-balance': {
+  //   action: 'clickButtonByText',
+  //   buttonText: 'scripts/check-balance.ts',
+  // },
+  // 'check-priv-balance': {
+  //   action: 'writeToFile',
+  //   filepath: 'tests-output/prividium/prividium-token/scripts/check-balance.ts',
+  // },
+  // 'get-user-token': {
+  //   action: 'extractDataToEnv',
+  //   dataFilepath: 'tests-output/prividium/prividium-token/interact-output.txt',
+  //   envFilepath: 'tests-output/prividium/prividium-token/.env',
+  //   variableName: 'USER_TOKEN',
+  //   selector: { regex: /(?<=token:\s*)[A-Za-z0-9_-]+/ },
+  // },
+  // 'check-user-balance': {
+  //   action: 'runCommand',
+  //   commandFolder: 'tests-output/prividium/prividium-token',
+  //   // checkForOutput: 'token balance: 999999.0',
+  // },
 };
 
 export default steps;
