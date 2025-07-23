@@ -2,7 +2,7 @@ import redirects from './redirects';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  extends: ['@matterlabs/docs-nuxt-template@2.10.1-next.1'],
+  extends: ['@matterlabs/docs-nuxt-template'],
   modules: ['nuxt-gtag', '@vite-pwa/nuxt'],
   site: {
     name: 'ZKsync Docs',
