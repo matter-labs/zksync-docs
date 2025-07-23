@@ -93,6 +93,7 @@ export default defineNuxtConfig({
       includeCustomCollections: true,
       // guard for uncompressed bundle size, will fail the build if exceeds
       sizeLimitKb: 256,
+      icons: ['heroicons:clipboard-document'],
     },
   },
   $production:
