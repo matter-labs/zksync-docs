@@ -73,7 +73,10 @@ export interface IModifyFile {
   atLine?: number;
   removeLines?: RangeOrIntArray;
   useSetData?: string;
+  // replaces <*GET_CONTRACT_ID*> with deployed contract id at this filepath
   getContractId?: string;
+  // trims whitespace, defaults to true
+  trim?: boolean;
 }
 
 export interface ICompareToFile {
