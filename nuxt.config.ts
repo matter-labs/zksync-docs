@@ -102,7 +102,6 @@ export default defineNuxtConfig({
         'heroicons:moon-20-solid',
         'heroicons:x-mark-20-solid',
         'heroicons:rocket-launch',
-        'lucide:rocket',
         'heroicons:arrow-up-right-20-solid',
         'emojione-monotone:yin-yang',
         'heroicons:check-circle-16-solid',
