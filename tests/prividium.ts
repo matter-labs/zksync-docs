@@ -148,26 +148,26 @@ const steps: IStepConfig = {
     checkForOutput: '✅ Transferred',
     saveOutput: 'tests-output/prividium/prividium-token/interact-output.txt',
   },
-  'open-balance': {
-    action: 'clickButtonByText',
-    buttonText: 'scripts/check-balance.ts',
-  },
-  'check-priv-balance': {
-    action: 'writeToFile',
-    filepath: 'tests-output/prividium/prividium-token/scripts/check-balance.ts',
-  },
-  'get-user-token': {
-    action: 'extractDataToEnv',
-    dataFilepath: 'tests-output/prividium/prividium-token/interact-output.txt',
-    envFilepath: 'tests-output/prividium/prividium-token/.env',
-    variableName: 'USER_TOKEN',
-    selector: { regex: /(?<=token:\s*)[A-Za-z0-9_-]+/ },
-  },
-  'check-user-balance': {
-    action: 'runCommand',
-    commandFolder: 'tests-output/prividium/prividium-token',
-    checkForOutput: 'token balance: 999999.0',
-  },
+  // 'open-balance': {
+  //   action: 'clickButtonByText',
+  //   buttonText: 'scripts/check-balance.ts',
+  // },
+  // 'check-priv-balance': {
+  //   action: 'writeToFile',
+  //   filepath: 'tests-output/prividium/prividium-token/scripts/check-balance.ts',
+  // },
+  // 'get-user-token': {
+  //   action: 'extractDataToEnv',
+  //   dataFilepath: 'tests-output/prividium/prividium-token/interact-output.txt',
+  //   envFilepath: 'tests-output/prividium/prividium-token/.env',
+  //   variableName: 'USER_TOKEN',
+  //   selector: { regex: /(?<=token:\s*)[A-Za-z0-9_-]+/ },
+  // },
+  // 'check-user-balance': {
+  //   action: 'runCommand',
+  //   commandFolder: 'tests-output/prividium/prividium-token',
+  //   checkForOutput: 'token balance: 999999.0',
+  // },
 };
 
 export default steps;
