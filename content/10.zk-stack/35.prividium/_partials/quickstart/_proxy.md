@@ -24,8 +24,6 @@ This command will generate two files:
 
 Next, you can start the Proxy API service with:
 
-:test-action{actionId="run-proxy"}
-
 ```bash
 zkstack private-rpc run
 ```

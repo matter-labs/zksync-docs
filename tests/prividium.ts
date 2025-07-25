@@ -82,12 +82,6 @@ const steps: IStepConfig = {
     action: 'runCommand',
     commandFolder: 'tests-output/prividium/my_elastic_network',
   },
-  // 'run-proxy': {
-  //   action: 'runCommand',
-  //   commandFolder: 'tests-output/prividium/my_elastic_network',
-  //   preCommand: "bun pm2 start '<COMMAND>' --name prividium_proxy",
-  //   waitTime: 30000,
-  // },
   'open-permissions': {
     action: 'clickButtonByText',
     buttonText: 'private-rpc-permissions.yaml',

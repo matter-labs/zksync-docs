@@ -1,8 +1,9 @@
 name: Playwright Tests
 
 on:
-  pull_request:
   workflow_dispatch:
+  schedule:
+    - cron: "0 12 * * 1"
 
 jobs:
   test-guides:
@@ -54,4 +55,3 @@ jobs:
         folder-name: 'prividium'
         custom-timeout: 55000000
         wait-time: 300000
-        debug-mode: 'true'
