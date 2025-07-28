@@ -10,7 +10,13 @@ const props = defineProps<{
 
 // calculate the current full URL to use in links below
 const route = useRoute();
-const currentUrl = computed(() => `${window.location.origin}${route.fullPath}`);
+const currentUrl = computed(() => {
+  if (import.meta.client) {
+    return `${window.location.origin}${route.fullPath}`;
+  }
+  // Fallback for SSR/CI: just use the path
+  return route.fullPath;
+});
 
 const links = computed(() =>
   [
