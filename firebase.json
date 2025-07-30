@@ -505,6 +505,16 @@
         "source": "/infra/:path*.@(html|md)",
         "destination": "/zksync-node/:path",
         "type": 301
+      },
+      {
+        "source": "zksync-era/unique-features/zksync-sso/supported-environments",
+        "destination": "/zksync-era/unique-features/zksync-sso/faqs",
+        "type": 301
+      },
+      {
+        "source": "zksync-era/unique-features/zksync-sso/account-modules",
+        "destination": "/zksync-era/unique-features/zksync-sso/accounts",
+        "type": 301
       }
     ]
   }
