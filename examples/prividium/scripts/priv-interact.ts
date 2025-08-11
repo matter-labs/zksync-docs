@@ -7,13 +7,15 @@ const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS || '';
 const RECIPIENT_ADDRESS = process.env.RECIPIENT_ADDRESS || '';
 // Base URL of the private proxy RPC API
 const BASE_URL = process.env.BASE_URL || 'http://localhost:4041';
+const PRIVATE_KEY = process.env.WALLET_PRIVATE_KEY;
 if (!CONTRACT_ADDRESS || !RECIPIENT_ADDRESS) throw '⛔️ Provide address of the contract and recipient.';
 
 async function main() {
   console.log(`Running script to interact with token contract ${CONTRACT_ADDRESS}`);
+  if (!PRIVATE_KEY) throw '⛔️ Provide private key.';
 
   // Get deployer address
-  const [deployer] = await ethers.getWallets();
+  const [deployer] = await ethers.getSigners();
 
   // Register the user and get user access token
   const userToken = await registerUser(deployer.address);
@@ -23,7 +25,7 @@ async function main() {
 
   // Connect to user-specific url
   const provider = new Provider(`${BASE_URL}/rpc/${userToken}`);
-  const signer = new ethers.Wallet(deployer.privateKey, provider);
+  const signer = new ethers.Wallet(PRIVATE_KEY, provider);
 
   // Get the ERC20 deployed contract
   const ERC20Factory = await ethers.getContractFactory('MyERC20Token');
