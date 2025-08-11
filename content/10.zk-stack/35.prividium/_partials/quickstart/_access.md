@@ -7,8 +7,9 @@ The permissions config file at
 `/chains/prividium_chain/configs/private-rpc-permissions.yaml`
 can be edited based on what access you want end users to have.
 
-There are two sections in the permissions file:
+There are three sections in the permissions file:
 
+- `whitelisted_wallets`: Wallets that are allowed to access the network.
 - `groups`: Logical collections of users or addresses sharing the same permissions.
 - `contracts`: Specific contracts or methods that a group is allowed to access.
 
