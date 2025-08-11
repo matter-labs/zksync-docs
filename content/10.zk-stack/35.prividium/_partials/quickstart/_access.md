@@ -9,9 +9,15 @@ can be edited based on what access you want end users to have.
 
 There are three sections in the permissions file:
 
-- `whitelisted_wallets`: Wallets that are allowed to access the network.
+- `whitelisted_wallets`: Wallet addresses that are allowed to access the network.
 - `groups`: Logical collections of users or addresses sharing the same permissions.
 - `contracts`: Specific contracts or methods that a group is allowed to access.
+
+### Wallets Access
+
+The `whitelisted_wallets` section defines wallet addresses that are allowed to access the network.
+To allow any wallet access, you can use the string `all`.
+Otherwise, you must define a list of allowed addresses.
 
 ### Groups Access
 
