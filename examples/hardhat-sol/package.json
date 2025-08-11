@@ -6,24 +6,27 @@
   "license": "MIT",
   "repository": "https://github.com/matter-labs/zksync-hardhat-template.git",
   "scripts": {
-    "deploy:main": "hardhat deploy-zksync --script deploy-main.ts",
+    "mint-token": "hardhat run ./scripts/mint-token.ts",
+    "usdc-bridge": "hardhat run ./scripts/usdc-bridge.ts",
     "compile": "hardhat compile",
     "clean": "hardhat clean"
   },
   "devDependencies": {
-    "@matterlabs/hardhat-zksync": "^1.1.0",
-    "@matterlabs/zksync-contracts": "^0.6.1",
-    "@nomicfoundation/hardhat-verify": "^2.0.9",
-    "@openzeppelin/contracts": "^5.3.0",
-    "@types/chai": "^4.3.16",
-    "@types/mocha": "^10.0.7",
+    "@matterlabs/hardhat-zksync": "^1.6.2",
+    "@matterlabs/zksync-contracts": "^28.0.1",
+    "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
+    "@nomicfoundation/hardhat-verify": "^2.1.1",
+    "@openzeppelin/contracts": "^5.4.0",
+    "@types/chai": "^5.2.2",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.17.1",
     "chai": "^4.5.0",
-    "dotenv": "^16.4.5",
-    "ethers": "^6.13.2",
-    "hardhat": "^2.22.7",
-    "mocha": "^10.7.0",
+    "dotenv": "^16.6.1",
+    "ethers": "^6.15.0",
+    "hardhat": "^2.26.2",
+    "mocha": "^11.7.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.4",
-    "zksync-ethers": "^6.11.0"
+    "typescript": "^5.9.2",
+    "zksync-ethers": "^6.20.1"
   }
 }
