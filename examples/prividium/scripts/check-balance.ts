@@ -5,17 +5,16 @@ import { Provider } from 'zksync-ethers';
 const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS || '';
 const BASE_URL = process.env.BASE_URL || 'http://localhost:4041';
 const USER_TOKEN = process.env.USER_TOKEN || '';
+const PRIVATE_KEY = process.env.WALLET_PRIVATE_KEY;
 if (!CONTRACT_ADDRESS || !USER_TOKEN) throw '⛔️ Provide address of the contract and user token.';
 
 async function main() {
   console.log(`Running script to check balance of token ${CONTRACT_ADDRESS}`);
-
-  // Get wallet address
-  const [wallet] = await ethers.getWallets();
+  if (!PRIVATE_KEY) throw '⛔️ Provide private key.';
 
   // Connect to user-specific url
   const provider = new Provider(`${BASE_URL}/rpc/${USER_TOKEN}`);
-  const signer = new ethers.Wallet(wallet.privateKey, provider);
+  const signer = new ethers.Wallet(PRIVATE_KEY, provider);
 
   // Get the ERC20 deployed contract
   const ERC20Factory = await ethers.getContractFactory('MyERC20Token');
