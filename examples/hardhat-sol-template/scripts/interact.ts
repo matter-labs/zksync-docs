@@ -1,18 +1,19 @@
 // Script that interacts with a Greeter contract
+import { ethers } from 'hardhat';
 
 // Address of the contract to interact with
-const CONTRACT_ADDRESS = '';
+const CONTRACT_ADDRESS = process.env.GREETER_ADDRESS ?? '';
 if (!CONTRACT_ADDRESS) throw '⛔️ Provide address of the contract to interact with!';
 
 async function main() {
   console.log(`Running script to interact with contract ${CONTRACT_ADDRESS}`);
 
   // Get the first signer
-  const [signer] = await hre.ethers.getSigners();
+  const [signer] = await ethers.getSigners();
 
   // Get the contract factory and deploy
-  const Greeter = await hre.ethers.getContractFactory('Greeter');
-  const greeterContract = await Greeter.connect(signer).attach(CONTRACT_ADDRESS);
+  const Greeter = await ethers.getContractFactory('Greeter');
+  const greeterContract = Greeter.connect(signer).attach(CONTRACT_ADDRESS);
 
   // Run contract read function
   const response = await greeterContract.greet();
