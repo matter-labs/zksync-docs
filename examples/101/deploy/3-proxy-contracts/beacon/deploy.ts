@@ -11,7 +11,7 @@ async function main() {
   const crowdfunding = await upgrades.deployBeaconProxy(beacon, beaconFactory, [fundingGoalInWei]);
   await crowdfunding.waitForDeployment();
 }
-// ANCHOR: deploy
+// ANCHOR_END: deploy
 
 main()
   .then(() => process.exit(0))

@@ -9,7 +9,7 @@ async function main() {
 
   await crowdfunding.waitForDeployment();
 }
-// ANCHOR: deploy
+// ANCHOR_END: deploy
 
 main()
   .then(() => process.exit(0))

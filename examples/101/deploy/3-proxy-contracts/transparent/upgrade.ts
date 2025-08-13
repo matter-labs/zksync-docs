@@ -22,7 +22,7 @@ async function main() {
 
   console.log(`V2_ProxyableCrowdfundingCampaign initialized. Transaction Hash: ${receipt?.hash}`);
 }
-// ANCHOR: upgrade
+// ANCHOR_END: upgrade
 
 main()
   .then(() => process.exit(0))
