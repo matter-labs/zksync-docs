@@ -1,14 +1,17 @@
 import type { HardhatUserConfig } from 'hardhat/config';
+
+import '@nomicfoundation/hardhat-toolbox';
+import '@typechain/hardhat';
 import '@nomicfoundation/hardhat-chai-matchers';
-// ANCHOR: zksync-import
 import '@matterlabs/hardhat-zksync';
-// ANCHOR_END: zksync-import
+
 import dotenv from 'dotenv';
 dotenv.config();
+
 const config: HardhatUserConfig = {
-  // ANCHOR: networks
-  defaultNetwork: 'ZKsyncEraSepolia',
+  defaultNetwork: 'dockerizedNode',
   networks: {
+    // ANCHOR: verify
     ZKsyncEraSepolia: {
       url: 'https://sepolia.era.zksync.dev',
       ethNetwork: 'sepolia',
@@ -23,12 +26,15 @@ const config: HardhatUserConfig = {
       verifyURL: 'https://zksync2-mainnet-explorer.zksync.io/contract_verification',
       accounts: process.env.WALLET_PRIVATE_KEY ? [process.env.WALLET_PRIVATE_KEY] : [],
     },
+    // ANCHOR_END: verify
+    // ANCHOR: docker-network
     dockerizedNode: {
       url: 'http://localhost:3050',
       ethNetwork: 'http://localhost:8545',
       zksync: true,
       accounts: process.env.WALLET_PRIVATE_KEY ? [process.env.WALLET_PRIVATE_KEY] : [],
     },
+    // ANCHOR_END: docker-network
     anvilZKsync: {
       url: 'http://127.0.0.1:8011',
       ethNetwork: 'http://localhost:8545',
@@ -39,8 +45,6 @@ const config: HardhatUserConfig = {
       zksync: true,
     },
   },
-  // ANCHOR_END: networks
-  // ANCHOR: zksolc
   zksolc: {
     version: '1.5.15',
     settings: {
@@ -49,9 +53,8 @@ const config: HardhatUserConfig = {
       // https://docs.zksync.io/build/tooling/hardhat/hardhat-zksync-solc#configuration
     },
   },
-  // ANCHOR_END: zksolc
   solidity: {
-    version: '0.8.24',
+    version: '0.8.30',
   },
 };
 
