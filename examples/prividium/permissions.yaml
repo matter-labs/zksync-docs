@@ -1,3 +1,4 @@
+whitelisted_wallets: 'all'
 groups:
   - name: 'admins_group1'
     members:
