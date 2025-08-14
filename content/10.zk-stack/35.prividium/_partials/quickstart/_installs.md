@@ -17,5 +17,5 @@ zkstackup
 ```
 
 ::callout{icon="i-heroicons-light-bulb"}
-You can find a full reference for the ZK Stack CLI in the [`zksync-era` repo](https://github.com/matter-labs/zksync-era/tree/main/zkstack_cli).
+You can find a full reference for the ZKsync Stack CLI in the [`zksync-era` repo](https://github.com/matter-labs/zksync-era/tree/main/zkstack_cli).
 ::
