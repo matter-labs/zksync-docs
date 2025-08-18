@@ -1,0 +1,24 @@
+{
+  "name": "sso",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "~5.8.3",
+    "vite": "^7.0.4"
+  },
+  "dependencies": {
+    "@reown/appkit": "^1.7.17",
+    "@reown/appkit-adapter-wagmi": "^1.7.17",
+    "@simplewebauthn/browser": "^13.1.2",
+    "@simplewebauthn/server": "^13.1.2",
+    "viem": "^2.33.1",
+    "wagmi": "^2.16.0",
+    "zksync-sso": "^0.3.3"
+  }
+}
