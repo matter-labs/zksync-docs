@@ -95,6 +95,7 @@ const cards = [
                   label="Return to Home"
                   variant="outline"
                   size="lg"
+                  to="/"
                 />
               </div>
             </UContainer>
