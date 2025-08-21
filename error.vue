@@ -26,22 +26,22 @@ provide('navigation', navigation);
 
 const cards = [
   {
-    title: 'Build Apps',
-    description: 'Explore the ZKsync Network documentation.',
-    to: '/zksync-era',
-    icon: 'i-heroicons-rocket-launch-solid',
+    title: 'Quickstart',
+    description: 'Get started building applications on ZKsync with our quickstart guide.',
+    to: '/zksync-era/guides/quick-start',
+    icon: 'i-heroicons-code-bracket-16-solid',
   },
   {
-    title: 'Build Chains',
-    description: 'Browse the documentation for ZKsync Stack.',
-    to: '/zk-stack',
+    title: 'ZKsync Stack',
+    description: 'Learn how to run your own ZKsync chain with our chain operator quickstart guide.',
+    to: '/zk-stack/running/quickstart',
     icon: 'i-heroicons-square-3-stack-3d-16-solid',
   },
   {
-    title: 'Learn About the Protocol',
-    description: 'Learn about the ZKsync protocol in-depth.',
-    to: '/zksync-protocol',
-    icon: 'i-heroicons-book-open-solid',
+    title: 'ZKsync Airbender',
+    description: 'Explore the fastest RISC-V prover powering the next-generation of ZKsync chains.',
+    to: '/zksync-protocol/zksync-airbender/overview',
+    icon: 'i-heroicons-rocket-launch-solid',
   },
   {
     title: 'Step-by-step Tutorials',
@@ -76,7 +76,7 @@ const cards = [
                 </p>
               </div>
 
-              <UPageGrid class="mt-8 lg:!grid-cols-2 xl:!grid-cols-2 2xl:!grid-cols-2">
+              <UPageGrid class="my-8 lg:!grid-cols-2 xl:!grid-cols-2 2xl:!grid-cols-2">
                 <ULandingCard
                   v-for="(c, i) in cards"
                   :key="i"
@@ -90,6 +90,13 @@ const cards = [
                   </template>
                 </ULandingCard>
               </UPageGrid>
+              <div class="text-center">
+                <UButton
+                  label="Return to Home"
+                  variant="outline"
+                  size="lg"
+                />
+              </div>
             </UContainer>
           </div>
           <UPageError
