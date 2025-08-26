@@ -23,6 +23,33 @@ useHead({
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation());
 
 provide('navigation', navigation);
+
+const cards = [
+  {
+    title: 'Quickstart',
+    description: 'Get started building applications on ZKsync with our quickstart guide.',
+    to: '/zksync-era/guides/quick-start',
+    icon: 'i-heroicons-code-bracket-16-solid',
+  },
+  {
+    title: 'ZKsync Stack',
+    description: 'Learn how to run your own ZKsync chain with our chain operator quickstart guide.',
+    to: '/zk-stack/running/quickstart',
+    icon: 'i-heroicons-square-3-stack-3d-16-solid',
+  },
+  {
+    title: 'ZKsync Airbender',
+    description: 'Explore the fastest RISC-V prover powering the next-generation of ZKsync chains.',
+    to: '/zksync-protocol/zksync-airbender/overview',
+    icon: 'i-heroicons-rocket-launch-solid',
+  },
+  {
+    title: 'Step-by-step Tutorials',
+    description: 'Follow along with step-by-step tutorials made by the ZKsync community.',
+    to: 'https://code.zksync.io/',
+    icon: 'i-heroicons-beaker-solid',
+  },
+];
 </script>
 
 <template>
@@ -33,55 +60,45 @@ provide('navigation', navigation);
       <UContainer>
         <UPage>
           <div
-            v-if="error.statusCode === 404"
-            class="flex flex-col items-center justify-center py-16"
+            v-if="error.statusCode == 404"
+            class="flex min-h-screen items-center"
           >
-            <h1 class="mb-4 text-4xl font-bold">Page Not Found</h1>
-            <p class="mb-8 text-2xl">Looks like this page didn’t make it through the prover.</p>
+            <UContainer>
+              <div class="space-y-3 text-center">
+                <UBadge
+                  color="gray"
+                  variant="subtle"
+                  >{{ error.statusCode }} • Page not found</UBadge
+                >
+                <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">Lost in the docs?</h1>
+                <p class="text-gray-500">
+                  We couldn’t find the page you were looking for. Try one of these helpful links.
+                </p>
+              </div>
 
-            <h2 class="mb-4 text-xl">Here are some other pages you might be interested in:</h2>
-            <div class="mb-8 w-full max-w-4xl space-y-6">
-              <NiceCardGroup>
-                <NiceCard
-                  title="Quickstart"
-                  icon="i-heroicons-code-bracket-solid"
-                  to="/zksync-era/guides/quick-start"
+              <UPageGrid class="my-8 lg:!grid-cols-2 xl:!grid-cols-2 2xl:!grid-cols-2">
+                <ULandingCard
+                  v-for="(c, i) in cards"
+                  :key="i"
+                  v-bind="c"
                 >
-                  Get started building applications on ZKsync with our quickstart guide.
-                </NiceCard>
-                <NiceCard
-                  title="ZKsync Stack"
-                  icon="i-heroicons-server-solid"
-                  to="/zk-stack/running/quickstart"
-                >
-                  Learn how to run your own ZKsync chain with our operator quickstart guide.
-                </NiceCard>
-              </NiceCardGroup>
-
-              <NiceCardGroup>
-                <NiceCard
-                  title="ZKsync Airbender"
-                  icon="i-heroicons-rocket-launch-solid"
-                  to="/zksync-protocol/zksync-airbender/overview"
-                >
-                  Explore the fastest RISC-V prover powering the next-generation of ZKsync chains.
-                </NiceCard>
-                <NiceCard
-                  title="Community Tutorials"
-                  icon="i-heroicons-academic-cap-solid"
-                  to="https://code.zksync.io/"
-                >
-                  Discover community-driven guides and tutorials for building on ZKsync.
-                </NiceCard>
-              </NiceCardGroup>
-            </div>
-
-            <NuxtLink
-              to="/"
-              class="rounded-md border border-gray-300 px-6 py-2 transition-colors hover:bg-gray-100"
-            >
-              Return to Home
-            </NuxtLink>
+                  <template #icon>
+                    <UIcon
+                      :name="c.icon"
+                      class="text-primary h-6 w-6"
+                    />
+                  </template>
+                </ULandingCard>
+              </UPageGrid>
+              <div class="text-center">
+                <UButton
+                  label="Return to Home"
+                  variant="outline"
+                  size="lg"
+                  to="/"
+                />
+              </div>
+            </UContainer>
           </div>
           <UPageError
             v-else
