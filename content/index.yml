@@ -27,7 +27,7 @@ features:
     - title: 'Quickstart'
       description: 'Build your first app and deploy it on any chain of the Elastic Network.'
       icon: 'i-heroicons-code-bracket-16-solid'
-      to: '/zksync-network/guides/quickstart'
+      to: '/zksync-network/guides/quick-start'
     - title: 'ZKsync Chain List'
       description: 'Explore all the chains on the Elastic Network.'
       icon: 'i-zkicon-zksync'
