@@ -4,6 +4,6 @@
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'zksync-era-section',
+  layout: 'zksync-network-section',
 });
 </script>
