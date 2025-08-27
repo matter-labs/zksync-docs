@@ -35,24 +35,7 @@ const testnetChains = computed(() => chainsData.filter((chain: Chain) => chain.i
       </div>
       <div class="flex items-center space-x-3">
         <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Mainnets only</span>
-        <button
-          :class="[
-            'focus:ring-primary relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2',
-            showTestnets ? 'bg-primary' : 'bg-gray-200 dark:bg-gray-600',
-          ]"
-          type="button"
-          role="switch"
-          :aria-checked="showTestnets"
-          aria-label="Toggle testnet visibility"
-          @click="showTestnets = !showTestnets"
-        >
-          <span
-            :class="[
-              'inline-block h-4 w-4 transform rounded-full bg-white transition-transform',
-              showTestnets ? 'translate-x-6' : 'translate-x-1',
-            ]"
-          />
-        </button>
+        <UToggle v-model="showTestnets" />
         <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Include testnets</span>
       </div>
     </div>
