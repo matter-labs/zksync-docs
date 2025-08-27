@@ -48,7 +48,7 @@
     "chainId": 388,
     "icon": "https://www.zksync.io/ecosystem/cronos-zkevm.png",
     "isTestnet": false,
-    "documentationURL": "https://docs.cronos.org/zkevm",
+    "documentationURL": "https://docs-zkevm.cronos.org/",
     "explorerURL": "https://explorer.zkevm.cronos.org/",
     "baseToken": "zkCRO",
     "pubdataMode": "Validium",
@@ -59,7 +59,7 @@
     "chainId": 240,
     "icon": "https://www.zksync.io/ecosystem/cronos-zkevm.png",
     "isTestnet": true,
-    "documentationURL": "https://docs.cronos.org/zkevm",
+    "documentationURL": "https://docs-zkevm.cronos.org/",
     "explorerURL": "https://explorer.zkevm.cronos.org/testnet",
     "baseToken": "zkTCRO",
     "pubdataMode": "Validium",
@@ -71,7 +71,7 @@
     "icon": "/logos/genlayer.jpg",
     "isTestnet": true,
     "documentationURL": "https://genlayer.com",
-    "explorerURL": "https://explorer.genlayer.com",
+    "explorerURL": "https://genlayer-testnet.explorer.caldera.xyz",
     "baseToken": "GEN",
     "pubdataMode": "Validium",
     "dataAvailability": "NoDA"
@@ -82,7 +82,6 @@
     "icon": "https://www.zksync.io/ecosystem/grvt.png",
     "isTestnet": false,
     "documentationURL": "https://api-docs.grvt.io/",
-    "explorerURL": "https://explorer.grvt.io",
     "baseToken": "ETH",
     "pubdataMode": "Validium",
     "dataAvailability": "NoDA"
@@ -93,7 +92,6 @@
     "icon": "https://www.zksync.io/ecosystem/grvt.png",
     "isTestnet": true,
     "documentationURL": "https://api-docs.grvt.io/",
-    "explorerURL": "https://testnet.explorer.grvt.io",
     "baseToken": "ETH",
     "pubdataMode": "Validium",
     "dataAvailability": "NoDA"
@@ -125,7 +123,7 @@
     "icon": "https://www.zksync.io/ecosystem/lens.png",
     "isTestnet": true,
     "documentationURL": "https://lens.xyz/docs/chain/overview",
-    "explorerURL": "https://testnet.explorer.lens.xyz",
+    "explorerURL": "https://explorer.testnet.lens.xyz/",
     "baseToken": "GRASS",
     "pubdataMode": "Validium",
     "dataAvailability": "Avail"
@@ -147,7 +145,6 @@
     "icon": "/logos/openzk.png",
     "isTestnet": true,
     "documentationURL": "https://docs.openzk.net/",
-    "explorerURL": "https://explorer.openzk.net",
     "baseToken": "OZK",
     "pubdataMode": "Rollup",
     "dataAvailability": "Ethereum"
@@ -178,7 +175,7 @@
     "icon": "https://www.zksync.io/ecosystem/ripio-lachain.png",
     "isTestnet": false,
     "documentationURL": "https://lachain.network",
-    "explorerURL": "https://explorer.lachain.network",
+    "explorerURL": "https://explorer.zk.lachain.network/",
     "baseToken": "LAC",
     "pubdataMode": "Rollup",
     "dataAvailability": "Ethereum"
@@ -189,7 +186,7 @@
     "icon": "https://www.zksync.io/ecosystem/ripio-lachain.png",
     "isTestnet": true,
     "documentationURL": "https://lachain.network",
-    "explorerURL": "https://testnet.explorer.lachain.network",
+    "explorerURL": "https://explorer.zk.lachain.network/?network=TestLaChainZK",
     "baseToken": "LAC",
     "pubdataMode": "Rollup",
     "dataAvailability": "Ethereum"
@@ -242,6 +239,7 @@
     "icon": "https://www.zksync.io/ecosystem/xpla.png",
     "isTestnet": false,
     "documentationURL": "https://xpla.io",
+    "explorerURL": "https://explorer.xpla.io/mainnet",
     "baseToken": "ETH",
     "pubdataMode": "Rollup",
     "dataAvailability": "Ethereum"
@@ -252,28 +250,18 @@
     "icon": "https://www.zksync.io/ecosystem/xpla.png",
     "isTestnet": true,
     "documentationURL": "https://xpla.io",
+    "explorerURL": "https://explorer.xpla.io/testnet",
     "baseToken": "ETH",
     "pubdataMode": "Rollup",
     "dataAvailability": "Ethereum"
   },
   {
-    "name": "Xsolla Chain",
-    "chainId": 98765,
-    "icon": "https://www.zksync.io/ecosystem/xsolla.png",
-    "isTestnet": false,
-    "documentationURL": "https://xsolla.com",
-    "explorerURL": "https://explorer.xsolla.com",
-    "baseToken": "XSL",
-    "pubdataMode": "Rollup",
-    "dataAvailability": "Ethereum"
-  },
-  {
     "name": "Xsolla Chain Testnet",
-    "chainId": 37111,
+    "chainId": 555272,
     "icon": "https://www.zksync.io/ecosystem/xsolla.png",
     "isTestnet": true,
     "documentationURL": "https://xsolla.com",
-    "explorerURL": "https://testnet.explorer.xsolla.com",
+    "explorerURL": "https://x.la/explorer/",
     "baseToken": "ETH",
     "pubdataMode": "Rollup",
     "dataAvailability": "Ethereum"
@@ -295,7 +283,7 @@
     "icon": "https://www.zksync.io/ecosystem/zero.png",
     "isTestnet": true,
     "documentationURL": "https://docs.zero.network/",
-    "explorerURL": "https://explorer.zero.network",
+    "explorerURL": "https://zerion-testnet-proofs.explorer.caldera.xyz/",
     "baseToken": "ETH",
     "pubdataMode": "Rollup",
     "dataAvailability": "Ethereum"
