@@ -98,7 +98,7 @@
   },
   {
     "name": "Heurist Chain Testnet",
-    "chainId": 42096,
+    "chainId": 207788,
     "icon": "https://www.zksync.io/ecosystem/heurist.png",
     "isTestnet": true,
     "documentationURL": "https://heurist.ai",
@@ -108,7 +108,7 @@
   },
   {
     "name": "Lens Chain",
-    "chainId": 37111,
+    "chainId": 232,
     "icon": "https://www.zksync.io/ecosystem/lens.png",
     "isTestnet": false,
     "documentationURL": "https://lens.xyz/docs/chain/overview",
@@ -119,7 +119,7 @@
   },
   {
     "name": "Lens Testnet",
-    "chainId": 37112,
+    "chainId": 37111,
     "icon": "https://www.zksync.io/ecosystem/lens.png",
     "isTestnet": true,
     "documentationURL": "https://lens.xyz/docs/chain/overview",
@@ -151,7 +151,7 @@
   },
   {
     "name": "Memento Chain",
-    "chainId": 42069,
+    "chainId": 51888,
     "icon": "https://www.zksync.io/ecosystem/memento.png",
     "isTestnet": false,
     "documentationURL": "https://mementoblockchain.com/zk-chain",
@@ -161,7 +161,7 @@
   },
   {
     "name": "Memento Chain Testnet",
-    "chainId": 985,
+    "chainId": 2129,
     "icon": "https://www.zksync.io/ecosystem/memento.png",
     "isTestnet": true,
     "documentationURL": "https://mementoblockchain.com/zk-chain",
@@ -171,7 +171,7 @@
   },
   {
     "name": "Ripio LaChain",
-    "chainId": 12345,
+    "chainId": 2904,
     "icon": "https://www.zksync.io/ecosystem/ripio-lachain.png",
     "isTestnet": false,
     "documentationURL": "https://lachain.network",
@@ -182,7 +182,7 @@
   },
   {
     "name": "Ripio LaChain Testnet",
-    "chainId": 33385,
+    "chainId": 14183,
     "icon": "https://www.zksync.io/ecosystem/ripio-lachain.png",
     "isTestnet": true,
     "documentationURL": "https://lachain.network",
@@ -215,7 +215,7 @@
   },
   {
     "name": "Space and Time",
-    "chainId": 86420,
+    "chainId": 1217,
     "icon": "https://www.zksync.io/ecosystem/space-and-time.png",
     "isTestnet": false,
     "documentationURL": "https://docs.spaceandtime.io/",
@@ -225,7 +225,7 @@
   },
   {
     "name": "Space and Time Testnet",
-    "chainId": 98985,
+    "chainId": 212000,
     "icon": "https://www.zksync.io/ecosystem/space-and-time.png",
     "isTestnet": true,
     "documentationURL": "https://docs.spaceandtime.io/",
@@ -235,7 +235,7 @@
   },
   {
     "name": "XPLA Chain",
-    "chainId": 37,
+    "chainId": 375,
     "icon": "https://www.zksync.io/ecosystem/xpla.png",
     "isTestnet": false,
     "documentationURL": "https://xpla.io",
@@ -246,7 +246,7 @@
   },
   {
     "name": "XPLA Chain Testnet",
-    "chainId": 37,
+    "chainId": 475,
     "icon": "https://www.zksync.io/ecosystem/xpla.png",
     "isTestnet": true,
     "documentationURL": "https://xpla.io",
@@ -268,7 +268,7 @@
   },
   {
     "name": "Zero Network",
-    "chainId": 24680,
+    "chainId": 543210,
     "icon": "https://www.zksync.io/ecosystem/zero.png",
     "isTestnet": false,
     "documentationURL": "https://docs.zero.network/",
@@ -279,7 +279,7 @@
   },
   {
     "name": "Zero Network Testnet",
-    "chainId": 4457,
+    "chainId": 43210,
     "icon": "https://www.zksync.io/ecosystem/zero.png",
     "isTestnet": true,
     "documentationURL": "https://docs.zero.network/",
@@ -290,7 +290,7 @@
   },
   {
     "name": "ZKcandy",
-    "chainId": 56789,
+    "chainId": 320,
     "icon": "https://www.zksync.io/ecosystem/zkcandy.png",
     "isTestnet": false,
     "documentationURL": "https://docs.zkcandyapi.com/",
