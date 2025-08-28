@@ -21,6 +21,29 @@ const filteredChains = computed(() => {
 
 const mainnetChains = computed(() => chainsData.filter((chain: Chain) => !chain.isTestnet));
 const testnetChains = computed(() => chainsData.filter((chain: Chain) => chain.isTestnet));
+
+const columns = [
+  {
+    key: 'name',
+    label: 'Chain Name',
+  },
+  {
+    key: 'chainId',
+    label: 'Chain ID',
+  },
+  {
+    key: 'baseToken',
+    label: 'Base Token',
+  },
+  {
+    key: 'dataAvailability',
+    label: 'Data Availability',
+  },
+  {
+    key: 'links',
+    label: 'Links',
+  },
+];
 </script>
 
 <template>
@@ -41,116 +64,100 @@ const testnetChains = computed(() => chainsData.filter((chain: Chain) => chain.i
     </div>
 
     <!-- Chain List Table -->
-    <div>
-      <div class="overflow-x-auto">
-        <table
-          class="min-w-full divide-y divide-gray-200 rounded-lg border border-gray-200 dark:divide-gray-700 dark:border-gray-700"
-        >
-          <thead class="bg-gray-50 dark:bg-gray-800">
-            <tr>
-              <th
-                class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400"
-              >
-                Chain Name
-              </th>
-              <th
-                class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400"
-              >
-                Chain ID
-              </th>
-              <th
-                class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400"
-              >
-                Base Token
-              </th>
-              <th
-                class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400"
-              >
-                Data Availability
-              </th>
-              <th
-                class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400"
-              >
-                Links
-              </th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-gray-200 bg-white dark:divide-gray-700 dark:bg-gray-900">
-            <tr
-              v-for="chain in filteredChains"
-              :key="chain.chainId"
-              class="transition-colors hover:bg-gray-50 dark:hover:bg-gray-800"
+    <div class="not-prose overflow-x-auto">
+      <UTable
+        :columns="columns"
+        :rows="filteredChains"
+        class="min-w-full divide-y divide-gray-200 rounded-lg border border-gray-200 dark:divide-gray-700 dark:border-gray-700"
+        :ui="{
+          table: 'w-full table-auto',
+          thead: 'bg-gray-50 dark:bg-gray-800',
+          trow: 'transition-colors hover:bg-gray-50 dark:hover:bg-gray-800 whitespace-nowrap px-6 py-4',
+          tbody: 'divide-y divide-gray-200 bg-white dark:divide-gray-700 dark:bg-gray-900',
+          td: { base: 'whitespace-nowrap px-6 py-8' },
+          tr: { base: 'transition-colors hover:bg-gray-50 dark:hover:bg-gray-800' },
+          th: {
+            base: 'px-6 py-3 text-left text-xs font-medium uppercase tracking-wider',
+          },
+        }"
+      >
+        <template #name-data="{ row }">
+          <div class="flex min-w-0 items-center gap-2 truncate">
+            <img
+              :src="row.icon"
+              :alt="`${row.name} logo`"
+              class="mr-3 h-6 w-6 rounded-full object-cover"
+            />
+            <div class="text-sm font-medium text-gray-900 dark:text-gray-100">
+              {{ row.name }}
+            </div>
+          </div>
+        </template>
+
+        <template #chainId-data="{ row }">
+          <div class="flex items-center justify-center gap-2">
+            <span
+              class="rounded bg-gray-100 px-2 py-1 font-mono text-xs text-gray-900 dark:bg-gray-700 dark:text-gray-100"
             >
-              <td class="whitespace-nowrap px-6 py-4">
-                <div class="flex items-center">
-                  <img
-                    :src="chain.icon"
-                    :alt="`${chain.name} logo`"
-                    class="mr-3 h-6 w-6 rounded-full object-cover"
-                  />
-                  <div class="text-sm font-medium text-gray-900 dark:text-gray-100">
-                    {{ chain.name }}
-                  </div>
-                </div>
-              </td>
-              <td class="whitespace-nowrap px-6 py-4">
-                <span
-                  class="rounded bg-gray-100 px-2 py-1 font-mono text-xs text-gray-900 dark:bg-gray-700 dark:text-gray-100"
-                >
-                  {{ chain.chainId }}
-                </span>
-              </td>
-              <td class="whitespace-nowrap px-6 py-4">
-                <span class="text-sm font-semibold text-gray-900 dark:text-gray-100">
-                  {{ chain.baseToken }}
-                </span>
-              </td>
-              <td class="whitespace-nowrap px-6 py-4">
-                <span
-                  :class="{
-                    'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200':
-                      chain.dataAvailability === 'Ethereum',
-                    'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200': chain.dataAvailability === 'Avail',
-                    'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200':
-                      chain.dataAvailability === 'EigenLayer',
-                    'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200': chain.dataAvailability === 'NoDA',
-                  }"
-                  class="inline-flex rounded-full px-2 py-1 text-xs font-medium"
-                >
-                  {{ chain.dataAvailability }}
-                </span>
-              </td>
-              <td class="whitespace-nowrap px-6 py-4">
-                <div class="flex items-center space-x-3">
-                  <NuxtLink
-                    :to="chain.documentationURL"
-                    class="text-primary hover:text-primary-dark inline-flex items-center transition-colors"
-                    :title="`View ${chain.name} Documentation`"
-                  >
-                    <UIcon
-                      name="i-heroicons-document-text-20-solid"
-                      class="h-5 w-5"
-                    />
-                  </NuxtLink>
-                  <a
-                    v-if="chain.explorerURL"
-                    :href="chain.explorerURL"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-primary hover:text-primary-dark inline-flex items-center transition-colors"
-                    :title="`View ${chain.name} Explorer`"
-                  >
-                    <UIcon
-                      name="i-heroicons-magnifying-glass-20-solid"
-                      class="h-5 w-5"
-                    />
-                  </a>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+              {{ row.chainId }}
+            </span>
+          </div>
+        </template>
+
+        <template #baseToken-data="{ row }">
+          <div>
+            <span class="text-sm font-semibold text-gray-900 dark:text-gray-100">
+              {{ row.baseToken }}
+            </span>
+          </div>
+        </template>
+
+        <template #dataAvailability-data="{ row }">
+          <div>
+            <span
+              :class="{
+                'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200':
+                  row.dataAvailability === 'Ethereum',
+                'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200': row.dataAvailability === 'Avail',
+                'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200':
+                  row.dataAvailability === 'EigenLayer',
+                'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200': row.dataAvailability === 'NoDA',
+              }"
+              class="inline-flex rounded-full px-2 py-1 text-xs font-medium"
+            >
+              {{ row.dataAvailability }}
+            </span>
+          </div>
+        </template>
+
+        <template #links-data="{ row }">
+          <div class="flex items-center space-x-3">
+            <NuxtLink
+              :to="row.documentationURL"
+              class="text-primary hover:text-primary-dark inline-flex items-center transition-colors"
+              :title="`View ${row.name} Documentation`"
+            >
+              <UIcon
+                name="i-heroicons-document-text-20-solid"
+                class="h-5 w-5"
+              />
+            </NuxtLink>
+            <a
+              v-if="row.explorerURL"
+              :href="row.explorerURL"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-primary hover:text-primary-dark inline-flex items-center transition-colors"
+              :title="`View ${row.name} Explorer`"
+            >
+              <UIcon
+                name="i-heroicons-magnifying-glass-20-solid"
+                class="h-5 w-5"
+              />
+            </a>
+          </div>
+        </template>
+      </UTable>
     </div>
   </div>
 </template>
