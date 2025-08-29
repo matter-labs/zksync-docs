@@ -97,16 +97,6 @@
     "dataAvailability": "NoDA"
   },
   {
-    "name": "Heurist Chain Testnet",
-    "chainId": 207788,
-    "icon": "https://www.zksync.io/ecosystem/heurist.png",
-    "isTestnet": true,
-    "documentationURL": "https://heurist.ai",
-    "baseToken": "HEU",
-    "pubdataMode": "Rollup",
-    "dataAvailability": "Ethereum"
-  },
-  {
     "name": "Lens Chain",
     "chainId": 232,
     "icon": "https://www.zksync.io/ecosystem/lens.png",
@@ -148,26 +138,6 @@
     "baseToken": "OZK",
     "pubdataMode": "Rollup",
     "dataAvailability": "Ethereum"
-  },
-  {
-    "name": "Memento Chain",
-    "chainId": 51888,
-    "icon": "https://www.zksync.io/ecosystem/memento.png",
-    "isTestnet": false,
-    "documentationURL": "https://mementoblockchain.com/zk-chain",
-    "baseToken": "ETH",
-    "pubdataMode": "Validium",
-    "dataAvailability": "NoDA"
-  },
-  {
-    "name": "Memento Chain Testnet",
-    "chainId": 2129,
-    "icon": "https://www.zksync.io/ecosystem/memento.png",
-    "isTestnet": true,
-    "documentationURL": "https://mementoblockchain.com/zk-chain",
-    "baseToken": "ETH",
-    "pubdataMode": "Validium",
-    "dataAvailability": "NoDA"
   },
   {
     "name": "Ripio LaChain",
@@ -214,16 +184,6 @@
     "dataAvailability": "Avail"
   },
   {
-    "name": "Space and Time",
-    "chainId": 1217,
-    "icon": "https://www.zksync.io/ecosystem/space-and-time.png",
-    "isTestnet": false,
-    "documentationURL": "https://docs.spaceandtime.io/",
-    "baseToken": "ETH",
-    "pubdataMode": "Validium",
-    "dataAvailability": "Avail"
-  },
-  {
     "name": "Space and Time Testnet",
     "chainId": 212000,
     "icon": "https://www.zksync.io/ecosystem/space-and-time.png",
@@ -234,7 +194,7 @@
     "dataAvailability": "Avail"
   },
   {
-    "name": "XPLA Chain",
+    "name": "zkXPLA Chain",
     "chainId": 375,
     "icon": "https://www.zksync.io/ecosystem/xpla.png",
     "isTestnet": false,
@@ -245,7 +205,7 @@
     "dataAvailability": "Ethereum"
   },
   {
-    "name": "XPLA Chain Testnet",
+    "name": "zkXPLA Chain Testnet",
     "chainId": 475,
     "icon": "https://www.zksync.io/ecosystem/xpla.png",
     "isTestnet": true,
