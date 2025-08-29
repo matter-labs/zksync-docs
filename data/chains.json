@@ -140,6 +140,26 @@
     "dataAvailability": "Ethereum"
   },
   {
+    "name": "Memento ZK Chain",
+    "chainId": 51888,
+    "icon": "https://www.zksync.io/ecosystem/memento.png",
+    "isTestnet": false,
+    "documentationURL": "https://mementoblockchain.com/zk-chain",
+    "baseToken": "ETH",
+    "pubdataMode": "Validium",
+    "dataAvailability": "NoDA"
+  },
+  {
+    "name": "Memento ZK Chain Testnet",
+    "chainId": 2129,
+    "icon": "https://www.zksync.io/ecosystem/memento.png",
+    "isTestnet": true,
+    "documentationURL": "https://mementoblockchain.com/zk-chain",
+    "baseToken": "ETH",
+    "pubdataMode": "Validium",
+    "dataAvailability": "NoDA"
+  },
+  {
     "name": "Ripio LaChain",
     "chainId": 2904,
     "icon": "https://www.zksync.io/ecosystem/ripio-lachain.png",
