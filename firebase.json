@@ -520,6 +520,11 @@
         "source": "/zksync-era/:path*",
         "destination": "/zksync-network/:path",
         "type": 301
+      },
+      {
+        "source": "/zksync-era",
+        "destination": "/zksync-network",
+        "type": 301
       }
     ]
   }
