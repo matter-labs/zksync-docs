@@ -77,7 +77,7 @@
     "dataAvailability": "NoDA"
   },
   {
-    "name": "GRVT Chain",
+    "name": "GRVT Mainnet",
     "chainId": 325,
     "icon": "https://www.zksync.io/ecosystem/grvt.png",
     "isTestnet": false,
@@ -87,7 +87,7 @@
     "dataAvailability": "NoDA"
   },
   {
-    "name": "GRVT Chain Testnet",
+    "name": "GRVT Testnet",
     "chainId": 326,
     "icon": "https://www.zksync.io/ecosystem/grvt.png",
     "isTestnet": true,
@@ -194,7 +194,7 @@
     "dataAvailability": "Avail"
   },
   {
-    "name": "zkXPLA Chain",
+    "name": "zkXPLA",
     "chainId": 375,
     "icon": "https://www.zksync.io/ecosystem/xpla.png",
     "isTestnet": false,
@@ -205,7 +205,7 @@
     "dataAvailability": "Ethereum"
   },
   {
-    "name": "zkXPLA Chain Testnet",
+    "name": "zkXPLA Testnet",
     "chainId": 475,
     "icon": "https://www.zksync.io/ecosystem/xpla.png",
     "isTestnet": true,
