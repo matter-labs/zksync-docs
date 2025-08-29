@@ -13,16 +13,21 @@ useSeoMeta({
 
 defineOgImage({
   component: 'OgImageZK',
-  title: seo?.siteName,
-  description: 'Access detailed guides, references and resources that will help you build with ZKsync Era.',
+  props: {
+    title: seo?.siteName,
+    description: 'Access detailed guides, references and resources that will help you build with ZKsync Era.',
+  },
 });
 </script>
 
 <template>
   <div v-if="page">
+    <IconOrbit class="mb-8 hidden md:block" />
+
     <ULandingHero
       v-if="page.hero"
       v-bind="page.hero"
+      class="hero-compact"
     >
       <ClientOnly>
         <vue-particles
@@ -80,6 +85,20 @@ defineOgImage({
     </ULandingSection>
 
     <ULandingSection
+      :title="page.stackfeatures.title"
+      :links="page.stackfeatures.links"
+      class="py-16 pb-32 sm:py-12 sm:pb-24"
+    >
+      <UPageGrid>
+        <ULandingCard
+          v-for="(item, index) of page.stackfeatures.items"
+          :key="index"
+          v-bind="item"
+        />
+      </UPageGrid>
+    </ULandingSection>
+
+    <ULandingSection
       :title="page.community.title"
       :links="page.community.links"
       class="py-16 pb-32 sm:py-12 sm:pb-24"
@@ -94,3 +113,57 @@ defineOgImage({
     </ULandingSection>
   </div>
 </template>
+
+<style scoped>
+.hero-compact {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Override ULandingHero internal spacing */
+.hero-compact :deep(.container) {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+/* Reduce spacing around hero content */
+.hero-compact :deep(.text-center) {
+  margin-top: 0 !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Reduce button spacing */
+.hero-compact :deep(.mt-8) {
+  margin-top: 1rem !important;
+}
+
+.hero-compact :deep(.mt-6) {
+  margin-top: 0.75rem !important;
+}
+
+/* Enhanced button styling */
+.hero-compact :deep(.btn-primary) {
+  transition: all 0.3s ease;
+}
+
+.hero-compact :deep(.btn-outline) {
+  border: 2px solid rgb(59, 130, 246);
+  color: rgb(59, 130, 246);
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.hero-compact :deep(.btn-outline:hover) {
+  background: rgb(59, 130, 246);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.hero-compact :deep(.btn-primary:hover) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+</style>
