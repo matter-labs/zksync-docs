@@ -18,7 +18,7 @@ const redirects = {
 // Note: glob redirects don't work outside of the local environment, so we have to specify each redirect separately.
 const docsReorgRedirects = {
   '/build': { redirect: '/zksync-era' },
-  '/build/connect-to-zksync': { redirect: '/zksync-era/environment' },
+  '/build/connect-to-zksync': { redirect: '/zksync-era/environment/zksync-era' },
 
   // Quick start
   '/build/start-coding/quick-start': { redirect: '/zksync-era/guides/quick-start' },

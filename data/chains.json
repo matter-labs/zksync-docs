@@ -1,0 +1,282 @@
+[
+  {
+    "name": "ZKsync Era Mainnet",
+    "chainId": 324,
+    "icon": "https://www.zksync.io/ecosystem/era.png",
+    "isTestnet": false,
+    "documentationURL": "/zksync-network/environment/zksync-era",
+    "explorerURL": "https://explorer.zksync.io",
+    "baseToken": "ETH",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
+  },
+  {
+    "name": "ZKsync Era Sepolia",
+    "chainId": 300,
+    "icon": "https://www.zksync.io/ecosystem/era.png",
+    "isTestnet": true,
+    "documentationURL": "/zksync-network/environment/zksync-era",
+    "explorerURL": "https://sepolia.explorer.zksync.io",
+    "baseToken": "ETH",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
+  },
+  {
+    "name": "Abstract Mainnet",
+    "chainId": 2741,
+    "icon": "https://www.zksync.io/ecosystem/abstract.png",
+    "isTestnet": false,
+    "documentationURL": "https://docs.abs.xyz/overview",
+    "explorerURL": "https://abscan.org/",
+    "baseToken": "ETH",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
+  },
+  {
+    "name": "Abstract Testnet",
+    "chainId": 11124,
+    "icon": "https://www.zksync.io/ecosystem/abstract.png",
+    "isTestnet": true,
+    "documentationURL": "https://docs.abs.xyz/overview",
+    "explorerURL": "https://sepolia.abscan.org/",
+    "baseToken": "ETH",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
+  },
+  {
+    "name": "Cronos zkEVM Mainnet",
+    "chainId": 388,
+    "icon": "https://www.zksync.io/ecosystem/cronos-zkevm.png",
+    "isTestnet": false,
+    "documentationURL": "https://docs-zkevm.cronos.org/",
+    "explorerURL": "https://explorer.zkevm.cronos.org/",
+    "baseToken": "zkCRO",
+    "pubdataMode": "Validium",
+    "dataAvailability": "NoDA"
+  },
+  {
+    "name": "Cronos zkEVM Testnet",
+    "chainId": 240,
+    "icon": "https://www.zksync.io/ecosystem/cronos-zkevm.png",
+    "isTestnet": true,
+    "documentationURL": "https://docs-zkevm.cronos.org/",
+    "explorerURL": "https://explorer.zkevm.cronos.org/testnet",
+    "baseToken": "zkTCRO",
+    "pubdataMode": "Validium",
+    "dataAvailability": "NoDA"
+  },
+  {
+    "name": "GenLayer Testnet",
+    "chainId": 4221,
+    "icon": "/logos/genlayer.jpg",
+    "isTestnet": true,
+    "documentationURL": "https://genlayer.com",
+    "explorerURL": "https://genlayer-testnet.explorer.caldera.xyz",
+    "baseToken": "GEN",
+    "pubdataMode": "Validium",
+    "dataAvailability": "NoDA"
+  },
+  {
+    "name": "GRVT Mainnet",
+    "chainId": 325,
+    "icon": "https://www.zksync.io/ecosystem/grvt.png",
+    "isTestnet": false,
+    "documentationURL": "https://api-docs.grvt.io/",
+    "baseToken": "ETH",
+    "pubdataMode": "Validium",
+    "dataAvailability": "NoDA"
+  },
+  {
+    "name": "GRVT Testnet",
+    "chainId": 326,
+    "icon": "https://www.zksync.io/ecosystem/grvt.png",
+    "isTestnet": true,
+    "documentationURL": "https://api-docs.grvt.io/",
+    "baseToken": "ETH",
+    "pubdataMode": "Validium",
+    "dataAvailability": "NoDA"
+  },
+  {
+    "name": "Lens Chain",
+    "chainId": 232,
+    "icon": "https://www.zksync.io/ecosystem/lens.png",
+    "isTestnet": false,
+    "documentationURL": "https://lens.xyz/docs/chain/overview",
+    "explorerURL": "https://explorer.lens.xyz",
+    "baseToken": "GHO",
+    "pubdataMode": "Validium",
+    "dataAvailability": "Avail"
+  },
+  {
+    "name": "Lens Testnet",
+    "chainId": 37111,
+    "icon": "https://www.zksync.io/ecosystem/lens.png",
+    "isTestnet": true,
+    "documentationURL": "https://lens.xyz/docs/chain/overview",
+    "explorerURL": "https://explorer.testnet.lens.xyz/",
+    "baseToken": "GRASS",
+    "pubdataMode": "Validium",
+    "dataAvailability": "Avail"
+  },
+  {
+    "name": "OpenZK Mainnet",
+    "chainId": 1345,
+    "icon": "/logos/openzk.png",
+    "isTestnet": false,
+    "documentationURL": "https://docs.openzk.net/",
+    "explorerURL": "https://explorer.openzk.net",
+    "baseToken": "ozETH",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
+  },
+  {
+    "name": "OpenZK Testnet",
+    "chainId": 4681,
+    "icon": "/logos/openzk.png",
+    "isTestnet": true,
+    "documentationURL": "https://docs.openzk.net/",
+    "baseToken": "OZK",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
+  },
+  {
+    "name": "Memento ZK Chain",
+    "chainId": 51888,
+    "icon": "https://www.zksync.io/ecosystem/memento.png",
+    "isTestnet": false,
+    "documentationURL": "https://mementoblockchain.com/zk-chain",
+    "baseToken": "ETH",
+    "pubdataMode": "Validium",
+    "dataAvailability": "NoDA"
+  },
+  {
+    "name": "Memento ZK Chain Testnet",
+    "chainId": 2129,
+    "icon": "https://www.zksync.io/ecosystem/memento.png",
+    "isTestnet": true,
+    "documentationURL": "https://mementoblockchain.com/zk-chain",
+    "baseToken": "ETH",
+    "pubdataMode": "Validium",
+    "dataAvailability": "NoDA"
+  },
+  {
+    "name": "Ripio LaChain",
+    "chainId": 2904,
+    "icon": "https://www.zksync.io/ecosystem/ripio-lachain.png",
+    "isTestnet": false,
+    "documentationURL": "https://lachain.network",
+    "explorerURL": "https://explorer.zk.lachain.network/",
+    "baseToken": "LAC",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
+  },
+  {
+    "name": "Ripio LaChain Testnet",
+    "chainId": 14183,
+    "icon": "https://www.zksync.io/ecosystem/ripio-lachain.png",
+    "isTestnet": true,
+    "documentationURL": "https://lachain.network",
+    "explorerURL": "https://explorer.zk.lachain.network/?network=TestLaChainZK",
+    "baseToken": "LAC",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
+  },
+  {
+    "name": "Sophon Mainnet",
+    "chainId": 50104,
+    "icon": "https://www.zksync.io/ecosystem/sophon.png",
+    "isTestnet": false,
+    "documentationURL": "https://docs.sophon.xyz/welcome",
+    "explorerURL": "https://sophscan.xyz/",
+    "baseToken": "SOPH",
+    "pubdataMode": "Validium",
+    "dataAvailability": "Avail"
+  },
+  {
+    "name": "Sophon Testnet",
+    "chainId": 531050104,
+    "icon": "https://www.zksync.io/ecosystem/sophon.png",
+    "isTestnet": true,
+    "documentationURL": "https://docs.sophon.xyz/welcome",
+    "explorerURL": "https://testnet.sophscan.xyz/",
+    "baseToken": "SOPH",
+    "pubdataMode": "Validium",
+    "dataAvailability": "Avail"
+  },
+  {
+    "name": "Space and Time Testnet",
+    "chainId": 212000,
+    "icon": "https://www.zksync.io/ecosystem/space-and-time.png",
+    "isTestnet": true,
+    "documentationURL": "https://docs.spaceandtime.io/",
+    "baseToken": "ETH",
+    "pubdataMode": "Validium",
+    "dataAvailability": "Avail"
+  },
+  {
+    "name": "zkXPLA",
+    "chainId": 375,
+    "icon": "https://www.zksync.io/ecosystem/xpla.png",
+    "isTestnet": false,
+    "documentationURL": "https://xpla.io",
+    "explorerURL": "https://explorer.xpla.io/mainnet",
+    "baseToken": "ETH",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
+  },
+  {
+    "name": "zkXPLA Testnet",
+    "chainId": 475,
+    "icon": "https://www.zksync.io/ecosystem/xpla.png",
+    "isTestnet": true,
+    "documentationURL": "https://xpla.io",
+    "explorerURL": "https://explorer.xpla.io/testnet",
+    "baseToken": "ETH",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
+  },
+  {
+    "name": "Xsolla Chain Testnet",
+    "chainId": 555272,
+    "icon": "https://www.zksync.io/ecosystem/xsolla.png",
+    "isTestnet": true,
+    "documentationURL": "https://xsolla.com",
+    "explorerURL": "https://x.la/explorer/",
+    "baseToken": "ETH",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
+  },
+  {
+    "name": "Zero Network",
+    "chainId": 543210,
+    "icon": "https://www.zksync.io/ecosystem/zero.png",
+    "isTestnet": false,
+    "documentationURL": "https://docs.zero.network/",
+    "explorerURL": "https://explorer.zero.network",
+    "baseToken": "ETH",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
+  },
+  {
+    "name": "Zero Network Testnet",
+    "chainId": 43210,
+    "icon": "https://www.zksync.io/ecosystem/zero.png",
+    "isTestnet": true,
+    "documentationURL": "https://docs.zero.network/",
+    "explorerURL": "https://zerion-testnet-proofs.explorer.caldera.xyz/",
+    "baseToken": "ETH",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
+  },
+  {
+    "name": "ZKcandy",
+    "chainId": 320,
+    "icon": "https://www.zksync.io/ecosystem/zkcandy.png",
+    "isTestnet": false,
+    "documentationURL": "https://docs.zkcandyapi.com/",
+    "explorerURL": "https://explorer.zkcandy.io",
+    "baseToken": "ETH",
+    "pubdataMode": "Validium",
+    "dataAvailability": "Avail"
+  }
+]

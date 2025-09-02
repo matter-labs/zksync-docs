@@ -44,6 +44,12 @@ const links = computed(() =>
       to: `https://claude.ai/new?q=Read%20${currentUrl.value}%20and%20all%20its%20subpages%20and%20answer%20questions%20about%20the%20content.`,
       target: '_blank',
     },
+    {
+      icon: 'i-heroicons-question-mark-circle',
+      label: 'Get Help',
+      to: 'https://github.com/zkSync-Community-Hub/zksync-developers/discussions/new/choose',
+      target: '_blank',
+    },
     ...(toc?.bottom?.links || []),
   ].filter(Boolean)
 );

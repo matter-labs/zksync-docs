@@ -110,6 +110,7 @@ export default defineNuxtConfig({
         'heroicons:rocket-launch-solid',
         'heroicons:book-open-solid',
         'heroicons:square-3-stack-3d-16-solid',
+        'heroicons:question-mark-circle',
         'vscode-icons:file-type-bun',
         'vscode-icons:file-type-npm',
         'vscode-icons:file-type-pnpm',
