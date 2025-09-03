@@ -79,6 +79,7 @@ ptrtoint
 Rabby
 recid.
 REDC
+reown
 rocksdb
 rodata
 rustc
