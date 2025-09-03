@@ -4,32 +4,55 @@ description:
   with our guides and tutorials, or go deep into our architecture and protocol specification.
 navigation: false
 hero:
-  title: 'Unlock the Potential of Layer 2 Scaling with ZKsync'
+  title: 'A network of interoperable chains, secured by ZK.'
   description: 'Explore comprehensive guides, developer tools, and resources to innovate on ZKsync.'
   orientation: vertical
   links:
-    - label: Start building on ZKsync
+    - label: Build Apps on ZKsync
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
-      to: '/zksync-era'
+      to: '/zksync-network'
       size: xl
-features:
-  title: 'Explore ZKsync Docs'
-  items:
-    - title: 'ZKsync Era'
-      description: 'Start building apps on the ZKsync Era.'
-      icon: 'i-zkicon-zksync'
-      to: '/zksync-era'
-    - title: 'ZKsync Stack'
-      description: 'Build your own ZKsync Chain. Fully custom.'
-      icon: 'i-heroicons-bars-4-16-solid'
+      color: primary
+    - label: Launch Your Chain
+      icon: i-heroicons-arrow-right-20-solid
+      trailing: true
       to: '/zk-stack'
-    - title: 'ZKsync protocol'
-      description: 'Learn the magic behind ZKsync.'
-      icon: 'i-heroicons-cpu-chip-16-solid'
+      size: xl
+      color: primary
+      variant: outline
+features:
+  title: 'Build on the Elastic Network'
+  items:
+    - title: 'Quickstart'
+      description: 'Build your first app and deploy it on any chain of the Elastic Network.'
+      icon: 'i-heroicons-code-bracket-16-solid'
+      to: '/zksync-network/guides/quick-start'
+    - title: 'ZKsync Chain List'
+      description: 'Explore all the chains on the Elastic Network.'
+      icon: 'i-zkicon-zksync'
+      to: '/zksync-network/environment'
+    - title: 'Local setup'
+      description: 'Learn about the recommended paths of testing and debugging your projects on ZKsync.'
+      icon: 'i-heroicons-lifebuoy-16-solid'
       to: '/zksync-protocol'
+stackfeatures:
+  title: 'Launch your chain'
+  items:
+    - title: 'ZKsync Chains'
+      description: 'Learn about interoperable ZK rollups connected through a shared Ethereum bridge.'
+      icon: 'i-heroicons-link-16-solid'
+      to: '/zk-stack/zk-chains'
+    - title: 'Running a ZKsync Chain'
+      description: 'Get your first ZKsync chain running locally using ZKsync Stack CLI.'
+      icon: 'i-zkicon-zksync'
+      to: '/zk-stack/running/quickstart'
+    - title: 'Prividium'
+      description: 'Private, permissioned ZK-Rollup with Ethereum-anchored security and enterprise-grade privacy.'
+      icon: 'i-heroicons-shield-check-16-solid'
+      to: '/zk-stack/prividium'
 community:
-  title: 'Join the ZKsync Community'
+  title: 'Join the Community'
   items:
     - title: 'Developer Updates'
       description: 'Keep up to date with the latest from the ZKsync team on X.'
