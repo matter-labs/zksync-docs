@@ -47,10 +47,6 @@ const steps: IStepConfig = {
     prompts:
       'Amount to deposit:9|Private key of the sender:0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110|Recipient address on L2:0x36615Cf349d7F6344891B1e7CA7C72883F5dc049',
   },
-  'check-balance': {
-    action: 'runCommand',
-    commandFolder: 'tests-output/prividium/my_elastic_network',
-  },
   'create-test-project': {
     action: 'runCommand',
     commandFolder: 'tests-output/prividium',
