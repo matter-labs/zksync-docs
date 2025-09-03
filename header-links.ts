@@ -8,9 +8,9 @@ export const headerLinks = () => {
 
   return [
     {
-      label: 'ZKsync Era',
-      to: isDocsApp ? '/zksync-era' : `${config.public.urls.docs}/zksync-era`,
-      active: route.path.startsWith('/zksync-era'),
+      label: 'ZKsync Network',
+      to: isDocsApp ? '/zksync-network' : `${config.public.urls.docs}/zksync-network`,
+      active: route.path.startsWith('/zksync-network'),
     },
     {
       label: 'ZKsync Stack',
