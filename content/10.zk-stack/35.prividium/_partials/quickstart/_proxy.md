@@ -5,11 +5,11 @@ description: Proxy RPC API
 
 To initialize the Proxy API service, open a new terminal in your ecosystem folder and run:
 
-```bash
-zkstack private-rpc init
-```
+:test-action{actionId="init-proxy"}
 
-You can select the default options for the prompts.
+```bash
+zkstack private-rpc init --dev
+```
 
 ::callout{icon="i-heroicons-light-bulb"}
 If you get an error at this step, you may need to allow Docker to use more resources on your system.

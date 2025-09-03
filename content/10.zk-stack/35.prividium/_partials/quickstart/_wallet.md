@@ -15,6 +15,8 @@ Never use these wallets in production or send real funds to them.
 Open a new terminal and run the command below to bridge some ETH to `prividium_chain`.
 This command will bridge 1 ETH to `0x36615cf349d7f6344891b1e7ca7c72883f5dc049`.
 
+:test-action{actionId="deposit-eth"}
+
 ```bash
 zkstack dev rich-account --chain prividium_chain
 ```
