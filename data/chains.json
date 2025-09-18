@@ -22,6 +22,17 @@
     "dataAvailability": "Ethereum"
   },
   {
+    "name": "ZKsync OS Testnet",
+    "chainId": 8022833,
+    "icon": "https://docs.zksync.io/zksync-icon_150.svg",
+    "isTestnet": true,
+    "documentationURL": "/zksync-network/zksync-os",
+    "explorerURL": "",
+    "baseToken": "ETH",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
+  },
+  {
     "name": "Abstract Mainnet",
     "chainId": 2741,
     "icon": "https://www.zksync.io/ecosystem/abstract.png",
