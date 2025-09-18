@@ -1,7 +1,10 @@
 <template>
   <div class="space-y-6">
     <!-- Mainnet Details -->
-    <div class="not-prose overflow-x-auto">
+    <div
+      v-if="!props.showzksyncos"
+      class="not-prose overflow-x-auto"
+    >
       <UTable
         :columns="columns"
         :rows="mainnetDetails"
@@ -53,7 +56,7 @@
     <div class="not-prose overflow-x-auto">
       <UTable
         :columns="columns"
-        :rows="testnetDetails"
+        :rows="props.showzksyncos ? zksyncOSTestnetDetails : testnetDetails"
         class="min-w-full divide-y divide-gray-200 rounded-lg border border-gray-200 dark:divide-gray-700 dark:border-gray-700"
         :ui="{
           table: 'w-full table-auto',
@@ -109,6 +112,10 @@ interface NetworkDetail {
   isLink?: boolean;
 }
 
+const props = defineProps<{
+  showzksyncos?: boolean;
+}>();
+
 const columns = [
   {
     key: 'property',
@@ -145,6 +152,20 @@ const testnetDetails: NetworkDetail[] = [
     property: 'Explorer Verification API',
     value: 'https://explorer.sepolia.era.zksync.dev/contract_verification',
     isCopyable: true,
+  },
+];
+
+const zksyncOSTestnetDetails: NetworkDetail[] = [
+  { property: 'Network Name', value: 'ZKsync OS Sepolia', isCode: true },
+  { property: 'RPC URL', value: 'https://zksync-os-testnet-alpha.zksync.dev/', isCopyable: true },
+  { property: 'WebSocket URL', value: 'wss://zksync-os-testnet-alpha.zksync.dev/ws', isCopyable: true },
+  { property: 'Chain ID', value: '8022833', isCode: true },
+  { property: 'Currency Symbol', value: 'ETH', isCode: true },
+  { property: 'Block Explorer URL', value: '(coming soon)', isLink: false },
+  {
+    property: 'Explorer Verification API',
+    value: '(coming soon)',
+    isCopyable: false,
   },
 ];
 </script>
