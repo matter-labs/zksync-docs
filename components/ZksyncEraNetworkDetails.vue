@@ -156,12 +156,16 @@ const testnetDetails: NetworkDetail[] = [
 ];
 
 const zksyncOSTestnetDetails: NetworkDetail[] = [
-  { property: 'Network Name', value: 'ZKsync OS Sepolia', isCode: true },
+  { property: 'Network Name', value: 'ZKsync OS Devnet', isCode: true },
   { property: 'RPC URL', value: 'https://zksync-os-testnet-alpha.zksync.dev/', isCopyable: true },
   { property: 'WebSocket URL', value: 'wss://zksync-os-testnet-alpha.zksync.dev/ws', isCopyable: true },
   { property: 'Chain ID', value: '8022833', isCode: true },
   { property: 'Currency Symbol', value: 'ETH', isCode: true },
-  { property: 'Block Explorer URL', value: '(coming soon)', isLink: false },
+  {
+    property: 'Block Explorer URL',
+    value: 'https://zksync-os-testnet-alpha.staging-scan-v2.zksync.dev/',
+    isLink: true,
+  },
   {
     property: 'Explorer Verification API',
     value: '(coming soon)',

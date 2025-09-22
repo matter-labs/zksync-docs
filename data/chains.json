@@ -22,12 +22,12 @@
     "dataAvailability": "Ethereum"
   },
   {
-    "name": "ZKsync OS Testnet",
+    "name": "ZKsync OS Devnet",
     "chainId": 8022833,
     "icon": "https://docs.zksync.io/zksync-icon_150.svg",
     "isTestnet": true,
     "documentationURL": "/zksync-network/zksync-os",
-    "explorerURL": "",
+    "explorerURL": "https://zksync-os-testnet-alpha.staging-scan-v2.zksync.dev",
     "baseToken": "ETH",
     "pubdataMode": "Rollup",
     "dataAvailability": "Ethereum"
