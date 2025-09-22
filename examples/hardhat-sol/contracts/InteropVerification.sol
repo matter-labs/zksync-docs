@@ -1,8 +1,7 @@
 //SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.28;
 
-// TODO: replace with IMessageVerification.sol from @matterlabs/zksync-contracts
-import { IMessageVerification } from './Interface.sol';
+import { IMessageVerification } from '@matterlabs/zksync-contracts/contracts/l1-contracts/state-transition/chain-interfaces/IMessageVerification.sol';
 import { L2Message } from '@matterlabs/zksync-contracts/contracts/l1-contracts/common/Messaging.sol';
 
 contract InteropVerification {
