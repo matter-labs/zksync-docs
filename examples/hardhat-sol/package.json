@@ -6,6 +6,8 @@
   "license": "MIT",
   "repository": "https://github.com/matter-labs/zksync-hardhat-template.git",
   "scripts": {
+    "interop:testnet": "hardhat run ./scripts/interop/test-testnet.ts",
+    "interop:local": "hardhat run ./scripts/interop/test-local.ts",
     "mint-token": "hardhat run ./scripts/mint-token.ts",
     "usdc-bridge": "hardhat run ./scripts/usdc-bridge.ts",
     "compile": "hardhat compile",
@@ -13,7 +15,7 @@
   },
   "devDependencies": {
     "@matterlabs/hardhat-zksync": "^1.6.2",
-    "@matterlabs/zksync-contracts": "^28.0.1",
+    "@matterlabs/zksync-contracts": "^29.0.0",
     "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
     "@nomicfoundation/hardhat-verify": "^2.1.1",
     "@openzeppelin/contracts": "^5.4.0",
@@ -27,6 +29,6 @@
     "mocha": "^11.7.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2",
-    "zksync-ethers": "^6.20.1"
+    "zksync-ethers": "^6.21.0"
   }
 }
