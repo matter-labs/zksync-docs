@@ -11,6 +11,7 @@ interface Chain {
   baseToken: string;
   pubdataMode: string;
   dataAvailability: string;
+  onGateway?: boolean;
 }
 
 const showTestnets = ref(false);
@@ -38,6 +39,10 @@ const columns = [
   {
     key: 'dataAvailability',
     label: 'Data Availability',
+  },
+  {
+    key: 'onGateway',
+    label: 'On Gateway',
   },
   {
     key: 'links',
@@ -127,6 +132,18 @@ const columns = [
             >
               {{ row.dataAvailability }}
             </span>
+          </div>
+        </template>
+
+        <template #onGateway-data="{ row }">
+          <div
+            v-if="row.onGateway"
+            class="flex justify-center"
+          >
+            <UIcon
+              name="i-heroicons-check-circle-16-solid"
+              class="h-5 w-5 text-green-600"
+            />
           </div>
         </template>
 

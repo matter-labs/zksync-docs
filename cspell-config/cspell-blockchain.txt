@@ -33,6 +33,7 @@ Omnibtc
 omnichain
 ONFT
 Owlto
+Pectra
 Plonky
 poseidon
 PREVRANDAO

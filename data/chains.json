@@ -8,7 +8,8 @@
     "explorerURL": "https://explorer.zksync.io",
     "baseToken": "ETH",
     "pubdataMode": "Rollup",
-    "dataAvailability": "Ethereum"
+    "dataAvailability": "Ethereum",
+    "onGateway": true
   },
   {
     "name": "ZKsync Era Sepolia",
@@ -17,6 +18,18 @@
     "isTestnet": true,
     "documentationURL": "/zksync-network/environment/zksync-era",
     "explorerURL": "https://sepolia.explorer.zksync.io",
+    "baseToken": "ETH",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum",
+    "onGateway": true
+  },
+  {
+    "name": "ZKsync OS Devnet",
+    "chainId": 8022833,
+    "icon": "https://docs.zksync.io/zksync-icon_150.svg",
+    "isTestnet": true,
+    "documentationURL": "/zksync-network/zksync-os",
+    "explorerURL": "https://zksync-os-testnet-alpha.staging-scan-v2.zksync.dev",
     "baseToken": "ETH",
     "pubdataMode": "Rollup",
     "dataAvailability": "Ethereum"
@@ -41,7 +54,8 @@
     "explorerURL": "https://sepolia.abscan.org/",
     "baseToken": "ETH",
     "pubdataMode": "Rollup",
-    "dataAvailability": "Ethereum"
+    "dataAvailability": "Ethereum",
+    "onGateway": true
   },
   {
     "name": "Cronos zkEVM Mainnet",
@@ -94,7 +108,8 @@
     "documentationURL": "https://api-docs.grvt.io/",
     "baseToken": "ETH",
     "pubdataMode": "Validium",
-    "dataAvailability": "NoDA"
+    "dataAvailability": "NoDA",
+    "onGateway": true
   },
   {
     "name": "Lens Chain",
@@ -116,7 +131,8 @@
     "explorerURL": "https://explorer.testnet.lens.xyz/",
     "baseToken": "GRASS",
     "pubdataMode": "Validium",
-    "dataAvailability": "Avail"
+    "dataAvailability": "Avail",
+    "onGateway": true
   },
   {
     "name": "OpenZK Mainnet",
@@ -160,28 +176,6 @@
     "dataAvailability": "NoDA"
   },
   {
-    "name": "Ripio LaChain",
-    "chainId": 2904,
-    "icon": "https://www.zksync.io/ecosystem/ripio-lachain.png",
-    "isTestnet": false,
-    "documentationURL": "https://lachain.network",
-    "explorerURL": "https://explorer.zk.lachain.network/",
-    "baseToken": "LAC",
-    "pubdataMode": "Rollup",
-    "dataAvailability": "Ethereum"
-  },
-  {
-    "name": "Ripio LaChain Testnet",
-    "chainId": 14183,
-    "icon": "https://www.zksync.io/ecosystem/ripio-lachain.png",
-    "isTestnet": true,
-    "documentationURL": "https://lachain.network",
-    "explorerURL": "https://explorer.zk.lachain.network/?network=TestLaChainZK",
-    "baseToken": "LAC",
-    "pubdataMode": "Rollup",
-    "dataAvailability": "Ethereum"
-  },
-  {
     "name": "Sophon Mainnet",
     "chainId": 50104,
     "icon": "https://www.zksync.io/ecosystem/sophon.png",
@@ -201,7 +195,8 @@
     "explorerURL": "https://testnet.sophscan.xyz/",
     "baseToken": "SOPH",
     "pubdataMode": "Validium",
-    "dataAvailability": "Avail"
+    "dataAvailability": "Avail",
+    "onGateway": true
   },
   {
     "name": "Space and Time Testnet",
