@@ -31,7 +31,7 @@ Unlock the full potential of ZKsync with our comprehensive resources:
 - **🛠️ Build:** Learn how to develop and deploy your smart contracts and
 applications on ZKsync Era. Our step-by-step guides and tutorials will help you get started quickly and efficiently.
 
-- **🔗 ZKsync Stack:** Dive into the ZKsync Stack to discover how to
+- **🔗 ZK Stack:** Dive into the ZK Stack to discover how to
 configure and build a ZKsync Chain tailored for your application. Explore the architecture, components, and best practices.
 
 - **🌐 ZKsync Node:** Set up and run your own ZKsync full node. Gain a deeper

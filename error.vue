@@ -32,7 +32,7 @@ const cards = [
     icon: 'i-heroicons-code-bracket-16-solid',
   },
   {
-    title: 'ZKsync Stack',
+    title: 'ZK Stack',
     description: 'Learn how to run your own ZKsync chain with our chain operator quickstart guide.',
     to: '/zk-stack/running/quickstart',
     icon: 'i-heroicons-square-3-stack-3d-16-solid',
