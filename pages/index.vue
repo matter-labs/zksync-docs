@@ -71,20 +71,6 @@ defineOgImage({
     </ULandingHero>
 
     <ULandingSection
-      :title="page.features.title"
-      :links="page.features.links"
-      class="py-16 sm:py-12"
-    >
-      <UPageGrid>
-        <ULandingCard
-          v-for="(item, index) of page.features.items"
-          :key="index"
-          v-bind="item"
-        />
-      </UPageGrid>
-    </ULandingSection>
-
-    <ULandingSection
       :title="page.stackfeatures.title"
       :links="page.stackfeatures.links"
       class="py-16 pb-32 sm:py-12 sm:pb-24"
@@ -92,6 +78,20 @@ defineOgImage({
       <UPageGrid>
         <ULandingCard
           v-for="(item, index) of page.stackfeatures.items"
+          :key="index"
+          v-bind="item"
+        />
+      </UPageGrid>
+    </ULandingSection>
+
+    <ULandingSection
+      :title="page.features.title"
+      :links="page.features.links"
+      class="py-16 sm:py-12"
+    >
+      <UPageGrid>
+        <ULandingCard
+          v-for="(item, index) of page.features.items"
           :key="index"
           v-bind="item"
         />

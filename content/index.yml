@@ -8,16 +8,16 @@ hero:
   description: 'Explore comprehensive guides, developer tools, and resources to innovate on ZKsync.'
   orientation: vertical
   links:
-    - label: Build Apps on ZKsync
-      icon: i-heroicons-arrow-right-20-solid
-      trailing: true
-      to: '/zksync-network'
-      size: xl
-      color: primary
     - label: Launch Your Chain
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
       to: '/zk-stack'
+      size: xl
+      color: primary
+    - label: Build Apps on ZKsync
+      icon: i-heroicons-arrow-right-20-solid
+      trailing: true
+      to: '/zksync-network'
       size: xl
       color: primary
       variant: outline
