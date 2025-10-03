@@ -243,7 +243,7 @@ const docsReorgRedirects = {
   '/zk-stack/components/zksync-evm/bootloader': { redirect: '/zksync-protocol/contracts/bootloader' },
   '/zk-stack/components/zksync-evm': { redirect: '/zksync-protocol/vm' },
   '/zk-stack/components/zksync-evm/vm-specification': { redirect: '/zksync-protocol/vm' },
-  '/zk-stack/components/transaction-filtering': { redirect: '/zk-stack/extending/transaction-filtering' },
+  '/zk-stack/components/transaction-filtering': { redirect: '/zk-stack/customizations/transaction-filtering' },
 
   // ZK Stack components: prover
   // `/zk-stack/components/prover` doesn't get a redirect: it contains a new page at the same path that works better

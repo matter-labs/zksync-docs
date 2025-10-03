@@ -10,7 +10,7 @@ It takes block data and an initial state as input and computes the
 new state after the application of the block.
 
 ZKsync OS is implemented as a Rust program that will be compiled to two targets. This first one, x86, is used for running in the sequencer.
-The second, RISC-V, is fed as an input to the [ZKsync Airbender](zk-stack/components/zksync-airbender)
+The second, RISC-V, is fed as an input to the [ZKsync Airbender](/zk-stack/components/zksync-airbender)
 prover to produce the validity proof of the state transition.
 
 ## Components of ZKsync OS

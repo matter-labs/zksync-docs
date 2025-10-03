@@ -40,7 +40,7 @@ const cards = [
   {
     title: 'ZKsync Airbender',
     description: 'Explore the fastest RISC-V prover powering the next-generation of ZKsync chains.',
-    to: '/zksync-protocol/zksync-airbender/overview',
+    to: '/zk-stack/components/zksync-airbender',
     icon: 'i-heroicons-rocket-launch-solid',
   },
   {
