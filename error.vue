@@ -32,7 +32,7 @@ const cards = [
     icon: 'i-heroicons-code-bracket-16-solid',
   },
   {
-    title: 'ZKsync Stack',
+    title: 'ZK Stack',
     description: 'Learn how to run your own ZKsync chain with our chain operator quickstart guide.',
     to: '/zk-stack/running/quickstart',
     icon: 'i-heroicons-square-3-stack-3d-16-solid',
@@ -40,7 +40,7 @@ const cards = [
   {
     title: 'ZKsync Airbender',
     description: 'Explore the fastest RISC-V prover powering the next-generation of ZKsync chains.',
-    to: '/zksync-protocol/zksync-airbender/overview',
+    to: '/zk-stack/components/zksync-airbender',
     icon: 'i-heroicons-rocket-launch-solid',
   },
   {
