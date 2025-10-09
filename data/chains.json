@@ -24,7 +24,7 @@
     "onGateway": true
   },
   {
-    "name": "ZKsync OS Devnet",
+    "name": "ZKsync OS Developer Preview",
     "chainId": 8022833,
     "icon": "https://docs.zksync.io/zksync-icon_150.svg",
     "isTestnet": true,

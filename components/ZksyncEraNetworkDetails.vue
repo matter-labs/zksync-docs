@@ -156,7 +156,7 @@ const testnetDetails: NetworkDetail[] = [
 ];
 
 const zksyncOSTestnetDetails: NetworkDetail[] = [
-  { property: 'Network Name', value: 'ZKsync OS Devnet', isCode: true },
+  { property: 'Network Name', value: 'ZKsync OS Developer Preview', isCode: true },
   { property: 'RPC URL', value: 'https://zksync-os-testnet-alpha.zksync.dev/', isCopyable: true },
   { property: 'WebSocket URL', value: 'wss://zksync-os-testnet-alpha.zksync.dev/ws', isCopyable: true },
   { property: 'Chain ID', value: '8022833', isCode: true },
