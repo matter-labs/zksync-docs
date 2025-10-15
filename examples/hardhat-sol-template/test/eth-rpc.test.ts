@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-describe('Greeter', function () {
+describe('ZKsync OS RPC API Examples', function () {
   const RPC_URL = 'https://zksync-os-testnet-alpha.zksync.dev/';
 
   it('Should get the chainId', async function () {
@@ -826,5 +826,166 @@ describe('Greeter', function () {
     const data = await response.json();
     // console.log('data', data);
     expect(data.result).to.equal('0x7a6b31');
+  });
+
+  it('Should get the chain genesis info', async function () {
+    // ANCHOR: zks_getGenesis
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'zks_getGenesis',
+        params: [],
+      }),
+    });
+    // ANCHOR_END: zks_getGenesis
+
+    const data = await response.json();
+    // console.log('data', data);
+    expect(data.result.initial_contracts).to.be.an('array');
+  });
+
+  it('Should get the bridgehub contract', async function () {
+    // ANCHOR: zks_getBridgehubContract
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'zks_getBridgehubContract',
+        params: [],
+      }),
+    });
+    // ANCHOR_END: zks_getBridgehubContract
+
+    const data = await response.json();
+    // console.log('data', data);
+    expect(data.result).to.equal('0xc4fd2580c3487bba18d63f50301020132342fdbd');
+  });
+
+  it('Should get the l2 to l1 log proof', async function () {
+    // ANCHOR: zks_getL2ToL1LogProof
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'zks_getL2ToL1LogProof',
+        params: ['0xf246110a0e7b99173977eac947881011f9513bd8311111911bbd2a54cceb4ddb', '0x0'],
+      }),
+    });
+    // ANCHOR_END: zks_getL2ToL1LogProof
+
+    const data = await response.json();
+    // console.log('data', data);
+    expect(data.result.proof).to.be.an('array');
+  });
+
+  it('Should get trace by block hash', async function () {
+    // ANCHOR: debug_traceBlockByHash
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'debug_traceBlockByHash',
+        params: [
+          '0xb644c472be19f3eb825d42ef244c34b8d4df9e716cbb3d508bf1be6278aef3bf',
+          { tracer: 'callTracer', timeout: '120s' },
+        ],
+      }),
+    });
+    // ANCHOR_END: debug_traceBlockByHash
+
+    const data = await response.json();
+    // console.log('data', data.result[0]);
+    expect(data.result).to.be.an('array');
+  });
+
+  it('Should get trace by block number', async function () {
+    // ANCHOR: debug_traceBlockByNumber
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'debug_traceBlockByNumber',
+        params: ['latest', { tracer: 'callTracer', timeout: '120s' }],
+      }),
+    });
+    // ANCHOR_END: debug_traceBlockByNumber
+
+    const data = await response.json();
+    // console.log('data', data);
+    expect(data.result).to.be.an('array');
+  });
+
+  it('Should get trace for call', async function () {
+    // ANCHOR: debug_traceCall
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'debug_traceCall',
+        params: [
+          {
+            from: '0x1111111111111111111111111111111111111111',
+            to: '0x2222222222222222222222222222222222222222',
+            data: '0xffffffff',
+          },
+          'latest',
+          { tracer: 'callTracer', timeout: '120s' },
+        ],
+      }),
+    });
+    // ANCHOR_END: debug_traceCall
+
+    const data = await response.json();
+    // console.log('data', data);
+    expect(data.result.value).to.equal('0x0');
+  });
+
+  it('Should get trace for txn', async function () {
+    // ANCHOR: debug_traceTransaction
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'debug_traceTransaction',
+        params: [
+          '0xf246110a0e7b99173977eac947881011f9513bd8311111911bbd2a54cceb4ddb',
+          { tracer: 'callTracer', timeout: '120s' },
+        ],
+      }),
+    });
+    // ANCHOR_END: debug_traceTransaction
+
+    const data = await response.json();
+    // console.log('data', data);
+    expect(data.result.value).to.equal('0x0');
   });
 });
