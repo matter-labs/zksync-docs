@@ -528,7 +528,7 @@ describe('Greeter', function () {
     expect(data.result).to.include('zksync_os');
   });
 
-  it('Should sent a raw txn', async function () {
+  it('Should send a raw txn', async function () {
     // ANCHOR: eth_sendRawTransaction
     const response = await fetch(RPC_URL, {
       method: 'POST',
@@ -589,5 +589,242 @@ describe('Greeter', function () {
     const data = await response.json();
     // console.log('data', data);
     expect(data.result.baseFeePerGas).to.be.an('array');
+  });
+
+  it('Should get syncing status', async function () {
+    // ANCHOR: eth_syncing
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'eth_syncing',
+        params: [],
+      }),
+    });
+    // ANCHOR_END: eth_syncing
+
+    const data = await response.json();
+    // console.log('data', data);
+    expect(data.result).to.equal(false);
+  });
+
+  it('Should get latest block number', async function () {
+    // ANCHOR: eth_blockNumber
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'eth_blockNumber',
+        params: [],
+      }),
+    });
+    // ANCHOR_END: eth_blockNumber
+
+    const data = await response.json();
+    // console.log('data', data);
+    expect(data.result).to.include('0x');
+  });
+
+  it('Should get a raw txn by its hash', async function () {
+    // ANCHOR: eth_getRawTransactionByHash
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'eth_getRawTransactionByHash',
+        params: ['0xa858b5db1e935b50424691e9579a54047ca63979c52f85c2bd856c78cdecb661'],
+      }),
+    });
+    // ANCHOR_END: eth_getRawTransactionByHash
+
+    const data = await response.json();
+    // console.log('data', data);
+    expect(data.result).to.equal(
+      '0x02f867837a6b310c808207d08252ad94785c0219d5e23950f88452d23113b3b680006e6a0180c080a08378e5666cbc5b939e92fc4986273a52a7421566fb342c36ba30a9a36018401ea07c008391079e33db54ad748e24fa9d1615a62ed34d8ca2c6abc70430a1553047'
+    );
+  });
+
+  it('Should get a raw txn by its block hash and index', async function () {
+    // ANCHOR: eth_getRawTransactionByBlockHashAndIndex
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'eth_getRawTransactionByBlockHashAndIndex',
+        params: ['0x7c9b4377d10d03a44b5a77540d2bb071961be90b506e09a9f0bb27786fdd5fc5', '0x0'],
+      }),
+    });
+    // ANCHOR_END: eth_getRawTransactionByBlockHashAndIndex
+
+    const data = await response.json();
+    // console.log('data', data);
+    expect(data.result).to.equal(
+      '0x02f867837a6b310c808207d08252ad94785c0219d5e23950f88452d23113b3b680006e6a0180c080a08378e5666cbc5b939e92fc4986273a52a7421566fb342c36ba30a9a36018401ea07c008391079e33db54ad748e24fa9d1615a62ed34d8ca2c6abc70430a1553047'
+    );
+  });
+
+  it('Should get a raw txn by its block number and index', async function () {
+    // ANCHOR: eth_getRawTransactionByBlockNumberAndIndex
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'eth_getRawTransactionByBlockNumberAndIndex',
+        params: ['0x1b', '0x0'],
+      }),
+    });
+    // ANCHOR_END: eth_getRawTransactionByBlockNumberAndIndex
+
+    const data = await response.json();
+    // console.log('data', data);
+    expect(data.result).to.equal(
+      '0x02f867837a6b310c808207d08252ad94785c0219d5e23950f88452d23113b3b680006e6a0180c080a08378e5666cbc5b939e92fc4986273a52a7421566fb342c36ba30a9a36018401ea07c008391079e33db54ad748e24fa9d1615a62ed34d8ca2c6abc70430a1553047'
+    );
+  });
+
+  it('Should get a txn by its block number and index', async function () {
+    // ANCHOR: eth_getTransactionByBlockNumberAndIndex
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'eth_getTransactionByBlockNumberAndIndex',
+        params: ['0x1b', '0x0'],
+      }),
+    });
+    // ANCHOR_END: eth_getTransactionByBlockNumberAndIndex
+
+    const data = await response.json();
+    // console.log('data', data);
+    expect(data.result.chainId).to.equal('0x7a6b31');
+  });
+
+  it('Should get a txn by its sender and nonce', async function () {
+    // ANCHOR: eth_getTransactionBySenderAndNonce
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'eth_getTransactionBySenderAndNonce',
+        params: ['0x785C0219D5e23950F88452D23113B3b680006e6a', '0xc'],
+      }),
+    });
+    // ANCHOR_END: eth_getTransactionBySenderAndNonce
+
+    const data = await response.json();
+    // console.log('data', data);
+    expect(data.result.chainId).to.equal('0x7a6b31');
+  });
+
+  it('Should get a block header from the number', async function () {
+    // ANCHOR: eth_getHeaderByNumber
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'eth_getHeaderByNumber',
+        params: ['0x1b'],
+      }),
+    });
+    // ANCHOR_END: eth_getHeaderByNumber
+
+    const data = await response.json();
+    // console.log('data', data);
+    expect(data.result.extraData).to.equal('0x');
+  });
+
+  it('Should get a block header from the block hash', async function () {
+    // ANCHOR: eth_getHeaderByHash
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'eth_getHeaderByHash',
+        params: ['0x7c9b4377d10d03a44b5a77540d2bb071961be90b506e09a9f0bb27786fdd5fc5'],
+      }),
+    });
+    // ANCHOR_END: eth_getHeaderByHash
+
+    const data = await response.json();
+    // console.log('data', data);
+    expect(data.result.extraData).to.equal('0x');
+  });
+
+  it('Should get the max priority fee', async function () {
+    // ANCHOR: eth_maxPriorityFeePerGas
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'eth_maxPriorityFeePerGas',
+        params: [],
+      }),
+    });
+    // ANCHOR_END: eth_maxPriorityFeePerGas
+
+    const data = await response.json();
+    // console.log('data', data);
+    expect(data.result).to.include('0x');
+  });
+
+  it('Should get the chain ID of the network', async function () {
+    // ANCHOR: net_version
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'net_version',
+        params: [],
+      }),
+    });
+    // ANCHOR_END: net_version
+
+    const data = await response.json();
+    // console.log('data', data);
+    expect(data.result).to.equal('0x7a6b31');
   });
 });

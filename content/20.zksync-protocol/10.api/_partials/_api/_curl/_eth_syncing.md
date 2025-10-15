@@ -1,5 +1,5 @@
 ---
-title: eth_sendRawTransaction Curl Example
+title: eth_syncing Curl Example
 ---
 
 ```sh
@@ -9,7 +9,7 @@ curl --request POST \
   --data '{
       "jsonrpc": "2.0",
       "id": 1,
-      "method": "eth_sendRawTransaction",
-      "params": ["0xf86c808504a817c80082520894095e7baea6a6c7c4c2dfeb977efac326af552d870a868e8..."]
+      "method": "eth_syncing",
+      "params": []
     }'
 ```
