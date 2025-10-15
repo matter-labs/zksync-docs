@@ -155,19 +155,21 @@ const docsReorgRedirects = {
   },
 
   // Account abstraction
-  '/build/developer-reference/account-abstraction': { redirect: '/zksync-protocol/account-abstraction' },
-  '/build/developer-reference/account-abstraction/design': { redirect: '/zksync-protocol/account-abstraction/design' },
+  '/build/developer-reference/account-abstraction': { redirect: '/zksync-protocol/zksync-era/account-abstraction' },
+  '/build/developer-reference/account-abstraction/design': {
+    redirect: '/zksync-protocol/zksync-era/account-abstraction/design',
+  },
   '/build/developer-reference/account-abstraction/paymasters': {
-    redirect: '/zksync-protocol/account-abstraction/paymasters',
+    redirect: '/zksync-protocol/zksync-era/account-abstraction/paymasters',
   },
   '/build/developer-reference/account-abstraction/building-smart-accounts': {
-    redirect: '/zksync-protocol/account-abstraction/building-smart-accounts',
+    redirect: '/zksync-protocol/zksync-era/account-abstraction/building-smart-accounts',
   },
   '/build/developer-reference/account-abstraction/signature-validation': {
-    redirect: '/zksync-protocol/account-abstraction/signature-validation',
+    redirect: '/zksync-protocol/zksync-era/account-abstraction/signature-validation',
   },
   '/build/developer-reference/account-abstraction/extending-4337': {
-    redirect: '/zksync-protocol/account-abstraction/extending-4337',
+    redirect: '/zksync-protocol/zksync-era/account-abstraction/extending-4337',
   },
 
   // Era contracts
@@ -191,12 +193,12 @@ const docsReorgRedirects = {
   // /build/developer-reference/era-contracts/migrate-era-to-chain was removed
 
   // Fee model
-  '/build/developer-reference/fee-model': { redirect: '/zksync-protocol/rollup/fee-model' },
+  '/build/developer-reference/fee-model': { redirect: '/zksync-protocol/zksync-era/transactions/fee-model' },
   '/build/developer-reference/fee-model/how-l2-gas-price-works': {
-    redirect: '/zksync-protocol/rollup/fee-model/how-l2-gas-price-works',
+    redirect: '/zksync-protocol/zksync-era/transactions/fee-model/how-l2-gas-price-works',
   },
   '/build/developer-reference/fee-model/how-we-charge-for-pubdata': {
-    redirect: '/zksync-protocol/rollup/fee-model/how-we-charge-for-pubdata',
+    redirect: '/zksync-protocol/zksync-era/transactions/fee-model/how-we-charge-for-pubdata',
   },
 
   // API reference
@@ -228,11 +230,11 @@ const docsReorgRedirects = {
   '/zk-stack/concepts': { redirect: '/zksync-protocol/rollup' },
   '/zk-stack/concepts/transaction-lifecycle': { redirect: '/zksync-protocol/rollup/transaction-lifecycle' },
   '/zk-stack/concepts/blocks': { redirect: '/zksync-protocol/rollup/blocks' },
-  '/zk-stack/concepts/fee-mechanism': { redirect: '/zksync-protocol/rollup/fee-model' },
+  '/zk-stack/concepts/fee-mechanism': { redirect: '/zksync-protocol/zksync-era/transactions/fee-model' },
   '/zk-stack/concepts/finality': { redirect: '/zksync-protocol/rollup/finality' },
   // /zk-stack/concepts/system-upgrades was removed
   '/zk-stack/concepts/zk-chains': { redirect: '/zk-stack/zk-chains' },
-  '/zk-stack/concepts/account-abstraction': { redirect: '/zksync-protocol/account-abstraction' },
+  '/zk-stack/concepts/account-abstraction': { redirect: '/zksync-protocol/zksync-era/account-abstraction' },
   '/zk-stack/concepts/l1_l2_communication': { redirect: '/zksync-protocol/rollup/l1_l2_communication' },
 
   // ZK Stack components
@@ -247,49 +249,53 @@ const docsReorgRedirects = {
 
   // ZK Stack components: prover
   // `/zk-stack/components/prover` doesn't get a redirect: it contains a new page at the same path that works better
-  '/zk-stack/components/prover/zk-terminology': { redirect: '/zksync-protocol/circuits/zk-terminology' },
-  '/zk-stack/components/prover/boojum-gadgets': { redirect: '/zksync-protocol/circuits/boojum-gadgets' },
+  '/zk-stack/components/prover/zk-terminology': { redirect: '/zksync-protocol/zksync-era/circuits/zk-terminology' },
+  '/zk-stack/components/prover/boojum-gadgets': { redirect: '/zksync-protocol/zksync-era/circuits/boojum-gadgets' },
   '/zk-stack/components/prover/boojum-function-check-if-satisfied': {
-    redirect: '/zksync-protocol/circuits/boojum-function-check-if-satisfied',
+    redirect: '/zksync-protocol/zksync-era/circuits/boojum-function-check-if-satisfied',
   },
-  '/zk-stack/components/prover/circuits': { redirect: '/zksync-protocol/circuits/circuits' },
-  '/zk-stack/components/prover/circuits/index': { redirect: '/zksync-protocol/circuits/circuits/index' },
+  '/zk-stack/components/prover/circuits': { redirect: '/zksync-protocol/zksync-era/circuits/circuits' },
+  '/zk-stack/components/prover/circuits/index': { redirect: '/zksync-protocol/zksync-era/circuits/circuits/index' },
   '/zk-stack/components/prover/circuits/storage-application': {
-    redirect: '/zksync-protocol/circuits/circuits/storage-application',
+    redirect: '/zksync-protocol/zksync-era/circuits/circuits/storage-application',
   },
   '/zk-stack/components/prover/circuits/circuit-testing': {
-    redirect: '/zksync-protocol/circuits/circuits/circuit-testing',
+    redirect: '/zksync-protocol/zksync-era/circuits/circuits/circuit-testing',
   },
   '/zk-stack/components/prover/circuits/demux-log-queue': {
-    redirect: '/zksync-protocol/circuits/circuits/demux-log-queue',
+    redirect: '/zksync-protocol/zksync-era/circuits/circuits/demux-log-queue',
   },
   '/zk-stack/components/prover/circuits/keccak-round-function': {
-    redirect: '/zksync-protocol/circuits/circuits/keccak-round-function',
+    redirect: '/zksync-protocol/zksync-era/circuits/circuits/keccak-round-function',
   },
-  '/zk-stack/components/prover/circuits/log-sorter': { redirect: '/zksync-protocol/circuits/circuits/log-sorter' },
+  '/zk-stack/components/prover/circuits/log-sorter': {
+    redirect: '/zksync-protocol/zksync-era/circuits/circuits/log-sorter',
+  },
   '/zk-stack/components/prover/circuits/ram-permutation': {
-    redirect: '/zksync-protocol/circuits/circuits/ram-permutation',
+    redirect: '/zksync-protocol/zksync-era/circuits/circuits/ram-permutation',
   },
   '/zk-stack/components/prover/circuits/sha256-round-function': {
-    redirect: '/zksync-protocol/circuits/circuits/sha256-round-function',
+    redirect: '/zksync-protocol/zksync-era/circuits/circuits/sha256-round-function',
   },
   '/zk-stack/components/prover/circuits/code-decommitter': {
-    redirect: '/zksync-protocol/circuits/circuits/code-decommitter',
+    redirect: '/zksync-protocol/zksync-era/circuits/circuits/code-decommitter',
   },
-  '/zk-stack/components/prover/circuits/ecrecover': { redirect: '/zksync-protocol/circuits/circuits/ecrecover' },
+  '/zk-stack/components/prover/circuits/ecrecover': {
+    redirect: '/zksync-protocol/zksync-era/circuits/circuits/ecrecover',
+  },
   '/zk-stack/components/prover/circuits/l1-messages-hasher': {
-    redirect: '/zksync-protocol/circuits/circuits/l1-messages-hasher',
+    redirect: '/zksync-protocol/zksync-era/circuits/circuits/l1-messages-hasher',
   },
-  '/zk-stack/components/prover/circuits/main-vm': { redirect: '/zksync-protocol/circuits/circuits/main-vm' },
-  '/zk-stack/components/prover/circuits/sorting': { redirect: '/zksync-protocol/circuits/circuits/sorting' },
+  '/zk-stack/components/prover/circuits/main-vm': { redirect: '/zksync-protocol/zksync-era/circuits/circuits/main-vm' },
+  '/zk-stack/components/prover/circuits/sorting': { redirect: '/zksync-protocol/zksync-era/circuits/circuits/sorting' },
   '/zk-stack/components/prover/circuits/sorting/sort-decommitments': {
-    redirect: '/zksync-protocol/circuits/circuits/sorting/sort-decommitments',
+    redirect: '/zksync-protocol/zksync-era/circuits/circuits/sorting/sort-decommitments',
   },
   '/zk-stack/components/prover/circuits/sorting/storage-sorter': {
-    redirect: '/zksync-protocol/circuits/circuits/sorting/storage-sorter',
+    redirect: '/zksync-protocol/zksync-era/circuits/circuits/sorting/storage-sorter',
   },
   '/zk-stack/components/prover/circuits/sorting/log-sorter': {
-    redirect: '/zksync-protocol/circuits/circuits/sorting/log-sorter',
+    redirect: '/zksync-protocol/zksync-era/circuits/circuits/sorting/log-sorter',
   },
 
   // ZK Stack components: compiler
