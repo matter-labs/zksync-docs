@@ -525,6 +525,56 @@
         "source": "/zksync-era",
         "destination": "/zksync-network",
         "type": 301
+      },
+      {
+        "source": "/zksync-protocol/zksyncos/overview",
+        "destination": "/zksync-protocol/zksyncos",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/extending",
+        "destination": "/zk-stack/customizations/configurations",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/extending/node-framework",
+        "destination": "/zk-stack/customizations/configurations",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/running/configurations",
+        "destination": "/zk-stack/customizations/configurations",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/extending/transaction-filtering",
+        "destination": "/zk-stack/customizations/transaction-filtering",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/running/custom-base-tokens",
+        "destination": "/zk-stack/customizations/custom-base-tokens",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/running/validium",
+        "destination": "/zk-stack/customizations/validium",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/portal-wallet-bridge",
+        "destination": "/zk-stack/components/portal",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/zksync-airbender/overview",
+        "destination": "/zk-stack/components/zksync-airbender",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/zksync-airbender/deepdive",
+        "destination": "/zk-stack/components/zksync-airbender/deepdive",
+        "type": 301
       }
     ]
   }

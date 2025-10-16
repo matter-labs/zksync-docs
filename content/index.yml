@@ -1,23 +1,23 @@
 title: 'ZKsync Docs'
 description:
-  ZKsync Docs bring you all information you need about our protocol, APIs, SDKs, ZKsync Stack, and ZKsync chains. Start
-  with our guides and tutorials, or go deep into our architecture and protocol specification.
+  ZKsync Docs bring you all information you need about our protocol, APIs, SDKs, ZK Stack, and ZKsync chains. Start with
+  our guides and tutorials, or go deep into our architecture and protocol specification.
 navigation: false
 hero:
   title: 'A network of interoperable chains, secured by ZK.'
   description: 'Explore comprehensive guides, developer tools, and resources to innovate on ZKsync.'
   orientation: vertical
   links:
-    - label: Build Apps on ZKsync
-      icon: i-heroicons-arrow-right-20-solid
-      trailing: true
-      to: '/zksync-network'
-      size: xl
-      color: primary
     - label: Launch Your Chain
       icon: i-heroicons-arrow-right-20-solid
       trailing: true
       to: '/zk-stack'
+      size: xl
+      color: primary
+    - label: Build Apps on ZKsync
+      icon: i-heroicons-arrow-right-20-solid
+      trailing: true
+      to: '/zksync-network'
       size: xl
       color: primary
       variant: outline
@@ -44,7 +44,7 @@ stackfeatures:
       icon: 'i-heroicons-link-16-solid'
       to: '/zk-stack/zk-chains'
     - title: 'Running a ZKsync Chain'
-      description: 'Get your first ZKsync chain running locally using ZKsync Stack CLI.'
+      description: 'Get your first ZKsync chain running locally using ZK Stack CLI.'
       icon: 'i-zkicon-zksync'
       to: '/zk-stack/running/quickstart'
     - title: 'Prividium'
