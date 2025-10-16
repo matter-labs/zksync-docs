@@ -42,7 +42,7 @@ export default defineNuxtConfig({
       name: 'ZKsync Developer Documentation',
       short_name: 'ZKsync Docs',
       description:
-        'ZKsync Docs bring you all information you need about our protocol, APIs, SDKs, ZKsync Stack, and ZKsync chains. Start with our guides and tutorials, or go deep into our architecture and protocol specification.',
+        'ZKsync Docs bring you all information you need about our protocol, APIs, SDKs, ZK Stack, and ZKsync chains. Start with our guides and tutorials, or go deep into our architecture and protocol specification.',
       theme_color: '#F2F2F2',
       icons: [
         {
@@ -111,6 +111,7 @@ export default defineNuxtConfig({
         'heroicons:book-open-solid',
         'heroicons:square-3-stack-3d-16-solid',
         'heroicons:question-mark-circle',
+        'heroicons:document-magnifying-glass-16-solid',
         'vscode-icons:file-type-bun',
         'vscode-icons:file-type-npm',
         'vscode-icons:file-type-pnpm',
