@@ -527,6 +527,11 @@
         "type": 301
       },
       {
+        "source": "/zksync-protocol/zksyncos/overview",
+        "destination": "/zksync-protocol/zksyncos",
+        "type": 301
+      },
+      {
         "source": "/zk-stack/extending",
         "destination": "/zk-stack/customizations/configurations",
         "type": 301
