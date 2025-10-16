@@ -575,6 +575,11 @@
         "source": "/zksync-protocol/zksync-airbender/deepdive",
         "destination": "/zk-stack/components/zksync-airbender/deepdive",
         "type": 301
+      },
+      {
+        "source": "/zksync-protocol/gateway/overview",
+        "destination": "/zksync-protocol/gateway",
+        "type": 301
       }
     ]
   }

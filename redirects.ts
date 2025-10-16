@@ -130,8 +130,8 @@ const docsReorgRedirects = {
     redirect: '/zksync-protocol/contracts/l1-contracts/shared-bridges',
   },
   '/build/developer-reference/addresses/zk-chain-addresses': { redirect: '/zk-stack/zk-chain-addresses' },
-  '/build/developer-reference/batches-and-l2-blocks': { redirect: '/zksync-protocol/rollup/blocks' },
-  '/build/developer-reference/era-vm': { redirect: '/zksync-protocol/vm' },
+  '/build/developer-reference/batches-and-l2-blocks': { redirect: '/zksync-protocol/zksync-era/transactions/blocks' },
+  '/build/developer-reference/era-vm': { redirect: '/zksync-protocol/zksync-era/vm' },
   '/build/developer-reference/best-practices': { redirect: '/zksync-era/security-best-practices' },
   '/build/developer-reference/bridging-assets': { redirect: '/zksync-protocol/rollup/bridging-assets' },
   '/build/developer-reference/handling-pubdata-in-boojum': { redirect: '/zksync-protocol/contracts/handling-pubdata' },
@@ -235,7 +235,7 @@ const docsReorgRedirects = {
   '/zk-stack/concepts/transaction-lifecycle': {
     redirect: '/zksync-protocol/zksync-era/transactions/transaction-lifecycle',
   },
-  '/zk-stack/concepts/blocks': { redirect: '/zksync-protocol/rollup/blocks' },
+  '/zk-stack/concepts/blocks': { redirect: '/zksync-protocol/zksync-era/transactions/blocks' },
   '/zk-stack/concepts/fee-mechanism': { redirect: '/zksync-protocol/zksync-era/transactions/fee-model' },
   '/zk-stack/concepts/finality': { redirect: '/zksync-protocol/rollup/finality' },
   // /zk-stack/concepts/system-upgrades was removed
@@ -249,8 +249,8 @@ const docsReorgRedirects = {
   '/zk-stack/components/smart-contracts/system-contracts': { redirect: '/zksync-protocol/contracts/system-contracts' },
   '/zk-stack/components/shared-bridges': { redirect: '/zksync-protocol/contracts/l1-contracts/shared-bridges' },
   '/zk-stack/components/zksync-evm/bootloader': { redirect: '/zksync-protocol/contracts/bootloader' },
-  '/zk-stack/components/zksync-evm': { redirect: '/zksync-protocol/vm' },
-  '/zk-stack/components/zksync-evm/vm-specification': { redirect: '/zksync-protocol/vm' },
+  '/zk-stack/components/zksync-evm': { redirect: '/zksync-protocol/zksync-era/vm' },
+  '/zk-stack/components/zksync-evm/vm-specification': { redirect: '/zksync-protocol/zksync-era/vm' },
   '/zk-stack/components/transaction-filtering': { redirect: '/zk-stack/customizations/transaction-filtering' },
 
   // ZK Stack components: prover
