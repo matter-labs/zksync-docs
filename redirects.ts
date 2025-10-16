@@ -138,20 +138,24 @@ const docsReorgRedirects = {
   '/build/developer-reference/l1-l2-interoperability': { redirect: '/zksync-protocol/rollup/l1_l2_communication' },
 
   // Ethereum differences
-  '/build/developer-reference/ethereum-differences': { redirect: '/zksync-protocol/differences' },
+  '/build/developer-reference/ethereum-differences': { redirect: '/zksync-protocol/zksync-era/differences' },
   '/build/developer-reference/ethereum-differences/evm-instructions': {
-    redirect: '/zksync-protocol/differences/evm-instructions',
+    redirect: '/zksync-protocol/zksync-era/differences/evm-instructions',
   },
-  '/build/developer-reference/ethereum-differences/nonces': { redirect: '/zksync-protocol/differences/nonces' },
-  '/build/developer-reference/ethereum-differences/libraries': { redirect: '/zksync-protocol/differences/libraries' },
+  '/build/developer-reference/ethereum-differences/nonces': {
+    redirect: '/zksync-protocol/zksync-era/differences/nonces',
+  },
+  '/build/developer-reference/ethereum-differences/libraries': {
+    redirect: '/zksync-protocol/zksync-era/differences/libraries',
+  },
   '/build/developer-reference/ethereum-differences/pre-compiles': {
-    redirect: '/zksync-protocol/differences/pre-compiles',
+    redirect: '/zksync-protocol/zksync-era/differences/pre-compiles',
   },
   '/build/developer-reference/ethereum-differences/native-vs-eip4337': {
-    redirect: '/zksync-protocol/differences/native-vs-eip4337',
+    redirect: '/zksync-protocol/zksync-era/differences/native-vs-eip4337',
   },
   '/build/developer-reference/ethereum-differences/contract-deployment': {
-    redirect: '/zksync-protocol/differences/contract-deployment',
+    redirect: '/zksync-protocol/zksync-era/differences/contract-deployment',
   },
 
   // Account abstraction
@@ -228,7 +232,9 @@ const docsReorgRedirects = {
 
   // ZK Stack concepts
   '/zk-stack/concepts': { redirect: '/zksync-protocol/rollup' },
-  '/zk-stack/concepts/transaction-lifecycle': { redirect: '/zksync-protocol/rollup/transaction-lifecycle' },
+  '/zk-stack/concepts/transaction-lifecycle': {
+    redirect: '/zksync-protocol/zksync-era/transactions/transaction-lifecycle',
+  },
   '/zk-stack/concepts/blocks': { redirect: '/zksync-protocol/rollup/blocks' },
   '/zk-stack/concepts/fee-mechanism': { redirect: '/zksync-protocol/zksync-era/transactions/fee-model' },
   '/zk-stack/concepts/finality': { redirect: '/zksync-protocol/rollup/finality' },
@@ -299,179 +305,185 @@ const docsReorgRedirects = {
   },
 
   // ZK Stack components: compiler
-  '/zk-stack/components/compiler': { redirect: '/zksync-protocol/compiler' },
-  '/zk-stack/components/compiler/specification': { redirect: '/zksync-protocol/compiler/specification' },
-  '/zk-stack/components/compiler/specification/index': { redirect: '/zksync-protocol/compiler/specification/index' },
+  '/zk-stack/components/compiler': { redirect: '/zksync-protocol/zksync-era/compiler' },
+  '/zk-stack/components/compiler/specification': { redirect: '/zksync-protocol/zksync-era/compiler/specification' },
+  '/zk-stack/components/compiler/specification/index': {
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/index',
+  },
   '/zk-stack/components/compiler/specification/binary-layout': {
-    redirect: '/zksync-protocol/compiler/specification/binary-layout',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/binary-layout',
   },
   '/zk-stack/components/compiler/specification/system-contracts': {
-    redirect: '/zksync-protocol/compiler/specification/system-contracts',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/system-contracts',
   },
   '/zk-stack/components/compiler/specification/instructions': {
-    redirect: '/zksync-protocol/compiler/specification/instructions',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions',
   },
   '/zk-stack/components/compiler/specification/instructions/index': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/index',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/index',
   },
   '/zk-stack/components/compiler/specification/instructions/evm': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/evm',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/evm',
   },
   '/zk-stack/components/compiler/specification/instructions/evm/sha3': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/evm/sha3',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/sha3',
   },
   '/zk-stack/components/compiler/specification/instructions/evm/logical': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/evm/logical',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/logical',
   },
   '/zk-stack/components/compiler/specification/instructions/evm/index': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/evm/index',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/index',
   },
   '/zk-stack/components/compiler/specification/instructions/evm/call': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/evm/call',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/call',
   },
   '/zk-stack/components/compiler/specification/instructions/evm/arithmetic': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/evm/arithmetic',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/arithmetic',
   },
   '/zk-stack/components/compiler/specification/instructions/evm/create': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/evm/create',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/create',
   },
   '/zk-stack/components/compiler/specification/instructions/evm/environment': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/evm/environment',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/environment',
   },
   '/zk-stack/components/compiler/specification/instructions/evm/bitwise': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/evm/bitwise',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/bitwise',
   },
   '/zk-stack/components/compiler/specification/instructions/evm/return': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/evm/return',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/return',
   },
   '/zk-stack/components/compiler/specification/instructions/evm/memory': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/evm/memory',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/memory',
   },
   '/zk-stack/components/compiler/specification/instructions/evm/stack': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/evm/stack',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/stack',
   },
   '/zk-stack/components/compiler/specification/instructions/evm/block': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/evm/block',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/block',
   },
   '/zk-stack/components/compiler/specification/instructions/evm/logging': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/evm/logging',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/logging',
   },
   '/zk-stack/components/compiler/specification/instructions/extensions': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/extensions',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/extensions',
   },
   '/zk-stack/components/compiler/specification/instructions/extensions/verbatim': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/extensions/verbatim',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/extensions/verbatim',
   },
   '/zk-stack/components/compiler/specification/instructions/extensions/call': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/extensions/call',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/extensions/call',
   },
   '/zk-stack/components/compiler/specification/instructions/extensions/index': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/extensions/index',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/extensions/index',
   },
   '/zk-stack/components/compiler/specification/instructions/evmla': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/evmla',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/evmla',
   },
   '/zk-stack/components/compiler/specification/instructions/yul': {
-    redirect: '/zksync-protocol/compiler/specification/instructions/yul',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/instructions/yul',
   },
   '/zk-stack/components/compiler/specification/evmla-translator': {
-    redirect: '/zksync-protocol/compiler/specification/evmla-translator',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/evmla-translator',
   },
   '/zk-stack/components/compiler/specification/code-separation': {
-    redirect: '/zksync-protocol/compiler/specification/code-separation',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/code-separation',
   },
   '/zk-stack/components/compiler/specification/exception-handling': {
-    redirect: '/zksync-protocol/compiler/specification/exception-handling',
+    redirect: '/zksync-protocol/zksync-era/compiler/specification/exception-handling',
   },
-  '/zk-stack/components/compiler/toolchain': { redirect: '/zksync-protocol/compiler/toolchain' },
-  '/zk-stack/components/compiler/toolchain/vyper': { redirect: '/zksync-protocol/compiler/toolchain/vyper' },
-  '/zk-stack/components/compiler/toolchain/index': { redirect: '/zksync-protocol/compiler/toolchain/index' },
-  '/zk-stack/components/compiler/toolchain/llvm': { redirect: '/zksync-protocol/compiler/toolchain/llvm' },
-  '/zk-stack/components/compiler/toolchain/solidity': { redirect: '/zksync-protocol/compiler/toolchain/solidity' },
+  '/zk-stack/components/compiler/toolchain': { redirect: '/zksync-protocol/zksync-era/compiler/toolchain' },
+  '/zk-stack/components/compiler/toolchain/vyper': { redirect: '/zksync-protocol/zksync-era/compiler/toolchain/vyper' },
+  '/zk-stack/components/compiler/toolchain/index': { redirect: '/zksync-protocol/zksync-era/compiler/toolchain/index' },
+  '/zk-stack/components/compiler/toolchain/llvm': { redirect: '/zksync-protocol/zksync-era/compiler/toolchain/llvm' },
+  '/zk-stack/components/compiler/toolchain/solidity': {
+    redirect: '/zksync-protocol/zksync-era/compiler/toolchain/solidity',
+  },
 
-  '/zksync-protocol/compiler/toolchain/solidity': {
+  '/zksync-protocol/zksync-era/compiler/toolchain/solidity': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/',
   },
-  '/zksync-protocol/compiler/toolchain/vyper': { redirect: 'https://matter-labs.github.io/era-compiler-vyper/latest/' },
-  '/zksync-protocol/compiler/specification/code-separation': {
+  '/zksync-protocol/zksync-era/compiler/toolchain/vyper': {
+    redirect: 'https://matter-labs.github.io/era-compiler-vyper/latest/',
+  },
+  '/zksync-protocol/zksync-era/compiler/specification/code-separation': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/01-code-separation.html',
   },
-  '/zksync-protocol/compiler/specification/evmla-translator': {
+  '/zksync-protocol/zksync-era/compiler/specification/evmla-translator': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/02-evm-assembly-translator.html',
   },
-  '/zksync-protocol/compiler/specification/system-contracts': {
+  '/zksync-protocol/zksync-era/compiler/specification/system-contracts': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/03-system-contracts.html',
   },
-  '/zksync-protocol/compiler/specification/exception-handling': {
+  '/zksync-protocol/zksync-era/compiler/specification/exception-handling': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/04-exception-handling.html',
   },
-  '/zksync-protocol/compiler/specification/instructions': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/01-reference.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/index': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/index': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/01-reference.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/evm': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/evm': {
     redirect:
       'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/01-reference.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/evm/arithmetic': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/arithmetic': {
     redirect:
       'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/02-arithmetic.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/evm/bitwise': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/bitwise': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/03-bitwise.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/evm/block': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/block': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/04-block.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/evm/call': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/call': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/05-calls.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/evm/create': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/create': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/06-create.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/evm/environment': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/environment': {
     redirect:
       'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/07-environment.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/evm/logging': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/logging': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/08-logging.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/evm/logical': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/logical': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/09-logical.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/evm/memory': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/memory': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/10-memory.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/evm/return': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/return': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/11-return.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/evm/sha3': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/sha3': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/12-sha3.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/evm/stack': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/evm/stack': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/13-stack.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/evmla': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/evmla': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/03-evm-assembly.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/yul': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/yul': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/04-yul.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/extensions': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/extensions': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/06-extensions.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/extensions/index': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/extensions/index': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/06-extensions.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/extensions/call': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/extensions/call': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/06-extensions.html',
   },
-  '/zksync-protocol/compiler/specification/instructions/extensions/verbatim': {
+  '/zksync-protocol/zksync-era/compiler/specification/instructions/extensions/verbatim': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/06-extensions.html',
   },
-  '/zksync-protocol/compiler/specification/binary-layout': {
+  '/zksync-protocol/zksync-era/compiler/specification/binary-layout': {
     redirect: 'https://matter-labs.github.io/era-compiler-solidity/latest/eravm/07-binary-layout.html',
   },
 
