@@ -6,6 +6,8 @@ const { seo } = useAppConfig();
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation());
 provide('navigation', navigation);
 
+const links = headerLinks();
+
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -45,7 +47,7 @@ useSeoMeta({
     <NuxtPwaManifest />
     <NuxtLoadingIndicator />
 
-    <HeaderComponent :links="headerLinks().value" />
+    <HeaderComponent :links="links" />
 
     <UMain>
       <NuxtLayout>
