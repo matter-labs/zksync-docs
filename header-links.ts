@@ -6,7 +6,7 @@ export const headerLinks = () => {
   const isDocsApp = activeApp === 'docs';
   const isCodeApp = activeApp === 'code';
 
-  return [
+  return computed(() => [
     {
       label: 'ZKsync Network',
       to: isDocsApp ? '/zksync-network' : `${config.public.urls.docs}/zksync-network`,
@@ -27,5 +27,5 @@ export const headerLinks = () => {
       to: isCodeApp ? '/' : `${config.public.urls.code}`,
       active: isCodeApp,
     },
-  ];
+  ]);
 };

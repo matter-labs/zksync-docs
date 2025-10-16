@@ -45,7 +45,7 @@ useSeoMeta({
     <NuxtPwaManifest />
     <NuxtLoadingIndicator />
 
-    <HeaderComponent :links="unref(computed(() => headerLinks()))" />
+    <HeaderComponent :links="headerLinks().value" />
 
     <UMain>
       <NuxtLayout>
