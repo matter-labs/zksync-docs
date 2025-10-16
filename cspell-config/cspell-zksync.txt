@@ -1,39 +1,41 @@
-// zkSync-related words
-boojum
+-zkstack-
 !MatterLabs
-Matter Labs
-Hyperchain
-Prividium
-prividium
-Zeek
-Zeeks
-zkcast
-ZKEVM
-zkevm
-zkforge
-zkout
-zksolc
-zkcli-
-ZK Chain
 !ZKChain
 !zkStack
--zkstack-
-zkstack
-zkstackup
-ZK Stack
-zksync
-zksync-cli
-zkvyper
 !zkSync
 !Zksync
-ZKsync
-ZKP
-ZKVM
+// zkSync-related words
+boojum
 eravm
 ERAVM
-foundryup-zksync
 foundryup
-zkvm
-zksyncsepolia
+foundryup-zksync
+Hyperchain
+Matter Labs
+okta
+prividium
+Prividium
+SIWE
+Zeek
+Zeeks
+ZK Chain
+ZK Stack
+zkcast
+zkcli-
+zkevm
+ZKEVM
+zkforge
+zkout
+ZKP
+zksolc
+zkstack
+zkstackup
+zksync
+ZKsync
+zksync-cli
 zksyncmainnet
 zksyncos
+zksyncsepolia
+zkvm
+ZKVM
+zkvyper
