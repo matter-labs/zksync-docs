@@ -5,6 +5,9 @@ import { withoutTrailingSlash } from 'ufo';
 const route = useRoute();
 const category = useCategory();
 const navigation = inject<Ref<NavItem[]>>('navigation', ref([]));
+console.log('route path', route.path);
+const query = queryContent(route.path);
+console.log('query', query);
 const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne());
 
 if (!page.value) {
