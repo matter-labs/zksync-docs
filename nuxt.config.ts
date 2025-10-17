@@ -10,6 +10,9 @@ export default defineNuxtConfig({
   },
   nitro: {
     plugins: ['./plugins/code-snippet-import.ts'],
+    prerender: {
+      routes: ['/zk-stack/prividium', '/zk-stack/prividium/'],
+    },
   },
   components: [
     {
