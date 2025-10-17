@@ -575,16 +575,6 @@
         "source": "/zksync-protocol/zksync-airbender/deepdive",
         "destination": "/zk-stack/components/zksync-airbender/deepdive",
         "type": 301
-      },
-      {
-        "source": "/zk-stack/prividium",
-        "destination": "/zk-stack/prividium/overview",
-        "type": 301
-      },
-      {
-        "source": "/zk-stack/prividium/",
-        "destination": "/zk-stack/prividium/overview",
-        "type": 301
       }
     ]
   }

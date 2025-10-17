@@ -30,6 +30,17 @@ export default defineNuxtConfig({
       },
     },
   },
+  hooks: {
+    'pages:extend'(pages) {
+      // Find and normalize the prividium route
+      const prividiumPage = pages.find(
+        (page) => page.path === '/zk-stack/prividium' || page.path === '/zk-stack/prividium/'
+      );
+      if (prividiumPage) {
+        prividiumPage.path = '/zk-stack/prividium';
+      }
+    },
+  },
   pwa: {
     selfDestroying: true,
     strategies: 'generateSW',
