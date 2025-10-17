@@ -10,10 +10,10 @@ export default defineNuxtConfig({
   },
   nitro: {
     plugins: ['./plugins/code-snippet-import.ts'],
-    prerender: {
-      crawlLinks: true,
-      routes: ['/zk-stack/prividium'],
-    },
+    // prerender: {
+    //   crawlLinks: true,
+    //   routes: ['/zk-stack/prividium'],
+    // },
   },
   components: [
     {
@@ -28,7 +28,7 @@ export default defineNuxtConfig({
   },
   routeRules: {
     ...redirects,
-    '/zk-stack/prividium/': { redirect: '/zk-stack/prividium' },
+    // '/zk-stack/prividium/': { redirect: '/zk-stack/prividium' },
   },
   experimental: {
     defaults: {
