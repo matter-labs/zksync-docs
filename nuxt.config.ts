@@ -12,7 +12,6 @@ export default defineNuxtConfig({
     plugins: ['./plugins/code-snippet-import.ts'],
     prerender: {
       crawlLinks: true,
-      // Ensure both source & target exist in the static output
       routes: ['/zk-stack/prividium'],
     },
   },
