@@ -37,16 +37,16 @@ const columns = [
     label: 'Base Token',
   },
   {
-    key: 'dataAvailability',
-    label: 'Data Availability',
+    key: 'links',
+    label: 'Links',
   },
   {
     key: 'onGateway',
     label: 'On Gateway',
   },
   {
-    key: 'links',
-    label: 'Links',
+    key: 'dataAvailability',
+    label: 'Data Availability',
   },
 ];
 </script>

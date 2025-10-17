@@ -1,40 +1,5 @@
 [
   {
-    "name": "ZKsync Era Mainnet",
-    "chainId": 324,
-    "icon": "https://www.zksync.io/ecosystem/era.png",
-    "isTestnet": false,
-    "documentationURL": "/zksync-network/environment/zksync-era",
-    "explorerURL": "https://explorer.zksync.io",
-    "baseToken": "ETH",
-    "pubdataMode": "Rollup",
-    "dataAvailability": "Ethereum",
-    "onGateway": true
-  },
-  {
-    "name": "ZKsync Era Sepolia",
-    "chainId": 300,
-    "icon": "https://www.zksync.io/ecosystem/era.png",
-    "isTestnet": true,
-    "documentationURL": "/zksync-network/environment/zksync-era",
-    "explorerURL": "https://sepolia.explorer.zksync.io",
-    "baseToken": "ETH",
-    "pubdataMode": "Rollup",
-    "dataAvailability": "Ethereum",
-    "onGateway": true
-  },
-  {
-    "name": "ZKsync OS Developer Preview",
-    "chainId": 8022833,
-    "icon": "https://docs.zksync.io/zksync-icon_150.svg",
-    "isTestnet": true,
-    "documentationURL": "/zksync-network/zksync-os",
-    "explorerURL": "https://zksync-os-testnet-alpha.staging-scan-v2.zksync.dev",
-    "baseToken": "ETH",
-    "pubdataMode": "Rollup",
-    "dataAvailability": "Ethereum"
-  },
-  {
     "name": "Abstract Mainnet",
     "chainId": 2741,
     "icon": "https://www.zksync.io/ecosystem/abstract.png",
@@ -56,6 +21,17 @@
     "pubdataMode": "Rollup",
     "dataAvailability": "Ethereum",
     "onGateway": true
+  },
+  {
+    "name": "ADI Network Testnet",
+    "chainId": 36900,
+    "icon": "https://adi-foundation.gitbook.io/adi-chain-documentation/~gitbook/image?url=https%3A%2F%2F2989473863-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Forganizations%252FJjG3PO7wiqCLUGQF6zGS%252Fsites%252Fsite_U8La9%252Flogo%252FxnXFv0iMvzsNmgnn52po%252F1.png%3Falt%3Dmedia%26token%3D0946719a-9d1d-4bf0-8fbf-118265bc83c3&width=260&dpr=4&quality=100&sign=e3cdd9f9&sv=2",
+    "isTestnet": true,
+    "documentationURL": "https://adi-foundation.gitbook.io/adi-chain-documentation",
+    "explorerURL": "https://explorer.ab.testnet.adifoundation.ai/",
+    "baseToken": "ADI",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
   },
   {
     "name": "Cronos zkEVM Mainnet",
@@ -135,6 +111,26 @@
     "onGateway": true
   },
   {
+    "name": "Memento ZK Chain",
+    "chainId": 51888,
+    "icon": "https://www.zksync.io/ecosystem/memento.png",
+    "isTestnet": false,
+    "documentationURL": "https://mementoblockchain.com/zk-chain",
+    "baseToken": "ETH",
+    "pubdataMode": "Validium",
+    "dataAvailability": "NoDA"
+  },
+  {
+    "name": "Memento ZK Chain Testnet",
+    "chainId": 2129,
+    "icon": "https://www.zksync.io/ecosystem/memento.png",
+    "isTestnet": true,
+    "documentationURL": "https://mementoblockchain.com/zk-chain",
+    "baseToken": "ETH",
+    "pubdataMode": "Validium",
+    "dataAvailability": "NoDA"
+  },
+  {
     "name": "OpenZK Mainnet",
     "chainId": 1345,
     "icon": "/logos/openzk.png",
@@ -156,24 +152,15 @@
     "dataAvailability": "Ethereum"
   },
   {
-    "name": "Memento ZK Chain",
-    "chainId": 51888,
-    "icon": "https://www.zksync.io/ecosystem/memento.png",
-    "isTestnet": false,
-    "documentationURL": "https://mementoblockchain.com/zk-chain",
-    "baseToken": "ETH",
-    "pubdataMode": "Validium",
-    "dataAvailability": "NoDA"
-  },
-  {
-    "name": "Memento ZK Chain Testnet",
-    "chainId": 2129,
-    "icon": "https://www.zksync.io/ecosystem/memento.png",
+    "name": "SANDchain Testnet (Silica)",
+    "chainId": 6252,
+    "icon": "https://app.sandchain.com/icons/sandchain-symbol-light.svg",
     "isTestnet": true,
-    "documentationURL": "https://mementoblockchain.com/zk-chain",
-    "baseToken": "ETH",
-    "pubdataMode": "Validium",
-    "dataAvailability": "NoDA"
+    "documentationURL": "https://sandchain.gitbook.io/docs",
+    "explorerURL": "https://sandchain-explorer.caldera.xyz/",
+    "baseToken": "SAND",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
   },
   {
     "name": "Sophon Mainnet",
@@ -207,28 +194,6 @@
     "baseToken": "ETH",
     "pubdataMode": "Validium",
     "dataAvailability": "Avail"
-  },
-  {
-    "name": "zkXPLA",
-    "chainId": 375,
-    "icon": "https://www.zksync.io/ecosystem/xpla.png",
-    "isTestnet": false,
-    "documentationURL": "https://xpla.io",
-    "explorerURL": "https://explorer.xpla.io/mainnet",
-    "baseToken": "ETH",
-    "pubdataMode": "Rollup",
-    "dataAvailability": "Ethereum"
-  },
-  {
-    "name": "zkXPLA Testnet",
-    "chainId": 475,
-    "icon": "https://www.zksync.io/ecosystem/xpla.png",
-    "isTestnet": true,
-    "documentationURL": "https://xpla.io",
-    "explorerURL": "https://explorer.xpla.io/testnet",
-    "baseToken": "ETH",
-    "pubdataMode": "Rollup",
-    "dataAvailability": "Ethereum"
   },
   {
     "name": "Xsolla Chain Testnet",
@@ -273,5 +238,62 @@
     "baseToken": "ETH",
     "pubdataMode": "Validium",
     "dataAvailability": "Avail"
+  },
+  {
+    "name": "ZKsync Era Mainnet",
+    "chainId": 324,
+    "icon": "https://www.zksync.io/ecosystem/era.png",
+    "isTestnet": false,
+    "documentationURL": "/zksync-network/environment/zksync-era",
+    "explorerURL": "https://explorer.zksync.io",
+    "baseToken": "ETH",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum",
+    "onGateway": true
+  },
+  {
+    "name": "ZKsync Era Sepolia",
+    "chainId": 300,
+    "icon": "https://www.zksync.io/ecosystem/era.png",
+    "isTestnet": true,
+    "documentationURL": "/zksync-network/environment/zksync-era",
+    "explorerURL": "https://sepolia.explorer.zksync.io",
+    "baseToken": "ETH",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum",
+    "onGateway": true
+  },
+  {
+    "name": "ZKsync OS Developer Preview",
+    "chainId": 8022833,
+    "icon": "https://docs.zksync.io/zksync-icon_150.svg",
+    "isTestnet": true,
+    "documentationURL": "/zksync-network/zksync-os",
+    "explorerURL": "https://zksync-os-testnet-alpha.staging-scan-v2.zksync.dev",
+    "baseToken": "ETH",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
+  },
+  {
+    "name": "zkXPLA",
+    "chainId": 375,
+    "icon": "https://www.zksync.io/ecosystem/xpla.png",
+    "isTestnet": false,
+    "documentationURL": "https://xpla.io",
+    "explorerURL": "https://explorer.xpla.io/mainnet",
+    "baseToken": "ETH",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
+  },
+  {
+    "name": "zkXPLA Testnet",
+    "chainId": 475,
+    "icon": "https://www.zksync.io/ecosystem/xpla.png",
+    "isTestnet": true,
+    "documentationURL": "https://xpla.io",
+    "explorerURL": "https://explorer.xpla.io/testnet",
+    "baseToken": "ETH",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
   }
 ]
