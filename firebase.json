@@ -11,10 +11,6 @@
       {
         "source": "/zk-stack/prividium/",
         "destination": "/zk-stack/prividium/index.html"
-      },
-      {
-        "source": "**",
-        "destination": "/index.html"
       }
     ],
     "headers": [
