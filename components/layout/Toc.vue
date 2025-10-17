@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ParsedContent } from '@nuxt/content/types';
-import { useRoute } from 'vue-router';
+// import { useRoute } from 'vue-router';
 
 const { toc } = useAppConfig();
 
@@ -9,14 +9,14 @@ const props = defineProps<{
 }>();
 
 // calculate the current full URL to use in links below
-const route = useRoute();
-const currentUrl = computed(() => {
-  if (import.meta.client) {
-    return `${window.location.origin}${route.fullPath}`;
-  }
-  // Fallback for SSR/CI: just use the path
-  return route.fullPath;
-});
+// const route = useRoute();
+// const currentUrl = computed(() => {
+//   if (import.meta.client) {
+//     return `${window.location.origin}${route.fullPath}`;
+//   }
+//   // Fallback for SSR/CI: just use the path
+//   return route.fullPath;
+// });
 
 const links = computed(() =>
   [
@@ -32,18 +32,18 @@ const links = computed(() =>
       to: `https://github.com/matter-labs/zksync-docs/issues/new?labels=feedback%2Ctriage&projects=&template=feedback.yml&title=%5BFeedback%5D%3A+&page=https://docs.zksync.io${props.page?._path}`,
       target: '_blank',
     },
-    {
-      icon: 'i-heroicons-chat-bubble-left-right',
-      label: 'Open in ChatGPT',
-      to: `https://chatgpt.com/?q=Read%20${currentUrl.value}%20and%20all%20its%20subpages%20and%20answer%20questions%20about%20the%20content.`,
-      target: '_blank',
-    },
-    {
-      icon: 'i-heroicons-chat-bubble-bottom-center-text',
-      label: 'Open in Claude',
-      to: `https://claude.ai/new?q=Read%20${currentUrl.value}%20and%20all%20its%20subpages%20and%20answer%20questions%20about%20the%20content.`,
-      target: '_blank',
-    },
+    // {
+    //   icon: 'i-heroicons-chat-bubble-left-right',
+    //   label: 'Open in ChatGPT',
+    //   to: `https://chatgpt.com/?q=Read%20${currentUrl.value}%20and%20all%20its%20subpages%20and%20answer%20questions%20about%20the%20content.`,
+    //   target: '_blank',
+    // },
+    // {
+    //   icon: 'i-heroicons-chat-bubble-bottom-center-text',
+    //   label: 'Open in Claude',
+    //   to: `https://claude.ai/new?q=Read%20${currentUrl.value}%20and%20all%20its%20subpages%20and%20answer%20questions%20about%20the%20content.`,
+    //   target: '_blank',
+    // },
     {
       icon: 'i-heroicons-question-mark-circle',
       label: 'Get Help',
