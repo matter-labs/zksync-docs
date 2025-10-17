@@ -13,6 +13,8 @@ if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true });
 }
 
+console.log('page value found');
+
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
   queryContent()
     .where({
@@ -24,6 +26,8 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
     .findSurround(withoutTrailingSlash(route.path))
 );
 
+console.log('surround', surround);
+
 const { seo } = useAppConfig();
 useSeoMeta({
   title: page.value.title,
@@ -32,6 +36,8 @@ useSeoMeta({
   ogDescription: page.value.description,
   twitterDescription: page.value.description,
 });
+
+console.log('seo', seo);
 
 defineOgImage({
   component: 'OgImageZK',
@@ -49,6 +55,8 @@ const breadcrumb = computed(() => {
 
   return crumbs;
 });
+
+console.log('breadcrumb', breadcrumb);
 </script>
 
 <template>
