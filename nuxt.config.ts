@@ -29,7 +29,6 @@ export default defineNuxtConfig({
     ...redirects,
     '/zk-stack/prividium': {
       prerender: true,
-      // Force SPA mode as fallback
       ssr: true,
     },
   },
