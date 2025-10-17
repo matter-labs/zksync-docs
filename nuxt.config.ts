@@ -10,9 +10,6 @@ export default defineNuxtConfig({
   },
   nitro: {
     plugins: ['./plugins/code-snippet-import.ts'],
-    prerender: {
-      routes: ['/zk-stack/prividium', '/zk-stack/prividium/'],
-    },
   },
   components: [
     {
@@ -31,17 +28,6 @@ export default defineNuxtConfig({
       nuxtLink: {
         trailingSlash: 'remove',
       },
-    },
-  },
-  hooks: {
-    'pages:extend'(pages) {
-      // Find and normalize the prividium route
-      const prividiumPage = pages.find(
-        (page) => page.path === '/zk-stack/prividium' || page.path === '/zk-stack/prividium/'
-      );
-      if (prividiumPage) {
-        prividiumPage.path = '/zk-stack/prividium';
-      }
     },
   },
   pwa: {
