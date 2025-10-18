@@ -1,0 +1,31 @@
+---
+title: Header Result
+---
+
+```json
+{
+  "jsonrpc":"2.0",
+  "id":1,
+  "result":
+  {
+    "hash":"0x7c9b4377d10d03a44b5a77540d2bb071961be90b506e09a9f0bb27786fdd5fc5",
+    "parentHash":"0x033eaeb21ceaa1daa3d400e890fbebb0803770a55842463be4fb9c79a7f4dc51",
+    "sha3Uncles":"0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+    "miner":"0x0000000000000000000000000000000000000000",
+    "stateRoot":"0x0000000000000000000000000000000000000000000000000000000000000000",
+    "transactionsRoot":"0x5c82906f1a4e0da28bb6d793477dd0abccf8ded66f03d76a0be2d8df0e0149a2",
+    "receiptsRoot":"0x0000000000000000000000000000000000000000000000000000000000000000",
+    "logsBloom":"0x00000000...",
+    "difficulty":"0x0",
+    "number":"0x1b",
+    "gasLimit":"0x5f5e100",
+    "gasUsed":"0x5208",
+    "timestamp":"0x68cafa0d",
+    "extraData":"0x",
+    "mixHash":"0x0000000000000000000000000000000000000000000000000000000000000001",
+    "nonce":"0x0000000000000000",
+    "baseFeePerGas":"0x3e8",
+    "size":"0x223"
+  }
+}
+```

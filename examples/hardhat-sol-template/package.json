@@ -12,7 +12,8 @@
     "interact": "hardhat run ./scripts/interact.ts",
     "compile": "hardhat compile",
     "clean": "hardhat clean",
-    "test": "hardhat test --network hardhat"
+    "test": "hardhat test --network hardhat",
+    "test:rpc": "hardhat test test/eth-rpc.test.ts"
   },
   "devDependencies": {
     "@matterlabs/hardhat-zksync": "^1.6.1",
