@@ -3,16 +3,6 @@
     "trailingSlash": false,
     "public": ".output/public",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "rewrites": [
-      {
-        "source": "/zk-stack/prividium",
-        "destination": "/zk-stack/prividium/index.html"
-      },
-      {
-        "source": "/zk-stack/prividium/",
-        "destination": "/zk-stack/prividium/index.html"
-      }
-    ],
     "headers": [
       {
         "source": "/",
