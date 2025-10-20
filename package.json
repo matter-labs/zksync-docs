@@ -22,7 +22,7 @@
     "vue-tsc": "2.1.6"
   },
   "dependencies": {
-    "@matterlabs/docs-nuxt-template": "2.11.2-next.5",
+    "@matterlabs/docs-nuxt-template": "2.11.2",
     "@tsparticles/slim": "3.5.0",
     "@tsparticles/vue3": "3.0.1",
     "@vite-pwa/nuxt": "0.10.5",
