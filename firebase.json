@@ -3,6 +3,12 @@
     "trailingSlash": false,
     "public": ".output/public",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/200.html"
+      }
+    ],
     "headers": [
       {
         "source": "/",
