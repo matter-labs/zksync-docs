@@ -5,21 +5,23 @@ import { withoutTrailingSlash } from 'ufo';
 const route = useRoute();
 const category = useCategory();
 const navigation = inject<Ref<NavItem[]>>('navigation', ref([]));
-const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne());
+const { data: page } = await useAsyncData(route.path, async () => await queryContent(route.path).findOne());
 
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true });
 }
 
-const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
-  queryContent()
-    .where({
-      _partial: false,
-      _extension: 'md',
-      navigation: { $ne: false },
-    })
-    .only(['title', 'description', '_path'])
-    .findSurround(withoutTrailingSlash(route.path))
+const { data: surround } = await useAsyncData(
+  `${route.path}-surround`,
+  async () =>
+    await queryContent()
+      .where({
+        _partial: false,
+        _extension: 'md',
+        navigation: { $ne: false },
+      })
+      .only(['title', 'description', '_path'])
+      .findSurround(withoutTrailingSlash(route.path))
 );
 
 const { seo } = useAppConfig();
