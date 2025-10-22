@@ -408,12 +408,12 @@
       },
       {
         "source": "/build/developer-reference/account-abstraction",
-        "destination": "//zksync-protocol/account-abstraction",
+        "destination": "/zksync-protocol/account-abstraction",
         "type": 301
       },
       {
         "source": "/build/developer-reference/system-contracts.html",
-        "destination": "/zksync-protocol/contracts/system-contracts",
+        "destination": "/zksync-protocol/zksync-era/contracts/system-contracts",
         "type": 301
       },
       {
