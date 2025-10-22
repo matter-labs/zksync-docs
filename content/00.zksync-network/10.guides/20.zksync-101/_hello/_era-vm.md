@@ -71,7 +71,7 @@ We are going to use the "in-memory node" module for our local node setup.
     zksync-cli dev start
     ```
 
-    `anvil-zksync` node includes pre-configured rich wallets for use, see [anvil-zksync rich wallets](/build/test-and-debug/in-memory-node#pre-configured-rich-wallets).
+    `anvil-zksync` node includes pre-configured rich wallets for use, see [anvil-zksync rich wallets](/zksync-network/tooling/local-setup/anvil-zksync-node#pre-configured-rich-wallets).
 
 Your `anvil-zksync` node is accessible at **[http://127.0.0.1:8011](http://127.0.0.1:8011/)**, ready for deployment or testing purposes.
 You can use the Docker Desktop app to view logs from the running ZKsync Era node or use the `zksync-cli dev logs` command.
