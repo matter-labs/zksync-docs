@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   site: {
     name: 'ZKsync Docs',
     url: process.env.NUXT_SITE_ENV === 'production' ? 'https://docs.zksync.io' : 'https://staging-docs.zksync.io',
+    trailingSlash: 'append',
   },
   nitro: {
     plugins: ['./plugins/code-snippet-import.ts'],
@@ -26,7 +27,7 @@ export default defineNuxtConfig({
   experimental: {
     defaults: {
       nuxtLink: {
-        trailingSlash: 'remove',
+        trailingSlash: 'append',
       },
     },
   },
