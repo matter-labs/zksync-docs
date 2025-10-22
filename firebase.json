@@ -665,6 +665,96 @@
         "source": "/zksync-protocol/gateway/overview",
         "destination": "/zksync-protocol/gateway",
         "type": 301
+      },
+      {
+        "source": "/zksync-protocol/rollup/transaction-lifecycle",
+        "destination": "/zksync-protocol/zksync-era/transactions/transaction-lifecycle",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/rollup/blocks",
+        "destination": "/zksync-protocol/zksync-era/transactions/blocks",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/rollup/fee-model",
+        "destination": "/zksync-protocol/zksync-era/transactions/fee-model",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/rollup/fee-model/:path*",
+        "destination": "/zksync-protocol/zksync-era/transactions/fee-model/:path",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/vm",
+        "destination": "/zksync-protocol/zksync-era/vm",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/vm/formal-spec",
+        "destination": "/zksync-protocol/zksync-era/vm/formal-spec",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/contracts/bootloader",
+        "destination": "/zksync-protocol/zksync-era/contracts/bootloader",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/contracts/system-contracts",
+        "destination": "/zksync-protocol/zksync-era/contracts/system-contracts",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/contracts/handling-l1-l2-ops",
+        "destination": "/zksync-protocol/zksync-era/contracts/handling-l1-l2-ops",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/contracts/handling-pubdata",
+        "destination": "/zksync-protocol/zksync-era/contracts/handling-pubdata",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/contracts/pubdata-post-4844",
+        "destination": "/zksync-protocol/zksync-era/contracts/pubdata-post-4844",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/circuits",
+        "destination": "/zksync-protocol/zksync-era/circuits",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/circuits/:path*",
+        "destination": "/zksync-protocol/zksync-era/circuits/:path",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/:path*",
+        "destination": "/zksync-protocol/zksync-era/compiler/:path",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/differences/:path*",
+        "destination": "/zksync-protocol/zksync-era/differences/:path",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/evm-interpreter/:path*",
+        "destination": "/zksync-protocol/zksync-era/evm-interpreter/:path",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/account-abstraction",
+        "destination": "/zksync-protocol/zksync-era/account-abstraction",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/account-abstraction/:path*",
+        "destination": "/zksync-protocol/zksync-era/account-abstraction/:path",
+        "type": 301
       }
     ]
   }
