@@ -3,12 +3,6 @@
     "trailingSlash": false,
     "public": ".output/public",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/200.html"
-      }
-    ],
     "headers": [
       {
         "source": "/",
@@ -83,103 +77,748 @@
     ],
     "redirects": [
       {
-        "source": "/build/developer-reference/intro-rollups",
-        "destination": "/build/developer-reference/protocol",
+        "source": "/build/tutorials/smart-contract-development/account-abstraction/daily-spend-limit.html",
+        "destination": "https://code.zksync.io/tutorials/daily-spend-limit-account",
         "type": 301
       },
       {
-        "source": "/build/developer-reference/zksync-overview",
-        "destination": "/build/developer-reference/protocol",
+        "source": "/build/tutorials/smart-contract-development/paymasters/custom-paymaster-tutorial.html",
+        "destination": "https://code.zksync.io/tutorials/erc20-paymaster",
         "type": 301
       },
       {
-        "source": "/sdk:ext(.html|.md|)*",
-        "destination": "/zksync-era/sdk",
+        "source": "/zk-stack/components/compiler/specification/instructions/extensions/verbatim",
+        "destination": "/zksync-protocol/compiler/specification/instructions/extensions/verbatim",
         "type": 301
       },
       {
-        "source": "/sdk/:path*",
-        "destination": "/zksync-era/sdk/:path",
+        "source": "/zk-stack/components/compiler/specification/instructions/extensions/index",
+        "destination": "/zksync-protocol/compiler/specification/instructions/extensions/index",
         "type": 301
       },
       {
-        "source": "/sdk/:path*",
-        "destination": "https://docs.zksync.io/zksync-era/sdk/:path",
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/environment",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/environment",
         "type": 301
       },
       {
-        "source": "/sdks/:path*",
-        "destination": "https://docs.zksync.io/zksync-era/sdk/:path",
+        "source": "/zk-stack/components/compiler/specification/instructions/extensions/call",
+        "destination": "/zksync-protocol/compiler/specification/instructions/extensions/call",
         "type": 301
       },
       {
-        "source": "/sdks/js/:path*.@(html|md)",
-        "destination": "https://docs.zksync.io/zksync-era/sdk/js/ethers/v5/:path",
+        "source": "/zksync-protocol/compiler/specification/instructions/extensions/verbatim",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/06-extensions.html",
         "type": 301
       },
       {
-        "source": "/sdks/js/zksync-ethers/:path*.@(html|md)",
-        "destination": "https://docs.zksync.io/zksync-era/sdk/js/ethers/v6/:path",
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/arithmetic",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/arithmetic",
         "type": 301
       },
       {
-        "source": "/sdk/js/:path*.@(html|md)",
-        "destination": "https://docs.zksync.io/zksync-era/sdk/js/ethers/api/v5/:path",
+        "source": "/build/developer-reference/account-abstraction/building-smart-accounts",
+        "destination": "/zksync-protocol/account-abstraction/building-smart-accounts",
         "type": 301
       },
       {
-        "source": "/sdk/js/zksync-ethers/:path*.@(html|md)",
-        "destination": "https://docs.zksync.io/zksync-era/sdk/js/ethers/api/v6/:path",
+        "source": "/build/tutorials/smart-contract-development/cross-chain-tutorial.html",
+        "destination": "https://code.zksync.io/tutorials/cross-chain-governance",
         "type": 301
       },
       {
-        "source": "https://sdk.zksync.io/:path*",
-        "destination": "https://docs.zksync.io/zksync-era/sdk/:path",
+        "source": "/zksync-protocol/compiler/specification/instructions/extensions/index",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/06-extensions.html",
         "type": 301
       },
       {
-        "source": "https://sdk.zksync.io/js/:path*.@(html|md)",
-        "destination": "https://docs.zksync.io/zksync-era/sdk/js/ethers/api/v5/:path",
+        "source": "/build/tutorials/dapp-development/frontend-quickstart-paymaster.html",
+        "destination": "https://code.zksync.io/tutorials/frontend-paymaster",
         "type": 301
       },
       {
-        "source": "https://sdk.zksync.io/js/zksync-ethers/:path*.@(html|md)",
-        "destination": "https://docs.zksync.io/zksync-era/sdk/js/ethers/api/v6/:path",
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/bitwise",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/bitwise",
         "type": 301
       },
       {
-        "source": "/build/quick-start/:path*",
-        "destination": "/build/start-coding/quick-start/:path",
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/logging",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/logging",
         "type": 301
       },
       {
-        "source": "/build/zksync-101/:path*",
-        "destination": "/build/start-coding/zksync-101/:path",
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/logical",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/logical",
         "type": 301
       },
       {
-        "source": "/build/api.html",
-        "destination": "/build/api-reference",
+        "source": "/zksync-protocol/compiler/specification/instructions/evm/environment",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/07-environment.html",
         "type": 301
       },
       {
-        "source": "/build/tooling/zksync-cli",
-        "destination": "/build/zksync-cli",
+        "source": "/zksync-protocol/compiler/specification/instructions/extensions/call",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/06-extensions.html",
         "type": 301
       },
       {
-        "source": "/build/tooling/zksync-cli/troubleshooting",
-        "destination": "/build/zksync-cli/troubleshooting",
+        "source": "/build/developer-reference/account-abstraction/signature-validation",
+        "destination": "/zksync-protocol/account-abstraction/signature-validation",
         "type": 301
       },
       {
-        "source": "/build/tooling/zksync-cli/**",
-        "destination": "/build/zksync-cli/reference",
+        "source": "/build/developer-reference/ethereum-differences/contract-deployment",
+        "destination": "/zksync-protocol/differences/contract-deployment",
         "type": 301
       },
       {
-        "source": "/build/tooling/network-faucets.html",
-        "destination": "/zksync-era/ecosystem/network-faucets",
+        "source": "/build/tutorials/dapp-development/gated-nft-paymaster-tutorial.html",
+        "destination": "https://code.zksync.io/tutorials/dapp-nft-paymaster",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/smart-contract-development/paymasters/gasless.html",
+        "destination": "https://code.zksync.io/tutorials/dapp-nft-paymaster",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/create",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/create",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/memory",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/memory",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/return",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/return",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/instructions/extensions",
+        "destination": "/zksync-protocol/compiler/specification/instructions/extensions",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/instructions/evm/arithmetic",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/02-arithmetic.html",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/block",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/block",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/index",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/index",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/stack",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/stack",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/ethereum-differences/native-vs-eip4337",
+        "destination": "/zksync-protocol/differences/native-vs-eip4337",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/call",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/call",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/sha3",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/sha3",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/ethereum-differences/evm-instructions",
+        "destination": "/zksync-protocol/differences/evm-instructions",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/instructions/evm/bitwise",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/03-bitwise.html",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/instructions/evm/logging",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/08-logging.html",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/instructions/evm/logical",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/09-logical.html",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/era-contracts/l1-ecosystem-contracts",
+        "destination": "/zksync-protocol/contracts/l1-contracts//l1-ecosystem-contracts",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/circuits/sorting/sort-decommitments",
+        "destination": "/zksync-protocol/circuits/circuits/sorting/sort-decommitments",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/instructions/evm/create",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/06-create.html",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/instructions/evm/memory",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/10-memory.html",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/instructions/evm/return",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/11-return.html",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/instructions/extensions",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/06-extensions.html",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/fee-model/how-we-charge-for-pubdata",
+        "destination": "/zksync-protocol/rollup/fee-model/how-we-charge-for-pubdata",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/exception-handling",
+        "destination": "/zksync-protocol/compiler/specification/exception-handling",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/instructions/evmla",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evmla",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/instructions/index",
+        "destination": "/zksync-protocol/compiler/specification/instructions/index",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/boojum-function-check-if-satisfied",
+        "destination": "/zksync-protocol/circuits/boojum-function-check-if-satisfied",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/instructions/evm/block",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/04-block.html",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/instructions/evm/stack",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/13-stack.html",
+        "type": 301
+      },
+      {
+        "source": "/build/contributing-to-documentation/documentation-styleguide",
+        "destination": "/zksync-era/contributing/documentation/documentation-styleguide",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/account-abstraction/extending-4337",
+        "destination": "/zksync-protocol/account-abstraction/extending-4337",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/instructions/evm/call",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/05-calls.html",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/instructions/evm/sha3",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/12-sha3.html",
+        "type": 301
+      },
+      {
+        "source": "/build/contributing-to-documentation/contribution-guidelines",
+        "destination": "/zksync-era/contributing/documentation/contribution-guidelines",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/ethereum-differences/pre-compiles",
+        "destination": "/zksync-protocol/differences/pre-compiles",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/evmla-translator",
+        "destination": "/zksync-protocol/compiler/specification/evmla-translator",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/instructions/evm",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/instructions/yul",
+        "destination": "/zksync-protocol/compiler/specification/instructions/yul",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/system-contracts",
+        "destination": "/zksync-protocol/compiler/specification/system-contracts",
+        "type": 301
+      },
+      {
+        "source": "zksync-era/unique-features/zksync-sso/supported-environments",
+        "destination": "/zksync-era/unique-features/zksync-sso/faqs",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/era-contracts/handling-l1-l2-ops",
+        "destination": "/zksync-protocol/contracts/handling-l1-l2-ops",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/fee-model/how-l2-gas-price-works",
+        "destination": "/zksync-protocol/rollup/fee-model/how-l2-gas-price-works",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/code-separation",
+        "destination": "/zksync-protocol/compiler/specification/code-separation",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/circuits/sorting/storage-sorter",
+        "destination": "/zksync-protocol/circuits/circuits/sorting/storage-sorter",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/era-contracts/pubdata-post-4844",
+        "destination": "/zksync-protocol/contracts/pubdata-post-4844",
+        "type": 301
+      },
+      {
+        "source": "/build/start-coding/quick-start/deploy-your-first-contract",
+        "destination": "/zksync-era/guides/quick-start/deploy-your-first-contract",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/circuits/keccak-round-function",
+        "destination": "/zksync-protocol/circuits/circuits/keccak-round-function",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/circuits/sha256-round-function",
+        "destination": "/zksync-protocol/circuits/circuits/sha256-round-function",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/exception-handling",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/04-exception-handling.html",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/instructions/evmla",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/03-evm-assembly.html",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/instructions/index",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/01-reference.html",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/account-abstraction/paymasters",
+        "destination": "/zksync-protocol/account-abstraction/paymasters",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/differences-with-ethereum.html",
+        "destination": "/build/developer-reference/ethereum-differences/evm-instructions",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/era-contracts/handling-pubdata",
+        "destination": "/zksync-protocol/contracts/handling-pubdata",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/era-contracts/system-contracts",
+        "destination": "/zksync-protocol/contracts/system-contracts",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/ethereum-differences/libraries",
+        "destination": "/zksync-protocol/differences/libraries",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/binary-layout",
+        "destination": "/zksync-protocol/compiler/specification/binary-layout",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/instructions",
+        "destination": "/zksync-protocol/compiler/specification/instructions",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/circuits/storage-application",
+        "destination": "/zksync-protocol/circuits/circuits/storage-application",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/evmla-translator",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/02-evm-assembly-translator.html",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/instructions/evm",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/02-evm/01-reference.html",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/instructions/yul",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/04-yul.html",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/system-contracts",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/03-system-contracts.html",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/addresses/zk-chain-addresses",
+        "destination": "/zk-stack/zk-chain-addresses",
+        "type": 301
+      },
+      {
+        "source": "/build/start-coding/quick-start/paymasters-introduction",
+        "destination": "/zksync-era/guides/quick-start/paymasters-introduction",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/circuits/l1-messages-hasher",
+        "destination": "/zksync-protocol/circuits/circuits/l1-messages-hasher",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/circuits/sorting/log-sorter",
+        "destination": "/zksync-protocol/circuits/circuits/sorting/log-sorter",
+        "type": 301
+      },
+      {
+        "source": "/zksync-era/unique-features/zksync-sso/transaction-fees",
+        "destination": "/zksync-era/unique-features/zksync-sso/faq",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/code-separation",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/01-code-separation.html",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/ethereum-differences/nonces",
+        "destination": "/zksync-protocol/differences/nonces",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/account-abstraction/design",
+        "destination": "/zksync-protocol/account-abstraction/design",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/era-contracts/l1-contracts",
+        "destination": "/zksync-protocol/contracts/l1-contracts",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/handling-pubdata-in-boojum",
+        "destination": "/zksync-protocol/contracts/handling-pubdata",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/circuits/code-decommitter",
+        "destination": "/zksync-protocol/circuits/circuits/code-decommitter",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/smart-contracts/system-contracts",
+        "destination": "/zksync-protocol/contracts/system-contracts",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/binary-layout",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/07-binary-layout.html",
+        "type": 301
+      },
+      {
+        "source": "zksync-era/unique-features/zksync-sso/account-modules",
+        "destination": "/zksync-era/unique-features/zksync-sso/accounts",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-cli/reference/zksync-cli-config-chains",
+        "destination": "/zksync-era/tooling/zksync-cli/reference/zksync-cli-config-chains",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/circuits/circuit-testing",
+        "destination": "/zksync-protocol/circuits/circuits/circuit-testing",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/circuits/demux-log-queue",
+        "destination": "/zksync-protocol/circuits/circuits/demux-log-queue",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/circuits/ram-permutation",
+        "destination": "/zksync-protocol/circuits/circuits/ram-permutation",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/specification/instructions",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/eravm/05-instructions/01-reference.html",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/account-abstraction.html",
+        "destination": "/build/developer-reference/account-abstraction",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/tooling-guides/wallet-connect.html",
+        "destination": "https://code.zksync.io/tutorials/guide-walletconnect",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/running-a-zk-chain/using-a-local-zk-chain",
+        "destination": "/zk-stack/running/using-a-local-zk-chain",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/foundry/migration-guide/compilation",
+        "destination": "/zksync-era/tooling/foundry/migration-guide/compilation",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/how-to/withdraw-erc-20-to-l1.html",
+        "destination": "https://code.zksync.io/tutorials/how-to-withdraw-erc20",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-cli/reference/zksync-cli-transaction",
+        "destination": "/zksync-era/tooling/zksync-cli/reference/zksync-cli-transaction",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/l1-l2-interoperability",
+        "destination": "/zksync-protocol/rollup/l1_l2_communication",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/foundry/migration-guide/deployment",
+        "destination": "/zksync-era/tooling/foundry/migration-guide/deployment",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat/guides/compiling-libraries",
+        "destination": "/zksync-era/tooling/hardhat/guides/compiling-libraries",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat/guides/migrating-to-zksync",
+        "destination": "/zksync-era/tooling/hardhat/guides/migrating-to-zksync",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/how-to/deposit-erc-20-to-l2.html",
+        "destination": "https://code.zksync.io/tutorials/how-to-deposit-erc20",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification/index",
+        "destination": "/zksync-protocol/compiler/specification/index",
+        "type": 301
+      },
+      {
+        "source": "/zksync-era/unique-features/zksync-sso/interfaces",
+        "destination": "/zksync-era/unique-features/zksync-sso/sessions",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/batches-and-l2-blocks",
+        "destination": "/zksync-protocol/rollup/blocks",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/system-contracts.html",
+        "destination": "/build/developer-reference/era-contracts/l1-contracts",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/toolchain/solidity",
+        "destination": "/zksync-protocol/compiler/toolchain/solidity",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/zksync-evm/vm-specification",
+        "destination": "/zksync-protocol/vm",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/ethereum-differences",
+        "destination": "/zksync-protocol/differences",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/migrate-era-to-chain",
+        "destination": "/zksync-protocol/contracts/l1-contracts/shared-bridges",
+        "type": 301
+      },
+      {
+        "source": "/build/start-coding/zksync-101/contract-factory",
+        "destination": "/zksync-era/guides/zksync-101/contract-factory",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/foundry/migration-guide/overview",
+        "destination": "/zksync-era/tooling/foundry/migration-guide/overview",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/how-to/send-message-l2-l1.html",
+        "destination": "https://code.zksync.io/tutorials/how-to-send-l2-l1-message",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/how-to/withdraw-eth-to-l1.html",
+        "destination": "https://code.zksync.io/tutorials/how-to-withdraw-eth",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-cli/reference/zksync-cli-contract",
+        "destination": "/zksync-era/tooling/zksync-cli/reference/zksync-cli-contract",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/circuits/log-sorter",
+        "destination": "/zksync-protocol/circuits/circuits/log-sorter",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/running-a-zk-chain/custom-base-tokens",
+        "destination": "/zk-stack/running/custom-base-tokens",
+        "type": 301
+      },
+      {
+        "source": "/zksync-era/unique-features/zksync-sso/features",
+        "destination": "/zksync-era/unique-features/zksync-sso/architecture",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/account-abstraction",
+        "destination": "/zksync-protocol/account-abstraction",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/foundry/migration-guide/testing",
+        "destination": "/zksync-era/tooling/foundry/migration-guide/testing",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/how-to/deposit-eth-to-l2.html",
+        "destination": "https://code.zksync.io/tutorials/how-to-deposit-eth",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/tooling-guides/the-graph.html",
+        "destination": "https://code.zksync.io/tutorials/guide-the-graph",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/circuits/ecrecover",
+        "destination": "/zksync-protocol/circuits/circuits/ecrecover",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat/guides/getting-started",
+        "destination": "/zksync-era/tooling/hardhat/guides/getting-started",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/how-to/verify-contracts.html",
+        "destination": "https://code.zksync.io/tutorials/how-to-verify-contracts",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/tooling-guides/subquery.html",
+        "destination": "https://code.zksync.io/tutorials/guide-subquery",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-cli/reference/zksync-cli-bridge",
+        "destination": "/zksync-era/tooling/zksync-cli/reference/zksync-cli-bridge",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-cli/reference/zksync-cli-create",
+        "destination": "/zksync-era/tooling/zksync-cli/reference/zksync-cli-create",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-cli/reference/zksync-cli-wallet",
+        "destination": "/zksync-era/tooling/zksync-cli/reference/zksync-cli-wallet",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/toolchain/index",
+        "destination": "/zksync-protocol/compiler/toolchain/index",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/toolchain/vyper",
+        "destination": "/zksync-protocol/compiler/toolchain/vyper",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/how-to/deploy-contract.html",
+        "destination": "https://code.zksync.io/tutorials/how-to-deploy-contract",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/toolchain/llvm",
+        "destination": "/zksync-protocol/compiler/toolchain/llvm",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/circuits/main-vm",
+        "destination": "/zksync-protocol/circuits/circuits/main-vm",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/circuits/sorting",
+        "destination": "/zksync-protocol/circuits/circuits/sorting",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/toolchain/solidity",
+        "destination": "https://matter-labs.github.io/era-compiler-solidity/latest/",
+        "type": 301
+      },
+      {
+        "source": "/build/start-coding/quick-start/erc20-token",
+        "destination": "/zksync-era/guides/quick-start/erc20-token",
+        "type": 301
+      },
+      {
+        "source": "/build/start-coding/zksync-101/hello-zksync",
+        "destination": "/zksync-era/guides/zksync-101/hello-zksync",
         "type": 301
       },
       {
@@ -188,13 +827,43 @@
         "type": 301
       },
       {
-        "source": "/build/tooling/hardhat/getting-started",
-        "destination": "/zksync-era/tooling/hardhat/guides/getting-started",
+        "source": "/build/tutorials/how-to/test-contracts.html",
+        "destination": "https://code.zksync.io/tutorials/how-to-test-contracts",
         "type": 301
       },
       {
-        "source": "/build/tooling/hardhat/migrating-to-zksync",
-        "destination": "/zksync-era/tooling/hardhat/guides/migrating-to-zksync",
+        "source": "/build/tutorials/tooling-guides/dipdup.html",
+        "destination": "https://code.zksync.io/tutorials/guide-dipdup-indexer",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/tooling-guides/web3js.html",
+        "destination": "https://code.zksync.io/tutorials/guide-web3js",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/specification",
+        "destination": "/zksync-protocol/compiler/specification",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/running-a-zk-chain/configurations",
+        "destination": "/zk-stack/running/configurations",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/bridging-assets",
+        "destination": "/zksync-protocol/rollup/bridging-assets",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/zksync-overview",
+        "destination": "/build/developer-reference/protocol",
+        "type": 301
+      },
+      {
+        "source": "/build/test-and-debug/getting-started.html",
+        "destination": "/build/test-and-debug",
         "type": 301
       },
       {
@@ -203,23 +872,213 @@
         "type": 301
       },
       {
-        "source": "/build/tooling/hardhat/hardhat-:plugin",
-        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin",
+        "source": "/build/tooling/hardhat/migrating-to-zksync",
+        "destination": "/zksync-era/tooling/hardhat/guides/migrating-to-zksync",
         "type": 301
       },
       {
-        "source": "/docs/tools/hardhat/hardhat-:plugin.@(html|md)",
-        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin",
+        "source": "/build/tutorials/tooling-guides/wagmi.html",
+        "destination": "https://code.zksync.io/tutorials/guide-wagmi",
         "type": 301
       },
       {
-        "source": "/build/tooling/hardhat/plugins/hardhat-:plugin",
-        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin",
+        "source": "/build/zksync-cli/reading-transaction-data",
+        "destination": "/zksync-era/tooling/zksync-cli/reading-transaction-data",
         "type": 301
       },
       {
-        "source": "/build/tooling/hardhat/plugins/hardhat-:plugin.@(html|md)",
-        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin",
+        "source": "/build/zksync-cli/reference/zksync-cli-dev",
+        "destination": "/zksync-era/tooling/zksync-cli/reference/zksync-cli-dev",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/boojum-gadgets",
+        "destination": "/zksync-protocol/circuits/boojum-gadgets",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/circuits/index",
+        "destination": "/zksync-protocol/circuits/circuits/index",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/zk-terminology",
+        "destination": "/zksync-protocol/circuits/zk-terminology",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/transaction-filtering",
+        "destination": "/zk-stack/customizations/transaction-filtering",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/zksync-evm/bootloader",
+        "destination": "/zksync-protocol/contracts/bootloader",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/zksync-airbender/deepdive",
+        "destination": "/zk-stack/components/zksync-airbender/deepdive",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/zksync-airbender/overview",
+        "destination": "/zk-stack/components/zksync-airbender",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/best-practices",
+        "destination": "/zksync-era/security-best-practices",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/zksync-cli/troubleshooting",
+        "destination": "/build/zksync-cli/troubleshooting",
+        "type": 301
+      },
+      {
+        "source": "/build/tutorials/tooling-guides/viem.html",
+        "destination": "https://code.zksync.io/tutorials/guide-viem",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-cli/interact-with-contracts",
+        "destination": "/zksync-era/tooling/zksync-cli/interact-with-contracts",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/portal-wallet-bridge",
+        "destination": "/zk-stack/components/portal",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/prover/overview.html",
+        "destination": "/zk-stack/components/prover",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/extending/transaction-filtering",
+        "destination": "/zk-stack/customizations/transaction-filtering",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/toolchain/vyper",
+        "destination": "https://matter-labs.github.io/era-compiler-vyper/latest/",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/era-contracts",
+        "destination": "/zksync-protocol/contracts",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/intro-rollups",
+        "destination": "/build/developer-reference/protocol",
+        "type": 301
+      },
+      {
+        "source": "/build/resources/upgrades-and-migrations",
+        "destination": "/zksync-protocol/upgrades-and-migrations",
+        "type": 301
+      },
+      {
+        "source": "/build/start-coding/zksync-101/upgrading",
+        "destination": "/zksync-era/guides/zksync-101/upgrading",
+        "type": 301
+      },
+      {
+        "source": "/build/test-and-debug/era-test-node.html",
+        "destination": "/build/test-and-debug/in-memory-node",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-sso/supported-environments",
+        "destination": "/zksync-era/unique-features/zksync-sso/supported-environments",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/concepts/transaction-lifecycle",
+        "destination": "/zksync-protocol/rollup/transaction-lifecycle",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/rollups.html",
+        "destination": "/build/developer-reference/intro-rollups",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler/toolchain",
+        "destination": "/zksync-protocol/compiler/toolchain",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/running-a-zk-chain/production",
+        "destination": "/zk-stack/running/production",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/running-a-zk-chain/quickstart",
+        "destination": "/zk-stack/running/quickstart",
+        "type": 301
+      },
+      {
+        "source": "/build/start-coding/zksync-101/testing",
+        "destination": "/zksync-era/guides/zksync-101/testing",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/foundry/getting-started",
+        "destination": "/zksync-era/tooling/foundry/getting-started",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/foundry/migration-guide",
+        "destination": "/zksync-era/tooling/foundry/migration-guide",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat/getting-started",
+        "destination": "/zksync-era/tooling/hardhat/guides/getting-started",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/concepts/account-abstraction",
+        "destination": "/zksync-protocol/account-abstraction",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/concepts/l1_l2_communication",
+        "destination": "/zksync-protocol/rollup/l1_l2_communication",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/zksync-block-explorers",
+        "destination": "/zksync-era/tooling/block-explorers",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/sequencer-server",
+        "destination": "/zk-stack/components/server",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/running-a-zk-chain/validium",
+        "destination": "/zk-stack/running/validium",
+        "type": 301
+      },
+      {
+        "source": "/build/contributing-to-documentation",
+        "destination": "/zksync-era/contributing/documentation",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/fee-model",
+        "destination": "/zksync-protocol/rollup/fee-model",
+        "type": 301
+      },
+      {
+        "source": "/build/test-and-debug/in-memory-node",
+        "destination": "/zksync-era/tooling/local-setup/anvil-zksync-node",
         "type": 301
       },
       {
@@ -228,33 +1087,58 @@
         "type": 301
       },
       {
-        "source": "/ecosystem:ext(.html|.md|)*",
-        "destination": "/zksync-era/ecosystem",
+        "source": "/build/tooling/nft-marketplaces.html",
+        "destination": "/zksync-era/ecosystem/nft-marketplaces",
         "type": 301
       },
       {
-        "source": "/ecosystem/:path*",
-        "destination": "/new-destination",
+        "source": "/build/zksync-cli/configuring-chains",
+        "destination": "/zksync-era/tooling/zksync-cli/configuring-chains",
         "type": 301
       },
       {
-        "source": "/build/tooling/bridges.html",
-        "destination": "/zksync-era/ecosystem/bridges",
+        "source": "/zk-stack/components/prover/circuits",
+        "destination": "/zksync-protocol/circuits/circuits",
         "type": 301
       },
       {
-        "source": "/build/tooling/cross-chain.html",
-        "destination": "/zksync-era/ecosystem/cross-chain",
+        "source": "/zk-stack/components/smart-contracts",
+        "destination": "/zksync-protocol/contracts",
         "type": 301
       },
       {
-        "source": "/build/tooling/data-indexers.html",
-        "destination": "/zksync-era/ecosystem/data-indexers",
+        "source": "/zk-stack/running-a-zk-chain/proving",
+        "destination": "/zk-stack/running/proving",
         "type": 301
       },
       {
-        "source": "/build/tooling/monitoring.html",
-        "destination": "/zksync-era/ecosystem/monitoring",
+        "source": "/zk-stack/running/custom-base-tokens",
+        "destination": "/zk-stack/customizations/custom-base-tokens",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/protocol",
+        "destination": "/zksync-protocol/rollup",
+        "type": 301
+      },
+      {
+        "source": "/build/resources/community-channels",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/build/resources/contribution-track",
+        "destination": "/zksync-era/contributing",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/foundry/installation",
+        "destination": "/zksync-era/tooling/foundry/installation",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat/installation",
+        "destination": "/zksync-era/tooling/hardhat/installation",
         "type": 301
       },
       {
@@ -263,8 +1147,198 @@
         "type": 301
       },
       {
+        "source": "/build/zksync-cli/creating-projects",
+        "destination": "/zksync-era/tooling/zksync-cli/creating-projects",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/shared-bridges",
+        "destination": "/zksync-protocol/contracts/l1-contracts/shared-bridges",
+        "type": 301
+      },
+      {
         "source": "/build/tooling/node-providers.html",
         "destination": "/zksync-era/ecosystem/node-providers",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-sso/transaction-fees",
+        "destination": "/zksync-era/unique-features/zksync-sso/faq",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-sso/transaction-flow",
+        "destination": "/zksync-era/unique-features/zksync-sso/transaction-flow",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/extending/node-framework",
+        "destination": "/zk-stack/customizations/configurations",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/zksyncos/overview",
+        "destination": "/zksync-protocol/zksyncos",
+        "type": 301
+      },
+      {
+        "source": "/build/api-reference/ethereum-rpc",
+        "destination": "/zksync-protocol/api/ethereum-rpc",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/era-vm",
+        "destination": "/zksync-protocol/vm",
+        "type": 301
+      },
+      {
+        "source": "/build/resources/audit-bug-bounty",
+        "destination": "/zksync-protocol/security/bug-bounty",
+        "type": 301
+      },
+      {
+        "source": "/build/resources/withdrawal-delay",
+        "destination": "/zksync-protocol/security/withdrawal-delay",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/data-indexers.html",
+        "destination": "/zksync-era/ecosystem/data-indexers",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-cli/troubleshooting",
+        "destination": "/zksync-era/tooling/zksync-cli/troubleshooting",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-sso/getting-started",
+        "destination": "/zksync-era/unique-features/zksync-sso/getting-started",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/concepts/zk-chains.html",
+        "destination": "/zk-stack/concepts/zk-chains",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/running-a-zk-chain/raas",
+        "destination": "/zk-stack/running/raas",
+        "type": 301
+      },
+      {
+        "source": "/build/api-reference/conventions",
+        "destination": "/zksync-protocol/api/conventions",
+        "type": 301
+      },
+      {
+        "source": "/build/api-reference/pub-sub-rpc",
+        "destination": "/zksync-protocol/api/pub-sub-rpc",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-cli/running-a-node",
+        "destination": "/zksync-era/tooling/zksync-cli/running-a-node",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-cli/wallet-actions",
+        "destination": "/zksync-era/tooling/zksync-cli/wallet-actions",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/concepts/fee-mechanism",
+        "destination": "/zksync-protocol/rollup/fee-model",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/running/configurations",
+        "destination": "/zk-stack/customizations/configurations",
+        "type": 301
+      },
+      {
+        "source": "/build/start-coding/quick-start",
+        "destination": "/zksync-era/guides/quick-start",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/cross-chain.html",
+        "destination": "/zksync-era/ecosystem/cross-chain",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/foundry/overview",
+        "destination": "/zksync-era/tooling/foundry/overview",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/zksync-evm",
+        "destination": "/zksync-protocol/vm",
+        "type": 301
+      },
+      {
+        "source": "/build/api-reference/debug-rpc",
+        "destination": "/zksync-protocol/api/debug-rpc",
+        "type": 301
+      },
+      {
+        "source": "/build/start-coding/zksync-101",
+        "destination": "/zksync-era/guides/zksync-101",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/monitoring.html",
+        "destination": "/zksync-era/ecosystem/monitoring",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-sso/architecture",
+        "destination": "/zksync-era/unique-features/zksync-sso/architecture",
+        "type": 301
+      },
+      {
+        "source": "/build/test-and-debug/foundry",
+        "destination": "/zksync-era/guides/testing/testing-with-foundry",
+        "type": 301
+      },
+      {
+        "source": "/build/test-and-debug/hardhat",
+        "destination": "/zksync-era/guides/testing/testing-with-hardhat",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat/guides",
+        "destination": "/zksync-era/tooling/hardhat/guides/getting-started",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/components/compiler",
+        "destination": "/zksync-protocol/compiler",
+        "type": 301
+      },
+      {
+        "source": "/build/api-reference/zks-rpc",
+        "destination": "/zksync-protocol/api/zks-rpc",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-sso/interfaces",
+        "destination": "/zksync-era/unique-features/zksync-sso/sessions",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/concepts/zk-chains",
+        "destination": "/zk-stack/zk-chains",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/running-a-zk-chain",
+        "destination": "/zk-stack/running",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/bridges.html",
+        "destination": "/zksync-era/ecosystem/bridges",
         "type": 301
       },
       {
@@ -278,8 +1352,53 @@
         "type": 301
       },
       {
-        "source": "/build/tooling/nft-marketplaces.html",
-        "destination": "/zksync-era/ecosystem/nft-marketplaces",
+        "source": "/build/zksync-cli/reference",
+        "destination": "/zksync-era/tooling/zksync-cli/reference",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/concepts/finality",
+        "destination": "/zksync-protocol/rollup/finality",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference",
+        "destination": "/zksync-protocol",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-cli/bridging",
+        "destination": "/zksync-era/tooling/zksync-cli/bridging",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-sso/features",
+        "destination": "/zksync-era/unique-features/zksync-sso/architecture",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/running/validium",
+        "destination": "/zk-stack/customizations/validium",
+        "type": 301
+      },
+      {
+        "source": "/build/resources/glossary",
+        "destination": "/zksync-protocol/glossary",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/zksync-cli",
+        "destination": "/build/zksync-cli",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/concepts/blocks",
+        "destination": "/zksync-protocol/rollup/blocks",
+        "type": 301
+      },
+      {
+        "source": "/build/connect-to-zksync",
+        "destination": "/zksync-era/environment/zksync-era",
         "type": 301
       },
       {
@@ -288,188 +1407,98 @@
         "type": 301
       },
       {
-        "source": "/build/tooling/block-explorer/*.@(html|md)",
+        "source": "/build/tooling/foundry",
+        "destination": "/zksync-era/tooling/foundry",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat",
+        "destination": "/zksync-era/tooling/hardhat",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-sso/faqs",
+        "destination": "/zksync-era/unique-features/zksync-sso/faqs",
+        "type": 301
+      },
+      {
+        "source": "/build/test-and-debug",
+        "destination": "/zksync-era/tooling/local-setup",
+        "type": 301
+      },
+      {
+        "source": "/build/api-reference",
+        "destination": "/zksync-protocol/api",
+        "type": 301
+      },
+      {
+        "source": "/infra/introduction",
+        "destination": "/zksync-node",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/extending",
+        "destination": "/zk-stack/customizations/configurations",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/concepts",
+        "destination": "/zksync-protocol/rollup",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-cli",
+        "destination": "/zksync-era/tooling/zksync-cli",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-sso",
+        "destination": "/zksync-era/unique-features/zksync-sso",
+        "type": 301
+      },
+      {
+        "source": "/build/resources",
+        "destination": "/build/resources/glossary",
+        "type": 301
+      },
+      {
+        "source": "/build/api.html",
+        "destination": "/build/api-reference",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling",
         "destination": "/build/tooling/zksync-block-explorers",
         "type": 301
       },
       {
-        "source": "/build/tooling/hardhat/*.@(html|md)",
-        "destination": "/build/tooling/hardhat",
+        "source": "/zksync-node",
+        "destination": "/zksync-era/tooling/external-node",
         "type": 301
       },
       {
-        "source": "/build/tooling/foundry/*.@(html|md)",
-        "destination": "/build/tooling/foundry/overview",
+        "source": "/zksync-era",
+        "destination": "/zksync-network",
         "type": 301
       },
       {
-        "source": "/build/test-and-debug/getting-started.html",
-        "destination": "/build/test-and-debug",
+        "source": "/build",
+        "destination": "/zksync-era",
         "type": 301
       },
       {
-        "source": "/build/test-and-debug/era-test-node.html",
-        "destination": "/build/test-and-debug/in-memory-node",
+        "source": "/zk-stack/concepts/data-availability/validiums:ext(.html|.md|)*",
+        "destination": "/zk-stack/running/validium",
         "type": 301
       },
       {
-        "source": "/build/test-and-debug/:page.@(html|md)",
-        "destination": "/build/test-and-debug/:page",
+        "source": "/build/tooling/hardhat/plugins/hardhat-:plugin.@(html|md)",
+        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin",
         "type": 301
       },
       {
-        "source": "/build/sdks/js{,/**}",
-        "destination": "https://sdk.zksync.io/js/ethers/v6/getting-started",
-        "type": 301
-      },
-      {
-        "source": "/zk-stack/concepts/zk-chains.html",
-        "destination": "/zk-stack/concepts/zk-chains",
-        "type": 301
-      },
-      {
-        "source": "/build/developer-reference/rollups.html",
-        "destination": "/build/developer-reference/intro-rollups",
-        "type": 301
-      },
-      {
-        "source": "/build/developer-reference/differences-with-ethereum.html",
-        "destination": "/build/developer-reference/ethereum-differences/evm-instructions",
-        "type": 301
-      },
-      {
-        "source": "/build/developer-reference/account-abstraction.html",
-        "destination": "/build/developer-reference/account-abstraction",
-        "type": 301
-      },
-      {
-        "source": "/build/developer-reference/system-contracts.html",
-        "destination": "/build/developer-reference/era-contracts/l1-contracts",
-        "type": 301
-      },
-      {
-        "source": "/build/developer-reference/*.@(html|md)",
-        "destination": "/build/developer-reference",
-        "type": 301
-      },
-      {
-        "source": "/build/support/:post*.@(html|md)",
-        "destination": "/build/resources/:post",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/smart-contract-development/paymasters/custom-paymaster-tutorial.html",
-        "destination": "https://code.zksync.io/tutorials/erc20-paymaster",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/dapp-development/frontend-quickstart-paymaster.html",
-        "destination": "https://code.zksync.io/tutorials/frontend-paymaster",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/dapp-development/gated-nft-paymaster-tutorial.html",
-        "destination": "https://code.zksync.io/tutorials/dapp-nft-paymaster",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/how-to/deposit-eth-to-l2.html",
-        "destination": "https://code.zksync.io/tutorials/how-to-deposit-eth",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/smart-contract-development/account-abstraction/daily-spend-limit.html",
-        "destination": "https://code.zksync.io/tutorials/daily-spend-limit-account",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/smart-contract-development/paymasters/gasless.html",
-        "destination": "https://code.zksync.io/tutorials/dapp-nft-paymaster",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/smart-contract-development/cross-chain-tutorial.html",
-        "destination": "https://code.zksync.io/tutorials/cross-chain-governance",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/how-to/verify-contracts.html",
-        "destination": "https://code.zksync.io/tutorials/how-to-verify-contracts",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/how-to/withdraw-eth-to-l1.html",
-        "destination": "https://code.zksync.io/tutorials/how-to-withdraw-eth",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/how-to/deposit-erc-20-to-l2.html",
-        "destination": "https://code.zksync.io/tutorials/how-to-deposit-erc20",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/how-to/withdraw-erc-20-to-l1.html",
-        "destination": "https://code.zksync.io/tutorials/how-to-withdraw-erc20",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/how-to/send-message-l2-l1.html",
-        "destination": "https://code.zksync.io/tutorials/how-to-send-l2-l1-message",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/how-to/deploy-contract.html",
-        "destination": "https://code.zksync.io/tutorials/how-to-deploy-contract",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/how-to/test-contracts.html",
-        "destination": "https://code.zksync.io/tutorials/how-to-test-contracts",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/tooling-guides/wallet-connect.html",
-        "destination": "https://code.zksync.io/tutorials/guide-walletconnect",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/tooling-guides/wagmi.html",
-        "destination": "https://code.zksync.io/tutorials/guide-wagmi",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/tooling-guides/viem.html",
-        "destination": "https://code.zksync.io/tutorials/guide-viem",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/tooling-guides/web3js.html",
-        "destination": "https://code.zksync.io/tutorials/guide-web3js",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/tooling-guides/the-graph.html",
-        "destination": "https://code.zksync.io/tutorials/guide-the-graph",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/tooling-guides/subquery.html",
-        "destination": "https://code.zksync.io/tutorials/guide-subquery",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials/tooling-guides/dipdup.html",
-        "destination": "https://code.zksync.io/tutorials/guide-dipdup-indexer",
-        "type": 301
-      },
-      {
-        "source": "/build/tutorials{,/**}",
-        "destination": "https://code.zksync.io/tutorials",
-        "type": 301
-      },
-      {
-        "source": "/build/**/*.@(html|md)",
-        "destination": "/build",
+        "source": "https://sdk.zksync.io/js/zksync-ethers/:path*.@(html|md)",
+        "destination": "https://docs.zksync.io/zksync-era/sdk/js/ethers/api/v6/:path",
         "type": 301
       },
       {
@@ -478,8 +1507,13 @@
         "type": 301
       },
       {
-        "source": "/zk-stack/concepts/data-availability/validiums:ext(.html|.md|)*",
-        "destination": "/zk-stack/running/validium",
+        "source": "/build/tooling/hardhat/plugins/hardhat-:plugin",
+        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin",
+        "type": 301
+      },
+      {
+        "source": "/docs/tools/hardhat/hardhat-:plugin.@(html|md)",
+        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin",
         "type": 301
       },
       {
@@ -493,18 +1527,88 @@
         "type": 301
       },
       {
-        "source": "/zk-stack/components/prover/overview.html",
-        "destination": "/zk-stack/components/prover",
+        "source": "/build/tooling/block-explorer/*.@(html|md)",
+        "destination": "/build/tooling/zksync-block-explorers",
         "type": 301
       },
       {
-        "source": "/zk-stack/:path*.@(html|md)",
-        "destination": "/zk-stack/:path",
+        "source": "https://sdk.zksync.io/js/:path*.@(html|md)",
+        "destination": "https://docs.zksync.io/zksync-era/sdk/js/ethers/api/v5/:path",
         "type": 301
       },
       {
-        "source": "/infra/introduction",
-        "destination": "/zksync-node",
+        "source": "/sdks/js/zksync-ethers/:path*.@(html|md)",
+        "destination": "https://docs.zksync.io/zksync-era/sdk/js/ethers/v6/:path",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/*.@(html|md)",
+        "destination": "/build/developer-reference",
+        "type": 301
+      },
+      {
+        "source": "/sdk/js/zksync-ethers/:path*.@(html|md)",
+        "destination": "https://docs.zksync.io/zksync-era/sdk/js/ethers/api/v6/:path",
+        "type": 301
+      },
+      {
+        "source": "/build/test-and-debug/:page.@(html|md)",
+        "destination": "/build/test-and-debug/:page",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat/hardhat-:plugin",
+        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/foundry/*.@(html|md)",
+        "destination": "/build/tooling/foundry/overview",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat/*.@(html|md)",
+        "destination": "/build/tooling/hardhat",
+        "type": 301
+      },
+      {
+        "source": "/build/support/:post*.@(html|md)",
+        "destination": "/build/resources/:post",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/zksync-cli/**",
+        "destination": "/build/zksync-cli/reference",
+        "type": 301
+      },
+      {
+        "source": "https://sdk.zksync.io/:path*",
+        "destination": "https://docs.zksync.io/zksync-era/sdk/:path",
+        "type": 301
+      },
+      {
+        "source": "/ecosystem:ext(.html|.md|)*",
+        "destination": "/zksync-era/ecosystem",
+        "type": 301
+      },
+      {
+        "source": "/sdks/js/:path*.@(html|md)",
+        "destination": "https://docs.zksync.io/zksync-era/sdk/js/ethers/v5/:path",
+        "type": 301
+      },
+      {
+        "source": "/build/quick-start/:path*",
+        "destination": "/build/start-coding/quick-start/:path",
+        "type": 301
+      },
+      {
+        "source": "/sdk/js/:path*.@(html|md)",
+        "destination": "https://docs.zksync.io/zksync-era/sdk/js/ethers/api/v5/:path",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-101/:path*",
+        "destination": "/build/start-coding/zksync-101/:path",
         "type": 301
       },
       {
@@ -513,13 +1617,23 @@
         "type": 301
       },
       {
-        "source": "zksync-era/unique-features/zksync-sso/supported-environments",
-        "destination": "/zksync-era/unique-features/zksync-sso/faqs",
+        "source": "/build/**/*.@(html|md)",
+        "destination": "/build",
         "type": 301
       },
       {
-        "source": "zksync-era/unique-features/zksync-sso/account-modules",
-        "destination": "/zksync-era/unique-features/zksync-sso/accounts",
+        "source": "/build/tutorials{,/**}",
+        "destination": "https://code.zksync.io/tutorials",
+        "type": 301
+      },
+      {
+        "source": "/sdk:ext(.html|.md|)*",
+        "destination": "/zksync-era/sdk",
+        "type": 301
+      },
+      {
+        "source": "/build/sdks/js{,/**}",
+        "destination": "https://sdk.zksync.io/js/ethers/v6/getting-started",
         "type": 301
       },
       {
@@ -528,58 +1642,18 @@
         "type": 301
       },
       {
-        "source": "/zksync-era",
-        "destination": "/zksync-network",
+        "source": "/ecosystem/:path*",
+        "destination": "/new-destination",
         "type": 301
       },
       {
-        "source": "/zksync-protocol/zksyncos/overview",
-        "destination": "/zksync-protocol/zksyncos",
+        "source": "/sdks/:path*",
+        "destination": "https://docs.zksync.io/zksync-era/sdk/:path",
         "type": 301
       },
       {
-        "source": "/zk-stack/extending",
-        "destination": "/zk-stack/customizations/configurations",
-        "type": 301
-      },
-      {
-        "source": "/zk-stack/extending/node-framework",
-        "destination": "/zk-stack/customizations/configurations",
-        "type": 301
-      },
-      {
-        "source": "/zk-stack/running/configurations",
-        "destination": "/zk-stack/customizations/configurations",
-        "type": 301
-      },
-      {
-        "source": "/zk-stack/extending/transaction-filtering",
-        "destination": "/zk-stack/customizations/transaction-filtering",
-        "type": 301
-      },
-      {
-        "source": "/zk-stack/running/custom-base-tokens",
-        "destination": "/zk-stack/customizations/custom-base-tokens",
-        "type": 301
-      },
-      {
-        "source": "/zk-stack/running/validium",
-        "destination": "/zk-stack/customizations/validium",
-        "type": 301
-      },
-      {
-        "source": "/zk-stack/components/portal-wallet-bridge",
-        "destination": "/zk-stack/components/portal",
-        "type": 301
-      },
-      {
-        "source": "/zksync-protocol/zksync-airbender/overview",
-        "destination": "/zk-stack/components/zksync-airbender",
-        "type": 301
-      },
-      {
-        "source": "/zksync-protocol/zksync-airbender/deepdive",
-        "destination": "/zk-stack/components/zksync-airbender/deepdive",
+        "source": "/sdk/:path*",
+        "destination": "/zksync-era/sdk/:path",
         "type": 301
       }
     ]

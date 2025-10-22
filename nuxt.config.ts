@@ -1,6 +1,7 @@
-import redirects from './redirects';
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
+//
+// Note: Redirects are now managed in firebase.json instead of redirects.ts
+// This consolidates redirect management and ensures consistency across environments.
 export default defineNuxtConfig({
   extends: ['@matterlabs/docs-nuxt-template'],
   modules: ['nuxt-gtag', '@vite-pwa/nuxt'],
@@ -22,7 +23,6 @@ export default defineNuxtConfig({
       app: 'docs',
     },
   },
-  routeRules: { ...redirects },
   experimental: {
     defaults: {
       nuxtLink: {
