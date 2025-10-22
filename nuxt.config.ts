@@ -1,5 +1,3 @@
-import redirects from './redirects';
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['@matterlabs/docs-nuxt-template'],
@@ -22,7 +20,6 @@ export default defineNuxtConfig({
       app: 'docs',
     },
   },
-  routeRules: { ...redirects },
   experimental: {
     defaults: {
       nuxtLink: {

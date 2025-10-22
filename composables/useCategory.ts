@@ -3,19 +3,14 @@ const defaultCategory = 'ZKsync Docs';
 // Order by most specific to least specific.
 // e.g. `/js/ethers/api/v5` before `/js/ethers`
 const categories = [
-  ['/build/start-coding/quick-start', 'Quick Start ZKsync'],
-  ['/build/start-coding/zksync-101', 'ZKsync 101 Tutorial'],
-  ['/build/zksync-cli', 'ZKsync CLI'],
-  ['/build/tooling/hardhat', 'Hardhat'],
-  ['/build/tooling/foundry', 'Foundry'],
-  ['/build/developer-reference', 'Developer Reference'],
-  ['/build/api-reference', 'ZKsync API'],
-  ['/build/resources', 'Resources'],
-  ['/build', 'Build'],
-  ['/zk-stack/running-a-zk-chain', 'Running a ZK Chain'],
+  ['/zksync-network/guides/quick-start', 'Quick Start ZKsync'],
+  ['/zksync-network/guides/zksync-101', 'ZKsync 101 Tutorial'],
+  ['/zksync-network/tooling/zksync-cli', 'ZKsync CLI'],
+  ['/zksync-network/tooling/hardhat', 'Hardhat'],
+  ['/zksync-network/tooling/foundry/overview', 'Foundry'],
+  ['/zk-stack/running/quickstart', 'Running a ZK Chain'],
   ['/zk-stack', 'ZK Stack'],
-  ['/zksync-node', 'ZKsync Node'],
-  ['/ecosystem', 'Ecosystem'],
+  ['/zksync-network/ecosystem', 'Ecosystem'],
 ] as const;
 
 /**
