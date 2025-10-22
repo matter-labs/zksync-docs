@@ -77,7 +77,7 @@
     ],
     "redirects": [
       {
-        "source": "/zk-stack/prividium",
+        "source": "/zk-stack/prividium{,/}",
         "destination": "/zk-stack/prividium/overview",
         "type": 301
       },
