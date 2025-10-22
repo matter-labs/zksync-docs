@@ -1,0 +1,1787 @@
+# Firebase Routes That No Longer Exist
+# These routes were removed from firebase.json because their destinations do not exist in the content folder
+# Total routes: 162
+# Generated: 2025-10-22T14:30:56.684Z
+
+
+## Route 1
+Source: /zk-stack/components/compiler/specification/instructions/extensions/verbatim
+Destination: /zksync-protocol/compiler/specification/instructions/extensions/verbatim
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/extensions/verbatim",
+        "destination": "/zksync-protocol/compiler/specification/instructions/extensions/verbatim", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 2
+Source: /zk-stack/components/compiler/specification/instructions/extensions/index
+Destination: /zksync-protocol/compiler/specification/instructions/extensions/index
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/extensions/index",
+        "destination": "/zksync-protocol/compiler/specification/instructions/extensions/index", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 3
+Source: /zk-stack/components/compiler/specification/instructions/evm/environment
+Destination: /zksync-protocol/compiler/specification/instructions/evm/environment
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/environment",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/environment", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 4
+Source: /zk-stack/components/compiler/specification/instructions/extensions/call
+Destination: /zksync-protocol/compiler/specification/instructions/extensions/call
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/extensions/call",
+        "destination": "/zksync-protocol/compiler/specification/instructions/extensions/call", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 5
+Source: /zk-stack/components/compiler/specification/instructions/evm/arithmetic
+Destination: /zksync-protocol/compiler/specification/instructions/evm/arithmetic
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/arithmetic",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/arithmetic", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 6
+Source: /zk-stack/components/compiler/specification/instructions/evm/bitwise
+Destination: /zksync-protocol/compiler/specification/instructions/evm/bitwise
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/bitwise",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/bitwise", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 7
+Source: /zk-stack/components/compiler/specification/instructions/evm/logging
+Destination: /zksync-protocol/compiler/specification/instructions/evm/logging
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/logging",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/logging", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 8
+Source: /zk-stack/components/compiler/specification/instructions/evm/logical
+Destination: /zksync-protocol/compiler/specification/instructions/evm/logical
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/logical",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/logical", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 9
+Source: /zk-stack/components/compiler/specification/instructions/evm/create
+Destination: /zksync-protocol/compiler/specification/instructions/evm/create
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/create",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/create", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 10
+Source: /zk-stack/components/compiler/specification/instructions/evm/memory
+Destination: /zksync-protocol/compiler/specification/instructions/evm/memory
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/memory",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/memory", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 11
+Source: /zk-stack/components/compiler/specification/instructions/evm/return
+Destination: /zksync-protocol/compiler/specification/instructions/evm/return
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/return",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/return", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 12
+Source: /zk-stack/components/compiler/specification/instructions/extensions
+Destination: /zksync-protocol/compiler/specification/instructions/extensions
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/extensions",
+        "destination": "/zksync-protocol/compiler/specification/instructions/extensions", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 13
+Source: /zk-stack/components/compiler/specification/instructions/evm/block
+Destination: /zksync-protocol/compiler/specification/instructions/evm/block
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/block",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/block", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 14
+Source: /zk-stack/components/compiler/specification/instructions/evm/index
+Destination: /zksync-protocol/compiler/specification/instructions/evm/index
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/index",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/index", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 15
+Source: /zk-stack/components/compiler/specification/instructions/evm/stack
+Destination: /zksync-protocol/compiler/specification/instructions/evm/stack
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/stack",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/stack", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 16
+Source: /zk-stack/components/compiler/specification/instructions/evm/call
+Destination: /zksync-protocol/compiler/specification/instructions/evm/call
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/call",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/call", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 17
+Source: /zk-stack/components/compiler/specification/instructions/evm/sha3
+Destination: /zksync-protocol/compiler/specification/instructions/evm/sha3
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/evm/sha3",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm/sha3", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 18
+Source: /build/developer-reference/era-contracts/l1-ecosystem-contracts
+Destination: /zksync-protocol/contracts/l1-contracts//l1-ecosystem-contracts
+```json
+{
+        "source": "/build/developer-reference/era-contracts/l1-ecosystem-contracts",
+        "destination": "/zksync-protocol/contracts/l1-contracts//l1-ecosystem-contracts", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 19
+Source: /zk-stack/components/compiler/specification/exception-handling
+Destination: /zksync-protocol/compiler/specification/exception-handling
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/exception-handling",
+        "destination": "/zksync-protocol/compiler/specification/exception-handling", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 20
+Source: /zk-stack/components/compiler/specification/instructions/evmla
+Destination: /zksync-protocol/compiler/specification/instructions/evmla
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/evmla",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evmla", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 21
+Source: /zk-stack/components/compiler/specification/instructions/index
+Destination: /zksync-protocol/compiler/specification/instructions/index
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/index",
+        "destination": "/zksync-protocol/compiler/specification/instructions/index", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 22
+Source: /build/contributing-to-documentation/documentation-styleguide
+Destination: /zksync-era/contributing/documentation/documentation-styleguide
+```json
+{
+        "source": "/build/contributing-to-documentation/documentation-styleguide",
+        "destination": "/zksync-era/contributing/documentation/documentation-styleguide", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 23
+Source: /build/contributing-to-documentation/contribution-guidelines
+Destination: /zksync-era/contributing/documentation/contribution-guidelines
+```json
+{
+        "source": "/build/contributing-to-documentation/contribution-guidelines",
+        "destination": "/zksync-era/contributing/documentation/contribution-guidelines", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 24
+Source: /zk-stack/components/compiler/specification/evmla-translator
+Destination: /zksync-protocol/compiler/specification/evmla-translator
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/evmla-translator",
+        "destination": "/zksync-protocol/compiler/specification/evmla-translator", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 25
+Source: /zk-stack/components/compiler/specification/instructions/evm
+Destination: /zksync-protocol/compiler/specification/instructions/evm
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/evm",
+        "destination": "/zksync-protocol/compiler/specification/instructions/evm", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 26
+Source: /zk-stack/components/compiler/specification/instructions/yul
+Destination: /zksync-protocol/compiler/specification/instructions/yul
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions/yul",
+        "destination": "/zksync-protocol/compiler/specification/instructions/yul", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 27
+Source: /zk-stack/components/compiler/specification/system-contracts
+Destination: /zksync-protocol/compiler/specification/system-contracts
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/system-contracts",
+        "destination": "/zksync-protocol/compiler/specification/system-contracts", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 28
+Source: zksync-era/unique-features/zksync-sso/supported-environments
+Destination: /zksync-era/unique-features/zksync-sso/faqs
+```json
+{
+        "source": "zksync-era/unique-features/zksync-sso/supported-environments",
+        "destination": "/zksync-era/unique-features/zksync-sso/faqs", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 29
+Source: /zk-stack/components/compiler/specification/code-separation
+Destination: /zksync-protocol/compiler/specification/code-separation
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/code-separation",
+        "destination": "/zksync-protocol/compiler/specification/code-separation", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 30
+Source: /build/developer-reference/differences-with-ethereum.html
+Destination: /build/developer-reference/ethereum-differences/evm-instructions
+```json
+{
+        "source": "/build/developer-reference/differences-with-ethereum.html",
+        "destination": "/build/developer-reference/ethereum-differences/evm-instructions", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 31
+Source: /zk-stack/components/compiler/specification/binary-layout
+Destination: /zksync-protocol/compiler/specification/binary-layout
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/binary-layout",
+        "destination": "/zksync-protocol/compiler/specification/binary-layout", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 32
+Source: /zk-stack/components/compiler/specification/instructions
+Destination: /zksync-protocol/compiler/specification/instructions
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/instructions",
+        "destination": "/zksync-protocol/compiler/specification/instructions", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 33
+Source: /build/developer-reference/addresses/zk-chain-addresses
+Destination: /zk-stack/zk-chain-addresses
+```json
+{
+        "source": "/build/developer-reference/addresses/zk-chain-addresses",
+        "destination": "/zk-stack/zk-chain-addresses", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 34
+Source: /build/start-coding/quick-start/paymasters-introduction
+Destination: /zksync-era/guides/quick-start/paymasters-introduction
+```json
+{
+        "source": "/build/start-coding/quick-start/paymasters-introduction",
+        "destination": "/zksync-era/guides/quick-start/paymasters-introduction", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 35
+Source: /zksync-era/unique-features/zksync-sso/transaction-fees
+Destination: /zksync-era/unique-features/zksync-sso/faq
+```json
+{
+        "source": "/zksync-era/unique-features/zksync-sso/transaction-fees",
+        "destination": "/zksync-era/unique-features/zksync-sso/faq", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 36
+Source: zksync-era/unique-features/zksync-sso/account-modules
+Destination: /zksync-era/unique-features/zksync-sso/accounts
+```json
+{
+        "source": "zksync-era/unique-features/zksync-sso/account-modules",
+        "destination": "/zksync-era/unique-features/zksync-sso/accounts", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 37
+Source: /build/zksync-cli/reference/zksync-cli-config-chains
+Destination: /zksync-era/tooling/zksync-cli/reference/zksync-cli-config-chains
+```json
+{
+        "source": "/build/zksync-cli/reference/zksync-cli-config-chains",
+        "destination": "/zksync-era/tooling/zksync-cli/reference/zksync-cli-config-chains", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 38
+Source: /build/developer-reference/account-abstraction.html
+Destination: /build/developer-reference/account-abstraction
+```json
+{
+        "source": "/build/developer-reference/account-abstraction.html",
+        "destination": "/build/developer-reference/account-abstraction", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 39
+Source: /build/tooling/foundry/migration-guide/compilation
+Destination: /zksync-era/tooling/foundry/migration-guide/compilation
+```json
+{
+        "source": "/build/tooling/foundry/migration-guide/compilation",
+        "destination": "/zksync-era/tooling/foundry/migration-guide/compilation", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 40
+Source: /build/zksync-cli/reference/zksync-cli-transaction
+Destination: /zksync-era/tooling/zksync-cli/reference/zksync-cli-transaction
+```json
+{
+        "source": "/build/zksync-cli/reference/zksync-cli-transaction",
+        "destination": "/zksync-era/tooling/zksync-cli/reference/zksync-cli-transaction", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 41
+Source: /build/tooling/foundry/migration-guide/deployment
+Destination: /zksync-era/tooling/foundry/migration-guide/deployment
+```json
+{
+        "source": "/build/tooling/foundry/migration-guide/deployment",
+        "destination": "/zksync-era/tooling/foundry/migration-guide/deployment", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 42
+Source: /build/tooling/hardhat/guides/compiling-libraries
+Destination: /zksync-era/tooling/hardhat/guides/compiling-libraries
+```json
+{
+        "source": "/build/tooling/hardhat/guides/compiling-libraries",
+        "destination": "/zksync-era/tooling/hardhat/guides/compiling-libraries", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 43
+Source: /build/tooling/hardhat/guides/migrating-to-zksync
+Destination: /zksync-era/tooling/hardhat/guides/migrating-to-zksync
+```json
+{
+        "source": "/build/tooling/hardhat/guides/migrating-to-zksync",
+        "destination": "/zksync-era/tooling/hardhat/guides/migrating-to-zksync", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 44
+Source: /zk-stack/components/compiler/specification/index
+Destination: /zksync-protocol/compiler/specification/index
+```json
+{
+        "source": "/zk-stack/components/compiler/specification/index",
+        "destination": "/zksync-protocol/compiler/specification/index", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 45
+Source: /zksync-era/unique-features/zksync-sso/interfaces
+Destination: /zksync-era/unique-features/zksync-sso/sessions
+```json
+{
+        "source": "/zksync-era/unique-features/zksync-sso/interfaces",
+        "destination": "/zksync-era/unique-features/zksync-sso/sessions", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 46
+Source: /build/developer-reference/system-contracts.html
+Destination: /build/developer-reference/era-contracts/l1-contracts
+```json
+{
+        "source": "/build/developer-reference/system-contracts.html",
+        "destination": "/build/developer-reference/era-contracts/l1-contracts", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 47
+Source: /zk-stack/components/compiler/toolchain/solidity
+Destination: /zksync-protocol/compiler/toolchain/solidity
+```json
+{
+        "source": "/zk-stack/components/compiler/toolchain/solidity",
+        "destination": "/zksync-protocol/compiler/toolchain/solidity", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 48
+Source: /build/start-coding/zksync-101/contract-factory
+Destination: /zksync-era/guides/zksync-101/contract-factory
+```json
+{
+        "source": "/build/start-coding/zksync-101/contract-factory",
+        "destination": "/zksync-era/guides/zksync-101/contract-factory", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 49
+Source: /build/tooling/foundry/migration-guide/overview
+Destination: /zksync-era/tooling/foundry/migration-guide/overview
+```json
+{
+        "source": "/build/tooling/foundry/migration-guide/overview",
+        "destination": "/zksync-era/tooling/foundry/migration-guide/overview", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 50
+Source: /build/zksync-cli/reference/zksync-cli-contract
+Destination: /zksync-era/tooling/zksync-cli/reference/zksync-cli-contract
+```json
+{
+        "source": "/build/zksync-cli/reference/zksync-cli-contract",
+        "destination": "/zksync-era/tooling/zksync-cli/reference/zksync-cli-contract", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 51
+Source: /zk-stack/running-a-zk-chain/custom-base-tokens
+Destination: /zk-stack/running/custom-base-tokens
+```json
+{
+        "source": "/zk-stack/running-a-zk-chain/custom-base-tokens",
+        "destination": "/zk-stack/running/custom-base-tokens", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 52
+Source: /zksync-era/unique-features/zksync-sso/features
+Destination: /zksync-era/unique-features/zksync-sso/architecture
+```json
+{
+        "source": "/zksync-era/unique-features/zksync-sso/features",
+        "destination": "/zksync-era/unique-features/zksync-sso/architecture", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 53
+Source: /build/tooling/foundry/migration-guide/testing
+Destination: /zksync-era/tooling/foundry/migration-guide/testing
+```json
+{
+        "source": "/build/tooling/foundry/migration-guide/testing",
+        "destination": "/zksync-era/tooling/foundry/migration-guide/testing", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 54
+Source: /build/tooling/hardhat/guides/getting-started
+Destination: /zksync-era/tooling/hardhat/guides/getting-started
+```json
+{
+        "source": "/build/tooling/hardhat/guides/getting-started",
+        "destination": "/zksync-era/tooling/hardhat/guides/getting-started", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 55
+Source: /build/zksync-cli/reference/zksync-cli-bridge
+Destination: /zksync-era/tooling/zksync-cli/reference/zksync-cli-bridge
+```json
+{
+        "source": "/build/zksync-cli/reference/zksync-cli-bridge",
+        "destination": "/zksync-era/tooling/zksync-cli/reference/zksync-cli-bridge", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 56
+Source: /build/zksync-cli/reference/zksync-cli-create
+Destination: /zksync-era/tooling/zksync-cli/reference/zksync-cli-create
+```json
+{
+        "source": "/build/zksync-cli/reference/zksync-cli-create",
+        "destination": "/zksync-era/tooling/zksync-cli/reference/zksync-cli-create", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 57
+Source: /build/zksync-cli/reference/zksync-cli-wallet
+Destination: /zksync-era/tooling/zksync-cli/reference/zksync-cli-wallet
+```json
+{
+        "source": "/build/zksync-cli/reference/zksync-cli-wallet",
+        "destination": "/zksync-era/tooling/zksync-cli/reference/zksync-cli-wallet", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 58
+Source: /zk-stack/components/compiler/toolchain/index
+Destination: /zksync-protocol/compiler/toolchain/index
+```json
+{
+        "source": "/zk-stack/components/compiler/toolchain/index",
+        "destination": "/zksync-protocol/compiler/toolchain/index", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 59
+Source: /zk-stack/components/compiler/toolchain/vyper
+Destination: /zksync-protocol/compiler/toolchain/vyper
+```json
+{
+        "source": "/zk-stack/components/compiler/toolchain/vyper",
+        "destination": "/zksync-protocol/compiler/toolchain/vyper", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 60
+Source: /build/start-coding/quick-start/erc20-token
+Destination: /zksync-era/guides/quick-start/erc20-token
+```json
+{
+        "source": "/build/start-coding/quick-start/erc20-token",
+        "destination": "/zksync-era/guides/quick-start/erc20-token", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 61
+Source: /build/start-coding/zksync-101/hello-zksync
+Destination: /zksync-era/guides/zksync-101/hello-zksync
+```json
+{
+        "source": "/build/start-coding/zksync-101/hello-zksync",
+        "destination": "/zksync-era/guides/zksync-101/hello-zksync", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 62
+Source: /build/tooling/hardhat/getting-started.html
+Destination: /zksync-era/tooling/hardhat
+```json
+{
+        "source": "/build/tooling/hardhat/getting-started.html",
+        "destination": "/zksync-era/tooling/hardhat", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 63
+Source: /zk-stack/components/compiler/specification
+Destination: /zksync-protocol/compiler/specification
+```json
+{
+        "source": "/zk-stack/components/compiler/specification",
+        "destination": "/zksync-protocol/compiler/specification", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 64
+Source: /zk-stack/running-a-zk-chain/configurations
+Destination: /zk-stack/running/configurations
+```json
+{
+        "source": "/zk-stack/running-a-zk-chain/configurations",
+        "destination": "/zk-stack/running/configurations", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 65
+Source: /build/developer-reference/zksync-overview
+Destination: /build/developer-reference/protocol
+```json
+{
+        "source": "/build/developer-reference/zksync-overview",
+        "destination": "/build/developer-reference/protocol", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 66
+Source: /build/test-and-debug/getting-started.html
+Destination: /build/test-and-debug
+```json
+{
+        "source": "/build/test-and-debug/getting-started.html",
+        "destination": "/build/test-and-debug", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 67
+Source: /build/tooling/hardhat/compiling-libraries
+Destination: /zksync-era/tooling/hardhat/guides/compiling-libraries
+```json
+{
+        "source": "/build/tooling/hardhat/compiling-libraries",
+        "destination": "/zksync-era/tooling/hardhat/guides/compiling-libraries", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 68
+Source: /build/tooling/hardhat/migrating-to-zksync
+Destination: /zksync-era/tooling/hardhat/guides/migrating-to-zksync
+```json
+{
+        "source": "/build/tooling/hardhat/migrating-to-zksync",
+        "destination": "/zksync-era/tooling/hardhat/guides/migrating-to-zksync", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 69
+Source: /build/zksync-cli/reading-transaction-data
+Destination: /zksync-era/tooling/zksync-cli/reading-transaction-data
+```json
+{
+        "source": "/build/zksync-cli/reading-transaction-data",
+        "destination": "/zksync-era/tooling/zksync-cli/reading-transaction-data", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 70
+Source: /build/zksync-cli/reference/zksync-cli-dev
+Destination: /zksync-era/tooling/zksync-cli/reference/zksync-cli-dev
+```json
+{
+        "source": "/build/zksync-cli/reference/zksync-cli-dev",
+        "destination": "/zksync-era/tooling/zksync-cli/reference/zksync-cli-dev", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 71
+Source: /zk-stack/components/prover/circuits/index
+Destination: /zksync-protocol/circuits/circuits/index
+```json
+{
+        "source": "/zk-stack/components/prover/circuits/index",
+        "destination": "/zksync-protocol/circuits/circuits/index", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 72
+Source: /build/developer-reference/best-practices
+Destination: /zksync-era/security-best-practices
+```json
+{
+        "source": "/build/developer-reference/best-practices",
+        "destination": "/zksync-era/security-best-practices", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 73
+Source: /build/tooling/zksync-cli/troubleshooting
+Destination: /build/zksync-cli/troubleshooting
+```json
+{
+        "source": "/build/tooling/zksync-cli/troubleshooting",
+        "destination": "/build/zksync-cli/troubleshooting", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 74
+Source: /build/zksync-cli/interact-with-contracts
+Destination: /zksync-era/tooling/zksync-cli/interact-with-contracts
+```json
+{
+        "source": "/build/zksync-cli/interact-with-contracts",
+        "destination": "/zksync-era/tooling/zksync-cli/interact-with-contracts", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 75
+Source: /zk-stack/components/prover/overview.html
+Destination: /zk-stack/components/prover
+```json
+{
+        "source": "/zk-stack/components/prover/overview.html",
+        "destination": "/zk-stack/components/prover", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 76
+Source: /build/developer-reference/intro-rollups
+Destination: /build/developer-reference/protocol
+```json
+{
+        "source": "/build/developer-reference/intro-rollups",
+        "destination": "/build/developer-reference/protocol", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 77
+Source: /build/start-coding/zksync-101/upgrading
+Destination: /zksync-era/guides/zksync-101/upgrading
+```json
+{
+        "source": "/build/start-coding/zksync-101/upgrading",
+        "destination": "/zksync-era/guides/zksync-101/upgrading", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 78
+Source: /build/test-and-debug/era-test-node.html
+Destination: /build/test-and-debug/in-memory-node
+```json
+{
+        "source": "/build/test-and-debug/era-test-node.html",
+        "destination": "/build/test-and-debug/in-memory-node", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 79
+Source: /build/zksync-sso/supported-environments
+Destination: /zksync-era/unique-features/zksync-sso/supported-environments
+```json
+{
+        "source": "/build/zksync-sso/supported-environments",
+        "destination": "/zksync-era/unique-features/zksync-sso/supported-environments", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 80
+Source: /build/developer-reference/rollups.html
+Destination: /build/developer-reference/intro-rollups
+```json
+{
+        "source": "/build/developer-reference/rollups.html",
+        "destination": "/build/developer-reference/intro-rollups", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 81
+Source: /zk-stack/running-a-zk-chain/production
+Destination: /zk-stack/running/production
+```json
+{
+        "source": "/zk-stack/running-a-zk-chain/production",
+        "destination": "/zk-stack/running/production", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 82
+Source: /build/start-coding/zksync-101/testing
+Destination: /zksync-era/guides/zksync-101/testing
+```json
+{
+        "source": "/build/start-coding/zksync-101/testing",
+        "destination": "/zksync-era/guides/zksync-101/testing", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 83
+Source: /build/tooling/foundry/getting-started
+Destination: /zksync-era/tooling/foundry/getting-started
+```json
+{
+        "source": "/build/tooling/foundry/getting-started",
+        "destination": "/zksync-era/tooling/foundry/getting-started", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 84
+Source: /build/tooling/foundry/migration-guide
+Destination: /zksync-era/tooling/foundry/migration-guide
+```json
+{
+        "source": "/build/tooling/foundry/migration-guide",
+        "destination": "/zksync-era/tooling/foundry/migration-guide", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 85
+Source: /build/tooling/hardhat/getting-started
+Destination: /zksync-era/tooling/hardhat/guides/getting-started
+```json
+{
+        "source": "/build/tooling/hardhat/getting-started",
+        "destination": "/zksync-era/tooling/hardhat/guides/getting-started", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 86
+Source: /build/tooling/zksync-block-explorers
+Destination: /zksync-era/tooling/block-explorers
+```json
+{
+        "source": "/build/tooling/zksync-block-explorers",
+        "destination": "/zksync-era/tooling/block-explorers", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 87
+Source: /zk-stack/running-a-zk-chain/validium
+Destination: /zk-stack/running/validium
+```json
+{
+        "source": "/zk-stack/running-a-zk-chain/validium",
+        "destination": "/zk-stack/running/validium", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 88
+Source: /build/contributing-to-documentation
+Destination: /zksync-era/contributing/documentation
+```json
+{
+        "source": "/build/contributing-to-documentation",
+        "destination": "/zksync-era/contributing/documentation", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 89
+Source: /build/test-and-debug/in-memory-node
+Destination: /zksync-era/tooling/local-setup/anvil-zksync-node
+```json
+{
+        "source": "/build/test-and-debug/in-memory-node",
+        "destination": "/zksync-era/tooling/local-setup/anvil-zksync-node", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 90
+Source: /build/tooling/hardhat/other-plugins
+Destination: /zksync-era/tooling/hardhat/plugins/other-plugins
+```json
+{
+        "source": "/build/tooling/hardhat/other-plugins",
+        "destination": "/zksync-era/tooling/hardhat/plugins/other-plugins", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 91
+Source: /build/tooling/nft-marketplaces.html
+Destination: /zksync-era/ecosystem/nft-marketplaces
+```json
+{
+        "source": "/build/tooling/nft-marketplaces.html",
+        "destination": "/zksync-era/ecosystem/nft-marketplaces", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 92
+Source: /build/zksync-cli/configuring-chains
+Destination: /zksync-era/tooling/zksync-cli/configuring-chains
+```json
+{
+        "source": "/build/zksync-cli/configuring-chains",
+        "destination": "/zksync-era/tooling/zksync-cli/configuring-chains", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 93
+Source: /build/resources/community-channels
+Destination: /
+```json
+{
+        "source": "/build/resources/community-channels",
+        "destination": "/", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 94
+Source: /build/resources/contribution-track
+Destination: /zksync-era/contributing
+```json
+{
+        "source": "/build/resources/contribution-track",
+        "destination": "/zksync-era/contributing", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 95
+Source: /build/tooling/foundry/installation
+Destination: /zksync-era/tooling/foundry/installation
+```json
+{
+        "source": "/build/tooling/foundry/installation",
+        "destination": "/zksync-era/tooling/foundry/installation", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 96
+Source: /build/tooling/hardhat/installation
+Destination: /zksync-era/tooling/hardhat/installation
+```json
+{
+        "source": "/build/tooling/hardhat/installation",
+        "destination": "/zksync-era/tooling/hardhat/installation", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 97
+Source: /build/tooling/network-faucets.html
+Destination: /zksync-era/ecosystem/network-faucets
+```json
+{
+        "source": "/build/tooling/network-faucets.html",
+        "destination": "/zksync-era/ecosystem/network-faucets", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 98
+Source: /build/zksync-cli/creating-projects
+Destination: /zksync-era/tooling/zksync-cli/creating-projects
+```json
+{
+        "source": "/build/zksync-cli/creating-projects",
+        "destination": "/zksync-era/tooling/zksync-cli/creating-projects", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 99
+Source: /build/tooling/node-providers.html
+Destination: /zksync-era/ecosystem/node-providers
+```json
+{
+        "source": "/build/tooling/node-providers.html",
+        "destination": "/zksync-era/ecosystem/node-providers", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 100
+Source: /build/zksync-sso/transaction-fees
+Destination: /zksync-era/unique-features/zksync-sso/faq
+```json
+{
+        "source": "/build/zksync-sso/transaction-fees",
+        "destination": "/zksync-era/unique-features/zksync-sso/faq", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 101
+Source: /build/zksync-sso/transaction-flow
+Destination: /zksync-era/unique-features/zksync-sso/transaction-flow
+```json
+{
+        "source": "/build/zksync-sso/transaction-flow",
+        "destination": "/zksync-era/unique-features/zksync-sso/transaction-flow", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 102
+Source: /build/tooling/data-indexers.html
+Destination: /zksync-era/ecosystem/data-indexers
+```json
+{
+        "source": "/build/tooling/data-indexers.html",
+        "destination": "/zksync-era/ecosystem/data-indexers", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 103
+Source: /build/zksync-cli/troubleshooting
+Destination: /zksync-era/tooling/zksync-cli/troubleshooting
+```json
+{
+        "source": "/build/zksync-cli/troubleshooting",
+        "destination": "/zksync-era/tooling/zksync-cli/troubleshooting", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 104
+Source: /build/zksync-sso/getting-started
+Destination: /zksync-era/unique-features/zksync-sso/getting-started
+```json
+{
+        "source": "/build/zksync-sso/getting-started",
+        "destination": "/zksync-era/unique-features/zksync-sso/getting-started", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 105
+Source: /zk-stack/concepts/zk-chains.html
+Destination: /zk-stack/concepts/zk-chains
+```json
+{
+        "source": "/zk-stack/concepts/zk-chains.html",
+        "destination": "/zk-stack/concepts/zk-chains", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 106
+Source: /build/zksync-cli/running-a-node
+Destination: /zksync-era/tooling/zksync-cli/running-a-node
+```json
+{
+        "source": "/build/zksync-cli/running-a-node",
+        "destination": "/zksync-era/tooling/zksync-cli/running-a-node", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 107
+Source: /build/zksync-cli/wallet-actions
+Destination: /zksync-era/tooling/zksync-cli/wallet-actions
+```json
+{
+        "source": "/build/zksync-cli/wallet-actions",
+        "destination": "/zksync-era/tooling/zksync-cli/wallet-actions", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 108
+Source: /build/start-coding/quick-start
+Destination: /zksync-era/guides/quick-start
+```json
+{
+        "source": "/build/start-coding/quick-start",
+        "destination": "/zksync-era/guides/quick-start", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 109
+Source: /build/tooling/cross-chain.html
+Destination: /zksync-era/ecosystem/cross-chain
+```json
+{
+        "source": "/build/tooling/cross-chain.html",
+        "destination": "/zksync-era/ecosystem/cross-chain", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 110
+Source: /build/tooling/foundry/overview
+Destination: /zksync-era/tooling/foundry/overview
+```json
+{
+        "source": "/build/tooling/foundry/overview",
+        "destination": "/zksync-era/tooling/foundry/overview", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 111
+Source: /build/start-coding/zksync-101
+Destination: /zksync-era/guides/zksync-101
+```json
+{
+        "source": "/build/start-coding/zksync-101",
+        "destination": "/zksync-era/guides/zksync-101", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 112
+Source: /build/tooling/monitoring.html
+Destination: /zksync-era/ecosystem/monitoring
+```json
+{
+        "source": "/build/tooling/monitoring.html",
+        "destination": "/zksync-era/ecosystem/monitoring", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 113
+Source: /build/zksync-sso/architecture
+Destination: /zksync-era/unique-features/zksync-sso/architecture
+```json
+{
+        "source": "/build/zksync-sso/architecture",
+        "destination": "/zksync-era/unique-features/zksync-sso/architecture", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 114
+Source: /build/test-and-debug/foundry
+Destination: /zksync-era/guides/testing/testing-with-foundry
+```json
+{
+        "source": "/build/test-and-debug/foundry",
+        "destination": "/zksync-era/guides/testing/testing-with-foundry", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 115
+Source: /build/test-and-debug/hardhat
+Destination: /zksync-era/guides/testing/testing-with-hardhat
+```json
+{
+        "source": "/build/test-and-debug/hardhat",
+        "destination": "/zksync-era/guides/testing/testing-with-hardhat", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 116
+Source: /build/tooling/hardhat/guides
+Destination: /zksync-era/tooling/hardhat/guides/getting-started
+```json
+{
+        "source": "/build/tooling/hardhat/guides",
+        "destination": "/zksync-era/tooling/hardhat/guides/getting-started", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 117
+Source: /build/zksync-sso/interfaces
+Destination: /zksync-era/unique-features/zksync-sso/sessions
+```json
+{
+        "source": "/build/zksync-sso/interfaces",
+        "destination": "/zksync-era/unique-features/zksync-sso/sessions", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 118
+Source: /build/tooling/bridges.html
+Destination: /zksync-era/ecosystem/bridges
+```json
+{
+        "source": "/build/tooling/bridges.html",
+        "destination": "/zksync-era/ecosystem/bridges", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 119
+Source: /build/tooling/oracles.html
+Destination: /zksync-era/ecosystem/oracles
+```json
+{
+        "source": "/build/tooling/oracles.html",
+        "destination": "/zksync-era/ecosystem/oracles", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 120
+Source: /build/tooling/wallets.html
+Destination: /zksync-era/ecosystem/wallets
+```json
+{
+        "source": "/build/tooling/wallets.html",
+        "destination": "/zksync-era/ecosystem/wallets", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 121
+Source: /build/zksync-cli/reference
+Destination: /zksync-era/tooling/zksync-cli/reference
+```json
+{
+        "source": "/build/zksync-cli/reference",
+        "destination": "/zksync-era/tooling/zksync-cli/reference", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 122
+Source: /build/zksync-cli/bridging
+Destination: /zksync-era/tooling/zksync-cli/bridging
+```json
+{
+        "source": "/build/zksync-cli/bridging",
+        "destination": "/zksync-era/tooling/zksync-cli/bridging", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 123
+Source: /build/zksync-sso/features
+Destination: /zksync-era/unique-features/zksync-sso/architecture
+```json
+{
+        "source": "/build/zksync-sso/features",
+        "destination": "/zksync-era/unique-features/zksync-sso/architecture", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 124
+Source: /build/tooling/zksync-cli
+Destination: /build/zksync-cli
+```json
+{
+        "source": "/build/tooling/zksync-cli",
+        "destination": "/build/zksync-cli", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 125
+Source: /build/connect-to-zksync
+Destination: /zksync-era/environment/zksync-era
+```json
+{
+        "source": "/build/connect-to-zksync",
+        "destination": "/zksync-era/environment/zksync-era", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 126
+Source: /build/tooling/ide.html
+Destination: /zksync-era/ecosystem/ide
+```json
+{
+        "source": "/build/tooling/ide.html",
+        "destination": "/zksync-era/ecosystem/ide", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 127
+Source: /build/tooling/foundry
+Destination: /zksync-era/tooling/foundry
+```json
+{
+        "source": "/build/tooling/foundry",
+        "destination": "/zksync-era/tooling/foundry", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 128
+Source: /build/tooling/hardhat
+Destination: /zksync-era/tooling/hardhat
+```json
+{
+        "source": "/build/tooling/hardhat",
+        "destination": "/zksync-era/tooling/hardhat", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 129
+Source: /build/zksync-sso/faqs
+Destination: /zksync-era/unique-features/zksync-sso/faqs
+```json
+{
+        "source": "/build/zksync-sso/faqs",
+        "destination": "/zksync-era/unique-features/zksync-sso/faqs", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 130
+Source: /build/test-and-debug
+Destination: /zksync-era/tooling/local-setup
+```json
+{
+        "source": "/build/test-and-debug",
+        "destination": "/zksync-era/tooling/local-setup", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 131
+Source: /infra/introduction
+Destination: /zksync-node
+```json
+{
+        "source": "/infra/introduction",
+        "destination": "/zksync-node", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 132
+Source: /build/zksync-cli
+Destination: /zksync-era/tooling/zksync-cli
+```json
+{
+        "source": "/build/zksync-cli",
+        "destination": "/zksync-era/tooling/zksync-cli", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 133
+Source: /build/zksync-sso
+Destination: /zksync-era/unique-features/zksync-sso
+```json
+{
+        "source": "/build/zksync-sso",
+        "destination": "/zksync-era/unique-features/zksync-sso", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 134
+Source: /build/resources
+Destination: /build/resources/glossary
+```json
+{
+        "source": "/build/resources",
+        "destination": "/build/resources/glossary", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 135
+Source: /build/api.html
+Destination: /build/api-reference
+```json
+{
+        "source": "/build/api.html",
+        "destination": "/build/api-reference", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 136
+Source: /build/tooling
+Destination: /build/tooling/zksync-block-explorers
+```json
+{
+        "source": "/build/tooling",
+        "destination": "/build/tooling/zksync-block-explorers", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 137
+Source: /zksync-node
+Destination: /zksync-era/tooling/external-node
+```json
+{
+        "source": "/zksync-node",
+        "destination": "/zksync-era/tooling/external-node", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 138
+Source: /build
+Destination: /zksync-era
+```json
+{
+        "source": "/build",
+        "destination": "/zksync-era", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 139
+Source: /zk-stack/concepts/data-availability/validiums:ext(.html|.md|)*
+Destination: /zk-stack/running/validium
+```json
+{
+        "source": "/zk-stack/concepts/data-availability/validiums:ext(.html|.md|)*",
+        "destination": "/zk-stack/running/validium", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 140
+Source: /build/tooling/hardhat/plugins/hardhat-:plugin.@(html|md)
+Destination: /zksync-era/tooling/hardhat/plugins/hardhat-:plugin
+```json
+{
+        "source": "/build/tooling/hardhat/plugins/hardhat-:plugin.@(html|md)",
+        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 141
+Source: /zk-stack/concepts/data-availability:ext(.html|.md|)*
+Destination: /zk-stack/running/validium
+```json
+{
+        "source": "/zk-stack/concepts/data-availability:ext(.html|.md|)*",
+        "destination": "/zk-stack/running/validium", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 142
+Source: /build/tooling/hardhat/plugins/hardhat-:plugin
+Destination: /zksync-era/tooling/hardhat/plugins/hardhat-:plugin
+```json
+{
+        "source": "/build/tooling/hardhat/plugins/hardhat-:plugin",
+        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 143
+Source: /docs/tools/hardhat/hardhat-:plugin.@(html|md)
+Destination: /zksync-era/tooling/hardhat/plugins/hardhat-:plugin
+```json
+{
+        "source": "/docs/tools/hardhat/hardhat-:plugin.@(html|md)",
+        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 144
+Source: /zk-stack/concepts/validiums:ext(.html|.md|)*
+Destination: /zk-stack/running/validium
+```json
+{
+        "source": "/zk-stack/concepts/validiums:ext(.html|.md|)*",
+        "destination": "/zk-stack/running/validium", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 145
+Source: /zk-stack/components/zkEVM/:path*.@(html|md)
+Destination: /zk-stack/components/zksync-evm/:path
+```json
+{
+        "source": "/zk-stack/components/zkEVM/:path*.@(html|md)",
+        "destination": "/zk-stack/components/zksync-evm/:path", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 146
+Source: /build/tooling/block-explorer/*.@(html|md)
+Destination: /build/tooling/zksync-block-explorers
+```json
+{
+        "source": "/build/tooling/block-explorer/*.@(html|md)",
+        "destination": "/build/tooling/zksync-block-explorers", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 147
+Source: /build/developer-reference/*.@(html|md)
+Destination: /build/developer-reference
+```json
+{
+        "source": "/build/developer-reference/*.@(html|md)",
+        "destination": "/build/developer-reference", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 148
+Source: /build/test-and-debug/:page.@(html|md)
+Destination: /build/test-and-debug/:page
+```json
+{
+        "source": "/build/test-and-debug/:page.@(html|md)",
+        "destination": "/build/test-and-debug/:page", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 149
+Source: /build/tooling/hardhat/hardhat-:plugin
+Destination: /zksync-era/tooling/hardhat/plugins/hardhat-:plugin
+```json
+{
+        "source": "/build/tooling/hardhat/hardhat-:plugin",
+        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 150
+Source: /build/tooling/foundry/*.@(html|md)
+Destination: /build/tooling/foundry/overview
+```json
+{
+        "source": "/build/tooling/foundry/*.@(html|md)",
+        "destination": "/build/tooling/foundry/overview", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 151
+Source: /build/tooling/hardhat/*.@(html|md)
+Destination: /build/tooling/hardhat
+```json
+{
+        "source": "/build/tooling/hardhat/*.@(html|md)",
+        "destination": "/build/tooling/hardhat", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 152
+Source: /build/support/:post*.@(html|md)
+Destination: /build/resources/:post
+```json
+{
+        "source": "/build/support/:post*.@(html|md)",
+        "destination": "/build/resources/:post", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 153
+Source: /build/tooling/zksync-cli/**
+Destination: /build/zksync-cli/reference
+```json
+{
+        "source": "/build/tooling/zksync-cli/**",
+        "destination": "/build/zksync-cli/reference", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 154
+Source: /ecosystem:ext(.html|.md|)*
+Destination: /zksync-era/ecosystem
+```json
+{
+        "source": "/ecosystem:ext(.html|.md|)*",
+        "destination": "/zksync-era/ecosystem", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 155
+Source: /build/quick-start/:path*
+Destination: /build/start-coding/quick-start/:path
+```json
+{
+        "source": "/build/quick-start/:path*",
+        "destination": "/build/start-coding/quick-start/:path", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 156
+Source: /build/zksync-101/:path*
+Destination: /build/start-coding/zksync-101/:path
+```json
+{
+        "source": "/build/zksync-101/:path*",
+        "destination": "/build/start-coding/zksync-101/:path", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 157
+Source: /infra/:path*.@(html|md)
+Destination: /zksync-node/:path
+```json
+{
+        "source": "/infra/:path*.@(html|md)",
+        "destination": "/zksync-node/:path", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 158
+Source: /build/**/*.@(html|md)
+Destination: /build
+```json
+{
+        "source": "/build/**/*.@(html|md)",
+        "destination": "/build", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 159
+Source: /sdk:ext(.html|.md|)*
+Destination: /zksync-era/sdk
+```json
+{
+        "source": "/sdk:ext(.html|.md|)*",
+        "destination": "/zksync-era/sdk", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 160
+Source: /zksync-era/:path*
+Destination: /zksync-network/:path
+```json
+{
+        "source": "/zksync-era/:path*",
+        "destination": "/zksync-network/:path", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 161
+Source: /ecosystem/:path*
+Destination: /new-destination
+```json
+{
+        "source": "/ecosystem/:path*",
+        "destination": "/new-destination", // NO LONGER AVAILABLE
+        "type": 301
+      },
+```
+
+## Route 162
+Source: /sdk/:path*
+Destination: /zksync-era/sdk/:path
+```json
+{
+        "source": "/sdk/:path*",
+        "destination": "/zksync-era/sdk/:path", // NO LONGER AVAILABLE
+        "type": 301
+      }
+```

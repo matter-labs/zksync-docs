@@ -1,0 +1,46 @@
+{
+  "timestamp": "2025-10-22T14:30:56.684Z",
+  "summary": {
+    "total_redirects_analyzed": 1500,
+    "invalid_redirects_found": 162,
+    "valid_redirects_remaining": 1338,
+    "files_modified": ["firebase.json", "404-routes.txt (new)"]
+  },
+  "actions_taken": [
+    "Analyzed all redirect destinations in firebase.json against content folder structure",
+    "Identified 162 redirect destinations that no longer exist",
+    "Extracted invalid routes to 404-routes.txt for review",
+    "Cleaned firebase.json by removing all invalid redirect entries"
+  ],
+  "key_issues_found": {
+    "syntax_errors": [
+      {
+        "line": 261,
+        "issue": "Double slash in path",
+        "destination": "/zksync-protocol/contracts/l1-contracts//l1-ecosystem-contracts"
+      }
+    ],
+    "missing_leading_slashes": [
+      {
+        "line": 376,
+        "destination": "/zksync-era/unique-features/zksync-sso/faqs"
+      },
+      {
+        "line": 561,
+        "destination": "/zksync-era/unique-features/zksync-sso/accounts"
+      }
+    ],
+    "path_mismatches": {
+      "zksync_era_vs_zksync_network": "Many redirects point to /zksync-era/* but content is in /zksync-network/",
+      "compiler_paths": "Various compiler specification paths don't exist",
+      "zk_stack_paths": "Multiple /zk-stack/running/* and /zk-stack/customizations/* paths missing"
+    }
+  },
+  "recommendations": [
+    "Review 404-routes.txt to decide which routes need new destinations",
+    "Fix syntax error on line 261 (double slash)",
+    "Resolve zksync-era vs zksync-network naming mismatch",
+    "Update or create content for missing destinations",
+    "Consider adding proper 404 handling for removed routes"
+  ]
+}
