@@ -77,7 +77,7 @@ Your `anvil-zksync` node is accessible at **[http://127.0.0.1:8011](http://127.0
 You can use the Docker Desktop app to view logs from the running ZKsync Era node or use the `zksync-cli dev logs` command.
 
 When you are done running your `anvil-zksync` node, you can stop it with `zksync-cli dev stop`.
-You can learn more about managing a local node with ZKsync CLI on [Running a node](/build/zksync-cli/running-a-node).
+You can learn more about managing a local node with ZKsync CLI on [Running a node](/zksync-network/tooling/zksync-cli/running-a-node).
 
 ### Configuring a Hardhat Wallet
 
