@@ -77,278 +77,358 @@
     ],
     "redirects": [
       {
+        "source": "/zk-stack/prividium{,/}",
+        "destination": "/zk-stack/prividium/overview",
+        "type": 301
+      },
+      {
         "source": "/build/developer-reference/intro-rollups",
-        "destination": "/build/developer-reference/protocol",
+        "destination": "/zksync-protocol/rollup",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/protocol",
+        "destination": "/zksync-protocol",
         "type": 301
       },
       {
         "source": "/build/developer-reference/zksync-overview",
-        "destination": "/build/developer-reference/protocol",
+        "destination": "/zksync-protocol/rollup",
         "type": 301
       },
       {
         "source": "/sdk:ext(.html|.md|)*",
-        "destination": "/zksync-era/sdk",
+        "destination": "/zksync-network/sdk",
         "type": 301
       },
       {
         "source": "/sdk/:path*",
-        "destination": "/zksync-era/sdk/:path",
+        "destination": "/zksync-network/sdk/:path",
         "type": 301
       },
       {
         "source": "/sdk/:path*",
-        "destination": "https://docs.zksync.io/zksync-era/sdk/:path",
+        "destination": "https://docs.zksync.io/zksync-network/sdk/:path",
         "type": 301
       },
       {
         "source": "/sdks/:path*",
-        "destination": "https://docs.zksync.io/zksync-era/sdk/:path",
+        "destination": "https://docs.zksync.io/zksync-network/sdk/:path",
         "type": 301
       },
       {
         "source": "/sdks/js/:path*.@(html|md)",
-        "destination": "https://docs.zksync.io/zksync-era/sdk/js/ethers/v5/:path",
+        "destination": "https://docs.zksync.io/zksync-network/sdk/js/ethers/v5/:path",
         "type": 301
       },
       {
         "source": "/sdks/js/zksync-ethers/:path*.@(html|md)",
-        "destination": "https://docs.zksync.io/zksync-era/sdk/js/ethers/v6/:path",
+        "destination": "https://docs.zksync.io/zksync-network/sdk/js/ethers/v6/:path",
         "type": 301
       },
       {
         "source": "/sdk/js/:path*.@(html|md)",
-        "destination": "https://docs.zksync.io/zksync-era/sdk/js/ethers/api/v5/:path",
+        "destination": "https://docs.zksync.io/zksync-network/sdk/js/ethers/api/v5/:path",
         "type": 301
       },
       {
         "source": "/sdk/js/zksync-ethers/:path*.@(html|md)",
-        "destination": "https://docs.zksync.io/zksync-era/sdk/js/ethers/api/v6/:path",
+        "destination": "https://docs.zksync.io/zksync-network/sdk/js/ethers/api/v6/:path",
         "type": 301
       },
       {
         "source": "https://sdk.zksync.io/:path*",
-        "destination": "https://docs.zksync.io/zksync-era/sdk/:path",
+        "destination": "https://docs.zksync.io/zksync-network/sdk/:path",
         "type": 301
       },
       {
         "source": "https://sdk.zksync.io/js/:path*.@(html|md)",
-        "destination": "https://docs.zksync.io/zksync-era/sdk/js/ethers/api/v5/:path",
+        "destination": "https://docs.zksync.io/zksync-network/sdk/js/ethers/api/v5/:path",
         "type": 301
       },
       {
         "source": "https://sdk.zksync.io/js/zksync-ethers/:path*.@(html|md)",
-        "destination": "https://docs.zksync.io/zksync-era/sdk/js/ethers/api/v6/:path",
+        "destination": "https://docs.zksync.io/zksync-network/sdk/js/ethers/api/v6/:path",
         "type": 301
       },
       {
         "source": "/build/quick-start/:path*",
-        "destination": "/build/start-coding/quick-start/:path",
+        "destination": "/zksync-network/guides/quick-start/:path",
         "type": 301
       },
       {
         "source": "/build/zksync-101/:path*",
-        "destination": "/build/start-coding/zksync-101/:path",
+        "destination": "/zksync-network/guides/zksync-101/:path",
         "type": 301
       },
       {
-        "source": "/build/api.html",
+        "source": "/zksync-protocol/api",
         "destination": "/build/api-reference",
         "type": 301
       },
       {
+        "source": "/build/api-reference",
+        "destination": "/zksync-protocol/api",
+        "type": 301
+      },
+      {
         "source": "/build/tooling/zksync-cli",
-        "destination": "/build/zksync-cli",
+        "destination": "/zksync-network/tooling/zksync-cli",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-cli",
+        "destination": "/zksync-network/tooling/zksync-cli",
         "type": 301
       },
       {
         "source": "/build/tooling/zksync-cli/troubleshooting",
-        "destination": "/build/zksync-cli/troubleshooting",
+        "destination": "/zksync-network/tooling/zksync-cli/troubleshooting",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-cli/troubleshooting",
+        "destination": "/zksync-network/tooling/zksync-cli/troubleshooting",
         "type": 301
       },
       {
         "source": "/build/tooling/zksync-cli/**",
-        "destination": "/build/zksync-cli/reference",
+        "destination": "/zksync-network/tooling/zksync-cli/reference",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-cli/reference",
+        "destination": "/zksync-network/tooling/zksync-cli/reference",
         "type": 301
       },
       {
         "source": "/build/tooling/network-faucets.html",
-        "destination": "/zksync-era/ecosystem/network-faucets",
+        "destination": "/zksync-network/ecosystem/network-faucets",
+        "type": 301
+      },
+      {
+        "source": "/zksync-era/ecosystem/network-faucets",
+        "destination": "/zksync-network/ecosystem/network-faucets",
         "type": 301
       },
       {
         "source": "/build/tooling/hardhat/getting-started.html",
-        "destination": "/zksync-era/tooling/hardhat",
+        "destination": "/zksync-network/tooling/hardhat",
         "type": 301
       },
       {
         "source": "/build/tooling/hardhat/getting-started",
-        "destination": "/zksync-era/tooling/hardhat/guides/getting-started",
+        "destination": "/zksync-network/tooling/hardhat/guides/getting-started",
         "type": 301
       },
       {
         "source": "/build/tooling/hardhat/migrating-to-zksync",
-        "destination": "/zksync-era/tooling/hardhat/guides/migrating-to-zksync",
+        "destination": "/zksync-network/tooling/hardhat/guides/migrating-to-zksync",
         "type": 301
       },
       {
         "source": "/build/tooling/hardhat/compiling-libraries",
-        "destination": "/zksync-era/tooling/hardhat/guides/compiling-libraries",
+        "destination": "/zksync-network/tooling/hardhat/guides/compiling-libraries",
         "type": 301
       },
       {
         "source": "/build/tooling/hardhat/hardhat-:plugin",
-        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin",
+        "destination": "/zksync-network/tooling/hardhat/plugins/hardhat-:plugin",
         "type": 301
       },
       {
         "source": "/docs/tools/hardhat/hardhat-:plugin.@(html|md)",
-        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin",
+        "destination": "/zksync-network/tooling/hardhat/plugins/hardhat-:plugin",
         "type": 301
       },
       {
         "source": "/build/tooling/hardhat/plugins/hardhat-:plugin",
-        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin",
+        "destination": "/zksync-network/tooling/hardhat/plugins/hardhat-:plugin",
         "type": 301
       },
       {
         "source": "/build/tooling/hardhat/plugins/hardhat-:plugin.@(html|md)",
-        "destination": "/zksync-era/tooling/hardhat/plugins/hardhat-:plugin",
+        "destination": "/zksync-network/tooling/hardhat/plugins/hardhat-:plugin",
         "type": 301
       },
       {
         "source": "/build/tooling/hardhat/other-plugins",
-        "destination": "/zksync-era/tooling/hardhat/plugins/other-plugins",
+        "destination": "/zksync-network/tooling/hardhat/plugins/other-plugins",
         "type": 301
       },
       {
         "source": "/ecosystem:ext(.html|.md|)*",
-        "destination": "/zksync-era/ecosystem",
+        "destination": "/zksync-network/ecosystem",
         "type": 301
       },
       {
         "source": "/ecosystem/:path*",
-        "destination": "/new-destination",
+        "destination": "/zksync-network/ecosystem/:path*",
         "type": 301
       },
       {
         "source": "/build/tooling/bridges.html",
-        "destination": "/zksync-era/ecosystem/bridges",
+        "destination": "/zksync-network/ecosystem/bridges",
         "type": 301
       },
       {
         "source": "/build/tooling/cross-chain.html",
-        "destination": "/zksync-era/ecosystem/cross-chain",
+        "destination": "/zksync-network/ecosystem/cross-chain",
         "type": 301
       },
       {
         "source": "/build/tooling/data-indexers.html",
-        "destination": "/zksync-era/ecosystem/data-indexers",
+        "destination": "/zksync-network/ecosystem/data-indexers",
         "type": 301
       },
       {
         "source": "/build/tooling/monitoring.html",
-        "destination": "/zksync-era/ecosystem/monitoring",
+        "destination": "/zksync-network/ecosystem/monitoring",
         "type": 301
       },
       {
         "source": "/build/tooling/network-faucets.html",
-        "destination": "/zksync-era/ecosystem/network-faucets",
+        "destination": "/zksync-network/ecosystem/network-faucets",
         "type": 301
       },
       {
         "source": "/build/tooling/node-providers.html",
-        "destination": "/zksync-era/ecosystem/node-providers",
+        "destination": "/zksync-network/ecosystem/node-providers",
         "type": 301
       },
       {
         "source": "/build/tooling/oracles.html",
-        "destination": "/zksync-era/ecosystem/oracles",
+        "destination": "/zksync-network/ecosystem/oracles",
         "type": 301
       },
       {
         "source": "/build/tooling/wallets.html",
-        "destination": "/zksync-era/ecosystem/wallets",
+        "destination": "/zksync-network/ecosystem/wallets",
         "type": 301
       },
       {
         "source": "/build/tooling/nft-marketplaces.html",
-        "destination": "/zksync-era/ecosystem/nft-marketplaces",
+        "destination": "/zksync-network/ecosystem/nft-marketplaces",
         "type": 301
       },
       {
         "source": "/build/tooling/ide.html",
-        "destination": "/zksync-era/ecosystem/ide",
+        "destination": "/zksync-network/ecosystem/ide",
         "type": 301
       },
       {
         "source": "/build/tooling/block-explorer/*.@(html|md)",
-        "destination": "/build/tooling/zksync-block-explorers",
+        "destination": "/zksync-network/tooling/block-explorers",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/zksync-block-explorers",
+        "destination": "/zksync-network/tooling/block-explorers",
         "type": 301
       },
       {
         "source": "/build/tooling/hardhat/*.@(html|md)",
-        "destination": "/build/tooling/hardhat",
+        "destination": "/zksync-network/tooling/hardhat",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/hardhat",
+        "destination": "/zksync-network/tooling/hardhat",
         "type": 301
       },
       {
         "source": "/build/tooling/foundry/*.@(html|md)",
-        "destination": "/build/tooling/foundry/overview",
+        "destination": "/zksync-network/tooling/foundry/overview",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/foundry/overview",
+        "destination": "/zksync-network/tooling/foundry/overview",
         "type": 301
       },
       {
         "source": "/build/test-and-debug/getting-started.html",
-        "destination": "/build/test-and-debug",
+        "destination": "/zksync-network/tooling/local-setup",
+        "type": 301
+      },
+      {
+        "source": "/build/test-and-debug",
+        "destination": "/zksync-network/tooling/local-setup",
         "type": 301
       },
       {
         "source": "/build/test-and-debug/era-test-node.html",
-        "destination": "/build/test-and-debug/in-memory-node",
+        "destination": "/zksync-network/tooling/local-setup",
         "type": 301
       },
       {
         "source": "/build/test-and-debug/:page.@(html|md)",
-        "destination": "/build/test-and-debug/:page",
+        "destination": "/zksync-network/tooling/local-setup",
         "type": 301
       },
       {
         "source": "/build/sdks/js{,/**}",
-        "destination": "https://sdk.zksync.io/js/ethers/v6/getting-started",
+        "destination": "/zksync-network/sdk/js/ethers",
         "type": 301
       },
       {
         "source": "/zk-stack/concepts/zk-chains.html",
-        "destination": "/zk-stack/concepts/zk-chains",
+        "destination": "/zk-stack/zk-chains",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/concepts/zk-chains",
+        "destination": "/zk-stack/zk-chains",
         "type": 301
       },
       {
         "source": "/build/developer-reference/rollups.html",
-        "destination": "/build/developer-reference/intro-rollups",
+        "destination": "/zksync-protocol/rollup",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/intro-rollups",
+        "destination": "/zksync-protocol/rollup",
         "type": 301
       },
       {
         "source": "/build/developer-reference/differences-with-ethereum.html",
-        "destination": "/build/developer-reference/ethereum-differences/evm-instructions",
+        "destination": "/zksync-protocol/differences/evm-instructions",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/ethereum-differences/evm-instructions",
+        "destination": "/zksync-protocol/differences/evm-instructions",
         "type": 301
       },
       {
         "source": "/build/developer-reference/account-abstraction.html",
-        "destination": "/build/developer-reference/account-abstraction",
+        "destination": "/zksync-protocol/account-abstraction",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/account-abstraction",
+        "destination": "//zksync-protocol/account-abstraction",
         "type": 301
       },
       {
         "source": "/build/developer-reference/system-contracts.html",
-        "destination": "/build/developer-reference/era-contracts/l1-contracts",
+        "destination": "/zksync-protocol/contracts/system-contracts",
+        "type": 301
+      },
+      {
+        "source": "/build/developer-reference/era-contracts/l1-contracts",
+        "destination": "/zksync-protocol/contracts/l1-contracts",
         "type": 301
       },
       {
         "source": "/build/developer-reference/*.@(html|md)",
-        "destination": "/build/developer-reference",
+        "destination": "/zksync-protocol",
         "type": 301
       },
       {
-        "source": "/build/support/:post*.@(html|md)",
-        "destination": "/build/resources/:post",
+        "source": "/build/developer-reference",
+        "destination": "/zksync-protocol",
         "type": 301
       },
       {
@@ -463,7 +543,7 @@
       },
       {
         "source": "/build/**/*.@(html|md)",
-        "destination": "/build",
+        "destination": "/zksync-network",
         "type": 301
       },
       {
@@ -502,18 +582,23 @@
         "type": 301
       },
       {
+        "source": "/infra/introduction",
+        "destination": "/zksync-network/tooling/external-node",
+        "type": 301
+      },
+      {
         "source": "/infra/:path*.@(html|md)",
-        "destination": "/zksync-node/:path",
+        "destination": "/zksync-network/tooling/external-node",
         "type": 301
       },
       {
         "source": "zksync-era/unique-features/zksync-sso/supported-environments",
-        "destination": "/zksync-era/unique-features/zksync-sso/faqs",
+        "destination": "/zksync-network/unique-features/zksync-sso/faqs",
         "type": 301
       },
       {
         "source": "zksync-era/unique-features/zksync-sso/account-modules",
-        "destination": "/zksync-era/unique-features/zksync-sso/accounts",
+        "destination": "/zksync-network/unique-features/zksync-sso/accounts",
         "type": 301
       },
       {
