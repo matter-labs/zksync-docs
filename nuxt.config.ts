@@ -1,12 +1,14 @@
-import redirects from './redirects';
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
+//
+// Note: Redirects are now managed in firebase.json instead of redirects.ts
+// This consolidates redirect management and ensures consistency across environments.
 export default defineNuxtConfig({
   extends: ['@matterlabs/docs-nuxt-template'],
   modules: ['nuxt-gtag', '@vite-pwa/nuxt'],
   site: {
     name: 'ZKsync Docs',
     url: process.env.NUXT_SITE_ENV === 'production' ? 'https://docs.zksync.io' : 'https://staging-docs.zksync.io',
+    trailingSlash: 'append',
   },
   nitro: {
     plugins: ['./plugins/code-snippet-import.ts'],
@@ -22,11 +24,10 @@ export default defineNuxtConfig({
       app: 'docs',
     },
   },
-  routeRules: { ...redirects },
   experimental: {
     defaults: {
       nuxtLink: {
-        trailingSlash: 'remove',
+        trailingSlash: 'append',
       },
     },
   },

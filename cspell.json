@@ -8,7 +8,8 @@
     ".*/**",
     "dist/**",
     "cspell-config/**",
-    "package.json"
+    "package.json",
+    "firebase.json"
   ],
   "caseSensitive": true,
   "dictionaries": [
