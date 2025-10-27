@@ -408,12 +408,12 @@
       },
       {
         "source": "/build/developer-reference/account-abstraction",
-        "destination": "//zksync-protocol/account-abstraction",
+        "destination": "/zksync-protocol/account-abstraction",
         "type": 301
       },
       {
         "source": "/build/developer-reference/system-contracts.html",
-        "destination": "/zksync-protocol/contracts/system-contracts",
+        "destination": "/zksync-protocol/era-vm/contracts/system-contracts",
         "type": 301
       },
       {
@@ -659,6 +659,106 @@
       {
         "source": "/zksync-protocol/zksync-airbender/deepdive",
         "destination": "/zk-stack/components/zksync-airbender/deepdive",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/gateway/overview",
+        "destination": "/zksync-protocol/gateway",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/rollup/transaction-lifecycle",
+        "destination": "/zksync-protocol/era-vm/transactions/transaction-lifecycle",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/rollup/blocks",
+        "destination": "/zksync-protocol/era-vm/transactions/blocks",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/rollup/fee-model",
+        "destination": "/zksync-protocol/era-vm/transactions/fee-model",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/rollup/fee-model/:path*",
+        "destination": "/zksync-protocol/era-vm/transactions/fee-model/:path",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/vm",
+        "destination": "/zksync-protocol/era-vm/vm",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/vm/formal-spec",
+        "destination": "/zksync-protocol/era-vm/vm/formal-spec",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/contracts/bootloader",
+        "destination": "/zksync-protocol/era-vm/contracts/bootloader",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/contracts/system-contracts",
+        "destination": "/zksync-protocol/era-vm/contracts/system-contracts",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/contracts/handling-l1-l2-ops",
+        "destination": "/zksync-protocol/era-vm/contracts/handling-l1-l2-ops",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/contracts/handling-pubdata",
+        "destination": "/zksync-protocol/era-vm/contracts/handling-pubdata",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/contracts/pubdata-post-4844",
+        "destination": "/zksync-protocol/era-vm/contracts/pubdata-post-4844",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/circuits",
+        "destination": "/zksync-protocol/era-vm/circuits",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/circuits/:path*",
+        "destination": "/zksync-protocol/era-vm/circuits/:path",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/compiler/:path*",
+        "destination": "/zksync-protocol/era-vm/compiler/:path",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/differences/:path*",
+        "destination": "/zksync-protocol/era-vm/differences/:path",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/evm-interpreter/:path*",
+        "destination": "/zksync-protocol/era-vm/evm-interpreter/:path",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/account-abstraction",
+        "destination": "/zksync-protocol/era-vm/account-abstraction",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/account-abstraction/:path*",
+        "destination": "/zksync-protocol/era-vm/account-abstraction/:path",
+        "type": 301
+      },
+      {
+        "source": "/zksync-protocol/rollup/l1_l2_communication",
+        "destination": "/zksync-protocol/era-vm/transactions/l1_l2_communication",
         "type": 301
       }
     ]

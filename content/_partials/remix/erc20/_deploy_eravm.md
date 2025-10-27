@@ -16,7 +16,7 @@ plugin on the left menu and then "Compile TestToken.sol". If you get a popup mes
 ::callout{icon="i-heroicons-light-bulb"}
 Behind the scenes, Remix is using the ZKsync Era custom Solidity compiler (named `zksolc` ) to generate ZKEVM compatible
 bytecode.
-[Learn more about ZKsync custom compilers](/zksync-protocol/compiler/toolchain).
+[Learn more about ZKsync custom compilers](/zksync-protocol/era-vm/compiler/toolchain).
 ::
 
 We will use our wallet’s configured
