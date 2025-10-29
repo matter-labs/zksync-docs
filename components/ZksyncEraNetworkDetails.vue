@@ -168,8 +168,8 @@ const zksyncOSTestnetDetails: NetworkDetail[] = [
   },
   {
     property: 'Explorer Verification API',
-    value: '(coming soon)',
-    isCopyable: false,
+    value: 'https://block-explorer-api.zksync-os-testnet-alpha.zksync.dev/api',
+    isCopyable: true,
   },
 ];
 </script>
