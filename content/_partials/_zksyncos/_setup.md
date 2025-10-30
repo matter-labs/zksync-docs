@@ -4,7 +4,7 @@ title: Hardhat 3 Setup
 
 3. Add ZKsync OS to the `hardhat.config.ts` file and configure the ignition required confirmations. <!-- markdownlint-disable-line -->
 
-    ```ts
+    ```ts [hardhat.config.ts]
      :code-import{filePath="zksync-os/hardhat.config.ts:hh-config"}
     ```
 
