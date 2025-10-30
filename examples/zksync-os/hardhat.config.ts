@@ -1,4 +1,5 @@
 import type { HardhatUserConfig } from 'hardhat/config';
+import hardhatVerify from '@nomicfoundation/hardhat-verify';
 
 import hardhatToolboxViemPlugin from '@nomicfoundation/hardhat-toolbox-viem';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -7,7 +8,7 @@ import { configVariable } from 'hardhat/config';
 
 const config: HardhatUserConfig = {
   // plugins: [hardhatToolboxMochaEthersPlugin],
-  plugins: [hardhatToolboxViemPlugin],
+  plugins: [hardhatToolboxViemPlugin, hardhatVerify],
   solidity: {
     profiles: {
       default: {
@@ -37,6 +38,20 @@ const config: HardhatUserConfig = {
     },
   },
   // ANCHOR_END: hh-config
+  // ANCHOR: verify-config
+  chainDescriptors: {
+    8022833: {
+      name: 'zksyncOS',
+      blockExplorers: {
+        blockscout: {
+          name: 'Testnet Explorer',
+          url: 'https://zksync-os-testnet-alpha.staging-scan-v2.zksync.dev',
+          apiUrl: 'https://block-explorer-api.zksync-os-testnet-alpha.zksync.dev/api',
+        },
+      },
+    },
+  },
+  // ANCHOR_END: verify-config
 };
 
 export default config;
