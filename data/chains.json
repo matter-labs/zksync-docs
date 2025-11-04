@@ -244,7 +244,7 @@
     "chainId": 324,
     "icon": "https://www.zksync.io/ecosystem/era.png",
     "isTestnet": false,
-    "documentationURL": "/zksync-network/environment/zksync-era",
+    "documentationURL": "/zksync-network/zksync-era/",
     "explorerURL": "https://explorer.zksync.io",
     "baseToken": "ETH",
     "pubdataMode": "Rollup",
