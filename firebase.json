@@ -203,12 +203,12 @@
       },
       {
         "source": "/build/tooling/network-faucets.html",
-        "destination": "/zksync-network/ecosystem/network-faucets",
+        "destination": "/zksync-network/zksync-era/ecosystem/network-faucets",
         "type": 301
       },
       {
         "source": "/zksync-era/ecosystem/network-faucets",
-        "destination": "/zksync-network/ecosystem/network-faucets",
+        "destination": "/zksync-network/zksync-era/ecosystem/network-faucets",
         "type": 301
       },
       {
@@ -288,7 +288,7 @@
       },
       {
         "source": "/build/tooling/network-faucets.html",
-        "destination": "/zksync-network/ecosystem/network-faucets",
+        "destination": "/zksync-network/zksync-era/ecosystem/network-faucets",
         "type": 301
       },
       {
