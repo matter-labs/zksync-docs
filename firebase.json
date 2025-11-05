@@ -760,6 +760,11 @@
         "source": "/zksync-protocol/rollup/l1_l2_communication",
         "destination": "/zksync-protocol/era-vm/transactions/l1_l2_communication",
         "type": 301
+      },
+      {
+        "source": "/zksync-network/ecosystem/:path*",
+        "destination": "/zksync-network/zksync-era/ecosystem/:path*",
+        "type": 301
       }
     ]
   }
