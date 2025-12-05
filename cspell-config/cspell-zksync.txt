@@ -15,6 +15,7 @@ Matter Labs
 okta
 prividium
 Prividium
+Prividium™
 SIWE
 Zeek
 Zeeks
