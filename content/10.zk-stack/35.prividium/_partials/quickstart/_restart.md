@@ -1,6 +1,6 @@
 ---
 title: Quickstart - Restarting your chain
-description: How to restart your Prividium chain
+description: How to restart your Prividium™ chain
 ---
 
 If at some point during development you wish to stop and restart your chain,
