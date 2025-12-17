@@ -47,10 +47,10 @@ stackfeatures:
       description: 'Get your first ZKsync chain running locally using ZK Stack CLI.'
       icon: 'i-zkicon-zksync'
       to: '/zk-stack/running/quickstart'
-    - title: 'Prividium'
+    - title: 'Prividium™'
       description: 'Private, permissioned ZK-Rollup with Ethereum-anchored security and enterprise-grade privacy.'
       icon: 'i-heroicons-shield-check-16-solid'
-      to: '/zk-stack/prividium'
+      to: '/zk-stack/prividium/overview'
 community:
   title: 'Join the Community'
   items:
