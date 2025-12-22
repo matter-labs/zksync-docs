@@ -10,6 +10,6 @@ curl --request POST \
       "jsonrpc": "2.0",
       "id": 1,
       "method": "eth_sendRawTransactionSync",
-      "params": ["0x..."]
+      "params": ["0x...", 20000]
     }'
 ```
