@@ -1052,26 +1052,6 @@ describe('ZKsync OS RPC API Examples', function () {
     expect(data.result.status).to.equal('0x1');
   });
 
-  it('Should get the bytecode supplier contract', async function () {
-    // ANCHOR: zks_getBytecodeSupplierContract
-    const response = await fetch(RPC_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        jsonrpc: '2.0',
-        id: 1,
-        method: 'zks_getBytecodeSupplierContract',
-        params: [],
-      }),
-    });
-    // ANCHOR_END: zks_getBytecodeSupplierContract
-
-    const data = await response.json();
-    expect(data.result).to.include('0x');
-  });
-
   it('Should get metadata for a block', async function () {
     // ANCHOR: zks_getBlockMetadataByNumber
     const response = await fetch(RPC_URL, {
