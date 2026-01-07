@@ -39,22 +39,22 @@ You can now navigate to the explorer web-app. By default, the explorer frontend 
 
 #### Switching to an internal explorer
 
-To switch between the public-facing Prividium block explorer and a standard full-access block explorer for internal use:
+To switch between the public-facing Prividium™ block explorer and a standard full-access block explorer for internal use:
 
 1. Stop the explorer frontend.
 1. Stop the explorer backend.
-1. Run `zkstack explorer init` and select `No` when prompted to use the Prividium explorer.
+1. Run `zkstack explorer init` and select `No` when prompted to use the Prividium™ explorer.
 1. Restart the explorer backend and frontend services.
 
 Right now both versions of the explorer can't be run at the same time with `zkstack`,
 but it's possible to configure this manually.
 
-To switch back to a Prividium block explorer,
+To switch back to a Prividium™ block explorer,
 re-run the steps from ["Setting up a block explorer"](#setting-up-a-block-explorer).
 
 ### Using the Block Explorer
 
-To use the public-facing Prividium block explorer,
+To use the public-facing Prividium™ block explorer,
 users must first sign in with their wallet.
 The block explorer then provides the configured level of access
 based on their account.

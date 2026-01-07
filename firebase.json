@@ -765,6 +765,11 @@
         "source": "/zksync-network/ecosystem/:path*",
         "destination": "/zksync-network/zksync-era/ecosystem/:path*",
         "type": 301
+      },
+      {
+        "source": "/zk-stack/prividium/run-prividium-chain",
+        "destination": "/zk-stack/prividium/overview",
+        "type": 301
       }
     ]
   }
