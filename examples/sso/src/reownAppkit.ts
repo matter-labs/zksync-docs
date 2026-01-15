@@ -1,4 +1,4 @@
-import { zksyncSsoConnector, callPolicy } from 'zksync-sso/connector';
+import { zksyncSsoConnector, callPolicy } from 'zksync-sso-4337/connector';
 import { zksyncSepoliaTestnet } from 'viem/chains';
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi';
 import { erc20Abi, parseEther, parseUnits } from 'viem';

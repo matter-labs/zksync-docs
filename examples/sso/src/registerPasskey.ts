@@ -1,4 +1,4 @@
-import { registerNewPasskey, type RegisterNewPasskeyReturnType } from 'zksync-sso/client/passkey';
+import { registerNewPasskey, type RegisterNewPasskeyReturnType } from 'zksync-sso-4337/client/passkey';
 
 export async function registerPasskey() {
   const newPasskey: RegisterNewPasskeyReturnType = await registerNewPasskey({
