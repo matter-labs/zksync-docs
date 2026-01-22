@@ -770,6 +770,11 @@
         "source": "/zk-stack/prividium/run-prividium-chain",
         "destination": "/zk-stack/prividium/overview",
         "type": 301
+      },
+      {
+        "source": "/zk-stack/prividium/config/:path*",
+        "destination": "/zk-stack/prividium/overview",
+        "type": 301
       }
     ]
   }
