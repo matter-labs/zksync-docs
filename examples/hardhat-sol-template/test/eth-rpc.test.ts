@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+import { JsonRpcProvider, parseEther, Wallet } from 'ethers';
 
 describe('ZKsync OS RPC API Examples', function () {
   const RPC_URL = 'https://zksync-os-testnet-alpha.zksync.dev/';
@@ -987,5 +988,87 @@ describe('ZKsync OS RPC API Examples', function () {
     const data = await response.json();
     // console.log('data', data);
     expect(data.result.value).to.equal('0x0');
+  });
+
+  it('Should get sha3', async function () {
+    // ANCHOR: web3_sha3
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'web3_sha3',
+        params: ['0xf246110a0e7b99173977eac947881011f9513bd8311111911bbd2a54cceb4ddb'],
+      }),
+    });
+    // ANCHOR_END: web3_sha3
+
+    const data = await response.json();
+    // console.log('data', data);
+    expect(data.result).to.equal('0x489e6bd00a029f704a85d1b17899f823cca1d43b7a21fefe6160fd330c3eeca7');
+  });
+
+  it('Should send a raw transaction and await the receipt', async function () {
+    const PRIVATE_KEY = '0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110';
+
+    const provider = new JsonRpcProvider(RPC_URL);
+    const wallet = new Wallet(PRIVATE_KEY, provider);
+    const sender = wallet.address;
+    const nonce = await provider.getTransactionCount(sender);
+    const feeData = await provider.getFeeData();
+    const chainId = (await provider.getNetwork()).chainId;
+    const tx = {
+      to: sender,
+      value: parseEther('0.001'),
+      nonce,
+      chainId,
+      type: 2,
+      maxFeePerGas: feeData.maxFeePerGas!,
+      maxPriorityFeePerGas: feeData.maxPriorityFeePerGas!,
+      gasLimit: BigInt(21_000),
+    };
+
+    // ANCHOR: eth_sendRawTransactionSync
+    const rawSignedTx = await wallet.signTransaction(tx);
+    const waitTime = 1000 * 20;
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'eth_sendRawTransactionSync',
+        params: [rawSignedTx, waitTime],
+      }),
+    });
+    // ANCHOR_END: eth_sendRawTransactionSync
+
+    const data = await response.json();
+    expect(data.result.status).to.equal('0x1');
+  });
+
+  it('Should get metadata for a block', async function () {
+    // ANCHOR: zks_getBlockMetadataByNumber
+    const response = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'zks_getBlockMetadataByNumber',
+        params: [57224],
+      }),
+    });
+    // ANCHOR_END: zks_getBlockMetadataByNumber
+
+    const data = await response.json();
+    expect(data.result.execution_version).to.equal(5);
   });
 });

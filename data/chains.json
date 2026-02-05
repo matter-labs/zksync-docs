@@ -23,8 +23,19 @@
     "onGateway": true
   },
   {
-    "name": "ADI Network Testnet",
+    "name": "ADI Network",
     "chainId": 36900,
+    "icon": "https://adi-foundation.gitbook.io/adi-chain-documentation/~gitbook/image?url=https%3A%2F%2F2989473863-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Forganizations%252FJjG3PO7wiqCLUGQF6zGS%252Fsites%252Fsite_U8La9%252Flogo%252FxnXFv0iMvzsNmgnn52po%252F1.png%3Falt%3Dmedia%26token%3D0946719a-9d1d-4bf0-8fbf-118265bc83c3&width=260&dpr=4&quality=100&sign=e3cdd9f9&sv=2",
+    "isTestnet": false,
+    "documentationURL": "https://adi-foundation.gitbook.io/adi-chain-documentation",
+    "explorerURL": "https://explorer-bls.adifoundation.ai/",
+    "baseToken": "ADI",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
+  },
+  {
+    "name": "ADI Network Testnet",
+    "chainId": 99999,
     "icon": "https://adi-foundation.gitbook.io/adi-chain-documentation/~gitbook/image?url=https%3A%2F%2F2989473863-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Forganizations%252FJjG3PO7wiqCLUGQF6zGS%252Fsites%252Fsite_U8La9%252Flogo%252FxnXFv0iMvzsNmgnn52po%252F1.png%3Falt%3Dmedia%26token%3D0946719a-9d1d-4bf0-8fbf-118265bc83c3&width=260&dpr=4&quality=100&sign=e3cdd9f9&sv=2",
     "isTestnet": true,
     "documentationURL": "https://adi-foundation.gitbook.io/adi-chain-documentation",
