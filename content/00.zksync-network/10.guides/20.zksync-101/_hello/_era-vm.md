@@ -87,7 +87,7 @@ rich wallets for transactions and deployments.
 Copy the private key for the first rich wallet from `.env.example` to the `.env` file.
 
 ::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
-Never save a real private key to the `.env` file!
+Never store a private key associated with real funds in the `.env` file! The `.env` file stores keys in plain text, which is a security risk. Use only test or burner wallets for development.
 ::
 
 ## Deploy the contract

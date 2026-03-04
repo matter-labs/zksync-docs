@@ -32,6 +32,10 @@ rich wallets for transactions and deployments.
 
 Copy one of the private keys logged after starting the node to the `.env` file, using the `.env.example` file as an example.
 
+::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
+Never store a private key associated with real funds in the `.env` file! The `.env` file stores keys in plain text, which is a security risk. Use only test or burner wallets for development.
+::
+
 ## Deploy the contract
 
 The deployment script is located at
