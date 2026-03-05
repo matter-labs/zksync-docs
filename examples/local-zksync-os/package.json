@@ -1,0 +1,22 @@
+{
+  "name": "local-zksync-os",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "compile": "hardhat compile",
+    "interop:counter": "hardhat run scripts/interop-counter.ts",
+    "interop:adapter": "hardhat run scripts/interop-adapter.ts"
+  },
+  "devDependencies": {
+    "@matterlabs/zksync-js": "^0.0.11",
+    "@nomicfoundation/hardhat-ignition": "^3.0.8",
+    "@nomicfoundation/hardhat-toolbox-mocha-ethers": "^3.0.3",
+    "@nomicfoundation/hardhat-toolbox-viem": "^5.0.2",
+    "@types/node": "^22.19.13",
+    "ethers": "^6.16.0",
+    "forge-std": "github:foundry-rs/forge-std#v1.9.4",
+    "hardhat": "^3.1.10",
+    "typescript": "~5.8.0",
+    "viem": "^2.46.3"
+  }
+}
