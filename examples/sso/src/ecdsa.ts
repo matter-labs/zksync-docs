@@ -2,7 +2,7 @@ import type { Address } from 'viem';
 import { createWalletClient, http } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
 import { zksyncSepoliaTestnet } from 'viem/chains';
-import { createZksyncEcdsaClient } from 'zksync-sso/client/ecdsa';
+import { createZksyncEcdsaClient } from 'zksync-sso-4337/client/ecdsa';
 
 const privateKey = '0x_YOUR_PRIVATE_KEY'; // Replace with an owner account's private key
 
