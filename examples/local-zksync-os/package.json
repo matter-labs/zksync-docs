@@ -5,7 +5,8 @@
   "scripts": {
     "compile": "hardhat compile",
     "interop:counter": "hardhat run scripts/interop-counter.ts",
-    "interop:adapter": "hardhat run scripts/interop-adapter.ts"
+    "interop:adapter": "hardhat run scripts/interop-adapter.ts",
+    "interop:solidity-demo": "hardhat run scripts/interop-solidity-demo.ts"
   },
   "devDependencies": {
     "@matterlabs/zksync-js": "^0.0.11",
