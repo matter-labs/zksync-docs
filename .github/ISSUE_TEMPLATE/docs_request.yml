@@ -1,0 +1,98 @@
+name: Docs Request
+description: Request a new docs page, update, fix, or migration.
+title: "[Docs Request]: "
+labels: ["needs-triage"]
+assignees:
+  - matter-labs/devxp
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for documentation work that should be triaged for the docs automation pipeline.
+        Triage policy: see `ISSUE_TRIAGE.md` and `internal/automation/triage.md`.
+
+  - type: dropdown
+    id: request-type
+    attributes:
+      label: Request Type
+      description: Choose the type that best matches this request.
+      options:
+        - new
+        - update
+        - fix
+        - migrate
+    validations:
+      required: true
+
+  - type: textarea
+    id: user-goal
+    attributes:
+      label: User Goal Statement
+      description: Describe the user outcome in one sentence.
+      placeholder: As a __, I want __, so that __.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: target-section
+    attributes:
+      label: Target Section
+      description: Choose the top-level docs section for this work.
+      options:
+        - ZKsync Network
+        - ZK Stack
+        - ZKsync Protocol
+    validations:
+      required: true
+
+  - type: input
+    id: target-page
+    attributes:
+      label: Target Page (optional)
+      description: Existing path or suggested location for new content.
+      placeholder: content/00.zksync-network/10.guides/example.md
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources of Truth (recommended)
+      description: Add repo paths and/or links that support factual claims.
+      placeholder: |
+        - content/10.zk-stack/...
+        - https://github.com/matter-labs/.../pull/123
+        - https://example.com/spec
+
+  - type: textarea
+    id: update-changes
+    attributes:
+      label: What Changed? (required for update requests)
+      description: If request type is `update`, include PR links, commit hashes, or release references.
+      placeholder: PR #123, commit abc123, release vX.Y.Z notes.
+
+  - type: textarea
+    id: definition-of-done
+    attributes:
+      label: Definition of Done
+      description: Provide acceptance criteria as checklist bullets. Empty DoD blocks triage.
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+        Templates: internal/automation/definition-of-done.md
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks-notes
+    attributes:
+      label: Risks / Notes
+      description: Mention potential side effects and who should sanity-check.
+      placeholder: Could affect setup docs for SDK users. Please sanity-check with DevRel.
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/matter-labs/zksync-docs/blob/main/CODE_OF_CONDUCT.md).
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
