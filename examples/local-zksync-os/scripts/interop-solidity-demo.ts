@@ -54,9 +54,11 @@ const payload = AbiCoder.defaultAbiCoder().encode(['uint8'], [0]) as `0x${string
 
 const sendTx = await senderDemo.sendSingleCallBundle(destinationChainId, counterAddress, payload);
 const sendReceipt = await sendTx.wait();
+
 if (!sendReceipt) {
   throw new Error('Missing receipt for sendSingleCallBundle transaction');
 }
+
 console.log(`Bundle sent via Solidity contract. Source tx hash: ${sendTx.hash}`);
 
 const finalizationInfo = await sdk.interop.wait(
