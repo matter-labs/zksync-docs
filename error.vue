@@ -27,7 +27,7 @@ const cards = [
   {
     title: 'Quickstart',
     description: 'Get started building applications on ZKsync with our quickstart guide.',
-    to: '/zksync-network/guides/quick-start',
+    to: '/zksync-network/quick-start',
     icon: 'i-heroicons-code-bracket-16-solid',
   },
   {

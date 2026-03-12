@@ -1,8 +1,11 @@
 import type { HardhatUserConfig } from 'hardhat/config';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import hardhatToolboxMochaEthersPlugin from '@nomicfoundation/hardhat-toolbox-mocha-ethers';
 import hardhatToolboxViemPlugin from '@nomicfoundation/hardhat-toolbox-viem';
 
 const config: HardhatUserConfig = {
+  // plugins: [hardhatToolboxMochaEthersPlugin],
   plugins: [hardhatToolboxViemPlugin],
   solidity: {
     profiles: {

@@ -5,6 +5,10 @@
   "scripts": {
     "compile": "hardhat compile",
     "deploy:": "hardhat ignition deploy ignition/modules/Counter.ts --network zksyncOS",
+    "interact:ethers:local": "hardhat run scripts/interact-local-ethers.ts --config hardhat.config.local.ts",
+    "interact:ethers:testnet": "hardhat run scripts/interact-testnet-ethers.ts",
+    "interact:viem:local": "hardhat run scripts/interact-local-viem.ts --config hardhat.config.local.ts",
+    "interact:viem:testnet": "hardhat run scripts/interact-local-viem.ts",
     "increment:ethers": "hardhat run scripts/increment-ethers.ts",
     "increment:viem": "hardhat run scripts/increment-viem.ts"
   },

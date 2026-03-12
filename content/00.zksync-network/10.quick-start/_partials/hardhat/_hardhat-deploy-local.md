@@ -9,8 +9,9 @@ title: Quickstart - Hardhat Deploy Local
     cd hardhat-example
     ```
 
-1. Initialize a new Hardhat 3 project with Mocha and Ethers.js.
-  Select `y` to install the dependencies.
+1. Initialize a new Hardhat 3 project.
+    You can choose to either use `Mocha` with `Ethers.js` or `Node Test Runner` with `viem`.
+    Select `y` to install the dependencies.
 
     ```bash
     npx hardhat --init
