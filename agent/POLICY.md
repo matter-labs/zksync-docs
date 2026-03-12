@@ -6,8 +6,10 @@ This file defines what the docs agent may and may not change in this repository.
 
 - `content/**/*.md`
 - `content/_partials/**`
+- `examples/**`
 - docs assets under `public/**` that are referenced by changed docs pages
 - navigation metadata only when required for page discoverability
+- redirects inside `firebase.json` when removing or renaming pages
 
 ## Forbidden Changes (default)
 
