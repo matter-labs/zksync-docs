@@ -39,11 +39,20 @@ description: "Concise description of page purpose and value"
 - never include real secrets or tokens
 - prefer environment variables over inline secret placeholders
 - use partials for reusable content via `:display_partial{path="..."}`
+- always check if an existing partial from the `content/_partials` folder can be used in place of writing new documentation.
 - use `::content-switcher` for variant-specific instructions
 - use `::card-group` for grouped navigation cards
 - use callouts intentionally:
   - note: `::callout{icon="i-heroicons-light-bulb"}`
   - warning: `::callout{icon="i-heroicons-exclamation-triangle" color="amber"}`
+- use `:code-import` to import example code from the `examples` folder.
+- whenever possible, add or reuse code examples to the `examples` folder and import them using `:code-import`
+  instead of hardcoding the example directly in the markdown file
+- use `ANCHOR:<tag-name>` comments to specify subsections of code in the `examples` folder to import to a page.
+  To import subsections of code using `:code-import`, add `:<tag-name>` at the end of the filepath.
+- for any bash commands, use `::code-group` to show the command using `npm`, `yarn`, `pnpm`, and `bun`.
+- for very long code examples, nest the code example inside a `::drop-panel` component.
+- for images or videos, use `::centered-container` to center the media.
 
 ## Link and Accessibility Rules
 
