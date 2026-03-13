@@ -33,3 +33,5 @@ title: Quickstart - Hardhat Interact Local Viem
     ```
 
     ::
+
+You should see in the logs the total messages is `2` and the last message is `Hello from Hardhat`.

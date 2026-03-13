@@ -17,6 +17,7 @@ prividium
 Prividium
 Prividium™
 SIWE
+zeek
 Zeek
 Zeeks
 ZK Chain

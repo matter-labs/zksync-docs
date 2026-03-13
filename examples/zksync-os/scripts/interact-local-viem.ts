@@ -16,7 +16,7 @@ const hash = await walletClient.writeContract({
   address: CONTRACT_ADDRESS,
   abi: contract.abi as Abi,
   functionName: 'sendMessage',
-  args: ['Hello from local Hardhat'],
+  args: ['Hello from Hardhat'],
 });
 await publicClient.waitForTransactionReceipt({ hash });
 

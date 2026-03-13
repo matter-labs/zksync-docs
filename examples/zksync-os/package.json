@@ -4,11 +4,14 @@
   "type": "module",
   "scripts": {
     "compile": "hardhat compile",
-    "deploy:": "hardhat ignition deploy ignition/modules/Counter.ts --network zksyncOS",
+    "deploy:counter:testnet": "hardhat ignition deploy ignition/modules/Counter.ts --network zksyncOS",
+    "deploy:counter:local": "hardhat ignition deploy ignition/modules/Counter.ts --config hardhat.config.local.ts --network anvil",
+    "deploy:messages:testnet": "hardhat ignition deploy ignition/modules/ZeekMessages.ts --network zksyncOS",
+    "deploy:messages:local": "hardhat ignition deploy ignition/modules/ZeekMessages.ts --config hardhat.config.local.ts --network anvil",
     "interact:ethers:local": "hardhat run scripts/interact-local-ethers.ts --config hardhat.config.local.ts",
     "interact:ethers:testnet": "hardhat run scripts/interact-testnet-ethers.ts",
     "interact:viem:local": "hardhat run scripts/interact-local-viem.ts --config hardhat.config.local.ts",
-    "interact:viem:testnet": "hardhat run scripts/interact-local-viem.ts",
+    "interact:viem:testnet": "hardhat run scripts/interact-testnet-viem.ts",
     "increment:ethers": "hardhat run scripts/increment-ethers.ts",
     "increment:viem": "hardhat run scripts/increment-viem.ts"
   },

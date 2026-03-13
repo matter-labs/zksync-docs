@@ -22,8 +22,9 @@ title: Quickstart - Hardhat Deploy Testnet
      :code-import{filePath="zksync-os/hardhat.config.ts:hh-config"}
     ```
 
-1. Add your private key to the keystore as `TESTNET_PRIVATE_KEY`.
-  Get this from your browser wallet for the same account where you bridged testnet ETH.
+1. Add your private key to the Hardhat keystore as `TESTNET_PRIVATE_KEY`.
+    If you've never used `hardhat keystore` before, you will be asked to set up a password.
+    Get the private key from your browser wallet for the same account where you bridged testnet ETH.
 
     ::code-group
 
@@ -127,19 +128,30 @@ You can optionally verify the contract so the code shows on the block explorer.
     ::code-group
 
     ```bash [npm]
-    npx hardhat verify --network zksyncOS 0x<YOUR_CONTRACT_ADDRESS>
+    npx hardhat clean
+    npx hardhat compile --build-profile production
+    npx hardhat verify -build-profile production --network zksyncOS 0x<YOUR_CONTRACT_ADDRESS>
     ```
 
     ```bash [yarn]
-    yarn hardhat verify --network zksyncOS 0x<YOUR_CONTRACT_ADDRESS>
+    yarn hardhat clean
+    yarn hardhat compile --build-profile production
+    yarn hardhat verify -build-profile production --network zksyncOS 0x<YOUR_CONTRACT_ADDRESS>
     ```
 
     ```bash [pnpm]
-    pnpm hardhat verify --network zksyncOS 0x<YOUR_CONTRACT_ADDRESS>
+    pnpm hardhat clean
+    pnpm hardhat compile --build-profile production
+    pnpm hardhat verify -build-profile production --network zksyncOS 0x<YOUR_CONTRACT_ADDRESS>
     ```
 
     ```bash [bun]
-    bun hardhat verify --network zksyncOS 0x<YOUR_CONTRACT_ADDRESS>
+    bun hardhat clean
+    bun hardhat compile --build-profile production
+    bun hardhat verify -build-profile production --network zksyncOS 0x<YOUR_CONTRACT_ADDRESS>
     ```
 
     ::
+
+1. Verify if the contract is verified by searching for your contract address on the [block explorer](https://zksync-os-testnet-alpha.staging-scan-v2.zksync.dev)
+    and clicking on the "Contract" tab.

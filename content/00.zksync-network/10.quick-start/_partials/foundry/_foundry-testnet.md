@@ -58,3 +58,6 @@ you can install it via [`foundryup`](https://www.getfoundry.sh/introduction/inst
     0x<YOUR_CONTRACT_ADDRESS> \
     src/ZeekMessages.sol:ZeekMessages
     ```
+
+1. Verify if the contract is verified by searching for your contract address on the [block explorer](https://zksync-os-testnet-alpha.staging-scan-v2.zksync.dev)
+    and clicking on the "Contract" tab.

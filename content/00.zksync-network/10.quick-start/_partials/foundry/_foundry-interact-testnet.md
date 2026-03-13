@@ -19,5 +19,7 @@ title: Quickstart - Foundry Interact Testnet
 1. Run the interaction script.
 
     ```bash
-    forge script script/InteractZeekMessages.s.sol --rpc-url https://zksync-os-testnet-alpha.zksync.dev --broadcast --private-key $TESTNET_PRIVATE_KEY
+    forge script script/InteractZeekMessages.s.sol --rpc-url https://zksync-os-testnet-alpha.zksync.dev --broadcast --skip-simulation --private-key $TESTNET_PRIVATE_KEY
     ```
+
+You should see in the logs the total messages is `1` and the last message is `Hello from Foundry`.

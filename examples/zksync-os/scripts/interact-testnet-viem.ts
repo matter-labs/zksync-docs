@@ -1,11 +1,19 @@
 import { network } from 'hardhat';
-import type { Abi, Address } from 'viem';
+import { defineChain, type Abi, type Address } from 'viem';
 
 const CONTRACT_ADDRESS: Address = '0x...';
 
+const zksyncOS = defineChain({
+  id: 8022833,
+  name: 'ZKsync OS',
+  network: 'zksyncOS',
+  nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
+  rpcUrls: { default: { http: ['https://zksync-os-testnet-alpha.zksync.dev'] } },
+});
+
 const { viem } = await network.connect('zksyncOS');
-const publicClient = await viem.getPublicClient();
-const [walletClient] = await viem.getWalletClients();
+const publicClient = await viem.getPublicClient({ chain: zksyncOS });
+const [walletClient] = await viem.getWalletClients({ chain: zksyncOS });
 if (!walletClient) throw new Error('No wallet client. Set TESTNET_PRIVATE_KEY in the keystore.');
 
 const contract = await viem.getContractAt('ZeekMessages', CONTRACT_ADDRESS, {
