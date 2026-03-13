@@ -21,9 +21,9 @@ title: Quickstart - Local Foundry
 
 1. Copy and paste the script below into `ZeekMessages.s.sol`.
 
-  ```solidity
-  :code-import{filePath="zksync-os-foundry/script/ZeekMessages.s.sol"}
-  ```
+    ```solidity
+    :code-import{filePath="zksync-os-foundry/script/ZeekMessages.s.sol"}
+    ```
 
 1. Build the project
 

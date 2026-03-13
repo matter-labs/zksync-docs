@@ -13,5 +13,4 @@ title: Quickstart - Vue Frontend Local
 
 :display-partial{path="/zksync-network/quick-start/_partials/vue/_shared-setup-2"}
 
-add local network to metamask
-add rich wallet to metamask
+:display-partial{path="/zksync-network/quick-start/_partials/_local-funds"}

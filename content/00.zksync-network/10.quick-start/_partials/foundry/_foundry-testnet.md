@@ -23,9 +23,9 @@ you can install it via [`foundryup`](https://www.getfoundry.sh/introduction/inst
 
 1. Copy and paste the script below into `ZeekMessages.s.sol`.
 
-  ```solidity
-  :code-import{filePath="zksync-os-foundry/script/ZeekMessages.s.sol"}
-  ```
+    ```solidity
+    :code-import{filePath="zksync-os-foundry/script/ZeekMessages.s.sol"}
+    ```
 
 1. Build the project
 
