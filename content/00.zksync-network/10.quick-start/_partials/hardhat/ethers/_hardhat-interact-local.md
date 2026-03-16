@@ -4,7 +4,11 @@ title: Quickstart - Hardhat Interact Local Ethers
 
 1. Create a new file in the `scripts` folder called `interact.ts`.
 
+    :test-action{actionId="create-hardhat-ethers-script-file"}
+
 1. Copy and paste the script below into `scripts/interact.ts`.
+
+    :test-action{actionId="add-hardhat-ethers-script"}
 
     ```ts
     :code-import{filePath="zksync-os/scripts/interact-local-ethers.ts"}
@@ -12,7 +16,12 @@ title: Quickstart - Hardhat Interact Local Ethers
 
 1. Set your deployed contract address at the top of the script file.
 
+    :test-action{actionId="create-hh-ethers-env-file"}
+    :test-action{actionId="set-hardhat-ethers-contract-address"}
+
 1. Run the script.
+
+    :test-action{actionId="run-hardhat-ethers-script"}
 
     ::code-group
 
