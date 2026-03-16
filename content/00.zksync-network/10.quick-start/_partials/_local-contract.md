@@ -8,6 +8,8 @@ title: Quickstart - Local Contract
 
 Choose between using `Foundry` or `Hardhat`.
 
+:test-action{actionId="select-hardhat-deploy"}
+
 ::content-switcher
 ---
 items: [{

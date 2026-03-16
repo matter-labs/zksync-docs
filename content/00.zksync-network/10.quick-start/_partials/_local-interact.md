@@ -6,6 +6,8 @@ title: Quickstart - Local Interaction
 
 Choose between using `Foundry`, `Hardhat with viem`, or `Hardhat with ethers`.
 
+:test-action{actionId="select-hardhat-viem-interact"}
+
 ::content-switcher
 ---
 items: [{

@@ -31,6 +31,8 @@ export interface IRunCommand {
   commandFolder?: string;
   // what to name the project folder (only used for npx hardhat init)
   projectFolder?: string;
+  // which scaffold to use for `npx hardhat --init`
+  projectTemplate?: HardhatProjectTemplate;
   // add something before the command
   preCommand?: string;
   // how long to wait after running the command
@@ -67,7 +69,9 @@ export interface IWriteToFile {
   useSetData?: string;
 }
 
+// remove only the lines included in the array
 export type IntArray = number[];
+// remove all lines from this range
 export type RangeArray = [number, '-->', number];
 export type RangeOrIntArray = IntArray | RangeArray;
 
@@ -153,3 +157,5 @@ export interface IFillInput {
   action: 'fillInput';
   text: string;
 }
+
+export type HardhatProjectTemplate = 'hardhat-v2-ethers' | 'hardhat-v3-ethers' | 'hardhat-v3-viem';

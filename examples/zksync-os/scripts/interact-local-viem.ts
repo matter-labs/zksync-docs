@@ -1,7 +1,7 @@
 import { network } from 'hardhat';
 import type { Abi, Address } from 'viem';
 
-const CONTRACT_ADDRESS: Address = '0x...';
+const CONTRACT_ADDRESS: Address = (process.env.CONTRACT_ADDRESS as Address) || '0x...';
 
 const { viem } = await network.connect('anvil');
 const publicClient = await viem.getPublicClient();

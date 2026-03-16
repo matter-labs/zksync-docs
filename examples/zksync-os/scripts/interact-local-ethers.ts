@@ -1,6 +1,6 @@
 import { network } from 'hardhat';
 
-const CONTRACT_ADDRESS = '0x...';
+const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS || '0x...';
 
 const { ethers } = await network.connect('anvil');
 
