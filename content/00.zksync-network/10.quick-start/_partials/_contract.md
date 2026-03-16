@@ -7,6 +7,8 @@ title: Quickstart - Contract code
 The smart contract will store messages from users and emit events with replies from Zeek.
 The entire code is as follows:
 
+:test-action{actionId="add-zeek-messages-contract"}
+
 ```solidity
 :code-import{filePath="zksync-os/contracts/ZeekMessages.sol"}
 ```
