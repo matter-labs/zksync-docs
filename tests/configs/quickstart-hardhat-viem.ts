@@ -13,40 +13,40 @@ const steps: IPageStepConfig = {
     'init-hardhat-project': {
       action: 'runCommand',
       commandFolder: 'tests-output',
-      projectFolder: 'hardhat-example',
+      projectFolder: 'hardhat-example-viem',
       projectTemplate: 'hardhat-v3-viem',
     },
     'configure-hardhat-local-config': {
       action: 'modifyFile',
-      filepath: 'tests-output/hardhat-example/hardhat.config.ts',
+      filepath: 'tests-output/hardhat-example-viem/hardhat.config.ts',
       atLine: 22,
       removeLines: [22, '-->', 37],
     },
     'create-hardhat-contract-file': {
       action: 'runCommand',
-      commandFolder: 'tests-output/hardhat-example',
+      commandFolder: 'tests-output/hardhat-example-viem',
       useSetCommand: 'touch contracts/ZeekMessages.sol',
     },
     'add-zeek-messages-contract': {
       action: 'writeToFile',
-      filepath: 'tests-output/hardhat-example/contracts/ZeekMessages.sol',
+      filepath: 'tests-output/hardhat-example-viem/contracts/ZeekMessages.sol',
     },
     'create-hardhat-ignition-module': {
       action: 'runCommand',
-      commandFolder: 'tests-output/hardhat-example',
+      commandFolder: 'tests-output/hardhat-example-viem',
       useSetCommand: 'touch ignition/modules/ZeekMessages.ts',
     },
     'add-hardhat-ignition-module': {
       action: 'writeToFile',
-      filepath: 'tests-output/hardhat-example/ignition/modules/ZeekMessages.ts',
+      filepath: 'tests-output/hardhat-example-viem/ignition/modules/ZeekMessages.ts',
     },
     'compile-hardhat-project': {
       action: 'runCommand',
-      commandFolder: 'tests-output/hardhat-example',
+      commandFolder: 'tests-output/hardhat-example-viem',
     },
     'deploy-hardhat-contract': {
       action: 'runCommand',
-      commandFolder: 'tests-output/hardhat-example',
+      commandFolder: 'tests-output/hardhat-example-viem',
     },
   },
   'zksync-network/quick-start/interact-with-your-contract': {
@@ -60,28 +60,28 @@ const steps: IPageStepConfig = {
     },
     'create-hardhat-viem-script-file': {
       action: 'runCommand',
-      commandFolder: 'tests-output/hardhat-example',
+      commandFolder: 'tests-output/hardhat-example-viem',
       useSetCommand: 'touch scripts/interact.ts',
     },
     'add-hardhat-viem-script': {
       action: 'writeToFile',
-      filepath: 'tests-output/hardhat-example/scripts/interact.ts',
+      filepath: 'tests-output/hardhat-example-viem/scripts/interact.ts',
     },
     'create-hh-env-file': {
       action: 'runCommand',
-      commandFolder: 'tests-output/hardhat-example',
+      commandFolder: 'tests-output/hardhat-example-viem',
       useSetCommand: 'touch .env',
     },
     'set-hardhat-viem-contract-address': {
       action: 'extractDataToEnv',
-      dataFilepath: 'tests-output/hardhat-example/ignition/deployments/chain-31337/deployed_addresses.json',
-      envFilepath: 'tests-output/hardhat-example/.env',
+      dataFilepath: 'tests-output/hardhat-example-viem/ignition/deployments/chain-31337/deployed_addresses.json',
+      envFilepath: 'tests-output/hardhat-example-viem/.env',
       variableName: 'CONTRACT_ADDRESS',
       selector: { regex: /(?<="ZeekMessages#ZeekMessages"\s*:\s*")0x[a-fA-F0-9]{40}(?=")/ },
     },
     'run-hardhat-viem-script': {
       action: 'runCommand',
-      commandFolder: 'tests-output/hardhat-example',
+      commandFolder: 'tests-output/hardhat-example-viem',
       preCommand: 'set -a && source .env && set +a && <COMMAND>',
       checkForOutput: 'Last message: Hello from Hardhat',
     },

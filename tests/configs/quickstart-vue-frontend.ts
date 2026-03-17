@@ -64,12 +64,12 @@ const steps: IPageStepConfig = {
     'run-vue-frontend': {
       action: 'runCommand',
       commandFolder: 'tests-output/zeek-frontend-vue',
-      preCommand: "bun pm2 start '<COMMAND>' --name quickstart-vue",
+      preCommand: "bun pm2 start '<COMMAND> -- --port 5174' --name quickstart-vue",
       waitTime: 10000,
     },
     'open-frontend-preview': {
       action: 'visitURL',
-      url: 'http://localhost:5173',
+      url: 'http://localhost:5174',
     },
     'check-frontend-title': {
       action: 'findText',
