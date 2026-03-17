@@ -152,13 +152,43 @@
         "type": 301
       },
       {
+        "source": "/zksync-network/guides",
+        "destination": "/zksync-network/quick-start",
+        "type": 301
+      },
+      {
+        "source": "/zksync-network/guides/:path*",
+        "destination": "/zksync-network/quick-start",
+        "type": 301
+      },
+      {
+        "source": "/build/quick-start/deploy-your-first-contract",
+        "destination": "/zksync-network/quick-start/deploy-your-first-contract",
+        "type": 301
+      },
+      {
+        "source": "/build/quick-start/erc20-token",
+        "destination": "/zksync-network/quick-start",
+        "type": 301
+      },
+      {
         "source": "/build/quick-start/:path*",
-        "destination": "/zksync-network/guides/quick-start/:path",
+        "destination": "/zksync-network/quick-start/:path",
+        "type": 301
+      },
+      {
+        "source": "/build/quick-start",
+        "destination": "/zksync-network/quick-start",
         "type": 301
       },
       {
         "source": "/build/zksync-101/:path*",
-        "destination": "/zksync-network/guides/zksync-101/:path",
+        "destination": "/zksync-network/quick-start/:path",
+        "type": 301
+      },
+      {
+        "source": "/build/zksync-101",
+        "destination": "/zksync-network/quick-start",
         "type": 301
       },
       {
