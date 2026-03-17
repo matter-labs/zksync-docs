@@ -16,7 +16,7 @@ The only time you may need a ZKsync-specific node is to test bridging or crossch
 For this tutorial, we won't need one.
 ::
 
-Once installed, open new terminal and run the command below to start a local node:
+Once installed, open a new terminal and run the command below to start a local node:
 
 ```bash
 anvil
