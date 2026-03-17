@@ -6,6 +6,10 @@ title: Quickstart - React Frontend Local
 
 6. Create a `.env` file and add your deployed contract address as `VITE_CONTRACT_ADDRESS` and set `VITE_CHAIN` to `local`.  <!-- markdownlint-disable-line -->
 
+    :test-action{actionId="create-react-env-file"}
+    :test-action{actionId="set-react-frontend-contract-address"}
+    :test-action{actionId="set-react-frontend-chain"}
+
     ```txt
     VITE_CONTRACT_ADDRESS=0x...
     VITE_CHAIN=local

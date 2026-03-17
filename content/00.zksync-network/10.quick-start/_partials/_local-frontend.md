@@ -6,6 +6,8 @@ title: Quickstart - Local Frontend
 
 Choose between using `React` or `Vue` for your frontend.
 
+:test-action{actionId="select-vue-frontend"}
+
 ::content-switcher
 ---
 items: [{

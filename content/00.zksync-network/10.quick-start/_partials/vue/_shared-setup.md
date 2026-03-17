@@ -7,19 +7,19 @@ title: Quickstart - Vue Frontend Setup
     ::code-group
 
     ```bash [npm]
-    npm create vite@latest zeek-frontend -- --template vue-ts --no-interactive
+    npm create vite@latest zeek-frontend-vue -- --template vue-ts --no-interactive
     ```
 
     ```bash [yarn]
-    yarn create vite zeek-frontend --template vue-ts --no-interactive
+    yarn create vite zeek-frontend-vue --template vue-ts --no-interactive
     ```
 
     ```bash [pnpm]
-    pnpm create vite zeek-frontend --template vue-ts --no-interactive
+    pnpm create vite zeek-frontend-vue --template vue-ts --no-interactive
     ```
 
     ```bash [bun]
-    bun create vite zeek-frontend --template vue-ts --no-interactive
+    bun create vite zeek-frontend-vue --template vue-ts --no-interactive
     ```
 
     ::
@@ -27,7 +27,7 @@ title: Quickstart - Vue Frontend Setup
 1. Move into the project folder and install the required packages.
 
     ```bash
-    cd zeek-frontend
+    cd zeek-frontend-vue
     ```
 
     ::code-group

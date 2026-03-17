@@ -4,6 +4,8 @@ title: Quickstart - React Frontend Setup
 
 1. Create a Vite React project.
 
+    :test-action{actionId="create-react-frontend-project"}
+
     ::code-group
 
     ```bash [npm]
@@ -26,9 +28,13 @@ title: Quickstart - React Frontend Setup
 
 1. Move into the project folder and install the required packages.
 
+    :test-action{actionId="move-into-react-frontend-project"}
+
     ```bash
     cd zeek-frontend
     ```
+
+    :test-action{actionId="install-react-frontend-deps"}
 
     ::code-group
 
@@ -56,17 +62,25 @@ title: Quickstart - React Frontend Setup
 
 1. Create file in the `src` folder called `wagmi.ts` and copy/paste the config below.
 
+    :test-action{actionId="create-react-wagmi-file"}
+    :test-action{actionId="add-react-wagmi-config"}
+
     ```ts
     :code-import{filePath="zeek-frontend-react/src/wagmi.ts"}
     ```
 
 1. Next, configure the `wagmi` and query client providers in `src/main.tsx`.
 
+    :test-action{actionId="configure-react-main-file"}
+
     ```ts
     :code-import{filePath="zeek-frontend-react/src/main.tsx"}
     ```
 
 1. Replace `src/App.tsx` with the code below.
+
+    :test-action{actionId="open-app-tsx"}
+    :test-action{actionId="replace-react-app-file"}
 
     ::drop-panel
 
