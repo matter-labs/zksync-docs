@@ -4,6 +4,8 @@ title: Quickstart - Vue Frontend Setup
 
 1. Create a Vite Vue project.
 
+    :test-action{actionId="create-vue-frontend-project"}
+
     ::code-group
 
     ```bash [npm]
@@ -26,9 +28,13 @@ title: Quickstart - Vue Frontend Setup
 
 1. Move into the project folder and install the required packages.
 
+    :test-action{actionId="move-into-vue-frontend-project"}
+
     ```bash
     cd zeek-frontend-vue
     ```
+
+    :test-action{actionId="install-vue-frontend-deps"}
 
     ::code-group
 
@@ -56,17 +62,25 @@ title: Quickstart - Vue Frontend Setup
 
 1. Create file in the `src` folder called `wagmi.ts` and copy/paste the config below.
 
+    :test-action{actionId="create-vue-wagmi-file"}
+    :test-action{actionId="add-vue-wagmi-config"}
+
     ```ts
     :code-import{filePath="zeek-frontend-vue/src/wagmi.ts"}
     ```
 
 1. Next, configure the `wagmi` plugin and query client in `src/main.ts`.
 
+    :test-action{actionId="configure-vue-main-file"}
+
     ```ts
     :code-import{filePath="zeek-frontend-vue/src/main.ts"}
     ```
 
 1. Replace `src/App.vue` with the code below.
+
+    :test-action{actionId="open-app-vue"}
+    :test-action{actionId="replace-vue-app-file"}
 
     ::drop-panel
 

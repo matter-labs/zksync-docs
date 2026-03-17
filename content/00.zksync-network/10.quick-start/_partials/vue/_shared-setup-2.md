@@ -4,6 +4,8 @@ title: Quickstart - Vue Frontend Setup 2
 
 7. Finally you can start the development server.  <!-- markdownlint-disable-line -->
 
+    :test-action{actionId="run-vue-frontend"}
+
     ::code-group
 
     ```bash [npm]
