@@ -70,7 +70,7 @@ const steps: IPageStepConfig = {
     'run-foundry-interact-script': {
       action: 'runCommand',
       commandFolder: 'tests-output/ZeekMessages',
-      preCommand: 'set -a && source .env && set +a && <COMMAND>',
+      preCommand: 'set -a && . ./.env && set +a && <COMMAND>',
       checkForOutput: 'Last message: Hello from Foundry',
     },
   },

@@ -82,7 +82,7 @@ const steps: IPageStepConfig = {
     'run-hardhat-viem-script': {
       action: 'runCommand',
       commandFolder: 'tests-output/hardhat-example-viem',
-      preCommand: 'set -a && source .env && set +a && <COMMAND>',
+      preCommand: 'set -a && . ./.env && set +a && <COMMAND>',
       checkForOutput: 'Last message: Hello from Hardhat',
     },
   },
