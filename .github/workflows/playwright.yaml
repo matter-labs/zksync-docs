@@ -1,12 +1,18 @@
 name: Playwright Quickstart Tests
 
+permissions:
+  contents: read
+
+env:
+  TUTORIAL_TESTER_PATH: /home/runner/work/_actions/sarahschwartz/tutorial-tester/main
+
 on:
   pull_request:
   workflow_dispatch:
 
 jobs:
   contract-tests:
-    timeout-minutes: 15
+    timeout-minutes: 8
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -16,19 +22,16 @@ jobs:
             tutorial-paths: '["zksync-network/quick-start/deploy-your-first-contract", "zksync-network/quick-start/interact-with-your-contract"]'
             config-path: tests/configs/quickstart-foundry.ts
             folder-name: quickstart-foundry
-            wait-time: 30000
             persist-state: 'false'
           - test-file-name: quickstart-hardhat-viem
             tutorial-paths: '["zksync-network/quick-start/deploy-your-first-contract", "zksync-network/quick-start/interact-with-your-contract"]'
             config-path: tests/configs/quickstart-hardhat-viem.ts
             folder-name: quickstart-hardhat-viem
-            wait-time: 30000
             persist-state: 'true'
           - test-file-name: quickstart-hardhat-ethers
             tutorial-paths: '["zksync-network/quick-start/deploy-your-first-contract", "zksync-network/quick-start/interact-with-your-contract"]'
             config-path: tests/configs/quickstart-hardhat-ethers.ts
             folder-name: quickstart-hardhat-ethers
-            wait-time: 30000
             persist-state: 'false'
 
     steps:
@@ -64,7 +67,7 @@ jobs:
           folder-name: ${{ matrix.suite.folder-name }}
           mm-wallet: 'false'
           use-config-order: 'true'
-          wait-time: ${{ matrix.suite.wait-time }}
+          wait-time: 30000
 
       - name: Stop anvil and flush state
         if: always() && matrix.suite.persist-state == 'true'
@@ -74,7 +77,7 @@ jobs:
 
       - name: Stage viem deployment outputs
         if: success() && matrix.suite.persist-state == 'true'
-        run: cp /tmp/anvil-state.json anvil-state.json
+        run: cp /tmp/anvil-state.json $TUTORIAL_TESTER_PATH/anvil-state.json
 
       - name: Upload viem deployment outputs
         if: success() && matrix.suite.persist-state == 'true'
@@ -82,15 +85,15 @@ jobs:
         with:
           name: quickstart-hardhat-viem-output
           path: |
-            tests-output/hardhat-example-viem
-            anvil-state.json
+            ${{ env.TUTORIAL_TESTER_PATH }}/tests-output/hardhat-example-viem
+            ${{ env.TUTORIAL_TESTER_PATH }}/anvil-state.json
           retention-days: 5
           overwrite: true
 
   frontend-tests:
     needs: contract-tests
     if: always()
-    timeout-minutes: 10
+    timeout-minutes: 8
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -120,12 +123,12 @@ jobs:
         continue-on-error: true
         with:
           name: quickstart-hardhat-viem-output
-          path: .
+          path: ${{ env.TUTORIAL_TESTER_PATH }}
 
       - name: Start anvil from saved state
         if: steps.viem-artifact.outcome == 'success'
         run: |
-          nohup anvil --host 0.0.0.0 --load-state anvil-state.json > /tmp/anvil.log 2>&1 &
+          nohup anvil --host 0.0.0.0 --load-state $TUTORIAL_TESTER_PATH/anvil-state.json > /tmp/anvil.log 2>&1 &
           sleep 5
 
       - name: Start docs
@@ -143,4 +146,4 @@ jobs:
           folder-name: ${{ matrix.suite.folder-name }}
           mm-wallet: 'false'
           use-config-order: 'true'
-          wait-time: 3000
+          wait-time: 30000
