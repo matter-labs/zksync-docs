@@ -15,7 +15,7 @@ const contract = await viem.getContractAt('QuickstartToken', CONTRACT_ADDRESS, {
   client: { public: publicClient, wallet: walletClient },
 });
 
-const [tokenName, tokenSymbol, totalSupply] = await Promise.all([
+const [tokenName, tokenSymbol, totalSupply, recipientBalanceBefore] = await Promise.all([
   publicClient.readContract({
     address: CONTRACT_ADDRESS,
     abi: contract.abi as Abi,
@@ -30,6 +30,12 @@ const [tokenName, tokenSymbol, totalSupply] = await Promise.all([
     address: CONTRACT_ADDRESS,
     abi: contract.abi as Abi,
     functionName: 'totalSupply',
+  }),
+  publicClient.readContract({
+    address: CONTRACT_ADDRESS,
+    abi: contract.abi as Abi,
+    functionName: 'balanceOf',
+    args: [recipientAddress],
   }),
 ]);
 
@@ -56,11 +62,13 @@ const [senderBalance, recipientBalance] = await Promise.all([
     args: [recipientAddress],
   }),
 ]);
+const recipientBalanceIncrease = (recipientBalance as bigint) - (recipientBalanceBefore as bigint);
 
 console.log('Token name:', tokenName);
 console.log('Token symbol:', tokenSymbol);
 console.log('Total supply:', formatUnits(totalSupply as bigint, 18));
 console.log('Transferred amount:', formatUnits(TRANSFER_AMOUNT, 18));
 console.log('Recipient address:', recipientAddress);
+console.log('Recipient balance increase:', formatUnits(recipientBalanceIncrease, 18));
 console.log('Recipient balance:', formatUnits(recipientBalance as bigint, 18));
 console.log('Sender balance:', formatUnits(senderBalance as bigint, 18));

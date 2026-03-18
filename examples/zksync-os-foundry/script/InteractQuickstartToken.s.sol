@@ -13,6 +13,7 @@ contract InteractQuickstartTokenScript is Script {
         address contractAddress = vm.envAddress("CONTRACT_ADDRESS");
         address recipientAddress = vm.envOr("RECIPIENT_ADDRESS", DEFAULT_LOCAL_RECIPIENT);
         QuickstartToken quickstartToken = QuickstartToken(contractAddress);
+        uint256 recipientBalanceBefore = quickstartToken.balanceOf(recipientAddress);
 
         vm.startBroadcast();
         quickstartToken.transfer(recipientAddress, TRANSFER_AMOUNT);
@@ -22,6 +23,9 @@ contract InteractQuickstartTokenScript is Script {
         console2.log("Token symbol:", quickstartToken.symbol());
         console2.log("Total supply:", quickstartToken.totalSupply() / 10 ** 18);
         console2.log("Transferred amount:", TRANSFER_AMOUNT / 10 ** 18);
+        console2.log(
+            "Recipient balance increase:", (quickstartToken.balanceOf(recipientAddress) - recipientBalanceBefore) / 10 ** 18
+        );
         console2.log("Recipient balance:", quickstartToken.balanceOf(recipientAddress) / 10 ** 18);
     }
 }

@@ -84,7 +84,7 @@ const steps: IPageStepConfig = {
       action: 'runCommand',
       commandFolder: 'tests-output/QuickstartToken',
       preCommand: 'set -a && . ./.env && set +a && <COMMAND>',
-      checkForOutput: 'Recipient balance: 10',
+      checkForOutput: 'Recipient balance increase: 10',
     },
   },
 };

@@ -15,15 +15,18 @@ const contract = await ethers.getContractAt('QuickstartToken', CONTRACT_ADDRESS,
 const tokenName = await contract.name();
 const tokenSymbol = await contract.symbol();
 const totalSupply = await contract.totalSupply();
+const recipientBalanceBefore = await contract.balanceOf(recipientAddress);
 const transferTx = await contract.transfer(recipientAddress, TRANSFER_AMOUNT);
 await transferTx.wait();
 const senderBalance = await contract.balanceOf(sender.address);
 const recipientBalance = await contract.balanceOf(recipientAddress);
+const recipientBalanceIncrease = recipientBalance - recipientBalanceBefore;
 
 console.log('Token name:', tokenName);
 console.log('Token symbol:', tokenSymbol);
 console.log('Total supply:', formatUnits(totalSupply, 18));
 console.log('Transferred amount:', formatUnits(TRANSFER_AMOUNT, 18));
 console.log('Recipient address:', recipientAddress);
+console.log('Recipient balance increase:', formatUnits(recipientBalanceIncrease, 18));
 console.log('Recipient balance:', formatUnits(recipientBalance, 18));
 console.log('Sender balance:', formatUnits(senderBalance, 18));

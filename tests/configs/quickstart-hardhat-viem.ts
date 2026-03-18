@@ -88,7 +88,7 @@ const steps: IPageStepConfig = {
       action: 'runCommand',
       commandFolder: 'tests-output/hardhat-example-viem',
       preCommand: 'set -a && . ./.env && set +a && <COMMAND>',
-      checkForOutput: 'Recipient balance: 10.0',
+      checkForOutput: 'Recipient balance increase: 10.0',
     },
   },
 };
