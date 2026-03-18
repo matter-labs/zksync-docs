@@ -2,12 +2,13 @@ import { network } from 'hardhat';
 import { formatUnits, parseUnits } from 'ethers';
 
 const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS || '0x...';
+const DEFAULT_LOCAL_RECIPIENT = '0x70997970C51812dc3A010C7d01b50e0d17dc79C8';
 const TRANSFER_AMOUNT = parseUnits('10', 18);
 
 const { ethers } = await network.connect('anvil');
 
-const [sender, fallbackRecipient] = await ethers.getSigners();
-const recipientAddress = process.env.RECIPIENT_ADDRESS || fallbackRecipient.address;
+const [sender] = await ethers.getSigners();
+const recipientAddress = process.env.RECIPIENT_ADDRESS || DEFAULT_LOCAL_RECIPIENT;
 
 const contract = await ethers.getContractAt('QuickstartToken', CONTRACT_ADDRESS, sender);
 
