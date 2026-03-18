@@ -2,17 +2,17 @@
 pragma solidity ^0.8.13;
 
 import {Script} from "forge-std/Script.sol";
-import {ZeekMessages} from "../src/ZeekMessages.sol";
+import {QuickstartToken} from "../src/QuickstartToken.sol";
 
-contract ZeekMessagesScript is Script {
-    ZeekMessages public zeekMessages;
+contract QuickstartTokenScript is Script {
+    QuickstartToken public quickstartToken;
 
     function setUp() public {}
 
     function run() public {
         vm.startBroadcast();
 
-        zeekMessages = new ZeekMessages();
+        quickstartToken = new QuickstartToken("Quickstart Token", "QKT");
 
         vm.stopBroadcast();
     }

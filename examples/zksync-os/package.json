@@ -1,26 +1,13 @@
 {
   "name": "hh-test",
   "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "compile": "hardhat compile",
-    "deploy:counter:testnet": "hardhat ignition deploy ignition/modules/Counter.ts --network zksyncOS",
-    "deploy:counter:local": "hardhat ignition deploy ignition/modules/Counter.ts --config hardhat.config.local.ts --network anvil",
-    "deploy:messages:testnet": "hardhat ignition deploy ignition/modules/ZeekMessages.ts --network zksyncOS",
-    "deploy:messages:local": "hardhat ignition deploy ignition/modules/ZeekMessages.ts --config hardhat.config.local.ts --network anvil",
-    "interact:ethers:local": "hardhat run scripts/interact-local-ethers.ts --config hardhat.config.local.ts",
-    "interact:ethers:testnet": "hardhat run scripts/interact-testnet-ethers.ts",
-    "interact:viem:local": "hardhat run scripts/interact-local-viem.ts --config hardhat.config.local.ts",
-    "interact:viem:testnet": "hardhat run scripts/interact-testnet-viem.ts",
-    "increment:ethers": "hardhat run scripts/increment-ethers.ts",
-    "increment:viem": "hardhat run scripts/increment-viem.ts"
-  },
   "devDependencies": {
     "@nomicfoundation/hardhat-ignition": "^3.0.3",
     "@nomicfoundation/hardhat-toolbox-mocha-ethers": "^3.0.0",
     "@nomicfoundation/hardhat-toolbox-viem": "^5.0.0",
     "@nomicfoundation/hardhat-verify": "^3.0.4",
     "@nomicfoundation/hardhat-viem": "^3.0.0",
+    "@openzeppelin/contracts": "^5.6.1",
     "@types/chai": "^4.3.20",
     "@types/chai-as-promised": "^8.0.2",
     "@types/mocha": "^10.0.10",
@@ -32,5 +19,19 @@
     "mocha": "^11.7.2",
     "typescript": "~5.8.0",
     "viem": "^2.37.6"
-  }
+  },
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy:counter:testnet": "hardhat ignition deploy ignition/modules/Counter.ts --network zksyncOS",
+    "deploy:counter:local": "hardhat ignition deploy ignition/modules/Counter.ts --config hardhat.config.local.ts --network anvil",
+    "deploy:messages:testnet": "hardhat ignition deploy ignition/modules/QuickstartToken.ts --network zksyncOS",
+    "deploy:messages:local": "hardhat ignition deploy ignition/modules/QuickstartToken.ts --config hardhat.config.local.ts --network anvil",
+    "interact:ethers:local": "hardhat run scripts/interact-local-ethers-quickstart-token.ts --config hardhat.config.local.ts",
+    "interact:ethers:testnet": "hardhat run scripts/interact-testnet-ethers-quickstart-token.ts",
+    "interact:viem:local": "hardhat run scripts/interact-local-viem-quickstart-token.ts --config hardhat.config.local.ts",
+    "interact:viem:testnet": "hardhat run scripts/interact-testnet-viem-quickstart-token.ts",
+    "increment:ethers": "hardhat run scripts/increment-ethers.ts",
+    "increment:viem": "hardhat run scripts/increment-viem.ts"
+  },
+  "type": "module"
 }

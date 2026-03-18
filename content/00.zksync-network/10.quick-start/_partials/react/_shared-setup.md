@@ -9,19 +9,19 @@ title: Quickstart - React Frontend Setup
     ::code-group
 
     ```bash [npm]
-    npm create vite@latest zeek-frontend -- --template react-ts --no-interactive
+    npm create vite@latest token-frontend -- --template react-ts --no-interactive
     ```
 
     ```bash [yarn]
-    yarn create vite zeek-frontend --template react-ts --no-interactive
+    yarn create vite token-frontend --template react-ts --no-interactive
     ```
 
     ```bash [pnpm]
-    pnpm create vite zeek-frontend --template react-ts --no-interactive
+    pnpm create vite token-frontend --template react-ts --no-interactive
     ```
 
     ```bash [bun]
-    bun create vite zeek-frontend --template react-ts --no-interactive
+    bun create vite token-frontend --template react-ts --no-interactive
     ```
 
     ::
@@ -31,7 +31,7 @@ title: Quickstart - React Frontend Setup
     :test-action{actionId="move-into-react-frontend-project"}
 
     ```bash
-    cd zeek-frontend
+    cd token-frontend
     ```
 
     :test-action{actionId="install-react-frontend-deps"}
@@ -66,7 +66,7 @@ title: Quickstart - React Frontend Setup
     :test-action{actionId="add-react-wagmi-config"}
 
     ```ts
-    :code-import{filePath="zeek-frontend-react/src/wagmi.ts"}
+    :code-import{filePath="token-frontend-react/src/wagmi.ts"}
     ```
 
 1. Next, configure the `wagmi` and query client providers in `src/main.tsx`.
@@ -74,7 +74,7 @@ title: Quickstart - React Frontend Setup
     :test-action{actionId="configure-react-main-file"}
 
     ```ts
-    :code-import{filePath="zeek-frontend-react/src/main.tsx"}
+    :code-import{filePath="token-frontend-react/src/main.tsx"}
     ```
 
 1. Replace `src/App.tsx` with the code below.
@@ -84,10 +84,10 @@ title: Quickstart - React Frontend Setup
 
     ::drop-panel
 
-    ::panel{label="App.tsx"}
+   ::panel{label="App.tsx"}
 
    ```ts
-    :code-import{filePath="zeek-frontend-react/src/App.tsx"}
+    :code-import{filePath="token-frontend-react/src/App.tsx"}
     ```
 
     ::

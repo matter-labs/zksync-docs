@@ -11,13 +11,16 @@ title: Quickstart - Hardhat Interact Local Viem
     :test-action{actionId="add-hardhat-viem-script"}
 
     ```ts
-    :code-import{filePath="zksync-os/scripts/interact-local-viem.ts"}
+    :code-import{filePath="zksync-os/scripts/interact-local-viem-quickstart-token.ts"}
     ```
 
 1. Set your deployed contract address at the top of the script file.
 
     :test-action{actionId="create-hh-env-file"}
     :test-action{actionId="set-hardhat-viem-contract-address"}
+
+    You may also change the recipient address.
+    This example uses another `anvil` rich wallet as the recipient by default.
 
 1. Run the script.
 
@@ -43,4 +46,4 @@ title: Quickstart - Hardhat Interact Local Viem
 
     ::
 
-You should see in the logs the total messages is `2` and the last message is `Hello from Hardhat`.
+You should see the token name, symbol, transfer amount, recipient balance, and sender balance in the logs.

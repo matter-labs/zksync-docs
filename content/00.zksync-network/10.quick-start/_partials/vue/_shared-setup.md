@@ -9,19 +9,19 @@ title: Quickstart - Vue Frontend Setup
     ::code-group
 
     ```bash [npm]
-    npm create vite@latest zeek-frontend-vue -- --template vue-ts --no-interactive
+    npm create vite@latest token-frontend-vue -- --template vue-ts --no-interactive
     ```
 
     ```bash [yarn]
-    yarn create vite zeek-frontend-vue --template vue-ts --no-interactive
+    yarn create vite token-frontend-vue --template vue-ts --no-interactive
     ```
 
     ```bash [pnpm]
-    pnpm create vite zeek-frontend-vue --template vue-ts --no-interactive
+    pnpm create vite token-frontend-vue --template vue-ts --no-interactive
     ```
 
     ```bash [bun]
-    bun create vite zeek-frontend-vue --template vue-ts --no-interactive
+    bun create vite token-frontend-vue --template vue-ts --no-interactive
     ```
 
     ::
@@ -31,7 +31,7 @@ title: Quickstart - Vue Frontend Setup
     :test-action{actionId="move-into-vue-frontend-project"}
 
     ```bash
-    cd zeek-frontend-vue
+    cd token-frontend-vue
     ```
 
     :test-action{actionId="install-vue-frontend-deps"}
@@ -66,7 +66,7 @@ title: Quickstart - Vue Frontend Setup
     :test-action{actionId="add-vue-wagmi-config"}
 
     ```ts
-    :code-import{filePath="zeek-frontend-vue/src/wagmi.ts"}
+    :code-import{filePath="token-frontend-vue/src/wagmi.ts"}
     ```
 
 1. Next, configure the `wagmi` plugin and query client in `src/main.ts`.
@@ -74,7 +74,7 @@ title: Quickstart - Vue Frontend Setup
     :test-action{actionId="configure-vue-main-file"}
 
     ```ts
-    :code-import{filePath="zeek-frontend-vue/src/main.ts"}
+    :code-import{filePath="token-frontend-vue/src/main.ts"}
     ```
 
 1. Replace `src/App.vue` with the code below.
@@ -84,10 +84,10 @@ title: Quickstart - Vue Frontend Setup
 
     ::drop-panel
 
-    ::panel{label="App.vue"}
+   ::panel{label="App.vue"}
 
    ```ts
-    :code-import{filePath="zeek-frontend-vue/src/App.vue"}
+    :code-import{filePath="token-frontend-vue/src/App.vue"}
     ```
 
     ::

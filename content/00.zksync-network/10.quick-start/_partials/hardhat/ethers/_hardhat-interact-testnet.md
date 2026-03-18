@@ -7,10 +7,10 @@ title: Quickstart - Hardhat Interact Testnet Ethers
 1. Copy and paste the script below into `scripts/interact.ts`.
 
     ```ts
-    :code-import{filePath="zksync-os/scripts/interact-testnet-ethers.ts"}
+    :code-import{filePath="zksync-os/scripts/interact-testnet-ethers-quickstart-token.ts"}
     ```
 
-1. Set your deployed contract address at the top of the script file.
+1. Set your deployed contract address and recipient address at the top of the script file.
 
 1. Run the script.
 
@@ -34,4 +34,4 @@ title: Quickstart - Hardhat Interact Testnet Ethers
 
     ::
 
-You should see in the logs the total messages is `2` and the last message is `Hello from Hardhat`.
+You should see the token name, symbol, transfer amount, recipient balance, and sender balance in the logs.

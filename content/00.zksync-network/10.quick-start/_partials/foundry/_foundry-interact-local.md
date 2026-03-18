@@ -2,16 +2,16 @@
 title: Quickstart - Foundry Interact Local
 ---
 
-1. Create a new file in the `script` folder called `InteractZeekMessages.s.sol`.
+1. Create a new file in the `script` folder called `InteractQuickstartToken.s.sol`.
 
     :test-action{actionId="create-foundry-interact-script-file"}
 
-1. Copy and paste the script below into `InteractZeekMessages.s.sol`.
+1. Copy and paste the script below into `InteractQuickstartToken.s.sol`.
 
     :test-action{actionId="add-foundry-interact-script"}
 
     ```solidity
-    :code-import{filePath="zksync-os-foundry/script/InteractZeekMessages.s.sol"}
+    :code-import{filePath="zksync-os-foundry/script/InteractQuickstartToken.s.sol"}
     ```
 
 1. Set your deployed contract address.
@@ -23,12 +23,15 @@ title: Quickstart - Foundry Interact Local
     export CONTRACT_ADDRESS="0x..."
     ```
 
+    You may also change the recipient address.
+    This example uses another `anvil` rich wallet as the recipient by default.
+
 1. Run the interaction script.
 
     :test-action{actionId="run-foundry-interact-script"}
 
     ```bash
-    forge script script/InteractZeekMessages.s.sol --rpc-url http://localhost:8545 --broadcast --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+    forge script script/InteractQuickstartToken.s.sol --rpc-url http://localhost:8545 --broadcast --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
     ```
 
-You should see in the logs the total messages is `1` and the last message is `Hello from Foundry`.
+You should see the token name, symbol, transfer amount, and recipient balance in the logs.

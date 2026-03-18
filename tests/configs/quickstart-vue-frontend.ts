@@ -20,20 +20,20 @@ const steps: IPageStepConfig = {
     },
     'install-vue-frontend-deps': {
       action: 'runCommand',
-      commandFolder: 'tests-output/zeek-frontend-vue',
+      commandFolder: 'tests-output/token-frontend-vue',
     },
     'create-vue-wagmi-file': {
       action: 'runCommand',
-      commandFolder: 'tests-output/zeek-frontend-vue',
+      commandFolder: 'tests-output/token-frontend-vue',
       useSetCommand: 'touch src/wagmi.ts',
     },
     'add-vue-wagmi-config': {
       action: 'writeToFile',
-      filepath: 'tests-output/zeek-frontend-vue/src/wagmi.ts',
+      filepath: 'tests-output/token-frontend-vue/src/wagmi.ts',
     },
     'configure-vue-main-file': {
       action: 'writeToFile',
-      filepath: 'tests-output/zeek-frontend-vue/src/main.ts',
+      filepath: 'tests-output/token-frontend-vue/src/main.ts',
     },
     'open-app-vue': {
       action: 'clickButtonByText',
@@ -41,29 +41,29 @@ const steps: IPageStepConfig = {
     },
     'replace-vue-app-file': {
       action: 'writeToFile',
-      filepath: 'tests-output/zeek-frontend-vue/src/App.vue',
+      filepath: 'tests-output/token-frontend-vue/src/App.vue',
     },
     'create-vue-env-file': {
       action: 'runCommand',
-      commandFolder: 'tests-output/zeek-frontend-vue',
+      commandFolder: 'tests-output/token-frontend-vue',
       useSetCommand: 'touch .env',
     },
     'set-vue-frontend-contract-address': {
       action: 'extractDataToEnv',
       dataFilepath: 'tests-output/hardhat-example-viem/ignition/deployments/chain-31337/deployed_addresses.json',
-      envFilepath: 'tests-output/zeek-frontend-vue/.env',
+      envFilepath: 'tests-output/token-frontend-vue/.env',
       variableName: 'VITE_CONTRACT_ADDRESS',
-      selector: { regex: /(?<="ZeekMessages#ZeekMessages"\s*:\s*")0x[a-fA-F0-9]{40}(?=")/ },
+      selector: { regex: /(?<="QuickstartToken#QuickstartToken"\s*:\s*")0x[a-fA-F0-9]{40}(?=")/ },
     },
     'set-vue-frontend-chain': {
       action: 'modifyFile',
-      filepath: 'tests-output/zeek-frontend-vue/.env',
+      filepath: 'tests-output/token-frontend-vue/.env',
       atLine: 2,
       useSetData: 'VITE_CHAIN=local',
     },
     'run-vue-frontend': {
       action: 'runCommand',
-      commandFolder: 'tests-output/zeek-frontend-vue',
+      commandFolder: 'tests-output/token-frontend-vue',
       preCommand: "bun pm2 start '<COMMAND> -- --port 5174' --name quickstart-vue",
       waitTime: 10000,
     },
@@ -73,15 +73,15 @@ const steps: IPageStepConfig = {
     },
     'check-frontend-title': {
       action: 'findText',
-      text: 'Zeek Messages',
+      text: 'Quickstart Token',
     },
     'check-frontend-total-messages': {
       action: 'findText',
-      text: 'Total messages',
+      text: 'Total supply',
     },
     'check-frontend-last-message': {
       action: 'findText',
-      text: 'Last message',
+      text: 'Your balance',
     },
   },
 };

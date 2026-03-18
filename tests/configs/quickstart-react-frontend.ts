@@ -16,20 +16,20 @@ const steps: IPageStepConfig = {
     },
     'install-react-frontend-deps': {
       action: 'runCommand',
-      commandFolder: 'tests-output/zeek-frontend',
+      commandFolder: 'tests-output/token-frontend',
     },
     'create-react-wagmi-file': {
       action: 'runCommand',
-      commandFolder: 'tests-output/zeek-frontend',
+      commandFolder: 'tests-output/token-frontend',
       useSetCommand: 'touch src/wagmi.ts',
     },
     'add-react-wagmi-config': {
       action: 'writeToFile',
-      filepath: 'tests-output/zeek-frontend/src/wagmi.ts',
+      filepath: 'tests-output/token-frontend/src/wagmi.ts',
     },
     'configure-react-main-file': {
       action: 'writeToFile',
-      filepath: 'tests-output/zeek-frontend/src/main.tsx',
+      filepath: 'tests-output/token-frontend/src/main.tsx',
     },
     'open-app-tsx': {
       action: 'clickButtonByText',
@@ -37,29 +37,29 @@ const steps: IPageStepConfig = {
     },
     'replace-react-app-file': {
       action: 'writeToFile',
-      filepath: 'tests-output/zeek-frontend/src/App.tsx',
+      filepath: 'tests-output/token-frontend/src/App.tsx',
     },
     'create-react-env-file': {
       action: 'runCommand',
-      commandFolder: 'tests-output/zeek-frontend',
+      commandFolder: 'tests-output/token-frontend',
       useSetCommand: 'touch .env',
     },
     'set-react-frontend-contract-address': {
       action: 'extractDataToEnv',
       dataFilepath: 'tests-output/hardhat-example-viem/ignition/deployments/chain-31337/deployed_addresses.json',
-      envFilepath: 'tests-output/zeek-frontend/.env',
+      envFilepath: 'tests-output/token-frontend/.env',
       variableName: 'VITE_CONTRACT_ADDRESS',
-      selector: { regex: /(?<="ZeekMessages#ZeekMessages"\s*:\s*")0x[a-fA-F0-9]{40}(?=")/ },
+      selector: { regex: /(?<="QuickstartToken#QuickstartToken"\s*:\s*")0x[a-fA-F0-9]{40}(?=")/ },
     },
     'set-react-frontend-chain': {
       action: 'modifyFile',
-      filepath: 'tests-output/zeek-frontend/.env',
+      filepath: 'tests-output/token-frontend/.env',
       atLine: 2,
       useSetData: 'VITE_CHAIN=local',
     },
     'run-react-frontend': {
       action: 'runCommand',
-      commandFolder: 'tests-output/zeek-frontend',
+      commandFolder: 'tests-output/token-frontend',
       preCommand: "bun pm2 start '<COMMAND>' --name quickstart-react",
       waitTime: 10000,
     },
@@ -69,15 +69,15 @@ const steps: IPageStepConfig = {
     },
     'check-frontend-title': {
       action: 'findText',
-      text: 'Zeek Messages',
+      text: 'Quickstart Token',
     },
     'check-frontend-total-messages': {
       action: 'findText',
-      text: 'Total messages',
+      text: 'Total supply',
     },
     'check-frontend-last-message': {
       action: 'findText',
-      text: 'Last message',
+      text: 'Your balance',
     },
   },
 };

@@ -16,6 +16,11 @@ const steps: IPageStepConfig = {
       projectFolder: 'hardhat-example-viem',
       projectTemplate: 'hardhat-v3-viem',
     },
+    'install-hardhat-openzeppelin': {
+      action: 'runCommand',
+      commandFolder: 'tests-output/hardhat-example-viem',
+      useSetCommand: 'npm install @openzeppelin/contracts',
+    },
     'configure-hardhat-local-config': {
       action: 'modifyFile',
       filepath: 'tests-output/hardhat-example-viem/hardhat.config.ts',
@@ -25,20 +30,20 @@ const steps: IPageStepConfig = {
     'create-hardhat-contract-file': {
       action: 'runCommand',
       commandFolder: 'tests-output/hardhat-example-viem',
-      useSetCommand: 'touch contracts/ZeekMessages.sol',
+      useSetCommand: 'touch contracts/QuickstartToken.sol',
     },
-    'add-zeek-messages-contract': {
+    'add-token-contract': {
       action: 'writeToFile',
-      filepath: 'tests-output/hardhat-example-viem/contracts/ZeekMessages.sol',
+      filepath: 'tests-output/hardhat-example-viem/contracts/QuickstartToken.sol',
     },
     'create-hardhat-ignition-module': {
       action: 'runCommand',
       commandFolder: 'tests-output/hardhat-example-viem',
-      useSetCommand: 'touch ignition/modules/ZeekMessages.ts',
+      useSetCommand: 'touch ignition/modules/QuickstartToken.ts',
     },
     'add-hardhat-ignition-module': {
       action: 'writeToFile',
-      filepath: 'tests-output/hardhat-example-viem/ignition/modules/ZeekMessages.ts',
+      filepath: 'tests-output/hardhat-example-viem/ignition/modules/QuickstartToken.ts',
     },
     'compile-hardhat-project': {
       action: 'runCommand',
@@ -77,13 +82,13 @@ const steps: IPageStepConfig = {
       dataFilepath: 'tests-output/hardhat-example-viem/ignition/deployments/chain-31337/deployed_addresses.json',
       envFilepath: 'tests-output/hardhat-example-viem/.env',
       variableName: 'CONTRACT_ADDRESS',
-      selector: { regex: /(?<="ZeekMessages#ZeekMessages"\s*:\s*")0x[a-fA-F0-9]{40}(?=")/ },
+      selector: { regex: /(?<="QuickstartToken#QuickstartToken"\s*:\s*")0x[a-fA-F0-9]{40}(?=")/ },
     },
     'run-hardhat-viem-script': {
       action: 'runCommand',
       commandFolder: 'tests-output/hardhat-example-viem',
       preCommand: 'set -a && . ./.env && set +a && <COMMAND>',
-      checkForOutput: 'Last message: Hello from Hardhat',
+      checkForOutput: 'Recipient balance: 10.0',
     },
   },
 };

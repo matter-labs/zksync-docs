@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "zeek-frontend-vue",
+      "name": "token-frontend-vue",
       "dependencies": {
         "@tanstack/vue-query": "^5.92.9",
         "@wagmi/vue": "^0.5.0",

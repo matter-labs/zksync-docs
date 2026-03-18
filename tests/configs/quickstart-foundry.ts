@@ -14,31 +14,44 @@ const steps: IPageStepConfig = {
       action: 'runCommand',
       commandFolder: 'tests-output',
     },
+    'install-foundry-openzeppelin': {
+      action: 'runCommand',
+      commandFolder: 'tests-output/QuickstartToken',
+    },
+    'create-remappings': {
+      action: 'runCommand',
+      commandFolder: 'tests-output/QuickstartToken',
+      useSetCommand: 'touch remappings.txt',
+    },
+    'modify-remappings': {
+      action: 'writeToFile',
+      filepath: 'tests-output/QuickstartToken/remappings.txt',
+    },
     'create-foundry-contract-file': {
       action: 'runCommand',
-      commandFolder: 'tests-output/ZeekMessages',
-      useSetCommand: 'touch src/ZeekMessages.sol',
+      commandFolder: 'tests-output/QuickstartToken',
+      useSetCommand: 'touch src/QuickstartToken.sol',
     },
-    'add-zeek-messages-contract': {
+    'add-token-contract': {
       action: 'writeToFile',
-      filepath: 'tests-output/ZeekMessages/src/ZeekMessages.sol',
+      filepath: 'tests-output/QuickstartToken/src/QuickstartToken.sol',
     },
     'create-foundry-deploy-script-file': {
       action: 'runCommand',
-      commandFolder: 'tests-output/ZeekMessages',
-      useSetCommand: 'touch script/ZeekMessages.s.sol',
+      commandFolder: 'tests-output/QuickstartToken',
+      useSetCommand: 'touch script/QuickstartToken.s.sol',
     },
     'add-foundry-deploy-script': {
       action: 'writeToFile',
-      filepath: 'tests-output/ZeekMessages/script/ZeekMessages.s.sol',
+      filepath: 'tests-output/QuickstartToken/script/QuickstartToken.s.sol',
     },
     'build-foundry-project': {
       action: 'runCommand',
-      commandFolder: 'tests-output/ZeekMessages',
+      commandFolder: 'tests-output/QuickstartToken',
     },
     'deploy-foundry-contract': {
       action: 'runCommand',
-      commandFolder: 'tests-output/ZeekMessages',
+      commandFolder: 'tests-output/QuickstartToken',
     },
   },
   'zksync-network/quick-start/interact-with-your-contract': {
@@ -48,30 +61,30 @@ const steps: IPageStepConfig = {
     },
     'create-foundry-interact-script-file': {
       action: 'runCommand',
-      commandFolder: 'tests-output/ZeekMessages',
-      useSetCommand: 'touch script/InteractZeekMessages.s.sol',
+      commandFolder: 'tests-output/QuickstartToken',
+      useSetCommand: 'touch script/InteractQuickstartToken.s.sol',
     },
     'add-foundry-interact-script': {
       action: 'writeToFile',
-      filepath: 'tests-output/ZeekMessages/script/InteractZeekMessages.s.sol',
+      filepath: 'tests-output/QuickstartToken/script/InteractQuickstartToken.s.sol',
     },
     'create-env-file': {
       action: 'runCommand',
-      commandFolder: 'tests-output/ZeekMessages',
+      commandFolder: 'tests-output/QuickstartToken',
       useSetCommand: 'touch .env',
     },
     'set-foundry-contract-address': {
       action: 'extractDataToEnv',
-      dataFilepath: 'tests-output/ZeekMessages/broadcast/ZeekMessages.s.sol/31337/run-latest.json',
-      envFilepath: 'tests-output/ZeekMessages/.env',
+      dataFilepath: 'tests-output/QuickstartToken/broadcast/QuickstartToken.s.sol/31337/run-latest.json',
+      envFilepath: 'tests-output/QuickstartToken/.env',
       variableName: 'CONTRACT_ADDRESS',
       selector: { regex: /(?<="contractAddress"\s*:\s*")0x[a-fA-F0-9]{40}(?=")/ },
     },
     'run-foundry-interact-script': {
       action: 'runCommand',
-      commandFolder: 'tests-output/ZeekMessages',
+      commandFolder: 'tests-output/QuickstartToken',
       preCommand: 'set -a && . ./.env && set +a && <COMMAND>',
-      checkForOutput: 'Last message: Hello from Foundry',
+      checkForOutput: 'Recipient balance: 10',
     },
   },
 };

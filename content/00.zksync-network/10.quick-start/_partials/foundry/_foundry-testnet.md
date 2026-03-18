@@ -8,23 +8,27 @@ you can install it via [`foundryup`](https://www.getfoundry.sh/introduction/inst
 1. Create a new foundry project:
 
     ```bash
-    forge init ZeekMessages
+    forge init QuickstartToken
     ```
 
     ```bash
-    cd ZeekMessages
+    cd QuickstartToken
     ```
 
-1. Create a new file in the `src` folder called `ZeekMessages.sol`.
+1. Install OpenZeppelin Contracts.
 
-1. Copy and paste the `ZeekMessages` contract above into the `ZeekMessages.sol` file.
+    :display_partial{path="/zksync-network/quick-start/_partials/foundry/_foundry-install-openzeppelin"}
 
-1. Create a new file in the `script` folder called `ZeekMessages.s.sol`.
+1. Create a new file in the `src` folder called `QuickstartToken.sol`.
 
-1. Copy and paste the script below into `ZeekMessages.s.sol`.
+1. Copy and paste the `QuickstartToken` contract above into the `QuickstartToken.sol` file.
+
+1. Create a new file in the `script` folder called `QuickstartToken.s.sol`.
+
+1. Copy and paste the script below into `QuickstartToken.s.sol`.
 
     ```solidity
-    :code-import{filePath="zksync-os-foundry/script/ZeekMessages.s.sol"}
+    :code-import{filePath="zksync-os-foundry/script/QuickstartToken.s.sol"}
     ```
 
 1. Build the project
@@ -43,7 +47,7 @@ you can install it via [`foundryup`](https://www.getfoundry.sh/introduction/inst
 1. Deploy the contract:
 
     ```bash
-    forge script script/ZeekMessages.s.sol --rpc-url https://zksync-os-testnet-alpha.zksync.dev --broadcast --skip-simulation --private-key $TESTNET_PRIVATE_KEY
+    forge script script/QuickstartToken.s.sol --rpc-url https://zksync-os-testnet-alpha.zksync.dev --broadcast --skip-simulation --private-key $TESTNET_PRIVATE_KEY
     ```
 
 1. (Optional) Verify the contract.
@@ -56,7 +60,7 @@ you can install it via [`foundryup`](https://www.getfoundry.sh/introduction/inst
     --verifier custom \
     --verifier-url https://block-explorer-api.zksync-os-testnet-alpha.zksync.dev/api \
     0x<YOUR_CONTRACT_ADDRESS> \
-    src/ZeekMessages.sol:ZeekMessages
+    src/QuickstartToken.sol:QuickstartToken
     ```
 
 1. Verify if the contract is verified by searching for your contract address on the [block explorer](https://zksync-os-testnet-alpha.staging-scan-v2.zksync.dev)

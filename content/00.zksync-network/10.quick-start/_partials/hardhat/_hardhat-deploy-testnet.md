@@ -9,12 +9,17 @@ title: Quickstart - Hardhat Deploy Testnet
     cd hardhat-example
     ```
 
-1. Initialize a new Hardhat 3 project with Mocha and Ethers.js.
-  Select `y` to install the dependencies.
+1. Initialize a new Hardhat 3 project.
+    You can choose to either use `Mocha` with `Ethers.js` or `Node Test Runner` with `viem`.
+    Select `y` to install the dependencies.
 
     ```bash
     npx hardhat --init
     ```
+
+1. Install OpenZeppelin Contracts.
+
+    :display_partial{path="/zksync-network/quick-start/_partials/hardhat/_hardhat-install-openzeppelin"}
 
 1. Add ZKsync OS to the `hardhat.config.ts` file and configure the ignition required confirmations.
 
@@ -46,16 +51,16 @@ title: Quickstart - Hardhat Deploy Testnet
 
     ::
 
-1. Create a new file in the `contracts` folder called `ZeekMessages.sol`.
+1. Create a new file in the `contracts` folder called `QuickstartToken.sol`.
 
-1. Copy and paste the `ZeekMessages` contract above into the `ZeekMessages.sol` file.
+1. Copy and paste the `QuickstartToken` contract above into the `QuickstartToken.sol` file.
 
-1. Create a new file in the `ignition/modules` folder called `ZeekMessages.ts`.
+1. Create a new file in the `ignition/modules` folder called `QuickstartToken.ts`.
 
-1. Copy and paste the ignition module below into `ZeekMessages.ts`.
+1. Copy and paste the ignition module below into `QuickstartToken.ts`.
 
     ```solidity
-    :code-import{filePath="zksync-os/ignition/modules/ZeekMessages.ts"}
+    :code-import{filePath="zksync-os/ignition/modules/QuickstartToken.ts"}
     ```
 
 1. Compile and deploy the contract.
@@ -65,19 +70,19 @@ title: Quickstart - Hardhat Deploy Testnet
     ::code-group
 
     ```bash [npm]
-    npx hardhat ignition deploy ignition/modules/ZeekMessages.ts --network zksyncOS
+    npx hardhat ignition deploy ignition/modules/QuickstartToken.ts --network zksyncOS
     ```
 
     ```bash [yarn]
-    yarn hardhat ignition deploy ignition/modules/ZeekMessages.ts --network zksyncOS
+    yarn hardhat ignition deploy ignition/modules/QuickstartToken.ts --network zksyncOS
     ```
 
     ```bash [pnpm]
-    pnpm hardhat ignition deploy ignition/modules/ZeekMessages.ts --network zksyncOS
+    pnpm hardhat ignition deploy ignition/modules/QuickstartToken.ts --network zksyncOS
     ```
 
     ```bash [bun]
-    bun hardhat ignition deploy ignition/modules/ZeekMessages.ts --network zksyncOS
+    bun hardhat ignition deploy ignition/modules/QuickstartToken.ts --network zksyncOS
     ```
 
     ::
@@ -130,25 +135,25 @@ You can optionally verify the contract so the code shows on the block explorer.
     ```bash [npm]
     npx hardhat clean
     npx hardhat compile --build-profile production
-    npx hardhat verify -build-profile production --network zksyncOS 0x<YOUR_CONTRACT_ADDRESS>
+    npx hardhat verify --build-profile production --network zksyncOS 0x<YOUR_CONTRACT_ADDRESS> "Quickstart Token" "QKT"
     ```
 
     ```bash [yarn]
     yarn hardhat clean
     yarn hardhat compile --build-profile production
-    yarn hardhat verify -build-profile production --network zksyncOS 0x<YOUR_CONTRACT_ADDRESS>
+    yarn hardhat verify --build-profile production --network zksyncOS 0x<YOUR_CONTRACT_ADDRESS> "Quickstart Token" "QKT"
     ```
 
     ```bash [pnpm]
     pnpm hardhat clean
     pnpm hardhat compile --build-profile production
-    pnpm hardhat verify -build-profile production --network zksyncOS 0x<YOUR_CONTRACT_ADDRESS>
+    pnpm hardhat verify --build-profile production --network zksyncOS 0x<YOUR_CONTRACT_ADDRESS> "Quickstart Token" "QKT"
     ```
 
     ```bash [bun]
     bun hardhat clean
     bun hardhat compile --build-profile production
-    bun hardhat verify -build-profile production --network zksyncOS 0x<YOUR_CONTRACT_ADDRESS>
+    bun hardhat verify --build-profile production --network zksyncOS 0x<YOUR_CONTRACT_ADDRESS> "Quickstart Token" "QKT"
     ```
 
     ::

@@ -4,17 +4,19 @@ title: Quickstart - Contract code
 
 ## Review the smart contract code
 
-The smart contract will store messages from users and emit events with replies from Zeek.
+The quickstart contract is a basic ERC-20 token built with OpenZeppelin.
 The entire code is as follows:
 
-:test-action{actionId="add-zeek-messages-contract"}
+:test-action{actionId="add-token-contract"}
 
 ```solidity
-:code-import{filePath="zksync-os/contracts/ZeekMessages.sol"}
+:code-import{filePath="zksync-os/contracts/QuickstartToken.sol"}
 ```
 
-The Solidity smart contract contains three functions:
+The contract:
 
-- `sendMessage` stores the messages sent by users in the `messages` state variable.
-- `getTotalMessages` returns the number of messages stored in the smart contract.
-- `getLastMessage` returns the last message sent.
+- imports helper contracts from `@openzeppelin/contracts` so that our contract is a standard ERC-20 contract, has an owner,
+  and allows to tokens to be burned
+- sets the token name to the symbol using the constructor arguments
+- mints an initial supply of 100 tokens to the deployer in the constructor
+- only allows the owner to mint additional tokens using the `mint` function
