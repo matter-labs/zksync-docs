@@ -4,7 +4,7 @@ title: Quickstart - Vue Frontend Local
 
 :display-partial{path="/zksync-network/quick-start/_partials/vue/_shared-setup"}
 
-6. Create a `.env` file and add your deployed contract address as `VITE_CONTRACT_ADDRESS` and set `VITE_CHAIN` to `local`.  <!-- markdownlint-disable-line -->
+6. Create a `.env` file in the root of the `token-frontend-vue` folder, add your deployed contract address as `VITE_CONTRACT_ADDRESS`, and set `VITE_CHAIN` to `local`.  <!-- markdownlint-disable-line -->
 
     :test-action{actionId="create-vue-env-file"}
     :test-action{actionId="set-vue-frontend-contract-address"}

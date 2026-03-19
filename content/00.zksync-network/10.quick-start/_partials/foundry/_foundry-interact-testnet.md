@@ -5,6 +5,7 @@ title: Quickstart - Foundry Interact Testnet
 1. Create a new file in the `script` folder called `InteractQuickstartToken.s.sol`.
 
 1. Copy and paste the script below into `InteractQuickstartToken.s.sol`.
+    This script will transfer 10 tokens to the recipient address and log some metadata for the token.
 
     ```solidity
     :code-import{filePath="zksync-os-foundry/script/InteractQuickstartToken.s.sol"}

@@ -7,11 +7,11 @@ import {QuickstartToken} from "../src/QuickstartToken.sol";
 
 contract InteractQuickstartTokenScript is Script {
     uint256 internal constant TRANSFER_AMOUNT = 10 * 10 ** 18;
-    address internal constant DEFAULT_LOCAL_RECIPIENT = 0x70997970C51812dc3A010C7d01b50e0d17dc79C8;
+    address internal constant DEFAULT_RECIPIENT = 0x70997970C51812dc3A010C7d01b50e0d17dc79C8;
 
     function run() public {
         address contractAddress = vm.envAddress("CONTRACT_ADDRESS");
-        address recipientAddress = vm.envOr("RECIPIENT_ADDRESS", DEFAULT_LOCAL_RECIPIENT);
+        address recipientAddress = vm.envOr("RECIPIENT_ADDRESS", DEFAULT_RECIPIENT);
         QuickstartToken quickstartToken = QuickstartToken(contractAddress);
         uint256 recipientBalanceBefore = quickstartToken.balanceOf(recipientAddress);
 

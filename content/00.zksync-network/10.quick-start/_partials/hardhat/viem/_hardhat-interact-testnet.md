@@ -5,6 +5,7 @@ title: Quickstart - Hardhat Interact Testnet Viem
 1. Create a new file in the `scripts` folder called `interact.ts`.
 
 1. Copy and paste the script below into `scripts/interact.ts`.
+    This script will transfer 10 tokens to the recipient address and log some metadata for the token.
 
     ```ts
     :code-import{filePath="zksync-os/scripts/interact-testnet-viem-quickstart-token.ts"}

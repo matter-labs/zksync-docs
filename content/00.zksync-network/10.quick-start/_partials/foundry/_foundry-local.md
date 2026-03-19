@@ -32,6 +32,7 @@ title: Quickstart - Local Foundry
     :test-action{actionId="create-foundry-deploy-script-file"}
 
 1. Copy and paste the script below into `QuickstartToken.s.sol`.
+    This script will be used to deploy the contract.
 
     :test-action{actionId="add-foundry-deploy-script"}
 
@@ -39,7 +40,7 @@ title: Quickstart - Local Foundry
     :code-import{filePath="zksync-os-foundry/script/QuickstartToken.s.sol"}
     ```
 
-1. Build the project
+1. Build the project.
 
     :test-action{actionId="build-foundry-project"}
 
@@ -47,7 +48,7 @@ title: Quickstart - Local Foundry
     forge build
     ```
 
-1. Deploy the contract using one of the test wallets provided by `anvil`:
+1. Deploy the contract using one of the test wallets provided by `anvil`.
 
     :test-action{actionId="deploy-foundry-contract"}
 

@@ -4,7 +4,7 @@ title: Quickstart - React Frontend Local
 
 :display-partial{path="/zksync-network/quick-start/_partials/react/_shared-setup"}
 
-6. Create a `.env` file and add your deployed contract address as `VITE_CONTRACT_ADDRESS` and set `VITE_CHAIN` to `local`.  <!-- markdownlint-disable-line -->
+6. Create a `.env` file in the root of the `token-frontend` folder, add your deployed contract address as `VITE_CONTRACT_ADDRESS`, and set `VITE_CHAIN` to `local`.  <!-- markdownlint-disable-line -->
 
     :test-action{actionId="create-react-env-file"}
     :test-action{actionId="set-react-frontend-contract-address"}

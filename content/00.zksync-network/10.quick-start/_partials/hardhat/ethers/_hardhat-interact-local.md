@@ -7,6 +7,7 @@ title: Quickstart - Hardhat Interact Local Ethers
     :test-action{actionId="create-hardhat-ethers-script-file"}
 
 1. Copy and paste the script below into `scripts/interact.ts`.
+    This script will transfer 10 tokens to the recipient address and log some metadata for the token.
 
     :test-action{actionId="add-hardhat-ethers-script"}
 

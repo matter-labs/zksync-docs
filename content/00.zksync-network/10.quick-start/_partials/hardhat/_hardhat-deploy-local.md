@@ -42,6 +42,7 @@ title: Quickstart - Hardhat Deploy Local
     :test-action{actionId="create-hardhat-ignition-module"}
 
 1. Copy and paste the ignition module below into `QuickstartToken.ts`.
+    This will be used to deploy the contract.
 
     :test-action{actionId="add-hardhat-ignition-module"}
 

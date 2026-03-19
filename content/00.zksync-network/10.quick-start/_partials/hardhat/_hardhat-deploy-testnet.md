@@ -58,6 +58,7 @@ title: Quickstart - Hardhat Deploy Testnet
 1. Create a new file in the `ignition/modules` folder called `QuickstartToken.ts`.
 
 1. Copy and paste the ignition module below into `QuickstartToken.ts`.
+    This will be used to deploy the contract.
 
     ```solidity
     :code-import{filePath="zksync-os/ignition/modules/QuickstartToken.ts"}
@@ -158,5 +159,5 @@ You can optionally verify the contract so the code shows on the block explorer.
 
     ::
 
-1. Verify if the contract is verified by searching for your contract address on the [block explorer](https://zksync-os-testnet-alpha.staging-scan-v2.zksync.dev)
+1. Verify if the contract was successfully verified by searching for your contract address on the [block explorer](https://zksync-os-testnet-alpha.staging-scan-v2.zksync.dev)
     and clicking on the "Contract" tab.

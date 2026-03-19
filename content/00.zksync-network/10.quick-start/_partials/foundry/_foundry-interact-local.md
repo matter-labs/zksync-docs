@@ -7,6 +7,7 @@ title: Quickstart - Foundry Interact Local
     :test-action{actionId="create-foundry-interact-script-file"}
 
 1. Copy and paste the script below into `InteractQuickstartToken.s.sol`.
+    This script will transfer 10 tokens to the recipient address and log some metadata for the token.
 
     :test-action{actionId="add-foundry-interact-script"}
 
