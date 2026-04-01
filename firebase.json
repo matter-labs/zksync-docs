@@ -112,6 +112,11 @@
         "type": 301
       },
       {
+        "source": "/zksync-network/sdk/js/ethers/guides/interop-messages",
+        "destination": "/zksync-network/unique-features/zksync-connect/interop-messages",
+        "type": 301
+      },
+      {
         "source": "/sdk{,/**}",
         "destination": "/zksync-network",
         "type": 301
