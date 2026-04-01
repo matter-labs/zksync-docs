@@ -97,58 +97,23 @@
         "type": 301
       },
       {
-        "source": "/sdk:ext(.html|.md|)*",
-        "destination": "/zksync-network/sdk",
+        "source": "/zksync-network/sdk{,/**}",
+        "destination": "/zksync-network",
         "type": 301
       },
       {
-        "source": "/sdk/:path*",
-        "destination": "/zksync-network/sdk/:path",
+        "source": "/sdk{,/**}",
+        "destination": "/zksync-network",
         "type": 301
       },
       {
-        "source": "/sdk/:path*",
-        "destination": "https://docs.zksync.io/zksync-network/sdk/:path",
-        "type": 301
-      },
-      {
-        "source": "/sdks/:path*",
-        "destination": "https://docs.zksync.io/zksync-network/sdk/:path",
-        "type": 301
-      },
-      {
-        "source": "/sdks/js/:path*.@(html|md)",
-        "destination": "https://docs.zksync.io/zksync-network/sdk/js/ethers/v5/:path",
-        "type": 301
-      },
-      {
-        "source": "/sdks/js/zksync-ethers/:path*.@(html|md)",
-        "destination": "https://docs.zksync.io/zksync-network/sdk/js/ethers/v6/:path",
-        "type": 301
-      },
-      {
-        "source": "/sdk/js/:path*.@(html|md)",
-        "destination": "https://docs.zksync.io/zksync-network/sdk/js/ethers/api/v5/:path",
-        "type": 301
-      },
-      {
-        "source": "/sdk/js/zksync-ethers/:path*.@(html|md)",
-        "destination": "https://docs.zksync.io/zksync-network/sdk/js/ethers/api/v6/:path",
+        "source": "/sdks{,/**}",
+        "destination": "/zksync-network",
         "type": 301
       },
       {
         "source": "https://sdk.zksync.io/:path*",
-        "destination": "https://docs.zksync.io/zksync-network/sdk/:path",
-        "type": 301
-      },
-      {
-        "source": "https://sdk.zksync.io/js/:path*.@(html|md)",
-        "destination": "https://docs.zksync.io/zksync-network/sdk/js/ethers/api/v5/:path",
-        "type": 301
-      },
-      {
-        "source": "https://sdk.zksync.io/js/zksync-ethers/:path*.@(html|md)",
-        "destination": "https://docs.zksync.io/zksync-network/sdk/js/ethers/api/v6/:path",
+        "destination": "https://docs.zksync.io/zksync-network",
         "type": 301
       },
       {
@@ -368,7 +333,7 @@
       },
       {
         "source": "/build/sdks/js{,/**}",
-        "destination": "/zksync-network/sdk/js/ethers",
+        "destination": "/zksync-network",
         "type": 301
       },
       {
