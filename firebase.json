@@ -102,6 +102,16 @@
         "type": 301
       },
       {
+        "source": "/zksync-network/contributing/documentation{,/**}",
+        "destination": "/zksync-network/contributing",
+        "type": 301
+      },
+      {
+        "source": "/zksync-network/contributing/code{,/**}",
+        "destination": "/zksync-network/contributing/protocol-contributions",
+        "type": 301
+      },
+      {
         "source": "/sdk{,/**}",
         "destination": "/zksync-network",
         "type": 301
