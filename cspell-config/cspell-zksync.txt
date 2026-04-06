@@ -13,10 +13,12 @@ foundryup-zksync
 Hyperchain
 Matter Labs
 okta
+ostestnet
 prividium
 Prividium
 Prividium™
 SIWE
+zeek
 Zeek
 Zeeks
 ZK Chain
