@@ -46,6 +46,7 @@ you can install it via [`foundryup`](https://www.getfoundry.sh/introduction/inst
     ```
 
 1. Deploy the contract using the command below.
+    Your contract address will be logged in the output.
 
     ```bash
     forge script script/QuickstartToken.s.sol --rpc-url https://zksync-os-testnet-alpha.zksync.dev --broadcast --skip-simulation --private-key $TESTNET_PRIVATE_KEY

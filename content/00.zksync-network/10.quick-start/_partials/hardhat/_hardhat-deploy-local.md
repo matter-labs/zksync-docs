@@ -51,6 +51,7 @@ title: Quickstart - Hardhat Deploy Local
     ```
 
 1. Compile and deploy the contract.
+    Your contract address will be logged in the output.
 
     :test-action{actionId="compile-hardhat-project"}
 

@@ -65,6 +65,7 @@ title: Quickstart - Hardhat Deploy Testnet
     ```
 
 1. Compile and deploy the contract.
+    Your contract address will be logged in the output.
 
     :display_partial{path="_partials/commands/_hh_compile"}
 

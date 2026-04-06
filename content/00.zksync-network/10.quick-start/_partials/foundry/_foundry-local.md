@@ -49,6 +49,7 @@ title: Quickstart - Local Foundry
     ```
 
 1. Deploy the contract using one of the test wallets provided by `anvil`.
+    Your contract address will be logged in the output.
 
     :test-action{actionId="deploy-foundry-contract"}
 
