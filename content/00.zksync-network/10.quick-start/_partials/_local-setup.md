@@ -11,7 +11,7 @@ in the `foundry` docs.
 
 ::callout{icon="i-heroicons-light-bulb"}
 If you've used ZKsync in the past, you may remember having to use special tooling to run a local node.
-Since the Atlas upgrade, however, you can now use any standard EVM local node for testing.
+Since [the Atlas upgrade](https://www.zksync.io/blog/introducing-the-zk-stacks-atlas-upgrade), however, you can now use any standard EVM local node for testing.
 The only time you may need a ZKsync-specific node is to test bridging or crosschain transactions.
 For this tutorial, we won't need one.
 ::
