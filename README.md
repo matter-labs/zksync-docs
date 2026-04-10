@@ -90,11 +90,8 @@ bun run lint:eslint
 
 We welcome contributions from the community! Check out the following resources to get started:
 
-- [Contribution Overview](https://docs.zksync.io/zksync-network/contributing/documentation)
-- To get started with the project locally and learn how to submit PRs for the project,
-  read the [Contribution Guidelines](/zksync-network/contributing/documentation/contribution-guidelines)
-- To learn how to write your content for documentation, read the
-  [Documentation Styleguide](https://docs.zksync.io/zksync-network/contributing/documentation/documentation-styleguide)
+- [Contributing to the documentation](https://docs.zksync.io/zksync-network/contributing/)
+- [Contributing to ZKsync Protocol](https://docs.zksync.io/zksync-network/contributing/protocol-contributions)
 
 ### Check out Community Code
 
