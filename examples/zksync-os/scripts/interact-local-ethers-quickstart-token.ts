@@ -1,0 +1,32 @@
+import { network } from 'hardhat';
+import { formatUnits, parseUnits } from 'ethers';
+
+const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS || '0x...';
+const TRANSFER_AMOUNT = parseUnits('10', 18);
+const DEFAULT_RECIPIENT = '0x70997970C51812dc3A010C7d01b50e0d17dc79C8';
+const recipientAddress = process.env.RECIPIENT_ADDRESS || DEFAULT_RECIPIENT;
+
+const { ethers } = await network.connect('anvil');
+
+const [sender] = await ethers.getSigners();
+
+const contract = await ethers.getContractAt('QuickstartToken', CONTRACT_ADDRESS, sender);
+
+const tokenName = await contract.name();
+const tokenSymbol = await contract.symbol();
+const totalSupply = await contract.totalSupply();
+const recipientBalanceBefore = await contract.balanceOf(recipientAddress);
+const transferTx = await contract.transfer(recipientAddress, TRANSFER_AMOUNT);
+await transferTx.wait();
+const senderBalance = await contract.balanceOf(sender.address);
+const recipientBalance = await contract.balanceOf(recipientAddress);
+const recipientBalanceIncrease = recipientBalance - recipientBalanceBefore;
+
+console.log('Token name:', tokenName);
+console.log('Token symbol:', tokenSymbol);
+console.log('Total supply:', formatUnits(totalSupply, 18));
+console.log('Transferred amount:', formatUnits(TRANSFER_AMOUNT, 18));
+console.log('Recipient address:', recipientAddress);
+console.log('Recipient balance increase:', formatUnits(recipientBalanceIncrease, 18));
+console.log('Recipient balance:', formatUnits(recipientBalance, 18));
+console.log('Sender balance:', formatUnits(senderBalance, 18));
