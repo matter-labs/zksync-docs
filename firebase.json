@@ -177,11 +177,6 @@
         "type": 301
       },
       {
-        "source": "/zksync-protocol/api",
-        "destination": "/build/api-reference",
-        "type": 301
-      },
-      {
         "source": "/build/api-reference",
         "destination": "/zksync-protocol/api",
         "type": 301
