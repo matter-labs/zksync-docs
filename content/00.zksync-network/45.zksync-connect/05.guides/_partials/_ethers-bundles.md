@@ -10,12 +10,12 @@ title: Hardhat 3 with Ethers
     npx hardhat --init
     ```
 
-:display_partial{path="_partials/_zksyncos/_setup-hh-interop"}
+:display_partial{path="/zksync-network/zksync-connect/guides/_partials/_hardhat-shared"}
 
-7. Copy/paste the script below. <!-- markdownlint-disable-line -->
+8. Copy and paste the script below into the `interop-counter.ts` file. <!-- markdownlint-disable-line -->
 
-    ```ts [increment.ts]
-    :code-import{filePath="local-zksync-os/scripts/interop-counter.ts"}
+    ```ts
+    :code-import{filePath="local-zksync-os/scripts/interop-counter-ethers.ts"}
     ```
 
 :display_partial{path="_partials/_zksyncos/_run-script-interop"}

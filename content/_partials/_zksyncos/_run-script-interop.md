@@ -2,7 +2,7 @@
 title: Hardhat 3 Run Script
 ---
 
-8. Run the script <!-- markdownlint-disable-line -->
+9. Run the script <!-- markdownlint-disable-line -->
 
         ::code-group
 
@@ -23,3 +23,17 @@ title: Hardhat 3 Run Script
         ```
 
         ::
+
+You should see the script output:
+
+```txt
+Counter deployed on localZKsyncOSChain2 at: 0x...
+StartingNumber:  1n
+✅ Created interop transaction.
+✅ Bundle is finalized on source; root available on destination.
+Finalize result: {
+  bundleHash: '0x...',
+  dstExecTxHash: '0x...'
+}
+FinalNumber:  2n
+```
