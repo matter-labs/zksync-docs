@@ -7,19 +7,19 @@ title: Quickstart - Hardhat Install OpenZeppelin
 ::code-group
 
 ```bash [npm]
-npm install @openzeppelin/contracts
+npm install -D @openzeppelin/contracts
 ```
 
 ```bash [yarn]
-yarn add @openzeppelin/contracts
+yarn add -D @openzeppelin/contracts
 ```
 
 ```bash [pnpm]
-pnpm add @openzeppelin/contracts
+pnpm add -D @openzeppelin/contracts
 ```
 
 ```bash [bun]
-bun add @openzeppelin/contracts
+bun add -D @openzeppelin/contracts
 ```
 
 ::
