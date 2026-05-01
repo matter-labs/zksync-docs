@@ -1,4 +1,5 @@
-import { createClient, createViemSdk } from '@matterlabs/zksync-js/viem';
+import { createClient } from '@matterlabs/zksync-js/viem';
+import { createViemSdk } from '@matterlabs/zksync-js/viem/sdk';
 import { network } from 'hardhat';
 import { encodeAbiParameters } from 'viem';
 
