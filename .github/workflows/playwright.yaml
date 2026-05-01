@@ -40,7 +40,7 @@ jobs:
       - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
         with:
           node-version: 22
-      - uses: foundry-rs/foundry-toolchain@v1
+      - uses: foundry-rs/foundry-toolchain@c7450ba673e133f5ee30098b3b54f444d3a2ca2d # v1
 
       - name: Install dependencies
         run: bun install
@@ -60,7 +60,7 @@ jobs:
           sleep 10
 
       - name: Run ${{ matrix.suite.test-file-name }}
-        uses: sarahschwartz/tutorial-tester@main
+        uses: sarahschwartz/tutorial-tester@f6099770c267ace79687748cd847b934d6e69eef # main
         with:
           tutorial-paths: ${{ matrix.suite.tutorial-paths }}
           config-path: ${{ matrix.suite.config-path }}
@@ -81,7 +81,7 @@ jobs:
 
       - name: Upload viem deployment outputs
         if: success() && matrix.suite.persist-state == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: quickstart-hardhat-viem-output
           path: |
@@ -112,14 +112,14 @@ jobs:
       - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
         with:
           node-version: 22
-      - uses: foundry-rs/foundry-toolchain@v1
+      - uses: foundry-rs/foundry-toolchain@c7450ba673e133f5ee30098b3b54f444d3a2ca2d # v1
 
       - name: Install dependencies
         run: bun install
 
       - name: Download viem deployment outputs
         id: viem-artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         continue-on-error: true
         with:
           name: quickstart-hardhat-viem-output
@@ -139,7 +139,7 @@ jobs:
 
       - name: Run ${{ matrix.suite.test-file-name }}
         if: steps.viem-artifact.outcome == 'success'
-        uses: sarahschwartz/tutorial-tester@main
+        uses: sarahschwartz/tutorial-tester@f6099770c267ace79687748cd847b934d6e69eef # main
         with:
           tutorial-paths: '["zksync-network/quick-start/build-a-frontend"]'
           config-path: ${{ matrix.suite.config-path }}
