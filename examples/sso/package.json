@@ -19,6 +19,6 @@
     "@simplewebauthn/server": "^13.1.2",
     "viem": "^2.33.1",
     "wagmi": "^2.16.0",
-    "zksync-sso": "^0.3.3"
+    "zksync-sso-4337": "latest"
   }
 }

@@ -1,8 +1,8 @@
 import { createWalletClient, http, type Address } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
 import { zksyncSepoliaTestnet } from 'viem/zksync';
-import { deployModularAccount } from 'zksync-sso/client';
-import type { RegisterNewPasskeyReturnType } from 'zksync-sso/client/passkey';
+import { deployModularAccount } from 'zksync-sso-4337/client';
+import type { RegisterNewPasskeyReturnType } from 'zksync-sso-4337/client/passkey';
 
 export async function deployAccountFromPasskey(publicPassKey: RegisterNewPasskeyReturnType) {
   const deployerKey = '0x_YOUR_PRIVATE_KEY'; // Replace with your deployer's private key

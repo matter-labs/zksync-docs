@@ -15,6 +15,7 @@ immediates
 Immunefi
 initializable
 Initializable
+Pimlico
 Transak
 Lukka
 mathbb
