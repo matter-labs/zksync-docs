@@ -8,7 +8,7 @@
     "@commitlint/cli": "19.5.0",
     "@commitlint/config-conventional": "19.5.0",
     "@types/bun": "1.1.10",
-    "@vue/test-utils": "2.4.6",
+    "@vue/test-utils": "2.4.10",
     "cspell": "8.14.4",
     "eslint": "9.11.1",
     "husky": "9.1.6",
