@@ -1,12 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createClient } from '@matterlabs/zksync-js/ethers';
 import { createEthersSdk } from '@matterlabs/zksync-js/ethers/sdk';
-import { Contract, Interface, JsonRpcProvider, ZeroAddress, ZeroHash } from 'ethers';
+import { AbiCoder, Contract, Interface, JsonRpcProvider, ZeroAddress, ZeroHash, keccak256, toUtf8Bytes } from 'ethers';
 import { network } from 'hardhat';
 
 const L1_RPC_URL = 'http://localhost:8545';
 const L2_RPC_URL = 'http://localhost:3050';
 const L2_ASSET_TRACKER_ADDRESS = '0x000000000000000000000000000000000001000f';
+const L1_MESSENGER_ADDRESS = '0x0000000000000000000000000000000000008008';
+const TOPIC_L1_MESSAGE_SENT_NEW = keccak256(toUtf8Bytes('L1MessageSent(uint256,bytes32,bytes)'));
+const TOPIC_L1_MESSAGE_SENT_LEG = keccak256(toUtf8Bytes('L1MessageSent(address,bytes32,bytes)'));
 
 const tokenAddress = process.env.INTEROP_TOKEN_ADDRESS;
 
@@ -34,9 +37,6 @@ const client = createClient({
 const sdk = createEthersSdk(client);
 
 const l2Provider = new JsonRpcProvider(L2_RPC_URL);
-const l1MessageSentIface = new Interface([
-  'event L1MessageSent(address indexed sender, bytes32 indexed hash, bytes message)',
-]);
 const newPriorityRequestIface = new Interface([
   'event NewPriorityRequest(uint256 txId, bytes32 txHash, uint64 expirationTimestamp, tuple(uint256 txType, uint256 from, uint256 to, uint256 gasLimit, uint256 gasPerPubdataByteLimit, uint256 maxFeePerGas, uint256 maxPriorityFeePerGas, uint256 paymaster, uint256 nonce, uint256 value, uint256[4] reserved, bytes data, bytes signature, uint256[] factoryDeps, bytes paymasterInput, bytes reservedDynamic) transaction, bytes[] factoryDeps)',
 ]);
@@ -63,6 +63,35 @@ type FinalizeL1DepositParams = {
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function findL1MessageSentLog(receipt: NonNullable<Awaited<ReturnType<typeof client.zks.getReceiptWithL2ToL1>>>) {
+  const matches = receipt.logs.filter((log: (typeof receipt.logs)[number]) => {
+    const topic = (log.topics?.[0] ?? '').toLowerCase();
+    return topic === TOPIC_L1_MESSAGE_SENT_NEW.toLowerCase() || topic === TOPIC_L1_MESSAGE_SENT_LEG.toLowerCase();
+  });
+
+  if (!matches.length) {
+    throw new Error('No L1MessageSent event found in L2 receipt logs.');
+  }
+
+  const preferred = matches.find(
+    (log: (typeof matches)[number]) => (log.address ?? '').toLowerCase() === L1_MESSENGER_ADDRESS.toLowerCase()
+  );
+  return preferred ?? matches[0];
+}
+
+function messengerLogIndex(rawReceipt: NonNullable<Awaited<ReturnType<typeof client.zks.getReceiptWithL2ToL1>>>) {
+  const logs = Array.isArray(rawReceipt.l2ToL1Logs) ? rawReceipt.l2ToL1Logs : [];
+  const hit = logs.findIndex(
+    (log: (typeof logs)[number]) => (log?.sender ?? '').toLowerCase() === L1_MESSENGER_ADDRESS.toLowerCase()
+  );
+
+  if (hit === -1) {
+    throw new Error('No L2->L1 messenger logs found in receipt.');
+  }
+
+  return hit;
 }
 
 function getPriorityOpL2Hash(
@@ -97,34 +126,24 @@ async function waitForFinalizeDepositParams(
   while (Date.now() - start < timeoutMs) {
     const parsedReceipt = await client.zks.getReceiptWithL2ToL1(l2TxHash);
 
-    if (parsedReceipt?.logs) {
-      let message: string | undefined;
+    if (parsedReceipt?.logs?.length) {
+      try {
+        const messageLog = findL1MessageSentLog(parsedReceipt);
+        const [message] = AbiCoder.defaultAbiCoder().decode(['bytes'], messageLog.data);
+        const logIndex = messengerLogIndex(parsedReceipt);
+        const proof = await client.zks.getL2ToL1LogProof(l2TxHash, logIndex);
 
-      for (const log of parsedReceipt.logs) {
-        try {
-          const parsed = l1MessageSentIface.parseLog(log);
-          message = parsed?.args.message as string;
-          break;
-        } catch {
-          // Keep scanning logs until the messenger event is found.
-        }
-      }
-
-      if (message) {
-        try {
-          const proof = await client.zks.getL2ToL1LogProof(l2TxHash, 0);
-          return {
-            chainId: BigInt(await chain1.ethers.provider.getNetwork().then((net) => net.chainId)),
-            l2BatchNumber: proof.batchNumber,
-            l2MessageIndex: proof.id,
-            l2Sender: parsedReceipt.to,
-            l2TxNumberInBatch: Number(parsedReceipt.transactionIndex ?? 0),
-            message,
-            merkleProof: proof.proof,
-          };
-        } catch {
-          // The receipt exists, but the proof is not ready yet.
-        }
+        return {
+          chainId: BigInt(await chain1.ethers.provider.getNetwork().then((net: { chainId: bigint }) => net.chainId)),
+          l2BatchNumber: proof.batchNumber,
+          l2MessageIndex: proof.id,
+          l2Sender: parsedReceipt.to,
+          l2TxNumberInBatch: Number(parsedReceipt.transactionIndex ?? 0),
+          message,
+          merkleProof: proof.proof,
+        };
+      } catch {
+        // The receipt exists, but the messenger log/proof is not ready yet.
       }
     }
 
@@ -169,8 +188,8 @@ if (assetId === ZeroHash) {
   const l1TokenAddressBefore = await l1Ntv.tokenAddress(assetId);
   console.log('Token is not registered in the L2 Native Token Vault yet. Registering now...');
   console.log(`L1 tokenAddress(assetId) before registration: ${l1TokenAddressBefore}`);
-  const registerTx = await ntvWriter.registerToken(tokenAddress);
-  await registerTx.wait();
+  const ensureTx = await ntvWriter.ensureTokenIsRegistered(tokenAddress);
+  await ensureTx.wait();
   assetId = await ntv.assetId(tokenAddress);
 }
 

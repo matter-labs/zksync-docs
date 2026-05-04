@@ -22,9 +22,17 @@ title: Hardhat 3 with Ethers
 
 9. Copy and paste the script below into the `interop-asset-transfer.ts` file. <!-- markdownlint-disable-line -->
 
+    ::drop-panel
+
+    ::panel{label="interop-asset-transfer.ts"}
+
     ```ts
     :code-import{filePath="local-zksync-os/scripts/interop-asset-transfer-from-l1-ethers.ts"}
     ```
+
+    ::
+
+    ::
 
 10. Run the script. <!-- markdownlint-disable-line -->
 
@@ -100,17 +108,34 @@ This script deploys the token on L1, bridges it to chain `6565`, and then transf
     export INTEROP_TOKEN_ADDRESS=0x...
     ```
 
-13. Copy and paste the script below into the `interop-asset-transfer.ts` file. <!-- markdownlint-disable-line -->
+13. Migrate the token balance to Gateway before using interop. <!-- markdownlint-disable-line -->
+
+    The example helper for that flow is:
+
+    ::drop-panel
+
+    ::panel{label="interop-asset-migration-ethers.ts"}
+
+    ```ts
+    :code-import{filePath="local-zksync-os/scripts/interop-asset-migration-ethers.ts"}
+    ```
+
+    ::
+
+    ::
+
+14. Copy and paste the script below into the `interop-asset-transfer.ts` file. <!-- markdownlint-disable-line -->
+
+    ::drop-panel
+
+    ::panel{label="interop-asset-transfer.ts"}
 
     ```ts
     :code-import{filePath="local-zksync-os/scripts/interop-asset-transfer-ethers.ts"}
     ```
 
+    ::
+
+    ::
+
 :display_partial{path="_partials/_zksyncos/_run-script-interop-asset"}
-
-If your token was deployed on L2 after the chain had already migrated to Gateway, migrate the token balance to Gateway before using interop.
-The example helper for that flow is:
-
-```ts
-:code-import{filePath="local-zksync-os/scripts/interop-asset-migration-ethers.ts"}
-```

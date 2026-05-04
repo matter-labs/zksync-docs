@@ -35,6 +35,8 @@ L1_MESSENGER="0x0000000000000000000000000000000000008008"
 INTEROP_ROOT_STORAGE="0x0000000000000000000000000000000000010008"
 DEST_RPC="${DEST_RPC:-http://localhost:3051}"
 GW_RPC="${GW_RPC:-http://localhost:3052}"
+DEST_PRIVATE_KEY="${DEST_PRIVATE_KEY:-${LOCAL_PRIVATE_KEY:-}}"
+GW_PRIVATE_KEY="${GW_PRIVATE_KEY:-${LOCAL_PRIVATE_KEY:-}}"
 
 SEND_RECEIPT_JSON=$(mktemp)
 PROOF_JSON=$(mktemp)
@@ -59,6 +61,67 @@ debug_log() {
   if [[ "$DEBUG" == "1" ]]; then
     echo "debug: $*" >&2
   fi
+}
+
+poke_chain() {
+  local rpc_url="$1"
+  local private_key="$2"
+  local label="$3"
+
+  if [[ -z "$private_key" ]]; then
+    debug_log "poke_${label}_chain_skipped no_private_key"
+    return 0
+  fi
+
+  local sender
+  sender="$(cast wallet address --private-key "$private_key" 2>/dev/null || true)"
+  if [[ -z "$sender" ]]; then
+    debug_log "failed_to_derive_${label}_sender"
+    return 0
+  fi
+
+  debug_log "poke_${label}_chain sender=$sender"
+  local send_output
+  local tx_hash
+  local sender_balance
+  sender_balance="$(cast balance "$sender" --rpc-url "$rpc_url" 2>/dev/null || true)"
+  debug_log "poke_${label}_chain sender_balance_wei=${sender_balance:-unknown}"
+  send_output="$(
+    cast send \
+      --json \
+      --private-key "$private_key" \
+      --rpc-url "$rpc_url" \
+      "$sender" \
+      --value 1wei \
+      2>&1 || true
+  )"
+
+  tx_hash="$(printf '%s' "$send_output" | jq -r '.transactionHash // .hash // empty' 2>/dev/null || true)"
+  if [[ -z "$tx_hash" ]]; then
+    echo "error: failed to send ${label}-chain poke transaction on $rpc_url" >&2
+    echo "hint: sender $sender balance on ${label} chain is ${sender_balance:-unknown} wei" >&2
+    echo "$send_output" >&2
+    exit 1
+  fi
+
+  debug_log "poke_${label}_chain tx_hash=$tx_hash"
+
+  for _ in $(seq 1 20); do
+    if cast receipt "$tx_hash" --rpc-url "$rpc_url" >/dev/null 2>&1; then
+      return 0
+    fi
+    sleep 1
+  done
+
+  debug_log "poke_${label}_chain_receipt_timeout tx_hash=$tx_hash"
+}
+
+poke_gateway_chain() {
+  poke_chain "$GW_RPC" "${GW_PRIVATE_KEY:-}" "gateway"
+}
+
+poke_destination_chain() {
+  poke_chain "$DEST_RPC" "${DEST_PRIVATE_KEY:-}" "destination"
 }
 
 resolve_latest_send_tx_hash() {
@@ -280,6 +343,8 @@ for ((attempt = 1; attempt <= MAX_ATTEMPTS; attempt++)); do
     exit 1
   fi
 
+  poke_gateway_chain
+  poke_destination_chain
   sleep "$SLEEP_SECONDS"
 done
 
