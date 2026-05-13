@@ -20,6 +20,7 @@ INTEROP_ROOT_STORAGE="0x0000000000000000000000000000000000010008"
 ZERO_ROOT="0x0000000000000000000000000000000000000000000000000000000000000000"
 
 ME=$(cast wallet address --private-key "$LOCAL_PRIVATE_KEY")
+echo "Waiting for interop root on chain2 rpc=$CHAIN2_RPC gatewayChainId=$GATEWAY_CHAIN_ID gatewayBlock=$GATEWAY_BLOCK_NUMBER" >&2
 
 while true; do
   INTEROP_ROOT=$(cast call "$INTEROP_ROOT_STORAGE" \
@@ -29,10 +30,12 @@ while true; do
     --rpc-url "$CHAIN2_RPC")
 
   if [[ "$INTEROP_ROOT" != "$ZERO_ROOT" ]]; then
+    echo "Interop root found: $INTEROP_ROOT" >&2
     echo "export INTEROP_ROOT=$INTEROP_ROOT"
     exit 0
   fi
 
+  echo "Interop root not ready yet; sending a 1 wei tx to advance blocks and retrying in 5s..." >&2
   cast send "$ME" \
     --value 1 \
     --rpc-url "$CHAIN2_RPC" \

@@ -22,6 +22,8 @@ RPC="${2:-http://localhost:3050}"
 SOURCE_CHAIN_ID="${3:-6565}"
 
 L1_MESSENGER="0x0000000000000000000000000000000000008008"
+TOPIC_L1_MESSAGE_SENT_NEW="0xd0c9bf6f81b25545624e7ad46931632d5ad2f3313355ab364d096f4967797c90"
+TOPIC_L1_MESSAGE_SENT_LEG="0x3a36e47291f4201faf137fab081d92295bce2d53be2c6ca68ba82c7faa9ce241"
 
 RECEIPT_JSON="$(mktemp)"
 PROOF_JSON="$(mktemp)"
@@ -30,6 +32,8 @@ trap 'rm -f "$RECEIPT_JSON" "$PROOF_JSON"' EXIT
 curl -s -X POST "$RPC" -H 'content-type: application/json' \
   --data "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getTransactionReceipt\",\"params\":[\"$MESSAGE_TX_HASH\"]}" \
   > "$RECEIPT_JSON"
+
+echo "Fetched receipt for tx $MESSAGE_TX_HASH from $RPC" >&2
 
 MESSAGE_SENDER=$(jq -r '.result.to' "$RECEIPT_JSON")
 TX_INDEX_HEX=$(jq -r '.result.transactionIndex' "$RECEIPT_JSON")
@@ -41,7 +45,9 @@ while IFS= read -r idx; do
 done < <(
   jq -r \
     --arg a "$L1_MESSENGER" \
-    '.result.logs|to_entries[]|select((.value.address|ascii_downcase)==($a|ascii_downcase))|.key' \
+    --arg t1 "$TOPIC_L1_MESSAGE_SENT_NEW" \
+    --arg t2 "$TOPIC_L1_MESSAGE_SENT_LEG" \
+    '.result.logs|to_entries[]|select((.value.address|ascii_downcase)==($a|ascii_downcase) and ((.value.topics[0]|ascii_downcase)==($t1|ascii_downcase) or (.value.topics[0]|ascii_downcase)==($t2|ascii_downcase)))|.key' \
     "$RECEIPT_JSON"
 )
 
@@ -54,7 +60,7 @@ CHOSEN_LOG_INDEX="${MESSENGER_LOG_INDEXES[0]}"
 L2_TO_L1_LOG_INDEX=0
 
 L1_MESSAGE_DATA_ENCODED=$(jq -r --argjson i "$CHOSEN_LOG_INDEX" '.result.logs[$i].data' "$RECEIPT_JSON")
-MESSAGE_DATA=$(cast decode-abi "x(bytes)" "$L1_MESSAGE_DATA_ENCODED" | tr -d '()')
+MESSAGE_DATA=$(cast decode-abi "x()(bytes)" "$L1_MESSAGE_DATA_ENCODED" | tr -d '()')
 
 curl -s -X POST "$RPC" -H 'content-type: application/json' \
   --data "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"zks_getL2ToL1LogProof\",\"params\":[\"$MESSAGE_TX_HASH\",$L2_TO_L1_LOG_INDEX,\"messageRoot\"]}" \
@@ -74,6 +80,8 @@ $L2_MESSAGE_INDEX,\
 ($TX_NUMBER_IN_BATCH,$MESSAGE_SENDER,$MESSAGE_DATA),\
 $MESSAGE_PROOF_ARRAY\
 )")
+
+echo "Verification args ready: batch=$L1_BATCH_NUMBER, msgIndex=$L2_MESSAGE_INDEX, gatewayBlock=$GATEWAY_BLOCK_NUMBER" >&2
 
 cat <<EOF
 export SRC_CHAIN_ID=$SOURCE_CHAIN_ID

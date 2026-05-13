@@ -11,13 +11,13 @@ title: Foundry
 
 ## Sending a message
 
-1. Create `contracts/InteropSendMessage.sol`.
+1. Create `src/InteropSendMessage.sol`.
 
     ```bash
-    touch contracts/InteropSendMessage.sol
+    touch src/InteropSendMessage.sol
     ```
 
-1. Copy and paste the contract below into `contracts/InteropSendMessage.sol`.
+1. Copy and paste the contract below into `src/InteropSendMessage.sol`.
 
     ```solidity
     :code-import{filePath="local-interop-foundry/contracts/InteropSendMessage.sol"}
@@ -39,9 +39,10 @@ title: Foundry
     Save the deployed contract address from the command output.
 
     ```bash
-    forge create contracts/InteropSendMessage.sol:InteropSendMessage \
+    forge create src/InteropSendMessage.sol:InteropSendMessage \
       --rpc-url http://localhost:3050 \
-      --private-key $LOCAL_PRIVATE_KEY
+      --private-key $LOCAL_PRIVATE_KEY \
+      --broadcast
     ```
 
 1. Send a message through the deployed sender contract.
@@ -60,7 +61,6 @@ title: Foundry
 1. Create a helper script to fetch the message proof and verification arguments.
 
     ```bash
-    mkdir -p script
     touch script/get-message-verification-args.sh
     ```
 
@@ -125,13 +125,13 @@ title: Foundry
 
 ## Verifying onchain
 
-1. Create `contracts/InteropVerification.sol`.
+1. Create `src/InteropVerification.sol`.
 
     ```bash
-    touch contracts/InteropVerification.sol
+    touch src/InteropVerification.sol
     ```
 
-1. Copy and paste the contract below into `contracts/InteropVerification.sol`.
+1. Copy and paste the contract below into `src/InteropVerification.sol`.
 
     ```solidity
     :code-import{filePath="local-interop-foundry/contracts/InteropVerification.sol"}
@@ -141,9 +141,10 @@ title: Foundry
     Save the deployed contract address from the command output.
 
     ```bash
-    forge create contracts/InteropVerification.sol:InteropVerification \
+    forge create src/InteropVerification.sol:InteropVerification \
       --rpc-url http://localhost:3051 \
-      --private-key $LOCAL_PRIVATE_KEY
+      --private-key $LOCAL_PRIVATE_KEY \
+      --broadcast
     ```
 
 1. Call the wrapper contract with the same verification arguments.
