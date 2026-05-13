@@ -2,7 +2,7 @@
 title: Hardhat 3 Run Asset Transfer Script
 ---
 
-14. Run the script. <!-- markdownlint-disable-line -->
+16. Run the script. <!-- markdownlint-disable-line -->
 
         ::code-group
 
