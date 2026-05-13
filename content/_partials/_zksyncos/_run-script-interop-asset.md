@@ -28,11 +28,14 @@ You should see output similar to this:
 
 ```txt
 Using InteropToken on localZKsyncOSChain1 at: 0x...
-SourceBalance: 100000000000000000000n
+SourceBalance:  100000000000000000000n
 ✅ Created interop transaction.
 ✅ Bundle is finalized on source; root available on destination.
 Finalize result: {
   bundleHash: '0x...',
   dstExecTxHash: '0x...'
 }
+Chain 6565 balance after interop: 99999999999999000000
+Mapped token on chain 6566 after interop: 0x...
+Chain 6566 balance after interop: 1000000
 ```
