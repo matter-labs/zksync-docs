@@ -20,4 +20,4 @@ jobs:
         uses: lycheeverse/lychee-action@8646ba30535128ac92d33dfc9133794bfdd9b411 #v2.8.0
         with:
           workingDirectory: content
-          args: --exclude-file ../.lycheeignore --accept 403 --root-dir /github/workspace/content .
+          args: --exclude-file ../.lycheeignore --accept '200,403' --root-dir /github/workspace/content .
