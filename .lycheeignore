@@ -1,5 +1,6 @@
-http://localhost
-http://127.0.0.1
-^/zksync-protocol(/|$)
-^/zk-stack(/|$)
-^/zksync-network(/|$)
+^https?://localhost(:[0-9]+)?(/|$)
+^https?://127\.0\.0\.1(:[0-9]+)?(/|$)
+^/(zksync-protocol|zk-stack|zksync-network)(/|$)
+^file://.*/(zksync-protocol|zk-stack|zksync-network)(/|$)
+^%%zk_.*
+/images/*
