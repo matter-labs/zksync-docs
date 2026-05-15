@@ -1,6 +1,7 @@
 ^https?://localhost(:[0-9]+)?(/|$)
 ^https?://127\.0\.0\.1(:[0-9]+)?(/|$)
-^/(zksync-protocol|zk-stack|zksync-network)(/|$)
-^file://.*/(zksync-protocol|zk-stack|zksync-network)(/|$)
 ^%%zk_.*
-/images/*
+^/(zksync-protocol|zk-stack|zksync-network)(/|$)
+^https?://docs\.zksync\.io/(zksync-protocol|zk-stack|zksync-network)(/|$)
+^https?://docs\.zksync\.io/images(/|$)
+^file://.*/(zksync-protocol|zk-stack|zksync-network)(/|$)
