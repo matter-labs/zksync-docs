@@ -1,2 +1,5 @@
 http://localhost
 http://127.0.0.1
+^/zksync-protocol(/|$)
+^/zk-stack(/|$)
+^/zksync-network(/|$)
