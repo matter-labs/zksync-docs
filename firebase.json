@@ -177,11 +177,6 @@
         "type": 301
       },
       {
-        "source": "/zksync-protocol/api",
-        "destination": "/build/api-reference",
-        "type": 301
-      },
-      {
         "source": "/build/api-reference",
         "destination": "/zksync-protocol/api",
         "type": 301
@@ -319,11 +314,6 @@
       {
         "source": "/build/tooling/wallets.html",
         "destination": "/zksync-network/ecosystem/wallets",
-        "type": 301
-      },
-      {
-        "source": "/build/tooling/nft-marketplaces.html",
-        "destination": "/zksync-network/ecosystem/nft-marketplaces",
         "type": 301
       },
       {

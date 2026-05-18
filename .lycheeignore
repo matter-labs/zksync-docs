@@ -1,0 +1,6 @@
+^https?://localhost(:[0-9]+)?(/|$)
+^https?://127\.0\.0\.1(:[0-9]+)?(/|$)
+^%%zk_.*
+^/.*$
+^https?://docs\.zksync\.io/.*$
+^file://.*/(zksync-protocol|zk-stack|zksync-network)(/|$)
