@@ -6,7 +6,7 @@ Follow these steps to securely store your wallet's private key to use it in Foun
 
 1. **Extract Your Private Key:** If you are using the local era node, use a private key from the available rich
    accounts. Otherwise, find your personal wallet's private key. For MetaMask users, here's how to [export your wallet's
-   private key](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key).
+   private key](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/).
 
 2. **Create a Foundry keystore:** Create a keystore and import your private key by running
 

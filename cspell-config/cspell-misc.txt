@@ -39,3 +39,4 @@ permissionlessly
 Zoltu
 Zyfi
 Gravita
+Taran

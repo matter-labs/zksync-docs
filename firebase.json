@@ -322,11 +322,6 @@
         "type": 301
       },
       {
-        "source": "/build/tooling/nft-marketplaces.html",
-        "destination": "/zksync-network/ecosystem/nft-marketplaces",
-        "type": 301
-      },
-      {
         "source": "/build/tooling/ide.html",
         "destination": "/zksync-network/ecosystem/ide",
         "type": 301
