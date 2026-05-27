@@ -2,11 +2,9 @@
 title: Hardhat L2 Migration shared
 ---
 
-8. Create two new files in the `scripts` folder called `interop-asset-transfer.ts` and ``. <!-- markdownlint-disable-line -->
+8. Create two new files in the `scripts` folder called `interop-asset-transfer.ts` and `interop-asset-migration.ts`. <!-- markdownlint-disable-line -->
 
-    ```bash
-    touch scripts/interop-asset-transfer.ts
-    touch scripts/interop-asset-migration.ts
+    
     ```
 
 9. Create a new file in the `ignition/modules` folder called `InteropToken.ts`. <!-- markdownlint-disable-line -->

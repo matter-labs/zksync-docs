@@ -39,7 +39,7 @@ title: Foundry
 1. Copy the bundle sender below into `script/InteropAssetTransferSendBundle.s.sol`.
 
     It registers the token as an interoperable asset,
-    and sends an interop bundle transfering the token from chain `6565` to chain `6566`.
+    and sends an interop bundle transferring the token from chain `6565` to chain `6566`.
 
     ::drop-panel
 

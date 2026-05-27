@@ -17,7 +17,7 @@ title: Hardhat 3 Setup For Local Interop
 
 5. Copy and paste the contract below into `InteropCounter.sol`. <!-- markdownlint-disable-line -->
 
-    ```ts [hardhat.config.ts]
+    
      :code-import{filePath="local-zksync-os/contracts/InteropCounter.sol"}
     ```
 
