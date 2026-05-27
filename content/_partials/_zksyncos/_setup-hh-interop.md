@@ -17,8 +17,8 @@ title: Hardhat 3 Setup For Local Interop
 
 5. Copy and paste the contract below into `InteropCounter.sol`. <!-- markdownlint-disable-line -->
 
-    
-     :code-import{filePath="local-zksync-os/contracts/InteropCounter.sol"}
+    ```solidity [InteropCounter.sol]
+    :code-import{filePath="local-zksync-os/contracts/InteropCounter.sol"}
     ```
 
 6. Create a new script file in the `scripts` folder called `interop-counter.ts`. <!-- markdownlint-disable-line -->

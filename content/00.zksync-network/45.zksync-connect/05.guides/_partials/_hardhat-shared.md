@@ -22,7 +22,7 @@ title: Hardhat shared
 
 6. Copy and paste the contract below into the `InteropCounter.sol` file. <!-- markdownlint-disable-line -->
 
-    ```solidity
+    ```solidity [InteropCounter.sol]
     :code-import{filePath="local-zksync-os/contracts/InteropCounter.sol"}
     ```
 
