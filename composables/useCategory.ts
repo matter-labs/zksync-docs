@@ -3,8 +3,7 @@ const defaultCategory = 'ZKsync Docs';
 // Order by most specific to least specific.
 // e.g. `/js/ethers/api/v5` before `/js/ethers`
 const categories = [
-  ['/zksync-network/guides/quick-start', 'Quick Start ZKsync'],
-  ['/zksync-network/guides/zksync-101', 'ZKsync 101 Tutorial'],
+  ['/zksync-network/quick-start', 'Quick Start ZKsync'],
   ['/zksync-network/tooling/zksync-cli', 'ZKsync CLI'],
   ['/zksync-network/tooling/hardhat', 'Hardhat'],
   ['/zksync-network/tooling/foundry/overview', 'Foundry'],

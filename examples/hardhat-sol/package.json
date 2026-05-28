@@ -6,8 +6,6 @@
   "license": "MIT",
   "repository": "https://github.com/matter-labs/zksync-hardhat-template.git",
   "scripts": {
-    "interop:testnet": "hardhat run ./scripts/interop/test-testnet.ts",
-    "interop:local": "hardhat run ./scripts/interop/test-local.ts",
     "mint-token": "hardhat run ./scripts/mint-token.ts",
     "usdc-bridge": "hardhat run ./scripts/usdc-bridge.ts",
     "compile": "hardhat compile",

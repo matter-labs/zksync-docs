@@ -1,0 +1,149 @@
+name: Playwright Quickstart Tests
+
+permissions:
+  contents: read
+
+env:
+  TUTORIAL_TESTER_PATH: /home/runner/work/_actions/sarahschwartz/tutorial-tester/main
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  contract-tests:
+    timeout-minutes: 8
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        suite:
+          - test-file-name: quickstart-foundry
+            tutorial-paths: '["zksync-network/quick-start/deploy-your-first-contract", "zksync-network/quick-start/interact-with-your-contract"]'
+            config-path: tests/configs/quickstart-foundry.ts
+            folder-name: quickstart-foundry
+            persist-state: 'false'
+          - test-file-name: quickstart-hardhat-viem
+            tutorial-paths: '["zksync-network/quick-start/deploy-your-first-contract", "zksync-network/quick-start/interact-with-your-contract"]'
+            config-path: tests/configs/quickstart-hardhat-viem.ts
+            folder-name: quickstart-hardhat-viem
+            persist-state: 'true'
+          - test-file-name: quickstart-hardhat-ethers
+            tutorial-paths: '["zksync-network/quick-start/deploy-your-first-contract", "zksync-network/quick-start/interact-with-your-contract"]'
+            config-path: tests/configs/quickstart-hardhat-ethers.ts
+            folder-name: quickstart-hardhat-ethers
+            persist-state: 'false'
+
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
+        with:
+          node-version: 22
+      - uses: foundry-rs/foundry-toolchain@v1
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Start anvil
+        run: |
+          if [ "${{ matrix.suite.persist-state }}" = "true" ]; then
+            nohup anvil --host 0.0.0.0 --state /tmp/anvil-state.json > /tmp/anvil.log 2>&1 &
+          else
+            nohup anvil --host 0.0.0.0 > /tmp/anvil.log 2>&1 &
+          fi
+          sleep 5
+
+      - name: Start docs
+        run: |
+          nohup env PORT=3030 bun dev > /tmp/docs.log 2>&1 &
+          sleep 10
+
+      - name: Run ${{ matrix.suite.test-file-name }}
+        uses: sarahschwartz/tutorial-tester@main
+        with:
+          tutorial-paths: ${{ matrix.suite.tutorial-paths }}
+          config-path: ${{ matrix.suite.config-path }}
+          folder-name: ${{ matrix.suite.folder-name }}
+          mm-wallet: 'false'
+          use-config-order: 'true'
+          wait-time: 30000
+
+      - name: Stop anvil and flush state
+        if: always() && matrix.suite.persist-state == 'true'
+        run: |
+          pkill -INT anvil || true
+          sleep 5
+
+      - name: Stage viem deployment outputs
+        if: success() && matrix.suite.persist-state == 'true'
+        run: cp /tmp/anvil-state.json $TUTORIAL_TESTER_PATH/anvil-state.json
+
+      - name: Upload viem deployment outputs
+        if: success() && matrix.suite.persist-state == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: quickstart-hardhat-viem-output
+          path: |
+            ${{ env.TUTORIAL_TESTER_PATH }}/tests-output/hardhat-example-viem
+            ${{ env.TUTORIAL_TESTER_PATH }}/anvil-state.json
+          retention-days: 5
+          overwrite: true
+
+  frontend-tests:
+    needs: contract-tests
+    if: always()
+    timeout-minutes: 8
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        suite:
+          - test-file-name: quickstart-react-frontend
+            config-path: tests/configs/quickstart-react-frontend.ts
+            folder-name: quickstart-react-frontend
+          - test-file-name: quickstart-vue-frontend
+            config-path: tests/configs/quickstart-vue-frontend.ts
+            folder-name: quickstart-vue-frontend
+
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
+        with:
+          node-version: 22
+      - uses: foundry-rs/foundry-toolchain@v1
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Download viem deployment outputs
+        id: viem-artifact
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: quickstart-hardhat-viem-output
+          path: ${{ env.TUTORIAL_TESTER_PATH }}
+
+      - name: Start anvil from saved state
+        if: steps.viem-artifact.outcome == 'success'
+        run: |
+          nohup anvil --host 0.0.0.0 --load-state $TUTORIAL_TESTER_PATH/anvil-state.json > /tmp/anvil.log 2>&1 &
+          sleep 5
+
+      - name: Start docs
+        if: steps.viem-artifact.outcome == 'success'
+        run: |
+          nohup env PORT=3030 bun dev > /tmp/docs.log 2>&1 &
+          sleep 10
+
+      - name: Run ${{ matrix.suite.test-file-name }}
+        if: steps.viem-artifact.outcome == 'success'
+        uses: sarahschwartz/tutorial-tester@main
+        with:
+          tutorial-paths: '["zksync-network/quick-start/build-a-frontend"]'
+          config-path: ${{ matrix.suite.config-path }}
+          folder-name: ${{ matrix.suite.folder-name }}
+          mm-wallet: 'false'
+          use-config-order: 'true'
+          wait-time: 30000

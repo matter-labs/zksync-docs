@@ -1,0 +1,3 @@
+[submodule "examples/zksync-os-foundry/lib/openzeppelin-contracts"]
+	path = examples/zksync-os-foundry/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts

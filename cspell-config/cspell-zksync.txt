@@ -13,10 +13,15 @@ foundryup-zksync
 Hyperchain
 Matter Labs
 okta
+ostestnet
 prividium
 Prividium
 Prividium™
 SIWE
+unbundler
+unbundle
+unbundling
+zeek
 Zeek
 Zeeks
 ZK Chain
