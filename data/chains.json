@@ -20,7 +20,7 @@
     "baseToken": "ETH",
     "pubdataMode": "Rollup",
     "dataAvailability": "Ethereum",
-    "onGateway": true
+    "onGateway": false
   },
   {
     "name": "ADI Network",
@@ -96,7 +96,7 @@
     "baseToken": "ETH",
     "pubdataMode": "Validium",
     "dataAvailability": "NoDA",
-    "onGateway": true
+    "onGateway": false
   },
   {
     "name": "Lens Chain",
@@ -119,7 +119,7 @@
     "baseToken": "GRASS",
     "pubdataMode": "Validium",
     "dataAvailability": "Avail",
-    "onGateway": true
+    "onGateway": false
   },
   {
     "name": "Memento ZK Chain",
@@ -194,7 +194,7 @@
     "baseToken": "SOPH",
     "pubdataMode": "Validium",
     "dataAvailability": "Avail",
-    "onGateway": true
+    "onGateway": false
   },
   {
     "name": "Space and Time Testnet",
@@ -260,7 +260,7 @@
     "baseToken": "ETH",
     "pubdataMode": "Rollup",
     "dataAvailability": "Ethereum",
-    "onGateway": true
+    "onGateway": false
   },
   {
     "name": "ZKsync Era Sepolia",
@@ -272,7 +272,7 @@
     "baseToken": "ETH",
     "pubdataMode": "Rollup",
     "dataAvailability": "Ethereum",
-    "onGateway": true
+    "onGateway": false
   },
   {
     "name": "ZKsync OS Developer Preview",

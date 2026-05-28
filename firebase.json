@@ -113,7 +113,12 @@
       },
       {
         "source": "/zksync-network/sdk/js/ethers/guides/interop-messages",
-        "destination": "/zksync-network/unique-features/zksync-connect/interop-messages",
+        "destination": "/zksync-network/zksync-connect/guides/interop-messages",
+        "type": 301
+      },
+      {
+        "source": "/zksync-network/unique-features/zksync-connect/**",
+        "destination": "/zksync-network/zksync-connect/**",
         "type": 301
       },
       {
