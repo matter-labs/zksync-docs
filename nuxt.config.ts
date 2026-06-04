@@ -26,6 +26,8 @@ export default defineNuxtConfig({
         trailingSlash: 'remove',
       },
     },
+    // Avoid route-level _payload.json fetches that break on the current static hosting setup.
+    payloadExtraction: false,
   },
   pwa: {
     selfDestroying: true,
