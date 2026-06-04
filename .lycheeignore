@@ -4,3 +4,6 @@
 ^/.*$
 ^https?://docs\.zksync\.io/.*$
 ^file://.*/(zksync-protocol|zk-stack|zksync-network)(/|$)
+^https://geth\.ethereum\.org/docs/developers/evm-tracing/built-in-tracers#call-tracer$
+^https://geth\.ethereum\.org/docs/interacting-with-geth/rpc/ns-debug#traceconfig$
+^https://geth\.ethereum\.org/docs/interacting-with-geth/rpc/pubsub$

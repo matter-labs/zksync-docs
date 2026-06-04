@@ -127,6 +127,11 @@
         "type": 301
       },
       {
+        "source": "/zksync-network/tooling{,/**}",
+        "destination": "/zksync-network/zksync-era/custom-tooling",
+        "type": 301
+      },
+      {
         "source": "/sdk{,/**}",
         "destination": "/zksync-network",
         "type": 301
@@ -188,27 +193,27 @@
       },
       {
         "source": "/build/tooling/zksync-cli",
-        "destination": "/zksync-network/tooling/zksync-cli",
+        "destination": "/zksync-network/zksync-era/custom-tooling",
         "type": 301
       },
       {
         "source": "/build/zksync-cli",
-        "destination": "/zksync-network/tooling/zksync-cli",
+        "destination": "/zksync-network/zksync-era/custom-tooling",
         "type": 301
       },
       {
         "source": "/build/tooling/zksync-cli/troubleshooting",
-        "destination": "/zksync-network/tooling/zksync-cli/troubleshooting",
+        "destination": "/zksync-network/zksync-era/custom-tooling",
         "type": 301
       },
       {
         "source": "/build/zksync-cli/troubleshooting",
-        "destination": "/zksync-network/tooling/zksync-cli/troubleshooting",
+        "destination": "/zksync-network/zksync-era/custom-tooling",
         "type": 301
       },
       {
         "source": "/build/tooling/zksync-cli/**",
-        "destination": "/zksync-network/tooling/zksync-cli/reference",
+        "destination": "/zksync-network/zksync-era/custom-tooling",
         "type": 301
       },
       {
@@ -242,33 +247,33 @@
         "type": 301
       },
       {
-        "source": "/build/tooling/hardhat/compiling-libraries",
-        "destination": "/zksync-network/tooling/hardhat/guides/compiling-libraries",
+        "source": "/zksync-era/ecosystem/:path*",
+        "destination": "/zksync-network/zksync-era/ecosystem",
         "type": 301
       },
       {
-        "source": "/build/tooling/hardhat/hardhat-:plugin",
-        "destination": "/zksync-network/tooling/hardhat/plugins/hardhat-:plugin",
+        "source": "/zksync-era/ecosystem",
+        "destination": "/zksync-network/zksync-era/ecosystem",
         "type": 301
       },
       {
-        "source": "/docs/tools/hardhat/hardhat-:plugin.@(html|md)",
-        "destination": "/zksync-network/tooling/hardhat/plugins/hardhat-:plugin",
+        "source": "/build/tooling/hardhat{,/**}",
+        "destination": "/zksync-network/zksync-era/custom-tooling",
         "type": 301
       },
       {
-        "source": "/build/tooling/hardhat/plugins/hardhat-:plugin",
-        "destination": "/zksync-network/tooling/hardhat/plugins/hardhat-:plugin",
+        "source": "/docs/tools/hardhat{,/**}",
+        "destination": "/zksync-network/zksync-era/custom-tooling",
         "type": 301
       },
       {
-        "source": "/build/tooling/hardhat/plugins/hardhat-:plugin.@(html|md)",
-        "destination": "/zksync-network/tooling/hardhat/plugins/hardhat-:plugin",
+        "source": "/ecosystem:ext(.html|.md|)*",
+        "destination": "/zksync-network/zksync-era/ecosystem",
         "type": 301
       },
       {
-        "source": "/build/tooling/hardhat/other-plugins",
-        "destination": "/zksync-network/tooling/hardhat/plugins/other-plugins",
+        "source": "/ecosystem",
+        "destination": "/zksync-network/zksync-era/ecosystem",
         "type": 301
       },
       {
@@ -327,53 +332,28 @@
         "type": 301
       },
       {
-        "source": "/build/tooling/block-explorer/*.@(html|md)",
-        "destination": "/zksync-network/tooling/block-explorers",
+        "source": "/build/tooling/ide.html",
+        "destination": "/zksync-network/zksync-era/ecosystem",
+        "type": 301
+      },
+      {
+        "source": "/build/tooling/block-explorer{,/**}",
+        "destination": "/zksync-network/zksync-era/custom-tooling",
         "type": 301
       },
       {
         "source": "/build/tooling/zksync-block-explorers",
-        "destination": "/zksync-network/tooling/block-explorers",
+        "destination": "/zksync-network/zksync-era/custom-tooling",
         "type": 301
       },
       {
-        "source": "/build/tooling/hardhat/*.@(html|md)",
-        "destination": "/zksync-network/tooling/hardhat",
+        "source": "/build/tooling/foundry{,/**}",
+        "destination": "/zksync-network/zksync-era/custom-tooling",
         "type": 301
       },
       {
-        "source": "/build/tooling/hardhat",
-        "destination": "/zksync-network/tooling/hardhat",
-        "type": 301
-      },
-      {
-        "source": "/build/tooling/foundry/*.@(html|md)",
-        "destination": "/zksync-network/tooling/foundry/overview",
-        "type": 301
-      },
-      {
-        "source": "/build/tooling/foundry/overview",
-        "destination": "/zksync-network/tooling/foundry/overview",
-        "type": 301
-      },
-      {
-        "source": "/build/test-and-debug/getting-started.html",
-        "destination": "/zksync-network/tooling/local-setup",
-        "type": 301
-      },
-      {
-        "source": "/build/test-and-debug",
-        "destination": "/zksync-network/tooling/local-setup",
-        "type": 301
-      },
-      {
-        "source": "/build/test-and-debug/era-test-node.html",
-        "destination": "/zksync-network/tooling/local-setup",
-        "type": 301
-      },
-      {
-        "source": "/build/test-and-debug/:page.@(html|md)",
-        "destination": "/zksync-network/tooling/local-setup",
+        "source": "/build/test-and-debug{,/**}",
+        "destination": "/zksync-network/zksync-era/custom-tooling",
         "type": 301
       },
       {
@@ -588,17 +568,12 @@
       },
       {
         "source": "/infra/introduction",
-        "destination": "/zksync-node",
-        "type": 301
-      },
-      {
-        "source": "/infra/introduction",
-        "destination": "/zksync-network/tooling/external-node",
+        "destination": "/zksync-network/zksync-era/custom-tooling",
         "type": 301
       },
       {
         "source": "/infra/:path*.@(html|md)",
-        "destination": "/zksync-network/tooling/external-node",
+        "destination": "/zksync-network/zksync-era/custom-tooling",
         "type": 301
       },
       {

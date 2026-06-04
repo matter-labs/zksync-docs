@@ -6,7 +6,7 @@ title: Get testnet funds
 
 Once you have your wallet connected to the ZKsync OS Developer Preview environment,
 you can bridge testnet ETH from Sepolia Testnet.
-You can get testnet funds on Sepolia from one of many [testnet faucets](/zksync-network/zksync-era/ecosystem/network-faucets#sepolia-faucets).
+You can get testnet funds on Sepolia from one of many [testnet faucets](/zksync-network/zksync-era/ecosystem#faucets).
 
 ### Bridging testnet ETH
 
