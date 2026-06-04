@@ -218,7 +218,7 @@
       },
       {
         "source": "/build/zksync-cli/reference",
-        "destination": "/zksync-network/tooling/zksync-cli/reference",
+        "destination": "/zksync-network/zksync-era/custom-tooling",
         "type": 301
       },
       {
@@ -233,17 +233,17 @@
       },
       {
         "source": "/build/tooling/hardhat/getting-started.html",
-        "destination": "/zksync-network/tooling/hardhat",
+        "destination": "/zksync-network/zksync-era/custom-tooling",
         "type": 301
       },
       {
         "source": "/build/tooling/hardhat/getting-started",
-        "destination": "/zksync-network/tooling/hardhat/guides/getting-started",
+        "destination": "/zksync-network/zksync-era/custom-tooling",
         "type": 301
       },
       {
         "source": "/build/tooling/hardhat/migrating-to-zksync",
-        "destination": "/zksync-network/tooling/hardhat/guides/migrating-to-zksync",
+        "destination": "/zksync-network/zksync-era/custom-tooling",
         "type": 301
       },
       {
