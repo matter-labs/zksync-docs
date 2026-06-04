@@ -218,12 +218,12 @@
       },
       {
         "source": "/build/tooling/network-faucets.html",
-        "destination": "/zksync-network/zksync-era/ecosystem/network-faucets",
+        "destination": "/zksync-network/zksync-era/ecosystem",
         "type": 301
       },
       {
         "source": "/zksync-era/ecosystem/network-faucets",
-        "destination": "/zksync-network/zksync-era/ecosystem/network-faucets",
+        "destination": "/zksync-network/zksync-era/ecosystem",
         "type": 301
       },
       {
@@ -273,57 +273,57 @@
       },
       {
         "source": "/ecosystem:ext(.html|.md|)*",
-        "destination": "/zksync-network/ecosystem",
+        "destination": "/zksync-network/zksync-era/ecosystem",
         "type": 301
       },
       {
         "source": "/ecosystem/:path*",
-        "destination": "/zksync-network/ecosystem/:path*",
+        "destination": "/zksync-network/zksync-era/ecosystem",
         "type": 301
       },
       {
         "source": "/build/tooling/bridges.html",
-        "destination": "/zksync-network/ecosystem/bridges",
+        "destination": "/zksync-network/zksync-era/ecosystem",
         "type": 301
       },
       {
         "source": "/build/tooling/cross-chain.html",
-        "destination": "/zksync-network/ecosystem/cross-chain",
+        "destination": "/zksync-network/zksync-era/ecosystem",
         "type": 301
       },
       {
         "source": "/build/tooling/data-indexers.html",
-        "destination": "/zksync-network/ecosystem/data-indexers",
+        "destination": "/zksync-network/zksync-era/ecosystem",
         "type": 301
       },
       {
         "source": "/build/tooling/monitoring.html",
-        "destination": "/zksync-network/ecosystem/monitoring",
+        "destination": "/zksync-network/zksync-era/ecosystem",
         "type": 301
       },
       {
         "source": "/build/tooling/network-faucets.html",
-        "destination": "/zksync-network/zksync-era/ecosystem/network-faucets",
+        "destination": "/zksync-network/zksync-era/ecosystem",
         "type": 301
       },
       {
         "source": "/build/tooling/node-providers.html",
-        "destination": "/zksync-network/ecosystem/node-providers",
+        "destination": "/zksync-network/zksync-era/ecosystem",
         "type": 301
       },
       {
         "source": "/build/tooling/oracles.html",
-        "destination": "/zksync-network/ecosystem/oracles",
+        "destination": "/zksync-network/zksync-era/ecosystem",
         "type": 301
       },
       {
         "source": "/build/tooling/wallets.html",
-        "destination": "/zksync-network/ecosystem/wallets",
+        "destination": "/zksync-network/zksync-era/ecosystem",
         "type": 301
       },
       {
         "source": "/build/tooling/ide.html",
-        "destination": "/zksync-network/ecosystem/ide",
+        "destination": "/zksync-network/zksync-era/ecosystem",
         "type": 301
       },
       {
@@ -772,8 +772,18 @@
         "type": 301
       },
       {
+        "source": "/zksync-network/ecosystem",
+        "destination": "/zksync-network/zksync-era/ecosystem",
+        "type": 301
+      },
+      {
         "source": "/zksync-network/ecosystem/:path*",
-        "destination": "/zksync-network/zksync-era/ecosystem/:path*",
+        "destination": "/zksync-network/zksync-era/ecosystem",
+        "type": 301
+      },
+      {
+        "source": "/zksync-network/zksync-era/ecosystem/:path*",
+        "destination": "/zksync-network/zksync-era/ecosystem",
         "type": 301
       },
       {
