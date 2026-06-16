@@ -577,16 +577,6 @@
         "type": 301
       },
       {
-        "source": "zksync-era/unique-features/zksync-sso/supported-environments",
-        "destination": "/zksync-network/unique-features/zksync-sso/faqs",
-        "type": 301
-      },
-      {
-        "source": "zksync-era/unique-features/zksync-sso/account-modules",
-        "destination": "/zksync-network/unique-features/zksync-sso/accounts",
-        "type": 301
-      },
-      {
         "source": "/zksync-era/:path*",
         "destination": "/zksync-network/:path",
         "type": 301
