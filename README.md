@@ -93,9 +93,4 @@ We welcome contributions from the community! Check out the following resources t
 - [Contributing to the documentation](https://docs.zksync.io/zksync-network/contributing/)
 - [Contributing to ZKsync Protocol](https://docs.zksync.io/zksync-network/contributing/protocol-contributions)
 
-### Check out Community Code
-
-If you want to contribute tutorials to our Docs, check out the
-[Community Code repo](https://github.com/zkSync-Community-Hub/community-code?tab=readme-ov-file#community-code)!
-
 Join us in making ZKsync Docs better for everyone! 🌐✨

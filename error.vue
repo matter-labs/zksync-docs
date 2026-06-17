@@ -42,12 +42,6 @@ const cards = [
     to: '/zk-stack/components/zksync-airbender',
     icon: 'i-heroicons-rocket-launch-solid',
   },
-  {
-    title: 'Step-by-step Tutorials',
-    description: 'Follow along with step-by-step tutorials made by the ZKsync community.',
-    to: 'https://code.zksync.io/',
-    icon: 'i-heroicons-beaker-solid',
-  },
 ];
 </script>
 
