@@ -306,5 +306,16 @@
     "baseToken": "ETH",
     "pubdataMode": "Rollup",
     "dataAvailability": "Ethereum"
+  },
+  {
+    "name": "BattleChain Mainnet",
+    "chainId": 626,
+    "icon": "https://raw.githubusercontent.com/Cyfrin/brand-assets/2d5d104dac174de579de78ea7abb26ccfec9a97c/media/logos/battlechain/color/Battlechain%20Mark%20-%20Color.png",
+    "isTestnet": false,
+    "documentationURL": "https://docs.battlechain.com",
+    "explorerURL": "https://explorer.battlechain.com",
+    "baseToken": "ETH",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
   }
 ]
