@@ -538,17 +538,22 @@
       },
       {
         "source": "/zk-stack/concepts/data-availability:ext(.html|.md|)*",
-        "destination": "/zk-stack/running/validium",
+        "destination": "/zk-stack/customizations/validium",
         "type": 301
       },
       {
         "source": "/zk-stack/concepts/data-availability/validiums:ext(.html|.md|)*",
-        "destination": "/zk-stack/running/validium",
+        "destination": "/zk-stack/customizations/validium",
         "type": 301
       },
       {
         "source": "/zk-stack/concepts/validiums:ext(.html|.md|)*",
-        "destination": "/zk-stack/running/validium",
+        "destination": "/zk-stack/customizations/validium",
+        "type": 301
+      },
+      {
+        "source": "/zk-stack/running/validium",
+        "destination": "/zk-stack/customizations/validium",
         "type": 301
       },
       {
@@ -592,21 +597,6 @@
         "type": 301
       },
       {
-        "source": "/zk-stack/extending",
-        "destination": "/zk-stack/customizations/configurations",
-        "type": 301
-      },
-      {
-        "source": "/zk-stack/extending/node-framework",
-        "destination": "/zk-stack/customizations/configurations",
-        "type": 301
-      },
-      {
-        "source": "/zk-stack/running/configurations",
-        "destination": "/zk-stack/customizations/configurations",
-        "type": 301
-      },
-      {
         "source": "/zk-stack/extending/transaction-filtering",
         "destination": "/zk-stack/customizations/transaction-filtering",
         "type": 301
@@ -619,11 +609,6 @@
       {
         "source": "/zk-stack/running/validium",
         "destination": "/zk-stack/customizations/validium",
-        "type": 301
-      },
-      {
-        "source": "/zk-stack/components/portal-wallet-bridge",
-        "destination": "/zk-stack/components/portal",
         "type": 301
       },
       {
