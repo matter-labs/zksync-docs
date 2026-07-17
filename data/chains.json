@@ -19,8 +19,7 @@
     "explorerURL": "https://sepolia.abscan.org/",
     "baseToken": "ETH",
     "pubdataMode": "Rollup",
-    "dataAvailability": "Ethereum",
-    "onGateway": false
+    "dataAvailability": "Ethereum"
   },
   {
     "name": "ADI Network",
@@ -95,8 +94,7 @@
     "documentationURL": "https://api-docs.grvt.io/",
     "baseToken": "ETH",
     "pubdataMode": "Validium",
-    "dataAvailability": "NoDA",
-    "onGateway": false
+    "dataAvailability": "NoDA"
   },
   {
     "name": "Lens Chain",
@@ -118,8 +116,7 @@
     "explorerURL": "https://explorer.testnet.lens.xyz/",
     "baseToken": "GRASS",
     "pubdataMode": "Validium",
-    "dataAvailability": "Avail",
-    "onGateway": false
+    "dataAvailability": "Avail"
   },
   {
     "name": "Memento ZK Chain",
@@ -193,8 +190,7 @@
     "explorerURL": "https://testnet.sophscan.xyz/",
     "baseToken": "SOPH",
     "pubdataMode": "Validium",
-    "dataAvailability": "Avail",
-    "onGateway": false
+    "dataAvailability": "Avail"
   },
   {
     "name": "Space and Time Testnet",
@@ -259,8 +255,7 @@
     "explorerURL": "https://explorer.zksync.io",
     "baseToken": "ETH",
     "pubdataMode": "Rollup",
-    "dataAvailability": "Ethereum",
-    "onGateway": false
+    "dataAvailability": "Ethereum"
   },
   {
     "name": "ZKsync Era Sepolia",
@@ -271,8 +266,7 @@
     "explorerURL": "https://sepolia.explorer.zksync.io",
     "baseToken": "ETH",
     "pubdataMode": "Rollup",
-    "dataAvailability": "Ethereum",
-    "onGateway": false
+    "dataAvailability": "Ethereum"
   },
   {
     "name": "ZKsync OS Developer Preview",
