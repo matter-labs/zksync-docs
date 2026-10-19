@@ -9,6 +9,7 @@ Dappradar
 defi
 Defi
 DRPC
+Dwellir
 Echoo
 Eigen
 Enkrypt
