@@ -258,12 +258,23 @@
     "dataAvailability": "Ethereum"
   },
   {
-    "name": "ZKsync Era Sepolia",
+    "name": "ZKsync Era Sepolia (deprecated, shutdown date TBD)",
     "chainId": 300,
     "icon": "https://www.zksync.io/ecosystem/era.png",
     "isTestnet": true,
     "documentationURL": "/zksync-network/environment/zksync-era",
     "explorerURL": "https://sepolia.explorer.zksync.io",
+    "baseToken": "ETH",
+    "pubdataMode": "Rollup",
+    "dataAvailability": "Ethereum"
+  },
+  {
+    "name": "ZKsync Era Testnet",
+    "chainId": 312,
+    "icon": "https://www.zksync.io/ecosystem/era.png",
+    "isTestnet": true,
+    "documentationURL": "/zksync-network/zksync-era/network-details",
+    "explorerURL": "https://block-explorer.zksync-era-testnet.zksync.dev",
     "baseToken": "ETH",
     "pubdataMode": "Rollup",
     "dataAvailability": "Ethereum"
