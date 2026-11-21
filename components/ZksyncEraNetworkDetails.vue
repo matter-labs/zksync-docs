@@ -53,10 +53,14 @@
     </div>
 
     <!-- Testnet Details -->
-    <div class="not-prose overflow-x-auto">
+    <div
+      v-for="(rows, index) in testnetTables"
+      :key="index"
+      class="not-prose overflow-x-auto"
+    >
       <UTable
         :columns="columns"
-        :rows="props.showzksyncos ? zksyncOSTestnetDetails : testnetDetails"
+        :rows="rows"
         class="min-w-full divide-y divide-gray-200 rounded-lg border border-gray-200 dark:divide-gray-700 dark:border-gray-700"
         :ui="{
           table: 'w-full table-auto',
@@ -141,8 +145,23 @@ const mainnetDetails: NetworkDetail[] = [
   },
 ];
 
+const eraTestnetDetails: NetworkDetail[] = [
+  { property: 'Network Name', value: 'ZKsync Era Testnet', isCode: true },
+  { property: 'RPC URL', value: 'https://rpc.zksync-era-testnet.zksync.dev', isCopyable: true },
+  { property: 'WebSocket URL', value: 'wss://rpc.zksync-era-testnet.zksync.dev/ws', isCopyable: true },
+  { property: 'Chain ID', value: '312', isCode: true },
+  { property: 'Currency Symbol', value: 'ETH', isCode: true },
+  { property: 'Block Explorer URL', value: 'https://block-explorer.zksync-era-testnet.zksync.dev', isLink: true },
+  {
+    property: 'Explorer Verification API',
+    value: 'https://explorer-api.zksync-era-testnet.zksync.dev/contract_verification',
+    isCopyable: true,
+  },
+];
+
 const testnetDetails: NetworkDetail[] = [
   { property: 'Network Name', value: 'ZKsync Era Sepolia', isCode: true },
+  { property: 'Status', value: 'Deprecated, shutdown date TBD' },
   { property: 'RPC URL', value: 'https://sepolia.era.zksync.dev', isCopyable: true },
   { property: 'WebSocket URL', value: 'wss://sepolia.era.zksync.dev/ws', isCopyable: true },
   { property: 'Chain ID', value: '300', isCode: true },
@@ -172,4 +191,8 @@ const zksyncOSTestnetDetails: NetworkDetail[] = [
     isCopyable: true,
   },
 ];
+
+const testnetTables = computed(() =>
+  props.showzksyncos ? [zksyncOSTestnetDetails] : [eraTestnetDetails, testnetDetails]
+);
 </script>
