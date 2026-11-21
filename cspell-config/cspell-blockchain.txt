@@ -53,6 +53,7 @@ validium
 validiums
 viem
 Vitalik
+Vultisig
 vyper
 Weth
 YaspFi
