@@ -67,6 +67,8 @@ const breadcrumb = computed(() => {
         </template>
       </UPageHeader>
 
+      <LayoutEraDeprecationBanner />
+
       <UPageBody prose>
         <ContentRenderer
           v-if="page.body"
