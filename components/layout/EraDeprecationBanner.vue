@@ -1,17 +1,14 @@
 <script setup lang="ts">
 import { withoutTrailingSlash } from 'ufo';
 
-// The banner shows on the ZKsync Network landing page and on every page of the
-// ZKsync Era and EraVM sections, including pages added to them later.
-const exactPaths = ['/zksync-network'];
-const sectionPaths = ['/zksync-network/zksync-era', '/zksync-protocol/era-vm'];
+// The banner shows on every page of the ZKsync Era and EraVM sections,
+// including pages added to them later, and nowhere else.
+const eraSections = ['/zksync-network/zksync-era', '/zksync-protocol/era-vm'];
 
 const route = useRoute();
 const visible = computed(() => {
   const path = withoutTrailingSlash(route.path);
-  return (
-    exactPaths.includes(path) || sectionPaths.some((section) => path === section || path.startsWith(`${section}/`))
-  );
+  return eraSections.some((section) => path === section || path.startsWith(`${section}/`));
 });
 </script>
 
@@ -26,7 +23,12 @@ const visible = computed(() => {
   >
     <template #description>
       The ZKsync Era and EraVM documentation is no longer maintained. New ZKsync chains, including Prividium chains, run
-      on ZKsync OS instead of EraVM. For current documentation, see
+      on ZKsync OS instead of EraVM. For more information, see the
+      <NuxtLink
+        to="https://www.zksync.io/blog/eravm-security-update"
+        class="font-semibold underline"
+        >EraVM security update</NuxtLink
+      >. For current documentation, see
       <NuxtLink
         to="/zksync-network/zksync-os"
         class="font-semibold underline"
