@@ -13,7 +13,7 @@ on:
 jobs:
   contract-tests:
     timeout-minutes: 8
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:
@@ -94,7 +94,7 @@ jobs:
     needs: contract-tests
     if: always()
     timeout-minutes: 8
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:
